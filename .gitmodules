@@ -1,0 +1,3 @@
+[submodule "includes/libraries/ct-meta-box"]
+	path = includes/libraries/ct-meta-box
+	url = https://github.com/churchthemes/ct-meta-box.git
