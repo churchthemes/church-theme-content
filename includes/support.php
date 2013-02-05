@@ -45,23 +45,6 @@ function ccm_get_feature_data( $feature = false ) {
 			'theme_support'	=> 'ccm-locations',
 			'post_type'		=> 'ccm_location',
 		),
-		
-		// REMOVE THESE IF MOVE TO WIDGET
-		// REMOVE THESE IF MOVE TO WIDGET
-		// REMOVE THESE IF MOVE TO WIDGET
-		// REMOVE THESE IF MOVE TO WIDGET
-		// REMOVE THESE IF MOVE TO WIDGET
-		// REMOVE THESE IF MOVE TO WIDGET
-		// REMOVE THESE IF MOVE TO WIDGET
-
-		'slides' => array(
-			'theme_support'	=> 'ccm-slides',
-			'post_type'		=> 'ccm_slide',
-		),
-		'highlights' => array(
-			'theme_support'	=> 'ccm-highlights',
-			'post_type'		=> 'ccm_highlight',
-		),
 
 	);
 	

@@ -95,8 +95,6 @@ $ccm_includes = array(
 		CCM_INC_DIR . '/support.php',
 		CCM_INC_DIR . '/post-types.php', 
 		CCM_INC_DIR . '/taxonomies.php',
-		CCM_INC_DIR . '/slides.php',
-		CCM_INC_DIR . '/highlights.php',
 		CCM_INC_DIR . '/helpers.php',
 	),
 

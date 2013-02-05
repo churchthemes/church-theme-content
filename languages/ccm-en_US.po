@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Church Content Manager v1.0.0\n"
+"Project-Id-Version: Church Content Manager v0.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2012-11-29 21:29:33+0000\n"
+"PO-Revision-Date: 2013-02-05 22:57:44+0000\n"
 "Last-Translator: admin <steven@stevengliebe.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,1192 +19,987 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
 
-#: includes/events.php:20
+#: includes/post-types.php:59
 #@ ccm
 msgctxt "post type general name"
 msgid "Events"
 msgstr ""
 
-#: includes/events.php:21
+#: includes/post-types.php:60
 #@ ccm
 msgctxt "post type singular name"
 msgid "Event"
 msgstr ""
 
-#: includes/events.php:22
+#: includes/post-types.php:61
 #@ ccm
 msgctxt "event"
 msgid "Add New"
 msgstr ""
 
-#: includes/events.php:23
+#: includes/post-types.php:62
 #@ ccm
 msgid "Add Event"
 msgstr ""
 
-#: includes/events.php:24
+#: includes/post-types.php:63
 #@ ccm
 msgid "Edit Event"
 msgstr ""
 
-#: includes/events.php:25
+#: includes/post-types.php:64
 #@ ccm
 msgid "New Event"
 msgstr ""
 
-#: includes/events.php:26
+#: includes/post-types.php:65
 #@ ccm
 msgid "All Events"
 msgstr ""
 
-#: includes/events.php:27
+#: includes/post-types.php:66
 #@ ccm
 msgid "View Event"
 msgstr ""
 
-#: includes/events.php:28
+#: includes/post-types.php:67
 #@ ccm
 msgid "Search Events"
 msgstr ""
 
-#: includes/events.php:29
+#: includes/post-types.php:68
 #@ ccm
 msgid "No events found"
 msgstr ""
 
-#: includes/events.php:30
+#: includes/post-types.php:69
 #@ ccm
 msgid "No events found in Trash"
 msgstr ""
 
-#: includes/events.php:81
+#: includes/admin/event-fields.php:25
 #@ ccm
 msgctxt "event meta box"
 msgid "Date & Time"
 msgstr ""
 
-#: includes/events.php:91
+#: includes/admin/event-fields.php:141
 #@ ccm
 msgctxt "event meta box"
 msgid "Location"
 msgstr ""
 
-#: includes/events.php:215
-#@ ccm
-msgid "Start Date <span>(Required)</span>"
-msgstr ""
-
-#: includes/events.php:220
-#@ ccm
-msgid "Date must be in YYYY-MM-DD format such as \"2012-09-30\" for September 30, 2012."
-msgstr ""
-
-#: includes/events.php:228
+#: includes/admin/event-fields.php:79
 #@ ccm
 msgid "End Date"
 msgstr ""
 
-#: includes/events.php:233
-#@ ccm
-msgid "Provide an end date if this is a multi-day event."
-msgstr ""
-
-#: includes/events.php:241
+#: includes/admin/event-fields.php:100
 #@ ccm
 msgid "Time"
 msgstr ""
 
-#: includes/events.php:246
+#: includes/admin/event-fields.php:102
 #@ ccm
 msgid "Optionally provide a time such as \"8:00 am &ndash; 2:00 pm\""
 msgstr ""
 
-#: includes/events.php:271
+#: includes/admin/event-fields.php:173
 #@ ccm
 msgid "Venue"
 msgstr ""
 
-#: includes/events.php:276
-#@ ccm
+#: includes/admin/event-fields.php:175
+#@ default
 msgid "You can provide a building name, room number or other location name to help people find the event."
 msgstr ""
 
-#: includes/events.php:287
-#: includes/locations.php:144
-#@ ccm
-msgid "Address"
-msgstr ""
-
-#: includes/events.php:292
-#@ ccm
+#: includes/admin/event-fields.php:196
+#@ default
 msgid "You can enter an address if it is necessary for people to find this event."
 msgstr ""
 
-#: includes/events.php:299
-#@ ccm
-msgctxt "events meta box"
-msgid "Google Map"
-msgstr ""
-
-#: includes/events.php:304
-#@ ccm
-msgid "Provide the details below if you want to show a map for this event."
-msgstr ""
-
-#: includes/events.php:310
-#: includes/locations.php:177
-#@ ccm
-msgid "Latitude"
-msgstr ""
-
-#: includes/events.php:315
-#: includes/locations.php:182
-#@ ccm
+#: includes/admin/event-fields.php:217
+#: includes/admin/location-fields.php:101
+#@ default
 msgid "You can use a site like <a href=\"http://www.getlatlon.com/\" target=\"_blank\">Get Lat Lon</a> to convert an address into coordinates."
 msgstr ""
 
-#: includes/events.php:323
-#: includes/locations.php:190
-#@ ccm
-msgid "Longitude"
-msgstr ""
-
-#: includes/events.php:339
-#: includes/locations.php:206
-#@ ccm
-msgctxt "map"
-msgid "Type"
-msgstr ""
-
-#: includes/events.php:346
-#: includes/locations.php:213
-#@ ccm
-msgid "You can show a road map, satellite imagery, a combination of both or terrain."
-msgstr ""
-
-#: includes/events.php:360
-#: includes/locations.php:227
-#@ ccm
-msgid "Zoom Level"
-msgstr ""
-
-#: includes/events.php:367
-#: includes/locations.php:234
-#@ ccm
-msgid "A lower number is more zoomed out while a higher number is more zoomed in."
-msgstr ""
-
-#: includes/events.php:391
+#: includes/admin/event-fields.php:365
 #@ ccm
 msgctxt "events admin column"
 msgid "When"
 msgstr ""
 
-#: includes/events.php:392
+#: includes/admin/event-fields.php:366
 #@ ccm
 msgctxt "events admin column"
 msgid "Where"
 msgstr ""
 
-#: includes/events.php:430
+#: includes/admin/event-fields.php:403
 #@ ccm
 msgctxt "date range separator"
 msgid " &ndash; "
 msgstr ""
 
-#: includes/gallery.php:21
+#: includes/post-types.php:101
 #@ ccm
 msgctxt "post type general name"
 msgid "Gallery"
 msgstr ""
 
-#: includes/gallery.php:22
+#: includes/post-types.php:102
 #@ ccm
 msgctxt "post type singular name"
 msgid "Gallery Item"
 msgstr ""
 
-#: includes/gallery.php:23
+#: includes/post-types.php:103
 #@ ccm
 msgctxt "gallery"
 msgid "Add New"
 msgstr ""
 
-#: includes/gallery.php:24
+#: includes/post-types.php:104
 #@ ccm
 msgid "Add Gallery Item"
 msgstr ""
 
-#: includes/gallery.php:25
+#: includes/post-types.php:105
 #@ ccm
 msgid "Edit Gallery Item"
 msgstr ""
 
-#: includes/gallery.php:26
+#: includes/post-types.php:106
 #@ ccm
 msgid "New Gallery Item"
 msgstr ""
 
-#: includes/gallery.php:27
+#: includes/post-types.php:107
 #@ ccm
 msgctxt "gallery"
 msgid "All Items"
 msgstr ""
 
-#: includes/gallery.php:28
+#: includes/post-types.php:108
 #@ ccm
 msgid "View Gallery Item"
 msgstr ""
 
-#: includes/gallery.php:29
+#: includes/post-types.php:109
 #@ ccm
 msgid "Search Gallery Items"
 msgstr ""
 
-#: includes/gallery.php:30
+#: includes/post-types.php:110
 #@ ccm
 msgid "No gallery items found"
 msgstr ""
 
-#: includes/gallery.php:31
+#: includes/post-types.php:111
 #@ ccm
 msgid "No gallery items found in Trash"
 msgstr ""
 
-#: includes/gallery.php:60
+#: includes/taxonomies.php:163
 #@ ccm
 msgctxt "taxonomy general name"
 msgid "Gallery Albums"
 msgstr ""
 
-#: includes/gallery.php:61
+#: includes/taxonomies.php:164
 #@ ccm
 msgctxt "taxonomy singular name"
 msgid "Gallery Album"
 msgstr ""
 
-#: includes/gallery.php:62
+#: includes/taxonomies.php:165
 #@ ccm
 msgid "Search Albums"
 msgstr ""
 
-#: includes/gallery.php:63
+#: includes/taxonomies.php:166
 #@ ccm
 msgid "Popular Albums"
 msgstr ""
 
-#: includes/gallery.php:64
+#: includes/taxonomies.php:167
 #@ ccm
 msgid "All Albums"
 msgstr ""
 
-#: includes/gallery.php:67
+#: includes/taxonomies.php:170
 #@ ccm
 msgid "Edit Album"
 msgstr ""
 
-#: includes/gallery.php:68
+#: includes/taxonomies.php:171
 #@ ccm
 msgid "Update Album"
 msgstr ""
 
-#: includes/gallery.php:69
+#: includes/taxonomies.php:172
 #@ ccm
 msgid "Add Album"
 msgstr ""
 
-#: includes/gallery.php:70
+#: includes/taxonomies.php:173
 #@ ccm
 msgid "New Album"
 msgstr ""
 
-#: includes/gallery.php:71
+#: includes/taxonomies.php:174
 #@ ccm
 msgid "Separate albums with commas"
 msgstr ""
 
-#: includes/gallery.php:72
+#: includes/taxonomies.php:175
 #@ ccm
 msgid "Add or remove albums."
 msgstr ""
 
-#: includes/gallery.php:73
+#: includes/taxonomies.php:176
 #@ ccm
 msgid "Choose from the most used albums."
 msgstr ""
 
-#: includes/gallery.php:74
+#: includes/taxonomies.php:177
 #@ ccm
 msgctxt "gallery menu name"
 msgid "Albums"
 msgstr ""
 
-#: includes/gallery.php:123
-#: includes/highlights.php:206
-#: includes/slides.php:218
-#@ ccm
-msgid "Image (Required)"
-msgstr ""
-
-#: includes/gallery.php:128
-#@ ccm
-msgctxt "gallery meta box"
-msgid "Video"
-msgstr ""
-
-#: includes/gallery.php:187
-#: includes/sermons.php:280
-#: includes/slides.php:186
+#: includes/admin/gallery-fields.php:82
+#: includes/admin/sermon-fields.php:57
 #@ ccm
 msgid "Video URL"
 msgstr ""
 
-#: includes/gallery.php:192
-#: includes/sermons.php:285
-#@ ccm
-msgid "Enter a YouTube or Vimeo video page URL. Examples:"
-msgstr ""
-
-#: includes/gallery.php:198
-#@ ccm
-msgid "<b>Note:</b> You must provide a thumbnail image to represent this video."
-msgstr ""
-
-#: includes/gallery.php:222
-#: includes/people.php:161
+#: includes/admin/gallery-fields.php:147
+#: includes/admin/person-fields.php:121
 #@ ccm
 msgid "Thumbnail"
 msgstr ""
 
-#: includes/gallery.php:228
+#: includes/admin/gallery-fields.php:152
 #@ ccm
 msgid "Type"
 msgstr ""
 
-#: includes/gallery.php:229
+#: includes/admin/gallery-fields.php:153
 #@ ccm
 msgid "Albums"
 msgstr ""
 
-#: includes/highlights.php:34
-#@ ccm
-msgctxt "post type general name"
-msgid "Highlights"
-msgstr ""
-
-#: includes/highlights.php:35
-#@ ccm
-msgctxt "post type singular name"
-msgid "Highlight"
-msgstr ""
-
-#: includes/highlights.php:36
-#@ ccm
-msgctxt "highlight"
-msgid "Add New"
-msgstr ""
-
-#: includes/highlights.php:37
-#@ ccm
-msgid "Add Highlight"
-msgstr ""
-
-#: includes/highlights.php:38
-#@ ccm
-msgid "Edit Highlight"
-msgstr ""
-
-#: includes/highlights.php:39
-#@ ccm
-msgid "New Highlight"
-msgstr ""
-
-#: includes/highlights.php:40
-#@ ccm
-msgid "All Highlights"
-msgstr ""
-
-#: includes/highlights.php:41
-#@ ccm
-msgid "View Highlight"
-msgstr ""
-
-#: includes/highlights.php:42
-#@ ccm
-msgid "Search Highlights"
-msgstr ""
-
-#: includes/highlights.php:43
-#@ ccm
-msgid "No highlights found"
-msgstr ""
-
-#: includes/highlights.php:44
-#@ ccm
-msgid "No highlights found in Trash"
-msgstr ""
-
-#: includes/highlights.php:45
-#@ ccm
-msgid "Highlights"
-msgstr ""
-
-#: includes/highlights.php:94
-#@ ccm
-msgid "Highlight Options"
-msgstr ""
-
-#: includes/highlights.php:160
-#: includes/highlights.php:230
-#@ ccm
-msgctxt "highlight"
-msgid "Title"
-msgstr ""
-
-#: includes/highlights.php:170
-#@ ccm
-msgctxt "highlight"
-msgid "Description"
-msgstr ""
-
-#: includes/highlights.php:180
-#@ ccm
-msgctxt "highlight"
-msgid "Click URL"
-msgstr ""
-
-#: includes/highlights.php:185
-#@ ccm
-msgid "Enter a URL to go to upon clicking the highlight."
-msgstr ""
-
-#: includes/highlights.php:229
-#: includes/slides.php:241
-#@ ccm
-msgid "Image"
-msgstr ""
-
-#: includes/highlights.php:231
-#: includes/locations.php:260
-#: includes/people.php:168
-#: includes/slides.php:244
+#: includes/admin/location-fields.php:207
+#: includes/admin/person-fields.php:127
 #@ ccm
 msgctxt "sorting"
 msgid "Order"
 msgstr ""
 
-#: includes/highlights.php:270
-#: includes/slides.php:283
-#@ ccm
-msgid "No Title"
-msgstr ""
-
-#: includes/highlights.php:275
-#: includes/slides.php:288
-#@ ccm
-msgid "Edit"
-msgstr ""
-
-#: includes/locations.php:20
+#: includes/post-types.php:143
 #@ ccm
 msgctxt "post type general name"
 msgid "Locations"
 msgstr ""
 
-#: includes/locations.php:21
+#: includes/post-types.php:144
 #@ ccm
 msgctxt "post type singular name"
 msgid "Location"
 msgstr ""
 
-#: includes/locations.php:22
+#: includes/post-types.php:145
 #@ ccm
 msgctxt "location"
 msgid "Add New"
 msgstr ""
 
-#: includes/locations.php:23
+#: includes/post-types.php:146
 #@ ccm
 msgid "Add Location"
 msgstr ""
 
-#: includes/locations.php:24
+#: includes/post-types.php:147
 #@ ccm
 msgid "Edit Location"
 msgstr ""
 
-#: includes/locations.php:25
+#: includes/post-types.php:148
 #@ ccm
 msgid "New Location"
 msgstr ""
 
-#: includes/locations.php:26
+#: includes/post-types.php:149
 #@ ccm
 msgid "All Locations"
 msgstr ""
 
-#: includes/locations.php:27
+#: includes/post-types.php:150
 #@ ccm
 msgid "View Location"
 msgstr ""
 
-#: includes/locations.php:28
+#: includes/post-types.php:151
 #@ ccm
 msgid "Search Locations"
 msgstr ""
 
-#: includes/locations.php:29
+#: includes/post-types.php:152
 #@ ccm
 msgid "No location found"
 msgstr ""
 
-#: includes/locations.php:30
+#: includes/post-types.php:153
 #@ ccm
 msgid "No location found in Trash"
 msgstr ""
 
-#: includes/locations.php:79
-#@ ccm
-msgid "Location Details"
-msgstr ""
-
-#: includes/locations.php:157
-#@ ccm
-msgid "Phone Number(s)"
-msgstr ""
-
-#: includes/locations.php:166
-#@ ccm
-msgctxt "locations meta box"
-msgid "Google Map"
-msgstr ""
-
-#: includes/locations.php:171
-#@ ccm
-msgid "Provide the details below if you want to show a map for this location."
-msgstr ""
-
-#: includes/locations.php:259
+#: includes/admin/location-fields.php:206
 #@ ccm
 msgctxt "location admin column"
 msgid "Address"
 msgstr ""
 
-#: includes/locations.php:265
+#: includes/admin/location-fields.php:211
 #@ ccm
 msgctxt "location admin column"
 msgid "Location"
 msgstr ""
 
-#: includes/maps.php:68
+#: includes/admin/maps.php:21
 #@ ccm
 msgctxt "map"
 msgid "Road"
 msgstr ""
 
-#: includes/maps.php:69
+#: includes/admin/maps.php:22
 #@ ccm
 msgctxt "map"
 msgid "Satellite"
 msgstr ""
 
-#: includes/maps.php:70
+#: includes/admin/maps.php:23
 #@ ccm
 msgctxt "map"
 msgid "Hybrid"
 msgstr ""
 
-#: includes/maps.php:71
+#: includes/admin/maps.php:24
 #@ ccm
 msgctxt "map"
 msgid "Terrain"
 msgstr ""
 
-#: includes/people.php:20
+#: includes/post-types.php:184
 #@ ccm
 msgctxt "post type general name"
 msgid "People"
 msgstr ""
 
-#: includes/people.php:21
+#: includes/post-types.php:185
 #@ ccm
 msgctxt "post type singular name"
 msgid "Person"
 msgstr ""
 
-#: includes/people.php:22
+#: includes/post-types.php:186
 #@ ccm
 msgctxt "person"
 msgid "Add New"
 msgstr ""
 
-#: includes/people.php:23
+#: includes/post-types.php:187
 #@ ccm
 msgid "Add Person"
 msgstr ""
 
-#: includes/people.php:24
+#: includes/post-types.php:188
 #@ ccm
 msgid "Edit Person"
 msgstr ""
 
-#: includes/people.php:25
+#: includes/post-types.php:189
 #@ ccm
 msgid "New Person"
 msgstr ""
 
-#: includes/people.php:26
+#: includes/post-types.php:190
 #@ ccm
 msgid "All People"
 msgstr ""
 
-#: includes/people.php:27
+#: includes/post-types.php:191
 #@ ccm
 msgid "View Person"
 msgstr ""
 
-#: includes/people.php:28
+#: includes/post-types.php:192
 #@ ccm
 msgid "Search People"
 msgstr ""
 
-#: includes/people.php:29
+#: includes/post-types.php:193
 #@ ccm
 msgid "No people found"
 msgstr ""
 
-#: includes/people.php:30
+#: includes/post-types.php:194
 #@ ccm
 msgid "No people found in Trash"
 msgstr ""
 
-#: includes/people.php:79
-#@ ccm
-msgid "Details"
-msgstr ""
-
-#: includes/people.php:131
-#@ ccm
-msgctxt "person position"
-msgid "Position"
-msgstr ""
-
-#: includes/people.php:136
+#: includes/admin/person-fields.php:81
 #@ ccm
 msgid "Enter the person's position or title (e.g. Senior Pastor, Deacon, etc.)"
 msgstr ""
 
-#: includes/people.php:167
+#: includes/admin/person-fields.php:79
+#: includes/admin/person-fields.php:126
 #@ ccm
 msgid "Position"
 msgstr ""
 
-#: includes/people.php:173
+#: includes/admin/person-fields.php:131
 #@ ccm
 msgctxt "person"
 msgid "Name"
 msgstr ""
 
-#: includes/sermons.php:21
+#: includes/post-types.php:17
 #@ ccm
 msgctxt "post type general name"
 msgid "Sermons"
 msgstr ""
 
-#: includes/sermons.php:22
+#: includes/post-types.php:18
 #@ ccm
 msgctxt "post type singular name"
 msgid "Sermon"
 msgstr ""
 
-#: includes/sermons.php:23
+#: includes/post-types.php:19
 #@ ccm
 msgctxt "sermon"
 msgid "Add New"
 msgstr ""
 
-#: includes/sermons.php:24
+#: includes/post-types.php:20
 #@ ccm
 msgid "Add Sermon"
 msgstr ""
 
-#: includes/sermons.php:25
+#: includes/post-types.php:21
 #@ ccm
 msgid "Edit Sermon"
 msgstr ""
 
-#: includes/sermons.php:26
+#: includes/post-types.php:22
 #@ ccm
 msgid "New Sermon"
 msgstr ""
 
-#: includes/sermons.php:27
+#: includes/post-types.php:23
 #@ ccm
 msgid "All Sermons"
 msgstr ""
 
-#: includes/sermons.php:28
+#: includes/post-types.php:24
 #@ ccm
 msgid "View Sermons"
 msgstr ""
 
-#: includes/sermons.php:29
+#: includes/post-types.php:25
 #@ ccm
 msgid "Search Sermons"
 msgstr ""
 
-#: includes/sermons.php:30
+#: includes/post-types.php:26
 #@ ccm
 msgid "No sermons found"
 msgstr ""
 
-#: includes/sermons.php:31
+#: includes/post-types.php:27
 #@ ccm
 msgid "No sermons found in Trash"
 msgstr ""
 
-#: includes/sermons.php:71
+#: includes/taxonomies.php:21
 #@ ccm
 msgctxt "taxonomy general name"
 msgid "Sermon Categories"
 msgstr ""
 
-#: includes/sermons.php:72
+#: includes/taxonomies.php:22
 #@ ccm
 msgctxt "taxonomy singular name"
 msgid "Sermon Category"
 msgstr ""
 
-#: includes/sermons.php:73
+#: includes/taxonomies.php:23
 #@ ccm
 msgctxt "sermons"
 msgid "Search Categories"
 msgstr ""
 
-#: includes/sermons.php:74
+#: includes/taxonomies.php:24
 #@ ccm
 msgctxt "sermons"
 msgid "Popular Categories"
 msgstr ""
 
-#: includes/sermons.php:75
+#: includes/taxonomies.php:25
 #@ ccm
 msgctxt "sermons"
 msgid "All Categories"
 msgstr ""
 
-#: includes/sermons.php:78
+#: includes/taxonomies.php:28
 #@ ccm
 msgctxt "sermons"
 msgid "Edit Category"
 msgstr ""
 
-#: includes/sermons.php:79
+#: includes/taxonomies.php:29
 #@ ccm
 msgctxt "sermons"
 msgid "Update Category"
 msgstr ""
 
-#: includes/sermons.php:80
+#: includes/taxonomies.php:30
 #@ ccm
 msgctxt "sermons"
 msgid "Add Category"
 msgstr ""
 
-#: includes/sermons.php:81
+#: includes/taxonomies.php:31
 #@ ccm
 msgctxt "sermons"
 msgid "New Category"
 msgstr ""
 
-#: includes/sermons.php:82
+#: includes/taxonomies.php:32
 #@ ccm
 msgctxt "sermons"
 msgid "Separate categories with commas"
 msgstr ""
 
-#: includes/sermons.php:83
+#: includes/taxonomies.php:33
 #@ ccm
 msgctxt "sermons"
 msgid "Add or remove categories"
 msgstr ""
 
-#: includes/sermons.php:84
+#: includes/taxonomies.php:34
 #@ ccm
 msgctxt "sermons"
 msgid "Choose from the most used categories"
 msgstr ""
 
-#: includes/sermons.php:85
+#: includes/taxonomies.php:35
 #@ ccm
 msgctxt "sermon menu name"
 msgid "Categories"
 msgstr ""
 
-#: includes/sermons.php:113
+#: includes/taxonomies.php:67
 #@ ccm
 msgctxt "taxonomy general name"
 msgid "Sermon Tags"
 msgstr ""
 
-#: includes/sermons.php:114
+#: includes/taxonomies.php:68
 #@ ccm
 msgctxt "taxonomy singular name"
 msgid "Sermon Tag"
 msgstr ""
 
-#: includes/sermons.php:115
+#: includes/taxonomies.php:69
 #@ ccm
 msgctxt "sermons"
 msgid "Search Tags"
 msgstr ""
 
-#: includes/sermons.php:116
+#: includes/taxonomies.php:70
 #@ ccm
 msgctxt "sermons"
 msgid "Popular Tags"
 msgstr ""
 
-#: includes/sermons.php:117
+#: includes/taxonomies.php:71
 #@ ccm
 msgctxt "sermons"
 msgid "All Tags"
 msgstr ""
 
-#: includes/sermons.php:120
+#: includes/taxonomies.php:74
 #@ ccm
 msgctxt "sermons"
 msgid "Edit Tag"
 msgstr ""
 
-#: includes/sermons.php:121
+#: includes/taxonomies.php:75
 #@ ccm
 msgctxt "sermons"
 msgid "Update Tag"
 msgstr ""
 
-#: includes/sermons.php:122
+#: includes/taxonomies.php:76
 #@ ccm
 msgctxt "sermons"
 msgid "Add Tag"
 msgstr ""
 
-#: includes/sermons.php:123
+#: includes/taxonomies.php:77
 #@ ccm
 msgctxt "sermons"
 msgid "New Tag"
 msgstr ""
 
-#: includes/sermons.php:124
+#: includes/taxonomies.php:78
 #@ ccm
 msgctxt "sermons"
 msgid "Separate tags with commas"
 msgstr ""
 
-#: includes/sermons.php:125
+#: includes/taxonomies.php:79
 #@ ccm
 msgctxt "sermons"
 msgid "Add or remove tags"
 msgstr ""
 
-#: includes/sermons.php:126
+#: includes/taxonomies.php:80
 #@ ccm
 msgctxt "sermons"
 msgid "Choose from the most used tags"
 msgstr ""
 
-#: includes/sermons.php:127
+#: includes/taxonomies.php:81
 #@ ccm
 msgctxt "sermon menu name"
 msgid "Tags"
 msgstr ""
 
-#: includes/sermons.php:154
+#: includes/taxonomies.php:113
 #@ ccm
 msgctxt "taxonomy general name"
 msgid "Sermon Speakers"
 msgstr ""
 
-#: includes/sermons.php:155
+#: includes/taxonomies.php:114
 #@ ccm
 msgctxt "taxonomy singular name"
 msgid "Sermon Speaker"
 msgstr ""
 
-#: includes/sermons.php:156
+#: includes/taxonomies.php:115
 #@ ccm
 msgctxt "sermons"
 msgid "Search Speakers"
 msgstr ""
 
-#: includes/sermons.php:157
+#: includes/taxonomies.php:116
 #@ ccm
 msgctxt "sermons"
 msgid "Popular Speakers"
 msgstr ""
 
-#: includes/sermons.php:158
+#: includes/taxonomies.php:117
 #@ ccm
 msgctxt "sermons"
 msgid "All Speakers"
 msgstr ""
 
-#: includes/sermons.php:161
+#: includes/taxonomies.php:120
 #@ ccm
 msgctxt "sermons"
 msgid "Edit Speaker"
 msgstr ""
 
-#: includes/sermons.php:162
+#: includes/taxonomies.php:121
 #@ ccm
 msgctxt "sermons"
 msgid "Update Speaker"
 msgstr ""
 
-#: includes/sermons.php:163
+#: includes/taxonomies.php:122
 #@ ccm
 msgctxt "sermons"
 msgid "Add Speaker"
 msgstr ""
 
-#: includes/sermons.php:164
+#: includes/taxonomies.php:123
 #@ ccm
 msgctxt "sermons"
 msgid "New Speaker"
 msgstr ""
 
-#: includes/sermons.php:165
+#: includes/taxonomies.php:124
 #@ ccm
 msgctxt "sermons"
 msgid "Separate speakers with commas"
 msgstr ""
 
-#: includes/sermons.php:166
+#: includes/taxonomies.php:125
 #@ ccm
 msgctxt "sermons"
 msgid "Add or remove speakers"
 msgstr ""
 
-#: includes/sermons.php:167
+#: includes/taxonomies.php:126
 #@ ccm
 msgctxt "sermons"
 msgid "Choose from the most used speakers"
 msgstr ""
 
-#: includes/sermons.php:168
+#: includes/taxonomies.php:127
 #@ ccm
 msgctxt "sermon menu name"
 msgid "Speakers"
 msgstr ""
 
-#: includes/sermons.php:218
-#@ ccm
-msgctxt "sermon meta box"
-msgid "Media"
-msgstr ""
-
-#: includes/sermons.php:296
+#: includes/admin/sermon-fields.php:78
 #@ ccm
 msgid "MP3 Audio File"
 msgstr ""
 
-#: includes/sermons.php:302
+#: includes/admin/sermon-fields.php:80
 #@ ccm
 msgid "Upload or provide the URL to an audio file in MP3 format. <b>File too big?</b> Refer to the documentation for help."
 msgstr ""
 
-#: includes/sermons.php:310
+#: includes/admin/sermon-fields.php:99
 #@ ccm
 msgid "PDF File"
 msgstr ""
 
-#: includes/sermons.php:316
+#: includes/admin/sermon-fields.php:101
 #@ ccm
 msgid "Upload or provide the URL to a PDF file."
 msgstr ""
 
-#: includes/sermons.php:324
+#: includes/admin/sermon-fields.php:120
 #@ ccm
 msgid "Full Text"
 msgstr ""
 
-#: includes/sermons.php:328
+#: includes/admin/sermon-fields.php:124
 #@ ccm
 msgid "Full sermon text provided"
 msgstr ""
 
-#: includes/sermons.php:330
+#: includes/admin/sermon-fields.php:122
 #@ ccm
 msgid "If you provide a complete transcript in the content box above then check this box."
 msgstr ""
 
-#: includes/sermons.php:355
+#: includes/admin/sermon-fields.php:165
 #@ ccm
 msgid "Media Types"
 msgstr ""
 
-#: includes/sermons.php:356
+#: includes/admin/sermon-fields.php:166
 #@ ccm
 msgctxt "people"
 msgid "Speakers"
 msgstr ""
 
-#: includes/sermons.php:357
+#: includes/admin/sermon-fields.php:167
 #@ ccm
 msgid "Categories"
 msgstr ""
 
-#: includes/sermons.php:388
+#: includes/admin/sermon-fields.php:197
 #@ ccm
 msgctxt "media type"
 msgid "Video"
 msgstr ""
 
-#: includes/sermons.php:392
+#: includes/admin/sermon-fields.php:201
 #@ ccm
 msgctxt "media type"
 msgid "Audio"
 msgstr ""
 
-#: includes/sermons.php:396
+#: includes/admin/sermon-fields.php:205
 #@ ccm
 msgctxt "media type"
 msgid "PDF"
 msgstr ""
 
-#: includes/sermons.php:400
+#: includes/admin/sermon-fields.php:209
 #@ ccm
 msgctxt "media type"
 msgid "Text"
 msgstr ""
 
-#: includes/slides.php:21
-#@ ccm
-msgctxt "post type general name"
-msgid "Slides"
-msgstr ""
-
-#: includes/slides.php:22
-#@ ccm
-msgctxt "post type singular name"
-msgid "Slide"
-msgstr ""
-
-#: includes/slides.php:23
-#@ ccm
-msgctxt "slider"
-msgid "Add New"
-msgstr ""
-
-#: includes/slides.php:24
-#@ ccm
-msgid "Add Slide"
-msgstr ""
-
-#: includes/slides.php:25
-#@ ccm
-msgid "Edit Slide"
-msgstr ""
-
-#: includes/slides.php:26
-#@ ccm
-msgid "New Slide"
-msgstr ""
-
-#: includes/slides.php:27
-#@ ccm
-msgid "All Slides"
-msgstr ""
-
-#: includes/slides.php:28
-#@ ccm
-msgid "View Slide"
-msgstr ""
-
-#: includes/slides.php:29
-#@ ccm
-msgid "Search Slides"
-msgstr ""
-
-#: includes/slides.php:30
-#@ ccm
-msgid "No slides found"
-msgstr ""
-
-#: includes/slides.php:31
-#@ ccm
-msgid "No slides found in Trash"
-msgstr ""
-
-#: includes/slides.php:32
-#@ ccm
-msgid "Slides"
-msgstr ""
-
-#: includes/slides.php:81
-#@ ccm
-msgid "Slide Options"
-msgstr ""
-
-#: includes/slides.php:153
-#@ ccm
-msgid "Title"
-msgstr ""
-
-#: includes/slides.php:163
-#@ ccm
-msgid "Description"
-msgstr ""
-
-#: includes/slides.php:173
-#@ ccm
-msgid "Click URL"
-msgstr ""
-
-#: includes/slides.php:178
-#@ ccm
-msgid "Enter a URL to go to upon clicking the slide."
-msgstr ""
-
-#: includes/slides.php:191
-#@ ccm
-msgid "To make this a video slide, enter a YouTube or Vimeo video page URL. Examples:"
-msgstr ""
-
-#: includes/slides.php:197
-#@ ccm
-msgid "<b>Note:</b> You must provide an image above to represent this video in the slider."
-msgstr ""
-
-#: includes/slides.php:242
-#@ ccm
-msgctxt "slider"
-msgid "Title"
-msgstr ""
-
-#: includes/slides.php:243
-#@ ccm
-msgctxt "slider"
-msgid "Type"
-msgstr ""
-
-#: includes/sermons.php:300
+#: includes/admin/sermon-fields.php:84
 #@ ccm
 msgid "Upload MP3"
 msgstr ""
 
-#: includes/sermons.php:300
+#: includes/admin/sermon-fields.php:85
 #@ ccm
 msgid "Use for MP3 File"
 msgstr ""
 
-#: includes/sermons.php:314
+#: includes/admin/sermon-fields.php:105
 #@ ccm
 msgid "Upload PDF"
 msgstr ""
 
-#: includes/sermons.php:314
+#: includes/admin/sermon-fields.php:106
 #@ ccm
 msgid "Use for PDF File"
+msgstr ""
+
+#: includes/admin/event-fields.php:57
+#@ ccm
+msgid "Start Date"
+msgstr ""
+
+#: includes/admin/event-fields.php:58
+#@ ccm
+msgid "(Required)"
+msgstr ""
+
+#: includes/admin/event-fields.php:194
+#@ ccm
+msgctxt "event meta box"
+msgid "Address"
+msgstr ""
+
+#: includes/admin/event-fields.php:215
+#@ ccm
+msgctxt "event meta box"
+msgid "Map Latitude"
+msgstr ""
+
+#: includes/admin/event-fields.php:236
+#@ ccm
+msgctxt "event meta box"
+msgid "Map Longitude"
+msgstr ""
+
+#: includes/admin/event-fields.php:257
+#@ ccm
+msgctxt "event meta box"
+msgid "Map Type"
+msgstr ""
+
+#: includes/admin/event-fields.php:259
+#@ ccm
+msgctxt "event meta box"
+msgid "You can show a road map, satellite imagery, a combination of both (hybrid) or terrain."
+msgstr ""
+
+#: includes/admin/event-fields.php:278
+#@ ccm
+msgctxt "event meta box"
+msgid "Map Zoom"
+msgstr ""
+
+#: includes/admin/event-fields.php:280
+#@ ccm
+msgctxt "event meta box"
+msgid "A lower number is more zoomed out while a higher number is more zoomed in."
+msgstr ""
+
+#: includes/admin/gallery-fields.php:32
+#@ ccm
+msgctxt "gallery meta box"
+msgid "Image (Required)"
+msgstr ""
+
+#: includes/admin/gallery-fields.php:49
+#@ ccm
+msgctxt "meta box"
+msgid "Video"
+msgstr ""
+
+#: includes/admin/gallery-fields.php:84
+#: includes/admin/sermon-fields.php:59
+#, php-format
+#@ ccm
+msgid "Enter a YouTube or Vimeo video page URL. Examples: %s"
+msgstr ""
+
+#: includes/admin/location-fields.php:25
+#@ ccm
+msgctxt "location meta box"
+msgid "Location Details"
+msgstr ""
+
+#: includes/admin/location-fields.php:57
+#@ ccm
+msgctxt "location meta box"
+msgid "Address"
+msgstr ""
+
+#: includes/admin/location-fields.php:78
+#@ ccm
+msgctxt "location meta box"
+msgid "Phone"
+msgstr ""
+
+#: includes/admin/location-fields.php:99
+#@ ccm
+msgctxt "location meta box"
+msgid "Map Latitude"
+msgstr ""
+
+#: includes/admin/location-fields.php:120
+#@ ccm
+msgctxt "location meta box"
+msgid "Map Longitude"
+msgstr ""
+
+#: includes/admin/location-fields.php:141
+#@ ccm
+msgctxt "location meta box"
+msgid "Map Type"
+msgstr ""
+
+#: includes/admin/location-fields.php:143
+#@ ccm
+msgctxt "location meta box"
+msgid "You can show a road map, satellite imagery, a combination of both (hybrid) or terrain."
+msgstr ""
+
+#: includes/admin/location-fields.php:162
+#@ ccm
+msgctxt "location meta box"
+msgid "Map Zoom"
+msgstr ""
+
+#: includes/admin/location-fields.php:164
+#@ ccm
+msgctxt "location meta box"
+msgid "A lower number is more zoomed out while a higher number is more zoomed in."
+msgstr ""
+
+#: includes/admin/person-fields.php:23
+#@ ccm
+msgid "Enter name here"
+msgstr ""
+
+#: includes/admin/person-fields.php:47
+#@ ccm
+msgctxt "meta box"
+msgid "Person Details"
+msgstr ""
+
+#: includes/admin/sermon-fields.php:25
+#@ ccm
+msgctxt "meta box"
+msgid "Sermon Media"
+msgstr ""
+
+#: includes/support.php:411
+#, php-format
+#@ ccm
+msgid "The <b>%1$s</b> theme does not support the <b>%2$s</b> plugin. <a href=\"%3$s\" target=\"_blank\">More Information</a>, <a href=\"%4$s\">Dismiss</a>"
 msgstr ""
 
