@@ -8,7 +8,7 @@ Author URI: http://churchthemes.com
 License: GPL2
 Version: 0.5
 
-Copyright 2012 DreamDolphin Media, LLC
+Copyright 2012 - 2013 DreamDolphin Media, LLC
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License, version 2, as 
@@ -95,8 +95,6 @@ $ccm_includes = array(
 		CCM_INC_DIR . '/support.php',
 		CCM_INC_DIR . '/post-types.php', 
 		CCM_INC_DIR . '/taxonomies.php',
-		CCM_INC_DIR . '/slides.php',
-		CCM_INC_DIR . '/highlights.php',
 		CCM_INC_DIR . '/helpers.php',
 	),
 
