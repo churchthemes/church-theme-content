@@ -30,7 +30,8 @@ function ccm_register_post_type_sermon() {
 		'has_archive' 	=> ccm_feature_supported( 'sermons' ),
 		'rewrite'		=> array(
 			'slug' 			=> 'sermon-items', // has archive, so using plural so it makes sense on single post and archives and so that slug is not likely to match page slug (that causes issues)
-			'with_front' 	=> false
+			'with_front' 	=> false,
+			'feeds'			=> ccm_feature_supported( 'sermons' ),
 		),
 		'supports' 		=> array( 'title', 'editor', 'excerpt', 'thumbnail', 'comments', 'author', 'revisions' ), // 'editor' required for media upload button (see Meta Boxes note below about hiding)
 		'taxonomies' 	=> array( 'ccm_sermon_category', 'ccm_sermon_tag', 'ccm_sermon_speaker' )
@@ -73,7 +74,8 @@ function ccm_register_post_type_event() {
 		'rewrite'		=> array(
 			'slug' 			=> 'event-items', 	// has archive, so using plural so it makes sense on single post and archives and so that slug is not likely to match page slug (that causes issues)
 												// using "items" instead of "archive" since that indicates past which is not always the case
-			'with_front'	=> false
+			'with_front'	=> false,
+			'feeds'			=> ccm_feature_supported( 'events' ),
 		),
 		'supports' 		=> array( 'title', 'editor', 'excerpt', 'thumbnail', 'comments', 'author', 'revisions' )
 	);
@@ -114,7 +116,8 @@ function ccm_register_post_type_gallery_item() {
 		'has_archive' 	=> ccm_feature_supported( 'gallery' ),
 		'rewrite'		=> array(
 			'slug' 			=> 'gallery-items', // has archive, so using plural so it makes sense on single post and archives and so that slug is not likely to match page slug (that causes issues)
-			'with_front' 	=> false
+			'with_front' 	=> false,
+			'feeds'			=> ccm_feature_supported( 'gallery' ),
 		),
 		'supports' 		=> array( 'title', 'editor', 'thumbnail', 'comments', 'author', 'revisions' ),
 		'taxonomies' 	=> array( 'ccm_gallery_album' )
@@ -156,7 +159,8 @@ function ccm_location_post_type() {
 		'has_archive'	=> false, // not dated or frequently updated
 		'rewrite'		=> array(
 			'slug' 			=> 'location', // no archive, so using singular
-			'with_front'	=> false
+			'with_front'	=> false,
+			'feeds'			=> false,
 		),
 		'supports' 		=> array( 'title', 'editor', 'page-attributes' )
 	);
@@ -197,7 +201,8 @@ function ccm_register_post_type_person() {
 		'has_archive'	=> false, // not dated or frequently updated
 		'rewrite'		=> array(
 			'slug'		 	=> 'person', // no archive, so using singular
-			'with_front'	=> false
+			'with_front'	=> false,
+			'feeds'			=> false,
 		),
 		'supports' 		=> array( 'title', 'editor', 'page-attributes', 'thumbnail' )
 	);
