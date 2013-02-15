@@ -204,7 +204,7 @@ function ccm_register_post_type_person() {
 			'with_front'	=> false,
 			'feeds'			=> false,
 		),
-		'supports' 		=> array( 'title', 'editor', 'page-attributes', 'thumbnail' )
+		'supports' 		=> array( 'title', 'editor', 'page-attributes', 'thumbnail', 'excerpt' )
 	);
 	$args = apply_filters( 'ccm_post_type_person_args', $args ); // allow filtering
 	
