@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Church Content Manager v0.5\n"
+"Project-Id-Version: Church Content Manager v0.5.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-02-08 19:44:59+0000\n"
+"PO-Revision-Date: 2013-02-20 17:38:48+0000\n"
 "Last-Translator: admin <steven@stevengliebe.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,60 +19,60 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
 
-#: includes/post-types.php:59
+#: includes/post-types.php:60
 #@ ccm
 msgctxt "post type general name"
 msgid "Events"
 msgstr ""
 
-#: includes/post-types.php:60
+#: includes/post-types.php:61
 #@ ccm
 msgctxt "post type singular name"
 msgid "Event"
 msgstr ""
 
-#: includes/post-types.php:61
+#: includes/post-types.php:62
 #@ ccm
 msgctxt "event"
 msgid "Add New"
 msgstr ""
 
-#: includes/post-types.php:62
+#: includes/post-types.php:63
 #@ ccm
 msgid "Add Event"
 msgstr ""
 
-#: includes/post-types.php:63
+#: includes/post-types.php:64
 #@ ccm
 msgid "Edit Event"
 msgstr ""
 
-#: includes/post-types.php:64
+#: includes/post-types.php:65
 #@ ccm
 msgid "New Event"
 msgstr ""
 
-#: includes/post-types.php:65
+#: includes/post-types.php:66
 #@ ccm
 msgid "All Events"
 msgstr ""
 
-#: includes/post-types.php:66
+#: includes/post-types.php:67
 #@ ccm
 msgid "View Event"
 msgstr ""
 
-#: includes/post-types.php:67
+#: includes/post-types.php:68
 #@ ccm
 msgid "Search Events"
 msgstr ""
 
-#: includes/post-types.php:68
+#: includes/post-types.php:69
 #@ ccm
 msgid "No events found"
 msgstr ""
 
-#: includes/post-types.php:69
+#: includes/post-types.php:70
 #@ ccm
 msgid "No events found in Trash"
 msgstr ""
@@ -143,61 +143,61 @@ msgctxt "date range separator"
 msgid " &ndash; "
 msgstr ""
 
-#: includes/post-types.php:101
+#: includes/post-types.php:103
 #@ ccm
 msgctxt "post type general name"
 msgid "Gallery"
 msgstr ""
 
-#: includes/post-types.php:102
+#: includes/post-types.php:104
 #@ ccm
 msgctxt "post type singular name"
 msgid "Gallery Item"
 msgstr ""
 
-#: includes/post-types.php:103
+#: includes/post-types.php:105
 #@ ccm
 msgctxt "gallery"
 msgid "Add New"
 msgstr ""
 
-#: includes/post-types.php:104
+#: includes/post-types.php:106
 #@ ccm
 msgid "Add Gallery Item"
 msgstr ""
 
-#: includes/post-types.php:105
+#: includes/post-types.php:107
 #@ ccm
 msgid "Edit Gallery Item"
 msgstr ""
 
-#: includes/post-types.php:106
+#: includes/post-types.php:108
 #@ ccm
 msgid "New Gallery Item"
 msgstr ""
 
-#: includes/post-types.php:107
+#: includes/post-types.php:109
 #@ ccm
 msgctxt "gallery"
 msgid "All Items"
 msgstr ""
 
-#: includes/post-types.php:108
+#: includes/post-types.php:110
 #@ ccm
 msgid "View Gallery Item"
 msgstr ""
 
-#: includes/post-types.php:109
+#: includes/post-types.php:111
 #@ ccm
 msgid "Search Gallery Items"
 msgstr ""
 
-#: includes/post-types.php:110
+#: includes/post-types.php:112
 #@ ccm
 msgid "No gallery items found"
 msgstr ""
 
-#: includes/post-types.php:111
+#: includes/post-types.php:113
 #@ ccm
 msgid "No gallery items found in Trash"
 msgstr ""
@@ -299,60 +299,60 @@ msgctxt "sorting"
 msgid "Order"
 msgstr ""
 
-#: includes/post-types.php:143
+#: includes/post-types.php:146
 #@ ccm
 msgctxt "post type general name"
 msgid "Locations"
 msgstr ""
 
-#: includes/post-types.php:144
+#: includes/post-types.php:147
 #@ ccm
 msgctxt "post type singular name"
 msgid "Location"
 msgstr ""
 
-#: includes/post-types.php:145
+#: includes/post-types.php:148
 #@ ccm
 msgctxt "location"
 msgid "Add New"
 msgstr ""
 
-#: includes/post-types.php:146
+#: includes/post-types.php:149
 #@ ccm
 msgid "Add Location"
 msgstr ""
 
-#: includes/post-types.php:147
+#: includes/post-types.php:150
 #@ ccm
 msgid "Edit Location"
 msgstr ""
 
-#: includes/post-types.php:148
+#: includes/post-types.php:151
 #@ ccm
 msgid "New Location"
 msgstr ""
 
-#: includes/post-types.php:149
+#: includes/post-types.php:152
 #@ ccm
 msgid "All Locations"
 msgstr ""
 
-#: includes/post-types.php:150
+#: includes/post-types.php:153
 #@ ccm
 msgid "View Location"
 msgstr ""
 
-#: includes/post-types.php:151
+#: includes/post-types.php:154
 #@ ccm
 msgid "Search Locations"
 msgstr ""
 
-#: includes/post-types.php:152
+#: includes/post-types.php:155
 #@ ccm
 msgid "No location found"
 msgstr ""
 
-#: includes/post-types.php:153
+#: includes/post-types.php:156
 #@ ccm
 msgid "No location found in Trash"
 msgstr ""
@@ -393,60 +393,60 @@ msgctxt "map"
 msgid "Terrain"
 msgstr ""
 
-#: includes/post-types.php:184
+#: includes/post-types.php:188
 #@ ccm
 msgctxt "post type general name"
 msgid "People"
 msgstr ""
 
-#: includes/post-types.php:185
+#: includes/post-types.php:189
 #@ ccm
 msgctxt "post type singular name"
 msgid "Person"
 msgstr ""
 
-#: includes/post-types.php:186
+#: includes/post-types.php:190
 #@ ccm
 msgctxt "person"
 msgid "Add New"
 msgstr ""
 
-#: includes/post-types.php:187
+#: includes/post-types.php:191
 #@ ccm
 msgid "Add Person"
 msgstr ""
 
-#: includes/post-types.php:188
+#: includes/post-types.php:192
 #@ ccm
 msgid "Edit Person"
 msgstr ""
 
-#: includes/post-types.php:189
+#: includes/post-types.php:193
 #@ ccm
 msgid "New Person"
 msgstr ""
 
-#: includes/post-types.php:190
+#: includes/post-types.php:194
 #@ ccm
 msgid "All People"
 msgstr ""
 
-#: includes/post-types.php:191
+#: includes/post-types.php:195
 #@ ccm
 msgid "View Person"
 msgstr ""
 
-#: includes/post-types.php:192
+#: includes/post-types.php:196
 #@ ccm
 msgid "Search People"
 msgstr ""
 
-#: includes/post-types.php:193
+#: includes/post-types.php:197
 #@ ccm
 msgid "No people found"
 msgstr ""
 
-#: includes/post-types.php:194
+#: includes/post-types.php:198
 #@ ccm
 msgid "No people found in Trash"
 msgstr ""
