@@ -214,7 +214,7 @@ function ccm_add_meta_box_event_location() {
 			'_ccm_event_map_lat' => array(
 				'name'				=> _x( 'Map Latitude', 'event meta box', 'ccm' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> __( 'You can use a site like <a href="http://www.getlatlon.com/" target="_blank">Get Lat Lon</a> to convert an address into coordinates.' ),
+				'desc'				=> __( 'You can <a href="http://churchthemes.com/get-latitude-longitude" target="_blank">use this</a> to convert an address into coordinates.', 'ccm' ),
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
