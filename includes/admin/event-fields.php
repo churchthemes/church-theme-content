@@ -172,7 +172,7 @@ function ccm_add_meta_box_event_location() {
 			'_ccm_event_venue' => array(
 				'name'				=> __( 'Venue', 'ccm' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> __( 'You can provide a building name, room number or other location name to help people find the event.' ),
+				'desc'				=> __( 'You can provide a building name, room number or other location name to help people find the event.', 'ccm' ),
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
@@ -193,7 +193,7 @@ function ccm_add_meta_box_event_location() {
 			'_ccm_event_address' => array(
 				'name'				=> _x( 'Address', 'event meta box', 'ccm' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> __( 'You can enter an address if it is necessary for people to find this event.' ),
+				'desc'				=> __( 'You can enter an address if it is necessary for people to find this event.', 'ccm' ),
 				'type'				=> 'textarea', // text, textarea, checkbox, radio, select, number, upload, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select

@@ -3,13 +3,14 @@ msgstr ""
 "Project-Id-Version: Church Content Manager v0.5.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-02-20 17:38:48+0000\n"
+"PO-Revision-Date: 2013-03-05 22:25:09+0000\n"
 "Last-Translator: admin <steven@stevengliebe.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
 "X-Poedit-Language: English\n"
 "X-Poedit-Country: UNITED STATES\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -110,19 +111,13 @@ msgid "Venue"
 msgstr ""
 
 #: includes/admin/event-fields.php:175
-#@ default
+#@ ccm
 msgid "You can provide a building name, room number or other location name to help people find the event."
 msgstr ""
 
 #: includes/admin/event-fields.php:196
-#@ default
+#@ ccm
 msgid "You can enter an address if it is necessary for people to find this event."
-msgstr ""
-
-#: includes/admin/event-fields.php:217
-#: includes/admin/location-fields.php:101
-#@ default
-msgid "You can use a site like <a href=\"http://www.getlatlon.com/\" target=\"_blank\">Get Lat Lon</a> to convert an address into coordinates."
 msgstr ""
 
 #: includes/admin/event-fields.php:365
@@ -1001,5 +996,11 @@ msgstr ""
 #, php-format
 #@ ccm
 msgid "The <b>%1$s</b> theme does not support the <b>%2$s</b> plugin. <a href=\"%3$s\" target=\"_blank\">More Information</a>, <a href=\"%4$s\">Dismiss</a>"
+msgstr ""
+
+#: includes/admin/event-fields.php:217
+#: includes/admin/location-fields.php:101
+#@ ccm
+msgid "You can <a href=\"http://churchthemes.com/get-latitude-longitude\" target=\"_blank\">use this</a> to convert an address into coordinates."
 msgstr ""
 
