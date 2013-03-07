@@ -66,16 +66,9 @@ define( 'CCM_JS_DIR', 		'js' );							// JavaScript directory
 define( 'CCM_IMG_DIR', 		'images' );						// images directory
 
 // CT Meta Box
-if ( ! defined( 'CTMB_URL' ) ) { // in case also used in theme
-	//define( 'CTMB_URL', CCM_URL . '/' . CCM_LIB_DIR . '/ct-meta-box' ); // for enqueing JS/CSS
+if ( ! defined( 'CTMB_URL' ) ) { // in case also used in theme or other plugin
+	define( 'CTMB_URL', CCM_URL . '/' . CCM_LIB_DIR . '/ct-meta-box' ); // for enqueing JS/CSS
 }
-
-// DO SIMILAR FOR CT OPTIONS HERE?
-// DO SIMILAR FOR CT OPTIONS HERE?
-// DO SIMILAR FOR CT OPTIONS HERE?
-// DO SIMILAR FOR CT OPTIONS HERE?
-// DO SIMILAR FOR CT OPTIONS HERE?
-// DO SIMILAR FOR CT OPTIONS HERE?
 
 /********************************************
  * INCLUDES
