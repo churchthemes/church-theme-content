@@ -6,7 +6,7 @@ Description: This plugin provides content management functionality for sermons, 
 Author: churchthemes.com
 Author URI: http://churchthemes.com
 License: GPL2
-Version: 0.5.2
+Version: 0.6
 
 Copyright 2012 - 2013 DreamDolphin Media, LLC
 
