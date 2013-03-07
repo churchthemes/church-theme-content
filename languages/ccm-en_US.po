@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Church Content Manager v0.5.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-03-05 22:25:09+0000\n"
+"PO-Revision-Date: 2013-03-07 22:39:51+0000\n"
 "Last-Translator: admin <steven@stevengliebe.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -84,55 +84,55 @@ msgctxt "event meta box"
 msgid "Date & Time"
 msgstr ""
 
-#: includes/admin/event-fields.php:141
+#: includes/admin/event-fields.php:145
 #@ ccm
 msgctxt "event meta box"
 msgid "Location"
 msgstr ""
 
-#: includes/admin/event-fields.php:79
+#: includes/admin/event-fields.php:81
 #@ ccm
 msgid "End Date"
 msgstr ""
 
-#: includes/admin/event-fields.php:100
+#: includes/admin/event-fields.php:103
 #@ ccm
 msgid "Time"
 msgstr ""
 
-#: includes/admin/event-fields.php:102
+#: includes/admin/event-fields.php:105
 #@ ccm
 msgid "Optionally provide a time such as \"8:00 am &ndash; 2:00 pm\""
 msgstr ""
 
-#: includes/admin/event-fields.php:173
+#: includes/admin/event-fields.php:178
 #@ ccm
 msgid "Venue"
 msgstr ""
 
-#: includes/admin/event-fields.php:175
+#: includes/admin/event-fields.php:180
 #@ ccm
 msgid "You can provide a building name, room number or other location name to help people find the event."
 msgstr ""
 
-#: includes/admin/event-fields.php:196
+#: includes/admin/event-fields.php:202
 #@ ccm
 msgid "You can enter an address if it is necessary for people to find this event."
 msgstr ""
 
-#: includes/admin/event-fields.php:365
+#: includes/admin/event-fields.php:378
 #@ ccm
 msgctxt "events admin column"
 msgid "When"
 msgstr ""
 
-#: includes/admin/event-fields.php:366
+#: includes/admin/event-fields.php:379
 #@ ccm
 msgctxt "events admin column"
 msgid "Where"
 msgstr ""
 
-#: includes/admin/event-fields.php:403
+#: includes/admin/event-fields.php:416
 #@ ccm
 msgctxt "date range separator"
 msgid " &ndash; "
@@ -265,30 +265,30 @@ msgctxt "gallery menu name"
 msgid "Albums"
 msgstr ""
 
-#: includes/admin/gallery-fields.php:82
-#: includes/admin/sermon-fields.php:57
+#: includes/admin/gallery-fields.php:83
+#: includes/admin/sermon-fields.php:58
 #@ ccm
 msgid "Video URL"
 msgstr ""
 
-#: includes/admin/gallery-fields.php:147
-#: includes/admin/person-fields.php:121
+#: includes/admin/gallery-fields.php:149
+#: includes/admin/person-fields.php:123
 #@ ccm
 msgid "Thumbnail"
 msgstr ""
 
-#: includes/admin/gallery-fields.php:152
+#: includes/admin/gallery-fields.php:154
 #@ ccm
 msgid "Type"
 msgstr ""
 
-#: includes/admin/gallery-fields.php:153
+#: includes/admin/gallery-fields.php:155
 #@ ccm
 msgid "Albums"
 msgstr ""
 
-#: includes/admin/location-fields.php:207
-#: includes/admin/person-fields.php:127
+#: includes/admin/location-fields.php:216
+#: includes/admin/person-fields.php:129
 #@ ccm
 msgctxt "sorting"
 msgid "Order"
@@ -352,13 +352,13 @@ msgstr ""
 msgid "No location found in Trash"
 msgstr ""
 
-#: includes/admin/location-fields.php:206
+#: includes/admin/location-fields.php:215
 #@ ccm
 msgctxt "location admin column"
 msgid "Address"
 msgstr ""
 
-#: includes/admin/location-fields.php:211
+#: includes/admin/location-fields.php:220
 #@ ccm
 msgctxt "location admin column"
 msgid "Location"
@@ -446,18 +446,18 @@ msgstr ""
 msgid "No people found in Trash"
 msgstr ""
 
-#: includes/admin/person-fields.php:81
+#: includes/admin/person-fields.php:82
 #@ ccm
 msgid "Enter the person's position or title (e.g. Senior Pastor, Deacon, etc.)"
 msgstr ""
 
-#: includes/admin/person-fields.php:79
-#: includes/admin/person-fields.php:126
+#: includes/admin/person-fields.php:80
+#: includes/admin/person-fields.php:128
 #@ ccm
 msgid "Position"
 msgstr ""
 
-#: includes/admin/person-fields.php:131
+#: includes/admin/person-fields.php:133
 #@ ccm
 msgctxt "person"
 msgid "Name"
@@ -755,148 +755,128 @@ msgctxt "sermon menu name"
 msgid "Speakers"
 msgstr ""
 
-#: includes/admin/sermon-fields.php:78
+#: includes/admin/sermon-fields.php:80
 #@ ccm
 msgid "MP3 Audio File"
 msgstr ""
 
-#: includes/admin/sermon-fields.php:80
+#: includes/admin/sermon-fields.php:82
 #@ ccm
 msgid "Upload or provide the URL to an audio file in MP3 format. <b>File too big?</b> Refer to the documentation for help."
 msgstr ""
 
-#: includes/admin/sermon-fields.php:99
+#: includes/admin/sermon-fields.php:102
 #@ ccm
 msgid "PDF File"
 msgstr ""
 
-#: includes/admin/sermon-fields.php:101
+#: includes/admin/sermon-fields.php:104
 #@ ccm
 msgid "Upload or provide the URL to a PDF file."
 msgstr ""
 
-#: includes/admin/sermon-fields.php:120
+#: includes/admin/sermon-fields.php:124
 #@ ccm
 msgid "Full Text"
 msgstr ""
 
-#: includes/admin/sermon-fields.php:124
+#: includes/admin/sermon-fields.php:128
 #@ ccm
 msgid "Full sermon text provided"
 msgstr ""
 
-#: includes/admin/sermon-fields.php:122
+#: includes/admin/sermon-fields.php:126
 #@ ccm
 msgid "If you provide a complete transcript in the content box above then check this box."
 msgstr ""
 
-#: includes/admin/sermon-fields.php:165
+#: includes/admin/sermon-fields.php:170
 #@ ccm
 msgid "Media Types"
 msgstr ""
 
-#: includes/admin/sermon-fields.php:166
+#: includes/admin/sermon-fields.php:171
 #@ ccm
 msgctxt "people"
 msgid "Speakers"
 msgstr ""
 
-#: includes/admin/sermon-fields.php:167
+#: includes/admin/sermon-fields.php:172
 #@ ccm
 msgid "Categories"
 msgstr ""
 
-#: includes/admin/sermon-fields.php:197
+#: includes/admin/sermon-fields.php:202
 #@ ccm
 msgctxt "media type"
 msgid "Video"
 msgstr ""
 
-#: includes/admin/sermon-fields.php:201
+#: includes/admin/sermon-fields.php:206
 #@ ccm
 msgctxt "media type"
 msgid "Audio"
 msgstr ""
 
-#: includes/admin/sermon-fields.php:205
+#: includes/admin/sermon-fields.php:210
 #@ ccm
 msgctxt "media type"
 msgid "PDF"
 msgstr ""
 
-#: includes/admin/sermon-fields.php:209
+#: includes/admin/sermon-fields.php:214
 #@ ccm
 msgctxt "media type"
 msgid "Text"
 msgstr ""
 
-#: includes/admin/sermon-fields.php:84
-#@ ccm
-msgid "Upload MP3"
-msgstr ""
-
-#: includes/admin/sermon-fields.php:85
-#@ ccm
-msgid "Use for MP3 File"
-msgstr ""
-
-#: includes/admin/sermon-fields.php:105
-#@ ccm
-msgid "Upload PDF"
-msgstr ""
-
-#: includes/admin/sermon-fields.php:106
-#@ ccm
-msgid "Use for PDF File"
-msgstr ""
-
-#: includes/admin/event-fields.php:57
+#: includes/admin/event-fields.php:58
 #@ ccm
 msgid "Start Date"
 msgstr ""
 
-#: includes/admin/event-fields.php:58
+#: includes/admin/event-fields.php:59
 #@ ccm
 msgid "(Required)"
 msgstr ""
 
-#: includes/admin/event-fields.php:194
+#: includes/admin/event-fields.php:200
 #@ ccm
 msgctxt "event meta box"
 msgid "Address"
 msgstr ""
 
-#: includes/admin/event-fields.php:215
+#: includes/admin/event-fields.php:222
 #@ ccm
 msgctxt "event meta box"
 msgid "Map Latitude"
 msgstr ""
 
-#: includes/admin/event-fields.php:236
+#: includes/admin/event-fields.php:244
 #@ ccm
 msgctxt "event meta box"
 msgid "Map Longitude"
 msgstr ""
 
-#: includes/admin/event-fields.php:257
+#: includes/admin/event-fields.php:266
 #@ ccm
 msgctxt "event meta box"
 msgid "Map Type"
 msgstr ""
 
-#: includes/admin/event-fields.php:259
+#: includes/admin/event-fields.php:268
 #@ ccm
 msgctxt "event meta box"
 msgid "You can show a road map, satellite imagery, a combination of both (hybrid) or terrain."
 msgstr ""
 
-#: includes/admin/event-fields.php:278
+#: includes/admin/event-fields.php:289
 #@ ccm
 msgctxt "event meta box"
 msgid "Map Zoom"
 msgstr ""
 
-#: includes/admin/event-fields.php:280
+#: includes/admin/event-fields.php:291
 #@ ccm
 msgctxt "event meta box"
 msgid "A lower number is more zoomed out while a higher number is more zoomed in."
@@ -914,8 +894,8 @@ msgctxt "meta box"
 msgid "Video"
 msgstr ""
 
-#: includes/admin/gallery-fields.php:84
-#: includes/admin/sermon-fields.php:59
+#: includes/admin/gallery-fields.php:85
+#: includes/admin/sermon-fields.php:60
 #, php-format
 #@ ccm
 msgid "Enter a YouTube or Vimeo video page URL. Examples: %s"
@@ -927,49 +907,49 @@ msgctxt "location meta box"
 msgid "Location Details"
 msgstr ""
 
-#: includes/admin/location-fields.php:57
+#: includes/admin/location-fields.php:58
 #@ ccm
 msgctxt "location meta box"
 msgid "Address"
 msgstr ""
 
-#: includes/admin/location-fields.php:78
+#: includes/admin/location-fields.php:80
 #@ ccm
 msgctxt "location meta box"
 msgid "Phone"
 msgstr ""
 
-#: includes/admin/location-fields.php:99
+#: includes/admin/location-fields.php:102
 #@ ccm
 msgctxt "location meta box"
 msgid "Map Latitude"
 msgstr ""
 
-#: includes/admin/location-fields.php:120
+#: includes/admin/location-fields.php:124
 #@ ccm
 msgctxt "location meta box"
 msgid "Map Longitude"
 msgstr ""
 
-#: includes/admin/location-fields.php:141
+#: includes/admin/location-fields.php:146
 #@ ccm
 msgctxt "location meta box"
 msgid "Map Type"
 msgstr ""
 
-#: includes/admin/location-fields.php:143
+#: includes/admin/location-fields.php:148
 #@ ccm
 msgctxt "location meta box"
 msgid "You can show a road map, satellite imagery, a combination of both (hybrid) or terrain."
 msgstr ""
 
-#: includes/admin/location-fields.php:162
+#: includes/admin/location-fields.php:169
 #@ ccm
 msgctxt "location meta box"
 msgid "Map Zoom"
 msgstr ""
 
-#: includes/admin/location-fields.php:164
+#: includes/admin/location-fields.php:171
 #@ ccm
 msgctxt "location meta box"
 msgid "A lower number is more zoomed out while a higher number is more zoomed in."
@@ -998,9 +978,47 @@ msgstr ""
 msgid "The <b>%1$s</b> theme does not support the <b>%2$s</b> plugin. <a href=\"%3$s\" target=\"_blank\">More Information</a>, <a href=\"%4$s\">Dismiss</a>"
 msgstr ""
 
-#: includes/admin/event-fields.php:217
-#: includes/admin/location-fields.php:101
+#: includes/admin/event-fields.php:224
+#: includes/admin/location-fields.php:104
 #@ ccm
 msgid "You can <a href=\"http://churchthemes.com/get-latitude-longitude\" target=\"_blank\">use this</a> to convert an address into coordinates."
 msgstr ""
+
+#: includes/admin/sermon-fields.php:86
+#@ ccm
+msgid "Choose MP3"
+msgstr ""
+
+#: includes/admin/sermon-fields.php:87
+#@ ccm
+msgid "Choose an MP3 File"
+msgstr ""
+
+#: includes/admin/sermon-fields.php:108
+#@ ccm
+msgid "Choose PDF"
+msgstr ""
+
+#: includes/admin/sermon-fields.php:109
+#@ ccm
+msgid "Choose a PDF File"
+msgstr ""
+
+#: includes/mime-types.php:21
+#@ ccm
+msgid "PDF"
+msgstr ""
+
+#: includes/mime-types.php:22
+#@ ccm
+msgid "Manage PDFs"
+msgstr ""
+
+#: includes/mime-types.php:23
+#, php-format
+#@ ccm
+msgid "PDF <span class=\"count\">(%s)</span>"
+msgid_plural "PDFs <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
 
