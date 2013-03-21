@@ -156,11 +156,11 @@ function ccm_location_post_type() {
 			'not_found_in_trash' 	=> __( 'No location found in Trash', 'ccm' )
 		),
 		'public' 		=> ccm_feature_supported( 'locations' ),
-		'has_archive'	=> false, // not dated or frequently updated
+		'has_archive' 	=> ccm_feature_supported( 'locations' ),
 		'rewrite'		=> array(
-			'slug' 			=> 'location', // no archive, so using singular
-			'with_front'	=> false,
-			'feeds'			=> false,
+			'slug' 			=> 'location-items', // has archive, so using plural so it makes sense on single post and archives and so that slug is not likely to match page slug (that causes issues)
+			'with_front' 	=> false,
+			'feeds'			=> ccm_feature_supported( 'locations' ),
 		),
 		'supports' 		=> array( 'title', 'editor', 'page-attributes' )
 	);
@@ -198,11 +198,11 @@ function ccm_register_post_type_person() {
 			'not_found_in_trash' 	=> __( 'No people found in Trash', 'ccm' )
 		),
 		'public' 		=> ccm_feature_supported( 'people' ),
-		'has_archive'	=> false, // not dated or frequently updated
+		'has_archive' 	=> ccm_feature_supported( 'people' ),
 		'rewrite'		=> array(
-			'slug'		 	=> 'person', // no archive, so using singular
-			'with_front'	=> false,
-			'feeds'			=> false,
+			'slug' 			=> 'people-items', // has archive, so using plural so it makes sense on single post and archives and so that slug is not likely to match page slug (that causes issues)
+			'with_front' 	=> false,
+			'feeds'			=> ccm_feature_supported( 'people' ),
 		),
 		'supports' 		=> array( 'title', 'editor', 'page-attributes', 'thumbnail', 'excerpt' )
 	);
