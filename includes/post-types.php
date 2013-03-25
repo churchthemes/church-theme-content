@@ -29,7 +29,7 @@ function ccm_register_post_type_sermon() {
 		'public' 		=> ccm_feature_supported( 'sermons' ),
 		'has_archive' 	=> ccm_feature_supported( 'sermons' ),
 		'rewrite'		=> array(
-			'slug' 			=> 'sermon-items', // has archive, so using plural so it makes sense on single post and archives and so that slug is not likely to match page slug (that causes issues)
+			'slug' 			=> 'sermons', // has archive, so using plural so it makes sense on single post and archives and so that slug is not likely to match page slug (that causes issues)
 			'with_front' 	=> false,
 			'feeds'			=> ccm_feature_supported( 'sermons' ),
 		),
@@ -72,7 +72,7 @@ function ccm_register_post_type_event() {
 		'public' 		=> ccm_feature_supported( 'events' ),
 		'has_archive' 	=> ccm_feature_supported( 'events' ),
 		'rewrite'		=> array(
-			'slug' 			=> 'event-items', 	// has archive, so using plural so it makes sense on single post and archives and so that slug is not likely to match page slug (that causes issues)
+			'slug' 			=> 'events', 	// has archive, so using plural so it makes sense on single post and archives and so that slug is not likely to match page slug (that causes issues)
 												// using "items" instead of "archive" since that indicates past which is not always the case
 			'with_front'	=> false,
 			'feeds'			=> ccm_feature_supported( 'events' ),
@@ -115,7 +115,7 @@ function ccm_register_post_type_gallery_item() {
 		'public' 		=> ccm_feature_supported( 'gallery' ),
 		'has_archive' 	=> ccm_feature_supported( 'gallery' ),
 		'rewrite'		=> array(
-			'slug' 			=> 'gallery-items', // has archive, so using plural so it makes sense on single post and archives and so that slug is not likely to match page slug (that causes issues)
+			'slug' 			=> 'gallery', // has archive, so using plural so it makes sense on single post and archives and so that slug is not likely to match page slug (that causes issues)
 			'with_front' 	=> false,
 			'feeds'			=> ccm_feature_supported( 'gallery' ),
 		),
@@ -158,7 +158,7 @@ function ccm_location_post_type() {
 		'public' 		=> ccm_feature_supported( 'locations' ),
 		'has_archive' 	=> ccm_feature_supported( 'locations' ),
 		'rewrite'		=> array(
-			'slug' 			=> 'location-items', // has archive, so using plural so it makes sense on single post and archives and so that slug is not likely to match page slug (that causes issues)
+			'slug' 			=> 'locations', // has archive, so using plural so it makes sense on single post and archives and so that slug is not likely to match page slug (that causes issues)
 			'with_front' 	=> false,
 			'feeds'			=> ccm_feature_supported( 'locations' ),
 		),
@@ -200,7 +200,7 @@ function ccm_register_post_type_person() {
 		'public' 		=> ccm_feature_supported( 'people' ),
 		'has_archive' 	=> ccm_feature_supported( 'people' ),
 		'rewrite'		=> array(
-			'slug' 			=> 'people-items', // has archive, so using plural so it makes sense on single post and archives and so that slug is not likely to match page slug (that causes issues)
+			'slug' 			=> 'people', // has archive, so using plural so it makes sense on single post and archives and so that slug is not likely to match page slug (that causes issues)
 			'with_front' 	=> false,
 			'feeds'			=> ccm_feature_supported( 'people' ),
 		),
