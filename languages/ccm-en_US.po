@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Church Content Manager v0.6\n"
+"Project-Id-Version: Church Content Manager v0.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-03-07 22:47:52+0000\n"
+"PO-Revision-Date: 2013-03-25 22:09:40+0000\n"
 "Last-Translator: admin <steven@stevengliebe.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -288,7 +288,7 @@ msgid "Albums"
 msgstr ""
 
 #: includes/admin/location-fields.php:216
-#: includes/admin/person-fields.php:129
+#: includes/admin/person-fields.php:130
 #@ ccm
 msgctxt "sorting"
 msgid "Order"
@@ -364,25 +364,25 @@ msgctxt "location admin column"
 msgid "Location"
 msgstr ""
 
-#: includes/admin/maps.php:21
+#: includes/admin/helpers.php:50
 #@ ccm
 msgctxt "map"
 msgid "Road"
 msgstr ""
 
-#: includes/admin/maps.php:22
+#: includes/admin/helpers.php:51
 #@ ccm
 msgctxt "map"
 msgid "Satellite"
 msgstr ""
 
-#: includes/admin/maps.php:23
+#: includes/admin/helpers.php:52
 #@ ccm
 msgctxt "map"
 msgid "Hybrid"
 msgstr ""
 
-#: includes/admin/maps.php:24
+#: includes/admin/helpers.php:53
 #@ ccm
 msgctxt "map"
 msgid "Terrain"
@@ -457,7 +457,7 @@ msgstr ""
 msgid "Position"
 msgstr ""
 
-#: includes/admin/person-fields.php:133
+#: includes/admin/person-fields.php:134
 #@ ccm
 msgctxt "person"
 msgid "Name"
@@ -1021,4 +1021,88 @@ msgid "PDF <span class=\"count\">(%s)</span>"
 msgid_plural "PDFs <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
+
+#: includes/admin/person-fields.php:129
+#@ ccm
+msgctxt "people column"
+msgid "Groups"
+msgstr ""
+
+#: includes/taxonomies.php:213
+#@ ccm
+msgctxt "taxonomy general name"
+msgid "People Groups"
+msgstr ""
+
+#: includes/taxonomies.php:214
+#@ ccm
+msgctxt "taxonomy singular name"
+msgid "People Group"
+msgstr ""
+
+#: includes/taxonomies.php:215
+#@ ccm
+msgctxt "people"
+msgid "Search Groups"
+msgstr ""
+
+#: includes/taxonomies.php:216
+#@ ccm
+msgctxt "people"
+msgid "Popular Groups"
+msgstr ""
+
+#: includes/taxonomies.php:217
+#@ ccm
+msgctxt "people"
+msgid "All Groups"
+msgstr ""
+
+#: includes/taxonomies.php:220
+#@ ccm
+msgctxt "people"
+msgid "Edit Group"
+msgstr ""
+
+#: includes/taxonomies.php:221
+#@ ccm
+msgctxt "people"
+msgid "Update Group"
+msgstr ""
+
+#: includes/taxonomies.php:222
+#@ ccm
+msgctxt "people"
+msgid "Add Group"
+msgstr ""
+
+#: includes/taxonomies.php:223
+#@ ccm
+msgctxt "people"
+msgid "New Group"
+msgstr ""
+
+#: includes/taxonomies.php:224
+#@ ccm
+msgctxt "people"
+msgid "Separate groups with commas"
+msgstr ""
+
+#: includes/taxonomies.php:225
+#@ ccm
+msgctxt "people"
+msgid "Add or remove groups"
+msgstr ""
+
+#: includes/taxonomies.php:226
+#@ ccm
+msgctxt "people"
+msgid "Choose from the most used groups"
+msgstr ""
+
+#: includes/taxonomies.php:227
+#@ ccm
+msgctxt "people menu name"
+msgid "Groups"
+msgstr ""
 
