@@ -373,7 +373,7 @@ add_filter( 'manage_ccm_event_posts_columns' , 'ccm_event_columns' ); // add col
 
 function ccm_event_columns( $columns ) {
 
-	// insert media types, speakers, categories after title
+	// insert start date, venue after title
 	$insert_array = array();
 	if ( ccm_field_supported( 'events', '_ccm_event_start_date' ) ) $insert_array['ccm_event_dates'] = _x( 'When', 'events admin column', 'ccm' );
 	if ( ccm_field_supported( 'events', '_ccm_event_venue' ) ) $insert_array['ccm_event_venue'] = _x( 'Where', 'events admin column', 'ccm' );
