@@ -126,6 +126,7 @@ function ccm_person_columns( $columns ) {
 	// insert columns after title
 	$insert_array = array();
 	if ( ccm_field_supported( 'people', '_ccm_person_position' ) ) $insert_array['ccm_person_position'] = __( 'Position', 'ccm' );
+	if ( ccm_taxonomy_supported( 'people', 'ccm_person_group' ) ) $insert_array['ccm_person_group'] = _x( 'Groups', 'people column', 'ccm' );
 	$insert_array['ccm_person_order'] = _x( 'Order', 'sorting', 'ccm' );
 	$columns = ccm_array_merge_after_key( $columns, $insert_array, 'title' );
 	
@@ -157,10 +158,29 @@ function ccm_person_columns_content( $column ) {
 
 			break;
 	
-		// Under Name
+		// Position
 		case 'ccm_person_position' :
 
 			echo get_post_meta( $post->ID , '_ccm_person_position' , true );
+
+			break;
+
+		// Group
+		case 'ccm_person_group' :
+
+			// Get taxonomy and output a list
+			$groups = get_the_terms( $post->ID, 'ccm_person_group' );
+			if ( $groups && ! is_wp_error( $groups ) ) {
+			
+				$groups_array = array();
+				
+				foreach ( $groups as $group ) {
+					$groups_array[] = $group->name;
+				}	
+				
+				echo implode( ', ', $groups_array );
+				
+			}
 
 			break;
 

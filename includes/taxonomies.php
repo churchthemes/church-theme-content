@@ -194,3 +194,53 @@ function ccm_register_taxonomy_gallery_album() {
 	);
 
 }
+
+/**********************************
+ * PERSON TAXONOMIES
+ **********************************/
+
+/**
+ * Group
+ */
+
+add_action( 'init', 'ccm_register_taxonomy_person_group' );
+ 
+function ccm_register_taxonomy_person_group() {
+
+	// Arguments
+	$args = array(
+		'labels' => array(
+			'name' 							=> _x( 'People Groups', 'taxonomy general name', 'ccm' ),
+			'singular_name'					=> _x( 'People Group', 'taxonomy singular name', 'ccm' ),
+			'search_items' 					=> _x( 'Search Groups', 'people', 'ccm' ),
+			'popular_items' 				=> _x( 'Popular Groups', 'people', 'ccm' ),
+			'all_items' 					=> _x( 'All Groups', 'people', 'ccm' ),
+			'parent_item' 					=> null,
+			'parent_item_colon' 			=> null,
+			'edit_item' 					=> _x( 'Edit Group', 'people', 'ccm' ), 
+			'update_item' 					=> _x( 'Update Group', 'people', 'ccm' ),
+			'add_new_item' 					=> _x( 'Add Group', 'people', 'ccm' ),
+			'new_item_name' 				=> _x( 'New Group', 'people', 'ccm' ),
+			'separate_items_with_commas' 	=> _x( 'Separate groups with commas', 'people', 'ccm' ),
+			'add_or_remove_items' 			=> _x( 'Add or remove groups', 'people', 'ccm' ),
+			'choose_from_most_used' 		=> _x( 'Choose from the most used groups', 'people', 'ccm' ),
+			'menu_name' 					=> _x( 'Groups', 'people menu name', 'ccm' )
+		),
+		'hierarchical'	=> true, // category-style instead of tag-style
+		'public' 		=> ccm_taxonomy_supported( 'people', 'ccm_person_group' ),
+		'rewrite' 		=> array(
+			'slug' 			=> 'people-group',
+			'with_front' 	=> false,
+			'hierarchical' 	=> true
+		)
+	);
+	$args = apply_filters( 'ccm_taxonomy_person_group_args', $args ); // allow filtering
+
+	// Registration
+	register_taxonomy(
+		'ccm_person_group',
+		'ccm_person',
+		$args
+	);
+
+}
