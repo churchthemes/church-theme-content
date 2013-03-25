@@ -168,19 +168,7 @@ function ccm_person_columns_content( $column ) {
 		// Group
 		case 'ccm_person_group' :
 
-			// Get taxonomy and output a list
-			$groups = get_the_terms( $post->ID, 'ccm_person_group' );
-			if ( $groups && ! is_wp_error( $groups ) ) {
-			
-				$groups_array = array();
-				
-				foreach ( $groups as $group ) {
-					$groups_array[] = $group->name;
-				}	
-				
-				echo implode( ', ', $groups_array );
-				
-			}
+			echo ccm_admin_term_list( $post->ID, 'ccm_person_group' );
 
 			break;
 

@@ -197,19 +197,7 @@ function ccm_gallery_item_columns_content( $column ) {
 		// Albums
 		case 'ccm_gallery_item_albums' :
 
-			// Get albums and output a list
-			$albums = get_the_terms( $post->ID, 'ccm_gallery_album' );
-			if ( $albums && ! is_wp_error( $albums ) ) {
-			
-				$albums_array = array();
-				
-				foreach ( $albums as $album ) {
-					$albums_array[] = $album->name;
-				}	
-				
-				echo implode( ', ', $albums_array );
-				
-			}
+			echo ccm_admin_term_list( $post->ID, 'ccm_gallery_album' );
 
 			break;
 

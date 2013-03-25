@@ -221,38 +221,14 @@ function ccm_sermon_columns_content( $column ) {
 		// Speakers
 		case 'ccm_sermon_speakers' :
 
-			// Get speakers and output a list
-			$speakers = get_the_terms( $post->ID, 'ccm_sermon_speaker' );
-			if ( $speakers && ! is_wp_error( $speakers ) ) {
-			
-				$speakers_array = array();
-				
-				foreach ( $speakers as $speaker ) {
-					$speakers_array[] = $speaker->name;
-				}	
-				
-				echo implode( ', ', $speakers_array );
-				
-			}
+			echo ccm_admin_term_list( $post->ID, 'ccm_sermon_speaker' );
 
 			break;
 			
 		// Categories
 		case 'ccm_sermon_categories' :
 
-			// Get categories and output a list
-			$categories = get_the_terms( $post->ID, 'ccm_sermon_category' );
-			if ( $categories && ! is_wp_error( $categories ) ) {
-			
-				$categories_array = array();
-				
-				foreach ( $categories as $category ) {
-					$categories_array[] = $category->name;
-				}	
-				
-				echo implode( ', ', $categories_array );
-				
-			}
+			echo ccm_admin_term_list( $post->ID, 'ccm_sermon_category' );
 
 			break;
 
