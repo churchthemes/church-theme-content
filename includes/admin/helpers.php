@@ -1,12 +1,43 @@
 <?php
 /**
- * Google Maps Functions
- *
- * This helps with setting up custom fields for meta boxes.
+ * Admin Helpers
  */
 
+/*********************************
+ * TAXONOMY TERMS
+ *********************************/
+
+/**
+ * Get taxonomy term list for a post type with admin links
+ */
+
+function ccm_admin_term_list( $post_id, $taxonomy ) {
+
+	$list = '';
+
+	// Get taxonomy and output a list
+	$terms = get_the_terms( $post_id, $taxonomy );
+
+	if ( $terms && ! is_wp_error( $terms ) ) {
+	
+		$post_type = get_post_type( $post_id );
+
+		$terms_array = array();
+		
+		foreach ( $terms as $term ) {
+			$terms_array[] = '<a href="' . esc_url( admin_url( 'edit.php?' . $taxonomy . '=' . $term->slug  . '&post_type=' . $post_type ) ) . '"> ' . $term->name . '</a>';
+		}	
+		
+		$list = implode( ', ', $terms_array );
+		
+	}
+
+	return apply_filters( 'ccm_admin_term_list', $list, $post_id, $taxonomy );
+
+}
+
 /**********************************
- * MAP TYPE
+ * GOOGLE MAPS
  **********************************/
 
 /**
@@ -35,11 +66,7 @@ function ccm_gmaps_type_default() {
 	return apply_filters( 'ccm_gmaps_type_default', 'HYBRID' );
 
 }
- 
-/**********************************
- * ZOOM LEVEL
- **********************************/
- 
+
 /**
  * Zoom Levels Array
  */

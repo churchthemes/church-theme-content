@@ -104,7 +104,7 @@ $ccm_includes = array(
 		CCM_ADMIN_DIR . '/gallery-fields.php',
 		CCM_ADMIN_DIR . '/person-fields.php',
 		CCM_ADMIN_DIR . '/location-fields.php',
-		CCM_ADMIN_DIR . '/maps.php',
+		CCM_ADMIN_DIR . '/helpers.php',
 		
 		// Libraries
 		CCM_LIB_DIR . '/ct-meta-box/ct-meta-box.php', // see CTMB_URL constant defined above
