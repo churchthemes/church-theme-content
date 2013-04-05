@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Church Content Manager v0.7\n"
+"Project-Id-Version: Church Content Manager v0.7.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-03-25 22:09:40+0000\n"
+"PO-Revision-Date: 2013-04-05 14:10:42+0000\n"
 "Last-Translator: admin <steven@stevengliebe.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -287,7 +287,7 @@ msgstr ""
 msgid "Albums"
 msgstr ""
 
-#: includes/admin/location-fields.php:216
+#: includes/admin/location-fields.php:260
 #: includes/admin/person-fields.php:130
 #@ ccm
 msgctxt "sorting"
@@ -352,13 +352,13 @@ msgstr ""
 msgid "No location found in Trash"
 msgstr ""
 
-#: includes/admin/location-fields.php:215
+#: includes/admin/location-fields.php:259
 #@ ccm
 msgctxt "location admin column"
 msgid "Address"
 msgstr ""
 
-#: includes/admin/location-fields.php:220
+#: includes/admin/location-fields.php:264
 #@ ccm
 msgctxt "location admin column"
 msgid "Location"
@@ -913,43 +913,43 @@ msgctxt "location meta box"
 msgid "Address"
 msgstr ""
 
-#: includes/admin/location-fields.php:80
+#: includes/admin/location-fields.php:102
 #@ ccm
 msgctxt "location meta box"
 msgid "Phone"
 msgstr ""
 
-#: includes/admin/location-fields.php:102
+#: includes/admin/location-fields.php:146
 #@ ccm
 msgctxt "location meta box"
 msgid "Map Latitude"
 msgstr ""
 
-#: includes/admin/location-fields.php:124
+#: includes/admin/location-fields.php:168
 #@ ccm
 msgctxt "location meta box"
 msgid "Map Longitude"
 msgstr ""
 
-#: includes/admin/location-fields.php:146
+#: includes/admin/location-fields.php:190
 #@ ccm
 msgctxt "location meta box"
 msgid "Map Type"
 msgstr ""
 
-#: includes/admin/location-fields.php:148
+#: includes/admin/location-fields.php:192
 #@ ccm
 msgctxt "location meta box"
 msgid "You can show a road map, satellite imagery, a combination of both (hybrid) or terrain."
 msgstr ""
 
-#: includes/admin/location-fields.php:169
+#: includes/admin/location-fields.php:213
 #@ ccm
 msgctxt "location meta box"
 msgid "Map Zoom"
 msgstr ""
 
-#: includes/admin/location-fields.php:171
+#: includes/admin/location-fields.php:215
 #@ ccm
 msgctxt "location meta box"
 msgid "A lower number is more zoomed out while a higher number is more zoomed in."
@@ -979,7 +979,7 @@ msgid "The <b>%1$s</b> theme does not support the <b>%2$s</b> plugin. <a href=\"
 msgstr ""
 
 #: includes/admin/event-fields.php:224
-#: includes/admin/location-fields.php:104
+#: includes/admin/location-fields.php:148
 #@ ccm
 msgid "You can <a href=\"http://churchthemes.com/get-latitude-longitude\" target=\"_blank\">use this</a> to convert an address into coordinates."
 msgstr ""
@@ -1104,5 +1104,11 @@ msgstr ""
 #@ ccm
 msgctxt "people menu name"
 msgid "Groups"
+msgstr ""
+
+#: includes/admin/location-fields.php:124
+#@ ccm
+msgctxt "location meta box"
+msgid "Times"
 msgstr ""
 
