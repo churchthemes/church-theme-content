@@ -79,7 +79,7 @@ function ccm_add_meta_box_sermon_details() {
 			'_ccm_sermon_video_url' => array(
 				'name'				=> __( 'Video URL', 'ccm' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> sprintf( __( 'Enter a YouTube or Vimeo video page URL. Examples: %s', 'ccm' ), '<br /><br />http://www.youtube.com/watch?v=mmRPSoDrrFU<br />http://vimeo.com/28323716' ),
+				'desc'				=> '',
 				'type'				=> 'url', // text, textarea, checkbox, radio, select, number, upload, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
@@ -101,7 +101,7 @@ function ccm_add_meta_box_sermon_details() {
 			'_ccm_sermon_audio_url' => array(
 				'name'				=> __( 'MP3 Audio File', 'ccm' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> __( 'Upload or provide the URL to an audio file in MP3 format. <b>File too big?</b> Refer to the documentation for help.', 'ccm' ),
+				'desc'				=> __( 'Upload or provide the URL to an audio file in MP3 format. <b>File too big?</b> See documentation for help.', 'ccm' ),
 				'type'				=> 'upload', // text, textarea, checkbox, radio, select, number, upload, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
