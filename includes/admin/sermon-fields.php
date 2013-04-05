@@ -52,6 +52,28 @@ function ccm_add_meta_box_sermon_details() {
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'=> '', // function for custom display of field input
 			*/
+		
+			// Full Text					
+			'_ccm_sermon_has_full_text' => array(
+				'name'				=> __( 'Full Text', 'ccm' ),
+				'after_name'		=> '', // (Optional), (Required), etc.
+				'desc'				=> __( 'Check this if you provide a complete transcript above.', 'ccm' ),
+				'type'				=> 'checkbox', // text, textarea, checkbox, radio, select, number, upload, url
+				'checkbox_label'	=> __( 'Full sermon text provided', 'ccm' ), //show text after checkbox
+				'options'			=> array(), // array of keys/values for radio or select
+				'upload_button'		=> '', // text for button that opens media frame
+				'upload_title'		=> '', // title appearing at top of media frame
+				'upload_type'		=> '', // optional type of media to filter by (image, audio, video, application/pdf)
+				'default'			=> '', // value to pre-populate option with (before first save or on reset)
+				'no_empty'			=> false, // if user empties value, force default to be saved instead
+				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'class'				=> '', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
+				'field_attributes'	=> array(), // attr => value array for field container
+				'field_class'		=> '', // class(es) to add to field container
+				'custom_sanitize'	=> '', // function to do additional sanitization
+				'custom_field'		=> '', // function for custom display of field input
+			),
 			
 			// Video URL					
 			'_ccm_sermon_video_url' => array(
@@ -108,28 +130,6 @@ function ccm_add_meta_box_sermon_details() {
 				'upload_button'		=> __( 'Choose PDF', 'ccm' ), // text for button that opens media frame
 				'upload_title'		=> __( 'Choose a PDF File', 'ccm' ), // title appearing at top of media frame
 				'upload_type'		=> 'application/pdf', // optional type of media to filter by (image, audio, video, application/pdf)
-				'default'			=> '', // value to pre-populate option with (before first save or on reset)
-				'no_empty'			=> false, // if user empties value, force default to be saved instead
-				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
-				'class'				=> '', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
-				'field_attributes'	=> array(), // attr => value array for field container
-				'field_class'		=> '', // class(es) to add to field container
-				'custom_sanitize'	=> '', // function to do additional sanitization
-				'custom_field'		=> '', // function for custom display of field input
-			),
-			
-			// Full Text					
-			'_ccm_sermon_text' => array(
-				'name'				=> __( 'Full Text', 'ccm' ),
-				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> __( 'If you provide a complete transcript in the content box above then check this box.', 'ccm' ),
-				'type'				=> 'checkbox', // text, textarea, checkbox, radio, select, number, upload, url
-				'checkbox_label'	=> __( 'Full sermon text provided', 'ccm' ), //show text after checkbox
-				'options'			=> array(), // array of keys/values for radio or select
-				'upload_button'		=> '', // text for button that opens media frame
-				'upload_title'		=> '', // title appearing at top of media frame
-				'upload_type'		=> '', // optional type of media to filter by (image, audio, video, application/pdf)
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
