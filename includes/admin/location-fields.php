@@ -257,6 +257,7 @@ function ccm_location_columns( $columns ) {
 	// insert address and order after location (title)
 	$insert_array = array();
 	if ( ccm_field_supported( 'locations', '_ccm_location_address' ) ) $insert_array['ccm_location_address'] = _x( 'Address', 'location admin column', 'ccm' );
+	if ( ccm_field_supported( 'locations', '_ccm_location_times' ) ) $insert_array['ccm_location_times'] = _x( 'Times', 'location admin column', 'ccm' );
 	$insert_array['ccm_location_order'] = _x( 'Order', 'sorting', 'ccm' );
 	$columns = ccm_array_merge_after_key( $columns, $insert_array, 'title' );
 	
@@ -285,6 +286,13 @@ function ccm_location_columns_content( $column ) {
 		case 'ccm_location_address' :
 
 			echo nl2br( strip_tags( get_post_meta( $post->ID , '_ccm_location_address' , true ) ) );
+
+			break;
+
+		// Times
+		case 'ccm_location_times' :
+
+			echo nl2br( strip_tags( get_post_meta( $post->ID , '_ccm_location_times' , true ) ) );
 
 			break;
 			

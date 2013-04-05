@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Church Content Manager v0.7.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-04-05 14:10:42+0000\n"
+"PO-Revision-Date: 2013-04-05 14:18:00+0000\n"
 "Last-Translator: admin <steven@stevengliebe.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -287,7 +287,7 @@ msgstr ""
 msgid "Albums"
 msgstr ""
 
-#: includes/admin/location-fields.php:260
+#: includes/admin/location-fields.php:261
 #: includes/admin/person-fields.php:130
 #@ ccm
 msgctxt "sorting"
@@ -358,7 +358,7 @@ msgctxt "location admin column"
 msgid "Address"
 msgstr ""
 
-#: includes/admin/location-fields.php:264
+#: includes/admin/location-fields.php:265
 #@ ccm
 msgctxt "location admin column"
 msgid "Location"
@@ -1109,6 +1109,12 @@ msgstr ""
 #: includes/admin/location-fields.php:124
 #@ ccm
 msgctxt "location meta box"
+msgid "Times"
+msgstr ""
+
+#: includes/admin/location-fields.php:260
+#@ ccm
+msgctxt "location admin column"
 msgid "Times"
 msgstr ""
 
