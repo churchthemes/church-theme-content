@@ -95,7 +95,7 @@ function ccm_add_meta_box_location() {
 				'field_class'		=> 'ctmb-no-top-margin', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
-			),			
+			),
 			
 			// Phone				
 			'_ccm_location_phone' => array(
