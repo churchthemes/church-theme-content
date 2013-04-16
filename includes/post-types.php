@@ -21,7 +21,7 @@ function ccm_register_post_type_sermon() {
 			'edit_item' 			=> __( 'Edit Sermon', 'ccm' ),
 			'new_item' 				=> __( 'New Sermon', 'ccm' ),
 			'all_items' 			=> __( 'All Sermons', 'ccm' ),
-			'view_item' 			=> __( 'View Sermons', 'ccm' ),
+			'view_item' 			=> __( 'View Sermon', 'ccm' ),
 			'search_items' 			=> __( 'Search Sermons', 'ccm' ),
 			'not_found' 			=> __( 'No sermons found', 'ccm' ),
 			'not_found_in_trash' 	=> __( 'No sermons found in Trash', 'ccm' )
