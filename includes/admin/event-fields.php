@@ -390,7 +390,6 @@ function ccm_sanitize_event_end_date( $value ) {
  * Add/remove event list columns
  */
 
-
 add_filter( 'manage_ccm_event_posts_columns' , 'ccm_event_columns' ); // add columns for meta values
 
 function ccm_event_columns( $columns ) {

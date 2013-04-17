@@ -162,7 +162,7 @@ function ccm_location_post_type() {
 			'with_front' 	=> false,
 			'feeds'			=> ccm_feature_supported( 'locations' ),
 		),
-		'supports' 		=> array( 'title', 'editor', 'page-attributes' )
+		'supports' 		=> array( 'title', 'editor', 'excerpt', 'thumbnail', 'page-attributes' )
 	);
 	$args = apply_filters( 'ccm_post_type_location_args', $args ); // allow filtering
 		

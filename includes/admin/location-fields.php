@@ -254,6 +254,11 @@ add_filter( 'manage_ccm_location_posts_columns' , 'ccm_location_columns' ); // a
  
 function ccm_location_columns( $columns ) {
 
+	// insert thumbnail after checkbox (before title)
+	$insert_array = array();
+	$insert_array['ccm_location_thumbnail'] = __( 'Thumbnail', 'ccm' );
+	$columns = ccm_array_merge_after_key( $columns, $insert_array, 'cb' );
+
 	// insert address and order after location (title)
 	$insert_array = array();
 	if ( ccm_field_supported( 'locations', '_ccm_location_address' ) ) $insert_array['ccm_location_address'] = _x( 'Address', 'location admin column', 'ccm' );
@@ -281,6 +286,15 @@ function ccm_location_columns_content( $column ) {
 	global $post;
 	
 	switch ( $column ) {
+
+		// Thumbnail
+		case 'ccm_location_thumbnail' :
+
+			if ( has_post_thumbnail() ) {
+				echo '<a href="' . get_edit_post_link( $post->ID ) . '">' . get_the_post_thumbnail( $post->ID, array( 80, 80 ) ) . '</a>';
+			}
+
+			break;
 	
 		// Address
 		case 'ccm_location_address' :
