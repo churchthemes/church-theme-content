@@ -394,6 +394,11 @@ add_filter( 'manage_ccm_event_posts_columns' , 'ccm_event_columns' ); // add col
 
 function ccm_event_columns( $columns ) {
 
+	// insert thumbnail after checkbox (before title)
+	$insert_array = array();
+	$insert_array['ccm_event_thumbnail'] = __( 'Thumbnail', 'ccm' );
+	$columns = ccm_array_merge_after_key( $columns, $insert_array, 'cb' );
+
 	// insert start date, venue after title
 	$insert_array = array();
 	if ( ccm_field_supported( 'events', '_ccm_event_start_date' ) ) $insert_array['ccm_event_dates'] = _x( 'When', 'events admin column', 'ccm' );
@@ -418,6 +423,15 @@ function ccm_event_columns_content( $column ) {
 	global $post;
 	
 	switch ( $column ) {
+
+		// Thumbnail
+		case 'ccm_event_thumbnail' :
+
+			if ( has_post_thumbnail() ) {
+				echo '<a href="' . get_edit_post_link( $post->ID ) . '">' . get_the_post_thumbnail( $post->ID, array( 80, 80 ) ) . '</a>';
+			}
+
+			break;
 
 		// Dates
 		case 'ccm_event_dates' :

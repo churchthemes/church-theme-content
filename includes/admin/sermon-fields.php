@@ -19,7 +19,7 @@ function ccm_add_meta_box_sermon_details() {
 
 	// Configure Meta Box
 	$meta_box = array(
-	
+
 		// Meta Box
 		'id' 		=> 'ccm_sermon_options', // unique ID
 		'title' 	=> _x( 'Sermon Media', 'meta box', 'ccm' ),
@@ -165,6 +165,11 @@ add_filter( 'manage_ccm_sermon_posts_columns' , 'ccm_sermon_columns' ); // add c
 
 function ccm_sermon_columns( $columns ) {
 
+	// insert thumbnail after checkbox (before title)
+	$insert_array = array();
+	$insert_array['ccm_sermon_thumbnail'] = __( 'Thumbnail', 'ccm' );
+	$columns = ccm_array_merge_after_key( $columns, $insert_array, 'cb' );
+
 	// insert media types, speakers, categories after title
 	$insert_array = array();
 	$insert_array['ccm_sermon_types'] = __( 'Media Types', 'ccm' );
@@ -192,6 +197,15 @@ function ccm_sermon_columns_content( $column ) {
 	global $post;
 	
 	switch ( $column ) {
+
+		// Thumbnail
+		case 'ccm_sermon_thumbnail' :
+
+			if ( has_post_thumbnail() ) {
+				echo '<a href="' . get_edit_post_link( $post->ID ) . '">' . get_the_post_thumbnail( $post->ID, array( 80, 80 ) ) . '</a>';
+			}
+
+			break;
 
 		// Media Types
 		case 'ccm_sermon_types' :
