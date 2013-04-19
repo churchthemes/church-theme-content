@@ -146,56 +146,6 @@ function ccm_register_taxonomy_sermon_speaker() {
 }
 
 /**********************************
- * GALLERY TAXONOMIES
- **********************************/
-
-/**
- * Album
- */
- 
-add_action( 'init', 'ccm_register_taxonomy_gallery_album' );
- 
-function ccm_register_taxonomy_gallery_album() {
-
-	// Arguments
-	$args = array(
-		'labels' => array(
-			'name' 							=> _x( 'Gallery Albums', 'taxonomy general name', 'ccm' ),
-			'singular_name'					=> _x( 'Gallery Album', 'taxonomy singular name', 'ccm' ),
-			'search_items' 					=> __( 'Search Albums', 'ccm' ),
-			'popular_items' 				=> __( 'Popular Albums', 'ccm' ),
-			'all_items' 					=> __( 'All Albums', 'ccm' ),
-			'parent_item' 					=> null,
-			'parent_item_colon' 			=> null,
-			'edit_item' 					=> __( 'Edit Album', 'ccm' ), 
-			'update_item' 					=> __( 'Update Album', 'ccm' ),
-			'add_new_item' 					=> __( 'Add Album', 'ccm' ),
-			'new_item_name' 				=> __( 'New Album', 'ccm' ),
-			'separate_items_with_commas' 	=> __( 'Separate albums with commas', 'ccm' ),
-			'add_or_remove_items' 			=> __( 'Add or remove albums.', 'ccm' ),
-			'choose_from_most_used' 		=> __( 'Choose from the most used albums.', 'ccm' ),
-			'menu_name' 					=> _x( 'Albums', 'gallery menu name', 'ccm' )
-		),
-		'hierarchical'	=> true, // category-style instead of tag-style
-		'public' 		=> ccm_taxonomy_supported( 'gallery', 'ccm_gallery_album' ),
-		'rewrite' 		=> array(
-			'slug' 			=> 'album',
-			'with_front' 	=> false,
-			'hierarchical' 	=> true
-		)
-	);
-	$args = apply_filters( 'ccm_taxonomy_gallery_album_args', $args ); // allow filtering
-
-	// Register
-	register_taxonomy(
-		'ccm_gallery_album',
-		'ccm_gallery_item',
-		$args
-	);
-
-}
-
-/**********************************
  * PERSON TAXONOMIES
  **********************************/
 

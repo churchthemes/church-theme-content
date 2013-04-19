@@ -90,49 +90,6 @@ function ccm_register_post_type_event() {
 }
 
 /**********************************
- * GALLERY ITEM
- **********************************/
- 
-add_action( 'init', 'ccm_register_post_type_gallery_item' ); // register post type
- 
-function ccm_register_post_type_gallery_item() {
-
-	// Arguments
-	$args = array(
-		'labels' => array(
-			'name'					=> _x( 'Gallery', 'post type general name', 'ccm' ),
-			'singular_name'			=> _x( 'Gallery Item', 'post type singular name', 'ccm' ),
-			'add_new' 				=> _x( 'Add New', 'gallery', 'ccm' ),
-			'add_new_item' 			=> __( 'Add Gallery Item', 'ccm' ),
-			'edit_item' 			=> __( 'Edit Gallery Item', 'ccm' ),
-			'new_item' 				=> __( 'New Gallery Item', 'ccm' ),
-			'all_items' 			=> _x( 'All Items', 'gallery', 'ccm' ),
-			'view_item' 			=> __( 'View Gallery Item', 'ccm' ),
-			'search_items' 			=> __( 'Search Gallery Items', 'ccm' ),
-			'not_found' 			=> __( 'No gallery items found', 'ccm' ),
-			'not_found_in_trash' 	=> __( 'No gallery items found in Trash', 'ccm' )
-		),
-		'public' 		=> ccm_feature_supported( 'gallery' ),
-		'has_archive' 	=> ccm_feature_supported( 'gallery' ),
-		'rewrite'		=> array(
-			'slug' 			=> 'gallery', // has archive, so using plural so it makes sense on single post and archives and so that slug is not likely to match page slug (that causes issues)
-			'with_front' 	=> false,
-			'feeds'			=> ccm_feature_supported( 'gallery' ),
-		),
-		'supports' 		=> array( 'title', 'editor', 'thumbnail', 'comments', 'author', 'revisions' ),
-		'taxonomies' 	=> array( 'ccm_gallery_album' )
-	);
-	$args = apply_filters( 'ccm_post_type_gallery_item_args', $args ); // allow filtering
-		
-	// Registration
-	register_post_type(
-		'ccm_gallery_item',
-		$args
-	);
-
-}
-
-/**********************************
  * LOCATION
  **********************************/
 

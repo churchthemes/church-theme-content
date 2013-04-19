@@ -2,7 +2,7 @@
 /*
 Plugin Name: Church Content Manager
 Plugin URI: http://churchthemes.com/plugins/church-content-manager
-Description: This plugin provides content management functionality for sermons, events, gallery items, locations and people. It <strong>requires a compatible theme</strong> to display the content.
+Description: This plugin provides content management functionality for sermons, events, locations and people. It <strong>requires a compatible theme</strong> to display the content.
 Author: churchthemes.com
 Author URI: http://churchthemes.com
 License: GPL2
@@ -101,7 +101,6 @@ $ccm_includes = array(
 		CCM_ADMIN_DIR . '/admin-css.php',
 		CCM_ADMIN_DIR . '/sermon-fields.php', 
 		CCM_ADMIN_DIR . '/event-fields.php',
-		CCM_ADMIN_DIR . '/gallery-fields.php',
 		CCM_ADMIN_DIR . '/person-fields.php',
 		CCM_ADMIN_DIR . '/location-fields.php',
 		CCM_ADMIN_DIR . '/helpers.php',
