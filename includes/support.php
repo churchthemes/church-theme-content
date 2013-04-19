@@ -31,11 +31,6 @@ function ccm_get_feature_data( $feature = false ) {
 			'post_type'		=> 'ccm_event',
 		),
 		
-		'gallery' => array(
-			'theme_support'	=> 'ccm-gallery',
-			'post_type'		=> 'ccm_gallery_item',
-		),
-		
 		'people' => array(
 			'theme_support'	=> 'ccm-people',
 			'post_type'		=> 'ccm_person',
