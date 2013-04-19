@@ -141,9 +141,9 @@ function ccm_add_meta_box_person_details() {
 				'custom_field'		=> '', // function for custom display of field input
 			),
 
-			// Social URLs
+			// URLs
 			'_ccm_person_urls' => array(
-				'name'				=> __( 'Profile URLs', 'ccm' ),
+				'name'				=> __( 'URLs', 'ccm' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
 				'type'				=> 'textarea', // text, textarea, checkbox, radio, select, number, upload, url
