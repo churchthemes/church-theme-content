@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Church Content Manager v0.8\n"
+"Project-Id-Version: Church Content Manager v0.8.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-04-19 22:02:37+0000\n"
+"PO-Revision-Date: 2013-04-26 23:49:45+0000\n"
 "Last-Translator: admin <steven@stevengliebe.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -138,156 +138,17 @@ msgctxt "date range separator"
 msgid " &ndash; "
 msgstr ""
 
-#: includes/post-types.php:103
-#@ ccm
-msgctxt "post type general name"
-msgid "Gallery"
-msgstr ""
-
-#: includes/post-types.php:104
-#@ ccm
-msgctxt "post type singular name"
-msgid "Gallery Item"
-msgstr ""
-
-#: includes/post-types.php:105
-#@ ccm
-msgctxt "gallery"
-msgid "Add New"
-msgstr ""
-
-#: includes/post-types.php:106
-#@ ccm
-msgid "Add Gallery Item"
-msgstr ""
-
-#: includes/post-types.php:107
-#@ ccm
-msgid "Edit Gallery Item"
-msgstr ""
-
-#: includes/post-types.php:108
-#@ ccm
-msgid "New Gallery Item"
-msgstr ""
-
-#: includes/post-types.php:109
-#@ ccm
-msgctxt "gallery"
-msgid "All Items"
-msgstr ""
-
-#: includes/post-types.php:110
-#@ ccm
-msgid "View Gallery Item"
-msgstr ""
-
-#: includes/post-types.php:111
-#@ ccm
-msgid "Search Gallery Items"
-msgstr ""
-
-#: includes/post-types.php:112
-#@ ccm
-msgid "No gallery items found"
-msgstr ""
-
-#: includes/post-types.php:113
-#@ ccm
-msgid "No gallery items found in Trash"
-msgstr ""
-
-#: includes/taxonomies.php:163
-#@ ccm
-msgctxt "taxonomy general name"
-msgid "Gallery Albums"
-msgstr ""
-
-#: includes/taxonomies.php:164
-#@ ccm
-msgctxt "taxonomy singular name"
-msgid "Gallery Album"
-msgstr ""
-
-#: includes/taxonomies.php:165
-#@ ccm
-msgid "Search Albums"
-msgstr ""
-
-#: includes/taxonomies.php:166
-#@ ccm
-msgid "Popular Albums"
-msgstr ""
-
-#: includes/taxonomies.php:167
-#@ ccm
-msgid "All Albums"
-msgstr ""
-
-#: includes/taxonomies.php:170
-#@ ccm
-msgid "Edit Album"
-msgstr ""
-
-#: includes/taxonomies.php:171
-#@ ccm
-msgid "Update Album"
-msgstr ""
-
-#: includes/taxonomies.php:172
-#@ ccm
-msgid "Add Album"
-msgstr ""
-
-#: includes/taxonomies.php:173
-#@ ccm
-msgid "New Album"
-msgstr ""
-
-#: includes/taxonomies.php:174
-#@ ccm
-msgid "Separate albums with commas"
-msgstr ""
-
-#: includes/taxonomies.php:175
-#@ ccm
-msgid "Add or remove albums."
-msgstr ""
-
-#: includes/taxonomies.php:176
-#@ ccm
-msgid "Choose from the most used albums."
-msgstr ""
-
-#: includes/taxonomies.php:177
-#@ ccm
-msgctxt "gallery menu name"
-msgid "Albums"
-msgstr ""
-
-#: includes/admin/gallery-fields.php:83
 #: includes/admin/sermon-fields.php:80
 #@ ccm
 msgid "Video URL"
 msgstr ""
 
 #: includes/admin/event-fields.php:399
-#: includes/admin/gallery-fields.php:149
 #: includes/admin/location-fields.php:259
 #: includes/admin/person-fields.php:189
 #: includes/admin/sermon-fields.php:170
 #@ ccm
 msgid "Thumbnail"
-msgstr ""
-
-#: includes/admin/gallery-fields.php:154
-#@ ccm
-msgid "Type"
-msgstr ""
-
-#: includes/admin/gallery-fields.php:155
-#@ ccm
-msgid "Albums"
 msgstr ""
 
 #: includes/admin/location-fields.php:266
@@ -297,60 +158,60 @@ msgctxt "sorting"
 msgid "Order"
 msgstr ""
 
-#: includes/post-types.php:146
+#: includes/post-types.php:103
 #@ ccm
 msgctxt "post type general name"
 msgid "Locations"
 msgstr ""
 
-#: includes/post-types.php:147
+#: includes/post-types.php:104
 #@ ccm
 msgctxt "post type singular name"
 msgid "Location"
 msgstr ""
 
-#: includes/post-types.php:148
+#: includes/post-types.php:105
 #@ ccm
 msgctxt "location"
 msgid "Add New"
 msgstr ""
 
-#: includes/post-types.php:149
+#: includes/post-types.php:106
 #@ ccm
 msgid "Add Location"
 msgstr ""
 
-#: includes/post-types.php:150
+#: includes/post-types.php:107
 #@ ccm
 msgid "Edit Location"
 msgstr ""
 
-#: includes/post-types.php:151
+#: includes/post-types.php:108
 #@ ccm
 msgid "New Location"
 msgstr ""
 
-#: includes/post-types.php:152
+#: includes/post-types.php:109
 #@ ccm
 msgid "All Locations"
 msgstr ""
 
-#: includes/post-types.php:153
+#: includes/post-types.php:110
 #@ ccm
 msgid "View Location"
 msgstr ""
 
-#: includes/post-types.php:154
+#: includes/post-types.php:111
 #@ ccm
 msgid "Search Locations"
 msgstr ""
 
-#: includes/post-types.php:155
+#: includes/post-types.php:112
 #@ ccm
 msgid "No location found"
 msgstr ""
 
-#: includes/post-types.php:156
+#: includes/post-types.php:113
 #@ ccm
 msgid "No location found in Trash"
 msgstr ""
@@ -391,60 +252,60 @@ msgctxt "map"
 msgid "Terrain"
 msgstr ""
 
-#: includes/post-types.php:188
+#: includes/post-types.php:145
 #@ ccm
 msgctxt "post type general name"
 msgid "People"
 msgstr ""
 
-#: includes/post-types.php:189
+#: includes/post-types.php:146
 #@ ccm
 msgctxt "post type singular name"
 msgid "Person"
 msgstr ""
 
-#: includes/post-types.php:190
+#: includes/post-types.php:147
 #@ ccm
 msgctxt "person"
 msgid "Add New"
 msgstr ""
 
-#: includes/post-types.php:191
+#: includes/post-types.php:148
 #@ ccm
 msgid "Add Person"
 msgstr ""
 
-#: includes/post-types.php:192
+#: includes/post-types.php:149
 #@ ccm
 msgid "Edit Person"
 msgstr ""
 
-#: includes/post-types.php:193
+#: includes/post-types.php:150
 #@ ccm
 msgid "New Person"
 msgstr ""
 
-#: includes/post-types.php:194
+#: includes/post-types.php:151
 #@ ccm
 msgid "All People"
 msgstr ""
 
-#: includes/post-types.php:195
+#: includes/post-types.php:152
 #@ ccm
 msgid "View Person"
 msgstr ""
 
-#: includes/post-types.php:196
+#: includes/post-types.php:153
 #@ ccm
 msgid "Search People"
 msgstr ""
 
-#: includes/post-types.php:197
+#: includes/post-types.php:154
 #@ ccm
 msgid "No people found"
 msgstr ""
 
-#: includes/post-types.php:198
+#: includes/post-types.php:155
 #@ ccm
 msgid "No people found in Trash"
 msgstr ""
@@ -870,24 +731,6 @@ msgctxt "event meta box"
 msgid "A lower number is more zoomed out while a higher number is more zoomed in."
 msgstr ""
 
-#: includes/admin/gallery-fields.php:32
-#@ ccm
-msgctxt "gallery meta box"
-msgid "Image (Required)"
-msgstr ""
-
-#: includes/admin/gallery-fields.php:49
-#@ ccm
-msgctxt "meta box"
-msgid "Video"
-msgstr ""
-
-#: includes/admin/gallery-fields.php:85
-#, php-format
-#@ ccm
-msgid "Enter a YouTube or Vimeo video page URL. Examples: %s"
-msgstr ""
-
 #: includes/admin/location-fields.php:25
 #@ ccm
 msgctxt "location meta box"
@@ -960,7 +803,7 @@ msgctxt "meta box"
 msgid "Sermon Media"
 msgstr ""
 
-#: includes/support.php:411
+#: includes/support.php:406
 #, php-format
 #@ ccm
 msgid "The <b>%1$s</b> theme does not support the <b>%2$s</b> plugin. <a href=\"%3$s\" target=\"_blank\">More Information</a>, <a href=\"%4$s\">Dismiss</a>"
@@ -1016,79 +859,79 @@ msgctxt "people column"
 msgid "Groups"
 msgstr ""
 
-#: includes/taxonomies.php:213
+#: includes/taxonomies.php:163
 #@ ccm
 msgctxt "taxonomy general name"
 msgid "People Groups"
 msgstr ""
 
-#: includes/taxonomies.php:214
+#: includes/taxonomies.php:164
 #@ ccm
 msgctxt "taxonomy singular name"
 msgid "People Group"
 msgstr ""
 
-#: includes/taxonomies.php:215
+#: includes/taxonomies.php:165
 #@ ccm
 msgctxt "people"
 msgid "Search Groups"
 msgstr ""
 
-#: includes/taxonomies.php:216
+#: includes/taxonomies.php:166
 #@ ccm
 msgctxt "people"
 msgid "Popular Groups"
 msgstr ""
 
-#: includes/taxonomies.php:217
+#: includes/taxonomies.php:167
 #@ ccm
 msgctxt "people"
 msgid "All Groups"
 msgstr ""
 
-#: includes/taxonomies.php:220
+#: includes/taxonomies.php:170
 #@ ccm
 msgctxt "people"
 msgid "Edit Group"
 msgstr ""
 
-#: includes/taxonomies.php:221
+#: includes/taxonomies.php:171
 #@ ccm
 msgctxt "people"
 msgid "Update Group"
 msgstr ""
 
-#: includes/taxonomies.php:222
+#: includes/taxonomies.php:172
 #@ ccm
 msgctxt "people"
 msgid "Add Group"
 msgstr ""
 
-#: includes/taxonomies.php:223
+#: includes/taxonomies.php:173
 #@ ccm
 msgctxt "people"
 msgid "New Group"
 msgstr ""
 
-#: includes/taxonomies.php:224
+#: includes/taxonomies.php:174
 #@ ccm
 msgctxt "people"
 msgid "Separate groups with commas"
 msgstr ""
 
-#: includes/taxonomies.php:225
+#: includes/taxonomies.php:175
 #@ ccm
 msgctxt "people"
 msgid "Add or remove groups"
 msgstr ""
 
-#: includes/taxonomies.php:226
+#: includes/taxonomies.php:176
 #@ ccm
 msgctxt "people"
 msgid "Choose from the most used groups"
 msgstr ""
 
-#: includes/taxonomies.php:227
+#: includes/taxonomies.php:177
 #@ ccm
 msgctxt "people menu name"
 msgid "Groups"
