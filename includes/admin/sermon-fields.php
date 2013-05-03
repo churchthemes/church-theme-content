@@ -151,6 +151,35 @@ function ccm_add_meta_box_sermon_details() {
 }
 
 /**********************************
+ * PODCASTING ENCLOSURE
+ **********************************/
+
+/**
+ * Save enclosure for sermon podcasting
+ *
+ * When audio URL is provided, save its data to the 'enclosure' field.
+ * WordPress automatically uses this data to make feeds useful for podcasting.
+ */
+
+add_action( 'save_post', 'ccm_sermon_save_audio_enclosure', 11, 2 ); // after 'save_post' saves meta fields on 10
+
+function ccm_sermon_save_audio_enclosure( $post_id, $post ) {
+
+	// Stop if no post, auto-save (meta not submitted) or user lacks permission
+	$post_type = get_post_type_object( $post->post_type );
+	if ( empty( $_POST ) || ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) || ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+		return false;
+	}
+
+	// Get audio URL
+	$audio_url = get_post_meta( $post_id , '_ccm_sermon_audio_url' , true );
+
+	// Populate enclosure field with URL, length and format, if valid URL found
+	do_enclose( $audio_url, $post_id );
+
+}
+
+/**********************************
  * ADMIN COLUMNS
  **********************************/
 
