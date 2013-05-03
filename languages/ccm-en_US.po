@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Church Content Manager v0.8.1\n"
+"Project-Id-Version: Church Content Manager v0.8.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-04-26 23:49:45+0000\n"
+"PO-Revision-Date: 2013-05-03 21:09:47+0000\n"
 "Last-Translator: admin <steven@stevengliebe.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -146,7 +146,7 @@ msgstr ""
 #: includes/admin/event-fields.php:399
 #: includes/admin/location-fields.php:259
 #: includes/admin/person-fields.php:189
-#: includes/admin/sermon-fields.php:170
+#: includes/admin/sermon-fields.php:199
 #@ ccm
 msgid "Thumbnail"
 msgstr ""
@@ -639,41 +639,41 @@ msgstr ""
 msgid "Full sermon text provided"
 msgstr ""
 
-#: includes/admin/sermon-fields.php:175
+#: includes/admin/sermon-fields.php:204
 #@ ccm
 msgid "Media Types"
 msgstr ""
 
-#: includes/admin/sermon-fields.php:176
+#: includes/admin/sermon-fields.php:205
 #@ ccm
 msgctxt "people"
 msgid "Speakers"
 msgstr ""
 
-#: includes/admin/sermon-fields.php:177
+#: includes/admin/sermon-fields.php:206
 #@ ccm
 msgid "Categories"
 msgstr ""
 
-#: includes/admin/sermon-fields.php:216
+#: includes/admin/sermon-fields.php:245
 #@ ccm
 msgctxt "media type"
 msgid "Video"
 msgstr ""
 
-#: includes/admin/sermon-fields.php:220
+#: includes/admin/sermon-fields.php:249
 #@ ccm
 msgctxt "media type"
 msgid "Audio"
 msgstr ""
 
-#: includes/admin/sermon-fields.php:224
+#: includes/admin/sermon-fields.php:253
 #@ ccm
 msgctxt "media type"
 msgid "PDF"
 msgstr ""
 
-#: includes/admin/sermon-fields.php:228
+#: includes/admin/sermon-fields.php:257
 #@ ccm
 msgctxt "media type"
 msgid "Text"
