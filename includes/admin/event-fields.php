@@ -474,11 +474,28 @@ function ccm_event_columns_content( $column ) {
 				$dates[] = date_i18n( get_option( 'date_format' ), strtotime( $end_date ) ); // translated date
 			}
 			
-			echo implode( _x( ' &ndash; ', 'date range separator', 'ccm' ), $dates );
+			echo '<b>' . implode( _x( ' &ndash; ', 'date range separator', 'ccm' ), $dates ) . '</b>';
 			
 			$time = get_post_meta( $post->ID , '_ccm_event_time' , true );
 			if ( ! empty( $time ) ) {
-				echo '<div class="description"><i>' . $time . '</i></div>';
+				echo '<div class="description">' . $time . '</div>';
+			}
+
+			$recurrence = get_post_meta( $post->ID , '_ccm_event_recurrence' , true );
+			if ( ! empty( $recurrence ) && $recurrence != 'none' ) {
+				echo '<div class="description"><i>';
+				switch ( $recurrence ) {
+					case 'weekly' :
+						_e( 'Recurs Weekly', 'ccm' );
+						break;
+					case 'monthly' :
+						_e( 'Recurs Monthly', 'ccm' );
+						break;
+					case 'yearly' :
+						_e( 'Recurs Yearly', 'ccm' );
+						break;
+				}
+				echo '</i></div>';
 			}
 
 			break;
