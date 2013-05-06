@@ -128,10 +128,10 @@ function ccm_add_meta_box_event_date() {
 				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array( // array of keys/values for radio or select
-					'none'			=> _x( 'None', 'event meta box', 'church-themes' ),
-					'weekly'	=> _x( 'Weekly', 'event meta box', 'church-themes' ),
-					'monthly'	=> _x( 'Monthly', 'event meta box', 'church-themes' ),
-					'yearly'	=> _x( 'Yearly', 'event meta box', 'church-themes' ),
+					'none'			=> _x( 'None', 'event meta box', 'ccm' ),
+					'weekly'	=> _x( 'Weekly', 'event meta box', 'ccm' ),
+					'monthly'	=> _x( 'Monthly', 'event meta box', 'ccm' ),
+					'yearly'	=> _x( 'Yearly', 'event meta box', 'ccm' ),
 				),
 				'upload_button'		=> '', // text for button that opens media frame
 				'upload_title'		=> '', // title appearing at top of media frame

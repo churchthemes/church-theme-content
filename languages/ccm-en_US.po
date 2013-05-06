@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Church Content Manager v0.8.2\n"
+"Project-Id-Version: Church Content Manager v0.8.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-05-03 21:09:47+0000\n"
+"PO-Revision-Date: 2013-05-06 19:25:31+0000\n"
 "Last-Translator: admin <steven@stevengliebe.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -84,7 +84,7 @@ msgctxt "event meta box"
 msgid "Date & Time"
 msgstr ""
 
-#: includes/admin/event-fields.php:145
+#: includes/admin/event-fields.php:172
 #@ ccm
 msgctxt "event meta box"
 msgid "Location"
@@ -105,34 +105,34 @@ msgstr ""
 msgid "Optionally provide a time such as \"8:00 am &ndash; 2:00 pm\""
 msgstr ""
 
-#: includes/admin/event-fields.php:178
+#: includes/admin/event-fields.php:205
 #@ ccm
 msgid "Venue"
 msgstr ""
 
-#: includes/admin/event-fields.php:180
+#: includes/admin/event-fields.php:207
 #@ ccm
 msgid "You can provide a building name, room number or other location name to help people find the event."
 msgstr ""
 
-#: includes/admin/event-fields.php:202
+#: includes/admin/event-fields.php:229
 #@ ccm
 msgid "You can enter an address if it is necessary for people to find this event."
 msgstr ""
 
-#: includes/admin/event-fields.php:404
+#: includes/admin/event-fields.php:430
 #@ ccm
 msgctxt "events admin column"
 msgid "When"
 msgstr ""
 
-#: includes/admin/event-fields.php:405
+#: includes/admin/event-fields.php:431
 #@ ccm
 msgctxt "events admin column"
 msgid "Where"
 msgstr ""
 
-#: includes/admin/event-fields.php:451
+#: includes/admin/event-fields.php:477
 #@ ccm
 msgctxt "date range separator"
 msgid " &ndash; "
@@ -143,7 +143,7 @@ msgstr ""
 msgid "Video URL"
 msgstr ""
 
-#: includes/admin/event-fields.php:399
+#: includes/admin/event-fields.php:425
 #: includes/admin/location-fields.php:259
 #: includes/admin/person-fields.php:189
 #: includes/admin/sermon-fields.php:199
@@ -689,43 +689,43 @@ msgstr ""
 msgid "(Required)"
 msgstr ""
 
-#: includes/admin/event-fields.php:200
+#: includes/admin/event-fields.php:227
 #@ ccm
 msgctxt "event meta box"
 msgid "Address"
 msgstr ""
 
-#: includes/admin/event-fields.php:244
+#: includes/admin/event-fields.php:271
 #@ ccm
 msgctxt "event meta box"
 msgid "Map Latitude"
 msgstr ""
 
-#: includes/admin/event-fields.php:266
+#: includes/admin/event-fields.php:293
 #@ ccm
 msgctxt "event meta box"
 msgid "Map Longitude"
 msgstr ""
 
-#: includes/admin/event-fields.php:288
+#: includes/admin/event-fields.php:315
 #@ ccm
 msgctxt "event meta box"
 msgid "Map Type"
 msgstr ""
 
-#: includes/admin/event-fields.php:290
+#: includes/admin/event-fields.php:317
 #@ ccm
 msgctxt "event meta box"
 msgid "You can show a road map, satellite imagery, a combination of both (hybrid) or terrain."
 msgstr ""
 
-#: includes/admin/event-fields.php:311
+#: includes/admin/event-fields.php:337
 #@ ccm
 msgctxt "event meta box"
 msgid "Map Zoom"
 msgstr ""
 
-#: includes/admin/event-fields.php:313
+#: includes/admin/event-fields.php:339
 #@ ccm
 msgctxt "event meta box"
 msgid "A lower number is more zoomed out while a higher number is more zoomed in."
@@ -809,7 +809,7 @@ msgstr ""
 msgid "The <b>%1$s</b> theme does not support the <b>%2$s</b> plugin. <a href=\"%3$s\" target=\"_blank\">More Information</a>, <a href=\"%4$s\">Dismiss</a>"
 msgstr ""
 
-#: includes/admin/event-fields.php:246
+#: includes/admin/event-fields.php:273
 #: includes/admin/location-fields.php:148
 #@ ccm
 msgid "You can <a href=\"http://churchthemes.com/get-latitude-longitude\" target=\"_blank\">use this</a> to convert an address into coordinates."
@@ -973,5 +973,56 @@ msgstr ""
 #: includes/post-types.php:24
 #@ ccm
 msgid "View Sermon"
+msgstr ""
+
+#: includes/admin/event-fields.php:125
+#@ ccm
+msgctxt "event meta box"
+msgid "Recurrence"
+msgstr ""
+
+#: includes/admin/event-fields.php:127
+#@ ccm
+msgctxt "event meta box"
+msgid "Start and end dates will automatically move forward after the event ends."
+msgstr ""
+
+#: includes/admin/event-fields.php:131
+#@ ccm
+msgctxt "event meta box"
+msgid "None"
+msgstr ""
+
+#: includes/admin/event-fields.php:132
+#@ ccm
+msgctxt "event meta box"
+msgid "Weekly"
+msgstr ""
+
+#: includes/admin/event-fields.php:133
+#@ ccm
+msgctxt "event meta box"
+msgid "Monthly"
+msgstr ""
+
+#: includes/admin/event-fields.php:134
+#@ ccm
+msgctxt "event meta box"
+msgid "Yearly"
+msgstr ""
+
+#: includes/admin/event-fields.php:489
+#@ ccm
+msgid "Recurs Weekly"
+msgstr ""
+
+#: includes/admin/event-fields.php:492
+#@ ccm
+msgid "Recurs Monthly"
+msgstr ""
+
+#: includes/admin/event-fields.php:495
+#@ ccm
+msgid "Recurs Yearly"
 msgstr ""
 
