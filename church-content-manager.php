@@ -89,6 +89,7 @@ $ccm_includes = array(
 		CCM_INC_DIR . '/post-types.php', 
 		CCM_INC_DIR . '/taxonomies.php',
 		CCM_INC_DIR . '/mime-types.php',
+		CCM_INC_DIR . '/schedule.php',
 		CCM_INC_DIR . '/helpers.php',
 	),
 
