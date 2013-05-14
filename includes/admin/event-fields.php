@@ -22,7 +22,7 @@ function ccm_add_meta_box_event_date() {
 	
 		// Meta Box
 		'id' 		=> 'ccm_event_date', // unique ID
-		'title' 	=> _x( 'Date & Time', 'event meta box', 'ccm' ),
+		'title' 	=> _x( 'Date & Time', 'event meta box', 'church-content-manager' ),
 		'post_type'	=> 'ccm_event',
 		'context'	=> 'normal', // where the meta box appear: normal (left above standard meta boxes), advanced (left below standard boxes), side
 		'priority'	=> 'high', // high, core, default or low (see this: http://www.wproots.com/ultimate-guide-to-meta-boxes-in-wordpress/)
@@ -33,9 +33,9 @@ function ccm_add_meta_box_event_date() {
 			// Example
 			/*
 			'option_key' => array(
-				'name'				=> __( 'Field Name', 'ccm' ),
+				'name'				=> __( 'Field Name', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> __( 'This is the description below the field.', 'ccm' ),
+				'desc'				=> __( 'This is the description below the field.', 'church-content-manager' ),
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
@@ -55,8 +55,8 @@ function ccm_add_meta_box_event_date() {
 			
 			// Start Date				
 			'_ccm_event_start_date' => array(
-				'name'				=> __( 'Start Date', 'ccm' ),
-				'after_name'		=> __( '(Required)', 'ccm' ), // (Optional), (Required), etc.
+				'name'				=> __( 'Start Date', 'church-content-manager' ),
+				'after_name'		=> __( '(Required)', 'church-content-manager' ), // (Optional), (Required), etc.
 				'desc'				=> '',
 				'type'				=> 'date', // text, textarea, checkbox, radio, select, number, upload, url
 				'checkbox_label'	=> '', //show text after checkbox
@@ -78,7 +78,7 @@ function ccm_add_meta_box_event_date() {
 			// End Date
 			// Note: ccm_sanitize_event_end_date calback corrects end and start dates (ie. end date but no start or end is sooner than start)
 			'_ccm_event_end_date' => array(
-				'name'				=> __( 'End Date', 'ccm' ),
+				'name'				=> __( 'End Date', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
 				'type'				=> 'date', // text, textarea, checkbox, radio, select, number, upload, url
@@ -100,9 +100,9 @@ function ccm_add_meta_box_event_date() {
 			
 			// Time				
 			'_ccm_event_time' => array(
-				'name'				=> __( 'Time', 'ccm' ),
+				'name'				=> __( 'Time', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> __( 'Optionally provide a time such as "8:00 am &ndash; 2:00 pm"', 'ccm' ),
+				'desc'				=> __( 'Optionally provide a time such as "8:00 am &ndash; 2:00 pm"', 'church-content-manager' ),
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
@@ -122,16 +122,16 @@ function ccm_add_meta_box_event_date() {
 
 			// Recurrence
 			'_ccm_event_recurrence' => array(
-				'name'				=> _x( 'Recurrence', 'event meta box', 'ccm' ),
+				'name'				=> _x( 'Recurrence', 'event meta box', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> _x( "Start and end dates will automatically move forward after the event ends.", 'event meta box', 'ccm' ),
+				'desc'				=> _x( "Start and end dates will automatically move forward after the event ends.", 'event meta box', 'church-content-manager' ),
 				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array( // array of keys/values for radio or select
-					'none'			=> _x( 'None', 'event meta box', 'ccm' ),
-					'weekly'	=> _x( 'Weekly', 'event meta box', 'ccm' ),
-					'monthly'	=> _x( 'Monthly', 'event meta box', 'ccm' ),
-					'yearly'	=> _x( 'Yearly', 'event meta box', 'ccm' ),
+					'none'			=> _x( 'None', 'event meta box', 'church-content-manager' ),
+					'weekly'	=> _x( 'Weekly', 'event meta box', 'church-content-manager' ),
+					'monthly'	=> _x( 'Monthly', 'event meta box', 'church-content-manager' ),
+					'yearly'	=> _x( 'Yearly', 'event meta box', 'church-content-manager' ),
 				),
 				'upload_button'		=> '', // text for button that opens media frame
 				'upload_title'		=> '', // title appearing at top of media frame
@@ -169,7 +169,7 @@ function ccm_add_meta_box_event_location() {
 	
 		// Meta Box
 		'id' 		=> 'ccm_event_location', // unique ID
-		'title' 	=> _x( 'Location', 'event meta box', 'ccm' ),
+		'title' 	=> _x( 'Location', 'event meta box', 'church-content-manager' ),
 		'post_type'	=> 'ccm_event',
 		'context'	=> 'normal', // where the meta box appear: normal (left above standard meta boxes), advanced (left below standard boxes), side
 		'priority'	=> 'high', // high, core, default or low (see this: http://www.wproots.com/ultimate-guide-to-meta-boxes-in-wordpress/)
@@ -180,9 +180,9 @@ function ccm_add_meta_box_event_location() {
 			// Example
 			/*
 			'option_key' => array(
-				'name'				=> __( 'Field Name', 'ccm' ),
+				'name'				=> __( 'Field Name', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> __( 'This is the description below the field.', 'ccm' ),
+				'desc'				=> __( 'This is the description below the field.', 'church-content-manager' ),
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
@@ -202,9 +202,9 @@ function ccm_add_meta_box_event_location() {
 			
 			// Venue				
 			'_ccm_event_venue' => array(
-				'name'				=> __( 'Venue', 'ccm' ),
+				'name'				=> __( 'Venue', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> __( 'You can provide a building name, room number or other location name to help people find the event.', 'ccm' ),
+				'desc'				=> __( 'You can provide a building name, room number or other location name to help people find the event.', 'church-content-manager' ),
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
@@ -224,9 +224,9 @@ function ccm_add_meta_box_event_location() {
 			
 			// Address
 			'_ccm_event_address' => array(
-				'name'				=> _x( 'Address', 'event meta box', 'ccm' ),
+				'name'				=> _x( 'Address', 'event meta box', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> __( 'You can enter an address if it is necessary for people to find this event.', 'ccm' ),
+				'desc'				=> __( 'You can enter an address if it is necessary for people to find this event.', 'church-content-manager' ),
 				'type'				=> 'textarea', // text, textarea, checkbox, radio, select, number, upload, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
@@ -268,9 +268,9 @@ function ccm_add_meta_box_event_location() {
 			
 			// Map Latitude
 			'_ccm_event_map_lat' => array(
-				'name'				=> _x( 'Map Latitude', 'event meta box', 'ccm' ),
+				'name'				=> _x( 'Map Latitude', 'event meta box', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> __( 'You can <a href="http://churchthemes.com/get-latitude-longitude" target="_blank">use this</a> to convert an address into coordinates.', 'ccm' ),
+				'desc'				=> __( 'You can <a href="http://churchthemes.com/get-latitude-longitude" target="_blank">use this</a> to convert an address into coordinates.', 'church-content-manager' ),
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
@@ -290,7 +290,7 @@ function ccm_add_meta_box_event_location() {
 			
 			// Map Longitude
 			'_ccm_event_map_lng' => array(
-				'name'				=> _x( 'Map Longitude', 'event meta box', 'ccm' ),
+				'name'				=> _x( 'Map Longitude', 'event meta box', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, url
@@ -312,9 +312,9 @@ function ccm_add_meta_box_event_location() {
 			
 			// Map Type
 			'_ccm_event_map_type' => array(
-				'name'				=> _x( 'Map Type', 'event meta box', 'ccm' ),
+				'name'				=> _x( 'Map Type', 'event meta box', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> _x( 'You can show a road map, satellite imagery, a combination of both (hybrid) or terrain.', 'event meta box', 'ccm' ),
+				'desc'				=> _x( 'You can show a road map, satellite imagery, a combination of both (hybrid) or terrain.', 'event meta box', 'church-content-manager' ),
 				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> ccm_gmaps_types(), // array of keys/values for radio or select
@@ -334,9 +334,9 @@ function ccm_add_meta_box_event_location() {
 			
 			// Map Zoom
 			'_ccm_event_map_zoom' => array(
-				'name'				=> _x( 'Map Zoom', 'event meta box', 'ccm' ),
+				'name'				=> _x( 'Map Zoom', 'event meta box', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> _x( 'A lower number is more zoomed out while a higher number is more zoomed in.', 'event meta box', 'ccm' ),
+				'desc'				=> _x( 'A lower number is more zoomed out while a higher number is more zoomed in.', 'event meta box', 'church-content-manager' ),
 				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> ccm_gmaps_zoom_levels(), // array of keys/values for radio or select
@@ -422,13 +422,13 @@ function ccm_event_columns( $columns ) {
 
 	// insert thumbnail after checkbox (before title)
 	$insert_array = array();
-	$insert_array['ccm_event_thumbnail'] = __( 'Thumbnail', 'ccm' );
+	$insert_array['ccm_event_thumbnail'] = __( 'Thumbnail', 'church-content-manager' );
 	$columns = ccm_array_merge_after_key( $columns, $insert_array, 'cb' );
 
 	// insert start date, venue after title
 	$insert_array = array();
-	if ( ccm_field_supported( 'events', '_ccm_event_start_date' ) ) $insert_array['ccm_event_dates'] = _x( 'When', 'events admin column', 'ccm' );
-	if ( ccm_field_supported( 'events', '_ccm_event_venue' ) ) $insert_array['ccm_event_venue'] = _x( 'Where', 'events admin column', 'ccm' );
+	if ( ccm_field_supported( 'events', '_ccm_event_start_date' ) ) $insert_array['ccm_event_dates'] = _x( 'When', 'events admin column', 'church-content-manager' );
+	if ( ccm_field_supported( 'events', '_ccm_event_venue' ) ) $insert_array['ccm_event_venue'] = _x( 'Where', 'events admin column', 'church-content-manager' );
 	$columns = ccm_array_merge_after_key( $columns, $insert_array, 'title' );
 
 	// remove author
@@ -474,7 +474,7 @@ function ccm_event_columns_content( $column ) {
 				$dates[] = date_i18n( get_option( 'date_format' ), strtotime( $end_date ) ); // translated date
 			}
 			
-			echo '<b>' . implode( _x( ' &ndash; ', 'date range separator', 'ccm' ), $dates ) . '</b>';
+			echo '<b>' . implode( _x( ' &ndash; ', 'date range separator', 'church-content-manager' ), $dates ) . '</b>';
 			
 			$time = get_post_meta( $post->ID , '_ccm_event_time' , true );
 			if ( ! empty( $time ) ) {
@@ -486,13 +486,13 @@ function ccm_event_columns_content( $column ) {
 				echo '<div class="description"><i>';
 				switch ( $recurrence ) {
 					case 'weekly' :
-						_e( 'Recurs Weekly', 'ccm' );
+						_e( 'Recurs Weekly', 'church-content-manager' );
 						break;
 					case 'monthly' :
-						_e( 'Recurs Monthly', 'ccm' );
+						_e( 'Recurs Monthly', 'church-content-manager' );
 						break;
 					case 'yearly' :
-						_e( 'Recurs Yearly', 'ccm' );
+						_e( 'Recurs Yearly', 'church-content-manager' );
 						break;
 				}
 				echo '</i></div>';

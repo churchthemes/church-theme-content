@@ -20,7 +20,7 @@ function ccm_person_title_text( $title ) {
 	$screen = get_current_screen();
 
 	if  ( 'ccm_person' == $screen->post_type ) {
-		$title = __( 'Enter name here', 'ccm' );
+		$title = __( 'Enter name here', 'church-content-manager' );
 	}
 
 	return $title;
@@ -44,7 +44,7 @@ function ccm_add_meta_box_person_details() {
 	
 		// Meta Box
 		'id' 		=> 'ccm_person_details', // unique ID
-		'title' 	=> _x( 'Person Details', 'meta box', 'ccm' ),
+		'title' 	=> _x( 'Person Details', 'meta box', 'church-content-manager' ),
 		'post_type'	=> 'ccm_person',
 		'context'	=> 'normal', // where the meta box appear: normal (left above standard meta boxes), advanced (left below standard boxes), side
 		'priority'	=> 'high', // high, core, default or low (see this: http://www.wproots.com/ultimate-guide-to-meta-boxes-in-wordpress/)
@@ -55,9 +55,9 @@ function ccm_add_meta_box_person_details() {
 			// Example
 			/*
 			'option_key' => array(
-				'name'				=> __( 'Field Name', 'ccm' ),
+				'name'				=> __( 'Field Name', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> __( 'This is the description below the field.', 'ccm' ),
+				'desc'				=> __( 'This is the description below the field.', 'church-content-manager' ),
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
@@ -77,9 +77,9 @@ function ccm_add_meta_box_person_details() {
 
 			// Position				
 			'_ccm_person_position' => array(
-				'name'				=> __( 'Position', 'ccm' ),
+				'name'				=> __( 'Position', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> __( "Enter the person's position or title (e.g. Senior Pastor, Deacon, etc.)", 'ccm' ),
+				'desc'				=> __( "Enter the person's position or title (e.g. Senior Pastor, Deacon, etc.)", 'church-content-manager' ),
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
@@ -99,7 +99,7 @@ function ccm_add_meta_box_person_details() {
 
 			// Phone				
 			'_ccm_person_phone' => array(
-				'name'				=> _x( 'Phone', 'location meta box', 'ccm' ),
+				'name'				=> _x( 'Phone', 'location meta box', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, url
@@ -121,7 +121,7 @@ function ccm_add_meta_box_person_details() {
 
 			// Email				
 			'_ccm_person_email' => array(
-				'name'				=> _x( 'Email', 'location meta box', 'ccm' ),
+				'name'				=> _x( 'Email', 'location meta box', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, url
@@ -143,7 +143,7 @@ function ccm_add_meta_box_person_details() {
 
 			// URLs
 			'_ccm_person_urls' => array(
-				'name'				=> __( 'URLs', 'ccm' ),
+				'name'				=> __( 'URLs', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
 				'type'				=> 'textarea', // text, textarea, checkbox, radio, select, number, upload, url
@@ -186,18 +186,18 @@ function ccm_person_columns( $columns ) {
 
 	// insert thumbnail after checkbox (before title)
 	$insert_array = array();
-	$insert_array['ccm_person_thumbnail'] = __( 'Thumbnail', 'ccm' );
+	$insert_array['ccm_person_thumbnail'] = __( 'Thumbnail', 'church-content-manager' );
 	$columns = ccm_array_merge_after_key( $columns, $insert_array, 'cb' );
 
 	// insert columns after title
 	$insert_array = array();
-	if ( ccm_field_supported( 'people', '_ccm_person_position' ) ) $insert_array['ccm_person_position'] = __( 'Position', 'ccm' );
-	if ( ccm_taxonomy_supported( 'people', 'ccm_person_group' ) ) $insert_array['ccm_person_group'] = _x( 'Groups', 'people column', 'ccm' );
-	$insert_array['ccm_person_order'] = _x( 'Order', 'sorting', 'ccm' );
+	if ( ccm_field_supported( 'people', '_ccm_person_position' ) ) $insert_array['ccm_person_position'] = __( 'Position', 'church-content-manager' );
+	if ( ccm_taxonomy_supported( 'people', 'ccm_person_group' ) ) $insert_array['ccm_person_group'] = _x( 'Groups', 'people column', 'church-content-manager' );
+	$insert_array['ccm_person_order'] = _x( 'Order', 'sorting', 'church-content-manager' );
 	$columns = ccm_array_merge_after_key( $columns, $insert_array, 'title' );
 	
 	//change "title" to "name"
-	$columns['title'] = _x( 'Name', 'person', 'ccm' );
+	$columns['title'] = _x( 'Name', 'person', 'church-content-manager' );
 	
 	return $columns;
 

@@ -47,10 +47,10 @@ function ccm_admin_term_list( $post_id, $taxonomy ) {
 function ccm_gmaps_types() {
 
 	$types = array(
-		'ROADMAP'	=> _x( 'Road', 'map', 'ccm' ),
-		'SATELLITE'	=> _x( 'Satellite', 'map', 'ccm' ),
-		'HYBRID'	=> _x( 'Hybrid', 'map', 'ccm' ),
-		'TERRAIN'	=> _x( 'Terrain', 'map', 'ccm' )
+		'ROADMAP'	=> _x( 'Road', 'map', 'church-content-manager' ),
+		'SATELLITE'	=> _x( 'Satellite', 'map', 'church-content-manager' ),
+		'HYBRID'	=> _x( 'Hybrid', 'map', 'church-content-manager' ),
+		'TERRAIN'	=> _x( 'Terrain', 'map', 'church-content-manager' )
 	);
 	
 	return apply_filters( 'ccm_gmaps_types', $types );

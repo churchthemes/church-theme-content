@@ -64,6 +64,7 @@ define( 'CCM_LIB_DIR', 		CCM_INC_DIR . '/libraries' );	// libraries directory
 define( 'CCM_CSS_DIR', 		'css' );						// stylesheets directory
 define( 'CCM_JS_DIR', 		'js' );							// JavaScript directory
 define( 'CCM_IMG_DIR', 		'images' );						// images directory
+define( 'CCM_LANG_DIR', 	'languages' );					// languages directory
 
 // CT Meta Box
 if ( ! defined( 'CTMB_URL' ) ) { // in case also used in theme or other plugin

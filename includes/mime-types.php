@@ -18,9 +18,9 @@ function ccm_post_mime_types( $post_mime_types ) {
 
 	// PDF
 	$post_mime_types['application/pdf'] = array(
-		__( 'PDF', 'ccm' ),
-		__( 'Manage PDFs', 'ccm' ),
-		_n_noop( 'PDF <span class="count">(%s)</span>', 'PDFs <span class="count">(%s)</span>', 'ccm' )
+		__( 'PDF', 'church-content-manager' ),
+		__( 'Manage PDFs', 'church-content-manager' ),
+		_n_noop( 'PDF <span class="count">(%s)</span>', 'PDFs <span class="count">(%s)</span>', 'church-content-manager' )
 	);
 
 	return $post_mime_types;

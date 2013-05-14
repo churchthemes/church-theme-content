@@ -14,17 +14,17 @@ function ccm_register_post_type_sermon() {
 	// Arguments
 	$args = array(
 		'labels' => array(
-			'name'					=> _x( 'Sermons', 'post type general name', 'ccm' ),
-			'singular_name'			=> _x( 'Sermon', 'post type singular name', 'ccm' ),
-			'add_new' 				=> _x( 'Add New', 'sermon', 'ccm' ),
-			'add_new_item' 			=> __( 'Add Sermon', 'ccm' ),
-			'edit_item' 			=> __( 'Edit Sermon', 'ccm' ),
-			'new_item' 				=> __( 'New Sermon', 'ccm' ),
-			'all_items' 			=> __( 'All Sermons', 'ccm' ),
-			'view_item' 			=> __( 'View Sermon', 'ccm' ),
-			'search_items' 			=> __( 'Search Sermons', 'ccm' ),
-			'not_found' 			=> __( 'No sermons found', 'ccm' ),
-			'not_found_in_trash' 	=> __( 'No sermons found in Trash', 'ccm' )
+			'name'					=> _x( 'Sermons', 'post type general name', 'church-content-manager' ),
+			'singular_name'			=> _x( 'Sermon', 'post type singular name', 'church-content-manager' ),
+			'add_new' 				=> _x( 'Add New', 'sermon', 'church-content-manager' ),
+			'add_new_item' 			=> __( 'Add Sermon', 'church-content-manager' ),
+			'edit_item' 			=> __( 'Edit Sermon', 'church-content-manager' ),
+			'new_item' 				=> __( 'New Sermon', 'church-content-manager' ),
+			'all_items' 			=> __( 'All Sermons', 'church-content-manager' ),
+			'view_item' 			=> __( 'View Sermon', 'church-content-manager' ),
+			'search_items' 			=> __( 'Search Sermons', 'church-content-manager' ),
+			'not_found' 			=> __( 'No sermons found', 'church-content-manager' ),
+			'not_found_in_trash' 	=> __( 'No sermons found in Trash', 'church-content-manager' )
 		),
 		'public' 		=> ccm_feature_supported( 'sermons' ),
 		'has_archive' 	=> ccm_feature_supported( 'sermons' ),
@@ -57,17 +57,17 @@ function ccm_register_post_type_event() {
 	// Arguments
 	$args = array(
 		'labels' => array(
-			'name'					=> _x( 'Events', 'post type general name', 'ccm' ),
-			'singular_name'			=> _x( 'Event', 'post type singular name', 'ccm' ),
-			'add_new' 				=> _x( 'Add New', 'event', 'ccm' ),
-			'add_new_item' 			=> __( 'Add Event', 'ccm' ),
-			'edit_item' 			=> __( 'Edit Event', 'ccm' ),
-			'new_item' 				=> __( 'New Event', 'ccm' ),
-			'all_items' 			=> __( 'All Events', 'ccm' ),
-			'view_item' 			=> __( 'View Event', 'ccm' ),
-			'search_items' 			=> __( 'Search Events', 'ccm' ),
-			'not_found' 			=> __( 'No events found', 'ccm' ),
-			'not_found_in_trash' 	=> __( 'No events found in Trash', 'ccm' )
+			'name'					=> _x( 'Events', 'post type general name', 'church-content-manager' ),
+			'singular_name'			=> _x( 'Event', 'post type singular name', 'church-content-manager' ),
+			'add_new' 				=> _x( 'Add New', 'event', 'church-content-manager' ),
+			'add_new_item' 			=> __( 'Add Event', 'church-content-manager' ),
+			'edit_item' 			=> __( 'Edit Event', 'church-content-manager' ),
+			'new_item' 				=> __( 'New Event', 'church-content-manager' ),
+			'all_items' 			=> __( 'All Events', 'church-content-manager' ),
+			'view_item' 			=> __( 'View Event', 'church-content-manager' ),
+			'search_items' 			=> __( 'Search Events', 'church-content-manager' ),
+			'not_found' 			=> __( 'No events found', 'church-content-manager' ),
+			'not_found_in_trash' 	=> __( 'No events found in Trash', 'church-content-manager' )
 		),
 		'public' 		=> ccm_feature_supported( 'events' ),
 		'has_archive' 	=> ccm_feature_supported( 'events' ),
@@ -100,17 +100,17 @@ function ccm_location_post_type() {
 	// Arguments
 	$args = array(
 		'labels' => array(
-			'name'					=> _x( 'Locations', 'post type general name', 'ccm' ),
-			'singular_name'			=> _x( 'Location', 'post type singular name', 'ccm' ),
-			'add_new' 				=> _x( 'Add New', 'location', 'ccm' ),
-			'add_new_item' 			=> __( 'Add Location', 'ccm' ),
-			'edit_item' 			=> __( 'Edit Location', 'ccm' ),
-			'new_item' 				=> __( 'New Location', 'ccm' ),
-			'all_items' 			=> __( 'All Locations', 'ccm' ),
-			'view_item' 			=> __( 'View Location', 'ccm' ),
-			'search_items' 			=> __( 'Search Locations', 'ccm' ),
-			'not_found' 			=> __( 'No location found', 'ccm' ),
-			'not_found_in_trash' 	=> __( 'No location found in Trash', 'ccm' )
+			'name'					=> _x( 'Locations', 'post type general name', 'church-content-manager' ),
+			'singular_name'			=> _x( 'Location', 'post type singular name', 'church-content-manager' ),
+			'add_new' 				=> _x( 'Add New', 'location', 'church-content-manager' ),
+			'add_new_item' 			=> __( 'Add Location', 'church-content-manager' ),
+			'edit_item' 			=> __( 'Edit Location', 'church-content-manager' ),
+			'new_item' 				=> __( 'New Location', 'church-content-manager' ),
+			'all_items' 			=> __( 'All Locations', 'church-content-manager' ),
+			'view_item' 			=> __( 'View Location', 'church-content-manager' ),
+			'search_items' 			=> __( 'Search Locations', 'church-content-manager' ),
+			'not_found' 			=> __( 'No location found', 'church-content-manager' ),
+			'not_found_in_trash' 	=> __( 'No location found in Trash', 'church-content-manager' )
 		),
 		'public' 		=> ccm_feature_supported( 'locations' ),
 		'has_archive' 	=> ccm_feature_supported( 'locations' ),
@@ -142,17 +142,17 @@ function ccm_register_post_type_person() {
 	// Arguments
 	$args = array(
 		'labels' => array(
-			'name'					=> _x( 'People', 'post type general name', 'ccm' ),
-			'singular_name'			=> _x( 'Person', 'post type singular name', 'ccm' ),
-			'add_new' 				=> _x( 'Add New', 'person', 'ccm' ),
-			'add_new_item' 			=> __( 'Add Person', 'ccm' ),
-			'edit_item' 			=> __( 'Edit Person', 'ccm' ),
-			'new_item' 				=> __( 'New Person', 'ccm' ),
-			'all_items' 			=> __( 'All People', 'ccm' ),
-			'view_item' 			=> __( 'View Person', 'ccm' ),
-			'search_items' 			=> __( 'Search People', 'ccm' ),
-			'not_found' 			=> __( 'No people found', 'ccm' ),
-			'not_found_in_trash' 	=> __( 'No people found in Trash', 'ccm' )
+			'name'					=> _x( 'People', 'post type general name', 'church-content-manager' ),
+			'singular_name'			=> _x( 'Person', 'post type singular name', 'church-content-manager' ),
+			'add_new' 				=> _x( 'Add New', 'person', 'church-content-manager' ),
+			'add_new_item' 			=> __( 'Add Person', 'church-content-manager' ),
+			'edit_item' 			=> __( 'Edit Person', 'church-content-manager' ),
+			'new_item' 				=> __( 'New Person', 'church-content-manager' ),
+			'all_items' 			=> __( 'All People', 'church-content-manager' ),
+			'view_item' 			=> __( 'View Person', 'church-content-manager' ),
+			'search_items' 			=> __( 'Search People', 'church-content-manager' ),
+			'not_found' 			=> __( 'No people found', 'church-content-manager' ),
+			'not_found_in_trash' 	=> __( 'No people found in Trash', 'church-content-manager' )
 		),
 		'public' 		=> ccm_feature_supported( 'people' ),
 		'has_archive' 	=> ccm_feature_supported( 'people' ),
