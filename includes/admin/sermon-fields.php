@@ -75,20 +75,24 @@ function ccm_add_meta_box_sermon_details() {
 				'custom_field'		=> '', // function for custom display of field input
 			),
 			
-			// Video URL					
-			'_ccm_sermon_video_url' => array(
-				'name'				=> __( 'Video URL', 'church-content-manager' ),
+			// Video				
+			'_ccm_sermon_video' => array( // intended for URL or embed code
+				'name'				=> __( 'Video', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> '',
-				'type'				=> 'url', // text, textarea, checkbox, radio, select, number, upload, url
+				'desc'				=> sprintf(
+											__( 'Upload a file by clicking "Choose Video" or upload a video to one of the <a href="%s" target="_blank">supported sites</a> (such as YouTube) then paste its URL here, or paste an embed code from another site. <a href="%s" target="_blank">Video Help</a>', 'church-content-manager' ),
+											apply_filters( 'ccm_sermon_video_sites_url', 'http://churchthemes.com/go/ccm-sermon-video-sites' ),
+											apply_filters( 'ccm_sermon_video_help_url', 'http://churchthemes.com/go/ccm-sermon-video-help' )
+										),
+				'type'				=> 'upload', // text, textarea, checkbox, radio, select, number, upload, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
-				'upload_button'		=> '', // text for button that opens media frame
-				'upload_type'		=> '', // type of media (image, audio)
-				'upload_select'		=> '', // text for button in media frame that inserts URL
+				'upload_button'		=> __( 'Choose Video', 'church-content-manager' ), // text for button that opens media frame
+				'upload_title'		=> __( 'Choose an Video File', 'church-content-manager' ), // title appearing at top of media frame
+				'upload_type'		=> 'video', // optional type of media to filter by (image, audio, video, application/pdf)
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
-				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
+				'allow_html'		=> true, // allow HTML to be used in the value (text, textarea)
 				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
 				'class'				=> '', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
@@ -97,20 +101,24 @@ function ccm_add_meta_box_sermon_details() {
 				'custom_field'		=> '', // function for custom display of field input
 			),
 			
-			// Audio URL					
-			'_ccm_sermon_audio_url' => array(
-				'name'				=> __( 'MP3 Audio File', 'church-content-manager' ),
+			// Audio
+			'_ccm_sermon_audio' => array( // intended for URL or embed code
+				'name'				=> __( 'Audio', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> __( 'Upload or provide the URL to an audio file in MP3 format. <b>File too big?</b> See documentation for help.', 'church-content-manager' ),
+				'desc'				=> sprintf(
+											__( 'Upload a file by clicking "Choose Audio" or upload audio to one of the <a href="%s" target="_blank">supported sites</a> (such as SoundCloud) then paste its URL here, or paste an embed code from another site. <a href="%s" target="_blank">Video Help</a>', 'church-content-manager' ),
+											apply_filters( 'ccm_sermon_audio_sites_url', 'http://churchthemes.com/go/ccm-sermon-audio-sites' ),
+											apply_filters( 'ccm_sermon_audio_help_url', 'http://churchthemes.com/go/ccm-sermon-audio-help' )
+										),
 				'type'				=> 'upload', // text, textarea, checkbox, radio, select, number, upload, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
-				'upload_button'		=> __( 'Choose MP3', 'church-content-manager' ), // text for button that opens media frame
-				'upload_title'		=> __( 'Choose an MP3 File', 'church-content-manager' ), // title appearing at top of media frame
+				'upload_button'		=> __( 'Choose Audio', 'church-content-manager' ), // text for button that opens media frame
+				'upload_title'		=> __( 'Choose an Audio File', 'church-content-manager' ), // title appearing at top of media frame
 				'upload_type'		=> 'audio', // optional type of media to filter by (image, audio, video, application/pdf)
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
-				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
+				'allow_html'		=> true, // allow HTML to be used in the value (text, textarea)
 				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
 				'class'				=> '', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
@@ -120,10 +128,10 @@ function ccm_add_meta_box_sermon_details() {
 			),
 			
 			// PDF URL					
-			'_ccm_sermon_pdf_url' => array(
-				'name'				=> __( 'PDF File', 'church-content-manager' ),
+			'_ccm_sermon_pdf' => array(
+				'name'				=> __( 'PDF', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> __( 'Upload or provide the URL to a PDF file.', 'church-content-manager' ),
+				'desc'				=> __( 'Upload a file by clicking "Choose PDF" or paste the URL to a PDF hosted on another site.', 'church-content-manager' ),
 				'type'				=> 'upload', // text, textarea, checkbox, radio, select, number, upload, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
@@ -172,10 +180,10 @@ function ccm_sermon_save_audio_enclosure( $post_id, $post ) {
 	}
 
 	// Get audio URL
-	$audio_url = get_post_meta( $post_id , '_ccm_sermon_audio_url' , true );
+	$audio = get_post_meta( $post_id , '_ccm_sermon_audio' , true );
 
 	// Populate enclosure field with URL, length and format, if valid URL found
-	do_enclose( $audio_url, $post_id );
+	do_enclose( $audio, $post_id );
 
 }
 
@@ -241,15 +249,15 @@ function ccm_sermon_columns_content( $column ) {
 
 			$media_types = array();
 		
-			if ( get_post_meta( $post->ID , '_ccm_sermon_video_url' , true ) ) {
+			if ( get_post_meta( $post->ID , '_ccm_sermon_video' , true ) ) {
 				$media_types[] = _x( 'Video', 'media type', 'church-content-manager' );
 			}
 			
-			if ( get_post_meta( $post->ID , '_ccm_sermon_audio_url' , true ) ) {
+			if ( get_post_meta( $post->ID , '_ccm_sermon_audio' , true ) ) {
 				$media_types[] = _x( 'Audio', 'media type', 'church-content-manager' );
 			}
 			
-			if ( get_post_meta( $post->ID , '_ccm_sermon_pdf_url' , true ) ) {
+			if ( get_post_meta( $post->ID , '_ccm_sermon_pdf' , true ) ) {
 				$media_types[] = _x( 'PDF', 'media type', 'church-content-manager' );
 			}
 			
