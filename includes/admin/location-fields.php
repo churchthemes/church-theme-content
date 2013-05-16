@@ -36,7 +36,7 @@ function ccm_add_meta_box_location() {
 				'name'				=> __( 'Field Name', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> __( 'This is the description below the field.', 'church-content-manager' ),
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -58,7 +58,7 @@ function ccm_add_meta_box_location() {
 				'name'				=> _x( 'Address', 'location meta box', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
-				'type'				=> 'textarea', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'textarea', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -80,7 +80,7 @@ function ccm_add_meta_box_location() {
 				'name'				=> '',
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
-				'type'				=> 'checkbox', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'checkbox', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> 'Show directions link', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -102,7 +102,7 @@ function ccm_add_meta_box_location() {
 				'name'				=> _x( 'Phone', 'location meta box', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -124,7 +124,7 @@ function ccm_add_meta_box_location() {
 				'name'				=> _x( 'Times', 'location meta box', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
-				'type'				=> 'textarea', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'textarea', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -146,7 +146,7 @@ function ccm_add_meta_box_location() {
 				'name'				=> _x( 'Map Latitude', 'location meta box', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> __( 'You can <a href="http://churchthemes.com/get-latitude-longitude" target="_blank">use this</a> to convert an address into coordinates.', 'church-content-manager' ),
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -168,7 +168,7 @@ function ccm_add_meta_box_location() {
 				'name'				=> _x( 'Map Longitude', 'location meta box', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -190,7 +190,7 @@ function ccm_add_meta_box_location() {
 				'name'				=> _x( 'Map Type', 'location meta box', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> _x( 'You can show a road map, satellite imagery, a combination of both (hybrid) or terrain.', 'location meta box', 'church-content-manager' ),
-				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> ccm_gmaps_types(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -213,7 +213,7 @@ function ccm_add_meta_box_location() {
 				'name'				=> _x( 'Map Zoom', 'location meta box', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> _x( 'A lower number is more zoomed out while a higher number is more zoomed in.', 'location meta box', 'church-content-manager' ),
-				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> ccm_gmaps_zoom_levels(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame

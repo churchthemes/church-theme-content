@@ -36,7 +36,7 @@ function ccm_add_meta_box_sermon_details() {
 				'name'				=> __( 'Field Name', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> __( 'This is the description below the field.', 'church-content-manager' ),
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -58,7 +58,7 @@ function ccm_add_meta_box_sermon_details() {
 				'name'				=> __( 'Full Text', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> __( 'Check this if you provide a complete transcript above.', 'church-content-manager' ),
-				'type'				=> 'checkbox', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'checkbox', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> __( 'Full sermon text provided', 'church-content-manager' ), //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -84,7 +84,7 @@ function ccm_add_meta_box_sermon_details() {
 											apply_filters( 'ccm_sermon_video_sites_url', 'http://churchthemes.com/go/ccm-sermon-video-sites' ),
 											apply_filters( 'ccm_sermon_video_help_url', 'http://churchthemes.com/go/ccm-sermon-video-help' )
 										),
-				'type'				=> 'upload', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'upload_textarea', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> __( 'Choose Video', 'church-content-manager' ), // text for button that opens media frame
@@ -110,7 +110,7 @@ function ccm_add_meta_box_sermon_details() {
 											apply_filters( 'ccm_sermon_audio_sites_url', 'http://churchthemes.com/go/ccm-sermon-audio-sites' ),
 											apply_filters( 'ccm_sermon_audio_help_url', 'http://churchthemes.com/go/ccm-sermon-audio-help' )
 										),
-				'type'				=> 'upload', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'upload_textarea', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> __( 'Choose Audio', 'church-content-manager' ), // text for button that opens media frame
@@ -132,7 +132,7 @@ function ccm_add_meta_box_sermon_details() {
 				'name'				=> __( 'PDF', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> __( 'Upload a file by clicking "Choose PDF" or paste the URL to a PDF hosted on another site.', 'church-content-manager' ),
-				'type'				=> 'upload', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'upload', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> __( 'Choose PDF', 'church-content-manager' ), // text for button that opens media frame

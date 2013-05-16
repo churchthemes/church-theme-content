@@ -36,7 +36,7 @@ function ccm_add_meta_box_event_date() {
 				'name'				=> __( 'Field Name', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> __( 'This is the description below the field.', 'church-content-manager' ),
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -58,7 +58,7 @@ function ccm_add_meta_box_event_date() {
 				'name'				=> __( 'Start Date', 'church-content-manager' ),
 				'after_name'		=> __( '(Required)', 'church-content-manager' ), // (Optional), (Required), etc.
 				'desc'				=> '',
-				'type'				=> 'date', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'date', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -81,7 +81,7 @@ function ccm_add_meta_box_event_date() {
 				'name'				=> __( 'End Date', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
-				'type'				=> 'date', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'date', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -103,7 +103,7 @@ function ccm_add_meta_box_event_date() {
 				'name'				=> __( 'Time', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> __( 'Optionally provide a time such as "8:00 am &ndash; 2:00 pm"', 'church-content-manager' ),
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -125,7 +125,7 @@ function ccm_add_meta_box_event_date() {
 				'name'				=> _x( 'Recurrence', 'event meta box', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> _x( "Start and end dates will automatically move forward after the event ends.", 'event meta box', 'church-content-manager' ),
-				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array( // array of keys/values for radio or select
 					'none'			=> _x( 'None', 'event meta box', 'church-content-manager' ),
@@ -183,7 +183,7 @@ function ccm_add_meta_box_event_location() {
 				'name'				=> __( 'Field Name', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> __( 'This is the description below the field.', 'church-content-manager' ),
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -205,7 +205,7 @@ function ccm_add_meta_box_event_location() {
 				'name'				=> __( 'Venue', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> __( 'You can provide a building name, room number or other location name to help people find the event.', 'church-content-manager' ),
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -227,7 +227,7 @@ function ccm_add_meta_box_event_location() {
 				'name'				=> _x( 'Address', 'event meta box', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> __( 'You can enter an address if it is necessary for people to find this event.', 'church-content-manager' ),
-				'type'				=> 'textarea', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'textarea', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -249,7 +249,7 @@ function ccm_add_meta_box_event_location() {
 				'name'				=> '',
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
-				'type'				=> 'checkbox', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'checkbox', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> 'Show directions link', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -271,7 +271,7 @@ function ccm_add_meta_box_event_location() {
 				'name'				=> _x( 'Map Latitude', 'event meta box', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> __( 'You can <a href="http://churchthemes.com/get-latitude-longitude" target="_blank">use this</a> to convert an address into coordinates.', 'church-content-manager' ),
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -293,7 +293,7 @@ function ccm_add_meta_box_event_location() {
 				'name'				=> _x( 'Map Longitude', 'event meta box', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -315,7 +315,7 @@ function ccm_add_meta_box_event_location() {
 				'name'				=> _x( 'Map Type', 'event meta box', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> _x( 'You can show a road map, satellite imagery, a combination of both (hybrid) or terrain.', 'event meta box', 'church-content-manager' ),
-				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> ccm_gmaps_types(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -337,7 +337,7 @@ function ccm_add_meta_box_event_location() {
 				'name'				=> _x( 'Map Zoom', 'event meta box', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> _x( 'A lower number is more zoomed out while a higher number is more zoomed in.', 'event meta box', 'church-content-manager' ),
-				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, url
+				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> ccm_gmaps_zoom_levels(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
