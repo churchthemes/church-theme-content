@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Church Content Manager 0.8.4\n"
-"POT-Creation-Date: 2013-05-13 19:30-0600\n"
-"PO-Revision-Date: 2013-05-13 19:30-0600\n"
+"Project-Id-Version: Church Content Manager 0.8.5\n"
+"POT-Creation-Date: 2013-05-18 17:48-0600\n"
+"PO-Revision-Date: 2013-05-18 17:48-0600\n"
 "Last-Translator: churchthemes.com\n"
 "Language-Team: churchthemes.com\n"
 "Language: English\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../includes/mime-types.php:21
+#: ../includes/mime-types.php:21 ../includes/admin/sermon-fields.php:132
 msgid "PDF"
 msgstr ""
 
@@ -612,7 +612,7 @@ msgstr ""
 #: ../includes/admin/event-fields.php:425
 #: ../includes/admin/location-fields.php:259
 #: ../includes/admin/person-fields.php:189
-#: ../includes/admin/sermon-fields.php:199
+#: ../includes/admin/sermon-fields.php:207
 msgid "Thumbnail"
 msgstr ""
 
@@ -793,72 +793,90 @@ msgid "Full sermon text provided"
 msgstr ""
 
 #: ../includes/admin/sermon-fields.php:80
-msgid "Video URL"
+msgid "Video"
 msgstr ""
 
-#: ../includes/admin/sermon-fields.php:102
-msgid "MP3 Audio File"
-msgstr ""
-
-#: ../includes/admin/sermon-fields.php:104
+#: ../includes/admin/sermon-fields.php:83
+#, php-format
 msgid ""
-"Upload or provide the URL to an audio file in MP3 format. <b>File too big?</"
-"b> See documentation for help."
+"Upload a file by clicking \"Choose Video\" or upload a video to one of the "
+"<a href=\"%s\" target=\"_blank\">supported sites</a> (such as YouTube) then "
+"paste its URL here, or paste an embed code from another site. <a href=\"%s\" "
+"target=\"_blank\">Video Help</a>"
 msgstr ""
 
-#: ../includes/admin/sermon-fields.php:108
-msgid "Choose MP3"
+#: ../includes/admin/sermon-fields.php:90
+msgid "Choose Video"
+msgstr ""
+
+#: ../includes/admin/sermon-fields.php:91
+msgid "Choose an Video File"
+msgstr ""
+
+#: ../includes/admin/sermon-fields.php:106
+msgid "Audio"
 msgstr ""
 
 #: ../includes/admin/sermon-fields.php:109
-msgid "Choose an MP3 File"
+#, php-format
+msgid ""
+"Upload a file by clicking \"Choose Audio\" or upload audio to one of the <a "
+"href=\"%s\" target=\"_blank\">supported sites</a> (such as SoundCloud) then "
+"paste its URL here, or paste an embed code from another site. <a href=\"%s\" "
+"target=\"_blank\">Video Help</a>"
 msgstr ""
 
-#: ../includes/admin/sermon-fields.php:124
-msgid "PDF File"
+#: ../includes/admin/sermon-fields.php:116
+msgid "Choose Audio"
 msgstr ""
 
-#: ../includes/admin/sermon-fields.php:126
-msgid "Upload or provide the URL to a PDF file."
+#: ../includes/admin/sermon-fields.php:117
+msgid "Choose an Audio File"
 msgstr ""
 
-#: ../includes/admin/sermon-fields.php:130
+#: ../includes/admin/sermon-fields.php:134
+msgid ""
+"Upload a file by clicking \"Choose PDF\" or paste the URL to a PDF hosted on "
+"another site."
+msgstr ""
+
+#: ../includes/admin/sermon-fields.php:138
 msgid "Choose PDF"
 msgstr ""
 
-#: ../includes/admin/sermon-fields.php:131
+#: ../includes/admin/sermon-fields.php:139
 msgid "Choose a PDF File"
 msgstr ""
 
-#: ../includes/admin/sermon-fields.php:204
+#: ../includes/admin/sermon-fields.php:212
 msgid "Media Types"
 msgstr ""
 
-#: ../includes/admin/sermon-fields.php:205
+#: ../includes/admin/sermon-fields.php:213
 msgctxt "people"
 msgid "Speakers"
 msgstr ""
 
-#: ../includes/admin/sermon-fields.php:206
+#: ../includes/admin/sermon-fields.php:214
 msgid "Categories"
-msgstr ""
-
-#: ../includes/admin/sermon-fields.php:245
-msgctxt "media type"
-msgid "Video"
-msgstr ""
-
-#: ../includes/admin/sermon-fields.php:249
-msgctxt "media type"
-msgid "Audio"
 msgstr ""
 
 #: ../includes/admin/sermon-fields.php:253
 msgctxt "media type"
-msgid "PDF"
+msgid "Video"
 msgstr ""
 
 #: ../includes/admin/sermon-fields.php:257
+msgctxt "media type"
+msgid "Audio"
+msgstr ""
+
+#: ../includes/admin/sermon-fields.php:261
+msgctxt "media type"
+msgid "PDF"
+msgstr ""
+
+#: ../includes/admin/sermon-fields.php:265
 msgctxt "media type"
 msgid "Text"
 msgstr ""
