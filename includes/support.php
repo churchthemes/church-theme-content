@@ -394,6 +394,17 @@ function ccm_get_theme_support_notice() {
 	// Theme does not support plugin
 	if ( ! current_theme_supports( 'ccm' ) ) {
 
+		// Show only if user has some control over plugins and themes
+		if ( ! current_user_can( 'activate_plugins' ) && ! current_user_can( 'switch_themes' ) ) {
+			return;
+		}
+
+		// Show only on relavent pages as not to overwhelm admin
+		$screen = get_current_screen();
+		if ( ! in_array( $screen->base, array( 'dashboard', 'themes', 'plugins' ) ) && ! preg_match( '/^ccm_.+/', $screen->post_type ) ) {
+			return;
+		}
+
 		// Option ID
 		$theme_data = wp_get_theme();
 		$option_id = 'ccm_hide_theme_support_notice-' . $theme_data['Template']; // unique to theme so if change, message shows again
