@@ -101,7 +101,7 @@ function ccm_get_feature_data_by_post_type( $post_type ) {
  /**
   * Default features for unsupported themes
   *
-  * If no add_theme_support( 'ccm' ), add support for all features with no arguments.
+  * If no add_theme_support( 'church-content-manager' ), add support for all features with no arguments.
   * This causes all content to be revealed in case admin switched to unsupported theme.
   * They can then develop the theme for the plugin or retrieve their content.
   */
@@ -111,7 +111,7 @@ add_action( 'init', 'ccm_set_default_theme_support', 1 ); // init 1 is right aft
 function ccm_set_default_theme_support() {
 
 	// Theme does not support plugin
-	if ( ! current_theme_supports( 'ccm' ) ) {
+	if ( ! current_theme_supports( 'church-content-manager' ) ) {
 	
 		// Loop features
 		$features = ccm_get_feature_data();
@@ -392,7 +392,7 @@ add_action( 'admin_notices', 'ccm_get_theme_support_notice' );
 function ccm_get_theme_support_notice() {
 
 	// Theme does not support plugin
-	if ( ! current_theme_supports( 'ccm' ) ) {
+	if ( ! current_theme_supports( 'church-content-manager' ) ) {
 
 		// Show only if user has some control over plugins and themes
 		if ( ! current_user_can( 'activate_plugins' ) && ! current_user_can( 'switch_themes' ) ) {
