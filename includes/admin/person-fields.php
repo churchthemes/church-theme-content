@@ -140,7 +140,7 @@ function ccm_add_meta_box_person_details() {
 				'class'				=> 'ctmb-medium', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
-				'custom_sanitize'	=> '', // function to do additional sanitization
+				'custom_sanitize'	=> 'sanitize_email', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
 			),
 
