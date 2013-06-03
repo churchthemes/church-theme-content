@@ -12,6 +12,9 @@
  * 'application/pdf' can also be used as upload_type in sermon's PDF field (as 'audio' is for MP3).
  */
 
+// No direct access
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 add_filter( 'post_mime_types', 'ccm_post_mime_types' );
 
 function ccm_post_mime_types( $post_mime_types ) {

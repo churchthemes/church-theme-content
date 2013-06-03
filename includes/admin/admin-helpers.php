@@ -3,6 +3,9 @@
  * Admin Helpers
  */
 
+// No direct access
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /*********************************
  * TAXONOMY TERMS
  *********************************/

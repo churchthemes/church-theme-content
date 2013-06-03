@@ -3,6 +3,9 @@
  * Register Post Types
  */
 
+// No direct access
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**********************************
  * SERMON
  **********************************/

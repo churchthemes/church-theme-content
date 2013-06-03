@@ -5,6 +5,9 @@
  * Schedule functions to run at certain times using the WordPress "cron" functions.
  */
 
+// No direct access
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /*************************************************
  * RECURRING EVENTS
  *************************************************/

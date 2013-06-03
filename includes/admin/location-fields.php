@@ -5,6 +5,9 @@
  * Meta boxes and admin columns.
  */
 
+// No direct access
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**********************************
  * META BOXES
  **********************************/

@@ -3,6 +3,9 @@
  * Register Taxonomies
  */
 
+// No direct access
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**********************************
  * SERMON TAXONOMIES
  **********************************/

@@ -3,6 +3,9 @@
  * Admin <body> Functions
  */
 
+// No direct access
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /*******************************************
  * BODY CLASSES
  *******************************************/

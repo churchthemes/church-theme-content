@@ -5,6 +5,9 @@
  * Handle support for plugin features based on theme support and plugin settings.
  */
 
+// No direct access
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /*********************************************
  * FEATURE DATA
  *********************************************/
