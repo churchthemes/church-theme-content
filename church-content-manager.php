@@ -85,13 +85,13 @@ $ccm_includes = array(
 	'always' => array(
 		
 		// Functions
-		CCM_INC_DIR . '/localization.php',
-		CCM_INC_DIR . '/support.php',
-		CCM_INC_DIR . '/post-types.php', 
-		CCM_INC_DIR . '/taxonomies.php',
-		CCM_INC_DIR . '/mime-types.php',
-		CCM_INC_DIR . '/schedule.php',
 		CCM_INC_DIR . '/helpers.php',
+		CCM_INC_DIR . '/localization.php',
+		CCM_INC_DIR . '/mime-types.php',
+		CCM_INC_DIR . '/post-types.php', 
+		CCM_INC_DIR . '/schedule.php',
+		CCM_INC_DIR . '/support.php',
+		CCM_INC_DIR . '/taxonomies.php',
 	),
 
 	// Admin Only
@@ -99,13 +99,12 @@ $ccm_includes = array(
 	
 		// Functions
 		CCM_ADMIN_DIR . '/activation.php',
-		CCM_ADMIN_DIR . '/admin-js.php',
-		CCM_ADMIN_DIR . '/admin-css.php',
-		CCM_ADMIN_DIR . '/sermon-fields.php', 
+		CCM_ADMIN_DIR . '/admin-body.php',
+		CCM_ADMIN_DIR . '/admin-helpers.php',
 		CCM_ADMIN_DIR . '/event-fields.php',
-		CCM_ADMIN_DIR . '/person-fields.php',
 		CCM_ADMIN_DIR . '/location-fields.php',
-		CCM_ADMIN_DIR . '/helpers.php',
+		CCM_ADMIN_DIR . '/person-fields.php',
+		CCM_ADMIN_DIR . '/sermon-fields.php', 
 		
 		// Libraries
 		CCM_LIB_DIR . '/ct-meta-box/ct-meta-box.php', // see CTMB_URL constant defined above

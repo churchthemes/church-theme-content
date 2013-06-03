@@ -1,23 +1,7 @@
 <?php
 /**
- * Admin CSS
+ * Admin <body> Functions
  */
-
-/*******************************************
- * ENQUEUE STYLESHEETS
- *******************************************/
-
-/*
- * Enqueue admin stylesheets
- */
- 
-add_action( 'admin_enqueue_scripts', 'ccm_admin_enqueue_styles' );
-
-function ccm_admin_enqueue_styles() {
-
-	// none currently (ct-meta-box handles its own)
-
-}
 
 /*******************************************
  * BODY CLASSES
