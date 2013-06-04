@@ -1,6 +1,13 @@
 <?php
 /**
  * Register Taxonomies
+ *
+ * @package    Church_Content_Manager
+ * @subpackage Functions
+ * @copyright  Copyright (c) 2013, churchthemes.com
+ * @link       https://github.com/churchthemes/church-content-manager
+ * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * @since      0.5
  */
 
 // No direct access
