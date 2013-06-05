@@ -9,7 +9,7 @@
  * @copyright  Copyright (c) 2013, churchthemes.com
  * @link       https://github.com/churchthemes/church-content-manager
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @since      0.5
+ * @since      0.9
  */
 
 // No direct access
@@ -20,13 +20,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  *************************************************/
  
 /**
- * Weekly, monthly and yearly events
+ * Schedule weekly, monthly and yearly events
  *
  * Move recurring event dates forward after they end.
  */
-
-add_action( 'wp', 'ccm_schedule_recurring_events' );
-
 function ccm_schedule_recurring_events() {
 
 	// Schedule if not already scheduled
@@ -36,8 +33,11 @@ function ccm_schedule_recurring_events() {
 
 }
 
-add_action( 'ccm_update_recurring_event_dates', 'ccm_update_recurring_event_dates' );
+add_action( 'wp', 'ccm_schedule_recurring_events' );
 
+/**
+ * Update recurring event dates
+ */
 function ccm_update_recurring_event_dates() {
 
 	// Get all events that ended yesterday and have valid recurring value
@@ -83,3 +83,5 @@ function ccm_update_recurring_event_dates() {
 	}
 
 }
+
+add_action( 'ccm_update_recurring_event_dates', 'ccm_update_recurring_event_dates' );

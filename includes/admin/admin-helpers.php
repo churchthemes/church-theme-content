@@ -7,7 +7,7 @@
  * @copyright  Copyright (c) 2013, churchthemes.com
  * @link       https://github.com/churchthemes/church-content-manager
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @since      0.5
+ * @since      0.9
  */
 
 // No direct access
@@ -20,7 +20,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * Get taxonomy term list for a post type with admin links
  */
-
 function ccm_admin_term_list( $post_id, $taxonomy ) {
 
 	$list = '';
@@ -53,7 +52,6 @@ function ccm_admin_term_list( $post_id, $taxonomy ) {
 /**
  * Map Types Array
  */
-
 function ccm_gmaps_types() {
 
 	$types = array(
@@ -70,7 +68,6 @@ function ccm_gmaps_types() {
 /**
  * Map Type Default
  */
-
 function ccm_gmaps_type_default() {
 
 	return apply_filters( 'ccm_gmaps_type_default', 'HYBRID' );
@@ -80,7 +77,6 @@ function ccm_gmaps_type_default() {
 /**
  * Zoom Levels Array
  */
-
 function ccm_gmaps_zoom_levels() {
 
 	$zoom_levels = array();
@@ -99,7 +95,6 @@ function ccm_gmaps_zoom_levels() {
 /**
  * Zoom Level Default
  */
-
 function ccm_gmaps_zoom_level_default() {
 
 	return apply_filters( 'ccm_gmaps_zoom_level_default', 14 );

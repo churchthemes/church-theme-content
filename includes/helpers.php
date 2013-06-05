@@ -7,7 +7,7 @@
  * @copyright  Copyright (c) 2013, churchthemes.com
  * @link       https://github.com/churchthemes/church-content-manager
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @since      0.5
+ * @since      0.9
  */
 
 // No direct access
@@ -22,7 +22,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  *
  * An easy way to get the URL of a file.
  */
-
 function ccm_file_url( $file, $directory = false ) {
 
 	if ( ! empty( $directory ) ) {
@@ -41,7 +40,6 @@ function ccm_file_url( $file, $directory = false ) {
  *
  * An easy way to get the absolute path of a file.
  */
-
 function ccm_file_path( $file, $directory = false ) {
 
 	if ( ! empty( $directory ) ) {
@@ -65,7 +63,6 @@ function ccm_file_path( $file, $directory = false ) {
  * Meant for one dimensional associative arrays.
  * Used to insert post type overview columns.
  */
-
 function ccm_array_merge_after_key( $original_array, $insert_array, $after_key ) {
 
 	$modified_array = array();
@@ -97,7 +94,6 @@ function ccm_array_merge_after_key( $original_array, $insert_array, $after_key )
  * Move date forward by one week, month or year.
  * $increment is weekly, monthly or yearly.
  */
-
 function ccm_increment_date( $date, $increment ) {
 
 	// In case no change could be made

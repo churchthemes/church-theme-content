@@ -9,7 +9,7 @@
  * @copyright  Copyright (c) 2013, churchthemes.com
  * @link       https://github.com/churchthemes/church-content-manager
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @since      0.5
+ * @since      0.9
  */
 
 // No direct access
@@ -25,7 +25,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * Used for mapping features to post types, theme support and so on.
  * Al feature data returned when $feature is empty
  */
-
 function ccm_get_feature_data( $feature = false ) {
  
 	// Feature data
@@ -78,7 +77,6 @@ function ccm_get_feature_data( $feature = false ) {
 /**
  * Get feature data by post type
  */
-
 function ccm_get_feature_data_by_post_type( $post_type ) {
 
 	$data = false;
@@ -108,16 +106,13 @@ function ccm_get_feature_data_by_post_type( $post_type ) {
  * THEME SUPPORT
  ****************************************
 
- /**
-  * Default features for unsupported themes
-  *
-  * If no add_theme_support( 'church-content-manager' ), add support for all features with no arguments.
-  * This causes all content to be revealed in case admin switched to unsupported theme.
-  * They can then develop the theme for the plugin or retrieve their content.
-  */
- 
-add_action( 'init', 'ccm_set_default_theme_support', 1 ); // init 1 is right after after_setup_theme when theme add support but earlier than normal plugin init at 10
-
+/**
+ * Default features for unsupported themes
+ *
+ * If no add_theme_support( 'church-content-manager' ), add support for all features with no arguments.
+ * This causes all content to be revealed in case admin switched to unsupported theme.
+ * They can then develop the theme for the plugin or retrieve their content.
+ */
 function ccm_set_default_theme_support() {
 
 	// Theme does not support plugin
@@ -136,12 +131,13 @@ function ccm_set_default_theme_support() {
 
 }
  
+add_action( 'init', 'ccm_set_default_theme_support', 1 ); // init 1 is right after after_setup_theme when theme add support but earlier than normal plugin init at 10
+ 
 /**
  * Get theme support data for a feature
  *
  * Optionally specify an argument to get that data
  */
-
 function ccm_get_theme_support( $feature, $argument = null ) {
 
 	$data = false;
@@ -178,7 +174,6 @@ function ccm_get_theme_support( $feature, $argument = null ) {
  *
  * Optionally specify an argument to get that data
  */
-
 function ccm_get_theme_support_by_post_type( $post_type, $argument = null ) {
 
 	$data = false;
@@ -203,7 +198,6 @@ function ccm_get_theme_support_by_post_type( $post_type, $argument = null ) {
 /**
  * Check if feature is supported
  */
- 
 function ccm_feature_supported( $feature ) {
 
 	$supported = false;
@@ -230,7 +224,6 @@ function ccm_feature_supported( $feature ) {
 /**
  * Check if taxonomy is supported
  */
-
 function ccm_taxonomy_supported( $feature, $taxonomy ) {
 
 	$supported = false;
@@ -268,7 +261,6 @@ function ccm_taxonomy_supported( $feature, $taxonomy ) {
 /**
  * Check if field is supported
  */
- 
 function ccm_field_supported( $feature, $field ) {
 
 	$supported = false;
@@ -312,9 +304,6 @@ function ccm_field_supported( $feature, $field ) {
  * Add filters for CT_Meta_Box to set visibility and override data on fields
  * based on theme support and possibly in future plugin settings.
  */
- 
-add_action( 'init', 'ccm_filter_fields' );
-
 function ccm_filter_fields() {
 
 	// Loop features to filter their fields
@@ -335,6 +324,8 @@ function ccm_filter_fields() {
 	}
 
 }
+ 
+add_action( 'init', 'ccm_filter_fields' );
 
 /**
  * Set Visible Fields
@@ -342,7 +333,6 @@ function ccm_filter_fields() {
  * Show or hide CT_Meta_Box fields for a post type based on add_theme_support.
  * Door is open for plugin settings to override in future.
  */
-
 function ccm_set_visible_fields( $visible_fields, $post_type ) {
 	
 	// All fields
@@ -379,7 +369,6 @@ function ccm_set_visible_fields( $visible_fields, $post_type ) {
  *
  * Override CT_Meta_Box field data for a post type based on add_theme_support.
  */
- 
 function ccm_set_field_overrides( $field_overrides, $post_type ) {
 
 	// Return field overrides, if any
@@ -396,9 +385,6 @@ function ccm_set_field_overrides( $field_overrides, $post_type ) {
  *
  * Show a message if current theme does not support the plugin.
  */
-
-add_action( 'admin_notices', 'ccm_get_theme_support_notice' );
-
 function ccm_get_theme_support_notice() {
 
 	// Theme does not support plugin
@@ -434,14 +420,13 @@ function ccm_get_theme_support_notice() {
 
 }
 
+add_action( 'admin_notices', 'ccm_get_theme_support_notice' );
+
 /**
  * Dismiss Notice
  *
  * Save data to keep message from showing on this theme.
  */
-
-add_action( 'admin_init', 'ccm_hide_theme_support_notice' ); // before admin_notices
-
 function ccm_hide_theme_support_notice() {
 
 	// User requested dismissal
@@ -457,3 +442,6 @@ function ccm_hide_theme_support_notice() {
 	}
 
 }
+
+add_action( 'admin_init', 'ccm_hide_theme_support_notice' ); // before admin_notices
+

@@ -7,7 +7,7 @@
  * @copyright  Copyright (c) 2013, churchthemes.com
  * @link       https://github.com/churchthemes/church-content-manager
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @since      0.5
+ * @since      0.9
  */
 
 // No direct access
@@ -20,9 +20,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * Category
  */
- 
-add_action( 'init', 'ccm_register_taxonomy_sermon_category' ); // category taxonomy
- 
 function ccm_register_taxonomy_sermon_category() {
 
 	// Arguments
@@ -62,13 +59,12 @@ function ccm_register_taxonomy_sermon_category() {
 	);
 
 }
+ 
+add_action( 'init', 'ccm_register_taxonomy_sermon_category' ); // category taxonomy
 
 /**
  * Tag
  */
- 
-add_action( 'init', 'ccm_register_taxonomy_sermon_tag' ); // tag taxonomy
- 
 function ccm_register_taxonomy_sermon_tag() {
 
 	// Arguments
@@ -108,13 +104,12 @@ function ccm_register_taxonomy_sermon_tag() {
 	);
 
 }
+ 
+add_action( 'init', 'ccm_register_taxonomy_sermon_tag' ); // tag taxonomy
 
 /**
  * Speaker
  */
-
-add_action( 'init', 'ccm_register_taxonomy_sermon_speaker' ); // speaker taxonomy
- 
 function ccm_register_taxonomy_sermon_speaker() {
 
 	// Arguments
@@ -155,6 +150,8 @@ function ccm_register_taxonomy_sermon_speaker() {
 
 }
 
+add_action( 'init', 'ccm_register_taxonomy_sermon_speaker' ); // speaker taxonomy
+
 /**********************************
  * PERSON TAXONOMIES
  **********************************/
@@ -162,9 +159,6 @@ function ccm_register_taxonomy_sermon_speaker() {
 /**
  * Group
  */
-
-add_action( 'init', 'ccm_register_taxonomy_person_group' );
- 
 function ccm_register_taxonomy_person_group() {
 
 	// Arguments
@@ -204,3 +198,5 @@ function ccm_register_taxonomy_person_group() {
 	);
 
 }
+
+add_action( 'init', 'ccm_register_taxonomy_person_group' );

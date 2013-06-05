@@ -9,7 +9,7 @@
  * @copyright  Copyright (c) 2013, churchthemes.com
  * @link       https://github.com/churchthemes/church-content-manager
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @since      0.5
+ * @since      0.9
  */
 
 // No direct access
@@ -22,9 +22,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * Sermon Details
  */
- 
-add_action( 'admin_init', 'ccm_add_meta_box_sermon_details' );
-
 function ccm_add_meta_box_sermon_details() {
 
 	// Configure Meta Box
@@ -167,6 +164,8 @@ function ccm_add_meta_box_sermon_details() {
 	new CT_Meta_Box( $meta_box );
 	
 }
+ 
+add_action( 'admin_init', 'ccm_add_meta_box_sermon_details' );
 
 /**********************************
  * PODCASTING ENCLOSURE
@@ -178,9 +177,6 @@ function ccm_add_meta_box_sermon_details() {
  * When audio URL is provided, save its data to the 'enclosure' field.
  * WordPress automatically uses this data to make feeds useful for podcasting.
  */
-
-add_action( 'save_post', 'ccm_sermon_save_audio_enclosure', 11, 2 ); // after 'save_post' saves meta fields on 10
-
 function ccm_sermon_save_audio_enclosure( $post_id, $post ) {
 
 	// Stop if no post, auto-save (meta not submitted) or user lacks permission
@@ -197,6 +193,8 @@ function ccm_sermon_save_audio_enclosure( $post_id, $post ) {
 
 }
 
+add_action( 'save_post', 'ccm_sermon_save_audio_enclosure', 11, 2 ); // after 'save_post' saves meta fields on 10
+
 /**********************************
  * ADMIN COLUMNS
  **********************************/
@@ -206,10 +204,6 @@ function ccm_sermon_save_audio_enclosure( $post_id, $post ) {
  *
  * Add speaker, media, categories
  */
- 
-
-add_filter( 'manage_ccm_sermon_posts_columns' , 'ccm_sermon_columns' ); // add columns for thumbnail, categories, etc.
-
 function ccm_sermon_columns( $columns ) {
 
 	// insert thumbnail after checkbox (before title)
@@ -231,14 +225,13 @@ function ccm_sermon_columns( $columns ) {
 
 }
 
+add_filter( 'manage_ccm_sermon_posts_columns' , 'ccm_sermon_columns' ); // add columns for thumbnail, categories, etc.
+
 /**
  * Change sermon list column content
  *
  * Add content to new columns
  */
-
-add_action( 'manage_posts_custom_column' , 'ccm_sermon_columns_content' ); // add content to the new columns
- 
 function ccm_sermon_columns_content( $column ) {
 
 	global $post;
@@ -296,3 +289,5 @@ function ccm_sermon_columns_content( $column ) {
 	}
 
 }
+
+add_action( 'manage_posts_custom_column' , 'ccm_sermon_columns_content' ); // add content to the new columns

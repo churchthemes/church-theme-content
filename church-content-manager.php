@@ -39,18 +39,14 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * Get plugin data
  */
-
 if ( ! function_exists( 'get_plugins' ) ) {
 	require_once ABSPATH . 'wp-admin/includes/plugin.php';
 }
-
 $ccm_plugin_data = current( get_plugins( '/' . plugin_basename( dirname( __FILE__ ) ) ) );
 
 /**
- * Define constants
+ * Plugin constants
  */
-
-// Plugin Data
 define( 'CCM_VERSION', 		$ccm_plugin_data['Version'] );						// plugin version
 define( 'CCM_NAME', 		$ccm_plugin_data['Name'] );							// plugin name
 define( 'CCM_INFO_URL',		$ccm_plugin_data['PluginURI'] );					// plugin's info page URL
@@ -59,7 +55,9 @@ define( 'CCM_DIR', 			dirname( plugin_basename( CCM_FILE ) ) );			// plugin's di
 define( 'CCM_PATH',			untrailingslashit( plugin_dir_path( CCM_FILE ) ) );	// plugin's directory
 define( 'CCM_URL', 			untrailingslashit( plugin_dir_url( CCM_FILE ) ) );	// plugin's directory URL
 
-// Include and Asset Directories
+/**
+ * Directory constants
+ */
 define( 'CCM_INC_DIR',		'includes' );					// includes directory
 define( 'CCM_ADMIN_DIR',	CCM_INC_DIR . '/admin' );		// admin directory
 define( 'CCM_CLASS_DIR', 	CCM_INC_DIR . '/classes' );		// classes directory
@@ -69,7 +67,9 @@ define( 'CCM_JS_DIR', 		'js' );							// JavaScript directory
 define( 'CCM_IMG_DIR', 		'images' );						// images directory
 define( 'CCM_LANG_DIR', 	'languages' );					// languages directory
 
-// CT Meta Box
+/**
+ * CT Meta Box
+ */
 if ( ! defined( 'CTMB_URL' ) ) { // in case also used in theme or other plugin
 	define( 'CTMB_URL', CCM_URL . '/' . CCM_LIB_DIR . '/ct-meta-box' ); // for enqueing JS/CSS
 }
@@ -122,9 +122,13 @@ $ccm_includes = array(
 );
 
 /**
- * Load includes
+ * Filter includes
  */
 $ccm_includes = apply_filters( 'ccm_includes', $ccm_includes ); // make filterable
+
+/**
+ * Load includes
+ */
 ccm_load_includes( $ccm_includes );
 
 /**
@@ -132,8 +136,8 @@ ccm_load_includes( $ccm_includes );
  *
  * Include file based on whether or not condition is met.
  *
- * @since 0.5
- * @param array $includes Files to include'church-content-manager'
+ * @since 0.9
+ * @param array $includes Files to include
  */
 function ccm_load_includes( $includes ) {
 		

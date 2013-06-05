@@ -9,7 +9,7 @@
  * @copyright  Copyright (c) 2013, churchthemes.com
  * @link       https://github.com/churchthemes/church-content-manager
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @since      0.5
+ * @since      0.9
  */
 
 // No direct access
@@ -22,9 +22,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * Change "Enter title here"
  */
- 
-add_filter( 'enter_title_here', 'ccm_person_title_text' );
-
 function ccm_person_title_text( $title ) {
 
 	$screen = get_current_screen();
@@ -37,6 +34,8 @@ function ccm_person_title_text( $title ) {
 
 }
  
+add_filter( 'enter_title_here', 'ccm_person_title_text' );
+ 
 /**********************************
  * META BOXES
  **********************************/
@@ -44,9 +43,6 @@ function ccm_person_title_text( $title ) {
 /**
  * Person Details
  */
- 
-add_action( 'admin_init', 'ccm_add_meta_box_person_details' );
-
 function ccm_add_meta_box_person_details() {
 
 	// Configure Meta Box
@@ -181,6 +177,8 @@ function ccm_add_meta_box_person_details() {
 	new CT_Meta_Box( $meta_box );
 	
 }
+ 
+add_action( 'admin_init', 'ccm_add_meta_box_person_details' );
 
 /**********************************
  * ADMIN COLUMNS
@@ -189,9 +187,6 @@ function ccm_add_meta_box_person_details() {
 /**
  * Add/remove list columns
  */
-
-add_filter( 'manage_ccm_person_posts_columns' , 'ccm_person_columns' ); // add columns
-
 function ccm_person_columns( $columns ) {
 
 	// insert thumbnail after checkbox (before title)
@@ -213,12 +208,11 @@ function ccm_person_columns( $columns ) {
 
 }
 
+add_filter( 'manage_ccm_person_posts_columns' , 'ccm_person_columns' ); // add columns
+
 /**
  * Change list column content
  */
-
-add_action( 'manage_posts_custom_column' , 'ccm_person_columns_content' ); // add content for columns
- 
 function ccm_person_columns_content( $column ) {
 
 	global $post;
@@ -259,12 +253,11 @@ function ccm_person_columns_content( $column ) {
 
 }
 
+add_action( 'manage_posts_custom_column' , 'ccm_person_columns_content' ); // add content for columns
+
 /**
  * Enable sorting for new columns
  */
-
-add_filter( 'manage_edit-ccm_person_sortable_columns', 'ccm_person_columns_sorting' ); // make columns sortable
-
 function ccm_person_columns_sorting( $columns ) {
 
 	$columns['ccm_person_position'] = '_ccm_person_position';
@@ -274,12 +267,11 @@ function ccm_person_columns_sorting( $columns ) {
 
 }
 
+add_filter( 'manage_edit-ccm_person_sortable_columns', 'ccm_person_columns_sorting' ); // make columns sortable
+
 /**
  * Set how to sort columns (default sorting, custom fields)
  */
-
-add_filter( 'request', 'ccm_person_columns_sorting_request' ); // set how to sort columns
- 
 function ccm_person_columns_sorting_request( $args ) {
 
 	// admin area only
@@ -320,3 +312,5 @@ function ccm_person_columns_sorting_request( $args ) {
 	return $args;
 
 }
+
+add_filter( 'request', 'ccm_person_columns_sorting_request' ); // set how to sort columns

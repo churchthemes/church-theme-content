@@ -7,7 +7,7 @@
  * @copyright  Copyright (c) 2013, churchthemes.com
  * @link       https://github.com/churchthemes/church-content-manager
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @since      0.5
+ * @since      0.9
  */
 
 /**
@@ -22,9 +22,10 @@
 // No direct access
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-add_filter( 'post_mime_types', 'ccm_post_mime_types' );
-
-function ccm_post_mime_types( $post_mime_types ) {
+/**
+ * Add mime types
+ */
+function ccm_add_post_mime_types( $post_mime_types ) {
 
 	// PDF
 	$post_mime_types['application/pdf'] = array(
@@ -36,3 +37,5 @@ function ccm_post_mime_types( $post_mime_types ) {
 	return $post_mime_types;
 
 }
+
+add_filter( 'post_mime_types', 'ccm_add_post_mime_types' );

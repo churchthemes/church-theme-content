@@ -9,7 +9,7 @@
  * @copyright  Copyright (c) 2013, churchthemes.com
  * @link       https://github.com/churchthemes/church-content-manager
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @since      0.5
+ * @since      0.9
 
 // No direct access
 if ( ! defined( 'ABSPATH' ) ) exit;
@@ -21,9 +21,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * Date & Time
  */
- 
-add_action( 'admin_init', 'ccm_add_meta_box_event_date' );
-
 function ccm_add_meta_box_event_date() {
 
 	// Configure Meta Box
@@ -164,13 +161,12 @@ function ccm_add_meta_box_event_date() {
 	new CT_Meta_Box( $meta_box );
 	
 }
+ 
+add_action( 'admin_init', 'ccm_add_meta_box_event_date' );
 
 /**
  * Location
  */
-
-add_action( 'admin_init', 'ccm_add_meta_box_event_location' );
-
 function ccm_add_meta_box_event_location() {
 
 	// Configure Meta Box
@@ -373,6 +369,8 @@ function ccm_add_meta_box_event_location() {
 	
 }
 
+add_action( 'admin_init', 'ccm_add_meta_box_event_location' );
+
 /**
  * End Date Sanitization
  *
@@ -380,7 +378,6 @@ function ccm_add_meta_box_event_location() {
  * In order for this to work properly, End Date must be after Start Date so that the saved/sanitized
  * Start Date value is available in database.
  */
- 
 function ccm_sanitize_event_end_date( $value ) {
 
 	global $post_id, $post;
@@ -424,9 +421,6 @@ function ccm_sanitize_event_end_date( $value ) {
 /**
  * Add/remove event list columns
  */
-
-add_filter( 'manage_ccm_event_posts_columns' , 'ccm_event_columns' ); // add columns for meta values
-
 function ccm_event_columns( $columns ) {
 
 	// insert thumbnail after checkbox (before title)
@@ -447,12 +441,11 @@ function ccm_event_columns( $columns ) {
 
 }
 
+add_filter( 'manage_ccm_event_posts_columns' , 'ccm_event_columns' ); // add columns for meta values
+
 /**
  * Add content to new columns
  */
-
-add_action( 'manage_posts_custom_column' , 'ccm_event_columns_content' ); // add content to the new columns
- 
 function ccm_event_columns_content( $column ) {
 
 	global $post;
@@ -520,12 +513,11 @@ function ccm_event_columns_content( $column ) {
 
 }
 
+add_action( 'manage_posts_custom_column' , 'ccm_event_columns_content' ); // add content to the new columns
+
 /**
  * Enable sorting for new columns
  */
-
-add_filter( 'manage_edit-ccm_event_sortable_columns', 'ccm_event_columns_sorting' ); // make columns sortable
- 
 function ccm_event_columns_sorting( $columns ) {
 
 	$columns['ccm_event_dates'] = '_ccm_event_start_date';
@@ -535,12 +527,11 @@ function ccm_event_columns_sorting( $columns ) {
 
 }
 
+add_filter( 'manage_edit-ccm_event_sortable_columns', 'ccm_event_columns_sorting' ); // make columns sortable
+
 /**
  * Set how to sort columns (default sorting, custom fields)
  */
- 
-add_filter( 'request', 'ccm_event_columns_sorting_request' ); // set how to sort columns
-	
 function ccm_event_columns_sorting_request( $args ) {
 
 	// admin area only
@@ -592,3 +583,6 @@ function ccm_event_columns_sorting_request( $args ) {
 	return $args;
 
 }
+ 
+add_filter( 'request', 'ccm_event_columns_sorting_request' ); // set how to sort columns
+

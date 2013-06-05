@@ -9,7 +9,7 @@
  * @copyright  Copyright (c) 2013, churchthemes.com
  * @link       https://github.com/churchthemes/church-content-manager
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @since      0.5
+ * @since      0.9
  */
 
 // No direct access
@@ -22,9 +22,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * Location Details
  */
- 
-add_action( 'admin_init', 'ccm_add_meta_box_location' );
-
 function ccm_add_meta_box_location() {
 
 	// Configure Meta Box
@@ -282,15 +279,14 @@ function ccm_location_columns( $columns ) {
 	return $columns;
 
 }
+ 
+add_action( 'admin_init', 'ccm_add_meta_box_location' );
 
 /**
  * Change location list column content
  *
  * Add "Below List" custom field value
  */
-
-add_action( 'manage_posts_custom_column' , 'ccm_location_columns_content' ); // add content to the new columns
- 
 function ccm_location_columns_content( $column ) {
 
 	global $post;
@@ -331,12 +327,11 @@ function ccm_location_columns_content( $column ) {
 
 }
 
+add_action( 'manage_posts_custom_column' , 'ccm_location_columns_content' ); // add content to the new columns
+
 /**
  * Enable sorting for new columns
  */
-
-add_filter( 'manage_edit-ccm_location_sortable_columns', 'ccm_location_columns_sorting' ); // make columns sortable
- 
 function ccm_location_columns_sorting( $columns ) {
 
 	$columns['ccm_location_order'] = 'menu_order';
@@ -345,12 +340,11 @@ function ccm_location_columns_sorting( $columns ) {
 
 }
 
+add_filter( 'manage_edit-ccm_location_sortable_columns', 'ccm_location_columns_sorting' ); // make columns sortable
+
 /**
  * Set how to sort columns (default sorting, custom fields)
  */
-
-add_filter( 'request', 'ccm_location_columns_sorting_request' ); // set how to sort columns
-
 function ccm_location_columns_sorting_request( $args ) {
 
 	// admin area only
@@ -391,3 +385,5 @@ function ccm_location_columns_sorting_request( $args ) {
 	return $args;
 
 }
+
+add_filter( 'request', 'ccm_location_columns_sorting_request' ); // set how to sort columns

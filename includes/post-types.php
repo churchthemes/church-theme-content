@@ -7,7 +7,7 @@
  * @copyright  Copyright (c) 2013, churchthemes.com
  * @link       https://github.com/churchthemes/church-content-manager
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @since      0.5
+ * @since      0.9
  */
 
 // No direct access
@@ -17,8 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * SERMON
  **********************************/
 
-add_action( 'init', 'ccm_register_post_type_sermon' ); // register post type
- 
+/**
+ * Register sermon post type
+ */
 function ccm_register_post_type_sermon() {
 
 	// Arguments
@@ -55,13 +56,16 @@ function ccm_register_post_type_sermon() {
 	);
 
 }
+
+add_action( 'init', 'ccm_register_post_type_sermon' ); // register post type
  
 /**********************************
  * EVENT
  **********************************/
 
-add_action( 'init', 'ccm_register_post_type_event' ); // register post type
-	
+/**
+ * Register event post type
+ */
 function ccm_register_post_type_event() {
 
 	// Arguments
@@ -99,12 +103,15 @@ function ccm_register_post_type_event() {
 	
 }
 
+add_action( 'init', 'ccm_register_post_type_event' ); // register post type
+
 /**********************************
  * LOCATION
  **********************************/
 
-add_action( 'init', 'ccm_location_post_type' ); // register post type
-
+/**
+ * Register location post type
+ */
 function ccm_location_post_type() {
 
 	// Arguments
@@ -141,12 +148,15 @@ function ccm_location_post_type() {
 	
 }
 
+add_action( 'init', 'ccm_location_post_type' ); // register post type
+
 /**********************************
  * PERSON
  **********************************/ 
- 
-add_action( 'init', 'ccm_register_post_type_person' ); // register post type
-	
+
+/**
+ * Register person post type
+ */	
 function ccm_register_post_type_person() {
 
 	// Arguments
@@ -184,8 +194,10 @@ function ccm_register_post_type_person() {
 	
 }
 
+add_action( 'init', 'ccm_register_post_type_person' ); // register post type
+
 /**********************************
- * RESERVED SLUGS
+ * RESERVED POST SLUGS
  **********************************/ 
 
 /**
@@ -196,10 +208,6 @@ function ccm_register_post_type_person() {
  *
  * This is broad but mainly intended for top-level pages.
  */
-
-add_filter( 'wp_unique_post_slug_is_bad_flat_slug', 'ccm_is_bad_post_slug', 10, 2 );
-add_filter( 'wp_unique_post_slug_is_bad_hierarchical_slug', 'ccm_is_bad_post_slug', 10, 2 );
-
 function ccm_is_bad_post_slug( $current_value, $slug ) {
 
 	// Get post types with archives
@@ -217,3 +225,6 @@ function ccm_is_bad_post_slug( $current_value, $slug ) {
 	return $current_value;
 
 }
+
+add_filter( 'wp_unique_post_slug_is_bad_flat_slug', 'ccm_is_bad_post_slug', 10, 2 );
+add_filter( 'wp_unique_post_slug_is_bad_hierarchical_slug', 'ccm_is_bad_post_slug', 10, 2 );
