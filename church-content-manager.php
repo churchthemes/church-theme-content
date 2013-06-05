@@ -133,8 +133,7 @@ ccm_load_includes( $ccm_includes );
  * Include file based on whether or not condition is met.
  *
  * @since 0.5
- * @param array $includes Files to include
- * @return void
+ * @param array $includes Files to include'church-content-manager'
  */
 function ccm_load_includes( $includes ) {
 		
