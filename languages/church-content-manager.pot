@@ -230,12 +230,12 @@ msgstr ""
 
 #: ../includes/taxonomies.php:21
 msgctxt "taxonomy general name"
-msgid "Sermon Categories"
+msgid "Sermon Topics"
 msgstr ""
 
 #: ../includes/taxonomies.php:22
 msgctxt "taxonomy singular name"
-msgid "Sermon Category"
+msgid "Sermon Topic"
 msgstr ""
 
 #: ../includes/taxonomies.php:23

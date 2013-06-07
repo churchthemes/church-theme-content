@@ -208,7 +208,7 @@ add_action( 'save_post', 'ccm_sermon_save_audio_enclosure', 11, 2 ); // after 's
 /**
  * Add/remove sermon list columns
  *
- * Add speaker, media, categories
+ * Add speaker, media, topics
  *
  * @since 0.9
  * @param array $columns Columns to manipulate
@@ -221,11 +221,11 @@ function ccm_sermon_columns( $columns ) {
 	$insert_array['ccm_sermon_thumbnail'] = __( 'Thumbnail', 'church-content-manager' );
 	$columns = ccm_array_merge_after_key( $columns, $insert_array, 'cb' );
 
-	// insert media types, speakers, categories after title
+	// insert media types, speakers, topics after title
 	$insert_array = array();
 	$insert_array['ccm_sermon_types'] = __( 'Media Types', 'church-content-manager' );
 	if ( ccm_taxonomy_supported( 'sermons', 'ccm_sermon_speaker' ) ) $insert_array['ccm_sermon_speakers'] = _x( 'Speakers', 'people', 'church-content-manager' );
-	if ( ccm_taxonomy_supported( 'sermons', 'ccm_sermon_category' ) ) $insert_array['ccm_sermon_categories'] = __( 'Categories', 'church-content-manager' );
+	if ( ccm_taxonomy_supported( 'sermons', 'ccm_sermon_topic' ) ) $insert_array['ccm_sermon_topics'] = __( 'Topics', 'church-content-manager' );
 	$columns = ccm_array_merge_after_key( $columns, $insert_array, 'title' );
 
 	// remove author
@@ -235,7 +235,7 @@ function ccm_sermon_columns( $columns ) {
 
 }
 
-add_filter( 'manage_ccm_sermon_posts_columns' , 'ccm_sermon_columns' ); // add columns for thumbnail, categories, etc.
+add_filter( 'manage_ccm_sermon_posts_columns' , 'ccm_sermon_columns' ); // add columns for thumbnail, topics, etc.
 
 /**
  * Change sermon list column content
@@ -290,10 +290,10 @@ function ccm_sermon_columns_content( $column ) {
 
 			break;
 			
-		// Categories
-		case 'ccm_sermon_categories' :
+		// Topics
+		case 'ccm_sermon_topics' :
 
-			echo ccm_admin_term_list( $post->ID, 'ccm_sermon_category' );
+			echo ccm_admin_term_list( $post->ID, 'ccm_sermon_topic' );
 
 			break;
 

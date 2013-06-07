@@ -47,7 +47,7 @@ function ccm_register_post_type_sermon() {
 			'feeds'			=> ccm_feature_supported( 'sermons' )
 		),
 		'supports' 		=> array( 'title', 'editor', 'excerpt', 'thumbnail', 'comments', 'author', 'revisions' ), // 'editor' required for media upload button (see Meta Boxes note below about hiding)
-		'taxonomies' 	=> array( 'ccm_sermon_category', 'ccm_sermon_tag', 'ccm_sermon_speaker' )
+		'taxonomies' 	=> array( 'ccm_sermon_topic', 'ccm_sermon_series', 'ccm_sermon_book', 'ccm_sermon_speaker', 'ccm_sermon_tag' )
 	);
 	$args = apply_filters( 'ccm_post_type_sermon_args', $args ); // allow filtering
 		
