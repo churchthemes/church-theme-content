@@ -208,7 +208,7 @@ add_action( 'save_post', 'ccm_sermon_save_audio_enclosure', 11, 2 ); // after 's
 /**
  * Add/remove sermon list columns
  *
- * Add speaker, media, topics
+ * Add speaker, media, topics, etc.
  *
  * @since 0.9
  * @param array $columns Columns to manipulate
@@ -223,9 +223,11 @@ function ccm_sermon_columns( $columns ) {
 
 	// insert media types, speakers, topics after title
 	$insert_array = array();
-	$insert_array['ccm_sermon_types'] = __( 'Media Types', 'church-content-manager' );
-	if ( ccm_taxonomy_supported( 'sermons', 'ccm_sermon_speaker' ) ) $insert_array['ccm_sermon_speakers'] = _x( 'Speakers', 'people', 'church-content-manager' );
+	$insert_array['ccm_sermon_types'] = _x( 'Formats', 'sermons', 'church-content-manager' );
 	if ( ccm_taxonomy_supported( 'sermons', 'ccm_sermon_topic' ) ) $insert_array['ccm_sermon_topics'] = __( 'Topics', 'church-content-manager' );
+	if ( ccm_taxonomy_supported( 'sermons', 'ccm_sermon_series' ) ) $insert_array['ccm_sermon_series'] = _x( 'Series', 'sermons', 'church-content-manager' );
+	if ( ccm_taxonomy_supported( 'sermons', 'ccm_sermon_book' ) ) $insert_array['ccm_sermon_books'] = _x( 'Books', 'sermons', 'church-content-manager' );
+	// little room: if ( ccm_taxonomy_supported( 'sermons', 'ccm_sermon_speaker' ) ) $insert_array['ccm_sermon_speakers'] = _x( 'Speakers', 'sermons', 'church-content-manager' );
 	$columns = ccm_array_merge_after_key( $columns, $insert_array, 'title' );
 
 	// remove author
@@ -263,6 +265,10 @@ function ccm_sermon_columns_content( $column ) {
 
 			$media_types = array();
 		
+			if ( get_post_meta( $post->ID , '_ccm_sermon_text' , true ) ) {
+				$media_types[] = _x( 'Text', 'media type', 'church-content-manager' );
+			}
+
 			if ( get_post_meta( $post->ID , '_ccm_sermon_video' , true ) ) {
 				$media_types[] = _x( 'Video', 'media type', 'church-content-manager' );
 			}
@@ -275,25 +281,36 @@ function ccm_sermon_columns_content( $column ) {
 				$media_types[] = _x( 'PDF', 'media type', 'church-content-manager' );
 			}
 			
-			if ( get_post_meta( $post->ID , '_ccm_sermon_text' , true ) ) {
-				$media_types[] = _x( 'Text', 'media type', 'church-content-manager' );
-			}
-			
 			echo implode( ', ', $media_types );
 
 			break;
+
+		// Topics
+		case 'ccm_sermon_topics' :
+
+			echo ccm_admin_term_list( $post->ID, 'ccm_sermon_topic' );
+
+			break;
+			
+		// Series
+		case 'ccm_sermon_series' :
+
+			echo ccm_admin_term_list( $post->ID, 'ccm_sermon_series' );
+
+			break;
+			
+		// Books
+		case 'ccm_sermon_books' :
+
+			echo ccm_admin_term_list( $post->ID, 'ccm_sermon_book' );
+
+			break;
+			
 			
 		// Speakers
 		case 'ccm_sermon_speakers' :
 
 			echo ccm_admin_term_list( $post->ID, 'ccm_sermon_speaker' );
-
-			break;
-			
-		// Topics
-		case 'ccm_sermon_topics' :
-
-			echo ccm_admin_term_list( $post->ID, 'ccm_sermon_topic' );
 
 			break;
 

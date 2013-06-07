@@ -78,7 +78,7 @@ function ccm_register_taxonomy_sermon_series() {
 			'singular_name'					=> _x( "Sermon Series", 'taxonomy singular name', 'church-content-manager' ),
 			'search_items' 					=> _x( "Search Series", 'sermons', 'church-content-manager' ),
 			'popular_items' 				=> _x( "Popular Series", 'sermons', 'church-content-manager' ),
-			'all_items' 					=> _x( "All Series'", 'sermons', 'church-content-manager' ),
+			'all_items' 					=> _x( "All Series", 'sermons', 'church-content-manager' ),
 			'parent_item' 					=> null,
 			'parent_item_colon' 			=> null,
 			'edit_item' 					=> _x( 'Edit Series', 'sermons', 'church-content-manager' ), 
