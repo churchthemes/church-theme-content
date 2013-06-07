@@ -42,9 +42,9 @@ function ccm_register_post_type_sermon() {
 		'public' 		=> ccm_feature_supported( 'sermons' ),
 		'has_archive' 	=> ccm_feature_supported( 'sermons' ),
 		'rewrite'		=> array(
-			'slug' 			=> 'sermons', // has archive, so using plural so it makes sense on single post and archives and so that slug is not likely to match page slug (that causes issues)
+			'slug' 			=> 'sermons',
 			'with_front' 	=> false,
-			'feeds'			=> ccm_feature_supported( 'sermons' ),
+			'feeds'			=> ccm_feature_supported( 'sermons' )
 		),
 		'supports' 		=> array( 'title', 'editor', 'excerpt', 'thumbnail', 'comments', 'author', 'revisions' ), // 'editor' required for media upload button (see Meta Boxes note below about hiding)
 		'taxonomies' 	=> array( 'ccm_sermon_category', 'ccm_sermon_tag', 'ccm_sermon_speaker' )
@@ -90,8 +90,7 @@ function ccm_register_post_type_event() {
 		'public' 		=> ccm_feature_supported( 'events' ),
 		'has_archive' 	=> ccm_feature_supported( 'events' ),
 		'rewrite'		=> array(
-			'slug' 			=> 'events', 	// has archive, so using plural so it makes sense on single post and archives and so that slug is not likely to match page slug (that causes issues)
-												// using "items" instead of "archive" since that indicates past which is not always the case
+			'slug' 			=> 'events',
 			'with_front'	=> false,
 			'feeds'			=> ccm_feature_supported( 'events' ),
 		),
@@ -138,7 +137,7 @@ function ccm_location_post_type() {
 		'public' 		=> ccm_feature_supported( 'locations' ),
 		'has_archive' 	=> ccm_feature_supported( 'locations' ),
 		'rewrite'		=> array(
-			'slug' 			=> 'locations', // has archive, so using plural so it makes sense on single post and archives and so that slug is not likely to match page slug (that causes issues)
+			'slug' 			=> 'locations',
 			'with_front' 	=> false,
 			'feeds'			=> ccm_feature_supported( 'locations' ),
 		),
@@ -185,7 +184,7 @@ function ccm_register_post_type_person() {
 		'public' 		=> ccm_feature_supported( 'people' ),
 		'has_archive' 	=> ccm_feature_supported( 'people' ),
 		'rewrite'		=> array(
-			'slug' 			=> 'people', // has archive, so using plural so it makes sense on single post and archives and so that slug is not likely to match page slug (that causes issues)
+			'slug' 			=> 'people',
 			'with_front' 	=> false,
 			'feeds'			=> ccm_feature_supported( 'people' ),
 		),

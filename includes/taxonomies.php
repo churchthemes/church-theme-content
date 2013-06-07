@@ -191,7 +191,7 @@ function ccm_register_taxonomy_person_group() {
 		'hierarchical'	=> true, // category-style instead of tag-style
 		'public' 		=> ccm_taxonomy_supported( 'people', 'ccm_person_group' ),
 		'rewrite' 		=> array(
-			'slug' 			=> 'people-group',
+			'slug' 			=> 'person-group',
 			'with_front' 	=> false,
 			'hierarchical' 	=> true
 		)
