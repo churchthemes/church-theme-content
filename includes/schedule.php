@@ -23,6 +23,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * Schedule weekly, monthly and yearly events
  *
  * Move recurring event dates forward after they end.
+ *
+ * @since 0.9
  */
 function ccm_schedule_recurring_events() {
 
@@ -37,6 +39,8 @@ add_action( 'wp', 'ccm_schedule_recurring_events' );
 
 /**
  * Update recurring event dates
+ *
+ * @since 0.9
  */
 function ccm_update_recurring_event_dates() {
 

@@ -19,6 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
  * Register sermon post type
+ *
+ * @since 0.9
  */
 function ccm_register_post_type_sermon() {
 
@@ -65,6 +67,8 @@ add_action( 'init', 'ccm_register_post_type_sermon' ); // register post type
 
 /**
  * Register event post type
+ *
+ * @since 0.9
  */
 function ccm_register_post_type_event() {
 
@@ -111,6 +115,8 @@ add_action( 'init', 'ccm_register_post_type_event' ); // register post type
 
 /**
  * Register location post type
+ *
+ * @since 0.9
  */
 function ccm_location_post_type() {
 
@@ -156,6 +162,8 @@ add_action( 'init', 'ccm_location_post_type' ); // register post type
 
 /**
  * Register person post type
+ *
+ * @since 0.9
  */	
 function ccm_register_post_type_person() {
 
@@ -207,6 +215,11 @@ add_action( 'init', 'ccm_register_post_type_person' ); // register post type
  * For example, a 'sermons' page slug will become 'sermons-2'.
  *
  * This is broad but mainly intended for top-level pages.
+ *
+ * @since 0.9
+ * @param string $current_value The current value
+ * @param string $slug The slug to check
+ * @return bool Whether or not post slug is valid
  */
 function ccm_is_bad_post_slug( $current_value, $slug ) {
 

@@ -20,10 +20,14 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  *********************************************/
  
 /**
- * Get Feature Data
+ * Get feature data
  *
  * Used for mapping features to post types, theme support and so on.
  * Al feature data returned when $feature is empty
+ *
+ * @since 0.9
+ * @param string $feature Feature to get data for; if none, gets data for all features
+ * @return mixed Data for feature, all features or false if failed
  */
 function ccm_get_feature_data( $feature = false ) {
  
@@ -76,6 +80,10 @@ function ccm_get_feature_data( $feature = false ) {
 
 /**
  * Get feature data by post type
+ *
+ * @since 0.9
+ * @param string $post_type Post type to get feature data for
+ * @return array Feature data
  */
 function ccm_get_feature_data_by_post_type( $post_type ) {
 
@@ -112,6 +120,8 @@ function ccm_get_feature_data_by_post_type( $post_type ) {
  * If no add_theme_support( 'church-content-manager' ), add support for all features with no arguments.
  * This causes all content to be revealed in case admin switched to unsupported theme.
  * They can then develop the theme for the plugin or retrieve their content.
+ *
+ * @since 0.9
  */
 function ccm_set_default_theme_support() {
 
@@ -137,6 +147,10 @@ add_action( 'init', 'ccm_set_default_theme_support', 1 ); // init 1 is right aft
  * Get theme support data for a feature
  *
  * Optionally specify an argument to get that data
+ *
+ * @since 0.9
+ * @param string $feature Feature to get theme support data for
+ * @return mixed Feature data if found
  */
 function ccm_get_theme_support( $feature, $argument = null ) {
 
@@ -172,7 +186,12 @@ function ccm_get_theme_support( $feature, $argument = null ) {
 /**
  * Get theme support data based on post type
  *
- * Optionally specify an argument to get that data
+ * Optionally specify an argument to get that data.
+ *
+ * @since 0.9
+ * @param string $post_type Post type to get theme support data for.
+ * @param string $argument Optional feature argument to get specific data for.
+ * @return mixed Array of all feature data or specific argument
  */
 function ccm_get_theme_support_by_post_type( $post_type, $argument = null ) {
 
@@ -197,6 +216,10 @@ function ccm_get_theme_support_by_post_type( $post_type, $argument = null ) {
 
 /**
  * Check if feature is supported
+ *
+ * @since 0.9
+ * @param string $featurew Feature to check support for
+ * @return bool True if supported by theme
  */
 function ccm_feature_supported( $feature ) {
 
@@ -223,6 +246,11 @@ function ccm_feature_supported( $feature ) {
 
 /**
  * Check if taxonomy is supported
+ *
+ * @since 0.9
+ * @param string $feature Feature taxonomy relates to
+ * @param string $taxonomy Taxonomy to check support for
+ * @return bool True if feature supported
  */
 function ccm_taxonomy_supported( $feature, $taxonomy ) {
 
@@ -260,6 +288,11 @@ function ccm_taxonomy_supported( $feature, $taxonomy ) {
 
 /**
  * Check if field is supported
+ *
+ * @since 0.9
+ * @param string $feature Feature field relates to
+ * @param string $field Field to check support for
+ * @return bool True if field supported
  */
 function ccm_field_supported( $feature, $field ) {
 
@@ -303,6 +336,8 @@ function ccm_field_supported( $feature, $field ) {
  *
  * Add filters for CT_Meta_Box to set visibility and override data on fields
  * based on theme support and possibly in future plugin settings.
+ *
+ * @since 0.9
  */
 function ccm_filter_fields() {
 
@@ -328,10 +363,15 @@ function ccm_filter_fields() {
 add_action( 'init', 'ccm_filter_fields' );
 
 /**
- * Set Visible Fields
+ * Set visible fields
  *
  * Show or hide CT_Meta_Box fields for a post type based on add_theme_support.
  * Door is open for plugin settings to override in future.
+ *
+ * @since 0.9
+ * @param array $visible_fields Current field visibility
+ * @param string $post_type Post type this relates to
+ * @return array Modified $visible_fields
  */
 function ccm_set_visible_fields( $visible_fields, $post_type ) {
 	
@@ -365,83 +405,18 @@ function ccm_set_visible_fields( $visible_fields, $post_type ) {
 }
 
 /**
- * Set Field Overrides
+ * Set field overrides
  *
  * Override CT_Meta_Box field data for a post type based on add_theme_support.
+ *
+ * @since 0.9
+ * @param array $field_overrides Field overrides to set
+ * @param string $post_type Post type to set overrides on
+ * @return mixed Theme support data
  */
 function ccm_set_field_overrides( $field_overrides, $post_type ) {
 
 	// Return field overrides, if any
 	return ccm_get_theme_support_by_post_type( $post_type, 'field_overrides' );
 
-}	
-
-/*********************************************
- * ADMIN NOTICE
- *********************************************/
-
-/**
- * Show Notice
- *
- * Show a message if current theme does not support the plugin.
- */
-function ccm_get_theme_support_notice() {
-
-	// Theme does not support plugin
-	if ( ! current_theme_supports( 'church-content-manager' ) ) {
-
-		// Show only if user has some control over plugins and themes
-		if ( ! current_user_can( 'activate_plugins' ) && ! current_user_can( 'switch_themes' ) ) {
-			return;
-		}
-
-		// Show only on relavent pages as not to overwhelm admin
-		$screen = get_current_screen();
-		if ( ! in_array( $screen->base, array( 'dashboard', 'themes', 'plugins' ) ) && ! preg_match( '/^ccm_.+/', $screen->post_type ) ) {
-			return;
-		}
-
-		// Option ID
-		$theme_data = wp_get_theme();
-		$option_id = 'ccm_hide_theme_support_notice-' . $theme_data['Template']; // unique to theme so if change, message shows again
-
-		// Message has not been dismissed for this theme
-		if ( ! get_option( $option_id  ) ) {
-			
-			?>
-			<div class="updated">
-			   <p><?php printf( __( 'The <b>%1$s</b> theme does not support the <b>%2$s</b> plugin. <a href="%3$s" target="_blank">More Information</a>, <a href="%4$s">Dismiss</a>', 'church-content-manager' ), wp_get_theme(), CCM_NAME, CCM_INFO_URL, add_query_arg('ccm_hide_theme_support_notice', '1' ) ); ?></p>
-			</div>
-			<?php
-			
-		}
-	
-	}
-
 }
-
-add_action( 'admin_notices', 'ccm_get_theme_support_notice' );
-
-/**
- * Dismiss Notice
- *
- * Save data to keep message from showing on this theme.
- */
-function ccm_hide_theme_support_notice() {
-
-	// User requested dismissal
-	if ( ! empty( $_GET['ccm_hide_theme_support_notice'] ) ) {
-
-		// Option ID
-		$theme_data = wp_get_theme();
-		$option_id = 'ccm_hide_theme_support_notice-' . $theme_data['Template']; // unique to theme so if change, message shows again
-
-		// Mark notice for this theme as dismissed
-		update_option( $option_id, '1' );
-			
-	}
-
-}
-
-add_action( 'admin_init', 'ccm_hide_theme_support_notice' ); // before admin_notices
-

@@ -19,6 +19,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
  * Get taxonomy term list for a post type with admin links
+ *
+ * @since 0.9
+ * @param int $post_id Post ID to get term list for
+ * @param string $taxonomy Taxonomy to get terms for
+ * @return string Term list
  */
 function ccm_admin_term_list( $post_id, $taxonomy ) {
 
@@ -50,7 +55,10 @@ function ccm_admin_term_list( $post_id, $taxonomy ) {
  **********************************/
 
 /**
- * Map Types Array
+ * Google Map types array
+ *
+ * @since 0.9
+ * @return array Google Maps API map types
  */
 function ccm_gmaps_types() {
 
@@ -66,16 +74,20 @@ function ccm_gmaps_types() {
 }
 
 /**
- * Map Type Default
+ * Google Map type default
+ *
+ * @since 0.9
+ * @return string Default map type
  */
 function ccm_gmaps_type_default() {
-
 	return apply_filters( 'ccm_gmaps_type_default', 'HYBRID' );
-
 }
 
 /**
- * Zoom Levels Array
+ * Zoom levels array
+ *
+ * @since 0.9
+ * @return array Valid Google Maps zoom levels
  */
 function ccm_gmaps_zoom_levels() {
 
@@ -93,10 +105,11 @@ function ccm_gmaps_zoom_levels() {
 }
 
 /**
- * Zoom Level Default
+ * Zoom level default
+ * 
+ * @since 0.9
+ * @return int Default Google Maps zoom level
  */
 function ccm_gmaps_zoom_level_default() {
-
 	return apply_filters( 'ccm_gmaps_zoom_level_default', 14 );
-
 }

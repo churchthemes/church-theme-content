@@ -87,6 +87,7 @@ $ccm_includes = array(
 		// Functions
 		CCM_ADMIN_DIR . '/activation.php',
 		CCM_ADMIN_DIR . '/admin-helpers.php',
+		CCM_ADMIN_DIR . '/admin-support.php',
 		CCM_ADMIN_DIR . '/event-fields.php',
 		CCM_ADMIN_DIR . '/location-fields.php',
 		CCM_ADMIN_DIR . '/person-fields.php',

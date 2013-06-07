@@ -20,7 +20,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  **********************************/
 
 /**
- * Location Details
+ * Location details
+ *
+ * @since 0.9
  */
 function ccm_add_meta_box_location() {
 
@@ -255,6 +257,10 @@ function ccm_add_meta_box_location() {
  * Add/remove location list columns
  *
  * Add "Below Name", Order
+ *
+ * @since 0.9
+ * @param array $columns Columns to manipulate
+ * @return array Modified columns
  */
 
 add_filter( 'manage_ccm_location_posts_columns' , 'ccm_location_columns' ); // add columns for meta values
@@ -285,7 +291,8 @@ add_action( 'admin_init', 'ccm_add_meta_box_location' );
 /**
  * Change location list column content
  *
- * Add "Below List" custom field value
+ * @since 0.9
+ * @param string $column Column being worked on
  */
 function ccm_location_columns_content( $column ) {
 
@@ -331,6 +338,10 @@ add_action( 'manage_posts_custom_column' , 'ccm_location_columns_content' ); // 
 
 /**
  * Enable sorting for new columns
+ *
+ * @since 0.9
+ * @param array $columns Columns being worked on
+ * @return array Modified columns
  */
 function ccm_location_columns_sorting( $columns ) {
 
@@ -344,6 +355,10 @@ add_filter( 'manage_edit-ccm_location_sortable_columns', 'ccm_location_columns_s
 
 /**
  * Set how to sort columns (default sorting, custom fields)
+ *
+ * @since 0.9
+ * @param array $args Sorting arguments
+ * @return array Modified arguments
  */
 function ccm_location_columns_sorting_request( $args ) {
 

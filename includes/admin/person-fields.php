@@ -21,6 +21,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
  * Change "Enter title here"
+ *
+ * @since 0.9
+ * @param string $title Default title placeholder
+ * @return string Modified placeholder
  */
 function ccm_person_title_text( $title ) {
 
@@ -41,7 +45,9 @@ add_filter( 'enter_title_here', 'ccm_person_title_text' );
  **********************************/
 
 /**
- * Person Details
+ * Person details
+ *
+ * @since 0.9
  */
 function ccm_add_meta_box_person_details() {
 
@@ -186,6 +192,10 @@ add_action( 'admin_init', 'ccm_add_meta_box_person_details' );
  
 /**
  * Add/remove list columns
+ *
+ * @since 0.9
+ * @param array $columns Columns to manipulate
+ * @return array Modified columns
  */
 function ccm_person_columns( $columns ) {
 
@@ -211,7 +221,10 @@ function ccm_person_columns( $columns ) {
 add_filter( 'manage_ccm_person_posts_columns' , 'ccm_person_columns' ); // add columns
 
 /**
- * Change list column content
+ * Change person list column content
+ *
+ * @since 0.9
+ * @param string $column Column being worked on
  */
 function ccm_person_columns_content( $column ) {
 
@@ -257,6 +270,10 @@ add_action( 'manage_posts_custom_column' , 'ccm_person_columns_content' ); // ad
 
 /**
  * Enable sorting for new columns
+ *
+ * @since 0.9
+ * @param array $columns Columns being worked on
+ * @return array Modified columns
  */
 function ccm_person_columns_sorting( $columns ) {
 
@@ -271,6 +288,10 @@ add_filter( 'manage_edit-ccm_person_sortable_columns', 'ccm_person_columns_sorti
 
 /**
  * Set how to sort columns (default sorting, custom fields)
+ *
+ * @since 0.9
+ * @param array $args Sorting arguments
+ * @return array Modified arguments
  */
 function ccm_person_columns_sorting_request( $args ) {
 

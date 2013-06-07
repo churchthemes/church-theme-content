@@ -19,7 +19,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  **********************************/
 
 /**
- * Date & Time
+ * Date & time
+ *
+ * @since 0.9
  */
 function ccm_add_meta_box_event_date() {
 
@@ -166,6 +168,8 @@ add_action( 'admin_init', 'ccm_add_meta_box_event_date' );
 
 /**
  * Location
+ *
+ * @since 0.9
  */
 function ccm_add_meta_box_event_location() {
 
@@ -372,11 +376,17 @@ function ccm_add_meta_box_event_location() {
 add_action( 'admin_init', 'ccm_add_meta_box_event_location' );
 
 /**
- * End Date Sanitization
+ * End Date sanitization
  *
  * This callback runs after CT_Meta_Box general sanitization but before saving for End Date.
  * In order for this to work properly, End Date must be after Start Date so that the saved/sanitized
  * Start Date value is available in database.
+ *
+ * @since 0.9
+ * @global int $post_id
+ * @global object $post
+ * @param string $value User-submitted value to sanitize
+ * @return string Sanitized value
  */
 function ccm_sanitize_event_end_date( $value ) {
 
@@ -420,6 +430,10 @@ function ccm_sanitize_event_end_date( $value ) {
 
 /**
  * Add/remove event list columns
+ *
+ * @since 0.9
+ * @param array $columns Columns to manipulate
+ * @return array Modified columns
  */
 function ccm_event_columns( $columns ) {
 
@@ -444,7 +458,10 @@ function ccm_event_columns( $columns ) {
 add_filter( 'manage_ccm_event_posts_columns' , 'ccm_event_columns' ); // add columns for meta values
 
 /**
- * Add content to new columns
+ * Change event list column content
+ *
+ * @since 0.9
+ * @param string $column Column being worked on
  */
 function ccm_event_columns_content( $column ) {
 
@@ -517,6 +534,10 @@ add_action( 'manage_posts_custom_column' , 'ccm_event_columns_content' ); // add
 
 /**
  * Enable sorting for new columns
+ *
+ * @since 0.9
+ * @param array $columns Columns being worked on
+ * @return array Modified columns
  */
 function ccm_event_columns_sorting( $columns ) {
 
@@ -531,6 +552,10 @@ add_filter( 'manage_edit-ccm_event_sortable_columns', 'ccm_event_columns_sorting
 
 /**
  * Set how to sort columns (default sorting, custom fields)
+ *
+ * @since 0.9
+ * @param array $args Sorting arguments
+ * @return array Modified arguments
  */
 function ccm_event_columns_sorting_request( $args ) {
 

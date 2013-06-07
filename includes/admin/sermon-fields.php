@@ -20,7 +20,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  **********************************/
 
 /**
- * Sermon Details
+ * Sermon details
+ *
+ * @since 0.9
  */
 function ccm_add_meta_box_sermon_details() {
 
@@ -176,6 +178,10 @@ add_action( 'admin_init', 'ccm_add_meta_box_sermon_details' );
  *
  * When audio URL is provided, save its data to the 'enclosure' field.
  * WordPress automatically uses this data to make feeds useful for podcasting.
+ *
+ * @since 0.9
+ * @param int $post_id ID of post being saved
+ * @param object $post Post object being saved
  */
 function ccm_sermon_save_audio_enclosure( $post_id, $post ) {
 
@@ -203,6 +209,10 @@ add_action( 'save_post', 'ccm_sermon_save_audio_enclosure', 11, 2 ); // after 's
  * Add/remove sermon list columns
  *
  * Add speaker, media, categories
+ *
+ * @since 0.9
+ * @param array $columns Columns to manipulate
+ * @return array Modified columns
  */
 function ccm_sermon_columns( $columns ) {
 
@@ -230,7 +240,8 @@ add_filter( 'manage_ccm_sermon_posts_columns' , 'ccm_sermon_columns' ); // add c
 /**
  * Change sermon list column content
  *
- * Add content to new columns
+ * @since 0.9
+ * @param string $column Column being worked on
  */
 function ccm_sermon_columns_content( $column ) {
 
@@ -290,4 +301,4 @@ function ccm_sermon_columns_content( $column ) {
 
 }
 
-add_action( 'manage_posts_custom_column' , 'ccm_sermon_columns_content' ); // add content to the new columns
+add_action( 'manage_posts_custom_column' , 'ccm_sermon_columns_content' );

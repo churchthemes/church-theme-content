@@ -18,7 +18,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  **********************************/
 
 /**
- * Category
+ * Sermon category
+ *
+ * @since 0.9
  */
 function ccm_register_taxonomy_sermon_category() {
 
@@ -63,7 +65,9 @@ function ccm_register_taxonomy_sermon_category() {
 add_action( 'init', 'ccm_register_taxonomy_sermon_category' ); // category taxonomy
 
 /**
- * Tag
+ * Sermon tag
+ *
+ * @since 0.9
  */
 function ccm_register_taxonomy_sermon_tag() {
 
@@ -108,7 +112,9 @@ function ccm_register_taxonomy_sermon_tag() {
 add_action( 'init', 'ccm_register_taxonomy_sermon_tag' ); // tag taxonomy
 
 /**
- * Speaker
+ * Sermon Speaker
+ *
+ * @since 0.9
  */
 function ccm_register_taxonomy_sermon_speaker() {
 
@@ -157,7 +163,9 @@ add_action( 'init', 'ccm_register_taxonomy_sermon_speaker' ); // speaker taxonom
  **********************************/
 
 /**
- * Group
+ * Person group
+ *
+ * @since 0.9
  */
 function ccm_register_taxonomy_person_group() {
 

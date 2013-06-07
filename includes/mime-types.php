@@ -25,7 +25,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @param array $mime_types Currently uploadable mime types
  * @return array Mime types with additions
  */
-
 function ccm_add_mime_types( $mime_types ) {
 
 	// Sermon feature supported?

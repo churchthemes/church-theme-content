@@ -21,6 +21,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * File URL
  *
  * An easy way to get the URL of a file.
+ *
+ * @since 0.9
+ * @param string $file File relative to theme root
+ * @param string $directory Optional directory file is in, relative to theme root
+ * @return string URL to file
  */
 function ccm_file_url( $file, $directory = false ) {
 
@@ -36,9 +41,14 @@ function ccm_file_url( $file, $directory = false ) {
 }
 
 /**
- * File Path
+ * File path
  *
  * An easy way to get the absolute path of a file.
+ *
+ * @since 0.9
+ * @param string $file File relative to theme root
+ * @param string $directory Optional directory file is in, relative to theme root
+ * @return string Absolute path to file
  */
 function ccm_file_path( $file, $directory = false ) {
 
@@ -62,6 +72,12 @@ function ccm_file_path( $file, $directory = false ) {
  *
  * Meant for one dimensional associative arrays.
  * Used to insert post type overview columns.
+ *
+ * @since 0.9
+ * @param array $original_array Array to merge another into
+ * @param array $insert_array Array to merge into original
+ * @param mixed $after_key Key in original array to merge second array after
+ * @return array Modified array
  */
 function ccm_array_merge_after_key( $original_array, $insert_array, $after_key ) {
 
@@ -93,6 +109,11 @@ function ccm_array_merge_after_key( $original_array, $insert_array, $after_key )
  *
  * Move date forward by one week, month or year.
  * $increment is weekly, monthly or yearly.
+ *
+ * @since 0.9
+ * @param string $date Date to move into the future
+ * @param string $increment 'weekly', 'monthly' or 'yearly'
+ * @return string Future date
  */
 function ccm_increment_date( $date, $increment ) {
 
