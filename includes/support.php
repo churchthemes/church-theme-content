@@ -157,7 +157,8 @@ function ccm_get_theme_support( $feature, $argument = null ) {
 	$data = false;
 
 	// Theme has support
-	if ( $support = get_theme_support( $feature ) ) {
+	$support = get_theme_support( $feature );
+	if ( $support ) {
 
 		// Get theme support data
 		$support = isset( $support[0] ) ? $support[0] : false;
@@ -198,7 +199,8 @@ function ccm_get_theme_support_by_post_type( $post_type, $argument = null ) {
 	$data = false;
 
 	// Get feature based on post type
-	if ( $feature_data = ccm_get_feature_data_by_post_type( $post_type ) ) {
+	$feature_data = ccm_get_feature_data_by_post_type( $post_type );
+	if ( $feature_data ) {
 	
 		// Get data for feature/argument
 		$data = ccm_get_theme_support( $feature_data['theme_support'], $argument );
@@ -226,7 +228,8 @@ function ccm_feature_supported( $feature ) {
 	$supported = false;
 	
 	// Get feature data
-	if ( $feature_data = ccm_get_feature_data( $feature ) ) { // valid feature returns data
+	$feature_data = ccm_get_feature_data( $feature );
+	if ( $feature_data ) { // valid feature returns data
 
 		// Does theme support feature?
 		if ( current_theme_supports( $feature_data['theme_support'] ) ) {
@@ -257,7 +260,8 @@ function ccm_taxonomy_supported( $feature, $taxonomy ) {
 	$supported = false;
 	
 	// Get feature data
-	if ( $feature_data = ccm_get_feature_data( $feature ) ) { // valid feature returns data
+	$feature_data = ccm_get_feature_data( $feature );
+	if ( $feature_data ) { // valid feature returns data
 
 		// Theme taxonomies are specified
 		$theme_taxonomies = ccm_get_theme_support( $feature_data['theme_support'], 'taxonomies' );
@@ -299,7 +303,8 @@ function ccm_field_supported( $feature, $field ) {
 	$supported = false;
 	
 	// Get feature data
-	if ( $feature_data = ccm_get_feature_data( $feature ) ) { // valid feature returns data
+	$feature_data = ccm_get_feature_data( $feature );
+	if ( $feature_data ) { // valid feature returns data
 
 		// Theme fields are specified
 		$theme_fields = ccm_get_theme_support( $feature_data['theme_support'], 'fields' );
