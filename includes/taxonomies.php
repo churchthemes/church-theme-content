@@ -112,6 +112,53 @@ function ccm_register_taxonomy_sermon_series() {
 add_action( 'init', 'ccm_register_taxonomy_sermon_series' );
 
 /**
+ * Sermon book
+ *
+ * @since 0.9
+ */
+function ccm_register_taxonomy_sermon_book() {
+
+	// Arguments
+	$args = array(
+		'labels' => array(
+			'name' 							=> _x( 'Sermon Books', 'taxonomy general name', 'church-content-manager' ),
+			'singular_name'					=> _x( 'Sermon Book', 'taxonomy singular name', 'church-content-manager' ),
+			'search_items' 					=> _x( 'Search Books', 'sermons', 'church-content-manager' ),
+			'popular_items' 				=> _x( 'Popular Books', 'sermons', 'church-content-manager' ),
+			'all_items' 					=> _x( 'All Books', 'sermons', 'church-content-manager' ),
+			'parent_item' 					=> null,
+			'parent_item_colon' 			=> null,
+			'edit_item' 					=> _x( 'Edit Book', 'sermons', 'church-content-manager' ), 
+			'update_item' 					=> _x( 'Update Book', 'sermons', 'church-content-manager' ),
+			'add_new_item' 					=> _x( 'Add Book', 'sermons', 'church-content-manager' ),
+			'new_item_name' 				=> _x( 'New Book', 'sermons', 'church-content-manager' ),
+			'separate_items_with_commas' 	=> _x( 'Separate books with commas', 'sermons', 'church-content-manager' ),
+			'add_or_remove_items' 			=> _x( 'Add or remove books', 'sermons', 'church-content-manager' ),
+			'choose_from_most_used' 		=> _x( 'Choose from the most used books', 'sermons', 'church-content-manager' ),
+			'menu_name' 					=> _x( 'Books', 'sermon menu name', 'church-content-manager' )
+		),
+		'hierarchical'	=> true, // category-style instead of tag-style
+		'public' 		=> ccm_taxonomy_supported( 'sermons', 'ccm_sermon_book' ),
+		'rewrite' 		=> array(
+			'slug' 			=> 'sermon-book',
+			'with_front' 	=> false,
+			'hierarchical' 	=> true
+		)
+	);
+	$args = apply_filters( 'ccm_taxonomy_sermon_book_args', $args ); // allow filtering
+
+	// Registration
+	register_taxonomy(
+		'ccm_sermon_book',
+		'ccm_sermon',
+		$args
+	);
+
+}
+
+add_action( 'init', 'ccm_register_taxonomy_sermon_book' );
+
+/**
  * Sermon speaker
  *
  * @since 0.9
