@@ -164,7 +164,7 @@ function ccm_load_includes( $includes ) {
 		// Loop files if condition met
 		if ( $do_includes ) {
 		
-			foreach( $files as $file ) {			
+			foreach ( $files as $file ) {			
 				require_once trailingslashit( CCM_PATH ) . $file;				
 			}
 			

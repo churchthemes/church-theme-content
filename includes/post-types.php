@@ -229,7 +229,7 @@ function ccm_is_bad_post_slug( $current_value, $slug ) {
 	), 'objects' );
 
 	// Check if post slug matches a post type rewrite slug
-	foreach( $post_types as $post_type ) {
+	foreach ( $post_types as $post_type ) {
 		if ( ! empty( $post_type->rewrite['slug'] ) && $post_type->rewrite['slug'] == $slug ) {
 			return true;
 		}

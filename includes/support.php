@@ -389,7 +389,7 @@ function ccm_set_visible_fields( $visible_fields, $post_type ) {
 
 		// Add support for fields that are not from Church Content Manager
 		// (otherwise they would need to be in add_theme_support arguments)
-		foreach( $original_visible_fields as $field ) {
+		foreach ( $original_visible_fields as $field ) {
 			if ( ! preg_match( '/^_ccm_.+$/', $field ) ) { // CCM fields are prefixed by "_ccm_"
 				$visible_fields[] = $field;
 			}

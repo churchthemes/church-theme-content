@@ -84,7 +84,7 @@ function ccm_array_merge_after_key( $original_array, $insert_array, $after_key )
 	$modified_array = array();
 
 	// loop original array items
-	foreach( $original_array as $item_key => $item_value ) {
+	foreach ( $original_array as $item_key => $item_value ) {
 	
 		// rebuild the array one item at a time
 		$modified_array[$item_key] = $item_value;
