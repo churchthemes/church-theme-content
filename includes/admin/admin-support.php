@@ -36,7 +36,7 @@ function ccm_get_theme_support_notice() {
 
 		// Show only on relavent pages as not to overwhelm admin
 		$screen = get_current_screen();
-		if ( ! in_array( $screen->base, array( 'dashboard', 'themes', 'plugins' ) ) && ! preg_match( '/^ccm_.+/', $screen->post_type ) ) {
+		if ( ! in_array( $screen->base, array( 'themes', 'plugins' ) ) && ! preg_match( '/^ccm_.+/', $screen->post_type ) ) {
 			return;
 		}
 
@@ -48,8 +48,8 @@ function ccm_get_theme_support_notice() {
 		if ( ! get_option( $option_id  ) ) {
 			
 			?>
-			<div class="updated">
-			   <p><?php printf( __( 'The <b>%1$s</b> theme does not support the <b>%2$s</b> plugin. <a href="%3$s" target="_blank">More Information</a>, <a href="%4$s">Dismiss</a>', 'church-content-manager' ), wp_get_theme(), CCM_NAME, CCM_INFO_URL, add_query_arg('ccm_hide_theme_support_notice', '1' ) ); ?></p>
+			<div class="error">
+			   <p><?php printf( __( 'The <b>%1$s</b> theme does not support the <b>%2$s</b> plugin. <a href="%3$s" target="_blank">More Information</a>, <a href="%4$s">Dismiss</a>', 'church-content-manager' ), wp_get_theme(), CCM_NAME, CCM_INFO_URL, add_query_arg( 'ccm_hide_theme_support_notice', '1' ) ); ?></p>
 			</div>
 			<?php
 			
