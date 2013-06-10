@@ -65,53 +65,6 @@ function ccm_register_taxonomy_sermon_topic() {
 add_action( 'init', 'ccm_register_taxonomy_sermon_topic' );
 
 /**
- * Sermon series
- *
- * @since 0.9
- */
-function ccm_register_taxonomy_sermon_series() {
-
-	// Arguments
-	$args = array(
-		'labels' => array(
-			'name' 							=> _x( "Sermon Series", 'taxonomy general name', 'church-content-manager' ),
-			'singular_name'					=> _x( "Sermon Series", 'taxonomy singular name', 'church-content-manager' ),
-			'search_items' 					=> _x( "Search Series", 'sermons', 'church-content-manager' ),
-			'popular_items' 				=> _x( "Popular Series", 'sermons', 'church-content-manager' ),
-			'all_items' 					=> _x( "All Series", 'sermons', 'church-content-manager' ),
-			'parent_item' 					=> null,
-			'parent_item_colon' 			=> null,
-			'edit_item' 					=> _x( 'Edit Series', 'sermons', 'church-content-manager' ), 
-			'update_item' 					=> _x( 'Update Series', 'sermons', 'church-content-manager' ),
-			'add_new_item' 					=> _x( 'Add Series', 'sermons', 'church-content-manager' ),
-			'new_item_name' 				=> _x( 'New Series', 'sermons', 'church-content-manager' ),
-			'separate_items_with_commas' 	=> _x( "Separate series with commas", 'sermons', 'church-content-manager' ),
-			'add_or_remove_items' 			=> _x( "Add or remove series", 'sermons', 'church-content-manager' ),
-			'choose_from_most_used' 		=> _x( "Choose from the most used series", 'sermons', 'church-content-manager' ),
-			'menu_name' 					=> _x( "Series", 'sermon menu name', 'church-content-manager' )
-		),
-		'hierarchical'	=> true, // category-style instead of tag-style
-		'public' 		=> ccm_taxonomy_supported( 'sermons', 'ccm_sermon_series' ),
-		'rewrite' 		=> array(
-			'slug' 			=> 'sermon-series',
-			'with_front' 	=> false,
-			'hierarchical' 	=> true
-		)
-	);
-	$args = apply_filters( 'ccm_taxonomy_sermon_series_args', $args ); // allow filtering
-
-	// Registration
-	register_taxonomy(
-		'ccm_sermon_series',
-		'ccm_sermon',
-		$args
-	);
-
-}
- 
-add_action( 'init', 'ccm_register_taxonomy_sermon_series' );
-
-/**
  * Sermon book
  *
  * @since 0.9
@@ -157,6 +110,53 @@ function ccm_register_taxonomy_sermon_book() {
 }
 
 add_action( 'init', 'ccm_register_taxonomy_sermon_book' );
+
+/**
+ * Sermon series
+ *
+ * @since 0.9
+ */
+function ccm_register_taxonomy_sermon_series() {
+
+	// Arguments
+	$args = array(
+		'labels' => array(
+			'name' 							=> _x( "Sermon Series", 'taxonomy general name', 'church-content-manager' ),
+			'singular_name'					=> _x( "Sermon Series", 'taxonomy singular name', 'church-content-manager' ),
+			'search_items' 					=> _x( "Search Series", 'sermons', 'church-content-manager' ),
+			'popular_items' 				=> _x( "Popular Series", 'sermons', 'church-content-manager' ),
+			'all_items' 					=> _x( "All Series", 'sermons', 'church-content-manager' ),
+			'parent_item' 					=> null,
+			'parent_item_colon' 			=> null,
+			'edit_item' 					=> _x( 'Edit Series', 'sermons', 'church-content-manager' ), 
+			'update_item' 					=> _x( 'Update Series', 'sermons', 'church-content-manager' ),
+			'add_new_item' 					=> _x( 'Add Series', 'sermons', 'church-content-manager' ),
+			'new_item_name' 				=> _x( 'New Series', 'sermons', 'church-content-manager' ),
+			'separate_items_with_commas' 	=> _x( "Separate series with commas", 'sermons', 'church-content-manager' ),
+			'add_or_remove_items' 			=> _x( "Add or remove series", 'sermons', 'church-content-manager' ),
+			'choose_from_most_used' 		=> _x( "Choose from the most used series", 'sermons', 'church-content-manager' ),
+			'menu_name' 					=> _x( "Series", 'sermon menu name', 'church-content-manager' )
+		),
+		'hierarchical'	=> true, // category-style instead of tag-style
+		'public' 		=> ccm_taxonomy_supported( 'sermons', 'ccm_sermon_series' ),
+		'rewrite' 		=> array(
+			'slug' 			=> 'sermon-series',
+			'with_front' 	=> false,
+			'hierarchical' 	=> true
+		)
+	);
+	$args = apply_filters( 'ccm_taxonomy_sermon_series_args', $args ); // allow filtering
+
+	// Registration
+	register_taxonomy(
+		'ccm_sermon_series',
+		'ccm_sermon',
+		$args
+	);
+
+}
+ 
+add_action( 'init', 'ccm_register_taxonomy_sermon_series' );
 
 /**
  * Sermon speaker
