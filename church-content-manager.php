@@ -3,7 +3,7 @@
  * Plugin Name: Church Content Manager
  * Plugin URI: http://churchthemes.com/plugins/church-content-manager
  * Description: This plugin provides content management functionality for sermons, events, locations and people. It <strong>requires a compatible theme</strong> to display the content.
- * Version: 0.8.5
+ * Version: 0.9
  * Author: churchthemes.com
  * Author URI: http://churchthemes.com
  * License: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
