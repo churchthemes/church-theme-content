@@ -440,7 +440,7 @@ function ccm_sanitize_event_end_date( $value ) {
 	
 	// Update Start Date in case changed
 	update_post_meta( $post_id, '_ccm_event_start_date', $start_date );
-	
+
 	// Return sanitized End Date for saving
 	return $end_date;
 
