@@ -107,15 +107,14 @@ function ccm_array_merge_after_key( $original_array, $insert_array, $after_key )
 /**
  * Move date forward
  *
- * Move date forward by one week, month or year.
- * $increment is weekly, monthly or yearly.
+ * Move date forward by week, month or year until it is not in past (in case wp cron misses a beat).
  *
  * @since 0.9
  * @param string $date Date to move into the future
  * @param string $increment 'weekly', 'monthly' or 'yearly'
  * @return string Future date
  */
-function ccm_increment_date( $date, $increment ) {
+function ccm_increment_future_date( $date, $increment ) {
 
 	// In case no change could be made
 	$new_date = $date;
@@ -167,6 +166,14 @@ function ccm_increment_date( $date, $increment ) {
 
 		// Form the date string
 		$new_date = date( 'Y-m-d', mktime( 0, 0, 0, $m, $d, $y ) ); // pad day, month with 0
+
+		// Is new date in past? Increment until it is not (automatic correction in case wp-cron misses a beat)
+		$today_ts = strtotime( date_i18n( 'Y-m-d' ) ); // localized
+		$new_date_ts = strtotime( $new_date );
+		while ( $new_date_ts < $today_ts ) {
+			$new_date = ccm_increment_future_date( $new_date, $increment );
+			$new_date_ts = strtotime( $new_date );
+		}
 
 	}
 

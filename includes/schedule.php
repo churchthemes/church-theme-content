@@ -47,7 +47,7 @@ function ccm_update_recurring_event_dates() {
 	// Localized dates
 	$yesterday = date_i18n( 'Y-m-d', time() - DAY_IN_SECONDS );
 
-	// Get all events that ended yesterday and have valid recurring value
+	// Get all events with end date in past and have valid recurring value and 
 	$events_query = new WP_Query( array(
 		'post_type'	=> 'ccm_event',
 		'nopaging'	=> true,
@@ -55,7 +55,8 @@ function ccm_update_recurring_event_dates() {
 			'relation' => 'AND',
 			array(
 				'key' => '_ccm_event_end_date',
-				'value' => $yesterday // yesterday, localized
+				'value' => date_i18n( 'Y-m-d' ), // today localized
+		 		'compare' => '<', // earlier than today
 		   ),
 			array(
 				'key' => '_ccm_event_recurrence',
@@ -78,9 +79,12 @@ function ccm_update_recurring_event_dates() {
 			$start_date = get_post_meta( $post->ID, '_ccm_event_start_date', true );
 			$end_date = get_post_meta( $post->ID, '_ccm_event_end_date', true );
 
+			// Difference between start and end date in seconds
+			$time_difference = strtotime( $end_date ) - strtotime( $start_date );
+
 			// Calculate incremented dates
-			$new_start_date = ccm_increment_date( $start_date, $recurrence );
-			$new_end_date = ccm_increment_date( $end_date, $recurrence );
+			$new_start_date = ccm_increment_future_date( $start_date, $recurrence ); // get closest incremented date in future
+			$new_end_date = date( 'Y-m-d', ( strtotime( $new_start_date ) + $time_difference ) ); // add difference between original start/end date to new start date to get new end date
 
 			// Has recurrence ended?
 			// Recurrence end date exists and is earlier than new start date
@@ -100,8 +104,6 @@ function ccm_update_recurring_event_dates() {
 
 			}
 
-
-
 		}
 
 	}
@@ -109,13 +111,3 @@ function ccm_update_recurring_event_dates() {
 }
 
 add_action( 'ccm_update_recurring_event_dates', 'ccm_update_recurring_event_dates' );
-
-
-add_action('init','test');
-function test() {
-	if ( ! is_admin() ) {
-		echo 'schedule:<p>';
-		ccm_update_recurring_event_dates();
-		exit;
-	}
-}
