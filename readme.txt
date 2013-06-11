@@ -1,10 +1,11 @@
 === Plugin Name ===
 Contributors: churchthemes, stevengliebe
+Tags: church, sermon, sermons, ministry
 Donate link: http://churchthemes.com
-Tags: church, sermon, ministry
 Requires at least: 3.6
 Tested up to: 3.6
 Stable tag: 0.8.5
+License: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 Provides content management functionality for sermons, events, photos, videos, locations and people. A compatible theme displays content.
 
