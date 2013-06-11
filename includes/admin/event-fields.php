@@ -130,7 +130,7 @@ function ccm_add_meta_box_event_date() {
 
 			// Recurrence
 			'_ccm_event_recurrence' => array(
-				'name'				=> _x( 'Recurrence', 'event meta box', 'church-content-manager' ),
+				'name'				=> __( 'Recurrence', 'church-content-manager' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> _x( "Start and end dates will automatically move forward after the event ends.", 'event meta box', 'church-content-manager' ),
 				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
@@ -146,6 +146,28 @@ function ccm_add_meta_box_event_date() {
 				'upload_type'		=> '', // optional type of media to filter by (image, audio, video, application/pdf)
 				'default'			=> 'none', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> true, // if user empties value, force default to be saved instead
+				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'class'				=> '', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
+				'field_attributes'	=> array(), // attr => value array for field container
+				'field_class'		=> '', // class(es) to add to field container
+				'custom_sanitize'	=> '', // function to do additional sanitization
+				'custom_field'		=> '', // function for custom display of field input
+			),
+
+			// Recur Until
+			'_ccm_event_recurrence_end_date' => array(
+				'name'				=> __( 'Recur Until', 'church-content-manager' ),
+				'after_name'		=> '',
+				'desc'				=> '',
+				'type'				=> 'date', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
+				'checkbox_label'	=> '', //show text after checkbox
+				'options'			=> array(), // array of keys/values for radio or select
+				'upload_button'		=> '', // text for button that opens media frame
+				'upload_title'		=> '', // title appearing at top of media frame
+				'upload_type'		=> '', // optional type of media to filter by (image, audio, video, application/pdf)
+				'default'			=> '', // value to pre-populate option with (before first save or on reset)
+				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
 				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
 				'class'				=> '', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)

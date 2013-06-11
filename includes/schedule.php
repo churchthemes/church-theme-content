@@ -44,6 +44,9 @@ add_action( 'wp', 'ccm_schedule_recurring_events' );
  */
 function ccm_update_recurring_event_dates() {
 
+	// Localized dates
+	$yesterday = date_i18n( 'Y-m-d', time() - DAY_IN_SECONDS );
+
 	// Get all events that ended yesterday and have valid recurring value
 	$events_query = new WP_Query( array(
 		'post_type'	=> 'ccm_event',
@@ -52,7 +55,7 @@ function ccm_update_recurring_event_dates() {
 			'relation' => 'AND',
 			array(
 				'key' => '_ccm_event_end_date',
-				'value' => date_i18n( 'Y-m-d', time() - DAY_IN_SECONDS ) // yesterday, localized
+				'value' => $yesterday // yesterday, localized
 		   ),
 			array(
 				'key' => '_ccm_event_recurrence',
@@ -69,18 +72,35 @@ function ccm_update_recurring_event_dates() {
 
 		 	// Get recurrence
 		 	$recurrence = get_post_meta( $post->ID, '_ccm_event_recurrence', true );
+			$recurrence_end_date = get_post_meta( $post->ID, '_ccm_event_recurrence_end_date', true );
 
-			// Get dates
+			// Get start and end dates
 			$start_date = get_post_meta( $post->ID, '_ccm_event_start_date', true );
 			$end_date = get_post_meta( $post->ID, '_ccm_event_end_date', true );
 
-			// Increment dates
-			$start_date = ccm_increment_date( $start_date, $recurrence );
-			$end_date = ccm_increment_date( $end_date, $recurrence );
+			// Calculate incremented dates
+			$new_start_date = ccm_increment_date( $start_date, $recurrence );
+			$new_end_date = ccm_increment_date( $end_date, $recurrence );
 
-			// Update dates
-			update_post_meta( $post->ID, '_ccm_event_start_date', $start_date );
-			update_post_meta( $post->ID, '_ccm_event_end_date', $end_date );
+			// Has recurrence ended?
+			// Recurrence end date exists and is earlier than new start date
+			if ( $recurrence_end_date && strtotime( $recurrence_end_date ) < strtotime( $new_start_date ) ) {
+
+				// Unset recurrence option to keep dates from being moved forward
+				update_post_meta( $post->ID, '_ccm_event_recurrence', 'none' );
+
+			}
+
+			// No recurrence or recurrence end date is still future
+			else {
+
+				// Update dates
+				update_post_meta( $post->ID, '_ccm_event_start_date', $new_start_date );
+				update_post_meta( $post->ID, '_ccm_event_end_date', $new_end_date );
+
+			}
+
+
 
 		}
 
@@ -89,3 +109,13 @@ function ccm_update_recurring_event_dates() {
 }
 
 add_action( 'ccm_update_recurring_event_dates', 'ccm_update_recurring_event_dates' );
+
+
+add_action('init','test');
+function test() {
+	if ( ! is_admin() ) {
+		echo 'schedule:<p>';
+		ccm_update_recurring_event_dates();
+		exit;
+	}
+}
