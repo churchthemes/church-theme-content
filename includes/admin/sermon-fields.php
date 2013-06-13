@@ -225,8 +225,8 @@ function ccm_sermon_columns( $columns ) {
 	$insert_array = array();
 	$insert_array['ccm_sermon_types'] = _x( 'Formats', 'sermons', 'church-content-manager' );
 	if ( ccm_taxonomy_supported( 'sermons', 'ccm_sermon_topic' ) ) $insert_array['ccm_sermon_topics'] = __( 'Topics', 'church-content-manager' );
-	if ( ccm_taxonomy_supported( 'sermons', 'ccm_sermon_book' ) ) $insert_array['ccm_sermon_books'] = _x( 'Books', 'sermons', 'church-content-manager' );
-	if ( ccm_taxonomy_supported( 'sermons', 'ccm_sermon_series' ) ) $insert_array['ccm_sermon_series'] = _x( 'Series', 'sermons', 'church-content-manager' );
+	//if ( ccm_taxonomy_supported( 'sermons', 'ccm_sermon_book' ) ) $insert_array['ccm_sermon_books'] = _x( 'Books', 'sermons', 'church-content-manager' );
+	//if ( ccm_taxonomy_supported( 'sermons', 'ccm_sermon_series' ) ) $insert_array['ccm_sermon_series'] = _x( 'Series', 'sermons', 'church-content-manager' );
 	// little room: if ( ccm_taxonomy_supported( 'sermons', 'ccm_sermon_speaker' ) ) $insert_array['ccm_sermon_speakers'] = _x( 'Speakers', 'sermons', 'church-content-manager' );
 	$columns = ccm_array_merge_after_key( $columns, $insert_array, 'title' );
 
