@@ -266,8 +266,8 @@ function ccm_register_taxonomy_person_group() {
 	// Arguments
 	$args = array(
 		'labels' => array(
-			'name' 							=> _x( 'People Groups', 'taxonomy general name', 'church-content-manager' ),
-			'singular_name'					=> _x( 'People Group', 'taxonomy singular name', 'church-content-manager' ),
+			'name' 							=> _x( 'Groups', 'taxonomy general name', 'church-content-manager' ),
+			'singular_name'					=> _x( 'Group', 'taxonomy singular name', 'church-content-manager' ),
 			'search_items' 					=> _x( 'Search Groups', 'people', 'church-content-manager' ),
 			'popular_items' 				=> _x( 'Popular Groups', 'people', 'church-content-manager' ),
 			'all_items' 					=> _x( 'All Groups', 'people', 'church-content-manager' ),
@@ -285,7 +285,7 @@ function ccm_register_taxonomy_person_group() {
 		'hierarchical'	=> true, // category-style instead of tag-style
 		'public' 		=> ccm_taxonomy_supported( 'people', 'ccm_person_group' ),
 		'rewrite' 		=> array(
-			'slug' 			=> 'person-group',
+			'slug' 			=> 'group',
 			'with_front' 	=> false,
 			'hierarchical' 	=> true
 		)
