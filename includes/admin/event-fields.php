@@ -102,7 +102,7 @@ function ccm_add_meta_box_event_date() {
 				'class'				=> '', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
-				'custom_sanitize'	=> 'ccm_sanitize_event_end_date', // function to do additional sanitization
+				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
 			),
 			
@@ -392,6 +392,8 @@ function ccm_add_meta_box_event_location() {
 	
 	// Add Meta Box
 	new CT_Meta_Box( $meta_box );
+
+
 	
 }
 
@@ -404,23 +406,44 @@ add_action( 'admin_init', 'ccm_add_meta_box_event_location' );
  * In order for this to work properly, End Date must be after Start Date so that the saved/sanitized
  * Start Date value is available in database.
  *
- * @since 0.9
- * @global int $post_id
- * @global object $post
- * @param string $value User-submitted value to sanitize
- * @return string Sanitized value
+ * @since 0.9.1
+ * @param int $post_id Post ID
+ * @param object $post Data for post being saved
  */
-function ccm_sanitize_event_end_date( $value ) {
+function ccm_correct_event_end_date( $post_id, $post ) {
 
-	global $post_id, $post;
+	// Event is being saved
+	if ( ! isset( $post->post_type ) || 'ccm_event' != $post->post_type ) {
+		return;
+	}
 
-	// End Date already sanitized by CT_Meta_Box in general and for date type, but not yet saved
-	$end_date = $value;
-
-	// Get Start Date
-	// Already saved and sanitzed by CT_Meta_Box in general and for date type
-	$start_date = get_post_meta( $post_id, '_ccm_event_start_date', true );
+	// Is a POST occurring?
+	if ( empty( $_POST ) ) {
+		return;
+	}
 	
+	// Not an auto-save (meta values not submitted)
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
+
+	// Verify the nonce
+	$nonce_key = 'ccm_event_location_nonce';
+	$nonce_action = 'ccm_event_location_save';
+	if ( empty( $_POST[$nonce_key] ) || ! wp_verify_nonce( $_POST[$nonce_key], $nonce_action ) ) {
+		return;
+	}
+
+	// Make sure user has permission to edit
+	$post_type = get_post_type_object( $post->post_type );
+	if ( ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+		return;
+	}
+
+	// Get start and end dates already saved by CT Meta Box
+	$start_date = get_post_meta( $post_id, '_ccm_event_start_date', true );
+	$end_date = get_post_meta( $post_id, '_ccm_event_end_date', true );
+
 	// If end date given but start date empty, make end date start date
 	if ( empty( $start_date ) && ! empty( $end_date ) ) {
 		$start_date = $end_date;
@@ -438,13 +461,12 @@ function ccm_sanitize_event_end_date( $value ) {
 		$end_date = $start_date;
 	}
 	
-	// Update Start Date in case changed
+	// Update dates in case changed
 	update_post_meta( $post_id, '_ccm_event_start_date', $start_date );
-
-	// Return sanitized End Date for saving
-	return $end_date;
+	update_post_meta( $post_id, '_ccm_event_end_date', $end_date );
 
 }
+add_action( 'save_post', 'ccm_correct_event_end_date', 11, 2 ); // after save at default 10
 
 /**********************************
  * ADMIN COLUMNS
