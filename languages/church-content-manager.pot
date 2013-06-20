@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Church Content Manager 0.8.5\n"
-"POT-Creation-Date: 2013-06-11 13:39-0600\n"
-"PO-Revision-Date: 2013-06-11 13:39-0600\n"
+"POT-Creation-Date: 2013-06-20 12:16-0600\n"
+"PO-Revision-Date: 2013-06-20 12:16-0600\n"
 "Last-Translator: churchthemes.com\n"
 "Language-Team: churchthemes.com\n"
 "Language: English\n"
@@ -548,12 +548,12 @@ msgstr ""
 
 #: ../includes/taxonomies.php:269
 msgctxt "taxonomy general name"
-msgid "People Groups"
+msgid "Groups"
 msgstr ""
 
 #: ../includes/taxonomies.php:270
 msgctxt "taxonomy singular name"
-msgid "People Group"
+msgid "Group"
 msgstr ""
 
 #: ../includes/taxonomies.php:271
@@ -762,37 +762,37 @@ msgid ""
 "A lower number is more zoomed out while a higher number is more zoomed in."
 msgstr ""
 
-#: ../includes/admin/event-fields.php:464
+#: ../includes/admin/event-fields.php:486
 #: ../includes/admin/location-fields.php:272
 #: ../includes/admin/person-fields.php:204
 #: ../includes/admin/sermon-fields.php:221
 msgid "Thumbnail"
 msgstr ""
 
-#: ../includes/admin/event-fields.php:469
+#: ../includes/admin/event-fields.php:491
 msgctxt "events admin column"
 msgid "When"
 msgstr ""
 
-#: ../includes/admin/event-fields.php:470
+#: ../includes/admin/event-fields.php:492
 msgctxt "events admin column"
 msgid "Where"
 msgstr ""
 
-#: ../includes/admin/event-fields.php:518
+#: ../includes/admin/event-fields.php:540
 msgctxt "date range separator"
 msgid " &ndash; "
 msgstr ""
 
-#: ../includes/admin/event-fields.php:530
+#: ../includes/admin/event-fields.php:552
 msgid "Recurs Weekly"
 msgstr ""
 
-#: ../includes/admin/event-fields.php:533
+#: ../includes/admin/event-fields.php:555
 msgid "Recurs Monthly"
 msgstr ""
 
-#: ../includes/admin/event-fields.php:536
+#: ../includes/admin/event-fields.php:558
 msgid "Recurs Yearly"
 msgstr ""
 
@@ -988,16 +988,6 @@ msgstr ""
 
 #: ../includes/admin/sermon-fields.php:227
 msgid "Topics"
-msgstr ""
-
-#: ../includes/admin/sermon-fields.php:228
-msgctxt "sermons"
-msgid "Books"
-msgstr ""
-
-#: ../includes/admin/sermon-fields.php:229
-msgctxt "sermons"
-msgid "Series"
 msgstr ""
 
 #: ../includes/admin/sermon-fields.php:269
