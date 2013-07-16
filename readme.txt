@@ -17,88 +17,88 @@ This plugin is intended for a very specific audience. If you are not one of the 
 
 * Users of themes made by [churchthemes.com](http://churchthemes.com)
 * Users of themes from other providers made *specifically* for use with this plugin
-* Developers wanting to improve data portability among church WordPress sites
+* Theme developers wanting to improve data portability among church WordPress sites
 
 = What it does =
 
-It enables users to manage **sermons, events, people and locations** that a compatible theme can display. 
+It enables users to manage *sermons*, *events*, *people* and *locations* to be displayed by a compatible theme. 
 
-Experienced WordPress developers agree that functionality like this does not belong in themes since themes are intended only to control the look and feel of a WordPress site. Content that users might expect to take with them if they switch themes should "live" in a plugin. This plugin also follows [Church WordPress Standards](http://cwps.churchthemes.com) for improved data portability.
+Experienced WordPress developers agree that functionality like this does not belong in themes since themes are intended only to control the appearance of a WordPress site. Content that users might expect to take with them if they switch themes should "live" in a plugin. Similarly, our approach is not to display content using the plugin since themes offer more control for that purpose.
 
 = Developers =
 
-Please see the plugin's [GitHub](https://github.com/churchthemes/church-theme-functionality) repository for notes on developing themes that use this plugin.
+Please see the plugin's [GitHub](https://github.com/churchthemes/church-theme-functionality) repository for notes on developing themes that use this plugin. A couple benefits are that you will save time and be helping to accomplish better data portability among church websites powered by WordPress.
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
-
-e.g.
-
-1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
+Please see [Installing Plugins](http://codex.wordpress.org/Managing_Plugins#Installing_Plugins) in the WordPress Codex.
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+= Can I use this plugin with any theme? =
 
-An answer to that question.
+No, a theme made specifically for use with this plugin is necessary for displaying content. Please see *Who this is for* in the plugin description.
 
-= What about foo bar? =
+= Can make a theme that uses this plugin? =
 
-Answer to foo bar dilemma.
+Yes, please find development notes on [GitHub](https://github.com/churchthemes/church-theme-functionality).
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the directory of the stable readme.txt, so in this case, `/tags/4.3/screenshot-1.png` (or jpg, jpeg, gif)
-2. This is the second screen shot
+1. Admin menu
+2. Sermon list
+3. Add sermon
+4. Add event
+5. Add person
+6. Add location
 
 == Changelog ==
 
-= 1.0 =
-* A change since the previous version.
-* Another change.
+= 0.9.1 = 
+* Minor fixes and improvements
 
-= 0.5 =
-* List versions from most recent at top to oldest at bottom.
+= 0.9 = 
+* Code clean up and documentation
+* Event recurrence end date
+* New sermon taxonomies
 
-== Upgrade Notice ==
+= 0.8.5 = 
+* Sermon audio/video embedding by upload, external URL or embed code
 
-= 1.0 =
-Upgrade notices describe the reason a user should upgrade.  No more than 300 characters.
+= 0.8.4 = 
+* Finish localization (local or external for safe updates)
 
-= 0.5 =
-This version fixes a security related bug.  Upgrade immediately.
+= 0.8.3 = 
+* Recurring events added (weekly, monthly, yearly)
 
-== Arbitrary section ==
+= 0.8.2 = 
+* Support for sermon podcasting added
 
-You may provide arbitrary sections, in the same format as the ones above.  This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation."  Arbitrary sections will be shown below the built-in sections outlined above.
+= 0.8.1 = 
+* Update CT Meta Box library
 
-== A brief Markdown Example ==
+= 0.8 = 
+* Custom field improvements
+* Removed gallery post type (use native)
 
-Ordered list:
+= 0.7.1 = 
+* Add directions and times fields to locations
 
-1. Some feature
-1. Another feature
-1. Something else about the plugin
+= 0.7 = 
+* People groups
+* Friendlier post type rewrite slugs
+* Archives for all
 
-Unordered list:
+= 0.6 = 
+* New media manager (CT Meta Box)
+* PDF mime type
+* Various fixes
 
-* something
-* something else
-* third thing
+= 0.5.2 = 
+* Post type modifications
 
-Here's a link to [WordPress](http://wordpress.org/ "Your favorite software") and one to [Markdown's Syntax Documentation][markdown syntax].
-Titles are optional, naturally.
+= 0.5.1 = 
+* Remove slide and highlight post types
 
-[markdown syntax]: http://daringfireball.net/projects/markdown/syntax
-            "Markdown is what the parser uses to process much of the readme file"
-
-Markdown uses email style notation for blockquotes and I've been told:
-> Asterisks for *emphasis*. Double it up  for **strong**.
-
-`<?php code(); // goes in backticks ?>`
+= 0.5 = 
+* First public release
