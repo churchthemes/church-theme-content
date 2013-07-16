@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== Church Theme Functionality ===
 Contributors: churchthemes, stevengliebe
 Tags: church, sermon, sermons, ministry
 Donate link: http://churchthemes.com
@@ -7,34 +7,27 @@ Tested up to: 3.6
 Stable tag: 0.9.1
 License: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
-Provides content management functionality for sermons, events, photos, videos, locations and people. A compatible theme displays content.
+Provides compatible themes with church-related post types, taxonomies and custom fields. A compatible theme is required for displaying content.
 
 == Description ==
 
-This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
+= Who this is for =
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+This plugin is intended for a very specific audience. If you are not one of the below, then this plugin will not be useful to you.
 
-A few notes about the sections above:
+* Users of themes made by [churchthemes.com](http://churchthemes.com)
+* Users of themes from other providers made *specifically* for use with this plugin
+* Developers wanting to improve data portability among church WordPress sites
 
-*   "Contributors" is a comma separated list of wp.org/wp-plugins.org usernames
-*   "Tags" is a comma separated list of tags that apply to the plugin
-*   "Requires at least" is the lowest version that the plugin will work on
-*   "Tested up to" is the highest version that you've *successfully used to test the plugin*. Note that it might work on
-higher versions... this is just the highest one you've verified.
-*   Stable tag should indicate the Subversion "tag" of the latest stable version, or "trunk," if you use `/trunk/` for
-stable.
+= What it does =
 
-    Note that the `readme.txt` of the stable tag is the one that is considered the defining one for the plugin, so
-if the `/trunk/readme.txt` file says that the stable tag is `4.3`, then it is `/tags/4.3/readme.txt` that'll be used
-for displaying information about the plugin.  In this situation, the only thing considered from the trunk `readme.txt`
-is the stable tag pointer.  Thus, if you develop in trunk, you can update the trunk `readme.txt` to reflect changes in
-your in-development version, without having that information incorrectly disclosed about the current stable version
-that lacks those changes -- as long as the trunk's `readme.txt` points to the correct stable tag.
+It enables users to manage **sermons, events, people and locations** that a compatible theme can display. 
 
-    If no stable tag is provided, it is assumed that trunk is stable, but you should specify "trunk" if that's where
-you put the stable version, in order to eliminate any doubt.
+Experienced WordPress developers agree that functionality like this does not belong in themes since themes are intended only to control the look and feel of a WordPress site. Content that users might expect to take with them if they switch themes should "live" in a plugin. This plugin also follows [Church WordPress Standards](http://cwps.churchthemes.com) for improved data portability.
+
+= Developers =
+
+Please see the plugin's [GitHub](https://github.com/churchthemes/church-theme-functionality) repository for notes on developing themes that use this plugin.
 
 == Installation ==
 
