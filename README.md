@@ -1,5 +1,5 @@
-Church Theme Functionality Plugin
-=================================
+Church Theme Functionality (Plugin)
+===================================
 
 A WordPress plugin that provides compatible themes with church-related post types, taxonomies and custom fields.
 
