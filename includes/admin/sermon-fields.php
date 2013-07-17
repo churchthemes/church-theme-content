@@ -115,7 +115,7 @@ function ctc_add_meta_box_sermon_details() {
 				'name'				=> __( 'Audio', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> sprintf(
-											__( 'Upload a file by clicking "Choose Audio" or upload audio to one of the <a href="%s" target="_blank">supported sites</a> (such as SoundCloud) then paste its URL here, or paste an embed code from another site. <a href="%s" target="_blank">Video Help</a>', 'church-theme-content' ),
+											__( 'Upload a file by clicking "Choose Audio" or upload audio to one of the <a href="%s" target="_blank">supported sites</a> (such as SoundCloud) then paste its URL here, or paste an embed code from another site. <a href="%s" target="_blank">Audio Help</a>', 'church-theme-content' ),
 											apply_filters( 'ctc_sermon_audio_sites_url', 'http://churchthemes.com/go/ctc-sermon-audio-sites' ),
 											apply_filters( 'ctc_sermon_audio_help_url', 'http://churchthemes.com/go/ctc-sermon-audio-help' )
 										),
