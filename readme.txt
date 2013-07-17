@@ -4,7 +4,7 @@ Tags: church, churches, sermon, sermons, ministry, ministries
 Donate link: http://churchthemes.com
 Requires at least: 3.6
 Tested up to: 3.6
-Stable tag: 0.9.1
+Stable tag: 0.9.2
 License: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 Provides compatible themes with sermon, event, person and location post types, taxonomies and fields. Requires a compatible theme for showing content.
