@@ -1,5 +1,5 @@
-Church Theme Functionality (Plugin)
-===================================
+Church Theme Content (Plugin)
+=============================
 
 A WordPress plugin that provides compatible themes with church-related post types, taxonomies and custom fields.
 
@@ -10,7 +10,7 @@ This plugin enables the user to manage *sermons*, *events*, *people* and *locati
 
 Experienced WordPress developers agree that functionality like this does not belong in themes since themes are intended only to control the appearance of a WordPress site. Content that users might expect to take with them if they switch themes should "live" in a plugin. Similarly, our approach is not to display content using the plugin since themes offer more control for that purpose.
 
-Visit the [plugin's page](http://wordpress.org/plugins/church-theme-functionality) on WordPress.org for more information.
+Visit the [plugin's page](http://wordpress.org/plugins/church-theme-content) on WordPress.org for more information.
 
 Developers
 ----------

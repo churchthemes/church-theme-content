@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Church Theme Functionality
+ * Plugin Name: Church Theme Content
  * Plugin URI: http://churchthemes.com/plugins/church-content-manager
- * Description: Provides compatible themes with church-related post types, taxonomies and custom fields. A <strong>compatible theme is required</strong> for displaying content.
+ * Description: Provides compatible themes with sermon, event, person and location post types. A <strong>compatible theme is required</strong> for displaying content.
  * Version: 0.9.1
  * Author: churchthemes.com
  * Author URI: http://churchthemes.com
