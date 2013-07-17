@@ -56,6 +56,9 @@ Yes, please find development notes on [GitHub](https://github.com/churchthemes/c
 
 == Changelog ==
 
+= 0.9.2 = 
+* Rename plugin to Church Theme Content
+
 = 0.9.1 = 
 * Minor fixes and improvements
 
