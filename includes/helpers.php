@@ -2,10 +2,10 @@
 /**
  * Helper Functions
  *
- * @package    Church_Content_Manager
+ * @package    Church_Theme_Content
  * @subpackage Functions
  * @copyright  Copyright (c) 2013, churchthemes.com
- * @link       https://github.com/churchthemes/church-content-manager
+ * @link       https://github.com/churchthemes/church-theme-content
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * @since      0.9
  */
@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @param string $directory Optional directory file is in, relative to theme root
  * @return string URL to file
  */
-function ccm_file_url( $file, $directory = false ) {
+function ctc_file_url( $file, $directory = false ) {
 
 	if ( ! empty( $directory ) ) {
 		$path = trailingslashit( $directory ) . $file;
@@ -35,9 +35,9 @@ function ccm_file_url( $file, $directory = false ) {
 		$path = $file;
 	}
 	
-	$path = trailingslashit( CCM_URL ) . $path;
+	$path = trailingslashit( CTC_URL ) . $path;
 	
-	return apply_filters( 'ccm_file_url', $path, $file, $directory );
+	return apply_filters( 'ctc_file_url', $path, $file, $directory );
 }
 
 /**
@@ -50,7 +50,7 @@ function ccm_file_url( $file, $directory = false ) {
  * @param string $directory Optional directory file is in, relative to theme root
  * @return string Absolute path to file
  */
-function ccm_file_path( $file, $directory = false ) {
+function ctc_file_path( $file, $directory = false ) {
 
 	if ( ! empty( $directory ) ) {
 		$path = trailingslashit( $directory ) . $file;
@@ -58,9 +58,9 @@ function ccm_file_path( $file, $directory = false ) {
 		$path = $file;
 	}
 	
-	$path = trailingslashit( CCM_PATH ) . $path;
+	$path = trailingslashit( CTC_PATH ) . $path;
 	
-	return apply_filters( 'ccm_file_path', $path, $file, $directory );
+	return apply_filters( 'ctc_file_path', $path, $file, $directory );
 }
 
 /*************************************************
@@ -79,7 +79,7 @@ function ccm_file_path( $file, $directory = false ) {
  * @param mixed $after_key Key in original array to merge second array after
  * @return array Modified array
  */
-function ccm_array_merge_after_key( $original_array, $insert_array, $after_key ) {
+function ctc_array_merge_after_key( $original_array, $insert_array, $after_key ) {
 
 	$modified_array = array();
 
@@ -96,7 +96,7 @@ function ccm_array_merge_after_key( $original_array, $insert_array, $after_key )
 	
 	}
 
-	return apply_filters( 'ccm_array_merge_after_key', $modified_array, $original_array, $insert_array, $after_key );
+	return apply_filters( 'ctc_array_merge_after_key', $modified_array, $original_array, $insert_array, $after_key );
 
 }
 
@@ -114,7 +114,7 @@ function ccm_array_merge_after_key( $original_array, $insert_array, $after_key )
  * @param string $increment 'weekly', 'monthly' or 'yearly'
  * @return string Future date
  */
-function ccm_increment_future_date( $date, $increment ) {
+function ctc_increment_future_date( $date, $increment ) {
 
 	// In case no change could be made
 	$new_date = $date;
@@ -171,13 +171,13 @@ function ccm_increment_future_date( $date, $increment ) {
 		$today_ts = strtotime( date_i18n( 'Y-m-d' ) ); // localized
 		$new_date_ts = strtotime( $new_date );
 		while ( $new_date_ts < $today_ts ) {
-			$new_date = ccm_increment_future_date( $new_date, $increment );
+			$new_date = ctc_increment_future_date( $new_date, $increment );
 			$new_date_ts = strtotime( $new_date );
 		}
 
 	}
 
 	// Return filterable
-	return apply_filters( 'ccm_move_date_forward', $new_date, $date, $increment );
+	return apply_filters( 'ctc_move_date_forward', $new_date, $date, $increment );
 
 }

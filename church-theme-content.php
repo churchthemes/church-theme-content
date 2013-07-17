@@ -8,9 +8,9 @@
  * Author URI: http://churchthemes.com
  * License: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * 
- * @package   Church_Content_Manager
+ * @package   Church_Theme_Content
  * @copyright Copyright (c) 2013, churchthemes.com
- * @link      https://github.com/churchthemes/church-content-manager
+ * @link      https://github.com/churchthemes/church-theme-content
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  *
  * @since 0.9
  */
-class Church_Content_Manager {
+class Church_Theme_Content {
 
 	/**
 	 * Plugin data from get_plugins()
@@ -89,7 +89,7 @@ class Church_Content_Manager {
 		$plugin_data = current( get_plugins( '/' . $plugin_dir ) );
 
 		// Set plugin data
-		$this->plugin_data = apply_filters( 'ccm_plugin_data', $plugin_data );
+		$this->plugin_data = apply_filters( 'ctc_plugin_data', $plugin_data );
 
 	}
 
@@ -102,27 +102,27 @@ class Church_Content_Manager {
 	public function define_constants() {
 
 		// Plugin details
-		define( 'CCM_VERSION', 		$this->plugin_data['Version'] );					// plugin version
-		define( 'CCM_NAME', 		$this->plugin_data['Name'] );						// plugin name
-		define( 'CCM_INFO_URL',		$this->plugin_data['PluginURI'] );					// plugin's info page URL
-		define( 'CCM_FILE', 		__FILE__ );											// plugin's main file path
-		define( 'CCM_DIR', 			dirname( plugin_basename( CCM_FILE ) ) );			// plugin's directory
-		define( 'CCM_PATH',			untrailingslashit( plugin_dir_path( CCM_FILE ) ) );	// plugin's directory
-		define( 'CCM_URL', 			untrailingslashit( plugin_dir_url( CCM_FILE ) ) );	// plugin's directory URL
+		define( 'CTC_VERSION', 		$this->plugin_data['Version'] );					// plugin version
+		define( 'CTC_NAME', 		$this->plugin_data['Name'] );						// plugin name
+		define( 'CTC_INFO_URL',		$this->plugin_data['PluginURI'] );					// plugin's info page URL
+		define( 'CTC_FILE', 		__FILE__ );											// plugin's main file path
+		define( 'CTC_DIR', 			dirname( plugin_basename( CTC_FILE ) ) );			// plugin's directory
+		define( 'CTC_PATH',			untrailingslashit( plugin_dir_path( CTC_FILE ) ) );	// plugin's directory
+		define( 'CTC_URL', 			untrailingslashit( plugin_dir_url( CTC_FILE ) ) );	// plugin's directory URL
 
 		// Directories
-		define( 'CCM_INC_DIR',		'includes' );					// includes directory
-		define( 'CCM_ADMIN_DIR',	CCM_INC_DIR . '/admin' );		// admin directory
-		define( 'CCM_CLASS_DIR', 	CCM_INC_DIR . '/classes' );		// classes directory
-		define( 'CCM_LIB_DIR', 		CCM_INC_DIR . '/libraries' );	// libraries directory
-		define( 'CCM_CSS_DIR', 		'css' );						// stylesheets directory
-		define( 'CCM_JS_DIR', 		'js' );							// JavaScript directory
-		define( 'CCM_IMG_DIR', 		'images' );						// images directory
-		define( 'CCM_LANG_DIR', 	'languages' );					// languages directory
+		define( 'CTC_INC_DIR',		'includes' );					// includes directory
+		define( 'CTC_ADMIN_DIR',	CTC_INC_DIR . '/admin' );		// admin directory
+		define( 'CTC_CLASS_DIR', 	CTC_INC_DIR . '/classes' );		// classes directory
+		define( 'CTC_LIB_DIR', 		CTC_INC_DIR . '/libraries' );	// libraries directory
+		define( 'CTC_CSS_DIR', 		'css' );						// stylesheets directory
+		define( 'CTC_JS_DIR', 		'js' );							// JavaScript directory
+		define( 'CTC_IMG_DIR', 		'images' );						// images directory
+		define( 'CTC_LANG_DIR', 	'languages' );					// languages directory
 
 		// CT Meta Box
 		if ( ! defined( 'CTMB_URL' ) ) { // in case also used in theme or other plugin
-			define( 'CTMB_URL', CCM_URL . '/' . CCM_LIB_DIR . '/ct-meta-box' ); // for enqueing JS/CSS
+			define( 'CTMB_URL', CTC_URL . '/' . CTC_LIB_DIR . '/ct-meta-box' ); // for enqueing JS/CSS
 		}
 
 	}
@@ -131,7 +131,7 @@ class Church_Content_Manager {
 	 * Load language file
 	 *
 	 * This will load the MO file for the current locale.
-	 * The translation file must be named church-content-manager-$locale.mo.
+	 * The translation file must be named church-theme-content-$locale.mo.
 	 * 
 	 * First it will check to see if the MO file exists in wp-content/languages/plugins.
 	 * If not, then the 'languages' direcory inside the plugin will be used.
@@ -147,7 +147,7 @@ class Church_Content_Manager {
 	public function load_textdomain() {
 
 		// Textdomain
-		$domain = 'church-content-manager';
+		$domain = 'church-theme-content';
 
 		// WordPress core locale filter
 		$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
@@ -162,7 +162,7 @@ class Church_Content_Manager {
 		// Otherwise use MO file stored in plugin
 		// This is not ideal except for pre-made, unedited translations included with the plugin
 		else {
-			$languages_dir = CCM_DIR . '/' . trailingslashit( CCM_LANG_DIR ); // ensure trailing slash
+			$languages_dir = CTC_DIR . '/' . trailingslashit( CTC_LANG_DIR ); // ensure trailing slash
 			load_plugin_textdomain( $domain, false, $languages_dir );
 		}
 
@@ -176,35 +176,35 @@ class Church_Content_Manager {
 	 */
 	public function set_includes() {
 
-		$this->includes = apply_filters( 'ccm_includes', array(
+		$this->includes = apply_filters( 'ctc_includes', array(
 
 			// Frontend or admin
 			'always' => array(
 				
 				// Functions
-				CCM_INC_DIR . '/helpers.php',
-				CCM_INC_DIR . '/mime-types.php',
-				CCM_INC_DIR . '/post-types.php', 
-				CCM_INC_DIR . '/schedule.php',
-				CCM_INC_DIR . '/support.php',
-				CCM_INC_DIR . '/taxonomies.php',
+				CTC_INC_DIR . '/helpers.php',
+				CTC_INC_DIR . '/mime-types.php',
+				CTC_INC_DIR . '/post-types.php', 
+				CTC_INC_DIR . '/schedule.php',
+				CTC_INC_DIR . '/support.php',
+				CTC_INC_DIR . '/taxonomies.php',
 			),
 
 			// Admin only
 			'admin' => array(
 			
 				// Functions
-				CCM_ADMIN_DIR . '/activation.php',
-				CCM_ADMIN_DIR . '/admin-helpers.php',
-				CCM_ADMIN_DIR . '/admin-posts.php',
-				CCM_ADMIN_DIR . '/admin-support.php',
-				CCM_ADMIN_DIR . '/event-fields.php',
-				CCM_ADMIN_DIR . '/location-fields.php',
-				CCM_ADMIN_DIR . '/person-fields.php',
-				CCM_ADMIN_DIR . '/sermon-fields.php', 
+				CTC_ADMIN_DIR . '/activation.php',
+				CTC_ADMIN_DIR . '/admin-helpers.php',
+				CTC_ADMIN_DIR . '/admin-posts.php',
+				CTC_ADMIN_DIR . '/admin-support.php',
+				CTC_ADMIN_DIR . '/event-fields.php',
+				CTC_ADMIN_DIR . '/location-fields.php',
+				CTC_ADMIN_DIR . '/person-fields.php',
+				CTC_ADMIN_DIR . '/sermon-fields.php', 
 				
 				// Libraries
-				CCM_LIB_DIR . '/ct-meta-box/ct-meta-box.php', // see CTMB_URL constant defined above
+				CTC_LIB_DIR . '/ct-meta-box/ct-meta-box.php', // see CTMB_URL constant defined above
 
 			),
 			
@@ -271,7 +271,7 @@ class Church_Content_Manager {
 			if ( $do_includes ) {
 			
 				foreach ( $files as $file ) {			
-					require_once trailingslashit( CCM_PATH ) . $file;				
+					require_once trailingslashit( CTC_PATH ) . $file;				
 				}
 				
 			}
@@ -283,4 +283,4 @@ class Church_Content_Manager {
 }
 
 // Instantiate the main class
-new Church_Content_Manager();
+new Church_Theme_Content();

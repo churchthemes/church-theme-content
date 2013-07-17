@@ -2,10 +2,10 @@
 /**
  * Admin Helpers
  *
- * @package    Church_Content_Manager
+ * @package    Church_Theme_Content
  * @subpackage Admin
  * @copyright  Copyright (c) 2013, churchthemes.com
- * @link       https://github.com/churchthemes/church-content-manager
+ * @link       https://github.com/churchthemes/church-theme-content
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * @since      0.9
  */
@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @param string $taxonomy Taxonomy to get terms for
  * @return string Term list
  */
-function ccm_admin_term_list( $post_id, $taxonomy ) {
+function ctc_admin_term_list( $post_id, $taxonomy ) {
 
 	$list = '';
 
@@ -46,7 +46,7 @@ function ccm_admin_term_list( $post_id, $taxonomy ) {
 		
 	}
 
-	return apply_filters( 'ccm_admin_term_list', $list, $post_id, $taxonomy );
+	return apply_filters( 'ctc_admin_term_list', $list, $post_id, $taxonomy );
 
 }
 
@@ -60,16 +60,16 @@ function ccm_admin_term_list( $post_id, $taxonomy ) {
  * @since 0.9
  * @return array Google Maps API map types
  */
-function ccm_gmaps_types() {
+function ctc_gmaps_types() {
 
 	$types = array(
-		'ROADMAP'	=> _x( 'Road', 'map', 'church-content-manager' ),
-		'SATELLITE'	=> _x( 'Satellite', 'map', 'church-content-manager' ),
-		'HYBRID'	=> _x( 'Hybrid', 'map', 'church-content-manager' ),
-		'TERRAIN'	=> _x( 'Terrain', 'map', 'church-content-manager' )
+		'ROADMAP'	=> _x( 'Road', 'map', 'church-theme-content' ),
+		'SATELLITE'	=> _x( 'Satellite', 'map', 'church-theme-content' ),
+		'HYBRID'	=> _x( 'Hybrid', 'map', 'church-theme-content' ),
+		'TERRAIN'	=> _x( 'Terrain', 'map', 'church-theme-content' )
 	);
 	
-	return apply_filters( 'ccm_gmaps_types', $types );
+	return apply_filters( 'ctc_gmaps_types', $types );
 
 }
 
@@ -79,8 +79,8 @@ function ccm_gmaps_types() {
  * @since 0.9
  * @return string Default map type
  */
-function ccm_gmaps_type_default() {
-	return apply_filters( 'ccm_gmaps_type_default', 'HYBRID' );
+function ctc_gmaps_type_default() {
+	return apply_filters( 'ctc_gmaps_type_default', 'HYBRID' );
 }
 
 /**
@@ -89,7 +89,7 @@ function ccm_gmaps_type_default() {
  * @since 0.9
  * @return array Valid Google Maps zoom levels
  */
-function ccm_gmaps_zoom_levels() {
+function ctc_gmaps_zoom_levels() {
 
 	$zoom_levels = array();
 	
@@ -100,7 +100,7 @@ function ccm_gmaps_zoom_levels() {
 		$zoom_levels[$z] = $z;
 	}
 	
-	return apply_filters( 'ccm_gmaps_zoom_levels', $zoom_levels );
+	return apply_filters( 'ctc_gmaps_zoom_levels', $zoom_levels );
 
 }
 
@@ -110,6 +110,6 @@ function ccm_gmaps_zoom_levels() {
  * @since 0.9
  * @return int Default Google Maps zoom level
  */
-function ccm_gmaps_zoom_level_default() {
-	return apply_filters( 'ccm_gmaps_zoom_level_default', 14 );
+function ctc_gmaps_zoom_level_default() {
+	return apply_filters( 'ctc_gmaps_zoom_level_default', 14 );
 }

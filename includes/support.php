@@ -4,10 +4,10 @@
  *
  * Handle support for plugin features based on theme support and plugin settings.
  *
- * @package    Church_Content_Manager
+ * @package    Church_Theme_Content
  * @subpackage Functions
  * @copyright  Copyright (c) 2013, churchthemes.com
- * @link       https://github.com/churchthemes/church-content-manager
+ * @link       https://github.com/churchthemes/church-theme-content
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * @since      0.9
  */
@@ -29,29 +29,29 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @param string $feature Feature to get data for; if none, gets data for all features
  * @return mixed Data for feature, all features or false if failed
  */
-function ccm_get_feature_data( $feature = false ) {
+function ctc_get_feature_data( $feature = false ) {
  
 	// Feature data
 	$features = array(
 	
 		'sermons' => array(
-			'theme_support'	=> 'ccm-sermons', 	// theme support feature name
-			'post_type'		=> 'ccm_sermon', 	// post type feature requires
+			'theme_support'	=> 'ctc-sermons', 	// theme support feature name
+			'post_type'		=> 'ctc_sermon', 	// post type feature requires
 		),
 		
 		'events' => array(
-			'theme_support'	=> 'ccm-events',
-			'post_type'		=> 'ccm_event',
+			'theme_support'	=> 'ctc-events',
+			'post_type'		=> 'ctc_event',
 		),
 		
 		'people' => array(
-			'theme_support'	=> 'ccm-people',
-			'post_type'		=> 'ccm_person',
+			'theme_support'	=> 'ctc-people',
+			'post_type'		=> 'ctc_person',
 		),
 		
 		'locations' => array(
-			'theme_support'	=> 'ccm-locations',
-			'post_type'		=> 'ccm_location',
+			'theme_support'	=> 'ctc-locations',
+			'post_type'		=> 'ctc_location',
 		),
 
 	);
@@ -64,13 +64,13 @@ function ccm_get_feature_data( $feature = false ) {
 	// Return specific feature
 	if ( ! empty( $feature ) ) {
 		if ( isset( $features[$feature] ) ) { // feature data exists
-			return apply_filters( 'ccm_get_feature_data-' . $feature, $features[$feature] );
+			return apply_filters( 'ctc_get_feature_data-' . $feature, $features[$feature] );
 		}
 	}
 	
 	// Return all features
 	else {
-		return apply_filters( 'ccm_get_feature_data', $features );
+		return apply_filters( 'ctc_get_feature_data', $features );
 	}
 	
 	// In case feature given but not valid
@@ -85,12 +85,12 @@ function ccm_get_feature_data( $feature = false ) {
  * @param string $post_type Post type to get feature data for
  * @return array Feature data
  */
-function ccm_get_feature_data_by_post_type( $post_type ) {
+function ctc_get_feature_data_by_post_type( $post_type ) {
 
 	$data = false;
 
 	// Get all features
-	$features = ccm_get_feature_data();
+	$features = ctc_get_feature_data();
 
 	// Loop features to find post type and get feature data
 	foreach ( $features as $feature_key => $feature_data ) {
@@ -106,7 +106,7 @@ function ccm_get_feature_data_by_post_type( $post_type ) {
 	}
 
 	// Return filterable
-	return apply_filters( 'ccm_get_feature_data_by_post_type', $data, $post_type );
+	return apply_filters( 'ctc_get_feature_data_by_post_type', $data, $post_type );
 
 }
 
@@ -117,19 +117,19 @@ function ccm_get_feature_data_by_post_type( $post_type ) {
 /**
  * Default features for unsupported themes
  *
- * If no add_theme_support( 'church-content-manager' ), add support for all features with no arguments.
+ * If no add_theme_support( 'church-theme-content' ), add support for all features with no arguments.
  * This causes all content to be revealed in case admin switched to unsupported theme.
  * They can then develop the theme for the plugin or retrieve their content.
  *
  * @since 0.9
  */
-function ccm_set_default_theme_support() {
+function ctc_set_default_theme_support() {
 
 	// Theme does not support plugin
-	if ( ! current_theme_supports( 'church-content-manager' ) ) {
+	if ( ! current_theme_supports( 'church-theme-content' ) ) {
 	
 		// Loop features
-		$features = ccm_get_feature_data();
+		$features = ctc_get_feature_data();
 		foreach ( $features as $feature_key => $feature_data ) {
 		
 			// Add support with no arguments so defaults are used (everything)
@@ -141,7 +141,7 @@ function ccm_set_default_theme_support() {
 
 }
  
-add_action( 'init', 'ccm_set_default_theme_support', 1 ); // init 1 is right after after_setup_theme when theme add support but earlier than normal plugin init at 10
+add_action( 'init', 'ctc_set_default_theme_support', 1 ); // init 1 is right after after_setup_theme when theme add support but earlier than normal plugin init at 10
  
 /**
  * Get theme support data for a feature
@@ -152,7 +152,7 @@ add_action( 'init', 'ccm_set_default_theme_support', 1 ); // init 1 is right aft
  * @param string $feature Feature to get theme support data for
  * @return mixed Feature data if found
  */
-function ccm_get_theme_support( $feature, $argument = null ) {
+function ctc_get_theme_support( $feature, $argument = null ) {
 
 	$data = false;
 
@@ -180,7 +180,7 @@ function ccm_get_theme_support( $feature, $argument = null ) {
 	}
 	
 	// Return data
-	return apply_filters( 'ccm_get_theme_support', $data, $feature, $argument );
+	return apply_filters( 'ctc_get_theme_support', $data, $feature, $argument );
 
 }
 
@@ -194,21 +194,21 @@ function ccm_get_theme_support( $feature, $argument = null ) {
  * @param string $argument Optional feature argument to get specific data for.
  * @return mixed Array of all feature data or specific argument
  */
-function ccm_get_theme_support_by_post_type( $post_type, $argument = null ) {
+function ctc_get_theme_support_by_post_type( $post_type, $argument = null ) {
 
 	$data = false;
 
 	// Get feature based on post type
-	$feature_data = ccm_get_feature_data_by_post_type( $post_type );
+	$feature_data = ctc_get_feature_data_by_post_type( $post_type );
 	if ( $feature_data ) {
 	
 		// Get data for feature/argument
-		$data = ccm_get_theme_support( $feature_data['theme_support'], $argument );
+		$data = ctc_get_theme_support( $feature_data['theme_support'], $argument );
 		
 	}		
 	
 	// Return data
-	return apply_filters( 'ccm_get_theme_support_by_post_type', $data, $post_type, $argument );
+	return apply_filters( 'ctc_get_theme_support_by_post_type', $data, $post_type, $argument );
 
 }
  
@@ -223,12 +223,12 @@ function ccm_get_theme_support_by_post_type( $post_type, $argument = null ) {
  * @param string $featurew Feature to check support for
  * @return bool True if supported by theme
  */
-function ccm_feature_supported( $feature ) {
+function ctc_feature_supported( $feature ) {
 
 	$supported = false;
 	
 	// Get feature data
-	$feature_data = ccm_get_feature_data( $feature );
+	$feature_data = ctc_get_feature_data( $feature );
 	if ( $feature_data ) { // valid feature returns data
 
 		// Does theme support feature?
@@ -243,7 +243,7 @@ function ccm_feature_supported( $feature ) {
 	}
 	
 	// Return filtered
-	return apply_filters( 'ccm_feature_supported', $supported, $feature );
+	return apply_filters( 'ctc_feature_supported', $supported, $feature );
 	
 }
 
@@ -255,16 +255,16 @@ function ccm_feature_supported( $feature ) {
  * @param string $taxonomy Taxonomy to check support for
  * @return bool True if feature supported
  */
-function ccm_taxonomy_supported( $feature, $taxonomy ) {
+function ctc_taxonomy_supported( $feature, $taxonomy ) {
 
 	$supported = false;
 	
 	// Get feature data
-	$feature_data = ccm_get_feature_data( $feature );
+	$feature_data = ctc_get_feature_data( $feature );
 	if ( $feature_data ) { // valid feature returns data
 
 		// Theme taxonomies are specified
-		$theme_taxonomies = ccm_get_theme_support( $feature_data['theme_support'], 'taxonomies' );
+		$theme_taxonomies = ctc_get_theme_support( $feature_data['theme_support'], 'taxonomies' );
 		if ( isset( $theme_taxonomies ) ) {
 
 			// Taxonomy is explicitly supported
@@ -286,7 +286,7 @@ function ccm_taxonomy_supported( $feature, $taxonomy ) {
 	}
 	
 	// Return filtered
-	return apply_filters( 'ccm_taxonomy_supported', $supported, $feature, $taxonomy );
+	return apply_filters( 'ctc_taxonomy_supported', $supported, $feature, $taxonomy );
 	
 }
 
@@ -298,16 +298,16 @@ function ccm_taxonomy_supported( $feature, $taxonomy ) {
  * @param string $field Field to check support for
  * @return bool True if field supported
  */
-function ccm_field_supported( $feature, $field ) {
+function ctc_field_supported( $feature, $field ) {
 
 	$supported = false;
 	
 	// Get feature data
-	$feature_data = ccm_get_feature_data( $feature );
+	$feature_data = ctc_get_feature_data( $feature );
 	if ( $feature_data ) { // valid feature returns data
 
 		// Theme fields are specified
-		$theme_fields = ccm_get_theme_support( $feature_data['theme_support'], 'fields' );
+		$theme_fields = ctc_get_theme_support( $feature_data['theme_support'], 'fields' );
 		if ( isset( $theme_fields ) ) {
 
 			// Field is explicitly supported
@@ -328,7 +328,7 @@ function ccm_field_supported( $feature, $field ) {
 	}
 	
 	// Return filtered
-	return apply_filters( 'ccm_field_supported', $supported, $feature, $field );
+	return apply_filters( 'ctc_field_supported', $supported, $feature, $field );
 	
 }
 
@@ -344,20 +344,20 @@ function ccm_field_supported( $feature, $field ) {
  *
  * @since 0.9
  */
-function ccm_filter_fields() {
+function ctc_filter_fields() {
 
 	// Loop features to filter their fields
-	$features = ccm_get_feature_data();
+	$features = ctc_get_feature_data();
 	foreach ( $features as $feature_key => $feature_data ) {
 	
 		// Has post type, filter CT_Meta_Box configs
 		if ( isset( $feature_data['post_type'] ) ) {
 		
 			// Set Visible Fields
-			add_filter( 'ctmb_visible_fields-' . $feature_data['post_type'], 'ccm_set_visible_fields', 10, 2 );
+			add_filter( 'ctmb_visible_fields-' . $feature_data['post_type'], 'ctc_set_visible_fields', 10, 2 );
 			
 			// Set Field Overrides
-			add_filter( 'ctmb_field_overrides-' . $feature_data['post_type'], 'ccm_set_field_overrides', 10, 2 );
+			add_filter( 'ctmb_field_overrides-' . $feature_data['post_type'], 'ctc_set_field_overrides', 10, 2 );
 			
 		}
 
@@ -365,7 +365,7 @@ function ccm_filter_fields() {
 
 }
  
-add_action( 'init', 'ccm_filter_fields' );
+add_action( 'init', 'ctc_filter_fields' );
 
 /**
  * Set visible fields
@@ -378,7 +378,7 @@ add_action( 'init', 'ccm_filter_fields' );
  * @param string $post_type Post type this relates to
  * @return array Modified $visible_fields
  */
-function ccm_set_visible_fields( $visible_fields, $post_type ) {
+function ctc_set_visible_fields( $visible_fields, $post_type ) {
 	
 	// All fields
 	$original_visible_fields = $visible_fields;
@@ -386,16 +386,16 @@ function ccm_set_visible_fields( $visible_fields, $post_type ) {
 	// Filter visible fields based on theme support
 	// If not set, all fields are used by default
 	// If set and empty, all fields will be hidden
-	$theme_fields = ccm_get_theme_support_by_post_type( $post_type, 'fields' );
+	$theme_fields = ctc_get_theme_support_by_post_type( $post_type, 'fields' );
 	if ( isset( $theme_fields ) ) {
 	
 		// Make new array out of fields theme supports
 		$visible_fields = $theme_fields;
 
-		// Add support for fields that are not from Church Content Manager
+		// Add support for fields that are not from Church Theme Content
 		// (otherwise they would need to be in add_theme_support arguments)
 		foreach ( $original_visible_fields as $field ) {
-			if ( ! preg_match( '/^_ccm_.+$/', $field ) ) { // CCM fields are prefixed by "_ccm_"
+			if ( ! preg_match( '/^_ctc_.+$/', $field ) ) { // CTC fields are prefixed by "_ctc_"
 				$visible_fields[] = $field;
 			}
 		}
@@ -419,9 +419,9 @@ function ccm_set_visible_fields( $visible_fields, $post_type ) {
  * @param string $post_type Post type to set overrides on
  * @return mixed Theme support data
  */
-function ccm_set_field_overrides( $field_overrides, $post_type ) {
+function ctc_set_field_overrides( $field_overrides, $post_type ) {
 
 	// Return field overrides, if any
-	return ccm_get_theme_support_by_post_type( $post_type, 'field_overrides' );
+	return ctc_get_theme_support_by_post_type( $post_type, 'field_overrides' );
 
 }

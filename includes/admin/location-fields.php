@@ -4,10 +4,10 @@
  *
  * Meta boxes and admin columns.
  *
- * @package    Church_Content_Manager
+ * @package    Church_Theme_Content
  * @subpackage Admin
  * @copyright  Copyright (c) 2013, churchthemes.com
- * @link       https://github.com/churchthemes/church-content-manager
+ * @link       https://github.com/churchthemes/church-theme-content
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * @since      0.9
  */
@@ -24,15 +24,15 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  *
  * @since 0.9
  */
-function ccm_add_meta_box_location() {
+function ctc_add_meta_box_location() {
 
 	// Configure Meta Box
 	$meta_box = array(
 	
 		// Meta Box
-		'id' 		=> 'ccm_location', // unique ID
-		'title' 	=> _x( 'Location Details', 'location meta box', 'church-content-manager' ),
-		'post_type'	=> 'ccm_location',
+		'id' 		=> 'ctc_location', // unique ID
+		'title' 	=> _x( 'Location Details', 'location meta box', 'church-theme-content' ),
+		'post_type'	=> 'ctc_location',
 		'context'	=> 'normal', // where the meta box appear: normal (left above standard meta boxes), advanced (left below standard boxes), side
 		'priority'	=> 'high', // high, core, default or low (see this: http://www.wproots.com/ultimate-guide-to-meta-boxes-in-wordpress/)
 		
@@ -42,9 +42,9 @@ function ccm_add_meta_box_location() {
 			// Example
 			/*
 			'option_key' => array(
-				'name'				=> __( 'Field Name', 'church-content-manager' ),
+				'name'				=> __( 'Field Name', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> __( 'This is the description below the field.', 'church-content-manager' ),
+				'desc'				=> __( 'This is the description below the field.', 'church-theme-content' ),
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
@@ -63,8 +63,8 @@ function ccm_add_meta_box_location() {
 			*/
 			
 			// Address
-			'_ccm_location_address' => array(
-				'name'				=> _x( 'Address', 'location meta box', 'church-content-manager' ),
+			'_ctc_location_address' => array(
+				'name'				=> _x( 'Address', 'location meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
 				'type'				=> 'textarea', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
@@ -85,7 +85,7 @@ function ccm_add_meta_box_location() {
 			),
 
 			// Directions
-			'_ccm_location_show_directions_link' => array(
+			'_ctc_location_show_directions_link' => array(
 				'name'				=> '',
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
@@ -107,8 +107,8 @@ function ccm_add_meta_box_location() {
 			),
 			
 			// Phone				
-			'_ccm_location_phone' => array(
-				'name'				=> _x( 'Phone', 'location meta box', 'church-content-manager' ),
+			'_ctc_location_phone' => array(
+				'name'				=> _x( 'Phone', 'location meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
@@ -129,8 +129,8 @@ function ccm_add_meta_box_location() {
 			),
 
 			// Times
-			'_ccm_location_times' => array(
-				'name'				=> _x( 'Times', 'location meta box', 'church-content-manager' ),
+			'_ctc_location_times' => array(
+				'name'				=> _x( 'Times', 'location meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
 				'type'				=> 'textarea', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
@@ -151,10 +151,10 @@ function ccm_add_meta_box_location() {
 			),
 			
 			// Map Latitude
-			'_ccm_location_map_lat' => array(
-				'name'				=> _x( 'Map Latitude', 'location meta box', 'church-content-manager' ),
+			'_ctc_location_map_lat' => array(
+				'name'				=> _x( 'Map Latitude', 'location meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> __( 'You can <a href="http://churchthemes.com/get-latitude-longitude" target="_blank">use this</a> to convert an address into coordinates.', 'church-content-manager' ),
+				'desc'				=> __( 'You can <a href="http://churchthemes.com/get-latitude-longitude" target="_blank">use this</a> to convert an address into coordinates.', 'church-theme-content' ),
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
@@ -173,8 +173,8 @@ function ccm_add_meta_box_location() {
 			),		
 			
 			// Map Longitude
-			'_ccm_location_map_lng' => array(
-				'name'				=> _x( 'Map Longitude', 'location meta box', 'church-content-manager' ),
+			'_ctc_location_map_lng' => array(
+				'name'				=> _x( 'Map Longitude', 'location meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
@@ -195,18 +195,18 @@ function ccm_add_meta_box_location() {
 			),
 			
 			// Map Type
-			'_ccm_location_map_type' => array(
-				'name'				=> _x( 'Map Type', 'location meta box', 'church-content-manager' ),
+			'_ctc_location_map_type' => array(
+				'name'				=> _x( 'Map Type', 'location meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> _x( 'You can show a road map, satellite imagery, a combination of both (hybrid) or terrain.', 'location meta box', 'church-content-manager' ),
+				'desc'				=> _x( 'You can show a road map, satellite imagery, a combination of both (hybrid) or terrain.', 'location meta box', 'church-theme-content' ),
 				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
-				'options'			=> ccm_gmaps_types(), // array of keys/values for radio or select
+				'options'			=> ctc_gmaps_types(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
 				'upload_title'		=> '', // title appearing at top of media frame
 				'upload_type'		=> '', // optional type of media to filter by (image, audio, video, application/pdf)
 
-				'default'			=> ccm_gmaps_type_default(), // value to pre-populate option with (before first save or on reset)
+				'default'			=> ctc_gmaps_type_default(), // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> true, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
 				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
@@ -218,18 +218,18 @@ function ccm_add_meta_box_location() {
 			),
 			
 			// Map Zoom
-			'_ccm_location_map_zoom' => array(
-				'name'				=> _x( 'Map Zoom', 'location meta box', 'church-content-manager' ),
+			'_ctc_location_map_zoom' => array(
+				'name'				=> _x( 'Map Zoom', 'location meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> _x( 'A lower number is more zoomed out while a higher number is more zoomed in.', 'location meta box', 'church-content-manager' ),
+				'desc'				=> _x( 'A lower number is more zoomed out while a higher number is more zoomed in.', 'location meta box', 'church-theme-content' ),
 				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
-				'options'			=> ccm_gmaps_zoom_levels(), // array of keys/values for radio or select
+				'options'			=> ctc_gmaps_zoom_levels(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
 				'upload_title'		=> '', // title appearing at top of media frame
 				'upload_type'		=> '', // optional type of media to filter by (image, audio, video, application/pdf)
 
-				'default'			=> ccm_gmaps_zoom_level_default(), // value to pre-populate option with (before first save or on reset)
+				'default'			=> ctc_gmaps_zoom_level_default(), // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> true, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
 				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
@@ -263,30 +263,30 @@ function ccm_add_meta_box_location() {
  * @return array Modified columns
  */
 
-add_filter( 'manage_ccm_location_posts_columns' , 'ccm_location_columns' ); // add columns for meta values
+add_filter( 'manage_ctc_location_posts_columns' , 'ctc_location_columns' ); // add columns for meta values
  
-function ccm_location_columns( $columns ) {
+function ctc_location_columns( $columns ) {
 
 	// insert thumbnail after checkbox (before title)
 	$insert_array = array();
-	$insert_array['ccm_location_thumbnail'] = __( 'Thumbnail', 'church-content-manager' );
-	$columns = ccm_array_merge_after_key( $columns, $insert_array, 'cb' );
+	$insert_array['ctc_location_thumbnail'] = __( 'Thumbnail', 'church-theme-content' );
+	$columns = ctc_array_merge_after_key( $columns, $insert_array, 'cb' );
 
 	// insert address and order after location (title)
 	$insert_array = array();
-	if ( ccm_field_supported( 'locations', '_ccm_location_address' ) ) $insert_array['ccm_location_address'] = _x( 'Address', 'location admin column', 'church-content-manager' );
-	if ( ccm_field_supported( 'locations', '_ccm_location_times' ) ) $insert_array['ccm_location_times'] = _x( 'Times', 'location admin column', 'church-content-manager' );
-	$insert_array['ccm_location_order'] = _x( 'Order', 'sorting', 'church-content-manager' );
-	$columns = ccm_array_merge_after_key( $columns, $insert_array, 'title' );
+	if ( ctc_field_supported( 'locations', '_ctc_location_address' ) ) $insert_array['ctc_location_address'] = _x( 'Address', 'location admin column', 'church-theme-content' );
+	if ( ctc_field_supported( 'locations', '_ctc_location_times' ) ) $insert_array['ctc_location_times'] = _x( 'Times', 'location admin column', 'church-theme-content' );
+	$insert_array['ctc_location_order'] = _x( 'Order', 'sorting', 'church-theme-content' );
+	$columns = ctc_array_merge_after_key( $columns, $insert_array, 'title' );
 	
 	//change "Location" to "Location"
-	$columns['title'] = _x( 'Location', 'location admin column', 'church-content-manager' );
+	$columns['title'] = _x( 'Location', 'location admin column', 'church-theme-content' );
 	
 	return $columns;
 
 }
  
-add_action( 'admin_init', 'ccm_add_meta_box_location' );
+add_action( 'admin_init', 'ctc_add_meta_box_location' );
 
 /**
  * Change location list column content
@@ -294,14 +294,14 @@ add_action( 'admin_init', 'ccm_add_meta_box_location' );
  * @since 0.9
  * @param string $column Column being worked on
  */
-function ccm_location_columns_content( $column ) {
+function ctc_location_columns_content( $column ) {
 
 	global $post;
 	
 	switch ( $column ) {
 
 		// Thumbnail
-		case 'ccm_location_thumbnail' :
+		case 'ctc_location_thumbnail' :
 
 			if ( has_post_thumbnail() ) {
 				echo '<a href="' . get_edit_post_link( $post->ID ) . '">' . get_the_post_thumbnail( $post->ID, array( 80, 80 ) ) . '</a>';
@@ -310,21 +310,21 @@ function ccm_location_columns_content( $column ) {
 			break;
 	
 		// Address
-		case 'ccm_location_address' :
+		case 'ctc_location_address' :
 
-			echo nl2br( strip_tags( get_post_meta( $post->ID , '_ccm_location_address' , true ) ) );
+			echo nl2br( strip_tags( get_post_meta( $post->ID , '_ctc_location_address' , true ) ) );
 
 			break;
 
 		// Times
-		case 'ccm_location_times' :
+		case 'ctc_location_times' :
 
-			echo nl2br( strip_tags( get_post_meta( $post->ID , '_ccm_location_times' , true ) ) );
+			echo nl2br( strip_tags( get_post_meta( $post->ID , '_ctc_location_times' , true ) ) );
 
 			break;
 			
 		// Order
-		case 'ccm_location_order' :
+		case 'ctc_location_order' :
 
 			echo isset( $post->menu_order ) ? $post->menu_order : '';			
 
@@ -334,7 +334,7 @@ function ccm_location_columns_content( $column ) {
 
 }
 
-add_action( 'manage_posts_custom_column' , 'ccm_location_columns_content' ); // add content to the new columns
+add_action( 'manage_posts_custom_column' , 'ctc_location_columns_content' ); // add content to the new columns
 
 /**
  * Enable sorting for new columns
@@ -343,15 +343,15 @@ add_action( 'manage_posts_custom_column' , 'ccm_location_columns_content' ); // 
  * @param array $columns Columns being worked on
  * @return array Modified columns
  */
-function ccm_location_columns_sorting( $columns ) {
+function ctc_location_columns_sorting( $columns ) {
 
-	$columns['ccm_location_order'] = 'menu_order';
+	$columns['ctc_location_order'] = 'menu_order';
 
 	return $columns;
 
 }
 
-add_filter( 'manage_edit-ccm_location_sortable_columns', 'ccm_location_columns_sorting' ); // make columns sortable
+add_filter( 'manage_edit-ctc_location_sortable_columns', 'ctc_location_columns_sorting' ); // make columns sortable
 
 /**
  * Set how to sort columns (default sorting, custom fields)
@@ -360,7 +360,7 @@ add_filter( 'manage_edit-ccm_location_sortable_columns', 'ccm_location_columns_s
  * @param array $args Sorting arguments
  * @return array Modified arguments
  */
-function ccm_location_columns_sorting_request( $args ) {
+function ctc_location_columns_sorting_request( $args ) {
 
 	// admin area only
 	if ( is_admin() ) {
@@ -368,7 +368,7 @@ function ccm_location_columns_sorting_request( $args ) {
 		$screen = get_current_screen();
 
 		// only on this post type's list
-		if ( 'ccm_location' == $screen->post_type && 'edit' == $screen->base ) {
+		if ( 'ctc_location' == $screen->post_type && 'edit' == $screen->base ) {
 
 			// orderby has been set, tell how to order
 			if ( isset( $args['orderby'] ) ) {
@@ -376,7 +376,7 @@ function ccm_location_columns_sorting_request( $args ) {
 				switch ( $args['orderby'] ) {
 				
 					// Order
-					case '_ccm_location_order' :
+					case '_ctc_location_order' :
 
 						$args['meta_key'] = 'menu_order';
 						$args['orderby'] = 'meta_value_num';
@@ -401,4 +401,4 @@ function ccm_location_columns_sorting_request( $args ) {
 
 }
 
-add_filter( 'request', 'ccm_location_columns_sorting_request' ); // set how to sort columns
+add_filter( 'request', 'ctc_location_columns_sorting_request' ); // set how to sort columns

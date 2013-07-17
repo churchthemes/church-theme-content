@@ -4,10 +4,10 @@
  *
  * Meta boxes and admin columns.
  *
- * @package    Church_Content_Manager
+ * @package    Church_Theme_Content
  * @subpackage Admin
  * @copyright  Copyright (c) 2013, churchthemes.com
- * @link       https://github.com/churchthemes/church-content-manager
+ * @link       https://github.com/churchthemes/church-theme-content
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * @since      0.9
  */
@@ -26,19 +26,19 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @param string $title Default title placeholder
  * @return string Modified placeholder
  */
-function ccm_person_title_text( $title ) {
+function ctc_person_title_text( $title ) {
 
 	$screen = get_current_screen();
 
-	if  ( 'ccm_person' == $screen->post_type ) {
-		$title = __( 'Enter name here', 'church-content-manager' );
+	if  ( 'ctc_person' == $screen->post_type ) {
+		$title = __( 'Enter name here', 'church-theme-content' );
 	}
 
 	return $title;
 
 }
  
-add_filter( 'enter_title_here', 'ccm_person_title_text' );
+add_filter( 'enter_title_here', 'ctc_person_title_text' );
  
 /**********************************
  * META BOXES
@@ -49,15 +49,15 @@ add_filter( 'enter_title_here', 'ccm_person_title_text' );
  *
  * @since 0.9
  */
-function ccm_add_meta_box_person_details() {
+function ctc_add_meta_box_person_details() {
 
 	// Configure Meta Box
 	$meta_box = array(
 	
 		// Meta Box
-		'id' 		=> 'ccm_person_details', // unique ID
-		'title' 	=> _x( 'Person Details', 'meta box', 'church-content-manager' ),
-		'post_type'	=> 'ccm_person',
+		'id' 		=> 'ctc_person_details', // unique ID
+		'title' 	=> _x( 'Person Details', 'meta box', 'church-theme-content' ),
+		'post_type'	=> 'ctc_person',
 		'context'	=> 'normal', // where the meta box appear: normal (left above standard meta boxes), advanced (left below standard boxes), side
 		'priority'	=> 'high', // high, core, default or low (see this: http://www.wproots.com/ultimate-guide-to-meta-boxes-in-wordpress/)
 		
@@ -67,9 +67,9 @@ function ccm_add_meta_box_person_details() {
 			// Example
 			/*
 			'option_key' => array(
-				'name'				=> __( 'Field Name', 'church-content-manager' ),
+				'name'				=> __( 'Field Name', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> __( 'This is the description below the field.', 'church-content-manager' ),
+				'desc'				=> __( 'This is the description below the field.', 'church-theme-content' ),
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
@@ -88,10 +88,10 @@ function ccm_add_meta_box_person_details() {
 			*/
 
 			// Position				
-			'_ccm_person_position' => array(
-				'name'				=> __( 'Position', 'church-content-manager' ),
+			'_ctc_person_position' => array(
+				'name'				=> __( 'Position', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> __( "Enter the person's position or title (e.g. Senior Pastor, Deacon, etc.)", 'church-content-manager' ),
+				'desc'				=> __( "Enter the person's position or title (e.g. Senior Pastor, Deacon, etc.)", 'church-theme-content' ),
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
@@ -110,8 +110,8 @@ function ccm_add_meta_box_person_details() {
 			),
 
 			// Phone				
-			'_ccm_person_phone' => array(
-				'name'				=> _x( 'Phone', 'location meta box', 'church-content-manager' ),
+			'_ctc_person_phone' => array(
+				'name'				=> _x( 'Phone', 'location meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
@@ -132,8 +132,8 @@ function ccm_add_meta_box_person_details() {
 			),
 
 			// Email				
-			'_ccm_person_email' => array(
-				'name'				=> _x( 'Email', 'location meta box', 'church-content-manager' ),
+			'_ctc_person_email' => array(
+				'name'				=> _x( 'Email', 'location meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
@@ -154,8 +154,8 @@ function ccm_add_meta_box_person_details() {
 			),
 
 			// URLs
-			'_ccm_person_urls' => array(
-				'name'				=> __( 'URLs', 'church-content-manager' ),
+			'_ctc_person_urls' => array(
+				'name'				=> __( 'URLs', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
 				'type'				=> 'textarea', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
@@ -184,7 +184,7 @@ function ccm_add_meta_box_person_details() {
 	
 }
  
-add_action( 'admin_init', 'ccm_add_meta_box_person_details' );
+add_action( 'admin_init', 'ctc_add_meta_box_person_details' );
 
 /**********************************
  * ADMIN COLUMNS
@@ -197,28 +197,28 @@ add_action( 'admin_init', 'ccm_add_meta_box_person_details' );
  * @param array $columns Columns to manipulate
  * @return array Modified columns
  */
-function ccm_person_columns( $columns ) {
+function ctc_person_columns( $columns ) {
 
 	// insert thumbnail after checkbox (before title)
 	$insert_array = array();
-	$insert_array['ccm_person_thumbnail'] = __( 'Thumbnail', 'church-content-manager' );
-	$columns = ccm_array_merge_after_key( $columns, $insert_array, 'cb' );
+	$insert_array['ctc_person_thumbnail'] = __( 'Thumbnail', 'church-theme-content' );
+	$columns = ctc_array_merge_after_key( $columns, $insert_array, 'cb' );
 
 	// insert columns after title
 	$insert_array = array();
-	if ( ccm_field_supported( 'people', '_ccm_person_position' ) ) $insert_array['ccm_person_position'] = __( 'Position', 'church-content-manager' );
-	if ( ccm_taxonomy_supported( 'people', 'ccm_person_group' ) ) $insert_array['ccm_person_group'] = _x( 'Groups', 'people column', 'church-content-manager' );
-	$insert_array['ccm_person_order'] = _x( 'Order', 'sorting', 'church-content-manager' );
-	$columns = ccm_array_merge_after_key( $columns, $insert_array, 'title' );
+	if ( ctc_field_supported( 'people', '_ctc_person_position' ) ) $insert_array['ctc_person_position'] = __( 'Position', 'church-theme-content' );
+	if ( ctc_taxonomy_supported( 'people', 'ctc_person_group' ) ) $insert_array['ctc_person_group'] = _x( 'Groups', 'people column', 'church-theme-content' );
+	$insert_array['ctc_person_order'] = _x( 'Order', 'sorting', 'church-theme-content' );
+	$columns = ctc_array_merge_after_key( $columns, $insert_array, 'title' );
 	
 	//change "title" to "name"
-	$columns['title'] = _x( 'Name', 'person', 'church-content-manager' );
+	$columns['title'] = _x( 'Name', 'person', 'church-theme-content' );
 	
 	return $columns;
 
 }
 
-add_filter( 'manage_ccm_person_posts_columns' , 'ccm_person_columns' ); // add columns
+add_filter( 'manage_ctc_person_posts_columns' , 'ctc_person_columns' ); // add columns
 
 /**
  * Change person list column content
@@ -226,14 +226,14 @@ add_filter( 'manage_ccm_person_posts_columns' , 'ccm_person_columns' ); // add c
  * @since 0.9
  * @param string $column Column being worked on
  */
-function ccm_person_columns_content( $column ) {
+function ctc_person_columns_content( $column ) {
 
 	global $post;
 	
 	switch ( $column ) {
 			
 		// Thumbnail
-		case 'ccm_person_thumbnail' :
+		case 'ctc_person_thumbnail' :
 
 			if ( has_post_thumbnail() ) {
 				echo '<a href="' . get_edit_post_link( $post->ID ) . '">' . get_the_post_thumbnail( $post->ID, array( 80, 80 ) ) . '</a>';
@@ -242,21 +242,21 @@ function ccm_person_columns_content( $column ) {
 			break;
 	
 		// Position
-		case 'ccm_person_position' :
+		case 'ctc_person_position' :
 
-			echo get_post_meta( $post->ID , '_ccm_person_position' , true );
+			echo get_post_meta( $post->ID , '_ctc_person_position' , true );
 
 			break;
 
 		// Group
-		case 'ccm_person_group' :
+		case 'ctc_person_group' :
 
-			echo ccm_admin_term_list( $post->ID, 'ccm_person_group' );
+			echo ctc_admin_term_list( $post->ID, 'ctc_person_group' );
 
 			break;
 
 		// Order
-		case 'ccm_person_order' :
+		case 'ctc_person_order' :
 
 			echo isset( $post->menu_order ) ? $post->menu_order : '';			
 
@@ -266,7 +266,7 @@ function ccm_person_columns_content( $column ) {
 
 }
 
-add_action( 'manage_posts_custom_column' , 'ccm_person_columns_content' ); // add content for columns
+add_action( 'manage_posts_custom_column' , 'ctc_person_columns_content' ); // add content for columns
 
 /**
  * Enable sorting for new columns
@@ -275,16 +275,16 @@ add_action( 'manage_posts_custom_column' , 'ccm_person_columns_content' ); // ad
  * @param array $columns Columns being worked on
  * @return array Modified columns
  */
-function ccm_person_columns_sorting( $columns ) {
+function ctc_person_columns_sorting( $columns ) {
 
-	$columns['ccm_person_position'] = '_ccm_person_position';
-	$columns['ccm_person_order'] = 'menu_order';
+	$columns['ctc_person_position'] = '_ctc_person_position';
+	$columns['ctc_person_order'] = 'menu_order';
 
 	return $columns;
 
 }
 
-add_filter( 'manage_edit-ccm_person_sortable_columns', 'ccm_person_columns_sorting' ); // make columns sortable
+add_filter( 'manage_edit-ctc_person_sortable_columns', 'ctc_person_columns_sorting' ); // make columns sortable
 
 /**
  * Set how to sort columns (default sorting, custom fields)
@@ -293,7 +293,7 @@ add_filter( 'manage_edit-ccm_person_sortable_columns', 'ccm_person_columns_sorti
  * @param array $args Sorting arguments
  * @return array Modified arguments
  */
-function ccm_person_columns_sorting_request( $args ) {
+function ctc_person_columns_sorting_request( $args ) {
 
 	// admin area only
 	if ( is_admin() ) {
@@ -301,7 +301,7 @@ function ccm_person_columns_sorting_request( $args ) {
 		$screen = get_current_screen();
 
 		// only on this post type's list
-		if ( 'ccm_person' == $screen->post_type && 'edit' == $screen->base ) {
+		if ( 'ctc_person' == $screen->post_type && 'edit' == $screen->base ) {
 
 			// orderby has been set, tell how to order
 			if ( isset( $args['orderby'] ) ) {
@@ -309,9 +309,9 @@ function ccm_person_columns_sorting_request( $args ) {
 				switch ( $args['orderby'] ) {
 				
 					// Under Name
-					case '_ccm_person_position' :
+					case '_ctc_person_position' :
 
-						$args['meta_key'] = '_ccm_person_position';
+						$args['meta_key'] = '_ctc_person_position';
 						$args['orderby'] = 'meta_value'; // alphabetically (meta_value_num for numeric)
 						
 						break;
@@ -334,4 +334,4 @@ function ccm_person_columns_sorting_request( $args ) {
 
 }
 
-add_filter( 'request', 'ccm_person_columns_sorting_request' ); // set how to sort columns
+add_filter( 'request', 'ctc_person_columns_sorting_request' ); // set how to sort columns

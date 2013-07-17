@@ -2,10 +2,10 @@
 /**
  * Mime Types
  *
- * @package    Church_Content_Manager
+ * @package    Church_Theme_Content
  * @subpackage Functions
  * @copyright  Copyright (c) 2013, churchthemes.com
- * @link       https://github.com/churchthemes/church-content-manager
+ * @link       https://github.com/churchthemes/church-theme-content
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * @since      0.9
  */
@@ -25,10 +25,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @param array $mime_types Currently uploadable mime types
  * @return array Mime types with additions
  */
-function ccm_add_mime_types( $mime_types ) {
+function ctc_add_mime_types( $mime_types ) {
 
 	// Sermon feature supported?
-	if ( ccm_feature_supported( 'sermons' ) ) {
+	if ( ctc_feature_supported( 'sermons' ) ) {
 
 		// Video
 		$mime_types['webm']			= 'video/webm';
@@ -53,7 +53,7 @@ function ccm_add_mime_types( $mime_types ) {
 
 }
 
-add_filter( 'upload_mimes', 'ccm_add_mime_types' );
+add_filter( 'upload_mimes', 'ctc_add_mime_types' );
 
 /**
  * Add mime types for media filtering
@@ -67,17 +67,17 @@ add_filter( 'upload_mimes', 'ccm_add_mime_types' );
  * @param array $post_mime_types Default mime types
  * @return array Modified mime types
  */
-function ccm_add_post_mime_types( $post_mime_types ) {
+function ctc_add_post_mime_types( $post_mime_types ) {
 
 	// PDF
 	$post_mime_types['application/pdf'] = array(
-		__( 'PDF', 'church-content-manager' ),
-		__( 'Manage PDFs', 'church-content-manager' ),
-		_n_noop( 'PDF <span class="count">(%s)</span>', 'PDFs <span class="count">(%s)</span>', 'church-content-manager' )
+		__( 'PDF', 'church-theme-content' ),
+		__( 'Manage PDFs', 'church-theme-content' ),
+		_n_noop( 'PDF <span class="count">(%s)</span>', 'PDFs <span class="count">(%s)</span>', 'church-theme-content' )
 	);
 
 	return $post_mime_types;
 
 }
 
-add_filter( 'post_mime_types', 'ccm_add_post_mime_types' );
+add_filter( 'post_mime_types', 'ctc_add_post_mime_types' );

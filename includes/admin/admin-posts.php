@@ -2,10 +2,10 @@
 /**
  * Admin Post Functions
  *
- * @package    Church_Content_Manager
+ * @package    Church_Theme_Content
  * @subpackage Admin
  * @copyright  Copyright (c) 2013, churchthemes.com
- * @link       https://github.com/churchthemes/church-content-manager
+ * @link       https://github.com/churchthemes/church-theme-content
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * @since      0.9
  */
@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @param string $slug The slug to check
  * @return bool Whether or not post slug is valid
  */
-function ccm_is_bad_post_slug( $current_value, $slug ) {
+function ctc_is_bad_post_slug( $current_value, $slug ) {
 
 	// Get post types with archives
 	$post_types = get_post_types( array(
@@ -48,5 +48,5 @@ function ccm_is_bad_post_slug( $current_value, $slug ) {
 
 }
 
-add_filter( 'wp_unique_post_slug_is_bad_flat_slug', 'ccm_is_bad_post_slug', 10, 2 );
-add_filter( 'wp_unique_post_slug_is_bad_hierarchical_slug', 'ccm_is_bad_post_slug', 10, 2 );
+add_filter( 'wp_unique_post_slug_is_bad_flat_slug', 'ctc_is_bad_post_slug', 10, 2 );
+add_filter( 'wp_unique_post_slug_is_bad_hierarchical_slug', 'ctc_is_bad_post_slug', 10, 2 );

@@ -4,10 +4,10 @@
  *
  * Meta boxes and admin columns.
  *
- * @package    Church_Content_Manager
+ * @package    Church_Theme_Content
  * @subpackage Admin
  * @copyright  Copyright (c) 2013, churchthemes.com
- * @link       https://github.com/churchthemes/church-content-manager
+ * @link       https://github.com/churchthemes/church-theme-content
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * @since      0.9
  */
@@ -24,15 +24,15 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  *
  * @since 0.9
  */
-function ccm_add_meta_box_sermon_details() {
+function ctc_add_meta_box_sermon_details() {
 
 	// Configure Meta Box
 	$meta_box = array(
 
 		// Meta Box
-		'id' 		=> 'ccm_sermon_options', // unique ID
-		'title' 	=> _x( 'Sermon Media', 'meta box', 'church-content-manager' ),
-		'post_type'	=> 'ccm_sermon',
+		'id' 		=> 'ctc_sermon_options', // unique ID
+		'title' 	=> _x( 'Sermon Media', 'meta box', 'church-theme-content' ),
+		'post_type'	=> 'ctc_sermon',
 		'context'	=> 'normal', // where the meta box appear: normal (left above standard meta boxes), advanced (left below standard boxes), side
 		'priority'	=> 'high', // high, core, default or low (see this: http://www.wproots.com/ultimate-guide-to-meta-boxes-in-wordpress/)
 		
@@ -42,9 +42,9 @@ function ccm_add_meta_box_sermon_details() {
 			// Example
 			/*
 			'option_key' => array(
-				'name'				=> __( 'Field Name', 'church-content-manager' ),
+				'name'				=> __( 'Field Name', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> __( 'This is the description below the field.', 'church-content-manager' ),
+				'desc'				=> __( 'This is the description below the field.', 'church-theme-content' ),
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
@@ -63,12 +63,12 @@ function ccm_add_meta_box_sermon_details() {
 			*/
 		
 			// Full Text					
-			'_ccm_sermon_has_full_text' => array(
-				'name'				=> __( 'Full Text', 'church-content-manager' ),
+			'_ctc_sermon_has_full_text' => array(
+				'name'				=> __( 'Full Text', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> __( 'Check this if you provide a complete transcript above.', 'church-content-manager' ),
+				'desc'				=> __( 'Check this if you provide a complete transcript above.', 'church-theme-content' ),
 				'type'				=> 'checkbox', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
-				'checkbox_label'	=> __( 'Full sermon text provided', 'church-content-manager' ), //show text after checkbox
+				'checkbox_label'	=> __( 'Full sermon text provided', 'church-theme-content' ), //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
 				'upload_title'		=> '', // title appearing at top of media frame
@@ -85,19 +85,19 @@ function ccm_add_meta_box_sermon_details() {
 			),
 			
 			// Video				
-			'_ccm_sermon_video' => array( // intended for URL or embed code
-				'name'				=> __( 'Video', 'church-content-manager' ),
+			'_ctc_sermon_video' => array( // intended for URL or embed code
+				'name'				=> __( 'Video', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> sprintf(
-											__( 'Upload a file by clicking "Choose Video" or upload a video to one of the <a href="%s" target="_blank">supported sites</a> (such as YouTube) then paste its URL here, or paste an embed code from another site. <a href="%s" target="_blank">Video Help</a>', 'church-content-manager' ),
-											apply_filters( 'ccm_sermon_video_sites_url', 'http://churchthemes.com/go/ccm-sermon-video-sites' ),
-											apply_filters( 'ccm_sermon_video_help_url', 'http://churchthemes.com/go/ccm-sermon-video-help' )
+											__( 'Upload a file by clicking "Choose Video" or upload a video to one of the <a href="%s" target="_blank">supported sites</a> (such as YouTube) then paste its URL here, or paste an embed code from another site. <a href="%s" target="_blank">Video Help</a>', 'church-theme-content' ),
+											apply_filters( 'ctc_sermon_video_sites_url', 'http://churchthemes.com/go/ctc-sermon-video-sites' ),
+											apply_filters( 'ctc_sermon_video_help_url', 'http://churchthemes.com/go/ctc-sermon-video-help' )
 										),
 				'type'				=> 'upload_textarea', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
-				'upload_button'		=> __( 'Choose Video', 'church-content-manager' ), // text for button that opens media frame
-				'upload_title'		=> __( 'Choose an Video File', 'church-content-manager' ), // title appearing at top of media frame
+				'upload_button'		=> __( 'Choose Video', 'church-theme-content' ), // text for button that opens media frame
+				'upload_title'		=> __( 'Choose an Video File', 'church-theme-content' ), // title appearing at top of media frame
 				'upload_type'		=> 'video', // optional type of media to filter by (image, audio, video, application/pdf)
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
@@ -111,19 +111,19 @@ function ccm_add_meta_box_sermon_details() {
 			),
 			
 			// Audio
-			'_ccm_sermon_audio' => array( // intended for URL or embed code
-				'name'				=> __( 'Audio', 'church-content-manager' ),
+			'_ctc_sermon_audio' => array( // intended for URL or embed code
+				'name'				=> __( 'Audio', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> sprintf(
-											__( 'Upload a file by clicking "Choose Audio" or upload audio to one of the <a href="%s" target="_blank">supported sites</a> (such as SoundCloud) then paste its URL here, or paste an embed code from another site. <a href="%s" target="_blank">Video Help</a>', 'church-content-manager' ),
-											apply_filters( 'ccm_sermon_audio_sites_url', 'http://churchthemes.com/go/ccm-sermon-audio-sites' ),
-											apply_filters( 'ccm_sermon_audio_help_url', 'http://churchthemes.com/go/ccm-sermon-audio-help' )
+											__( 'Upload a file by clicking "Choose Audio" or upload audio to one of the <a href="%s" target="_blank">supported sites</a> (such as SoundCloud) then paste its URL here, or paste an embed code from another site. <a href="%s" target="_blank">Video Help</a>', 'church-theme-content' ),
+											apply_filters( 'ctc_sermon_audio_sites_url', 'http://churchthemes.com/go/ctc-sermon-audio-sites' ),
+											apply_filters( 'ctc_sermon_audio_help_url', 'http://churchthemes.com/go/ctc-sermon-audio-help' )
 										),
 				'type'				=> 'upload_textarea', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
-				'upload_button'		=> __( 'Choose Audio', 'church-content-manager' ), // text for button that opens media frame
-				'upload_title'		=> __( 'Choose an Audio File', 'church-content-manager' ), // title appearing at top of media frame
+				'upload_button'		=> __( 'Choose Audio', 'church-theme-content' ), // text for button that opens media frame
+				'upload_title'		=> __( 'Choose an Audio File', 'church-theme-content' ), // title appearing at top of media frame
 				'upload_type'		=> 'audio', // optional type of media to filter by (image, audio, video, application/pdf)
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
@@ -137,15 +137,15 @@ function ccm_add_meta_box_sermon_details() {
 			),
 			
 			// PDF URL					
-			'_ccm_sermon_pdf' => array(
-				'name'				=> __( 'PDF', 'church-content-manager' ),
+			'_ctc_sermon_pdf' => array(
+				'name'				=> __( 'PDF', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> __( 'Upload a file by clicking "Choose PDF" or paste the URL to a PDF hosted on another site.', 'church-content-manager' ),
+				'desc'				=> __( 'Upload a file by clicking "Choose PDF" or paste the URL to a PDF hosted on another site.', 'church-theme-content' ),
 				'type'				=> 'upload', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
-				'upload_button'		=> __( 'Choose PDF', 'church-content-manager' ), // text for button that opens media frame
-				'upload_title'		=> __( 'Choose a PDF File', 'church-content-manager' ), // title appearing at top of media frame
+				'upload_button'		=> __( 'Choose PDF', 'church-theme-content' ), // text for button that opens media frame
+				'upload_title'		=> __( 'Choose a PDF File', 'church-theme-content' ), // title appearing at top of media frame
 				'upload_type'		=> 'application/pdf', // optional type of media to filter by (image, audio, video, application/pdf)
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
@@ -167,7 +167,7 @@ function ccm_add_meta_box_sermon_details() {
 	
 }
  
-add_action( 'admin_init', 'ccm_add_meta_box_sermon_details' );
+add_action( 'admin_init', 'ctc_add_meta_box_sermon_details' );
 
 /**********************************
  * PODCASTING ENCLOSURE
@@ -183,7 +183,7 @@ add_action( 'admin_init', 'ccm_add_meta_box_sermon_details' );
  * @param int $post_id ID of post being saved
  * @param object $post Post object being saved
  */
-function ccm_sermon_save_audio_enclosure( $post_id, $post ) {
+function ctc_sermon_save_audio_enclosure( $post_id, $post ) {
 
 	// Stop if no post, auto-save (meta not submitted) or user lacks permission
 	$post_type = get_post_type_object( $post->post_type );
@@ -192,14 +192,14 @@ function ccm_sermon_save_audio_enclosure( $post_id, $post ) {
 	}
 
 	// Get audio URL
-	$audio = get_post_meta( $post_id , '_ccm_sermon_audio' , true );
+	$audio = get_post_meta( $post_id , '_ctc_sermon_audio' , true );
 
 	// Populate enclosure field with URL, length and format, if valid URL found
 	do_enclose( $audio, $post_id );
 
 }
 
-add_action( 'save_post', 'ccm_sermon_save_audio_enclosure', 11, 2 ); // after 'save_post' saves meta fields on 10
+add_action( 'save_post', 'ctc_sermon_save_audio_enclosure', 11, 2 ); // after 'save_post' saves meta fields on 10
 
 /**********************************
  * ADMIN COLUMNS
@@ -214,21 +214,21 @@ add_action( 'save_post', 'ccm_sermon_save_audio_enclosure', 11, 2 ); // after 's
  * @param array $columns Columns to manipulate
  * @return array Modified columns
  */
-function ccm_sermon_columns( $columns ) {
+function ctc_sermon_columns( $columns ) {
 
 	// insert thumbnail after checkbox (before title)
 	$insert_array = array();
-	$insert_array['ccm_sermon_thumbnail'] = __( 'Thumbnail', 'church-content-manager' );
-	$columns = ccm_array_merge_after_key( $columns, $insert_array, 'cb' );
+	$insert_array['ctc_sermon_thumbnail'] = __( 'Thumbnail', 'church-theme-content' );
+	$columns = ctc_array_merge_after_key( $columns, $insert_array, 'cb' );
 
 	// insert media types, speakers, topics after title
 	$insert_array = array();
-	$insert_array['ccm_sermon_types'] = _x( 'Formats', 'sermons', 'church-content-manager' );
-	if ( ccm_taxonomy_supported( 'sermons', 'ccm_sermon_topic' ) ) $insert_array['ccm_sermon_topics'] = __( 'Topics', 'church-content-manager' );
-	//if ( ccm_taxonomy_supported( 'sermons', 'ccm_sermon_book' ) ) $insert_array['ccm_sermon_books'] = _x( 'Books', 'sermons', 'church-content-manager' );
-	//if ( ccm_taxonomy_supported( 'sermons', 'ccm_sermon_series' ) ) $insert_array['ccm_sermon_series'] = _x( 'Series', 'sermons', 'church-content-manager' );
-	// little room: if ( ccm_taxonomy_supported( 'sermons', 'ccm_sermon_speaker' ) ) $insert_array['ccm_sermon_speakers'] = _x( 'Speakers', 'sermons', 'church-content-manager' );
-	$columns = ccm_array_merge_after_key( $columns, $insert_array, 'title' );
+	$insert_array['ctc_sermon_types'] = _x( 'Formats', 'sermons', 'church-theme-content' );
+	if ( ctc_taxonomy_supported( 'sermons', 'ctc_sermon_topic' ) ) $insert_array['ctc_sermon_topics'] = __( 'Topics', 'church-theme-content' );
+	//if ( ctc_taxonomy_supported( 'sermons', 'ctc_sermon_book' ) ) $insert_array['ctc_sermon_books'] = _x( 'Books', 'sermons', 'church-theme-content' );
+	//if ( ctc_taxonomy_supported( 'sermons', 'ctc_sermon_series' ) ) $insert_array['ctc_sermon_series'] = _x( 'Series', 'sermons', 'church-theme-content' );
+	// little room: if ( ctc_taxonomy_supported( 'sermons', 'ctc_sermon_speaker' ) ) $insert_array['ctc_sermon_speakers'] = _x( 'Speakers', 'sermons', 'church-theme-content' );
+	$columns = ctc_array_merge_after_key( $columns, $insert_array, 'title' );
 
 	// remove author
 	unset( $columns['author'] );
@@ -237,7 +237,7 @@ function ccm_sermon_columns( $columns ) {
 
 }
 
-add_filter( 'manage_ccm_sermon_posts_columns' , 'ccm_sermon_columns' ); // add columns for thumbnail, topics, etc.
+add_filter( 'manage_ctc_sermon_posts_columns' , 'ctc_sermon_columns' ); // add columns for thumbnail, topics, etc.
 
 /**
  * Change sermon list column content
@@ -245,14 +245,14 @@ add_filter( 'manage_ccm_sermon_posts_columns' , 'ccm_sermon_columns' ); // add c
  * @since 0.9
  * @param string $column Column being worked on
  */
-function ccm_sermon_columns_content( $column ) {
+function ctc_sermon_columns_content( $column ) {
 
 	global $post;
 	
 	switch ( $column ) {
 
 		// Thumbnail
-		case 'ccm_sermon_thumbnail' :
+		case 'ctc_sermon_thumbnail' :
 
 			if ( has_post_thumbnail() ) {
 				echo '<a href="' . get_edit_post_link( $post->ID ) . '">' . get_the_post_thumbnail( $post->ID, array( 80, 80 ) ) . '</a>';
@@ -261,24 +261,24 @@ function ccm_sermon_columns_content( $column ) {
 			break;
 
 		// Media Types
-		case 'ccm_sermon_types' :
+		case 'ctc_sermon_types' :
 
 			$media_types = array();
 		
-			if ( get_post_meta( $post->ID , '_ccm_sermon_text' , true ) ) {
-				$media_types[] = _x( 'Text', 'media type', 'church-content-manager' );
+			if ( get_post_meta( $post->ID , '_ctc_sermon_text' , true ) ) {
+				$media_types[] = _x( 'Text', 'media type', 'church-theme-content' );
 			}
 
-			if ( get_post_meta( $post->ID , '_ccm_sermon_video' , true ) ) {
-				$media_types[] = _x( 'Video', 'media type', 'church-content-manager' );
+			if ( get_post_meta( $post->ID , '_ctc_sermon_video' , true ) ) {
+				$media_types[] = _x( 'Video', 'media type', 'church-theme-content' );
 			}
 			
-			if ( get_post_meta( $post->ID , '_ccm_sermon_audio' , true ) ) {
-				$media_types[] = _x( 'Audio', 'media type', 'church-content-manager' );
+			if ( get_post_meta( $post->ID , '_ctc_sermon_audio' , true ) ) {
+				$media_types[] = _x( 'Audio', 'media type', 'church-theme-content' );
 			}
 			
-			if ( get_post_meta( $post->ID , '_ccm_sermon_pdf' , true ) ) {
-				$media_types[] = _x( 'PDF', 'media type', 'church-content-manager' );
+			if ( get_post_meta( $post->ID , '_ctc_sermon_pdf' , true ) ) {
+				$media_types[] = _x( 'PDF', 'media type', 'church-theme-content' );
 			}
 			
 			echo implode( ', ', $media_types );
@@ -286,30 +286,30 @@ function ccm_sermon_columns_content( $column ) {
 			break;
 
 		// Topics
-		case 'ccm_sermon_topics' :
+		case 'ctc_sermon_topics' :
 
-			echo ccm_admin_term_list( $post->ID, 'ccm_sermon_topic' );
+			echo ctc_admin_term_list( $post->ID, 'ctc_sermon_topic' );
 
 			break;
 			
 		// Books
-		case 'ccm_sermon_books' :
+		case 'ctc_sermon_books' :
 
-			echo ccm_admin_term_list( $post->ID, 'ccm_sermon_book' );
+			echo ctc_admin_term_list( $post->ID, 'ctc_sermon_book' );
 
 			break;
 						
 		// Series
-		case 'ccm_sermon_series' :
+		case 'ctc_sermon_series' :
 
-			echo ccm_admin_term_list( $post->ID, 'ccm_sermon_series' );
+			echo ctc_admin_term_list( $post->ID, 'ctc_sermon_series' );
 
 			break;
 			
 		// Speakers
-		case 'ccm_sermon_speakers' :
+		case 'ctc_sermon_speakers' :
 
-			echo ccm_admin_term_list( $post->ID, 'ccm_sermon_speaker' );
+			echo ctc_admin_term_list( $post->ID, 'ctc_sermon_speaker' );
 
 			break;
 
@@ -317,4 +317,4 @@ function ccm_sermon_columns_content( $column ) {
 
 }
 
-add_action( 'manage_posts_custom_column' , 'ccm_sermon_columns_content' );
+add_action( 'manage_posts_custom_column' , 'ctc_sermon_columns_content' );
