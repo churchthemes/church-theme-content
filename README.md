@@ -1,7 +1,7 @@
 Church Theme Content (Plugin)
 =============================
 
-A WordPress plugin providing compatible themes with church-related post types, taxonomies and fields.
+A WordPress plugin from [churchthemes.com](http://churchthemes.com) providing compatible themes with church-related post types, taxonomies and fields.
 
 Purpose
 -------
@@ -172,3 +172,7 @@ If you'd like an extra hand in presenting content from this plugin, have a look 
 
 * Sermon audio podcasting is built-in. When an audio URL is provided, it is used in the sermons feed as an enclosure.
 * Events can be set to automatically recur. This is accomplished with WordPress's scheduling feature.
+
+### Changelog
+
+View the [release tags](https://github.com/churchthemes/church-theme-content/tags).
