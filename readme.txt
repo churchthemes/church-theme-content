@@ -1,7 +1,6 @@
 === Church Theme Content ===
 Contributors: churchthemes, stevengliebe
 Tags: church, churches, sermon, sermons, ministry, ministries
-Donate link: http://churchthemes.com
 Requires at least: 3.6
 Tested up to: 3.6
 Stable tag: trunk
@@ -29,7 +28,9 @@ See the [screenshots](http://wordpress.org/plugins/church-theme-content/screensh
 
 = Developers =
 
-Please see the plugin's [GitHub](https://github.com/churchthemes/church-theme-content) repository for notes on developing themes that use this plugin. A couple benefits are that you will save time and be helping to accomplish better data portability among church websites powered by WordPress.
+Please see the [Developer Guide](http://churchthemes.com/guides/developer/church-theme-content/) on churchthemes.com for notes on developing themes that use this plugin. A couple benefits are that you will save time and be helping to accomplish better data portability among church websites powered by WordPress.
+
+You can follow development on [GitHub](https://github.com/churchthemes/church-theme-content).
 
 == Installation ==
 
@@ -43,7 +44,7 @@ No, a theme made specifically for use with this plugin is necessary for displayi
 
 = Can make a theme that uses this plugin? =
 
-Yes, please find development notes on [GitHub](https://github.com/churchthemes/church-theme-content).
+Yes, please see the [Developer Guide](http://churchthemes.com/guides/developer/church-theme-content/).
 
 == Screenshots ==
 
@@ -56,54 +57,4 @@ Yes, please find development notes on [GitHub](https://github.com/churchthemes/c
 
 == Changelog ==
 
-= 0.9.2 = 
-* Rename plugin to Church Theme Content
-
-= 0.9.1 = 
-* Minor fixes and improvements
-
-= 0.9 = 
-* Code clean up and documentation
-* Event recurrence end date
-* New sermon taxonomies
-
-= 0.8.5 = 
-* Sermon audio/video embedding by upload, external URL or embed code
-
-= 0.8.4 = 
-* Finish localization (local or external for safe updates)
-
-= 0.8.3 = 
-* Recurring events added (weekly, monthly, yearly)
-
-= 0.8.2 = 
-* Support for sermon podcasting added
-
-= 0.8.1 = 
-* Update CT Meta Box library
-
-= 0.8 = 
-* Custom field improvements
-* Removed gallery post type (use native)
-
-= 0.7.1 = 
-* Add directions and times fields to locations
-
-= 0.7 = 
-* People groups
-* Friendlier post type rewrite slugs
-* Archives for all
-
-= 0.6 = 
-* New media manager (CT Meta Box)
-* PDF mime type
-* Various fixes
-
-= 0.5.2 = 
-* Post type modifications
-
-= 0.5.1 = 
-* Remove slide and highlight post types
-
-= 0.5 = 
-* First public release
+See [release tags](https://github.com/churchthemes/church-theme-content/tags) on GitHub.
