@@ -200,6 +200,7 @@ class Church_Theme_Content {
 				CTC_ADMIN_DIR . '/admin-posts.php',
 				CTC_ADMIN_DIR . '/admin-support.php',
 				CTC_ADMIN_DIR . '/event-fields.php',
+				CTC_ADMIN_DIR . '/import.php',
 				CTC_ADMIN_DIR . '/location-fields.php',
 				CTC_ADMIN_DIR . '/person-fields.php',
 				CTC_ADMIN_DIR . '/sermon-fields.php', 
