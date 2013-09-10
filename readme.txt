@@ -57,4 +57,4 @@ Yes, please see the [Developer Guide](http://churchthemes.com/guides/developer/c
 
 == Changelog ==
 
-See [release tags](https://github.com/churchthemes/church-theme-content/tags) on GitHub.
+See [releases](https://github.com/churchthemes/church-theme-content/releases) on GitHub.
