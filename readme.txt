@@ -48,12 +48,16 @@ Yes, please see the [Developer Guide](http://churchthemes.com/guides/developer/c
 
 == Screenshots ==
 
-1. Admin menu
-2. Sermon list
-3. Add sermon
-4. Add event
-5. Add person
-6. Add location
+1. Sermons
+2. Add sermon
+3. Sermon topics
+4. Events
+5. Add event
+6. Locations
+7. Add location
+8. People
+9. Add person
+10. Add group
 
 == Changelog ==
 
