@@ -24,7 +24,7 @@ It enables users to manage *sermons*, *events*, *people* and *locations* to be d
 
 Experienced WordPress developers agree that functionality like this does not belong in themes since themes are intended only to control the appearance of a WordPress site. Content that users might expect to take with them if they switch themes should "live" in a plugin. Similarly, our approach is not to display content using the plugin since themes offer more control for that purpose. This is why a **compatible theme is required**.
 
-See the [screenshots](http://wordpress.org/plugins/church-theme-content/screenshots/) for a tour of features. Note also that sermon audio podcasting is built-in.
+See [screenshots](http://wordpress.org/plugins/church-theme-content/screenshots/) for a tour of features. Note also that sermon audio podcasting is built-in.
 
 = Developers =
 
@@ -57,7 +57,6 @@ Yes, please see the [Developer Guide](http://churchthemes.com/guides/developer/c
 7. Add location
 8. People
 9. Add person
-10. Add group
 
 == Changelog ==
 
