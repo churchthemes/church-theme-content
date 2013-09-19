@@ -115,6 +115,6 @@ function ctc_move_admin_menu_item( &$menu_ord, $move_item, $target_item, $positi
 	}
 	
 	// return manipulated menu or original menu if no manipulation done
-	return apply_filters( 'ctc_move_admin_menu_item', &$menu_ord, $menu_ord, $move_item, $target_item, $position );
+	return apply_filters( 'ctc_move_admin_menu_item', $menu_ord, $menu_ord, $move_item, $target_item, $position );
 
 }
