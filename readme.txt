@@ -5,8 +5,6 @@ Requires at least: 3.6
 Tested up to: 3.7
 Stable tag: trunk
 License: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
-Text Domain: church-theme-content
-Domain Path: /languages
 
 Provides compatible themes with sermon, event, person and location post types, taxonomies and fields. Requires a compatible theme for showing content.
 

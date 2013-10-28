@@ -7,6 +7,8 @@
  * Author: churchthemes.com
  * Author URI: http://churchthemes.com
  * License: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * Text Domain: church-theme-content
+ * Domain Path: /languages
  * 
  * @package   Church_Theme_Content
  * @copyright Copyright (c) 2013, churchthemes.com
