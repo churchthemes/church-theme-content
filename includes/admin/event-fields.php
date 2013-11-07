@@ -10,6 +10,7 @@
  * @link       https://github.com/churchthemes/church-theme-content
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * @since      0.9
+ */
 
 // No direct access
 if ( ! defined( 'ABSPATH' ) ) exit;
