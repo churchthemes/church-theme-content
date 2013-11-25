@@ -32,6 +32,18 @@ Please see the [Developer Guide](http://churchthemes.com/guides/developer/church
 
 You can follow development on [GitHub](https://github.com/churchthemes/church-theme-content).
 
+= Translations =
+
+The following translations are included. Please feel free to [contribute](https://churchthemes.com/contact/) your own translations.
+
+* English (default)
+* Serbo-Croatian (sr_RS) by Borisa Djuraskovic
+
+= Follow us =
+
+* Visit [churchthemes.com](http://churchthemes.com) for compatible themes and guides
+* We're on [Twitter](https://twitter.com/churchthemes), [Facebook](https://www.facebook.com/churchthemescom), [Google+](https://plus.google.com/u/0/+Churchthemes) and have a [Newsletter](http://churchthemes.com/newsletter)
+
 == Installation ==
 
 Please see [Installing Plugins](http://codex.wordpress.org/Managing_Plugins#Installing_Plugins) in the WordPress Codex.
