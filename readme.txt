@@ -43,6 +43,7 @@ The following translations are included. Please feel free to [contribute](https:
 
 * Visit [churchthemes.com](http://churchthemes.com) for compatible themes and guides
 * We're on [Twitter](https://twitter.com/churchthemes), [Facebook](https://www.facebook.com/churchthemescom), [Google+](https://plus.google.com/u/0/+Churchthemes) and have a [Newsletter](http://churchthemes.com/newsletter)
+* Lead developer: [stevengliebe.com](http://stevengliebe.com), [@stevengliebe](https://twitter.com/stevengliebe)
 
 == Installation ==
 
