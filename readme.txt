@@ -37,7 +37,7 @@ You can follow development on [GitHub](https://github.com/churchthemes/church-th
 The following translations are included. Please feel free to [contribute](https://churchthemes.com/contact/) your own translations.
 
 * English (default)
-* Serbo-Croatian (sr_RS) by Borisa Djuraskovic
+* Serbo-Croatian (sr_RS) by Borisa Djuraskovic of [Web Hosting Hub](http://www.webhostinghub.com)
 
 = Follow us =
 
