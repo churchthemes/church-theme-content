@@ -2,7 +2,7 @@
 Contributors: churchthemes, stevengliebe
 Tags: church, churches, sermon, sermons, ministry, ministries
 Requires at least: 3.6
-Tested up to: 3.7
+Tested up to: 3.8
 Stable tag: trunk
 License: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
@@ -37,6 +37,7 @@ You can follow development on [GitHub](https://github.com/churchthemes/church-th
 The following translations are included. Please feel free to [contribute](https://churchthemes.com/contact/) your own translations.
 
 * English (default)
+* Spanish (es_MX)
 * Serbo-Croatian (sr_RS) by Borisa Djuraskovic of [Web Hosting Hub](http://www.webhostinghub.com)
 
 = Follow us =
