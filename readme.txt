@@ -38,6 +38,7 @@ The following translations are included. Please feel free to [contribute](https:
 
 * English (default)
 * Spanish (es_MX)
+* French (fr_FR) by [Alexandre Koper](https://twitter.com/alexkoper)
 * Serbo-Croatian (sr_RS) by Borisa Djuraskovic of [Web Hosting Hub](http://www.webhostinghub.com)
 
 = Follow us =
