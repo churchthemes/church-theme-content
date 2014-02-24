@@ -191,6 +191,12 @@ function ctc_sermon_save_audio_enclosure( $post_id, $post ) {
 		return false;
 	}
 
+	// Stop if PowerPress plugin is active
+	// Solves conflict regarding enclosure field: http://wordpress.org/support/topic/breaks-blubrry-powerpress-plugin?replies=6
+	if ( defined( 'POWERPRESS_VERSION' ) ) {
+		return false;
+	}
+
 	// Get audio URL
 	$audio = get_post_meta( $post_id , '_ctc_sermon_audio' , true );
 
