@@ -2,7 +2,7 @@
 Contributors: churchthemes, stevengliebe
 Tags: church, churches, sermon, sermons, ministry, ministries
 Requires at least: 3.6
-Tested up to: 3.8
+Tested up to: 3.9
 Stable tag: trunk
 License: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
