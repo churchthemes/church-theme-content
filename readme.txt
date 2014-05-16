@@ -37,7 +37,7 @@ You can follow development on [GitHub](https://github.com/churchthemes/church-th
 The following translations are included. Please feel free to [contribute](https://churchthemes.com/contact/) your own translations.
 
 * English (default)
-* Spanish (es_MX)
+* Spanish (es_MX and es_ES)
 * French (fr_FR) by [Alexandre Koper](https://twitter.com/alexkoper)
 * Portuguese (pt_BR) by [Ministre.com.br](http://ministre.com.br)
 * Serbo-Croatian (sr_RS) by Borisa Djuraskovic of [Web Hosting Hub](http://www.webhostinghub.com)
