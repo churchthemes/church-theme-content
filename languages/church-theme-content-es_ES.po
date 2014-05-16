@@ -1,0 +1,1033 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Church Theme Content\n"
+"POT-Creation-Date: 2014-05-16 14:54-0600\n"
+"PO-Revision-Date: 2014-05-16 14:54-0600\n"
+"Last-Translator: churchthemes.com\n"
+"Language-Team: churchthemes.com\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.5\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_nx:1,2;_x:1,2c;_ex:1,2c;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:1,2,3c\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../includes/admin/admin-helpers.php:66
+msgctxt "map"
+msgid "Road"
+msgstr "Calle"
+
+#: ../includes/admin/admin-helpers.php:67
+msgctxt "map"
+msgid "Satellite"
+msgstr "Satelite"
+
+#: ../includes/admin/admin-helpers.php:68
+msgctxt "map"
+msgid "Hybrid"
+msgstr "Híbrido"
+
+#: ../includes/admin/admin-helpers.php:69
+msgctxt "map"
+msgid "Terrain"
+msgstr "Relieve"
+
+#: ../includes/admin/admin-support.php:52
+#, php-format
+msgid ""
+"The <b>%1$s</b> theme does not support the <b>%2$s</b> plugin. <a href=\"%3$s"
+"\" target=\"_blank\">More Information</a>, <a href=\"%4$s\">Dismiss</a>"
+msgstr ""
+"El <b>%1$s</b> tema no soporta el <b>%2$s</b> plugin. <a href=\"%3$s\" "
+"target=\"_blank\">Mas informacion</a>, <a href=\"%4$s\">Desaparecer</a>"
+
+#: ../includes/admin/event-fields.php:34
+msgctxt "event meta box"
+msgid "Date & Time"
+msgstr "Día y Hora"
+
+#: ../includes/admin/event-fields.php:67
+msgid "Start Date"
+msgstr "Día Empiezo"
+
+#: ../includes/admin/event-fields.php:68
+msgid "(Required)"
+msgstr "(Requerido)"
+
+#: ../includes/admin/event-fields.php:90
+msgid "End Date"
+msgstr "Día Termina"
+
+#: ../includes/admin/event-fields.php:112
+msgid "Time"
+msgstr "Hora"
+
+#: ../includes/admin/event-fields.php:114
+msgid "Optionally provide a time such as \"8:00 am &ndash; 2:00 pm\""
+msgstr "Hora Opcional"
+
+#: ../includes/admin/event-fields.php:134
+msgid "Recurrence"
+msgstr "Recurrente"
+
+#: ../includes/admin/event-fields.php:136
+msgctxt "event meta box"
+msgid ""
+"Start and end dates will automatically move forward after the event ends."
+msgstr ""
+"Días de empiezo/termina se mueven hacia adelante automáticamente después de "
+"que el evento pasa"
+
+#: ../includes/admin/event-fields.php:140
+msgctxt "event meta box"
+msgid "None"
+msgstr "Nada"
+
+#: ../includes/admin/event-fields.php:141
+msgctxt "event meta box"
+msgid "Weekly"
+msgstr "Semanal"
+
+#: ../includes/admin/event-fields.php:142
+msgctxt "event meta box"
+msgid "Monthly"
+msgstr "Mensual"
+
+#: ../includes/admin/event-fields.php:143
+msgctxt "event meta box"
+msgid "Yearly"
+msgstr "Anual"
+
+#: ../includes/admin/event-fields.php:161
+msgid "Recur Until"
+msgstr "Recurre Hasta"
+
+#: ../includes/admin/event-fields.php:204
+msgctxt "event meta box"
+msgid "Location"
+msgstr "Ubicación"
+
+#: ../includes/admin/event-fields.php:237
+msgid "Venue"
+msgstr "Local"
+
+#: ../includes/admin/event-fields.php:239
+msgid ""
+"You can provide a building name, room number or other location name to help "
+"people find the event."
+msgstr ""
+"Puedes proveer el nombre del edificio, el numero de salón o el nombre de la "
+"ubicación para que las personas encuentren el evento."
+
+#: ../includes/admin/event-fields.php:259
+msgctxt "event meta box"
+msgid "Address"
+msgstr "Dirección"
+
+#: ../includes/admin/event-fields.php:261
+msgid ""
+"You can enter an address if it is necessary for people to find this event."
+msgstr ""
+"Indica la dirección si es necesario para que las personas encienten el "
+"evento."
+
+#: ../includes/admin/event-fields.php:303
+msgctxt "event meta box"
+msgid "Map Latitude"
+msgstr "Mapa Latitud"
+
+#: ../includes/admin/event-fields.php:305
+#: ../includes/admin/location-fields.php:157
+msgid ""
+"You can <a href=\"http://churchthemes.com/get-latitude-longitude\" target="
+"\"_blank\">use this</a> to convert an address into coordinates."
+msgstr ""
+"Puedes <a href=\"http://churchthemes.com/get-latitude-longitude\" target="
+"\"_blank\">usar esto</a> para convertir una dirección a coordinadas."
+
+#: ../includes/admin/event-fields.php:325
+msgctxt "event meta box"
+msgid "Map Longitude"
+msgstr "Mapa Longitud"
+
+#: ../includes/admin/event-fields.php:347
+msgctxt "event meta box"
+msgid "Map Type"
+msgstr "Mapa Tipo"
+
+#: ../includes/admin/event-fields.php:349
+msgctxt "event meta box"
+msgid ""
+"You can show a road map, satellite imagery, a combination of both (hybrid) "
+"or terrain."
+msgstr ""
+"Puedes mostrar mapa de calle, satelite o combinación de híbrido y relieve."
+
+#: ../includes/admin/event-fields.php:369
+msgctxt "event meta box"
+msgid "Map Zoom"
+msgstr "Mapa Zoom"
+
+#: ../includes/admin/event-fields.php:371
+msgctxt "event meta box"
+msgid ""
+"A lower number is more zoomed out while a higher number is more zoomed in."
+msgstr "Numbero bajo es mas lejos numero alto es mas cerca"
+
+#: ../includes/admin/event-fields.php:487
+#: ../includes/admin/location-fields.php:272
+#: ../includes/admin/person-fields.php:204
+#: ../includes/admin/sermon-fields.php:227
+msgid "Thumbnail"
+msgstr "Imagen Miniatura"
+
+#: ../includes/admin/event-fields.php:492
+msgctxt "events admin column"
+msgid "When"
+msgstr "Cuando"
+
+#: ../includes/admin/event-fields.php:493
+msgctxt "events admin column"
+msgid "Where"
+msgstr "Donde"
+
+#: ../includes/admin/event-fields.php:541
+msgctxt "date range separator"
+msgid " &ndash; "
+msgstr " &ndash; "
+
+#: ../includes/admin/event-fields.php:553
+msgid "Recurs Weekly"
+msgstr "Recurre Semanalmente"
+
+#: ../includes/admin/event-fields.php:556
+msgid "Recurs Monthly"
+msgstr "Recurre Mensualmente"
+
+#: ../includes/admin/event-fields.php:559
+msgid "Recurs Yearly"
+msgstr "Recurre Anualmente"
+
+#: ../includes/admin/location-fields.php:34
+msgctxt "location meta box"
+msgid "Location Details"
+msgstr "Detalles Ubicación"
+
+#: ../includes/admin/location-fields.php:67
+msgctxt "location meta box"
+msgid "Address"
+msgstr "Dirección"
+
+#: ../includes/admin/location-fields.php:111
+#: ../includes/admin/person-fields.php:114
+msgctxt "location meta box"
+msgid "Phone"
+msgstr "Teléfono"
+
+#: ../includes/admin/location-fields.php:133
+msgctxt "location meta box"
+msgid "Times"
+msgstr "Horas"
+
+#: ../includes/admin/location-fields.php:155
+msgctxt "location meta box"
+msgid "Map Latitude"
+msgstr "Mapa Latitud"
+
+#: ../includes/admin/location-fields.php:177
+msgctxt "location meta box"
+msgid "Map Longitude"
+msgstr "Mapa Longitud"
+
+#: ../includes/admin/location-fields.php:199
+msgctxt "location meta box"
+msgid "Map Type"
+msgstr "Mapa Tipo"
+
+#: ../includes/admin/location-fields.php:201
+msgctxt "location meta box"
+msgid ""
+"You can show a road map, satellite imagery, a combination of both (hybrid) "
+"or terrain."
+msgstr ""
+"Puedes mostrar mapa de calle, satélite o combinación de híbrido y relieve"
+
+#: ../includes/admin/location-fields.php:222
+msgctxt "location meta box"
+msgid "Map Zoom"
+msgstr "Mapa Zoom"
+
+#: ../includes/admin/location-fields.php:224
+msgctxt "location meta box"
+msgid ""
+"A lower number is more zoomed out while a higher number is more zoomed in."
+msgstr "Numero bajo es mas lejos numero alto es mas cerca."
+
+#: ../includes/admin/location-fields.php:277
+msgctxt "location admin column"
+msgid "Address"
+msgstr "Dirección"
+
+#: ../includes/admin/location-fields.php:278
+msgctxt "location admin column"
+msgid "Times"
+msgstr "Horas"
+
+#: ../includes/admin/location-fields.php:279
+#: ../includes/admin/person-fields.php:211
+msgctxt "sorting"
+msgid "Order"
+msgstr "Orden"
+
+#: ../includes/admin/location-fields.php:283
+msgctxt "location admin column"
+msgid "Location"
+msgstr "Ubicación"
+
+#: ../includes/admin/person-fields.php:34
+msgid "Enter name here"
+msgstr "Nombre Aqui"
+
+#: ../includes/admin/person-fields.php:59
+msgctxt "meta box"
+msgid "Person Details"
+msgstr "Detalles Personas"
+
+#: ../includes/admin/person-fields.php:92
+#: ../includes/admin/person-fields.php:209
+msgid "Position"
+msgstr "Título de Personal"
+
+#: ../includes/admin/person-fields.php:94
+msgid "Enter the person's position or title (e.g. Senior Pastor, Deacon, etc.)"
+msgstr "Título de la persona"
+
+#: ../includes/admin/person-fields.php:136
+msgctxt "location meta box"
+msgid "Email"
+msgstr "Email"
+
+#: ../includes/admin/person-fields.php:158
+msgid "URLs"
+msgstr "URLs"
+
+#: ../includes/admin/person-fields.php:210
+msgctxt "people column"
+msgid "Groups"
+msgstr "Grupos"
+
+#: ../includes/admin/person-fields.php:215
+msgctxt "person"
+msgid "Name"
+msgstr "Nombre"
+
+#: ../includes/admin/sermon-fields.php:34
+msgctxt "meta box"
+msgid "Sermon Media"
+msgstr "Sermon Medios de Comunicación "
+
+#: ../includes/admin/sermon-fields.php:67
+msgid "Full Text"
+msgstr "Texto Completo"
+
+#: ../includes/admin/sermon-fields.php:69
+msgid "Check this if you provide a complete transcript above."
+msgstr "Checa esto si proviste transcripción completa arriba "
+
+#: ../includes/admin/sermon-fields.php:71
+msgid "Full sermon text provided"
+msgstr "Texto sermon completo provisto"
+
+#: ../includes/admin/sermon-fields.php:89
+msgid "Video"
+msgstr "Video"
+
+#: ../includes/admin/sermon-fields.php:92
+#, php-format
+msgid ""
+"Upload a file by clicking \"Choose Video\" or upload a video to one of the "
+"<a href=\"%s\" target=\"_blank\">supported sites</a> (such as YouTube) then "
+"paste its URL here, or paste an embed code from another site. <a href=\"%s\" "
+"target=\"_blank\">Video Help</a>"
+msgstr ""
+"Sube file al hacer clic \"Choose Video\" o sube video ha un <a href=\"%s\" "
+"target=\"_blank\">website</a> (como YouTube) luego pega su URL aqui, o pega "
+"código incrustado de otro website. <a href=\"%s\" target=\"_blank\">Video "
+"Help</a>"
+
+#: ../includes/admin/sermon-fields.php:99
+msgid "Choose Video"
+msgstr "Escoge Video"
+
+#: ../includes/admin/sermon-fields.php:100
+msgid "Choose an Video File"
+msgstr "Escoge Archivo Video"
+
+#: ../includes/admin/sermon-fields.php:115
+msgid "Audio"
+msgstr "Audio"
+
+#: ../includes/admin/sermon-fields.php:118
+#, php-format
+msgid ""
+"Upload a file by clicking \"Choose Audio\" or upload audio to one of the <a "
+"href=\"%s\" target=\"_blank\">supported sites</a> (such as SoundCloud) then "
+"paste its URL here, or paste an embed code from another site. <a href=\"%s\" "
+"target=\"_blank\">Audio Help</a>"
+msgstr ""
+"Sube file al hacer clic \"Choose Audio\"o sube audio ha un<a href=\"%s\" "
+"target=\"_blank\">website</a> (como SoundCloud) luego pega su URL aqui, o "
+"pega código incrustado de otro website. <a href=\"%s\" target=\"_blank"
+"\">Audio Help</a>"
+
+#: ../includes/admin/sermon-fields.php:125
+msgid "Choose Audio"
+msgstr "Escoge Audio"
+
+#: ../includes/admin/sermon-fields.php:126
+msgid "Choose an Audio File"
+msgstr "Escoge Archivo Audio"
+
+#: ../includes/admin/sermon-fields.php:141 ../includes/mime-types.php:74
+msgid "PDF"
+msgstr "PDF"
+
+#: ../includes/admin/sermon-fields.php:143
+msgid ""
+"Upload a file by clicking \"Choose PDF\" or paste the URL to a PDF hosted on "
+"another site."
+msgstr ""
+"Sube file al hacer clic \"Choose PDF\" o pega el URL en el PDF localizada en "
+"otro website. "
+
+#: ../includes/admin/sermon-fields.php:147
+msgid "Choose PDF"
+msgstr "Escoge PDF"
+
+#: ../includes/admin/sermon-fields.php:148
+msgid "Choose a PDF File"
+msgstr "Escoge Archivo PDF"
+
+#: ../includes/admin/sermon-fields.php:232
+msgctxt "sermons"
+msgid "Formats"
+msgstr "Formatos"
+
+#: ../includes/admin/sermon-fields.php:233
+msgid "Topics"
+msgstr "Temas"
+
+#: ../includes/admin/sermon-fields.php:275
+msgctxt "media type"
+msgid "Text"
+msgstr "Texto"
+
+#: ../includes/admin/sermon-fields.php:279
+msgctxt "media type"
+msgid "Video"
+msgstr "Video"
+
+#: ../includes/admin/sermon-fields.php:283
+msgctxt "media type"
+msgid "Audio"
+msgstr "Audio"
+
+#: ../includes/admin/sermon-fields.php:287
+msgctxt "media type"
+msgid "PDF"
+msgstr "PDF"
+
+#: ../includes/mime-types.php:75
+msgid "Manage PDFs"
+msgstr "Maneja PDFs"
+
+#: ../includes/mime-types.php:76
+#, php-format
+msgid "PDF <span class=\"count\">(%s)</span>"
+msgid_plural "PDFs <span class=\"count\">(%s)</span>"
+msgstr[0] "PDF <span class=\"count\">(%s)</span>"
+msgstr[1] "PDFs <span class=\"count\">(%s)</span>"
+
+#: ../includes/post-types.php:30
+msgctxt "post type general name"
+msgid "Sermons"
+msgstr "Sermones "
+
+#: ../includes/post-types.php:31
+msgctxt "post type singular name"
+msgid "Sermon"
+msgstr "Sermon"
+
+#: ../includes/post-types.php:32
+msgctxt "sermon"
+msgid "Add New"
+msgstr "Añade Nuevo"
+
+#: ../includes/post-types.php:33
+msgid "Add Sermon"
+msgstr "Añade Sermon"
+
+#: ../includes/post-types.php:34
+msgid "Edit Sermon"
+msgstr "Edita Sermon"
+
+#: ../includes/post-types.php:35
+msgid "New Sermon"
+msgstr "Nuevo Sermon"
+
+#: ../includes/post-types.php:36
+msgid "All Sermons"
+msgstr "Todos Sermones"
+
+#: ../includes/post-types.php:37
+msgid "View Sermon"
+msgstr "Ve Sermon"
+
+#: ../includes/post-types.php:38
+msgid "Search Sermons"
+msgstr "Busca Sermones"
+
+#: ../includes/post-types.php:39
+msgid "No sermons found"
+msgstr "No hay sermones"
+
+#: ../includes/post-types.php:40
+msgid "No sermons found in Trash"
+msgstr "No hay sermones en basurero"
+
+#: ../includes/post-types.php:79
+msgctxt "post type general name"
+msgid "Events"
+msgstr "Eventos"
+
+#: ../includes/post-types.php:80
+msgctxt "post type singular name"
+msgid "Event"
+msgstr "Evento"
+
+#: ../includes/post-types.php:81
+msgctxt "event"
+msgid "Add New"
+msgstr "Añade Nuevo"
+
+#: ../includes/post-types.php:82
+msgid "Add Event"
+msgstr "Añade Evento"
+
+#: ../includes/post-types.php:83
+msgid "Edit Event"
+msgstr "Edita Evento"
+
+#: ../includes/post-types.php:84
+msgid "New Event"
+msgstr "Nuevo Evento"
+
+#: ../includes/post-types.php:85
+msgid "All Events"
+msgstr "Todos Eventos"
+
+#: ../includes/post-types.php:86
+msgid "View Event"
+msgstr "Ve Evento"
+
+#: ../includes/post-types.php:87
+msgid "Search Events"
+msgstr "Busca Evento"
+
+#: ../includes/post-types.php:88
+msgid "No events found"
+msgstr "No hay eventos"
+
+#: ../includes/post-types.php:89
+msgid "No events found in Trash"
+msgstr "No hay eventos en basurero"
+
+#: ../includes/post-types.php:127
+msgctxt "post type general name"
+msgid "Locations"
+msgstr "Ubicaciones"
+
+#: ../includes/post-types.php:128
+msgctxt "post type singular name"
+msgid "Location"
+msgstr "Ubicación"
+
+#: ../includes/post-types.php:129
+msgctxt "location"
+msgid "Add New"
+msgstr "Nueva Ubicación"
+
+#: ../includes/post-types.php:130
+msgid "Add Location"
+msgstr "Añade Ubicación"
+
+#: ../includes/post-types.php:131
+msgid "Edit Location"
+msgstr "Edita Ubicación"
+
+#: ../includes/post-types.php:132
+msgid "New Location"
+msgstr "Nueva Ubicación"
+
+#: ../includes/post-types.php:133
+msgid "All Locations"
+msgstr "Todas Ubicaciones "
+
+#: ../includes/post-types.php:134
+msgid "View Location"
+msgstr "Ve Ubicación"
+
+#: ../includes/post-types.php:135
+msgid "Search Locations"
+msgstr "Busca Ubicaciones "
+
+#: ../includes/post-types.php:136
+msgid "No location found"
+msgstr "No hay ubicación"
+
+#: ../includes/post-types.php:137
+msgid "No location found in Trash"
+msgstr "No hay ubicación en basurero"
+
+#: ../includes/post-types.php:175
+msgctxt "post type general name"
+msgid "People"
+msgstr "Personal"
+
+#: ../includes/post-types.php:176
+msgctxt "post type singular name"
+msgid "Person"
+msgstr "Persona"
+
+#: ../includes/post-types.php:177
+msgctxt "person"
+msgid "Add New"
+msgstr "Añade Nueva"
+
+#: ../includes/post-types.php:178
+msgid "Add Person"
+msgstr "Añade Persona"
+
+#: ../includes/post-types.php:179
+msgid "Edit Person"
+msgstr "Edita Persona"
+
+#: ../includes/post-types.php:180
+msgid "New Person"
+msgstr "Nueva Persona"
+
+#: ../includes/post-types.php:181
+msgid "All People"
+msgstr "Todas Personas"
+
+#: ../includes/post-types.php:182
+msgid "View Person"
+msgstr "Ve Personal"
+
+#: ../includes/post-types.php:183
+msgid "Search People"
+msgstr "Busca Personal"
+
+#: ../includes/post-types.php:184
+msgid "No people found"
+msgstr "No hay personal"
+
+#: ../includes/post-types.php:185
+msgid "No people found in Trash"
+msgstr "No hay personal en basurero"
+
+#: ../includes/taxonomies.php:30
+msgctxt "taxonomy general name"
+msgid "Sermon Topics"
+msgstr "Temas Sermon"
+
+#: ../includes/taxonomies.php:31
+msgctxt "taxonomy singular name"
+msgid "Sermon Topic"
+msgstr "Tema Sermon"
+
+#: ../includes/taxonomies.php:32
+msgctxt "sermons"
+msgid "Search Topics"
+msgstr "Busca Temas"
+
+#: ../includes/taxonomies.php:33
+msgctxt "sermons"
+msgid "Popular Topics"
+msgstr "Temas Populares"
+
+#: ../includes/taxonomies.php:34
+msgctxt "sermons"
+msgid "All Topics"
+msgstr "Todos Temas"
+
+#: ../includes/taxonomies.php:37
+msgctxt "sermons"
+msgid "Edit Topic"
+msgstr "Edita Tema"
+
+#: ../includes/taxonomies.php:38
+msgctxt "sermons"
+msgid "Update Topic"
+msgstr "Actualiza Tema"
+
+#: ../includes/taxonomies.php:39
+msgctxt "sermons"
+msgid "Add Topic"
+msgstr "Añade Tema"
+
+#: ../includes/taxonomies.php:40
+msgctxt "sermons"
+msgid "New Topic"
+msgstr "Nuevo Tema"
+
+#: ../includes/taxonomies.php:41
+msgctxt "sermons"
+msgid "Separate topics with commas"
+msgstr "Separa temas con comas"
+
+#: ../includes/taxonomies.php:42
+msgctxt "sermons"
+msgid "Add or remove topics"
+msgstr "Añade o quita temas"
+
+#: ../includes/taxonomies.php:43
+msgctxt "sermons"
+msgid "Choose from the most used topics"
+msgstr "Escoge entre temas mas usados"
+
+#: ../includes/taxonomies.php:44
+msgctxt "sermon menu name"
+msgid "Topics"
+msgstr "Temas"
+
+#: ../includes/taxonomies.php:77
+msgctxt "taxonomy general name"
+msgid "Sermon Books"
+msgstr "Sermon Libros"
+
+#: ../includes/taxonomies.php:78
+msgctxt "taxonomy singular name"
+msgid "Sermon Book"
+msgstr "Sermon Libro"
+
+#: ../includes/taxonomies.php:79
+msgctxt "sermons"
+msgid "Search Books"
+msgstr "Busca Libros"
+
+#: ../includes/taxonomies.php:80
+msgctxt "sermons"
+msgid "Popular Books"
+msgstr "Libros Populares"
+
+#: ../includes/taxonomies.php:81
+msgctxt "sermons"
+msgid "All Books"
+msgstr "Todos Libros"
+
+#: ../includes/taxonomies.php:84
+msgctxt "sermons"
+msgid "Edit Book"
+msgstr "Edita Libro"
+
+#: ../includes/taxonomies.php:85
+msgctxt "sermons"
+msgid "Update Book"
+msgstr "Actualiza Libro"
+
+#: ../includes/taxonomies.php:86
+msgctxt "sermons"
+msgid "Add Book"
+msgstr "Añade Libro"
+
+#: ../includes/taxonomies.php:87
+msgctxt "sermons"
+msgid "New Book"
+msgstr "Nuevo Libro"
+
+#: ../includes/taxonomies.php:88
+msgctxt "sermons"
+msgid "Separate books with commas"
+msgstr "Separa libros con comas"
+
+#: ../includes/taxonomies.php:89
+msgctxt "sermons"
+msgid "Add or remove books"
+msgstr "Añade o quita libros"
+
+#: ../includes/taxonomies.php:90
+msgctxt "sermons"
+msgid "Choose from the most used books"
+msgstr "Escoge entre libros mas usados"
+
+#: ../includes/taxonomies.php:91
+msgctxt "sermon menu name"
+msgid "Books"
+msgstr "Libros"
+
+#: ../includes/taxonomies.php:124
+msgctxt "taxonomy general name"
+msgid "Sermon Series"
+msgstr "Series Semones"
+
+#: ../includes/taxonomies.php:125
+msgctxt "taxonomy singular name"
+msgid "Sermon Series"
+msgstr "Series Sermones"
+
+#: ../includes/taxonomies.php:126
+msgctxt "sermons"
+msgid "Search Series"
+msgstr "Busca Series"
+
+#: ../includes/taxonomies.php:127
+msgctxt "sermons"
+msgid "Popular Series"
+msgstr "Series Populares"
+
+#: ../includes/taxonomies.php:128
+msgctxt "sermons"
+msgid "All Series"
+msgstr "Todas Series"
+
+#: ../includes/taxonomies.php:131
+msgctxt "sermons"
+msgid "Edit Series"
+msgstr "Edita Series"
+
+#: ../includes/taxonomies.php:132
+msgctxt "sermons"
+msgid "Update Series"
+msgstr "Actualiza Series"
+
+#: ../includes/taxonomies.php:133
+msgctxt "sermons"
+msgid "Add Series"
+msgstr "Añade Series"
+
+#: ../includes/taxonomies.php:134
+msgctxt "sermons"
+msgid "New Series"
+msgstr "Nuevas Series"
+
+#: ../includes/taxonomies.php:135
+msgctxt "sermons"
+msgid "Separate series with commas"
+msgstr "Separa series con comas"
+
+#: ../includes/taxonomies.php:136
+msgctxt "sermons"
+msgid "Add or remove series"
+msgstr "Añade o quita series"
+
+#: ../includes/taxonomies.php:137
+msgctxt "sermons"
+msgid "Choose from the most used series"
+msgstr "Escoge entre series mas usadas"
+
+#: ../includes/taxonomies.php:138
+msgctxt "sermon menu name"
+msgid "Series"
+msgstr "Series"
+
+#: ../includes/taxonomies.php:171
+msgctxt "taxonomy general name"
+msgid "Sermon Speakers"
+msgstr "Predicadores Sermones"
+
+#: ../includes/taxonomies.php:172
+msgctxt "taxonomy singular name"
+msgid "Sermon Speaker"
+msgstr "Predicador Sermon"
+
+#: ../includes/taxonomies.php:173
+msgctxt "sermons"
+msgid "Search Speakers"
+msgstr "Buscar Predicadores"
+
+#: ../includes/taxonomies.php:174
+msgctxt "sermons"
+msgid "Popular Speakers"
+msgstr "Predicadores Populares"
+
+#: ../includes/taxonomies.php:175
+msgctxt "sermons"
+msgid "All Speakers"
+msgstr "Todos Predicadores"
+
+#: ../includes/taxonomies.php:178
+msgctxt "sermons"
+msgid "Edit Speaker"
+msgstr "Edita Predicador"
+
+#: ../includes/taxonomies.php:179
+msgctxt "sermons"
+msgid "Update Speaker"
+msgstr "Actualiza Predicador"
+
+#: ../includes/taxonomies.php:180
+msgctxt "sermons"
+msgid "Add Speaker"
+msgstr "Añade Predicador"
+
+#: ../includes/taxonomies.php:181
+msgctxt "sermons"
+msgid "New Speaker"
+msgstr "Nuevo Predicador"
+
+#: ../includes/taxonomies.php:182
+msgctxt "sermons"
+msgid "Separate speakers with commas"
+msgstr "Separa predicadores con comas"
+
+#: ../includes/taxonomies.php:183
+msgctxt "sermons"
+msgid "Add or remove speakers"
+msgstr "Añade o quita predicadores"
+
+#: ../includes/taxonomies.php:184
+msgctxt "sermons"
+msgid "Choose from the most used speakers"
+msgstr "Escoge entre predicadores mas usados"
+
+#: ../includes/taxonomies.php:185
+msgctxt "sermon menu name"
+msgid "Speakers"
+msgstr "Predicadores"
+
+#: ../includes/taxonomies.php:218
+msgctxt "taxonomy general name"
+msgid "Sermon Tags"
+msgstr "Sermones Palabras Claves"
+
+#: ../includes/taxonomies.php:219
+msgctxt "taxonomy singular name"
+msgid "Sermon Tag"
+msgstr "Sermon Palabra Claves"
+
+#: ../includes/taxonomies.php:220
+msgctxt "sermons"
+msgid "Search Tags"
+msgstr "Busca Palabras Claves"
+
+#: ../includes/taxonomies.php:221
+msgctxt "sermons"
+msgid "Popular Tags"
+msgstr "Palabras Claves Populares"
+
+#: ../includes/taxonomies.php:222
+msgctxt "sermons"
+msgid "All Tags"
+msgstr "Todas Palabras Claves"
+
+#: ../includes/taxonomies.php:225
+msgctxt "sermons"
+msgid "Edit Tag"
+msgstr "Edita Palabra Clave"
+
+#: ../includes/taxonomies.php:226
+msgctxt "sermons"
+msgid "Update Tag"
+msgstr "Actualiza Palabra Clave"
+
+#: ../includes/taxonomies.php:227
+msgctxt "sermons"
+msgid "Add Tag"
+msgstr "Añade Palabra Clave"
+
+#: ../includes/taxonomies.php:228
+msgctxt "sermons"
+msgid "New Tag"
+msgstr "Nueva Palabra Clave"
+
+#: ../includes/taxonomies.php:229
+msgctxt "sermons"
+msgid "Separate tags with commas"
+msgstr "Separa palabras claves con comas"
+
+#: ../includes/taxonomies.php:230
+msgctxt "sermons"
+msgid "Add or remove tags"
+msgstr "Añade o quita palabras claves"
+
+#: ../includes/taxonomies.php:231
+msgctxt "sermons"
+msgid "Choose from the most used tags"
+msgstr "Escoge entre palabras claves mas usadas"
+
+#: ../includes/taxonomies.php:232
+msgctxt "sermon menu name"
+msgid "Tags"
+msgstr "Palabras Claves"
+
+#: ../includes/taxonomies.php:269
+msgctxt "taxonomy general name"
+msgid "Groups"
+msgstr "Grupos"
+
+#: ../includes/taxonomies.php:270
+msgctxt "taxonomy singular name"
+msgid "Group"
+msgstr "Grupo"
+
+#: ../includes/taxonomies.php:271
+msgctxt "people"
+msgid "Search Groups"
+msgstr "Busca Grupos"
+
+#: ../includes/taxonomies.php:272
+msgctxt "people"
+msgid "Popular Groups"
+msgstr "Grupos Populares"
+
+#: ../includes/taxonomies.php:273
+msgctxt "people"
+msgid "All Groups"
+msgstr "Todos Grupos"
+
+#: ../includes/taxonomies.php:276
+msgctxt "people"
+msgid "Edit Group"
+msgstr "Edita Grupo"
+
+#: ../includes/taxonomies.php:277
+msgctxt "people"
+msgid "Update Group"
+msgstr "Actualiza Grupo"
+
+#: ../includes/taxonomies.php:278
+msgctxt "people"
+msgid "Add Group"
+msgstr "Añade Grupo"
+
+#: ../includes/taxonomies.php:279
+msgctxt "people"
+msgid "New Group"
+msgstr "Nuevo Grupo"
+
+#: ../includes/taxonomies.php:280
+msgctxt "people"
+msgid "Separate groups with commas"
+msgstr "Separa grupos con comas"
+
+#: ../includes/taxonomies.php:281
+msgctxt "people"
+msgid "Add or remove groups"
+msgstr "Añade o quita grupos"
+
+#: ../includes/taxonomies.php:282
+msgctxt "people"
+msgid "Choose from the most used groups"
+msgstr "Escoge entres los grupos mas usados"
+
+#: ../includes/taxonomies.php:283
+msgctxt "people menu name"
+msgid "Groups"
+msgstr "Grupos"
