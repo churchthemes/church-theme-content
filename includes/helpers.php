@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 /*************************************************
  * URLs & PATHS
  *************************************************/
- 
+
 /**
  * File URL
  *
@@ -34,9 +34,9 @@ function ctc_file_url( $file, $directory = false ) {
 	} else {
 		$path = $file;
 	}
-	
+
 	$path = trailingslashit( CTC_URL ) . $path;
-	
+
 	return apply_filters( 'ctc_file_url', $path, $file, $directory );
 }
 
@@ -57,9 +57,9 @@ function ctc_file_path( $file, $directory = false ) {
 	} else {
 		$path = $file;
 	}
-	
+
 	$path = trailingslashit( CTC_PATH ) . $path;
-	
+
 	return apply_filters( 'ctc_file_path', $path, $file, $directory );
 }
 
@@ -85,15 +85,15 @@ function ctc_array_merge_after_key( $original_array, $insert_array, $after_key )
 
 	// loop original array items
 	foreach ( $original_array as $item_key => $item_value ) {
-	
+
 		// rebuild the array one item at a time
 		$modified_array[$item_key] = $item_value;
-		
+
 		// insert array after specific key
 		if ( $item_key == $after_key ) {
 			$modified_array = array_merge( $modified_array, $insert_array );
 		}
-	
+
 	}
 
 	return apply_filters( 'ctc_array_merge_after_key', $modified_array, $original_array, $insert_array, $after_key );

@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**********************************
  * RESERVED POST SLUGS
- **********************************/ 
+ **********************************/
 
 /**
  * Prevent post from using slug reserved for a post type archive

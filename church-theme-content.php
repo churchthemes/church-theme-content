@@ -9,7 +9,7 @@
  * License: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * Text Domain: church-theme-content
  * Domain Path: /languages
- * 
+ *
  * @package   Church_Theme_Content
  * @copyright Copyright (c) 2013, churchthemes.com
  * @link      https://github.com/churchthemes/church-theme-content
@@ -134,7 +134,7 @@ class Church_Theme_Content {
 	 *
 	 * This will load the MO file for the current locale.
 	 * The translation file must be named church-theme-content-$locale.mo.
-	 * 
+	 *
 	 * First it will check to see if the MO file exists in wp-content/languages/plugins.
 	 * If not, then the 'languages' direcory inside the plugin will be used.
 	 * It is ideal to keep translation files outside of the plugin to avoid loss during updates.
@@ -178,11 +178,11 @@ class Church_Theme_Content {
 
 			// Frontend or admin
 			'always' => array(
-				
+
 				// Functions
 				CTC_INC_DIR . '/helpers.php',
 				CTC_INC_DIR . '/mime-types.php',
-				CTC_INC_DIR . '/post-types.php', 
+				CTC_INC_DIR . '/post-types.php',
 				CTC_INC_DIR . '/schedule.php',
 				CTC_INC_DIR . '/support.php',
 				CTC_INC_DIR . '/taxonomies.php',
@@ -190,7 +190,7 @@ class Church_Theme_Content {
 
 			// Admin only
 			'admin' => array(
-			
+
 				// Functions
 				CTC_ADMIN_DIR . '/activation.php',
 				CTC_ADMIN_DIR . '/admin-helpers.php',
@@ -201,13 +201,13 @@ class Church_Theme_Content {
 				CTC_ADMIN_DIR . '/import.php',
 				CTC_ADMIN_DIR . '/location-fields.php',
 				CTC_ADMIN_DIR . '/person-fields.php',
-				CTC_ADMIN_DIR . '/sermon-fields.php', 
-				
+				CTC_ADMIN_DIR . '/sermon-fields.php',
+
 				// Libraries
 				CTC_LIB_DIR . '/ct-meta-box/ct-meta-box.php', // see CTMB_URL constant defined above
 
 			),
-			
+
 			// Frontend only
 			/*
 			'frontend' => array (
@@ -221,7 +221,7 @@ class Church_Theme_Content {
 
 	/**
 	 * Load includes
-	 * 
+	 *
  	 * Include files based on whether or not condition is met.
 	 *
 	 * @since 0.9
@@ -234,48 +234,48 @@ class Church_Theme_Content {
 
 		// Loop conditions
 		foreach ( $includes as $condition => $files ) {
-		
+
 			$do_includes = false;
 
 			// Check condition
 			switch( $condition ) {
-				
+
 				// Admin Only
 				case 'admin':
-				
+
 					if ( is_admin() ) {
 						$do_includes = true;
 					}
-					
+
 					break;
-					
+
 				// Frontend Only
 				case 'frontend':
-				
+
 					if ( ! is_admin() ) {
 						$do_includes = true;
 					}
-					
+
 					break;
-					
+
 				// Admin or Frontend (always)
 				default:
-				
+
 					$do_includes = true;
-					
-					break;			
-				
+
+					break;
+
 			}
-		
+
 			// Loop files if condition met
 			if ( $do_includes ) {
-			
-				foreach ( $files as $file ) {			
-					require_once trailingslashit( CTC_PATH ) . $file;				
+
+				foreach ( $files as $file ) {
+					require_once trailingslashit( CTC_PATH ) . $file;
 				}
-				
+
 			}
-			
+
 		}
 
 	}

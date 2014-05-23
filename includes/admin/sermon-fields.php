@@ -35,10 +35,10 @@ function ctc_add_meta_box_sermon_details() {
 		'post_type'	=> 'ctc_sermon',
 		'context'	=> 'normal', // where the meta box appear: normal (left above standard meta boxes), advanced (left below standard boxes), side
 		'priority'	=> 'high', // high, core, default or low (see this: http://www.wproots.com/ultimate-guide-to-meta-boxes-in-wordpress/)
-		
+
 		// Fields
 		'fields' => array(
-		
+
 			// Example
 			/*
 			'option_key' => array(
@@ -61,8 +61,8 @@ function ctc_add_meta_box_sermon_details() {
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'=> '', // function for custom display of field input
 			*/
-		
-			// Full Text					
+
+			// Full Text
 			'_ctc_sermon_has_full_text' => array(
 				'name'				=> __( 'Full Text', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
@@ -83,8 +83,8 @@ function ctc_add_meta_box_sermon_details() {
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
 			),
-			
-			// Video				
+
+			// Video
 			'_ctc_sermon_video' => array( // intended for URL or embed code
 				'name'				=> __( 'Video', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
@@ -109,7 +109,7 @@ function ctc_add_meta_box_sermon_details() {
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
 			),
-			
+
 			// Audio
 			'_ctc_sermon_audio' => array( // intended for URL or embed code
 				'name'				=> __( 'Audio', 'church-theme-content' ),
@@ -135,8 +135,8 @@ function ctc_add_meta_box_sermon_details() {
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
 			),
-			
-			// PDF URL					
+
+			// PDF URL
 			'_ctc_sermon_pdf' => array(
 				'name'				=> __( 'PDF', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
@@ -157,16 +157,16 @@ function ctc_add_meta_box_sermon_details() {
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
 			),
-			
+
 		),
 
 	);
-	
+
 	// Add Meta Box
 	new CT_Meta_Box( $meta_box );
-	
+
 }
- 
+
 add_action( 'admin_init', 'ctc_add_meta_box_sermon_details' );
 
 /**********************************
@@ -238,7 +238,7 @@ function ctc_sermon_columns( $columns ) {
 
 	// remove author
 	unset( $columns['author'] );
-	
+
 	return $columns;
 
 }
@@ -254,7 +254,7 @@ add_filter( 'manage_ctc_sermon_posts_columns' , 'ctc_sermon_columns' ); // add c
 function ctc_sermon_columns_content( $column ) {
 
 	global $post;
-	
+
 	switch ( $column ) {
 
 		// Thumbnail
@@ -270,7 +270,7 @@ function ctc_sermon_columns_content( $column ) {
 		case 'ctc_sermon_types' :
 
 			$media_types = array();
-		
+
 			if ( get_post_meta( $post->ID , '_ctc_sermon_text' , true ) ) {
 				$media_types[] = _x( 'Text', 'media type', 'church-theme-content' );
 			}
@@ -278,15 +278,15 @@ function ctc_sermon_columns_content( $column ) {
 			if ( get_post_meta( $post->ID , '_ctc_sermon_video' , true ) ) {
 				$media_types[] = _x( 'Video', 'media type', 'church-theme-content' );
 			}
-			
+
 			if ( get_post_meta( $post->ID , '_ctc_sermon_audio' , true ) ) {
 				$media_types[] = _x( 'Audio', 'media type', 'church-theme-content' );
 			}
-			
+
 			if ( get_post_meta( $post->ID , '_ctc_sermon_pdf' , true ) ) {
 				$media_types[] = _x( 'PDF', 'media type', 'church-theme-content' );
 			}
-			
+
 			echo implode( ', ', $media_types );
 
 			break;
@@ -297,21 +297,21 @@ function ctc_sermon_columns_content( $column ) {
 			echo ctc_admin_term_list( $post->ID, 'ctc_sermon_topic' );
 
 			break;
-			
+
 		// Books
 		case 'ctc_sermon_books' :
 
 			echo ctc_admin_term_list( $post->ID, 'ctc_sermon_book' );
 
 			break;
-						
+
 		// Series
 		case 'ctc_sermon_series' :
 
 			echo ctc_admin_term_list( $post->ID, 'ctc_sermon_series' );
 
 			break;
-			
+
 		// Speakers
 		case 'ctc_sermon_speakers' :
 

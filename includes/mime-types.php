@@ -57,10 +57,10 @@ add_filter( 'upload_mimes', 'ctc_add_mime_types' );
 
 /**
  * Add mime types for media filtering
- * 
+ *
  * The media manager will have a new PDF filter in addition to the default Image, Video and Audio options.
  * This makes it easier to manage sermon PDF's
- * 
+ *
  * 'application/pdf' can also then be used as upload_type in sermon's PDF field (as 'audio' is for MP3).
  *
  * @since  0.9

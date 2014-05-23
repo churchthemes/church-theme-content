@@ -28,17 +28,17 @@ function ctc_add_meta_box_event_date() {
 
 	// Configure Meta Box
 	$meta_box = array(
-	
+
 		// Meta Box
 		'id' 		=> 'ctc_event_date', // unique ID
 		'title' 	=> _x( 'Date & Time', 'event meta box', 'church-theme-content' ),
 		'post_type'	=> 'ctc_event',
 		'context'	=> 'normal', // where the meta box appear: normal (left above standard meta boxes), advanced (left below standard boxes), side
 		'priority'	=> 'high', // high, core, default or low (see this: http://www.wproots.com/ultimate-guide-to-meta-boxes-in-wordpress/)
-		
+
 		// Fields
 		'fields' => array(
-		
+
 			// Example
 			/*
 			'option_key' => array(
@@ -61,8 +61,8 @@ function ctc_add_meta_box_event_date() {
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'=> '', // function for custom display of field input
 			*/
-			
-			// Start Date				
+
+			// Start Date
 			'_ctc_event_start_date' => array(
 				'name'				=> __( 'Start Date', 'church-theme-content' ),
 				'after_name'		=> __( '(Required)', 'church-theme-content' ), // (Optional), (Required), etc.
@@ -83,7 +83,7 @@ function ctc_add_meta_box_event_date() {
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
 			),
-			
+
 			// End Date
 			// Note: ctc_sanitize_event_end_date calback corrects end and start dates (ie. end date but no start or end is sooner than start)
 			'_ctc_event_end_date' => array(
@@ -106,8 +106,8 @@ function ctc_add_meta_box_event_date() {
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
 			),
-			
-			// Time				
+
+			// Time
 			'_ctc_event_time' => array(
 				'name'				=> __( 'Time', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
@@ -177,16 +177,16 @@ function ctc_add_meta_box_event_date() {
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
 			),
-			
+
 		),
 
 	);
-	
+
 	// Add Meta Box
 	new CT_Meta_Box( $meta_box );
-	
+
 }
- 
+
 add_action( 'admin_init', 'ctc_add_meta_box_event_date' );
 
 /**
@@ -198,17 +198,17 @@ function ctc_add_meta_box_event_location() {
 
 	// Configure Meta Box
 	$meta_box = array(
-	
+
 		// Meta Box
 		'id' 		=> 'ctc_event_location', // unique ID
 		'title' 	=> _x( 'Location', 'event meta box', 'church-theme-content' ),
 		'post_type'	=> 'ctc_event',
 		'context'	=> 'normal', // where the meta box appear: normal (left above standard meta boxes), advanced (left below standard boxes), side
 		'priority'	=> 'high', // high, core, default or low (see this: http://www.wproots.com/ultimate-guide-to-meta-boxes-in-wordpress/)
-		
+
 		// Fields
 		'fields' => array(
-		
+
 			// Example
 			/*
 			'option_key' => array(
@@ -231,8 +231,8 @@ function ctc_add_meta_box_event_location() {
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'=> '', // function for custom display of field input
 			*/
-			
-			// Venue				
+
+			// Venue
 			'_ctc_event_venue' => array(
 				'name'				=> __( 'Venue', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
@@ -253,7 +253,7 @@ function ctc_add_meta_box_event_location() {
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
 			),
-			
+
 			// Address
 			'_ctc_event_address' => array(
 				'name'				=> _x( 'Address', 'event meta box', 'church-theme-content' ),
@@ -296,8 +296,8 @@ function ctc_add_meta_box_event_location() {
 				'field_class'		=> 'ctmb-no-top-margin', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
-			),			
-			
+			),
+
 			// Map Latitude
 			'_ctc_event_map_lat' => array(
 				'name'				=> _x( 'Map Latitude', 'event meta box', 'church-theme-content' ),
@@ -318,8 +318,8 @@ function ctc_add_meta_box_event_location() {
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
-			),		
-			
+			),
+
 			// Map Longitude
 			'_ctc_event_map_lng' => array(
 				'name'				=> _x( 'Map Longitude', 'event meta box', 'church-theme-content' ),
@@ -341,7 +341,7 @@ function ctc_add_meta_box_event_location() {
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
 			),
-			
+
 			// Map Type
 			'_ctc_event_map_type' => array(
 				'name'				=> _x( 'Map Type', 'event meta box', 'church-theme-content' ),
@@ -363,7 +363,7 @@ function ctc_add_meta_box_event_location() {
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
 			),
-			
+
 			// Map Zoom
 			'_ctc_event_map_zoom' => array(
 				'name'				=> _x( 'Map Zoom', 'event meta box', 'church-theme-content' ),
@@ -386,16 +386,16 @@ function ctc_add_meta_box_event_location() {
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
 			),
-			
+
 		),
 
 	);
-	
+
 	// Add Meta Box
 	new CT_Meta_Box( $meta_box );
 
 
-	
+
 }
 
 add_action( 'admin_init', 'ctc_add_meta_box_event_location' );
@@ -422,7 +422,7 @@ function ctc_correct_event_end_date( $post_id, $post ) {
 	if ( empty( $_POST ) ) {
 		return;
 	}
-	
+
 	// Not an auto-save (meta values not submitted)
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
@@ -461,7 +461,7 @@ function ctc_correct_event_end_date( $post_id, $post ) {
 	) {
 		$end_date = $start_date;
 	}
-	
+
 	// Update dates in case changed
 	update_post_meta( $post_id, '_ctc_event_start_date', $start_date );
 	update_post_meta( $post_id, '_ctc_event_end_date', $end_date );
@@ -495,7 +495,7 @@ function ctc_event_columns( $columns ) {
 
 	// remove author
 	unset( $columns['author'] );
-	
+
 	return $columns;
 
 }
@@ -511,7 +511,7 @@ add_filter( 'manage_ctc_event_posts_columns' , 'ctc_event_columns' ); // add col
 function ctc_event_columns_content( $column ) {
 
 	global $post;
-	
+
 	switch ( $column ) {
 
 		// Thumbnail
@@ -525,21 +525,21 @@ function ctc_event_columns_content( $column ) {
 
 		// Dates
 		case 'ctc_event_dates' :
-		
+
 			$dates = array();
-		
+
 			$start_date = trim( get_post_meta( $post->ID , '_ctc_event_start_date' , true ) );
 			if ( ! empty( $start_date ) ) {
 				$dates[] = date_i18n( get_option( 'date_format' ), strtotime( $start_date ) ); // translated date
 			}
-			
+
 			$end_date = get_post_meta( $post->ID , '_ctc_event_end_date' , true );
 			if ( ! empty( $end_date ) ) {
 				$dates[] = date_i18n( get_option( 'date_format' ), strtotime( $end_date ) ); // translated date
 			}
-			
+
 			echo '<b>' . implode( _x( ' &ndash; ', 'date range separator', 'church-theme-content' ), $dates ) . '</b>';
-			
+
 			$time = get_post_meta( $post->ID , '_ctc_event_time' , true );
 			if ( ! empty( $time ) ) {
 				echo '<div class="description">' . $time . '</div>';
@@ -566,11 +566,11 @@ function ctc_event_columns_content( $column ) {
 
 		// Venue
 		case 'ctc_event_venue' :
-		
+
 			echo get_post_meta( $post->ID , '_ctc_event_venue' , true );
-		
+
 			break;
-			
+
 	}
 
 }
@@ -606,7 +606,7 @@ function ctc_event_columns_sorting_request( $args ) {
 
 	// admin area only
 	if ( is_admin() ) {
-	
+
 		$screen = get_current_screen();
 
 		// only on this post type's list
@@ -622,7 +622,7 @@ function ctc_event_columns_sorting_request( $args ) {
 
 						$args['meta_key'] = '_ctc_event_start_date';
 						$args['orderby'] = 'meta_value'; // alphabetically (meta_value_num for numeric)
-						
+
 						break;
 
 					// Venue
@@ -630,13 +630,13 @@ function ctc_event_columns_sorting_request( $args ) {
 
 						$args['meta_key'] = '_ctc_event_venue';
 						$args['orderby'] = 'meta_value'; // alphabetically (meta_value_num for numeric)
-						
+
 						break;
-						
+
 				}
-				
+
 			}
-			
+
 			// orderby not set, tell which column to sort by default
 			else {
 
@@ -645,14 +645,14 @@ function ctc_event_columns_sorting_request( $args ) {
 				$args['order'] = 'DESC';
 
 			}
-			
+
 		}
-		
+
 	}
- 
+
 	return $args;
 
 }
- 
+
 add_filter( 'request', 'ctc_event_columns_sorting_request' ); // set how to sort columns
 

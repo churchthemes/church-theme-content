@@ -34,7 +34,7 @@ function ctc_register_taxonomy_sermon_topic() {
 			'all_items' 					=> _x( 'All Topics', 'sermons', 'church-theme-content' ),
 			'parent_item' 					=> null,
 			'parent_item_colon' 			=> null,
-			'edit_item' 					=> _x( 'Edit Topic', 'sermons', 'church-theme-content' ), 
+			'edit_item' 					=> _x( 'Edit Topic', 'sermons', 'church-theme-content' ),
 			'update_item' 					=> _x( 'Update Topic', 'sermons', 'church-theme-content' ),
 			'add_new_item' 					=> _x( 'Add Topic', 'sermons', 'church-theme-content' ),
 			'new_item_name' 				=> _x( 'New Topic', 'sermons', 'church-theme-content' ),
@@ -81,7 +81,7 @@ function ctc_register_taxonomy_sermon_book() {
 			'all_items' 					=> _x( 'All Books', 'sermons', 'church-theme-content' ),
 			'parent_item' 					=> null,
 			'parent_item_colon' 			=> null,
-			'edit_item' 					=> _x( 'Edit Book', 'sermons', 'church-theme-content' ), 
+			'edit_item' 					=> _x( 'Edit Book', 'sermons', 'church-theme-content' ),
 			'update_item' 					=> _x( 'Update Book', 'sermons', 'church-theme-content' ),
 			'add_new_item' 					=> _x( 'Add Book', 'sermons', 'church-theme-content' ),
 			'new_item_name' 				=> _x( 'New Book', 'sermons', 'church-theme-content' ),
@@ -128,7 +128,7 @@ function ctc_register_taxonomy_sermon_series() {
 			'all_items' 					=> _x( "All Series", 'sermons', 'church-theme-content' ),
 			'parent_item' 					=> null,
 			'parent_item_colon' 			=> null,
-			'edit_item' 					=> _x( 'Edit Series', 'sermons', 'church-theme-content' ), 
+			'edit_item' 					=> _x( 'Edit Series', 'sermons', 'church-theme-content' ),
 			'update_item' 					=> _x( 'Update Series', 'sermons', 'church-theme-content' ),
 			'add_new_item' 					=> _x( 'Add Series', 'sermons', 'church-theme-content' ),
 			'new_item_name' 				=> _x( 'New Series', 'sermons', 'church-theme-content' ),
@@ -155,7 +155,7 @@ function ctc_register_taxonomy_sermon_series() {
 	);
 
 }
- 
+
 add_action( 'init', 'ctc_register_taxonomy_sermon_series' );
 
 /**
@@ -175,7 +175,7 @@ function ctc_register_taxonomy_sermon_speaker() {
 			'all_items' 					=> _x( 'All Speakers', 'sermons', 'church-theme-content' ),
 			'parent_item' 					=> null,
 			'parent_item_colon' 			=> null,
-			'edit_item' 					=> _x( 'Edit Speaker', 'sermons', 'church-theme-content' ), 
+			'edit_item' 					=> _x( 'Edit Speaker', 'sermons', 'church-theme-content' ),
 			'update_item' 					=> _x( 'Update Speaker', 'sermons', 'church-theme-content' ),
 			'add_new_item' 					=> _x( 'Add Speaker', 'sermons', 'church-theme-content' ),
 			'new_item_name' 				=> _x( 'New Speaker', 'sermons', 'church-theme-content' ),
@@ -222,7 +222,7 @@ function ctc_register_taxonomy_sermon_tag() {
 			'all_items' 					=> _x( 'All Tags', 'sermons', 'church-theme-content' ),
 			'parent_item' 					=> null,
 			'parent_item_colon' 			=> null,
-			'edit_item' 					=> _x( 'Edit Tag', 'sermons', 'church-theme-content' ), 
+			'edit_item' 					=> _x( 'Edit Tag', 'sermons', 'church-theme-content' ),
 			'update_item' 					=> _x( 'Update Tag', 'sermons', 'church-theme-content' ),
 			'add_new_item' 					=> _x( 'Add Tag', 'sermons', 'church-theme-content' ),
 			'new_item_name' 				=> _x( 'New Tag', 'sermons', 'church-theme-content' ),
@@ -249,7 +249,7 @@ function ctc_register_taxonomy_sermon_tag() {
 	);
 
 }
- 
+
 add_action( 'init', 'ctc_register_taxonomy_sermon_tag' );
 
 /**********************************
@@ -273,7 +273,7 @@ function ctc_register_taxonomy_person_group() {
 			'all_items' 					=> _x( 'All Groups', 'people', 'church-theme-content' ),
 			'parent_item' 					=> null,
 			'parent_item_colon' 			=> null,
-			'edit_item' 					=> _x( 'Edit Group', 'people', 'church-theme-content' ), 
+			'edit_item' 					=> _x( 'Edit Group', 'people', 'church-theme-content' ),
 			'update_item' 					=> _x( 'Update Group', 'people', 'church-theme-content' ),
 			'add_new_item' 					=> _x( 'Add Group', 'people', 'church-theme-content' ),
 			'new_item_name' 				=> _x( 'New Group', 'people', 'church-theme-content' ),

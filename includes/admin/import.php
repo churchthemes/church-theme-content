@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
  * Update event recurrence
- * 
+ *
  * Move recurring events up to date after import
  *
  * @since 1.0.1

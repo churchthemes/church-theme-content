@@ -33,17 +33,17 @@ function ctc_admin_term_list( $post_id, $taxonomy ) {
 	$terms = get_the_terms( $post_id, $taxonomy );
 
 	if ( $terms && ! is_wp_error( $terms ) ) {
-	
+
 		$post_type = get_post_type( $post_id );
 
 		$terms_array = array();
-		
+
 		foreach ( $terms as $term ) {
 			$terms_array[] = '<a href="' . esc_url( admin_url( 'edit.php?' . $taxonomy . '=' . $term->slug  . '&post_type=' . $post_type ) ) . '"> ' . $term->name . '</a>';
-		}	
-		
+		}
+
 		$list = implode( ', ', $terms_array );
-		
+
 	}
 
 	return apply_filters( 'ctc_admin_term_list', $list, $post_id, $taxonomy );
@@ -68,7 +68,7 @@ function ctc_gmaps_types() {
 		'HYBRID'	=> _x( 'Hybrid', 'map', 'church-theme-content' ),
 		'TERRAIN'	=> _x( 'Terrain', 'map', 'church-theme-content' )
 	);
-	
+
 	return apply_filters( 'ctc_gmaps_types', $types );
 
 }
@@ -92,21 +92,21 @@ function ctc_gmaps_type_default() {
 function ctc_gmaps_zoom_levels() {
 
 	$zoom_levels = array();
-	
+
 	$zoom_min = 1; // 0 is actually lowest but then it's detected as not set and reverts to default
 	$zoom_max = 21;
-	
+
 	for ( $z = $zoom_min; $z <= $zoom_max; $z++ ) {
 		$zoom_levels[$z] = $z;
 	}
-	
+
 	return apply_filters( 'ctc_gmaps_zoom_levels', $zoom_levels );
 
 }
 
 /**
  * Zoom level default
- * 
+ *
  * @since 0.9
  * @return int Default Google Maps zoom level
  */

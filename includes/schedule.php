@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 /*************************************************
  * RECURRING EVENTS
  *************************************************/
- 
+
 /**
  * Schedule weekly, monthly and yearly events
  *
@@ -47,7 +47,7 @@ function ctc_update_recurring_event_dates() {
 	// Localized dates
 	$yesterday = date_i18n( 'Y-m-d', time() - DAY_IN_SECONDS );
 
-	// Get all events with end date in past and have valid recurring value and 
+	// Get all events with end date in past and have valid recurring value and
 	$events_query = new WP_Query( array(
 		'post_type'	=> 'ctc_event',
 		'nopaging'	=> true,

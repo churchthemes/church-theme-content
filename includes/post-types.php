@@ -51,7 +51,7 @@ function ctc_register_post_type_sermon() {
 		'menu_icon'		=> 'dashicons-video-alt3'
 	);
 	$args = apply_filters( 'ctc_post_type_sermon_args', $args ); // allow filtering
-		
+
 	// Registration
 	register_post_type(
 		'ctc_sermon',
@@ -61,7 +61,7 @@ function ctc_register_post_type_sermon() {
 }
 
 add_action( 'init', 'ctc_register_post_type_sermon' ); // register post type
- 
+
 /**********************************
  * EVENT
  **********************************/
@@ -99,13 +99,13 @@ function ctc_register_post_type_event() {
 		'menu_icon'		=> 'dashicons-calendar'
 	);
 	$args = apply_filters( 'ctc_post_type_event_args', $args ); // allow filtering
-	
+
 	// Registration
 	register_post_type(
 		'ctc_event',
 		$args
 	);
-	
+
 }
 
 add_action( 'init', 'ctc_register_post_type_event' ); // register post type
@@ -147,26 +147,26 @@ function ctc_location_post_type() {
 		'menu_icon'		=> 'dashicons-location'
 	);
 	$args = apply_filters( 'ctc_post_type_location_args', $args ); // allow filtering
-		
+
 	// Registration
 	register_post_type(
 		'ctc_location',
 		$args
 	);
-	
+
 }
 
 add_action( 'init', 'ctc_location_post_type' ); // register post type
 
 /**********************************
  * PERSON
- **********************************/ 
+ **********************************/
 
 /**
  * Register person post type
  *
  * @since 0.9
- */	
+ */
 function ctc_register_post_type_person() {
 
 	// Arguments
@@ -196,13 +196,13 @@ function ctc_register_post_type_person() {
 		'menu_icon'		=> 'dashicons-admin-users'
 	);
 	$args = apply_filters( 'ctc_post_type_person_args', $args ); // allow filtering
-	
+
 	// Registration
 	register_post_type(
 		'ctc_person',
 		$args
 	);
-	
+
 }
 
 add_action( 'init', 'ctc_register_post_type_person' ); // register post type

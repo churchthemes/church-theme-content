@@ -20,7 +20,7 @@ This plugin is intended for a very specific audience. If you are *not* one of th
 
 = What it does =
 
-It enables users to manage *sermons*, *events*, *people* and *locations* to be displayed by a compatible theme. 
+It enables users to manage *sermons*, *events*, *people* and *locations* to be displayed by a compatible theme.
 
 Experienced WordPress developers agree that functionality like this does not belong in themes since themes are intended only to control the appearance of a WordPress site. Content that users might expect to take with them if they switch themes should "live" in a plugin. Similarly, our approach is not to display content using the plugin since themes offer more control for that purpose. This is why a **compatible theme is required**.
 

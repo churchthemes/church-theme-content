@@ -37,9 +37,9 @@ function ctc_person_title_text( $title ) {
 	return $title;
 
 }
- 
+
 add_filter( 'enter_title_here', 'ctc_person_title_text' );
- 
+
 /**********************************
  * META BOXES
  **********************************/
@@ -53,17 +53,17 @@ function ctc_add_meta_box_person_details() {
 
 	// Configure Meta Box
 	$meta_box = array(
-	
+
 		// Meta Box
 		'id' 		=> 'ctc_person_details', // unique ID
 		'title' 	=> _x( 'Person Details', 'meta box', 'church-theme-content' ),
 		'post_type'	=> 'ctc_person',
 		'context'	=> 'normal', // where the meta box appear: normal (left above standard meta boxes), advanced (left below standard boxes), side
 		'priority'	=> 'high', // high, core, default or low (see this: http://www.wproots.com/ultimate-guide-to-meta-boxes-in-wordpress/)
-		
+
 		// Fields
 		'fields' => array(
-		
+
 			// Example
 			/*
 			'option_key' => array(
@@ -87,7 +87,7 @@ function ctc_add_meta_box_person_details() {
 				'custom_field'=> '', // function for custom display of field input
 			*/
 
-			// Position				
+			// Position
 			'_ctc_person_position' => array(
 				'name'				=> __( 'Position', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
@@ -109,7 +109,7 @@ function ctc_add_meta_box_person_details() {
 				'custom_field'		=> '', // function for custom display of field input
 			),
 
-			// Phone				
+			// Phone
 			'_ctc_person_phone' => array(
 				'name'				=> _x( 'Phone', 'location meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
@@ -131,7 +131,7 @@ function ctc_add_meta_box_person_details() {
 				'custom_field'		=> '', // function for custom display of field input
 			),
 
-			// Email				
+			// Email
 			'_ctc_person_email' => array(
 				'name'				=> _x( 'Email', 'location meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
@@ -174,22 +174,22 @@ function ctc_add_meta_box_person_details() {
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
 			),
-			
+
 		),
 
 	);
-	
+
 	// Add Meta Box
 	new CT_Meta_Box( $meta_box );
-	
+
 }
- 
+
 add_action( 'admin_init', 'ctc_add_meta_box_person_details' );
 
 /**********************************
  * ADMIN COLUMNS
  **********************************/
- 
+
 /**
  * Add/remove list columns
  *
@@ -210,10 +210,10 @@ function ctc_person_columns( $columns ) {
 	if ( ctc_taxonomy_supported( 'people', 'ctc_person_group' ) ) $insert_array['ctc_person_group'] = _x( 'Groups', 'people column', 'church-theme-content' );
 	$insert_array['ctc_person_order'] = _x( 'Order', 'sorting', 'church-theme-content' );
 	$columns = ctc_array_merge_after_key( $columns, $insert_array, 'title' );
-	
+
 	//change "title" to "name"
 	$columns['title'] = _x( 'Name', 'person', 'church-theme-content' );
-	
+
 	return $columns;
 
 }
@@ -229,9 +229,9 @@ add_filter( 'manage_ctc_person_posts_columns' , 'ctc_person_columns' ); // add c
 function ctc_person_columns_content( $column ) {
 
 	global $post;
-	
+
 	switch ( $column ) {
-			
+
 		// Thumbnail
 		case 'ctc_person_thumbnail' :
 
@@ -240,7 +240,7 @@ function ctc_person_columns_content( $column ) {
 			}
 
 			break;
-	
+
 		// Position
 		case 'ctc_person_position' :
 
@@ -258,7 +258,7 @@ function ctc_person_columns_content( $column ) {
 		// Order
 		case 'ctc_person_order' :
 
-			echo isset( $post->menu_order ) ? $post->menu_order : '';			
+			echo isset( $post->menu_order ) ? $post->menu_order : '';
 
 			break;
 
@@ -297,7 +297,7 @@ function ctc_person_columns_sorting_request( $args ) {
 
 	// admin area only
 	if ( is_admin() ) {
-	
+
 		$screen = get_current_screen();
 
 		// only on this post type's list
@@ -307,29 +307,29 @@ function ctc_person_columns_sorting_request( $args ) {
 			if ( isset( $args['orderby'] ) ) {
 
 				switch ( $args['orderby'] ) {
-				
+
 					// Under Name
 					case '_ctc_person_position' :
 
 						$args['meta_key'] = '_ctc_person_position';
 						$args['orderby'] = 'meta_value'; // alphabetically (meta_value_num for numeric)
-						
+
 						break;
 
 				}
-				
+
 			}
-			
+
 			// orderby not set, tell which column to sort by default
 			else {
 				$args['orderby'] = 'menu_order'; // sort by Order column by default
 				$args['order'] = 'ASC';
 			}
-			
+
 		}
-		
+
 	}
- 
+
 	return $args;
 
 }
