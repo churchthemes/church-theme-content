@@ -22,7 +22,7 @@ This plugin is intended for a very specific audience. If you are *not* one of th
 
 It enables users to manage *sermons*, *events*, *people* and *locations* to be displayed by a compatible theme.
 
-Experienced WordPress developers agree that functionality like this does not belong in themes since themes are intended only to control the appearance of a WordPress site. Content that users might expect to take with them if they switch themes should "live" in a plugin. Similarly, our approach is not to display content using the plugin since themes offer more control for that purpose. This is why a **compatible theme is required**.
+Experienced WordPress developers agree that functionality like this does not belong in themes since themes are intended only to control the appearance of a WordPress site. Content that users might expect to take with them if they switch themes should "live" in a plugin in order to [avoid the lock-in effect](http://churchthemes.com/2014/05/27/wordpress-theme-users-avoid-lock-in-effect/). Similarly, our approach is not to display content using the plugin since themes offer more control for that purpose. This is why a **compatible theme is required**.
 
 See [screenshots](http://wordpress.org/plugins/church-theme-content/screenshots/) for a tour of features. Note also that sermon audio [podcasting](http://churchthemes.com/guides/user/content/sermons/sermon-podcasting/) is built-in and there is support for recurring events.
 
