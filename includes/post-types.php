@@ -46,7 +46,7 @@ function ctc_register_post_type_sermon() {
 			'with_front' 	=> false,
 			'feeds'			=> ctc_feature_supported( 'sermons' )
 		),
-		'supports' 		=> array( 'title', 'editor', 'excerpt', 'thumbnail', 'comments', 'author', 'revisions' ), // 'editor' required for media upload button (see Meta Boxes note below about hiding)
+		'supports' 		=> array( 'title', 'editor', 'excerpt', 'publicize', 'thumbnail', 'comments', 'author', 'revisions' ), // 'editor' required for media upload button (see Meta Boxes note below about hiding)
 		'taxonomies' 	=> array( 'ctc_sermon_topic', 'ctc_sermon_book', 'ctc_sermon_series', 'ctc_sermon_speaker', 'ctc_sermon_tag' ),
 		'menu_icon'		=> 'dashicons-video-alt3'
 	);
@@ -95,7 +95,7 @@ function ctc_register_post_type_event() {
 			'with_front'	=> false,
 			'feeds'			=> ctc_feature_supported( 'events' ),
 		),
-		'supports' 		=> array( 'title', 'editor', 'excerpt', 'thumbnail', 'comments', 'author', 'revisions' ),
+		'supports' 		=> array( 'title', 'editor', 'excerpt', 'publicize', 'thumbnail', 'comments', 'author', 'revisions' ),
 		'menu_icon'		=> 'dashicons-calendar'
 	);
 	$args = apply_filters( 'ctc_post_type_event_args', $args ); // allow filtering
