@@ -101,6 +101,62 @@ function ctc_array_merge_after_key( $original_array, $insert_array, $after_key )
 }
 
 /*************************************************
+ * Event Recurrence Options
+ *************************************************/
+
+function ctc_get_event_recurrences() {
+	$recurrence = array(
+		'weekly' => array(
+			'meta_box_option' => _x( 'Weekly', 'event meta box', 'church-theme-content' ),
+			'description' => __( 'Recurs Weekly', 'church-theme-content' )
+		),
+		'monthly' => array(
+			'meta_box_option' => _x( 'Monthly', 'event meta box', 'church-theme-content' ),
+			'description' => __( 'Recurs Monthly', 'church-theme-content' )
+		),
+		'yearly' =>  array(
+			'meta_box_option' => _x( 'Yearly', 'event meta box', 'church-theme-content' ),
+			'description' => __( 'Recurs Yearly', 'church-theme-content' )
+		)
+	);
+
+	return apply_filters( 'ctc_event_recurrence_options', $recurrence );
+}
+
+function ctc_get_event_recurrence_metabox_options() {
+	$recurrences = ctc_get_event_recurrences();
+	$options = array();
+	$options['none'] = _x( 'None', 'event meta box', 'church-theme-content' );
+	foreach ( $recurrences as $key => $data ) {
+		$options[ $key ] = $data['meta_box_option'];
+	}
+	return $options;
+}
+
+function ctc_get_event_recurrence_description( $recurrence ) {
+	$recurrences = ctc_get_event_recurrences();
+	if ( isset( $recurrences[ $recurrence ] ) ) {
+		return $recurrences[ $recurrence ]['description'];
+	} else {
+		return '';
+	}
+}
+
+function ctc_get_event_recurrence_keys() {
+	return array_keys( ctc_get_event_recurrences() );
+}
+
+function ctc_call_event_recurrence_increment_function( $recurrence, $date, $y, $m, $d ) {
+	$recurrences = ctc_get_event_recurrences();
+	if ( isset( $recurrences[ $recurrence ]['increment_function'] ) ) {
+		$func = $recurrences[ $recurrence ]['increment_function'];
+		return call_user_func( $func, $date, $y, $m, $d );
+	}
+	// default, do nothing if no method found
+	return array( $y, $m, $d );
+}
+
+/*************************************************
  * DATES
  *************************************************/
 
@@ -115,7 +171,6 @@ function ctc_array_merge_after_key( $original_array, $insert_array, $after_key )
  * @return string Future date
  */
 function ctc_increment_future_date( $date, $increment ) {
-
 	// In case no change could be made
 	$new_date = $date;
 
@@ -155,6 +210,11 @@ function ctc_increment_future_date( $date, $increment ) {
 
 				break;
 
+			default:
+
+				list( $y, $m, $d) = ctc_call_event_recurrence_increment_function( $increment, $date, $y, $m, $d );
+
+				break;
 		}
 
 		// Day does not exist in month
@@ -167,12 +227,15 @@ function ctc_increment_future_date( $date, $increment ) {
 		// Form the date string
 		$new_date = date( 'Y-m-d', mktime( 0, 0, 0, $m, $d, $y ) ); // pad day, month with 0
 
-		// Is new date in past? Increment until it is not (automatic correction in case wp-cron misses a beat)
-		$today_ts = strtotime( date_i18n( 'Y-m-d' ) ); // localized
-		$new_date_ts = strtotime( $new_date );
-		while ( $new_date_ts < $today_ts ) {
-			$new_date = ctc_increment_future_date( $new_date, $increment );
+		// check if date changed to avoid infinite recursion
+		if( $date !== $new_date ) {
+			// Is new date in past? Increment until it is not (automatic correction in case wp-cron misses a beat)
+			$today_ts = strtotime( date_i18n( 'Y-m-d' ) ); // localized
 			$new_date_ts = strtotime( $new_date );
+			while ( $new_date_ts < $today_ts ) {
+				$new_date = ctc_increment_future_date( $new_date, $increment );
+				$new_date_ts = strtotime( $new_date );
+			}
 		}
 
 	}

@@ -60,7 +60,7 @@ function ctc_update_recurring_event_dates() {
 		   ),
 			array(
 				'key' => '_ctc_event_recurrence',
-				'value' => array( 'weekly', 'monthly', 'yearly' ),
+				'value' => ctc_get_event_recurrence_keys(),
 		 		'compare' => 'IN',
 		   )
 		)
