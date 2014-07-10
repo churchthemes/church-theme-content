@@ -543,7 +543,7 @@ function ctc_event_columns_content( $column ) {
 			$recurrence = get_post_meta( $post->ID , '_ctc_event_recurrence' , true );
 			if ( ! empty( $recurrence ) && $recurrence != 'none' ) {
 				echo '<div class="description"><i>';
-				echo ctc_get_event_recurrence_description( $recurrence );
+				echo ctc_get_event_recurrence_description( $recurrence, $start_date, $end_date );
 				echo '</i></div>';
 			}
 

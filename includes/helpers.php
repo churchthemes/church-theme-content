@@ -126,6 +126,7 @@ function ctc_get_event_recurrences() {
 function ctc_get_event_recurrence_metabox_options() {
 	$recurrences = ctc_get_event_recurrences();
 	$options = array();
+	// add the none option, which is only required as a meta box option, and nowhere else
 	$options['none'] = _x( 'None', 'event meta box', 'church-theme-content' );
 	foreach ( $recurrences as $key => $data ) {
 		$options[ $key ] = $data['meta_box_option'];
@@ -133,10 +134,15 @@ function ctc_get_event_recurrence_metabox_options() {
 	return $options;
 }
 
-function ctc_get_event_recurrence_description( $recurrence ) {
+function ctc_get_event_recurrence_description( $recurrence, $start_date, $end_date ) {
 	$recurrences = ctc_get_event_recurrences();
 	if ( isset( $recurrences[ $recurrence ] ) ) {
-		return $recurrences[ $recurrence ]['description'];
+		// if description_callback is set and has the value true, then treat the description as a callback function
+		if ( isset( $recurrences[ $recurrence ]['description_callback'] ) && $recurrences[ $recurrence ]['description_callback'] ) {
+			return call_user_func( $recurrences[ $recurrence ]['description'], $start_date, $end_date );
+		} else { // otherwise just treat it as a string and return it
+			return $recurrences[ $recurrence ]['description'];
+		}
 	} else {
 		return '';
 	}
