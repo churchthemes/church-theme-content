@@ -74,6 +74,7 @@ Yes, please see the [Developer Guide](http://churchthemes.com/guides/developer/c
 7. Add location
 8. People
 9. Add person
+10. Groups
 
 == Changelog ==
 
