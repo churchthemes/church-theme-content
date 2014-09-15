@@ -136,12 +136,7 @@ function ctc_add_meta_box_event_date() {
 				'desc'				=> _x( "Start and end dates will automatically move forward after the event ends.", 'event meta box', 'church-theme-content' ),
 				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
-				'options'			=> array( // array of keys/values for radio or select
-					'none'			=> _x( 'None', 'event meta box', 'church-theme-content' ),
-					'weekly'	=> _x( 'Weekly', 'event meta box', 'church-theme-content' ),
-					'monthly'	=> _x( 'Monthly', 'event meta box', 'church-theme-content' ),
-					'yearly'	=> _x( 'Yearly', 'event meta box', 'church-theme-content' ),
-				),
+				'options'           => ctc_get_event_recurrence_metabox_options(),
 				'upload_button'		=> '', // text for button that opens media frame
 				'upload_title'		=> '', // title appearing at top of media frame
 				'upload_type'		=> '', // optional type of media to filter by (image, audio, video, application/pdf)
@@ -548,17 +543,7 @@ function ctc_event_columns_content( $column ) {
 			$recurrence = get_post_meta( $post->ID , '_ctc_event_recurrence' , true );
 			if ( ! empty( $recurrence ) && $recurrence != 'none' ) {
 				echo '<div class="description"><i>';
-				switch ( $recurrence ) {
-					case 'weekly' :
-						_e( 'Recurs Weekly', 'church-theme-content' );
-						break;
-					case 'monthly' :
-						_e( 'Recurs Monthly', 'church-theme-content' );
-						break;
-					case 'yearly' :
-						_e( 'Recurs Yearly', 'church-theme-content' );
-						break;
-				}
+				echo ctc_get_event_recurrence_description( $recurrence, $start_date, $end_date );
 				echo '</i></div>';
 			}
 
