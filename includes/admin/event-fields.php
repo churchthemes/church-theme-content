@@ -664,23 +664,51 @@ function ctc_event_columns_content( $column ) {
 			$dates = array();
 
 			$start_date = trim( get_post_meta( $post->ID , '_ctc_event_start_date' , true ) );
+			$end_date = get_post_meta( $post->ID , '_ctc_event_end_date' , true );
+			$time = get_post_meta( $post->ID , '_ctc_event_time' , true );
+			$start_time = get_post_meta( $post->ID , '_ctc_event_start_time' , true );
+			$end_time = get_post_meta( $post->ID , '_ctc_event_end_time' , true );
+			$hide_time_range = get_post_meta( $post->ID , '_ctc_event_hide_time_range' , true );
+			$recurrence = get_post_meta( $post->ID , '_ctc_event_recurrence' , true );
+
 			if ( ! empty( $start_date ) ) {
 				$dates[] = date_i18n( get_option( 'date_format' ), strtotime( $start_date ) ); // translated date
 			}
 
-			$end_date = get_post_meta( $post->ID , '_ctc_event_end_date' , true );
 			if ( ! empty( $end_date ) ) {
 				$dates[] = date_i18n( get_option( 'date_format' ), strtotime( $end_date ) ); // translated date
 			}
 
-			echo '<b>' . implode( _x( ' &ndash; ', 'date range separator', 'church-theme-content' ), $dates ) . '</b>';
+			echo '<b>' . esc_html( implode( _x( ' &ndash; ', 'date range separator', 'church-theme-content' ), $dates ) ) . '</b>';
 
-			$time = get_post_meta( $post->ID , '_ctc_event_time' , true );
-			if ( ! empty( $time ) ) {
-				echo '<div class="description">' . $time . '</div>';
+			// Show Start/End Time unless hidden
+			// Otherwise show Time Description
+			$time_format = 'g:i a';
+			if ( $start_time && ! $hide_time_range ) {
+
+				echo '<div class="description">';
+
+				$start_time_formatted = date( $time_format, strtotime( $start_time ) );
+
+				if ( ! $end_time ) { // just start time
+					echo esc_html( date( $time_format, strtotime( $start_time ) ) );
+				} else {
+
+					$end_time_formatted = date( $time_format, strtotime( $end_time ) );
+
+					echo esc_html( implode( _x( ' &ndash; ', 'time range separator', 'church-theme-content' ), array(
+						$start_time_formatted,
+						$end_time_formatted
+					) ) );
+
+				}
+
+				echo '</div>';
+
+			} elseif ( $time ) {
+				echo '<div class="description">' . esc_html( $time ) . '</div>';
 			}
 
-			$recurrence = get_post_meta( $post->ID , '_ctc_event_recurrence' , true );
 			if ( ! empty( $recurrence ) && $recurrence != 'none' ) {
 				echo '<div class="description"><i>';
 				switch ( $recurrence ) {
