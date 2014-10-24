@@ -55,7 +55,7 @@ function ctc_add_meta_box_event_date() {
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
 				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
-				'class'				=> '', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
+				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
@@ -77,7 +77,7 @@ function ctc_add_meta_box_event_date() {
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
 				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
-				'class'				=> '', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
+				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
@@ -100,7 +100,7 @@ function ctc_add_meta_box_event_date() {
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
 				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
-				'class'				=> '', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
+				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
@@ -122,7 +122,7 @@ function ctc_add_meta_box_event_date() {
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
 				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
-				'class'				=> 'ctmb-small', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
+				'class'				=> 'ctmb-small', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
@@ -144,7 +144,7 @@ function ctc_add_meta_box_event_date() {
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
 				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
-				'class'				=> 'ctmb-small', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
+				'class'				=> 'ctmb-small', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
@@ -168,7 +168,7 @@ function ctc_add_meta_box_event_date() {
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
 				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
-				'class'				=> 'ctmb-medium', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
+				'class'				=> 'ctmb-medium', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
@@ -195,7 +195,7 @@ function ctc_add_meta_box_event_date() {
 				'no_empty'			=> true, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
 				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
-				'class'				=> '', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
+				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
@@ -217,7 +217,7 @@ function ctc_add_meta_box_event_date() {
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
 				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
-				'class'				=> '', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
+				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
@@ -271,7 +271,7 @@ function ctc_add_meta_box_event_location() {
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
 				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
-				'class'				=> '', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
+				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
@@ -293,7 +293,7 @@ function ctc_add_meta_box_event_location() {
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
 				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
-				'class'				=> 'ctmb-medium', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
+				'class'				=> 'ctmb-medium', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
@@ -315,7 +315,7 @@ function ctc_add_meta_box_event_location() {
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
 				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
-				'class'				=> 'ctmb-medium', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
+				'class'				=> 'ctmb-medium', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> 'ctmb-no-bottom-margin', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
@@ -337,7 +337,7 @@ function ctc_add_meta_box_event_location() {
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
 				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
-				'class'				=> '', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
+				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> 'ctmb-no-top-margin', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
@@ -359,7 +359,7 @@ function ctc_add_meta_box_event_location() {
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
 				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
-				'class'				=> 'ctmb-medium', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
+				'class'				=> 'ctmb-medium', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
@@ -381,7 +381,7 @@ function ctc_add_meta_box_event_location() {
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
 				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
-				'class'				=> 'ctmb-medium', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
+				'class'				=> 'ctmb-medium', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
@@ -403,7 +403,7 @@ function ctc_add_meta_box_event_location() {
 				'no_empty'			=> true, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
 				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
-				'class'				=> '', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
+				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
@@ -426,7 +426,7 @@ function ctc_add_meta_box_event_location() {
 				'no_empty'			=> true, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
 				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
-				'class'				=> '', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
+				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
