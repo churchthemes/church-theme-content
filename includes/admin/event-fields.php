@@ -108,7 +108,7 @@ function ctc_add_meta_box_event_date() {
 			),
 
 			// Start Time
-			'_ctc_event_time_start' => array(
+			'_ctc_event_start_time' => array(
 				'name'				=> __( 'Start Time', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
@@ -130,7 +130,7 @@ function ctc_add_meta_box_event_date() {
 			),
 
 			// End Time
-			'_ctc_event_time_end' => array(
+			'_ctc_event_end_time' => array(
 				'name'				=> __( 'End Time', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
