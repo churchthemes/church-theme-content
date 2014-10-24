@@ -152,16 +152,37 @@ function ctc_add_meta_box_event_date() {
 				'custom_field'		=> '', // function for custom display of field input
 			),
 
+			// Hide Start/End Time
+			// The user may just want to show the Time Description while still having a Start Time for ordeing purposes
+			// An example is Sunday Worship Services having Time Description as "9:30 am and 11:00 am" with another event happening later that night
+			'_ctc_event_hide_time_range' => array(
+				'name'				=> '',
+				'after_name'		=> '', // (Optional), (Required), etc.
+				'desc'				=> '',
+				'type'				=> 'checkbox', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'checkbox_label'	=> __( 'Do not show times entered above (use only for ordering events)', 'church-theme-content' ), //show text after checkbox
+				'options'			=> array(), // array of keys/values for radio or select
+				'upload_button'		=> '', // text for button that opens media frame
+				'upload_title'		=> '', // title appearing at top of media frame
+				'upload_type'		=> '', // optional type of media to filter by (image, audio, video, application/pdf)
+				'default'			=> false, // value to pre-populate option with (before first save or on reset)
+				'no_empty'			=> false, // if user empties value, force default to be saved instead
+				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
+				'field_attributes'	=> array(), // attr => value array for field container
+				'field_class'		=> 'ctmb-no-top-margin', // class(es) to add to field container
+				'custom_sanitize'	=> '', // function to do additional sanitization
+				'custom_field'		=> '', // function for custom display of field input
+			),
+
 			// Time Description
 			// Formerly, "Time" was the only Time field
 			// Start Time and End Time were added for precise ordering
-			// This can be used to allow a written description in absence of or as a compliment to the exact time
-			// You may want to override this field's description with something like, "Optionally write a description of the time (e.g. 'After Second Service')"
-			// Your theme could then show this description after the Start/End Time or show only this description, if no Start/End Time is provided
 			'_ctc_event_time' => array(
 				'name'				=> __( 'Time Description', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> '',
+				'desc'				=> __( 'Optionally describe the time (e.g. "9:30 am and 11:00 am" or "After Second Service")', 'church-theme-content' ),
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
@@ -332,7 +353,7 @@ function ctc_add_meta_box_event_location() {
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
 				'type'				=> 'checkbox', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
-				'checkbox_label'	=> 'Show directions link', //show text after checkbox
+				'checkbox_label'	=> __( 'Show directions link', 'church-theme-content' ), //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
 				'upload_title'		=> '', // title appearing at top of media frame
