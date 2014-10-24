@@ -107,11 +107,35 @@ function ctc_add_meta_box_event_date() {
 				'custom_field'		=> '', // function for custom display of field input
 			),
 
-			// Time
+			// Start Time
 			'_ctc_event_time' => array(
 				'name'				=> __( 'Time', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> __( 'Optionally provide a time such as "8:00 am &ndash; 2:00 pm"', 'church-theme-content' ),
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
+				'checkbox_label'	=> '', //show text after checkbox
+				'options'			=> array(), // array of keys/values for radio or select
+				'upload_button'		=> '', // text for button that opens media frame
+				'upload_title'		=> '', // title appearing at top of media frame
+				'upload_type'		=> '', // optional type of media to filter by (image, audio, video, application/pdf)
+				'default'			=> '', // value to pre-populate option with (before first save or on reset)
+				'no_empty'			=> false, // if user empties value, force default to be saved instead
+				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'class'				=> 'ctmb-medium', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
+				'field_attributes'	=> array(), // attr => value array for field container
+				'field_class'		=> '', // class(es) to add to field container
+				'custom_sanitize'	=> '', // function to do additional sanitization
+				'custom_field'		=> '', // function for custom display of field input
+			),
+
+			// Time Description
+			// Formerly, "Time" was the only Time field
+			// Start Time and End Time were added for precise sorting
+			'_ctc_event_time' => array(
+				'name'				=> __( 'Time Description', 'church-theme-content' ),
+				'after_name'		=> '', // (Optional), (Required), etc.
+				//'desc'				=> __( 'Optionally provide a time such as "8:00 am &ndash; 2:00 pm"', 'church-theme-content' ),
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
