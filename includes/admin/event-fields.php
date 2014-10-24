@@ -85,7 +85,7 @@ function ctc_add_meta_box_event_date() {
 			),
 
 			// End Date
-			// Note: ctc_sanitize_event_end_date calback corrects end and start dates (ie. end date but no start or end is sooner than start)
+			// Note: ctc_correct_event_end_date() callback corrects end and start dates (ie. end date but no start or end is sooner than start)
 			'_ctc_event_end_date' => array(
 				'name'				=> __( 'End Date', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
@@ -130,6 +130,7 @@ function ctc_add_meta_box_event_date() {
 			),
 
 			// End Time
+			// Note: ctc_correct_event_end_time() corrects end and start times (ie. end time but no start or end is sooner than start)
 			'_ctc_event_end_time' => array(
 				'name'				=> __( 'End Time', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
@@ -447,9 +448,9 @@ function ctc_add_meta_box_event_location() {
 add_action( 'admin_init', 'ctc_add_meta_box_event_location' );
 
 /**
- * End Date sanitization
+ * End Date Sanitization
  *
- * This callback runs after CT_Meta_Box general sanitization but before saving for End Date.
+ * This runs after CT_Meta_Box general sanitization but before saving for End Date.
  * In order for this to work properly, End Date must be after Start Date so that the saved/sanitized
  * Start Date value is available in database.
  *
@@ -475,8 +476,8 @@ function ctc_correct_event_end_date( $post_id, $post ) {
 	}
 
 	// Verify the nonce
-	$nonce_key = 'ctc_event_location_nonce';
-	$nonce_action = 'ctc_event_location_save';
+	$nonce_key = 'ctc_event_date_nonce';
+	$nonce_action = 'ctc_event_date_save';
 	if ( empty( $_POST[$nonce_key] ) || ! wp_verify_nonce( $_POST[$nonce_key], $nonce_action ) ) {
 		return;
 	}
@@ -513,7 +514,71 @@ function ctc_correct_event_end_date( $post_id, $post ) {
 	update_post_meta( $post_id, '_ctc_event_end_date', $end_date );
 
 }
+
 add_action( 'save_post', 'ctc_correct_event_end_date', 11, 2 ); // after save at default 10
+
+/**
+ * End Time Sanitization
+ *
+ * This runs after CT_Meta_Box general sanitization but before saving for End Time.
+ * In order for this to work properly, End Time must be after Start Time so that the saved/sanitized
+ * Start Time value is available in database.
+ *
+ * @since 1.2
+ * @param int $post_id Post ID
+ * @param object $post Data for post being saved
+ */
+function ctc_correct_event_end_time( $post_id, $post ) {
+
+	// Event is being saved
+	if ( ! isset( $post->post_type ) || 'ctc_event' != $post->post_type ) {
+		return;
+	}
+
+	// Is a POST occurring?
+	if ( empty( $_POST ) ) {
+		return;
+	}
+
+	// Not an auto-save (meta values not submitted)
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
+
+	// Verify the nonce
+	$nonce_key = 'ctc_event_date_nonce';
+	$nonce_action = 'ctc_event_date_save';
+	if ( empty( $_POST[$nonce_key] ) || ! wp_verify_nonce( $_POST[$nonce_key], $nonce_action ) ) {
+		return;
+	}
+
+	// Make sure user has permission to edit
+	$post_type = get_post_type_object( $post->post_type );
+	if ( ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+		return;
+	}
+
+	// Get start and end times already saved by CT Meta Box
+	$start_time = get_post_meta( $post_id, '_ctc_event_start_time', true );
+	$end_time = get_post_meta( $post_id, '_ctc_event_end_time', true );
+
+	// If end time given but start time empty, empty end time
+	if ( empty( $start_time ) && ! empty( $end_time ) ) {
+		$end_time = '';
+	}
+
+	// If end time is same as or earlier than start time, empty end time
+	if ( ! empty( $start_time ) && $end_time <= $start_time ) {
+		$end_time = '';
+	}
+
+	// Uptime times in case changed
+	update_post_meta( $post_id, '_ctc_event_start_time', $start_time );
+	update_post_meta( $post_id, '_ctc_event_end_time', $end_time );
+
+}
+
+add_action( 'save_post', 'ctc_correct_event_end_time', 11, 2 ); // after save at default 10
 
 /**********************************
  * ADMIN COLUMNS
