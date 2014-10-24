@@ -154,7 +154,10 @@ function ctc_add_meta_box_event_date() {
 
 			// Time Description
 			// Formerly, "Time" was the only Time field
-			// Start Time and End Time were added for precise sorting
+			// Start Time and End Time were added for precise ordering
+			// This can be used to allow a written description in absence of or as a compliment to the exact time
+			// You may want to override this field's description with something like, "Optionally write a description of the time (e.g. 'After Second Service')"
+			// Your theme could then show this description after the Start/End Time or show only this description, if no Start/End Time is provided
 			'_ctc_event_time' => array(
 				'name'				=> __( 'Time Description', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
