@@ -45,7 +45,7 @@ function ctc_add_meta_box_event_date() {
 				'name'				=> __( 'Field Name', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> __( 'This is the description below the field.', 'church-theme-content' ),
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -67,7 +67,7 @@ function ctc_add_meta_box_event_date() {
 				'name'				=> __( 'Start Date', 'church-theme-content' ),
 				'after_name'		=> __( '(Required)', 'church-theme-content' ), // (Optional), (Required), etc.
 				'desc'				=> '',
-				'type'				=> 'date', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
+				'type'				=> 'date', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -90,7 +90,7 @@ function ctc_add_meta_box_event_date() {
 				'name'				=> __( 'End Date', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
-				'type'				=> 'date', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
+				'type'				=> 'date', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -108,11 +108,11 @@ function ctc_add_meta_box_event_date() {
 			),
 
 			// Start Time
-			'_ctc_event_time' => array(
-				'name'				=> __( 'Time', 'church-theme-content' ),
+			'_ctc_event_time_start' => array(
+				'name'				=> __( 'Start Time', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'desc'				=> __( 'Optionally provide a time such as "8:00 am &ndash; 2:00 pm"', 'church-theme-content' ),
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
+				'desc'				=> '',
+				'type'				=> 'time', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -122,7 +122,29 @@ function ctc_add_meta_box_event_date() {
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
 				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
-				'class'				=> 'ctmb-medium', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
+				'class'				=> 'ctmb-small', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
+				'field_attributes'	=> array(), // attr => value array for field container
+				'field_class'		=> '', // class(es) to add to field container
+				'custom_sanitize'	=> '', // function to do additional sanitization
+				'custom_field'		=> '', // function for custom display of field input
+			),
+
+			// End Time
+			'_ctc_event_time_end' => array(
+				'name'				=> __( 'End Time', 'church-theme-content' ),
+				'after_name'		=> '', // (Optional), (Required), etc.
+				'desc'				=> '',
+				'type'				=> 'time', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'checkbox_label'	=> '', //show text after checkbox
+				'options'			=> array(), // array of keys/values for radio or select
+				'upload_button'		=> '', // text for button that opens media frame
+				'upload_title'		=> '', // title appearing at top of media frame
+				'upload_type'		=> '', // optional type of media to filter by (image, audio, video, application/pdf)
+				'default'			=> '', // value to pre-populate option with (before first save or on reset)
+				'no_empty'			=> false, // if user empties value, force default to be saved instead
+				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'class'				=> 'ctmb-small', // class(es) to add to input (try try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
@@ -135,8 +157,8 @@ function ctc_add_meta_box_event_date() {
 			'_ctc_event_time' => array(
 				'name'				=> __( 'Time Description', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				//'desc'				=> __( 'Optionally provide a time such as "8:00 am &ndash; 2:00 pm"', 'church-theme-content' ),
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
+				'desc'				=> '',
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -158,7 +180,7 @@ function ctc_add_meta_box_event_date() {
 				'name'				=> __( 'Recurrence', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> _x( "Start and end dates will automatically move forward after the event ends.", 'event meta box', 'church-theme-content' ),
-				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
+				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array( // array of keys/values for radio or select
 					'none'			=> _x( 'None', 'event meta box', 'church-theme-content' ),
@@ -185,7 +207,7 @@ function ctc_add_meta_box_event_date() {
 				'name'				=> __( 'Recur Until', 'church-theme-content' ),
 				'after_name'		=> '',
 				'desc'				=> '',
-				'type'				=> 'date', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
+				'type'				=> 'date', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -239,7 +261,7 @@ function ctc_add_meta_box_event_location() {
 				'name'				=> __( 'Field Name', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> __( 'This is the description below the field.', 'church-theme-content' ),
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -261,7 +283,7 @@ function ctc_add_meta_box_event_location() {
 				'name'				=> __( 'Venue', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> __( 'You can provide a building name, room number or other location name to help people find the event.', 'church-theme-content' ),
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -283,7 +305,7 @@ function ctc_add_meta_box_event_location() {
 				'name'				=> _x( 'Address', 'event meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> __( 'You can enter an address if it is necessary for people to find this event.', 'church-theme-content' ),
-				'type'				=> 'textarea', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
+				'type'				=> 'textarea', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -305,7 +327,7 @@ function ctc_add_meta_box_event_location() {
 				'name'				=> '',
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
-				'type'				=> 'checkbox', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
+				'type'				=> 'checkbox', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> 'Show directions link', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -327,7 +349,7 @@ function ctc_add_meta_box_event_location() {
 				'name'				=> _x( 'Map Latitude', 'event meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> __( 'You can <a href="http://churchthemes.com/get-latitude-longitude" target="_blank">use this</a> to convert an address into coordinates.', 'church-theme-content' ),
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -349,7 +371,7 @@ function ctc_add_meta_box_event_location() {
 				'name'				=> _x( 'Map Longitude', 'event meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -371,7 +393,7 @@ function ctc_add_meta_box_event_location() {
 				'name'				=> _x( 'Map Type', 'event meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> _x( 'You can show a road map, satellite imagery, a combination of both (hybrid) or terrain.', 'event meta box', 'church-theme-content' ),
-				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
+				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> ctc_gmaps_types(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -393,7 +415,7 @@ function ctc_add_meta_box_event_location() {
 				'name'				=> _x( 'Map Zoom', 'event meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> _x( 'A lower number is more zoomed out while a higher number is more zoomed in.', 'event meta box', 'church-theme-content' ),
-				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
+				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> ctc_gmaps_zoom_levels(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame

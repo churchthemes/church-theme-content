@@ -70,7 +70,7 @@ function ctc_add_meta_box_person_details() {
 				'name'				=> __( 'Field Name', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> __( 'This is the description below the field.', 'church-theme-content' ),
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -92,7 +92,7 @@ function ctc_add_meta_box_person_details() {
 				'name'				=> __( 'Position', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> __( "Enter the person's position or title (e.g. Senior Pastor, Deacon, etc.)", 'church-theme-content' ),
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -114,7 +114,7 @@ function ctc_add_meta_box_person_details() {
 				'name'				=> _x( 'Phone', 'location meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -136,7 +136,7 @@ function ctc_add_meta_box_person_details() {
 				'name'				=> _x( 'Email', 'location meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -158,7 +158,7 @@ function ctc_add_meta_box_person_details() {
 				'name'				=> __( 'URLs', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'desc'				=> '',
-				'type'				=> 'textarea', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url
+				'type'				=> 'textarea', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
