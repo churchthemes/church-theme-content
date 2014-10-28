@@ -471,6 +471,10 @@ function ctc_add_meta_box_event_location() {
 
 add_action( 'admin_init', 'ctc_add_meta_box_event_location' );
 
+/**********************************
+ * AFTER SAVING
+ **********************************/
+
 /**
  * After Save Event
  *
@@ -606,7 +610,7 @@ add_action( 'ctc_after_save_event', 'ctc_correct_event_end_time', 10, 2 );
  * @param int $post_id Post ID
  * @param object $post Data for post being saved
  */
-function ctc_update_event_date_time( $post_id, $post ) {
+function ctc_update_event_date_time( $post_id ) {
 
 	// Get Start/End Date and Time fields
 	$start_date 	= get_post_meta( $post_id, '_ctc_event_start_date', true );
@@ -628,7 +632,7 @@ function ctc_update_event_date_time( $post_id, $post ) {
 
 }
 
-add_action( 'ctc_after_save_event', 'ctc_update_event_date_time', 10, 2 );
+add_action( 'ctc_after_save_event', 'ctc_update_event_date_time' );
 
 /**********************************
  * ADMIN COLUMNS
@@ -847,3 +851,10 @@ function ctc_event_columns_sorting_request( $args ) {
 
 add_filter( 'request', 'ctc_event_columns_sorting_request' ); // set how to sort columns
 
+/**********************************
+ * DATABASE UPDATES
+ **********************************/
+
+/**
+ * Update Date/Time Fields
+ */
