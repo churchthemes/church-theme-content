@@ -820,8 +820,9 @@ function ctc_event_columns_sorting_request( $args ) {
 					// Start Date
 					case '_ctc_event_start_date' :
 
-						$args['meta_key'] = '_ctc_event_start_date';
-						$args['orderby'] = 'meta_value'; // alphabetically (meta_value_num for numeric)
+						$args['meta_key'] = '_ctc_event_start_date_start_time';
+						$args['meta_type'] = 'DATETIME';
+						$args['orderby'] = 'meta_value';
 
 						break;
 
@@ -840,8 +841,9 @@ function ctc_event_columns_sorting_request( $args ) {
 			// orderby not set, tell which column to sort by default
 			else {
 
-				$args['meta_key'] = '_ctc_event_start_date';
-				$args['orderby'] = 'meta_value'; // alphabetically (meta_value_num for numeric)
+				$args['meta_key'] = '_ctc_event_start_date_start_time';
+				$args['meta_type'] = 'DATETIME';
+				$args['orderby'] = 'meta_value';
 				$args['order'] = 'DESC';
 
 			}
