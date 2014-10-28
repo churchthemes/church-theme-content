@@ -472,17 +472,15 @@ function ctc_add_meta_box_event_location() {
 add_action( 'admin_init', 'ctc_add_meta_box_event_location' );
 
 /**
- * End Date Sanitization
+ * After Save Event
  *
- * This runs after CT_Meta_Box general sanitization but before saving for End Date.
- * In order for this to work properly, End Date must be after Start Date so that the saved/sanitized
- * Start Date value is available in database.
+ * This runs after the event post is saved, for further manipulation of meta data.
  *
- * @since 0.9.1
+ * @since 1.2
  * @param int $post_id Post ID
  * @param object $post Data for post being saved
  */
-function ctc_correct_event_end_date( $post_id, $post ) {
+function ctc_after_save_event( $post_id, $post ) {
 
 	// Event is being saved
 	if ( ! isset( $post->post_type ) || 'ctc_event' != $post->post_type ) {
@@ -511,6 +509,26 @@ function ctc_correct_event_end_date( $post_id, $post ) {
 	if ( ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
 		return;
 	}
+
+	// Action hook
+	do_action( 'ctc_after_save_event', $post_id, $post );
+
+}
+
+add_action( 'save_post', 'ctc_after_save_event', 11, 2 ); // after save at default 10
+
+/**
+ * End Date Sanitization
+ *
+ * This is to be run after event is saved (ctc_after_save_event hook).
+ * In order for this to work properly, End Date must be after Start Date so that the saved/sanitized
+ * Start Date value is available in database.
+ *
+ * @since 0.9.1
+ * @param int $post_id Post ID
+ * @param object $post Data for post being saved
+ */
+function ctc_correct_event_end_date( $post_id, $post ) {
 
 	// Get start and end dates already saved by CT Meta Box
 	$start_date = get_post_meta( $post_id, '_ctc_event_start_date', true );
@@ -539,12 +557,12 @@ function ctc_correct_event_end_date( $post_id, $post ) {
 
 }
 
-add_action( 'save_post', 'ctc_correct_event_end_date', 11, 2 ); // after save at default 10
+add_action( 'ctc_after_save_event', 'ctc_correct_event_end_date', 10, 2 );
 
 /**
  * End Time Sanitization
  *
- * This runs after CT_Meta_Box general sanitization but before saving for End Time.
+ * This is to be run after event is saved (ctc_after_save_event hook).
  * In order for this to work properly, End Time must be after Start Time so that the saved/sanitized
  * Start Time value is available in database.
  *
@@ -553,34 +571,6 @@ add_action( 'save_post', 'ctc_correct_event_end_date', 11, 2 ); // after save at
  * @param object $post Data for post being saved
  */
 function ctc_correct_event_end_time( $post_id, $post ) {
-
-	// Event is being saved
-	if ( ! isset( $post->post_type ) || 'ctc_event' != $post->post_type ) {
-		return;
-	}
-
-	// Is a POST occurring?
-	if ( empty( $_POST ) ) {
-		return;
-	}
-
-	// Not an auto-save (meta values not submitted)
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return;
-	}
-
-	// Verify the nonce
-	$nonce_key = 'ctc_event_date_nonce';
-	$nonce_action = 'ctc_event_date_save';
-	if ( empty( $_POST[$nonce_key] ) || ! wp_verify_nonce( $_POST[$nonce_key], $nonce_action ) ) {
-		return;
-	}
-
-	// Make sure user has permission to edit
-	$post_type = get_post_type_object( $post->post_type );
-	if ( ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
-		return;
-	}
 
 	// Get start and end times already saved by CT Meta Box
 	$start_time = get_post_meta( $post_id, '_ctc_event_start_time', true );
@@ -602,7 +592,7 @@ function ctc_correct_event_end_time( $post_id, $post ) {
 
 }
 
-add_action( 'save_post', 'ctc_correct_event_end_time', 11, 2 ); // after save at default 10
+add_action( 'ctc_after_save_event', 'ctc_correct_event_end_time', 10, 2 );
 
 /**********************************
  * ADMIN COLUMNS
