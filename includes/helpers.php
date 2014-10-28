@@ -181,3 +181,29 @@ function ctc_increment_future_date( $date, $increment ) {
 	return apply_filters( 'ctc_move_date_forward', $new_date, $date, $increment );
 
 }
+
+/**
+ * Convert date and time to MySQL DATETIME format
+ *
+ * If no date, value will be 0000-00-00 00:00:00
+ * If no time, value will be 2014-10-28 00:00:00
+ *
+ * @since 1.2
+ * @param string $date Date in YYYY-mm-dd format (e.g. 2014-05-10 for May 5th, 2014)
+ * @param string $time Time in 24-hour hh-mm format (e.g. 08:00 for 8 AM or 13:12 for 1:12 PM)
+ * @return string Date and time in DATETIME format (e.g. 2014-05-10 13:12:00)
+ */
+function ctc_convert_to_datetime( $date, $time ) {
+
+	if ( empty( $date ) ) {
+		$date = '0000-00-00';
+	}
+	if ( empty( $time ) ) {
+		$time = '00:00';
+	}
+
+	$datetime = $date . ' ' . $time . ':00';
+
+	return apply_filters( 'ctc_convert_to_datetime', $datetime, $date, $time );
+
+}
