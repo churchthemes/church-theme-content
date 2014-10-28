@@ -751,17 +751,6 @@ function ctc_event_columns_content( $column ) {
 				echo '</i></div>';
 			}
 
-			echo "<p>";
-			$start_date_start_time 	= get_post_meta( $post->ID, '_ctc_event_start_date_start_time', true );
-			$end_date_start_time 	= get_post_meta( $post->ID, '_ctc_event_end_date_start_time', true );
-			$start_date_end_time 	= get_post_meta( $post->ID, '_ctc_event_start_date_end_time', true );
-			$end_date_end_time 	= get_post_meta( $post->ID, '_ctc_event_end_date_end_time', true );
-
-			echo '<br>' . $start_date_start_time;
-			echo '<br>' . $end_date_start_time;
-			echo '<br>' . $start_date_end_time;
-			echo '<br>' . $end_date_end_time;
-
 			break;
 
 		// Venue
