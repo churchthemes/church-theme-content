@@ -594,6 +594,42 @@ function ctc_correct_event_end_time( $post_id, $post ) {
 
 add_action( 'ctc_after_save_event', 'ctc_correct_event_end_time', 10, 2 );
 
+/**
+ * Update Date/Time Fields
+ *
+ * Date and Time fields are combined into one field for easier ordering (simpler queries)
+ *
+ * If no date, value will be 0000-00-00 00:00:00
+ * If no time, value will be 2014-10-28 00:00:00
+ *
+ * @since 1.2
+ * @param int $post_id Post ID
+ * @param object $post Data for post being saved
+ */
+function ctc_update_event_date_time( $post_id, $post ) {
+
+	// Get Start/End Date and Time fields
+	$start_date 	= get_post_meta( $post_id, '_ctc_event_start_date', true );
+	$end_date 		= get_post_meta( $post_id, '_ctc_event_end_date', true );
+	$start_time 	= get_post_meta( $post_id, '_ctc_event_start_time', true );
+	$end_time 		= get_post_meta( $post_id, '_ctc_event_end_time', true );
+
+	// Combine dates and times
+	$start_date_start_time 	= ctc_convert_to_datetime( $start_date, $start_time );	// Useful for ordering upcoming events (soonest to farthest)
+	$start_date_end_time  	= ctc_convert_to_datetime( $start_date, $end_time ); 	// It's possible there will be a use for this combination
+	$end_date_start_time  	= ctc_convert_to_datetime( $end_date, $start_time );	// It's possible there will be a use for this combination
+	$end_date_end_time  	= ctc_convert_to_datetime( $end_date, $end_time );  		// Useful for ordering past events (those ended most reecently first)
+
+	// Update date/time fields
+	update_post_meta( $post_id, '_ctc_event_start_date_start_time', $start_date_start_time );
+	update_post_meta( $post_id, '_ctc_event_start_date_end_time', $start_date_end_time );
+	update_post_meta( $post_id, '_ctc_event_end_date_start_time', $end_date_start_time );
+	update_post_meta( $post_id, '_ctc_event_end_date_end_time', $end_date_end_time );
+
+}
+
+add_action( 'ctc_after_save_event', 'ctc_update_event_date_time', 10, 2 );
+
 /**********************************
  * ADMIN COLUMNS
  **********************************/
@@ -714,6 +750,17 @@ function ctc_event_columns_content( $column ) {
 				}
 				echo '</i></div>';
 			}
+
+			echo "<p>";
+			$start_date_start_time 	= get_post_meta( $post->ID, '_ctc_event_start_date_start_time', true );
+			$end_date_start_time 	= get_post_meta( $post->ID, '_ctc_event_end_date_start_time', true );
+			$start_date_end_time 	= get_post_meta( $post->ID, '_ctc_event_start_date_end_time', true );
+			$end_date_end_time 	= get_post_meta( $post->ID, '_ctc_event_end_date_end_time', true );
+
+			echo '<br>' . $start_date_start_time;
+			echo '<br>' . $end_date_start_time;
+			echo '<br>' . $start_date_end_time;
+			echo '<br>' . $end_date_end_time;
 
 			break;
 
