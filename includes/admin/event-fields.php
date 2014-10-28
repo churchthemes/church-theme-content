@@ -617,8 +617,8 @@ function ctc_update_event_date_time( $post_id, $post ) {
 	// Combine dates and times
 	$start_date_start_time 	= ctc_convert_to_datetime( $start_date, $start_time );	// Useful for ordering upcoming events (soonest to farthest)
 	$start_date_end_time  	= ctc_convert_to_datetime( $start_date, $end_time ); 	// It's possible there will be a use for this combination
-	$end_date_start_time  	= ctc_convert_to_datetime( $end_date, $start_time );	// It's possible there will be a use for this combination
-	$end_date_end_time  	= ctc_convert_to_datetime( $end_date, $end_time );  		// Useful for ordering past events (those ended most reecently first)
+	$end_date_start_time  	= ctc_convert_to_datetime( $end_date, $start_time );	// Useful for ordering past events (those ended most recently first)
+	$end_date_end_time  	= ctc_convert_to_datetime( $end_date, $end_time );  	// It's possible there will be a use for this combination
 
 	// Update date/time fields
 	update_post_meta( $post_id, '_ctc_event_start_date_start_time', $start_date_start_time );
