@@ -856,5 +856,28 @@ add_filter( 'request', 'ctc_event_columns_sorting_request' ); // set how to sort
  **********************************/
 
 /**
- * Update Date/Time Fields
+ * Update All Events' Date/Time Fields
+ *
+ * Date and Time fields are combined into one field for easier ordering (simpler queries)
+ * This is run by the database updater (older versions did not have these hidden fields)
+ *
+ * If no date, value will be 0000-00-00 00:00:00
+ * If no time, value will be 2014-10-28 00:00:00
+ *
+ * @since 1.2
  */
+function ctc_update_all_events_date_time() {
+
+	// Select all events to check/update
+	$posts = get_posts( array(
+		'post_type'			=> 'ctc_event',
+		'post_status'		=> 'publish,pending,draft,auto-draft,future,private,inherit,trash', // all to be safe
+		'numberposts'		=> -1 // no limit
+	) );
+
+	// Loop each post to update fields
+	foreach( $posts as $post ) {
+		ctc_update_event_date_time( $post->ID );
+	}
+
+}
