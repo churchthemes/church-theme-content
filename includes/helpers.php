@@ -100,6 +100,27 @@ function ctc_array_merge_after_key( $original_array, $insert_array, $after_key )
 
 }
 
+/**
+ * Show array as HTML
+ *
+ * This is helpful for development / debugging
+ *
+ * @since 1.2
+ * @param array $array Array to format
+ * @param bool $return Return or echo output
+ */
+function ctc_print_array( $array, $return = false ) {
+
+	$result = '<pre>' . print_r( $array, true ) . '</pre>';
+
+	if ( empty($return) ) {
+		echo $result;
+	} else {
+		return $result;
+	}
+
+}
+
 /*************************************************
  * DATES
  *************************************************/
@@ -205,5 +226,37 @@ function ctc_convert_to_datetime( $date, $time ) {
 	$datetime = $date . ' ' . $time . ':00';
 
 	return apply_filters( 'ctc_convert_to_datetime', $datetime, $date, $time );
+
+}
+
+/*************************************************
+ * FUNCTIONS
+ *************************************************/
+
+/**
+ * Check if a function is available
+ *
+ * This is helpful: http://bit.ly/100BpPJ
+ *
+ * @since 1.2
+ * @param string $function Name of function to check
+ * @return bool True if function exists and is not disabled
+ */
+function ctc_function_available( $function ) {
+
+	$available = false;
+
+	// Function exists?
+	if ( function_exists( $function ) ) {
+
+		// Is it not disabled in php.ini?
+		$disabled_functions = explode( ',', ini_get( 'disable_functions' ) );
+		if ( ! in_array( $function, $disabled_functions ) ) {
+			$available = true;
+		}
+
+	}
+
+	return apply_filters( 'ctc_function_available', $available, $function );
 
 }
