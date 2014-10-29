@@ -852,7 +852,7 @@ function ctc_event_columns_sorting_request( $args ) {
 add_filter( 'request', 'ctc_event_columns_sorting_request' ); // set how to sort columns
 
 /**********************************
- * DATABASE UPDATES
+ * DATABASE UPGRADES
  **********************************/
 
 /**
@@ -860,6 +860,7 @@ add_filter( 'request', 'ctc_event_columns_sorting_request' ); // set how to sort
  *
  * Date and Time fields are combined into one field for easier ordering (simpler queries)
  * This is run by the database updater (older versions did not have these hidden fields)
+ * See ctc_upgrade_1_2() in includes/upgrade.php
  *
  * If no date, value will be 0000-00-00 00:00:00
  * If no time, value will be 2014-10-28 00:00:00

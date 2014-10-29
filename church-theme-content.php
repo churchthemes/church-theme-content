@@ -3,7 +3,7 @@
  * Plugin Name: Church Theme Content
  * Plugin URI: http://churchthemes.com/plugins/church-theme-content
  * Description: Provides compatible themes with sermon, event, person and location post types. A <strong>compatible theme is required</strong> for displaying content.
- * Version: 1.1.1
+ * Version: 1.2
  * Author: churchthemes.com
  * Author URI: http://churchthemes.com
  * License: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -202,6 +202,7 @@ class Church_Theme_Content {
 				CTC_ADMIN_DIR . '/location-fields.php',
 				CTC_ADMIN_DIR . '/person-fields.php',
 				CTC_ADMIN_DIR . '/sermon-fields.php',
+				CTC_ADMIN_DIR . '/upgrade.php',
 
 				// Libraries
 				CTC_LIB_DIR . '/ct-meta-box/ct-meta-box.php', // see CTMB_URL constant defined above
