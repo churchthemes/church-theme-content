@@ -229,6 +229,26 @@ function ctc_convert_to_datetime( $date, $time ) {
 
 }
 
+/**
+ * Localized days of week
+ *
+ * @since 1.2
+ * @return array Array of days of week with 0 - 6 as keys and Sunday - Saturday translated as values
+ */
+function ctc_week_days() {
+
+	global $wp_locale;
+
+	$week_days = array();
+
+	for ( $day = 0; $day < 7; $day++ ) {
+		$week_days[$day] = $wp_locale->get_weekday( $day );
+	}
+
+	return apply_filters( 'ctc_week_days', $week_days );
+
+}
+
 /*************************************************
  * FUNCTIONS
  *************************************************/
