@@ -295,7 +295,7 @@ function ctc_add_meta_box_event_date() {
 				'type'				=> 'radio', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', // show text after checkbox
 				'options'			=> array( // array of keys/values for radio or select
-					'day'	=> __( 'On the same day of the month', 'church-theme-content' ),
+					'day'	=> __( 'On same day of the month', 'church-theme-content' ),
 					'week'	=> __( "On a specific week...", 'church-theme-content' ),
 				),
 				'upload_button'		=> '', // text for button that opens media frame
@@ -321,6 +321,7 @@ function ctc_add_meta_box_event_date() {
 				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', // show text after checkbox
 				'options'			=> array( // array of keys/values for radio or select
+					''		=> __( 'Select a Week', '', 'church-theme-content' ),
 					'1'		=> __( 'First', 'week of month', 'church-theme-content' ),
 					'2'		=> __( 'Second', 'week of month', 'church-theme-content' ),
 					'3'		=> __( 'Third', 'week of month', 'church-theme-content' ),

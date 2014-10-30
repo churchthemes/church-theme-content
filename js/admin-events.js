@@ -47,11 +47,17 @@ function ctc_start_date_changed() {
 		// Show it after select option
 		jQuery( '#ctmb-input-_ctc_event_recurrence_monthly_week option' ).each( function() {
 
-			jQuery( this ).text(
-				ctc_events.week_of_month_format
-					.replace( '\{week\}', jQuery( this ).attr( 'data-ctc-text' ) ) // First, Third, etc.
-					.replace( '\{day\}', day_of_week ) // localized Sunday, Monday, etc.
-			);
+			// Pass over "Select a Week"
+			if ( jQuery( this ).val() && 'none' != jQuery( this ).val() ) {
+
+				// Add day of week to option
+				jQuery( this ).text(
+					ctc_events.week_of_month_format
+						.replace( '\{week\}', jQuery( this ).attr( 'data-ctc-text' ) ) // First, Third, etc.
+						.replace( '\{day\}', day_of_week ) // localized Sunday, Monday, etc.
+				);
+
+			}
 
 		} );
 
