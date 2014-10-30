@@ -30,9 +30,7 @@ function ctc_admin_enqueue_scripts() {
 
 		// Pass data to JS
 		wp_localize_script( 'ctc-admin-events', 'ctc_events', array(
-
-			'tacos' => 'tacosvalue',
-
+			'week_days' => ctc_week_days(), // to show translated week day after "On a specific week" dropdown
 		) );
 
 	}

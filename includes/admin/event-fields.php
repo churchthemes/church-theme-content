@@ -316,7 +316,7 @@ function ctc_add_meta_box_event_date() {
 			'_ctc_event_recurrence_monthly_week' => array(
 				'name'				=> '',
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> 'MAKE THIS SHOW SAME DAY OF WEEK AS START DATE', // text to show to right of input
+				'after_input'		=> '', // text to show to right of input
 				'desc'				=> __( 'Day of the week is the same as Start Date.', 'church-theme-content' ),
 				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', // show text after checkbox
