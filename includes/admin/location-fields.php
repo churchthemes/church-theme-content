@@ -44,6 +44,7 @@ function ctc_add_meta_box_location() {
 			'option_key' => array(
 				'name'				=> __( 'Field Name', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
+				'after_input'		=> '', // text to show to right of input
 				'desc'				=> __( 'This is the description below the field.', 'church-theme-content' ),
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
@@ -66,6 +67,7 @@ function ctc_add_meta_box_location() {
 			'_ctc_location_address' => array(
 				'name'				=> _x( 'Address', 'location meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
+				'after_input'		=> '', // text to show to right of input
 				'desc'				=> '',
 				'type'				=> 'textarea', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
@@ -88,6 +90,7 @@ function ctc_add_meta_box_location() {
 			'_ctc_location_show_directions_link' => array(
 				'name'				=> '',
 				'after_name'		=> '', // (Optional), (Required), etc.
+				'after_input'		=> '', // text to show to right of input
 				'desc'				=> '',
 				'type'				=> 'checkbox', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> 'Show directions link', //show text after checkbox
@@ -110,6 +113,7 @@ function ctc_add_meta_box_location() {
 			'_ctc_location_phone' => array(
 				'name'				=> _x( 'Phone', 'location meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
+				'after_input'		=> '', // text to show to right of input
 				'desc'				=> '',
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
@@ -132,6 +136,7 @@ function ctc_add_meta_box_location() {
 			'_ctc_location_times' => array(
 				'name'				=> _x( 'Times', 'location meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
+				'after_input'		=> '', // text to show to right of input
 				'desc'				=> '',
 				'type'				=> 'textarea', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
@@ -154,6 +159,7 @@ function ctc_add_meta_box_location() {
 			'_ctc_location_map_lat' => array(
 				'name'				=> _x( 'Map Latitude', 'location meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
+				'after_input'		=> '', // text to show to right of input
 				'desc'				=> __( 'You can <a href="http://churchthemes.com/get-latitude-longitude" target="_blank">use this</a> to convert an address into coordinates.', 'church-theme-content' ),
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
@@ -176,6 +182,7 @@ function ctc_add_meta_box_location() {
 			'_ctc_location_map_lng' => array(
 				'name'				=> _x( 'Map Longitude', 'location meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
+				'after_input'		=> '', // text to show to right of input
 				'desc'				=> '',
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
@@ -198,6 +205,7 @@ function ctc_add_meta_box_location() {
 			'_ctc_location_map_type' => array(
 				'name'				=> _x( 'Map Type', 'location meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
+				'after_input'		=> '', // text to show to right of input
 				'desc'				=> _x( 'You can show a road map, satellite imagery, a combination of both (hybrid) or terrain.', 'location meta box', 'church-theme-content' ),
 				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
@@ -221,6 +229,7 @@ function ctc_add_meta_box_location() {
 			'_ctc_location_map_zoom' => array(
 				'name'				=> _x( 'Map Zoom', 'location meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
+				'after_input'		=> '', // text to show to right of input
 				'desc'				=> _x( 'A lower number is more zoomed out while a higher number is more zoomed in.', 'location meta box', 'church-theme-content' ),
 				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox

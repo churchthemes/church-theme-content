@@ -44,6 +44,7 @@ function ctc_add_meta_box_sermon_details() {
 			'option_key' => array(
 				'name'				=> __( 'Field Name', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
+				'after_input'		=> '', // text to show to right of input
 				'desc'				=> __( 'This is the description below the field.', 'church-theme-content' ),
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
@@ -66,6 +67,7 @@ function ctc_add_meta_box_sermon_details() {
 			'_ctc_sermon_has_full_text' => array(
 				'name'				=> __( 'Full Text', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
+				'after_input'		=> '', // text to show to right of input
 				'desc'				=> __( 'Check this if you provide a complete transcript above.', 'church-theme-content' ),
 				'type'				=> 'checkbox', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> __( 'Full sermon text provided', 'church-theme-content' ), //show text after checkbox
@@ -88,6 +90,7 @@ function ctc_add_meta_box_sermon_details() {
 			'_ctc_sermon_video' => array( // intended for URL or embed code
 				'name'				=> __( 'Video', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
+				'after_input'		=> '', // text to show to right of input
 				'desc'				=> sprintf(
 											__( 'Upload a file by clicking "Choose Video" or upload a video to one of the <a href="%s" target="_blank">supported sites</a> (such as YouTube) then paste its URL here, or paste an embed code from another site. <a href="%s" target="_blank">Video Help</a>', 'church-theme-content' ),
 											apply_filters( 'ctc_sermon_video_sites_url', 'http://churchthemes.com/go/ctc-sermon-video-sites' ),
@@ -114,6 +117,7 @@ function ctc_add_meta_box_sermon_details() {
 			'_ctc_sermon_audio' => array( // intended for URL or embed code
 				'name'				=> __( 'Audio', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
+				'after_input'		=> '', // text to show to right of input
 				'desc'				=> sprintf(
 											__( 'Upload a file by clicking "Choose Audio" or upload audio to one of the <a href="%s" target="_blank">supported sites</a> (such as SoundCloud) then paste its URL here, or paste an embed code from another site. <a href="%s" target="_blank">Audio Help</a>', 'church-theme-content' ),
 											apply_filters( 'ctc_sermon_audio_sites_url', 'http://churchthemes.com/go/ctc-sermon-audio-sites' ),
@@ -140,6 +144,7 @@ function ctc_add_meta_box_sermon_details() {
 			'_ctc_sermon_pdf' => array(
 				'name'				=> __( 'PDF', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
+				'after_input'		=> '', // text to show to right of input
 				'desc'				=> __( 'Upload a file by clicking "Choose PDF" or paste the URL to a PDF hosted on another site.', 'church-theme-content' ),
 				'type'				=> 'upload', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
