@@ -32,6 +32,13 @@ function ctc_start_date_changed() {
 	start_date_day = jQuery( '#ctmb-input-_ctc_event_start_date-day' ).val();
 	if ( ctc_checkdate( start_date_month, start_date_day, start_date_year ) ) { // change date on screen only if date is valid
 
+		// Store unmodified option text before week day is appended
+		jQuery( '#ctmb-input-_ctc_event_recurrence_monthly_week option' ).each( function() {
+			if ( ! jQuery( this ).attr( 'data-ctc-text' ) ) {
+				jQuery( this ).attr( 'data-ctc-text', jQuery( this ).text() );
+			}
+		} );
+
 		// Get day of week
 		start_date = new Date( start_date_year, start_date_month, start_date_day );
 		day_of_week_num = start_date.getDay();
@@ -39,7 +46,13 @@ function ctc_start_date_changed() {
 
 		// Show it after select option
 		jQuery( '#ctmb-input-_ctc_event_recurrence_monthly_week option' ).each( function() {
-			jQuery( this ).text( jQuery( this ).text().replace( /  .*/, ' ' ) + '  ' + day_of_week );
+
+			jQuery( this ).text(
+				ctc_events.week_of_month_format
+					.replace( '\{week\}', jQuery( this ).attr( 'data-ctc-text' ) ) // First, Third, etc.
+					.replace( '\{day\}', day_of_week ) // localized Sunday, Monday, etc.
+			);
+
 		} );
 
 	}

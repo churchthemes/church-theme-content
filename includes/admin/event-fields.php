@@ -317,7 +317,7 @@ function ctc_add_meta_box_event_date() {
 				'name'				=> '',
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'after_input'		=> '', // text to show to right of input
-				'desc'				=> __( 'Day of the week is the same as Start Date.', 'church-theme-content' ),
+				'desc'				=> __( 'Day of the week is controlled by Start Date.', 'church-theme-content' ),
 				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', // show text after checkbox
 				'options'			=> array( // array of keys/values for radio or select

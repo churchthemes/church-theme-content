@@ -30,7 +30,9 @@ function ctc_admin_enqueue_scripts() {
 
 		// Pass data to JS
 		wp_localize_script( 'ctc-admin-events', 'ctc_events', array(
-			'week_days' => ctc_week_days(), // to show translated week day after "On a specific week" dropdown
+			'week_days' 			=> ctc_week_days(), // to show translated week day after "On a specific week" dropdown
+			/* translators: e.g. "First Friday" or "Third Tuesday" of month for event recurrence */
+			'week_of_month_format'	=> _x( '{week} {day}', 'week of month', 'church-theme-content'),
 		) );
 
 	}
