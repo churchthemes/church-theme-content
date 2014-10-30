@@ -253,7 +253,7 @@ function ctc_add_meta_box_event_date() {
 				'attributes'		=> array( // attr => value array (e.g. set min/max for number type)
 					'min'	=> '1',
 				),
-				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
+				'class'				=> 'ctmb-three-digits', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
@@ -278,7 +278,7 @@ function ctc_add_meta_box_event_date() {
 				'attributes'		=> array( // attr => value array (e.g. set min/max for number type)
 					'min'	=> '1',
 				),
-				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
+				'class'				=> 'ctmb-three-digits', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
