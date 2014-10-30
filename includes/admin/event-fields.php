@@ -285,6 +285,62 @@ function ctc_add_meta_box_event_date() {
 				'custom_field'		=> '', // function for custom display of field input
 			),
 
+			// Recur Monthly Type
+			// 'day' can later trigger a new field for multiple days like Apple Calendar
+			'_ctc_event_recurrence_monthly_type' => array(
+				'name'				=> '',
+				'after_name'		=> '', // (Optional), (Required), etc.
+				'after_input'		=> '', // text to show to right of input
+				'desc'				=> '',
+				'type'				=> 'radio', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'checkbox_label'	=> '', // show text after checkbox
+				'options'			=> array( // array of keys/values for radio or select
+					'day'	=> __( 'On the same day of the month', 'church-theme-content' ),
+					'week'	=> __( "On a specific week...", 'church-theme-content' ),
+				),
+				'upload_button'		=> '', // text for button that opens media frame
+				'upload_title'		=> '', // title appearing at top of media frame
+				'upload_type'		=> '', // optional type of media to filter by (image, audio, video, application/pdf)
+				'default'			=> 'day', // value to pre-populate option with (before first save or on reset)
+				'no_empty'			=> true, // if user empties value, force default to be saved instead
+				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
+				'field_attributes'	=> array(), // attr => value array for field container
+				'field_class'		=> '', // class(es) to add to field container
+				'custom_sanitize'	=> '', // function to do additional sanitization
+				'custom_field'		=> '', // function for custom display of field input
+			),
+
+			// Recur Monthly on Week
+			'_ctc_event_recurrence_monthly_week' => array(
+				'name'				=> '',
+				'after_name'		=> '', // (Optional), (Required), etc.
+				'after_input'		=> 'MAKE THIS SHOW SAME DAY OF WEEK AS START DATE', // text to show to right of input
+				'desc'				=> __( 'Day of the week is the same as Start Date.', 'church-theme-content' ),
+				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'checkbox_label'	=> '', // show text after checkbox
+				'options'			=> array( // array of keys/values for radio or select
+					'1'		=> __( 'First', 'week of month', 'church-theme-content' ),
+					'2'		=> __( 'Second', 'week of month', 'church-theme-content' ),
+					'3'		=> __( 'Third', 'week of month', 'church-theme-content' ),
+					'4'		=> __( 'Fourth', 'week of month', 'church-theme-content' ),
+					'last'	=> __( 'Last', 'week of month', 'church-theme-content' ),
+				),
+				'upload_button'		=> '', // text for button that opens media frame
+				'upload_title'		=> '', // title appearing at top of media frame
+				'upload_type'		=> '', // optional type of media to filter by (image, audio, video, application/pdf)
+				'default'			=> '', // value to pre-populate option with (before first save or on reset)
+				'no_empty'			=> true, // if user empties value, force default to be saved instead
+				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
+				'field_attributes'	=> array(), // attr => value array for field container
+				'field_class'		=> '', // class(es) to add to field container
+				'custom_sanitize'	=> '', // function to do additional sanitization
+				'custom_field'		=> '', // function for custom display of field input
+			),
+
 			// Recur Until
 			'_ctc_event_recurrence_end_date' => array(
 				'name'				=> __( 'Recur Until', 'church-theme-content' ),
