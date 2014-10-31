@@ -9,16 +9,16 @@ jQuery( document ).ready( function( $ ) {
 	 * FIELDS
 	 ********************************************/
 
-	// Update other elements depending on Start Date
+	// Add day of week to monthly recurrence on week dropdown
 	// Do this on page load and when date is changed
-	ctc_start_date_changed(); // on page load
-	$( '#ctmb-field-_ctc_event_start_date select, #ctmb-field-_ctc_event_start_date input' ).bind( 'change keyup', ctc_start_date_changed );
+	ctc_add_day_to_week(); // on page load
+	$( '#ctmb-field-_ctc_event_start_date select, #ctmb-field-_ctc_event_start_date input' ).bind( 'change keyup', ctc_add_day_to_week );
 
 } );
 
-// Update other elements depending on Start Date
+// Add day of week to monthly recurrence on week dropdown
 // Do this on page load and when date is changed
-function ctc_start_date_changed() {
+function ctc_add_day_to_week() {
 
 	var start_date_year, start_date_month, start_date_day, start_date, valid_date, day_of_week_num, day_of_week;
 
