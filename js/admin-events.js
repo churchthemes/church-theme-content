@@ -23,8 +23,8 @@ function ctc_start_date_changed() {
 	var start_date_year, start_date_month, start_date_day, start_date, day_of_week_num, day_of_week;
 
 	// Show or update Start Date's day of week after week of month dropdown
+	start_date_month = jQuery( '#ctmb-input-_ctc_event_start_date-month' ).val();
 	start_date_year = jQuery( '#ctmb-input-_ctc_event_start_date-year' ).val();
-	start_date_month = jQuery( '#ctmb-input-_ctc_event_start_date-month' ).val() - 1; // Months are 0 - 11
 	start_date_day = jQuery( '#ctmb-input-_ctc_event_start_date-day' ).val();
 	if ( ctc_checkdate( start_date_month, start_date_day, start_date_year ) ) { // change date on screen only if date is valid
 
@@ -36,7 +36,7 @@ function ctc_start_date_changed() {
 		} );
 
 		// Get day of week
-		start_date = new Date( start_date_year, start_date_month, start_date_day );
+		start_date = new Date( start_date_year, start_date_month - 1, start_date_day ); // Months are 0 - 11
 		day_of_week_num = start_date.getDay();
 		day_of_week = ctc_events.week_days[ day_of_week_num ];
 
@@ -69,8 +69,3 @@ function ctc_start_date_changed() {
 function ctc_checkdate( m, d, y ) {
 	return m > 0 && m < 13 && y > 0 && y < 32768 && d > 0 && d <= ( new Date( y, m, 0 ) ).getDate();
 }
-
-m = 10;
-d = 30;
-y = 2014;
-console.log( y + '-' + m + '-' d + ctc_checkdate( m, d, y ) );
