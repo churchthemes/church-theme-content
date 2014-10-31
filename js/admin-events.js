@@ -20,13 +20,13 @@ jQuery( document ).ready( function( $ ) {
 // Do this on page load and when date is changed
 function ctc_start_date_changed() {
 
-	var start_date_year, start_date_month, start_date_day, start_date, day_of_week_num, day_of_week;
+	var start_date_year, start_date_month, start_date_day, start_date, valid_date, day_of_week_num, day_of_week;
 
 	// Show or update Start Date's day of week after week of month dropdown
 	start_date_month = jQuery( '#ctmb-input-_ctc_event_start_date-month' ).val();
 	start_date_year = jQuery( '#ctmb-input-_ctc_event_start_date-year' ).val();
 	start_date_day = jQuery( '#ctmb-input-_ctc_event_start_date-day' ).val();
-	if ( ctc_checkdate( start_date_month, start_date_day, start_date_year ) ) { // change date on screen only if date is valid
+	valid_date = ctc_checkdate( start_date_month, start_date_day, start_date_year );
 
 		// Store unmodified option text before week day is appended
 		jQuery( '#ctmb-input-_ctc_event_recurrence_monthly_week option' ).each( function() {
@@ -36,9 +36,11 @@ function ctc_start_date_changed() {
 		} );
 
 		// Get day of week
-		start_date = new Date( start_date_year, start_date_month - 1, start_date_day ); // Months are 0 - 11
-		day_of_week_num = start_date.getDay();
-		day_of_week = ctc_events.week_days[ day_of_week_num ];
+		if ( valid_date ) {
+			start_date = new Date( start_date_year, start_date_month - 1, start_date_day ); // Months are 0 - 11
+			day_of_week_num = start_date.getDay();
+			day_of_week = ctc_events.week_days[ day_of_week_num ];
+		}
 
 		// Show it after select option
 		jQuery( '#ctmb-input-_ctc_event_recurrence_monthly_week option' ).each( function() {
@@ -47,17 +49,20 @@ function ctc_start_date_changed() {
 			if ( jQuery( this ).val() && 'none' != jQuery( this ).val() ) {
 
 				// Add day of week to option
-				jQuery( this ).text(
-					ctc_events.week_of_month_format
-						.replace( '\{week\}', jQuery( this ).attr( 'data-ctc-text' ) ) // First, Third, etc.
-						.replace( '\{day\}', day_of_week ) // localized Sunday, Monday, etc.
-				);
+				if ( valid_date ) {
+					jQuery( this ).text(
+						ctc_events.week_of_month_format
+							.replace( '\{week\}', jQuery( this ).attr( 'data-ctc-text' ) ) // First, Third, etc.
+							.replace( '\{day\}', day_of_week ) // localized Sunday, Monday, etc.
+					);
+				} else { // if no valid date, return to original state
+					jQuery( this ).text( jQuery( this ).attr( 'data-ctc-text' ) );
+				}
 
 			}
 
 		} );
 
-	}
 
 }
 
