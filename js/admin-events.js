@@ -28,41 +28,40 @@ function ctc_start_date_changed() {
 	start_date_day = jQuery( '#ctmb-input-_ctc_event_start_date-day' ).val();
 	valid_date = ctc_checkdate( start_date_month, start_date_day, start_date_year );
 
-		// Store unmodified option text before week day is appended
-		jQuery( '#ctmb-input-_ctc_event_recurrence_monthly_week option' ).each( function() {
-			if ( ! jQuery( this ).attr( 'data-ctc-text' ) ) {
-				jQuery( this ).attr( 'data-ctc-text', jQuery( this ).text() );
-			}
-		} );
+	// Store unmodified option text before week day is appended
+	jQuery( '#ctmb-input-_ctc_event_recurrence_monthly_week option' ).each( function() {
+		if ( ! jQuery( this ).attr( 'data-ctc-text' ) ) {
+			jQuery( this ).attr( 'data-ctc-text', jQuery( this ).text() );
+		}
+	} );
 
-		// Get day of week
-		if ( valid_date ) {
-			start_date = new Date( start_date_year, start_date_month - 1, start_date_day ); // Months are 0 - 11
-			day_of_week_num = start_date.getDay();
-			day_of_week = ctc_events.week_days[ day_of_week_num ];
+	// Get day of week
+	if ( valid_date ) {
+		start_date = new Date( start_date_year, start_date_month - 1, start_date_day ); // Months are 0 - 11
+		day_of_week_num = start_date.getDay();
+		day_of_week = ctc_events.week_days[ day_of_week_num ];
+	}
+
+	// Show it after select option
+	jQuery( '#ctmb-input-_ctc_event_recurrence_monthly_week option' ).each( function() {
+
+		// Pass over "Select a Week"
+		if ( jQuery( this ).val() && 'none' != jQuery( this ).val() ) {
+
+			// Add day of week to option
+			if ( valid_date ) {
+				jQuery( this ).text(
+					ctc_events.week_of_month_format
+						.replace( '\{week\}', jQuery( this ).attr( 'data-ctc-text' ) ) // First, Third, etc.
+						.replace( '\{day\}', day_of_week ) // localized Sunday, Monday, etc.
+				);
+			} else { // if no valid date, return to original state
+				jQuery( this ).text( jQuery( this ).attr( 'data-ctc-text' ) );
+			}
+
 		}
 
-		// Show it after select option
-		jQuery( '#ctmb-input-_ctc_event_recurrence_monthly_week option' ).each( function() {
-
-			// Pass over "Select a Week"
-			if ( jQuery( this ).val() && 'none' != jQuery( this ).val() ) {
-
-				// Add day of week to option
-				if ( valid_date ) {
-					jQuery( this ).text(
-						ctc_events.week_of_month_format
-							.replace( '\{week\}', jQuery( this ).attr( 'data-ctc-text' ) ) // First, Third, etc.
-							.replace( '\{day\}', day_of_week ) // localized Sunday, Monday, etc.
-					);
-				} else { // if no valid date, return to original state
-					jQuery( this ).text( jQuery( this ).attr( 'data-ctc-text' ) );
-				}
-
-			}
-
-		} );
-
+	} );
 
 }
 

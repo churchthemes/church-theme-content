@@ -44,7 +44,7 @@ function ctc_add_meta_box_event_date() {
 			'option_key' => array(
 				'name'				=> __( 'Field Name', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> __( 'This is the description below the field.', 'church-theme-content' ),
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
@@ -67,7 +67,7 @@ function ctc_add_meta_box_event_date() {
 			'_ctc_event_start_date' => array(
 				'name'				=> __( 'Start Date', 'church-theme-content' ),
 				'after_name'		=> __( '(Required)', 'church-theme-content' ), // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time) (fields: text, select, number, upload, url, date, time)
 				'desc'				=> '',
 				'type'				=> 'date', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
@@ -91,7 +91,7 @@ function ctc_add_meta_box_event_date() {
 			'_ctc_event_end_date' => array(
 				'name'				=> __( 'End Date', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> '',
 				'type'				=> 'date', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
@@ -114,7 +114,7 @@ function ctc_add_meta_box_event_date() {
 			'_ctc_event_start_time' => array(
 				'name'				=> __( 'Start Time', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> '',
 				'type'				=> 'time', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
@@ -138,7 +138,7 @@ function ctc_add_meta_box_event_date() {
 			'_ctc_event_end_time' => array(
 				'name'				=> __( 'End Time', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> '',
 				'type'				=> 'time', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
@@ -163,7 +163,7 @@ function ctc_add_meta_box_event_date() {
 			'_ctc_event_hide_time_range' => array(
 				'name'				=> '',
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> '',
 				'type'				=> 'checkbox', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> __( 'Do not show times entered above (use only for ordering events)', 'church-theme-content' ), //show text after checkbox
@@ -188,7 +188,7 @@ function ctc_add_meta_box_event_date() {
 			'_ctc_event_time' => array(
 				'name'				=> __( 'Time Description', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> __( 'Optionally describe the time (e.g. "9:30 am and 11:00 am" or "After Second Service")', 'church-theme-content' ),
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
@@ -211,7 +211,7 @@ function ctc_add_meta_box_event_date() {
 			'_ctc_event_recurrence' => array(
 				'name'				=> __( 'Recurrence', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> _x( "Start and end dates will automatically move forward after the event ends.", 'event meta box', 'church-theme-content' ),
 				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
@@ -239,7 +239,7 @@ function ctc_add_meta_box_event_date() {
 			'_ctc_event_recurrence_weekly_every' => array(
 				'name'				=> _x( 'Recur Every', 'weeks', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> __( 'week(s)', 'church-theme-content' ), // text to show to right of input
+				'after_input'		=> __( 'week(s)', 'church-theme-content' ), // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> '',
 				'type'				=> 'number', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
@@ -264,7 +264,7 @@ function ctc_add_meta_box_event_date() {
 			'_ctc_event_recurrence_monthly_every' => array(
 				'name'				=> _x( 'Recur Every', 'months', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> __( 'month(s)', 'church-theme-content' ), // text to show to right of input
+				'after_input'		=> __( 'month(s)', 'church-theme-content' ), // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> '',
 				'type'				=> 'number', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
@@ -290,7 +290,7 @@ function ctc_add_meta_box_event_date() {
 			'_ctc_event_recurrence_monthly_type' => array(
 				'name'				=> '',
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> '',
 				'type'				=> 'radio', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', // show text after checkbox
@@ -316,7 +316,7 @@ function ctc_add_meta_box_event_date() {
 			'_ctc_event_recurrence_monthly_week' => array(
 				'name'				=> '',
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> __( 'Day of the week is controlled by Start Date.', 'church-theme-content' ),
 				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', // show text after checkbox
@@ -346,7 +346,7 @@ function ctc_add_meta_box_event_date() {
 			'_ctc_event_recurrence_end_date' => array(
 				'name'				=> __( 'Recur Until', 'church-theme-content' ),
 				'after_name'		=> '',
-				'after_input'		=> '', // text to show to right of input
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> '',
 				'type'				=> 'date', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
@@ -401,7 +401,7 @@ function ctc_add_meta_box_event_location() {
 			'option_key' => array(
 				'name'				=> __( 'Field Name', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> __( 'This is the description below the field.', 'church-theme-content' ),
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
@@ -424,7 +424,7 @@ function ctc_add_meta_box_event_location() {
 			'_ctc_event_venue' => array(
 				'name'				=> __( 'Venue', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> __( 'You can provide a building name, room number or other location name to help people find the event.', 'church-theme-content' ),
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
@@ -447,7 +447,7 @@ function ctc_add_meta_box_event_location() {
 			'_ctc_event_address' => array(
 				'name'				=> _x( 'Address', 'event meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> __( 'You can enter an address if it is necessary for people to find this event.', 'church-theme-content' ),
 				'type'				=> 'textarea', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
@@ -470,7 +470,7 @@ function ctc_add_meta_box_event_location() {
 			'_ctc_event_show_directions_link' => array(
 				'name'				=> '',
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> '',
 				'type'				=> 'checkbox', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> __( 'Show directions link', 'church-theme-content' ), //show text after checkbox
@@ -493,7 +493,7 @@ function ctc_add_meta_box_event_location() {
 			'_ctc_event_map_lat' => array(
 				'name'				=> _x( 'Map Latitude', 'event meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> __( 'You can <a href="http://churchthemes.com/get-latitude-longitude" target="_blank">use this</a> to convert an address into coordinates.', 'church-theme-content' ),
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
@@ -516,7 +516,7 @@ function ctc_add_meta_box_event_location() {
 			'_ctc_event_map_lng' => array(
 				'name'				=> _x( 'Map Longitude', 'event meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> '',
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
@@ -539,7 +539,7 @@ function ctc_add_meta_box_event_location() {
 			'_ctc_event_map_type' => array(
 				'name'				=> _x( 'Map Type', 'event meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> _x( 'You can show a road map, satellite imagery, a combination of both (hybrid) or terrain.', 'event meta box', 'church-theme-content' ),
 				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
@@ -562,7 +562,7 @@ function ctc_add_meta_box_event_location() {
 			'_ctc_event_map_zoom' => array(
 				'name'				=> _x( 'Map Zoom', 'event meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> _x( 'A lower number is more zoomed out while a higher number is more zoomed in.', 'event meta box', 'church-theme-content' ),
 				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
