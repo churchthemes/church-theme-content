@@ -644,7 +644,7 @@ function ctc_after_save_event( $post_id, $post ) {
 add_action( 'save_post', 'ctc_after_save_event', 11, 2 ); // after save at default 10
 
 /**
- * End Date Sanitization
+ * End Date Correction
  *
  * This is to be run after event is saved (ctc_after_save_event hook).
  * In order for this to work properly, End Date must be after Start Date so that the saved/sanitized
@@ -686,7 +686,7 @@ function ctc_correct_event_end_date( $post_id, $post ) {
 add_action( 'ctc_after_save_event', 'ctc_correct_event_end_date', 10, 2 );
 
 /**
- * End Time Sanitization
+ * End Time Correction
  *
  * This is to be run after event is saved (ctc_after_save_event hook).
  * In order for this to work properly, End Time must be after Start Time so that the saved/sanitized
@@ -721,7 +721,7 @@ function ctc_correct_event_end_time( $post_id, $post ) {
 add_action( 'ctc_after_save_event', 'ctc_correct_event_end_time', 10, 2 );
 
 /**
- * Update Date/Time Fields
+ * Update Date/Time Hidden Fields
  *
  * Date and Time fields are combined into one field for easier ordering (simpler queries)
  *
@@ -730,7 +730,6 @@ add_action( 'ctc_after_save_event', 'ctc_correct_event_end_time', 10, 2 );
  *
  * @since 1.2
  * @param int $post_id Post ID
- * @param object $post Data for post being saved
  */
 function ctc_update_event_date_time( $post_id ) {
 
@@ -755,6 +754,35 @@ function ctc_update_event_date_time( $post_id ) {
 }
 
 add_action( 'ctc_after_save_event', 'ctc_update_event_date_time' );
+
+/**
+ * Recur Monthly Type Correction
+ *
+ * If "On a specific week" is chosen but no week is chosen, fall back to "On same day of the month"
+ * Similarly, if "On same day of month" is chosen, set week to nothing
+ *
+ * @since 1.2
+ * @param int $post_id Post ID
+ */
+function ctc_correct_event_recurrence_monthly_type( $post_id ) {
+
+	// Get values
+	$monthly_type 	= get_post_meta( $post_id, '_ctc_event_recurrence_monthly_type', true );
+	$monthly_week 	= get_post_meta( $post_id, '_ctc_event_recurrence_monthly_week', true );
+
+	// If type is week and week is empty, set type to day
+	if ( 'week' == $monthly_type && ! $monthly_week ) {
+		update_post_meta( $post_id, '_ctc_event_recurrence_monthly_type', 'day' );
+	}
+
+	// If type is day and week is not empty, empty it (so user is forced to choose when going back)
+	elseif ( 'day' == $monthly_type && $monthly_week ) {
+		update_post_meta( $post_id, '_ctc_event_recurrence_monthly_week', '' );
+	}
+
+}
+
+add_action( 'ctc_after_save_event', 'ctc_correct_event_recurrence_monthly_type' );
 
 /**********************************
  * ADMIN COLUMNS
