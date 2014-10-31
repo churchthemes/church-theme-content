@@ -14,10 +14,6 @@ jQuery( document ).ready( function( $ ) {
 	ctc_start_date_changed(); // on page load
 	$( '#ctmb-field-_ctc_event_start_date select, #ctmb-field-_ctc_event_start_date input' ).bind( 'change keyup', ctc_start_date_changed );
 
-
-
-
-
 } );
 
 // Update other elements depending on Start Date
@@ -73,3 +69,8 @@ function ctc_start_date_changed() {
 function ctc_checkdate( m, d, y ) {
 	return m > 0 && m < 13 && y > 0 && y < 32768 && d > 0 && d <= ( new Date( y, m, 0 ) ).getDate();
 }
+
+m = 10;
+d = 30;
+y = 2014;
+console.log( y + '-' + m + '-' d + ctc_checkdate( m, d, y ) );
