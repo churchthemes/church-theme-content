@@ -45,7 +45,7 @@ function ctc_add_meta_box_event_date() {
 				'name'				=> __( 'Field Name', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
-				'desc'				=> __( 'This is the description below the field.', 'church-theme-content' ),
+				'desc'				=> __( 'This is the description below the field.', 'church-theme-content' ), // description below input
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
@@ -60,7 +60,11 @@ function ctc_add_meta_box_event_date() {
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
-				'custom_field'=> '', // function for custom display of field input
+				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array( // show/hide this field based on other fields' values
+					'field1'	=> 'value', // and...
+					'field2'	=> array( 'value', '!=' ), // not having this value
+				),
 			*/
 
 			// Start Date
@@ -68,7 +72,7 @@ function ctc_add_meta_box_event_date() {
 				'name'				=> __( 'Start Date', 'church-theme-content' ),
 				'after_name'		=> __( '(Required)', 'church-theme-content' ), // (Optional), (Required), etc.
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time) (fields: text, select, number, upload, url, date, time)
-				'desc'				=> '',
+				'desc'				=> '', // description below input
 				'type'				=> 'date', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
@@ -84,6 +88,7 @@ function ctc_add_meta_box_event_date() {
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
 			),
 
 			// End Date
@@ -108,6 +113,7 @@ function ctc_add_meta_box_event_date() {
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
 			),
 
 			// Start Time
@@ -131,6 +137,7 @@ function ctc_add_meta_box_event_date() {
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
 			),
 
 			// End Time
@@ -155,6 +162,7 @@ function ctc_add_meta_box_event_date() {
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
 			),
 
 			// Hide Start/End Time
@@ -180,6 +188,7 @@ function ctc_add_meta_box_event_date() {
 				'field_class'		=> 'ctmb-no-top-margin', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
 			),
 
 			// Time Description
@@ -205,6 +214,7 @@ function ctc_add_meta_box_event_date() {
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
 			),
 
 			// Recurrence
@@ -233,6 +243,7 @@ function ctc_add_meta_box_event_date() {
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
 			),
 
 			// Recur Every X Weeks
@@ -258,6 +269,9 @@ function ctc_add_meta_box_event_date() {
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array( // show this field only when other field(s) have certain values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
+					'_ctc_event_recurrence' => 'weekly',
+				),
 			),
 
 			// Recur Every X Months
@@ -283,6 +297,9 @@ function ctc_add_meta_box_event_date() {
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array( // show this field only when other field(s) have certain values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
+					'_ctc_event_recurrence' => 'monthly',
+				),
 			),
 
 			// Recur Monthly Type
@@ -310,6 +327,9 @@ function ctc_add_meta_box_event_date() {
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array( // show this field only when other field(s) have certain values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
+					'_ctc_event_recurrence' => 'monthly',
+				),
 			),
 
 			// Recur Monthly on Week
@@ -340,6 +360,10 @@ function ctc_add_meta_box_event_date() {
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array( // show this field only when other field(s) have certain values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
+					'_ctc_event_recurrence'					=> 'monthly', // and...
+					'_ctc_event_recurrence_monthly_type'	=> 'week',
+				),
 			),
 
 			// Recur Until
@@ -363,6 +387,9 @@ function ctc_add_meta_box_event_date() {
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array( // show this field only when other field(s) have certain values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
+					'_ctc_event_recurrence' => array( 'none', '!=' ),
+				)
 			),
 
 		),
@@ -417,7 +444,11 @@ function ctc_add_meta_box_event_location() {
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
-				'custom_field'=> '', // function for custom display of field input
+				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array( // show/hide this field based on other fields' values
+					'field1'	=> 'value', // and...
+					'field2'	=> array( 'value', '!=' ), // not having this value
+				),
 			*/
 
 			// Venue
@@ -441,6 +472,7 @@ function ctc_add_meta_box_event_location() {
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
 			),
 
 			// Address
@@ -464,6 +496,7 @@ function ctc_add_meta_box_event_location() {
 				'field_class'		=> 'ctmb-no-bottom-margin', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
 			),
 
 			// Directions
@@ -487,6 +520,7 @@ function ctc_add_meta_box_event_location() {
 				'field_class'		=> 'ctmb-no-top-margin', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
 			),
 
 			// Map Latitude
@@ -510,6 +544,7 @@ function ctc_add_meta_box_event_location() {
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
 			),
 
 			// Map Longitude
@@ -533,6 +568,7 @@ function ctc_add_meta_box_event_location() {
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
 			),
 
 			// Map Type
@@ -556,6 +592,7 @@ function ctc_add_meta_box_event_location() {
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
 			),
 
 			// Map Zoom
@@ -570,7 +607,6 @@ function ctc_add_meta_box_event_location() {
 				'upload_button'		=> '', // text for button that opens media frame
 				'upload_title'		=> '', // title appearing at top of media frame
 				'upload_type'		=> '', // optional type of media to filter by (image, audio, video, application/pdf)
-
 				'default'			=> ctc_gmaps_zoom_level_default(), // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> true, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
@@ -580,6 +616,7 @@ function ctc_add_meta_box_event_location() {
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
 			),
 
 		),
