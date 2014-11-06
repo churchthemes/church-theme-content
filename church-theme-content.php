@@ -186,6 +186,10 @@ class Church_Theme_Content {
 				CTC_INC_DIR . '/schedule.php',
 				CTC_INC_DIR . '/support.php',
 				CTC_INC_DIR . '/taxonomies.php',
+
+				// Libraries
+				CTC_CLASS_DIR . '/ct-recurrence.php',
+
 			),
 
 			// Admin only
