@@ -85,7 +85,11 @@ function ctc_add_meta_box_person_details() {
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
-				'custom_field'=> '', // function for custom display of field input
+				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array( // show/hide this field based on other fields' values
+					'field1'	=> 'value', // and...
+					'field2'	=> array( 'value', '!=' ), // not having this value
+				),
 			*/
 
 			// Position
@@ -109,6 +113,7 @@ function ctc_add_meta_box_person_details() {
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
 			),
 
 			// Phone
@@ -132,6 +137,7 @@ function ctc_add_meta_box_person_details() {
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
 			),
 
 			// Email
@@ -155,6 +161,7 @@ function ctc_add_meta_box_person_details() {
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> 'sanitize_email', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
 			),
 
 			// URLs
@@ -178,6 +185,7 @@ function ctc_add_meta_box_person_details() {
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
 			),
 
 		),

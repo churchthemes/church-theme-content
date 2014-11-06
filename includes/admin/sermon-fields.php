@@ -61,6 +61,10 @@ function ctc_add_meta_box_sermon_details() {
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'=> '', // function for custom display of field input
+				'visibility' 		=> array( // show/hide this field based on other fields' values
+					'field1'	=> 'value', // and...
+					'field2'	=> array( 'value', '!=' ), // not having this value
+				),
 			*/
 
 			// Full Text
@@ -84,6 +88,7 @@ function ctc_add_meta_box_sermon_details() {
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
 			),
 
 			// Video
@@ -111,6 +116,7 @@ function ctc_add_meta_box_sermon_details() {
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
 			),
 
 			// Audio
@@ -138,6 +144,7 @@ function ctc_add_meta_box_sermon_details() {
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
 			),
 
 			// PDF URL
@@ -161,6 +168,7 @@ function ctc_add_meta_box_sermon_details() {
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
 			),
 
 		),
