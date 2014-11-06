@@ -114,10 +114,8 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 						$args = false;
 					}
 
-					// Date is earlier than start date
-					if ( $args && strtotime( $args['until_date'] ) < strtotime( $args['start_date'] ) ) {
-						$args = false;
-					}
+					// Note: until_date can exceed start date
+					// If not allowed, would not be able to loop and check effectively
 
 				}
 
@@ -216,11 +214,12 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 		/**
 		 * Get dates
 		 *
-		 * Get dates recurring in the future
+		 * Get multiple recurring dates.
+		 * The start date is included in the dates returned.
 		 *
 		 * @since 0.1
 		 * @access public
-		 * @param array $args Arguments determining future recurrence
+		 * @param array $args Arguments determining recurrence
 		 * @return array|bool Array of dates or false if arguments invalid
 		 */
 		public function get_dates( $args ) {
@@ -230,9 +229,153 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 			// Validate and set default arguments
 			$args = $this->prepare_args( $args );
 
+			// Have valid arguments?
+			// If not, return false
+			if ( ! $args ) {
+				$dates = false;
+			}
 
+			// Get multiple recurring dates
+			if ( $args ) { // valid args
+
+				// Keep track of how many dates are returned
+				$i = 1;
+
+				// Include the date provided
+				$dates[] = $args['start_date'];
+
+				// Get next dates until until_date or limit is reached (whichever is sooner)
+				$next_start_date = $args['start_date'];
+				while ( ++$i ) {
+
+					// Get next date
+					$next_args = $args;
+					$next_args['start_date'] = $next_start_date;
+					$next_date = $this->get_next_date( $next_args );
+
+					// If for some reason no next date can be calculated, stop
+					// This is a safeguard to prevent an infinite loop
+					if ( empty( $next_date ) ) {
+						break;
+					}
+
+					// Has until_date been exceeded?
+					if ( ! empty( $args['until_date'] ) ) { // until date is provided
+
+						$until_date_ts = strtotime( date_i18n( 'Y-m-d', $args['until_date'] ) ); // localized
+						$next_date_ts = strtotime( $next_date );
+
+						if ( $next_date_ts > $until_date_ts ) { // yes, stop loop
+							break;
+						}
+
+					}
+
+					// Add it to array
+					$dates[] = $next_date; // add it to array
+
+					// Has limit been reached?
+					if ( ! empty( $args['limit'] ) && $i == $args['limit'] ) {
+						break;
+					}
+
+					// Update start_date argument
+					$next_start_date = $next_date;
+
+				}
+
+			}
 
 			return $dates;
+
+		}
+
+		/**
+		 * Get next date
+		 *
+		 * Get the next recurring date.
+		 * This may or may not be future.
+		 *
+		 * @since 0.1
+		 * @access public
+		 * @param array $args Arguments determining recurrence
+		 * @return string|bool Date string or false if arguments invalid
+		 */
+		public function get_next_date( $args ) {
+
+			$date = '';
+
+			// Validate and set default arguments
+			$args = $this->prepare_args( $args );
+
+			// Have valid arguments?
+			// If not, return false
+			if ( ! $args ) {
+				$date = false;
+			}
+
+			// Get next recurring date
+			// This may or may not be future
+			if ( $args ) { // valid args
+
+				// Start this off with what is in old ctc_increment_future_date()
+
+
+
+
+			}
+
+			return $date;
+
+		}
+
+		/**
+		 * Get next future date
+		 *
+		 * Get the next future recurring date (future includes today).
+		 * This is helpful when cron misses a beat.
+		 *
+		 * @since 0.1
+		 * @access public
+		 * @param array $args Arguments determining recurrence
+		 * @return string|bool Date string or false if arguments invalid
+		 */
+		public function get_next_future_date( $args ) {
+
+			// Get next date
+			// This may or may not be future
+			$date = $this->get_next_date( $args ); // returns false if invalid args
+
+			// Have valid date
+			if ( $date ) {
+
+				// Convert dates to timestamp for comparison
+				$today_ts = strtotime( date_i18n( 'Y-m-d' ) ); // localized
+				$date_ts = strtotime( $date );
+
+				// Continue getting next date until it is not in past
+				// This provides automatic correction in case wp-cron misses a beat
+				while ( $date_ts < $today_ts ) {
+
+					// Get next date
+					$next_args = $args;
+					$next_args['start_date'] = $date;
+					$date = $this->get_next_date( $next_args );
+
+					// If for some reason no next date can be calculated, stop
+					// This is a safeguard to prevent an infinite loop
+					if ( empty( $date ) ) {
+						break;
+					}
+
+					// Convert new date to timestamp
+					$date_ts = strtotime( $date );
+
+				}
+
+			}
+
+			return $date;
 
 		}
 
