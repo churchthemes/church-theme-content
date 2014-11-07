@@ -401,7 +401,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 					// Has until_date been exceeded?
 					if ( ! empty( $args['until_date'] ) ) { // until date is provided
 
-						$until_date_ts = strtotime( date_i18n( 'Y-m-d', $args['until_date'] ) ); // localized
+						$until_date_ts = strtotime( date_i18n( 'Y-m-d', strtotime( $args['until_date'] ) ) ); // localized
 						$next_date_ts = strtotime( $next_date );
 
 						if ( $next_date_ts > $until_date_ts ) { // yes, stop loop
@@ -478,7 +478,7 @@ $ctc_recurrence = new CT_Recurrence();
 $args = array(
 	'start_date'			=> '2014-11-10', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
 	'until_date'			=> '2014-11-30', // date recurrence should not extend beyond
-	'frequency'				=> 'monthly', // weekly, monthly, yearly
+	'frequency'				=> 'weekly', // weekly, monthly, yearly
 	'interval'				=> '1', // every 1, 2 or 3 weeks, months or years
 	'monthly_type'			=> 'week', // day (same day of month) or week (on a specific week); if recurrence is monthly (day is default)
 	'monthly_week'			=> 'last', // 1 - 4 or 'last'; if recurrence is monthly and monthly_type is 'week'
@@ -492,7 +492,7 @@ ctc_print_array( $dates );
 ?><h4>calc_next_future_date()</h3><?php
 
 $args = array(
-	'start_date'			=> '2014-11-10', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
+	'start_date'			=> '2014-07-10', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
 	'until_date'			=> '2014-11-30', // date recurrence should not extend beyond
 	'frequency'				=> 'monthly', // weekly, monthly, yearly
 	'interval'				=> '1', // every 1, 2 or 3 weeks, months or years
@@ -508,8 +508,8 @@ ctc_print_array( $dates );
 ?><h4>get_dates()</h3><?php
 
 $args = array(
-	'start_date'			=> '2014-11-10', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
-	'until_date'			=> '2014-11-30', // date recurrence should not extend beyond
+	'start_date'			=> '2014-05-10', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
+	'until_date'			=> '2014-10-15', // date recurrence should not extend beyond
 	'frequency'				=> 'monthly', // weekly, monthly, yearly
 	'interval'				=> '1', // every 1, 2 or 3 weeks, months or years
 	'monthly_type'			=> 'week', // day (same day of month) or week (on a specific week); if recurrence is monthly (day is default)
