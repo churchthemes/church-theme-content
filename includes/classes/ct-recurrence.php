@@ -212,97 +212,17 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 		}
 
 		/**
-		 * Get dates
+		 * Calculate next date
 		 *
-		 * Get multiple recurring dates.
-		 * The start date is included in the dates returned.
-		 *
-		 * @since 0.1
-		 * @access public
-		 * @param array $args Arguments determining recurrence
-		 * @return array|bool Array of dates or false if arguments invalid
-		 */
-		public function get_dates( $args ) {
-
-			$dates = array();
-
-			// Validate and set default arguments
-			$args = $this->prepare_args( $args );
-
-			// Have valid arguments?
-			// If not, return false
-			if ( ! $args ) {
-				$dates = false;
-			}
-
-			// Get multiple recurring dates
-			if ( $args ) { // valid args
-
-				// Keep track of how many dates are returned
-				$i = 1;
-
-				// Include the date provided
-				$dates[] = $args['start_date'];
-
-				// Get next dates until until_date or limit is reached (whichever is sooner)
-				$next_start_date = $args['start_date'];
-				while ( ++$i ) {
-
-					// Get next date
-					$next_args = $args;
-					$next_args['start_date'] = $next_start_date;
-					$next_date = $this->get_next_date( $next_args );
-
-					// If for some reason no next date can be calculated, stop
-					// This is a safeguard to prevent an infinite loop
-					if ( empty( $next_date ) ) {
-						break;
-					}
-
-					// Has until_date been exceeded?
-					if ( ! empty( $args['until_date'] ) ) { // until date is provided
-
-						$until_date_ts = strtotime( date_i18n( 'Y-m-d', $args['until_date'] ) ); // localized
-						$next_date_ts = strtotime( $next_date );
-
-						if ( $next_date_ts > $until_date_ts ) { // yes, stop loop
-							break;
-						}
-
-					}
-
-					// Add it to array
-					$dates[] = $next_date; // add it to array
-
-					// Has limit been reached?
-					if ( ! empty( $args['limit'] ) && $i == $args['limit'] ) {
-						break;
-					}
-
-					// Update start_date argument
-					$next_start_date = $next_date;
-
-				}
-
-			}
-
-			return $dates;
-
-		}
-
-		/**
-		 * Get next date
-		 *
-		 * Get the next recurring date.
-		 * This may or may not be future.
-		 * until_date and limit have no effect (they are for get_dates() only)
+		 * Calculate next date without regard for until_date or limit.
+		 * This may or may not be in the future.
 		 *
 		 * @since 0.1
 		 * @access public
 		 * @param array $args Arguments determining recurrence
 		 * @return string|bool Date string or false if arguments invalid or no next date
 		 */
-		public function get_next_date( $args ) {
+		public function calc_next_date( $args ) {
 
 			$date = false;
 
@@ -364,7 +284,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 				$days_in_month = date( 't', mktime( 0, 0, 0, $m, 1, $y ) );
 				if ( $d > $days_in_month ) {
 
-					// Figure this out. If loop get_next_date() on date that doesn't exist, it returns false
+					// Figure this out. If loop calc_next_date() on date that doesn't exist, it returns false
 					// Maybe double the interval and check until returns a valid date?
 					// Use checkdate instead?
 					// Test all scenarios
@@ -381,22 +301,21 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 		}
 
 		/**
-		 * Get next future date
+		 * Calculate next future date
 		 *
-		 * Get the next future recurring date (future includes today).
+		 * Calculate the next date in the future (may be today) without regard for until_date or limit.
 		 * This is helpful when cron misses a beat.
-		 * until_date and limit have no effect (they are for get_dates() only)
 		 *
 		 * @since 0.1
 		 * @access public
 		 * @param array $args Arguments determining recurrence
 		 * @return string|bool Date string or false if arguments invalid or no next date
 		 */
-		public function get_next_future_date( $args ) {
+		public function calc_next_future_date( $args ) {
 
 			// Get next date
 			// This may or may not be future
-			$date = $this->get_next_date( $args ); // returns false if invalid args
+			$date = $this->calc_next_date( $args ); // returns false if invalid args
 
 			// Have valid date
 			if ( $date ) {
@@ -412,7 +331,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 					// Get next date
 					$next_args = $args;
 					$next_args['start_date'] = $date;
-					$date = $this->get_next_date( $next_args );
+					$date = $this->calc_next_date( $next_args );
 
 					// If for some reason no next date can be calculated, stop
 					// This is a safeguard to prevent an infinite loop
@@ -428,6 +347,85 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 			}
 
 			return $date;
+
+		}
+
+		/**
+		 * Get dates
+		 *
+		 * Get multiple recurring dates.
+		 * The start date is included in the dates returned.
+		 *
+		 * @since 0.1
+		 * @access public
+		 * @param array $args Arguments determining recurrence
+		 * @return array|bool Array of dates or false if arguments invalid
+		 */
+		public function get_dates( $args ) {
+
+			$dates = array();
+
+			// Validate and set default arguments
+			$args = $this->prepare_args( $args );
+
+			// Have valid arguments?
+			// If not, return false
+			if ( ! $args ) {
+				$dates = false;
+			}
+
+			// Get multiple recurring dates
+			if ( $args ) { // valid args
+
+				// Keep track of how many dates are returned
+				$i = 1;
+
+				// Include the date provided
+				$dates[] = $args['start_date'];
+
+				// Get next dates until until_date or limit is reached (whichever is sooner)
+				$next_start_date = $args['start_date'];
+				while ( ++$i ) {
+
+					// Get next date
+					$next_args = $args;
+					$next_args['start_date'] = $next_start_date;
+					$next_date = $this->calc_next_date( $next_args );
+
+					// If for some reason no next date can be calculated, stop
+					// This is a safeguard to prevent an infinite loop
+					if ( empty( $next_date ) ) {
+						break;
+					}
+
+					// Has until_date been exceeded?
+					if ( ! empty( $args['until_date'] ) ) { // until date is provided
+
+						$until_date_ts = strtotime( date_i18n( 'Y-m-d', $args['until_date'] ) ); // localized
+						$next_date_ts = strtotime( $next_date );
+
+						if ( $next_date_ts > $until_date_ts ) { // yes, stop loop
+							break;
+						}
+
+					}
+
+					// Add it to array
+					$dates[] = $next_date; // add it to array
+
+					// Has limit been reached?
+					if ( ! empty( $args['limit'] ) && $i == $args['limit'] ) {
+						break;
+					}
+
+					// Update start_date argument
+					$next_start_date = $next_date;
+
+				}
+
+			}
+
+			return $dates;
 
 		}
 
@@ -475,7 +473,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 $ctc_recurrence = new CT_Recurrence();
 
 
-?><h4>get_next_date()</h3><?php
+?><h4>calc_next_date()</h3><?php
 
 $args = array(
 	'start_date'			=> '2014-11-10', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
@@ -486,12 +484,12 @@ $args = array(
 	'monthly_week'			=> 'last', // 1 - 4 or 'last'; if recurrence is monthly and monthly_type is 'week'
 	'limit'					=> '10', // maximum dates to return (if no until_date, default is 100 to prevent infinite loop)
 );
-$dates = $ctc_recurrence->get_next_date( $args );
+$dates = $ctc_recurrence->calc_next_date( $args );
 ctc_print_array( $args );
 ctc_print_array( $dates );
 
 
-?><h4>get_next_future_date()</h3><?php
+?><h4>calc_next_future_date()</h3><?php
 
 $args = array(
 	'start_date'			=> '2014-11-10', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
@@ -502,7 +500,7 @@ $args = array(
 	'monthly_week'			=> 'last', // 1 - 4 or 'last'; if recurrence is monthly and monthly_type is 'week'
 	'limit'					=> '10', // maximum dates to return (if no until_date, default is 100 to prevent infinite loop)
 );
-$dates = $ctc_recurrence->get_next_future_date( $args );
+$dates = $ctc_recurrence->calc_next_future_date( $args );
 ctc_print_array( $args );
 ctc_print_array( $dates );
 
