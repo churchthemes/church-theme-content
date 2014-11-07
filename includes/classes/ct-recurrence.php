@@ -538,7 +538,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 }
 
 
-
+if ( is_admin() ) {
 
 // TESTING
 // ADD USAGE TO TOP
@@ -572,6 +572,8 @@ Recur Date: <?php echo date( 'Y-m-d, F j, Y (l)', strtotime( $date ) ); ?>
 
 ?><h4>calc_next_future_date()</h3><?php
 
+$date = $ctc_recurrence->calc_next_future_date( $args );
+
 ?>
 <pre>
 Start Date: <?php echo date( 'Y-m-d, F j, Y (l)', strtotime( $args['start_date'] ) ); ?><br>
@@ -592,3 +594,5 @@ foreach( $dates as $date ) {
 ?></pre><?php
 
 exit;
+
+}
