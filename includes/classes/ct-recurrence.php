@@ -295,33 +295,84 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 		 *
 		 * Get the next recurring date.
 		 * This may or may not be future.
+		 * until_date and limit have no effect (they are for get_dates() only)
 		 *
 		 * @since 0.1
 		 * @access public
 		 * @param array $args Arguments determining recurrence
-		 * @return string|bool Date string or false if arguments invalid
+		 * @return string|bool Date string or false if arguments invalid or no next date
 		 */
 		public function get_next_date( $args ) {
 
-			$date = '';
+			$date = false;
 
 			// Validate and set default arguments
 			$args = $this->prepare_args( $args );
-
-			// Have valid arguments?
-			// If not, return false
-			if ( ! $args ) {
-				$date = false;
-			}
 
 			// Get next recurring date
 			// This may or may not be future
 			if ( $args ) { // valid args
 
-				// Start this off with what is in old ctc_increment_future_date()
+				// Get month, day and year
+				list( $y, $m, $d ) = explode( '-', $args['start_date'] );
 
+				// Calculate next recurrence
+				switch ( $args['frequency'] ) {
 
+					// UNFINISHED
+					// Add logic for advanced recurrence
 
+					// Weekly
+					case 'weekly' :
+
+						// Add 7 days
+						// This will always be the same day of the week (Mon, Tue, etc.)
+						list( $y, $m, $d ) = explode( '-', date( 'Y-m-d', strtotime( $args['start_date'] ) + WEEK_IN_SECONDS ) );
+
+						break;
+
+					// Monthly
+					case 'monthly' :
+
+						// Move forward one month
+						if ( $m < 12 ) { // same year
+							$m++; // add one month
+						} else { // next year (old month is December)
+							$m = 1; // first month of year
+							$y++; // add one year
+						}
+
+						// Note: Every month always has at least 4 full weeks
+
+						break;
+
+					// Yearly
+					case 'yearly' :
+
+						// Move forward one year
+						$y++;
+
+						break;
+
+				}
+
+				// UNFINISHED
+				// Day does not exist in month
+				// Increment until it does exist
+				// Example: January 30 recurring monthly goes to March 30, because there is no February 30
+				// Example 2: February 29 on a leap year recurring yearly skips to the next leap year
+				$days_in_month = date( 't', mktime( 0, 0, 0, $m, 1, $y ) );
+				if ( $d > $days_in_month ) {
+
+					// Figure this out. If loop get_next_date() on date that doesn't exist, it returns false
+					// Maybe double the interval and check until returns a valid date?
+					// Use checkdate instead?
+					// Test all scenarios
+
+				}
+
+				// Form the date string
+				$date = date( 'Y-m-d', mktime( 0, 0, 0, $m, $d, $y ) ); // pad day, month with 0
 
 			}
 
@@ -334,11 +385,12 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 		 *
 		 * Get the next future recurring date (future includes today).
 		 * This is helpful when cron misses a beat.
+		 * until_date and limit have no effect (they are for get_dates() only)
 		 *
 		 * @since 0.1
 		 * @access public
 		 * @param array $args Arguments determining recurrence
-		 * @return string|bool Date string or false if arguments invalid
+		 * @return string|bool Date string or false if arguments invalid or no next date
 		 */
 		public function get_next_future_date( $args ) {
 
@@ -412,3 +464,69 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 	}
 
 }
+
+
+
+
+// TESTING
+// ADD USAGE TO TOP
+
+// init this where? ctc.php (available everywhere then)? events? schdedule.php? make a dates include?
+$ctc_recurrence = new CT_Recurrence();
+
+
+?><h4>get_next_date()</h3><?php
+
+$args = array(
+	'start_date'			=> '2014-11-10', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
+	'until_date'			=> '2014-11-30', // date recurrence should not extend beyond
+	'frequency'				=> 'monthly', // weekly, monthly, yearly
+	'interval'				=> '1', // every 1, 2 or 3 weeks, months or years
+	'monthly_type'			=> 'week', // day (same day of month) or week (on a specific week); if recurrence is monthly (day is default)
+	'monthly_week'			=> 'last', // 1 - 4 or 'last'; if recurrence is monthly and monthly_type is 'week'
+	'limit'					=> '10', // maximum dates to return (if no until_date, default is 100 to prevent infinite loop)
+);
+$dates = $ctc_recurrence->get_next_date( $args );
+ctc_print_array( $args );
+ctc_print_array( $dates );
+
+
+?><h4>get_next_future_date()</h3><?php
+
+$args = array(
+	'start_date'			=> '2014-11-10', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
+	'until_date'			=> '2014-11-30', // date recurrence should not extend beyond
+	'frequency'				=> 'monthly', // weekly, monthly, yearly
+	'interval'				=> '1', // every 1, 2 or 3 weeks, months or years
+	'monthly_type'			=> 'week', // day (same day of month) or week (on a specific week); if recurrence is monthly (day is default)
+	'monthly_week'			=> 'last', // 1 - 4 or 'last'; if recurrence is monthly and monthly_type is 'week'
+	'limit'					=> '10', // maximum dates to return (if no until_date, default is 100 to prevent infinite loop)
+);
+$dates = $ctc_recurrence->get_next_future_date( $args );
+ctc_print_array( $args );
+ctc_print_array( $dates );
+
+
+?><h4>get_dates()</h3><?php
+
+$args = array(
+	'start_date'			=> '2014-11-10', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
+	'until_date'			=> '2014-11-30', // date recurrence should not extend beyond
+	'frequency'				=> 'monthly', // weekly, monthly, yearly
+	'interval'				=> '1', // every 1, 2 or 3 weeks, months or years
+	'monthly_type'			=> 'week', // day (same day of month) or week (on a specific week); if recurrence is monthly (day is default)
+	'monthly_week'			=> 'last', // 1 - 4 or 'last'; if recurrence is monthly and monthly_type is 'week'
+	'limit'					=> '10', // maximum dates to return (if no until_date, default is 100 to prevent infinite loop)
+);
+$dates = $ctc_recurrence->get_dates( $args );
+ctc_print_array( $args );
+ctc_print_array( $dates );
+
+exit;
+
+
+
+
+
+
+

@@ -84,6 +84,8 @@ function ctc_update_recurring_event_dates() {
 
 			// Calculate incremented dates
 			$new_start_date = ctc_increment_future_date( $start_date, $recurrence ); // get closest incremented date in future
+// CT_Recurrence->get_next_future_date() will return false if no next date; this returns current date
+// Know this when handling $new_end_date and "Has recurrrence ended?" below
 			$new_end_date = date( 'Y-m-d', ( strtotime( $new_start_date ) + $time_difference ) ); // add difference between original start/end date to new start date to get new end date
 
 			// Has recurrence ended?
