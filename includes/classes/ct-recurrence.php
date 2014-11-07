@@ -217,6 +217,8 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 		 * Calculate next date without regard for until_date or limit.
 		 * This may or may not be in the future.
 		 *
+		 * IMPORTANT: calc_* methods have no regard for until_date (the get_* methods do)
+		 *
 		 * @since 0.1
 		 * @access public
 		 * @param array $args Arguments determining recurrence
@@ -305,6 +307,8 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 		 *
 		 * Calculate the next date in the future (may be today) without regard for until_date or limit.
 		 * This is helpful when cron misses a beat.
+		 *
+		 * IMPORTANT: calc_* methods have no regard for until_date (the get_* methods do)
 		 *
 		 * @since 0.1
 		 * @access public
@@ -509,7 +513,7 @@ ctc_print_array( $dates );
 
 $args = array(
 	'start_date'			=> '2014-05-10', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
-	'until_date'			=> '2014-10-15', // date recurrence should not extend beyond
+	'until_date'			=> '2014-10-09', // date recurrence should not extend beyond
 	'frequency'				=> 'monthly', // weekly, monthly, yearly
 	'interval'				=> '1', // every 1, 2 or 3 weeks, months or years
 	'monthly_type'			=> 'week', // day (same day of month) or week (on a specific week); if recurrence is monthly (day is default)
