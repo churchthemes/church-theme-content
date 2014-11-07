@@ -6,6 +6,9 @@
  * It is used in the Church Theme Content plugin and Church Theme Framework.
  *
  * It is compatible with PHP 5.2.4, the minimum version required by WordPress.
+ * PHP manual recommends using DateTime::modify() for PHP 5.2 versus strtotime().
+ * See last note on http://php.net/manual/en/function.strtotime.php
+ *
  * Otherwise, simshaun/recurr or tplaner/When would be a good choice.
  *
  * @copyright Copyright (c) 2014, churchthemes.com
@@ -247,22 +250,27 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 					// Weekly
 					case 'weekly' :
 
-						// Add 7 days
+						// Add week(s)
 						// This will always be the same day of the week (Mon, Tue, etc.)
-						list( $y, $m, $d ) = explode( '-', date( 'Y-m-d', strtotime( $args['start_date'] ) + WEEK_IN_SECONDS ) );
+						$date = new DateTime( $args['start_date'] );
+						$date->modify( '+' . $args['interval'] . ' weeks' );
+						list( $y, $m, $d ) = explode( '-', $date->format( 'Y-m-d' ) );
 
 						break;
 
 					// Monthly
 					case 'monthly' :
 
-						// Move forward one month
-						if ( $m < 12 ) { // same year
-							$m++; // add one month
-						} else { // next year (old month is December)
-							$m = 1; // first month of year
-							$y++; // add one year
-						}
+						$old_d = $d;
+
+						// Move forward X month(s)
+						// Note: If day of month doesn't exist, the first day of next month is used
+						// Example: October 31 recurring monthly becomes December 1 because there is no November 31
+						// Users should use "Last Day" instead of 31 and be careful about February and leap years
+						// If they're not, they can simply edit their date to improve their recurrence
+						$date = new DateTime( $args['start_date'] );
+						$date->modify( '+' . $args['interval'] . ' months' );
+						list( $y, $m, $d ) = explode( '-', $date->format( 'Y-m-d' ) );
 
 						// Note: Every month always has at least 4 full weeks
 
@@ -271,25 +279,14 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 					// Yearly
 					case 'yearly' :
 
-						// Move forward one year
-						$y++;
+						// Move forward X years
+						// Note: If February 29 on leap year and recur to non-leap year, date becomes March 1
+						// User should use "Last Day" instead and can edit date to improve recurrence
+						$date = new DateTime( $args['start_date'] );
+						$date->modify( '+' . $args['interval'] . ' years' );
+						list( $y, $m, $d ) = explode( '-', $date->format( 'Y-m-d' ) );
 
 						break;
-
-				}
-
-				// UNFINISHED
-				// Day does not exist in month
-				// Increment until it does exist
-				// Example: January 30 recurring monthly goes to March 30, because there is no February 30
-				// Example 2: February 29 on a leap year recurring yearly skips to the next leap year
-				$days_in_month = date( 't', mktime( 0, 0, 0, $m, 1, $y ) );
-				if ( $d > $days_in_month ) {
-
-					// Figure this out. If loop calc_next_date() on date that doesn't exist, it returns false
-					// Maybe double the interval and check until returns a valid date?
-					// Use checkdate instead?
-					// Test all scenarios
 
 				}
 
@@ -480,13 +477,13 @@ $ctc_recurrence = new CT_Recurrence();
 ?><h4>calc_next_date()</h3><?php
 
 $args = array(
-	'start_date'			=> '2014-11-10', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
-	'until_date'			=> '2014-11-30', // date recurrence should not extend beyond
-	'frequency'				=> 'weekly', // weekly, monthly, yearly
-	'interval'				=> '1', // every 1, 2 or 3 weeks, months or years
+	'start_date'			=> '2016-02-29', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
+	'until_date'			=> '', // date recurrence should not extend beyond
+	'frequency'				=> 'yearly', // weekly, monthly, yearly
+	'interval'				=> '10', // every 1, 2 or 3 weeks, months or years
 	'monthly_type'			=> 'week', // day (same day of month) or week (on a specific week); if recurrence is monthly (day is default)
 	'monthly_week'			=> 'last', // 1 - 4 or 'last'; if recurrence is monthly and monthly_type is 'week'
-	'limit'					=> '10', // maximum dates to return (if no until_date, default is 100 to prevent infinite loop)
+	'limit'					=> '', // maximum dates to return (if no until_date, default is 100 to prevent infinite loop)
 );
 $dates = $ctc_recurrence->calc_next_date( $args );
 ctc_print_array( $args );
@@ -525,10 +522,3 @@ ctc_print_array( $args );
 ctc_print_array( $dates );
 
 exit;
-
-
-
-
-
-
-
