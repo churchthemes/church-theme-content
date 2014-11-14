@@ -459,7 +459,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 
 				// Get next dates until until_date or limit is reached (whichever is sooner)
 				$next_start_date = $args['start_date'];
-				while ( ++$i ) {
+				while ( ++$i && $args['limit'] != 1) {
 
 					// Get next date
 					$next_args = $args;
@@ -546,13 +546,13 @@ if ( is_admin() ) {
 $ctc_recurrence = new CT_Recurrence();
 
 $args = array(
-	'start_date'			=> '2014-01-29', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
-	'until_date'			=> '2014-07-29', // date recurrence should not extend beyond
+	'start_date'			=> '2014-04-30', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
+	'until_date'			=> '2028-10-31', // date recurrence should not extend beyond
 	'frequency'				=> 'monthly', // weekly, monthly, yearly
-	'interval'				=> '1', // every 1, 2 or 3 weeks, months or years
+	'interval'				=> '3', // every 1, 2 or 3 weeks, months or years
 	'monthly_type'			=> 'week', // day (same day of month) or week (on a specific week); if recurrence is monthly (day is default)
-	'monthly_week'			=> 'last', // 1 - 4 or 'last'; if recurrence is monthly and monthly_type is 'week'
-	'limit'					=> '', // maximum dates to return (if no until_date, default is 100 to prevent infinite loop)
+	'monthly_week'			=> '1', // 1 - 4 or 'last'; if recurrence is monthly and monthly_type is 'week'
+	'limit'					=> '10', // maximum dates to return (if no until_date, default is 100 to prevent infinite loop)
 );
 
 ctc_print_array( $args );
@@ -596,3 +596,4 @@ foreach( $dates as $date ) {
 exit;
 
 }
+
