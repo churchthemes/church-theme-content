@@ -1043,18 +1043,19 @@ add_filter( 'request', 'ctc_event_columns_sorting_request' ); // set how to sort
  **********************************/
 
 /**
- * Update All Events' Date/Time Fields
+ * Set All Events Defaults
  *
- * Date and Time fields are combined into one field for easier ordering (simpler queries)
- * This is run by the database updater (older versions did not have these hidden fields)
+ * Version 1.2 introduced new fields.
+ * This fills in defaults for the new fields.
+ * This is run by the database upgrader.
  * See ctc_upgrade_1_2() in includes/upgrade.php
  *
- * If no date, value will be 0000-00-00 00:00:00
- * If no time, value will be 2014-10-28 00:00:00
+ * NOTE: This does not set defaults for fields that have always existed.
+ * NOTE: could be modified in future to accommodate other new fields.
  *
  * @since 1.2
  */
-function ctc_update_all_events_date_time() {
+function ctc_set_events_defaults() {
 
 	// Select all events to check/update
 	$posts = get_posts( array(
@@ -1065,7 +1066,26 @@ function ctc_update_all_events_date_time() {
 
 	// Loop each post to update fields
 	foreach( $posts as $post ) {
+
+	 	// Get current values
+		$recurrence_weekly_every = get_post_meta( $post->ID, '_ctc_event_recurrence_weekly_every', true );
+		$recurrence_monthly_every = get_post_meta( $post->ID, '_ctc_event_recurrence_monthly_every', true );
+		$recurrence_monthly_type = get_post_meta( $post->ID, '_ctc_event_recurrence_monthly_type', true );
+		$recurrence_monthly_week = get_post_meta( $post->ID, '_ctc_event_recurrence_monthly_week', true );
+
+		// Date and Time fields are combined into one field for easier ordering (simpler queries)
+		// This hidden field was introduced in 1.2
+		// If no date, value will be 0000-00-00 00:00:00
+		// If no time, value will be 2014-10-28 00:00:00
 		ctc_update_event_date_time( $post->ID );
+
+		// Set defaults for new recurrence fields
+		// These were introduced in 1.2
+		if ( ! $recurrence_weekly_every ) update_post_meta( $post->ID, '_ctc_event_recurrence_weekly_every', '1' );
+		if ( ! $recurrence_monthly_every ) update_post_meta( $post->ID, '_ctc_event_recurrence_monthly_every', '1' );
+		if ( ! $recurrence_monthly_type ) update_post_meta( $post->ID, '_ctc_event_recurrence_monthly_type', 'day' );
+		if ( ! $recurrence_monthly_week ) update_post_meta( $post->ID, '_ctc_event_recurrence_monthly_week', '' );
+
 	}
 
 }
