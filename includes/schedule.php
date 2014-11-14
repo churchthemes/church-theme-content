@@ -6,7 +6,7 @@
  *
  * @package    Church_Theme_Content
  * @subpackage Functions
- * @copyright  Copyright (c) 2013, churchthemes.com
+ * @copyright  Copyright (c) 2013 - 2014, churchthemes.com
  * @link       https://github.com/churchthemes/church-theme-content
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * @since      0.9
@@ -44,10 +44,13 @@ add_action( 'wp', 'ctc_schedule_recurring_events' );
  */
 function ctc_update_recurring_event_dates() {
 
+	// Instantiate recurrence class
+	$ctc_recurrence = new CT_Recurrence();
+
 	// Localized dates
 	$yesterday = date_i18n( 'Y-m-d', time() - DAY_IN_SECONDS );
 
-	// Get all events with end date in past and have valid recurring value and
+	// Get all events with end date in past and have valid recurring value
 	$events_query = new WP_Query( array(
 		'post_type'	=> 'ctc_event',
 		'nopaging'	=> true,
@@ -71,22 +74,43 @@ function ctc_update_recurring_event_dates() {
 
 		foreach ( $events_query->posts as $post ) {
 
-		 	// Get recurrence
-		 	$recurrence = get_post_meta( $post->ID, '_ctc_event_recurrence', true );
-			$recurrence_end_date = get_post_meta( $post->ID, '_ctc_event_recurrence_end_date', true );
-
-			// Get start and end dates
+			// Get start and end date
 			$start_date = get_post_meta( $post->ID, '_ctc_event_start_date', true );
 			$end_date = get_post_meta( $post->ID, '_ctc_event_end_date', true );
+
+		 	// Get recurrence
+		 	$recurrence = get_post_meta( $post->ID, '_ctc_event_recurrence', true );
+			$recurrence_weekly_every = get_post_meta( $post->ID, '_ctc_event_recurrence_weekly_every', true );
+			$recurrence_monthly_every = get_post_meta( $post->ID, '_ctc_event_recurrence_monthly_every', true );
+			$recurrence_monthly_type = get_post_meta( $post->ID, '_ctc_event_recurrence_monthly_type', true );
+			$recurrence_monthly_week = get_post_meta( $post->ID, '_ctc_event_recurrence_monthly_week', true );
+			$recurrence_end_date = get_post_meta( $post->ID, '_ctc_event_recurrence_end_date', true );
+
+			// Interval
+			$interval = 1;
+			if ( 'weekly' == $recurrence ) {
+				$interval = $recurrence_weekly_every;
+			} elseif ( 'monthly' == $recurrence ) {
+				$interval = $recurrence_monthly_every;
+			}
 
 			// Difference between start and end date in seconds
 			$time_difference = strtotime( $end_date ) - strtotime( $start_date );
 
-			// Calculate incremented dates
-			$new_start_date = ctc_increment_future_date( $start_date, $recurrence ); // get closest incremented date in future
-// CT_Recurrence->calc_next_future_date() will return false if no next date; this returns current date
-// Know this when handling $new_end_date and "Has recurrrence ended?" below
-			$new_end_date = date( 'Y-m-d', ( strtotime( $new_start_date ) + $time_difference ) ); // add difference between original start/end date to new start date to get new end date
+			// Get soonest occurence that is today or later
+			$new_start_date = $ctc_recurrence->calc_next_future_date( array(
+				'start_date'			=> $start_date, // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
+				'frequency'				=> $recurrence, // weekly, monthly, yearly
+				'interval'				=> $interval, // every 1, 2 or 3, etc. weeks, months or years
+				'monthly_type'			=> $recurrence_monthly_type, // day (same day of month) or week (on a specific week); if recurrence is monthly (day is default)
+				'monthly_week'			=> $recurrence_monthly_week, // 1 - 4 or 'last'; if recurrence is monthly and monthly_type is 'week'
+			) );
+
+			// If no new start date gotten, set it to current start date
+			// This could be because recurrence ended, arguments are invalid, etc.
+			if ( ! $new_start_date ) {
+				$new_start_date = $start_date;
+			}
 
 			// Has recurrence ended?
 			// Recurrence end date exists and is earlier than new start date
@@ -100,7 +124,10 @@ function ctc_update_recurring_event_dates() {
 			// No recurrence or recurrence end date is still future
 			else {
 
-				// Update dates
+				// Add difference between original start/end date to new start date to get new end date
+				$new_end_date = date( 'Y-m-d', ( strtotime( $new_start_date ) + $time_difference ) );
+
+				// Update start and end dates
 				update_post_meta( $post->ID, '_ctc_event_start_date', $new_start_date );
 				update_post_meta( $post->ID, '_ctc_event_end_date', $new_end_date );
 
