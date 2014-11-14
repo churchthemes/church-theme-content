@@ -11,12 +11,18 @@
  *
  * Otherwise, simshaun/recurr or tplaner/When would be a good choice.
  *
+ * See example usage at bottom of this file.
+ *
  * @copyright Copyright (c) 2014, churchthemes.com
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
 // No direct access
 if ( ! defined( 'ABSPATH' ) ) exit;
+
+/*******************************************
+ * RECURRENCE CLASS
+ *******************************************/
 
 // Class may be used in both theme and plugin(s)
 if ( ! class_exists( 'CT_Recurrence' ) ) {
@@ -537,63 +543,78 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 
 }
 
+/*******************************************
+ * EXAMPLE USAGE
+ *******************************************/
 
-if ( is_admin() ) {
+// Copy this code to an appropriate place and go to wp-admin/?recurrence_test=1
 
-// TESTING
-// ADD USAGE TO TOP
+/*
 
-$ctc_recurrence = new CT_Recurrence();
+if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 
-$args = array(
-	'start_date'			=> '2014-04-30', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
-	'until_date'			=> '2028-10-31', // date recurrence should not extend beyond
-	'frequency'				=> 'monthly', // weekly, monthly, yearly
-	'interval'				=> '3', // every 1, 2 or 3 weeks, months or years
-	'monthly_type'			=> 'week', // day (same day of month) or week (on a specific week); if recurrence is monthly (day is default)
-	'monthly_week'			=> '1', // 1 - 4 or 'last'; if recurrence is monthly and monthly_type is 'week'
-	'limit'					=> '10', // maximum dates to return (if no until_date, default is 100 to prevent infinite loop)
-);
+	// Instantiate class first
+	$ctc_recurrence = new CT_Recurrence();
 
-ctc_print_array( $args );
+	// Specify arguments
+	// Note: until_date does not have effect on the calc_* methods, only the get_* methods
+	$args = array(
+		'start_date'			=> '2014-01-01', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
+		//'until_date'			=> '2014-06-01', // date recurrence should not extend beyond
+		'frequency'				=> 'monthly', // weekly, monthly, yearly
+		'interval'				=> '1', // every 1, 2 or 3 weeks, months or years
+		'monthly_type'			=> 'week', // day (same day of month) or week (on a specific week); if recurrence is monthly (day is default)
+		'monthly_week'			=> '1', // 1 - 4 or 'last'; if recurrence is monthly and monthly_type is 'week'
+		'limit'					=> '20', // maximum dates to return (if no until_date, default is 100 to prevent infinite loop)
+	);
 
+	?>
 
-?><h4>calc_next_date()</h3><?php
+	<h4>$args</h3>
 
-$date = $ctc_recurrence->calc_next_date( $args );
+	<?php
+	ctc_print_array( $args );
+	?>
 
-?>
-<pre>
-Start Date: <?php echo date( 'Y-m-d, F j, Y (l)', strtotime( $args['start_date'] ) ); ?><br>
-Recur Date: <?php echo date( 'Y-m-d, F j, Y (l)', strtotime( $date ) ); ?>
-</pre>
-<?php
+	<h4>calc_next_date()</h3>
 
+	<?php
+	$date = $ctc_recurrence->calc_next_date( $args );
+	?>
 
-?><h4>calc_next_future_date()</h3><?php
+	<pre>Start Date:<br><?php echo date( 'Y-m-d  F j, Y 	(l)', strtotime( $args['start_date'] ) ); ?></pre>
+	<pre>Recur Date:<br><?php echo date( 'Y-m-d  F j, Y 	(l)', strtotime( $date ) ); ?></pre>
 
-$date = $ctc_recurrence->calc_next_future_date( $args );
+	<h4>calc_next_future_date()</h3>
 
-?>
-<pre>
-Start Date: <?php echo date( 'Y-m-d, F j, Y (l)', strtotime( $args['start_date'] ) ); ?><br>
-Recur Date: <?php echo date( 'Y-m-d, F j, Y (l)', strtotime( $date ) ); ?>
-</pre>
-<?php
+	<?php
+	$date = $ctc_recurrence->calc_next_future_date( $args );
+	?>
 
+	<pre>Start Date:<br><?php echo date( 'Y-m-d  F j, Y 	(l)', strtotime( $args['start_date'] ) ); ?></pre>
+	<pre>Recur Date:<br><?php echo date( 'Y-m-d  F j, Y 	(l)', strtotime( $date ) ); ?></pre>
 
-?><h4>get_dates()</h3><?php
+	<h4>get_dates()</h3>
 
-$dates = $ctc_recurrence->get_dates( $args );
+	<?php
 
-?><pre><?php
-foreach( $dates as $date ) {
-	echo date( 'Y-m-d, F j, Y (l)', strtotime( $date ) );
-	echo '<br>';
+	$dates = $ctc_recurrence->get_dates( $args );
+
+	?>
+
+	<pre><?php
+
+		foreach( $dates as $date ) {
+			echo date( 'Y-m-d  F j, Y 	(l)', strtotime( $date ) );
+			echo '<br>';
+		}
+
+	?></pre>
+
+	<?php
+
+	exit;
+
 }
-?></pre><?php
 
-exit;
-
-}
-
+*/
