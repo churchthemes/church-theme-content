@@ -103,7 +103,6 @@ function ctc_update_recurring_event_dates() {
 				'monthly_type'			=> $recurrence_monthly_type, // day (same day of month) or week (on a specific week); if recurrence is monthly (day is default)
 				'monthly_week'			=> $recurrence_monthly_week, // 1 - 4 or 'last'; if recurrence is monthly and monthly_type is 'week'
 			);
-
 			$new_start_date = $ctc_recurrence->calc_next_future_date( $args );
 
 			// If no new start date gotten, set it to current start date
