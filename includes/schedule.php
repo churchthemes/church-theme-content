@@ -47,9 +47,6 @@ function ctc_update_recurring_event_dates() {
 	// Instantiate recurrence class
 	$ctc_recurrence = new CT_Recurrence();
 
-	// Localized dates
-	$yesterday = date_i18n( 'Y-m-d', time() - DAY_IN_SECONDS );
-
 	// Get all events with end date in past and have valid recurring value
 	$events_query = new WP_Query( array(
 		'post_type'	=> 'ctc_event',
@@ -60,6 +57,7 @@ function ctc_update_recurring_event_dates() {
 				'key' => '_ctc_event_end_date',
 				'value' => date_i18n( 'Y-m-d' ), // today localized
 		 		'compare' => '<', // earlier than today
+				'type' => 'DATE',
 		   ),
 			array(
 				'key' => '_ctc_event_recurrence',
@@ -98,19 +96,24 @@ function ctc_update_recurring_event_dates() {
 			$time_difference = strtotime( $end_date ) - strtotime( $start_date );
 
 			// Get soonest occurence that is today or later
-			$new_start_date = $ctc_recurrence->calc_next_future_date( array(
+			$args = array(
 				'start_date'			=> $start_date, // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
 				'frequency'				=> $recurrence, // weekly, monthly, yearly
 				'interval'				=> $interval, // every 1, 2 or 3, etc. weeks, months or years
 				'monthly_type'			=> $recurrence_monthly_type, // day (same day of month) or week (on a specific week); if recurrence is monthly (day is default)
 				'monthly_week'			=> $recurrence_monthly_week, // 1 - 4 or 'last'; if recurrence is monthly and monthly_type is 'week'
-			) );
+			);
+
+			$new_start_date = $ctc_recurrence->calc_next_future_date( $args );
 
 			// If no new start date gotten, set it to current start date
 			// This could be because recurrence ended, arguments are invalid, etc.
 			if ( ! $new_start_date ) {
 				$new_start_date = $start_date;
 			}
+
+			// Add difference between original start/end date to new start date to get new end date
+			$new_end_date = date( 'Y-m-d', ( strtotime( $new_start_date ) + $time_difference ) );
 
 			// Has recurrence ended?
 			// Recurrence end date exists and is earlier than new start date
@@ -123,9 +126,6 @@ function ctc_update_recurring_event_dates() {
 
 			// No recurrence or recurrence end date is still future
 			else {
-
-				// Add difference between original start/end date to new start date to get new end date
-				$new_end_date = date( 'Y-m-d', ( strtotime( $new_start_date ) + $time_difference ) );
 
 				// Update start and end dates
 				update_post_meta( $post->ID, '_ctc_event_start_date', $new_start_date );
