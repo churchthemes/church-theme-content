@@ -560,7 +560,7 @@ if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 	// Note: until_date does not have effect on the calc_* methods, only the get_* methods
 	$args = array(
 		'start_date'			=> '2014-01-01', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
-		//'until_date'			=> '2014-06-01', // date recurrence should not extend beyond
+		//'until_date'			=> '2014-06-01', // date recurrence should not extend beyond (has no effect on calc_* functions)
 		'frequency'				=> 'monthly', // weekly, monthly, yearly
 		'interval'				=> '1', // every 1, 2 or 3 weeks, months or years
 		'monthly_type'			=> 'week', // day (same day of month) or week (on a specific week); if recurrence is monthly (day is default)
