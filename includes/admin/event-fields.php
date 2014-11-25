@@ -789,19 +789,19 @@ function ctc_event_columns_content( $column ) {
 
 					case 'weekly' :
 
-						$recurrence_note = __( 'Recurs Weekly', 'church-theme-content' );
+						$recurrence_note = __( 'Every week', 'church-theme-content' );
 
 						break;
 
 					case 'monthly' :
 
-						$recurrence_note = __( 'Recurs Monthly', 'church-theme-content' );
+						$recurrence_note = __( 'Every month', 'church-theme-content' );
 
 						break;
 
 					case 'yearly' :
 
-						$recurrence_note = __( 'Recurs Yearly', 'church-theme-content' );
+						$recurrence_note = __( 'Every year', 'church-theme-content' );
 
 						break;
 
