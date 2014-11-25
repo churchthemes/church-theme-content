@@ -958,7 +958,7 @@ add_filter( 'request', 'ctc_event_columns_sorting_request' ); // set how to sort
  * This will ensure defaults are filled for new fields.
  * This can be safely run by the database upgrader for any version.
  *
- * See includes/upgrade.php for how it is used.
+ * See includes/admin/upgrade.php for how it is used.
  *
  * NOTE: This does not set defaults for fields that have always existed (not necessary).
  * NOTE: This can be modified in future to accommodate other new fields.
