@@ -740,6 +740,7 @@ function ctc_event_columns_content( $column ) {
 			$end_time = get_post_meta( $post->ID , '_ctc_event_end_time' , true );
 			$hide_time_range = get_post_meta( $post->ID , '_ctc_event_hide_time_range' , true );
 			$recurrence = get_post_meta( $post->ID , '_ctc_event_recurrence' , true );
+			$recurrence_end_date = get_post_meta( $post->ID , '_ctc_event_recurrence_end_date' , true );
 
 			if ( ! empty( $start_date ) ) {
 				$dates[] = date_i18n( get_option( 'date_format' ), strtotime( $start_date ) ); // translated date
@@ -783,31 +784,69 @@ function ctc_event_columns_content( $column ) {
 
 				echo '<div class="description"><i>';
 
+				$recurrence_end_date_localized = date_i18n( get_option( 'date_format' ), strtotime( $recurrence_end_date ) ); // translated date
+
 				$recurrence_note = '';
 
+				// Frequency
 				switch ( $recurrence ) {
 
 					case 'weekly' :
 
-						$recurrence_note = __( 'Every week', 'church-theme-content' );
+						if ( $recurrence_end_date ) {
+
+							/* translators: %1$s is recurrence end date */
+							$recurrence_note = sprintf(
+								__( 'Every week until %1$s', 'church-theme-content' ),
+								$recurrence_end_date_localized
+							);
+
+						} else {
+							$recurrence_note = __( 'Every week', 'church-theme-content' );
+						}
 
 						break;
 
 					case 'monthly' :
 
-						$recurrence_note = __( 'Every month', 'church-theme-content' );
+						if ( $recurrence_end_date ) {
+
+							/* translators: %1$s is recurrence end date */
+							$recurrence_note = sprintf(
+								__( 'Every month until %1$s', 'church-theme-content' ),
+								$recurrence_end_date_localized
+							);
+
+						} else {
+							$recurrence_note = __( 'Every month', 'church-theme-content' );
+						}
 
 						break;
 
 					case 'yearly' :
 
-						$recurrence_note = __( 'Every year', 'church-theme-content' );
+						if ( $recurrence_end_date ) {
+
+							/* translators: %1$s is recurrence end date */
+							$recurrence_note = sprintf(
+								__( 'Every year until %1$s', 'church-theme-content' ),
+								$recurrence_end_date_localized
+							);
+
+						} else {
+							$recurrence_note = __( 'Every year', 'church-theme-content' );
+						}
 
 						break;
 
 				}
 
-				echo apply_filters( 'ctc_event_columns_recurrence_note', $recurrence_note, $recurrence, $post );
+				echo apply_filters( 'ctc_event_columns_recurrence_note', $recurrence_note, array(
+					$post,
+					$recurrence,
+					$recurrence_end_date,
+					$recurrence_end_date_localized
+				) );
 
 				echo '</i></div>';
 
