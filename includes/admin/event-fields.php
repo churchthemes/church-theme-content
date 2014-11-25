@@ -715,6 +715,8 @@ function ctc_event_columns_content( $column ) {
 
 	global $post;
 
+	$output = '';
+
 	switch ( $column ) {
 
 		// Thumbnail
@@ -781,17 +783,31 @@ function ctc_event_columns_content( $column ) {
 
 				echo '<div class="description"><i>';
 
+				$recurrence_note = '';
+
 				switch ( $recurrence ) {
+
 					case 'weekly' :
-						_e( 'Recurs Weekly', 'church-theme-content' );
+
+						$recurrence_note = __( 'Recurs Weekly', 'church-theme-content' );
+
 						break;
+
 					case 'monthly' :
-						_e( 'Recurs Monthly', 'church-theme-content' );
+
+						$recurrence_note = __( 'Recurs Monthly', 'church-theme-content' );
+
 						break;
+
 					case 'yearly' :
-						_e( 'Recurs Yearly', 'church-theme-content' );
+
+						$recurrence_note = __( 'Recurs Yearly', 'church-theme-content' );
+
 						break;
+
 				}
+
+				echo apply_filters( 'ctc_event_columns_recurrence_note', $recurrence_note, $recurrence, $post );
 
 				echo '</i></div>';
 
