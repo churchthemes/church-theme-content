@@ -22,7 +22,7 @@ This plugin is intended for a very specific audience. If you are *not* one of th
 
 It enables users to manage *sermons*, *events*, *people* and *locations* to be displayed by a compatible theme.
 
-Experienced WordPress developers agree that functionality like this does not belong in themes since themes are intended only to control the appearance of a WordPress site. Content that users might expect to take with them if they switch themes should "live" in a plugin in order to [avoid the lock-in effect](http://churchthemes.com/2014/05/27/wordpress-theme-users-avoid-lock-in-effect/). Similarly, our approach is not to display content using the plugin since themes offer more control for that purpose. This is why a **compatible theme is required**.
+Experienced WordPress developers agree that functionality like this does not belong in themes since themes are intended only for controlling the appearance of a WordPress site. Content that users might expect to take with them if they switch themes should "live" in a plugin in order to [avoid theme lock-in](http://churchthemes.com/2014/05/27/wordpress-theme-users-avoid-lock-in-effect/). Similarly, our approach is not to present content using the plugin since themes offer more control for that purpose. This is why a **compatible theme is required**.
 
 See [screenshots](http://wordpress.org/plugins/church-theme-content/screenshots/) for a tour of features. Note also that sermon audio [podcasting](http://churchthemes.com/guides/user/content/sermons/sermon-podcasting/) is built-in and there is support for recurring events.
 
@@ -43,9 +43,16 @@ The following translations are included. Please feel free to [contribute](https:
 * Portuguese (pt_BR) by [Ministre.com.br](http://ministre.com.br)
 * Serbo-Croatian (sr_RS) by Borisa Djuraskovic of [Web Hosting Hub](http://www.webhostinghub.com)
 
+= Add-ons =
+
+Users can optionally install [add-ons](http://churchthemes.com/plugins/) for additional features.
+
+* [Custom Recurring Events](http://churchthemes.com/plugins/custom-recurring-events)
+* More add-ons to follow...
+
 = Follow us =
 
-* Visit [churchthemes.com](http://churchthemes.com) for compatible themes and guides
+* Visit [churchthemes.com](http://churchthemes.com) for compatible themes, add-ons and guides
 * We're on [Twitter](https://twitter.com/churchthemes), [Facebook](https://www.facebook.com/churchthemescom), [Google+](https://plus.google.com/u/0/+Churchthemes) and have a [Newsletter](http://churchthemes.com/newsletter)
 * Lead developer: [stevengliebe.com](http://stevengliebe.com), [@stevengliebe](https://twitter.com/stevengliebe)
 
@@ -62,6 +69,14 @@ No, a theme made specifically for use with this plugin is necessary for displayi
 = Can make a theme that uses this plugin? =
 
 Yes, please see the [Developer Guide](http://churchthemes.com/guides/developer/church-theme-content/).
+
+= How can I make an event recur in a special way? =
+
+The plugin includes basic recurring events (monthly, weekly and yearly). Install the [Custom Recurring Events](http://churchthemes.com/plugins/custom-recurring-events) add-on for recurrence like "every two weeks" and "third Sunday of every month".
+
+= How can I make content show differently? =
+
+Please contact the author of your theme. This plugin handles the management of content in a way friendly to both users and theme developers. The presentation of content is done entirely by the theme.
 
 == Screenshots ==
 
