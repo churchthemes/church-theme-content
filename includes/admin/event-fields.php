@@ -780,7 +780,7 @@ function ctc_event_columns_content( $column ) {
 				echo '<div class="description">' . esc_html( $time ) . '</div>';
 			}
 
-			if ( ! empty( $recurrence ) && $recurrence != 'none' ) {
+			if ( ! empty( $recurrence ) && $recurrence != 'none' && $start_date ) { // show nothing if no start date entered
 
 				echo '<div class="description"><i>';
 
@@ -842,10 +842,10 @@ function ctc_event_columns_content( $column ) {
 				}
 
 				echo apply_filters( 'ctc_event_columns_recurrence_note', $recurrence_note, array(
-					$post,
-					$recurrence,
-					$recurrence_end_date,
-					$recurrence_end_date_localized
+					'post'							=> $post,
+					'recurrence'					=> $recurrence,
+					'recurrence_end_date'			=> $recurrence_end_date,
+					'recurrence_end_date_localized'	=> $recurrence_end_date_localized
 				) );
 
 				echo '</i></div>';
