@@ -246,129 +246,9 @@ function ctc_add_meta_box_event_date() {
 				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
 			),
 
-			// Recur Every X Weeks
-			'_ctc_event_recurrence_weekly_every' => array(
-				'name'				=> _x( 'Recur Every', 'weeks', 'church-theme-content' ),
-				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> __( 'week(s)', 'church-theme-content' ), // text to show to right of input (fields: text, select, number, upload, url, date, time)
-				'desc'				=> '',
-				'type'				=> 'number', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
-				'checkbox_label'	=> '', //show text after checkbox
-				'options'			=> array(), // array of keys/values for radio or select
-				'upload_button'		=> '', // text for button that opens media frame
-				'upload_title'		=> '', // title appearing at top of media frame
-				'upload_type'		=> '', // optional type of media to filter by (image, audio, video, application/pdf)
-				'default'			=> '1', // value to pre-populate option with (before first save or on reset)
-				'no_empty'			=> true, // if user empties value, force default to be saved instead
-				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array( // attr => value array (e.g. set min/max for number type)
-					'min'	=> '1',
-				),
-				'class'				=> 'ctmb-three-digits', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
-				'field_attributes'	=> array(), // attr => value array for field container
-				'field_class'		=> '', // class(es) to add to field container
-				'custom_sanitize'	=> '', // function to do additional sanitization
-				'custom_field'		=> '', // function for custom display of field input
-				'visibility' 		=> array( // show this field only when other field(s) have certain values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
-					'_ctc_event_recurrence' => 'weekly',
-				),
-			),
-
-			// Recur Every X Months
-			'_ctc_event_recurrence_monthly_every' => array(
-				'name'				=> _x( 'Recur Every', 'months', 'church-theme-content' ),
-				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> __( 'month(s)', 'church-theme-content' ), // text to show to right of input (fields: text, select, number, upload, url, date, time)
-				'desc'				=> '',
-				'type'				=> 'number', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
-				'checkbox_label'	=> '', //show text after checkbox
-				'options'			=> array(), // array of keys/values for radio or select
-				'upload_button'		=> '', // text for button that opens media frame
-				'upload_title'		=> '', // title appearing at top of media frame
-				'upload_type'		=> '', // optional type of media to filter by (image, audio, video, application/pdf)
-				'default'			=> '1', // value to pre-populate option with (before first save or on reset)
-				'no_empty'			=> true, // if user empties value, force default to be saved instead
-				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array( // attr => value array (e.g. set min/max for number type)
-					'min'	=> '1',
-				),
-				'class'				=> 'ctmb-three-digits', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
-				'field_attributes'	=> array(), // attr => value array for field container
-				'field_class'		=> '', // class(es) to add to field container
-				'custom_sanitize'	=> '', // function to do additional sanitization
-				'custom_field'		=> '', // function for custom display of field input
-				'visibility' 		=> array( // show this field only when other field(s) have certain values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
-					'_ctc_event_recurrence' => 'monthly',
-				),
-			),
-
-			// Recur Monthly Type
-			// 'day' can later trigger a new field for multiple days like Apple Calendar
-			'_ctc_event_recurrence_monthly_type' => array(
-				'name'				=> '',
-				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
-				'desc'				=> '',
-				'type'				=> 'radio', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
-				'checkbox_label'	=> '', // show text after checkbox
-				'options'			=> array( // array of keys/values for radio or select
-					'day'	=> __( 'On same day of the month', 'church-theme-content' ),
-					'week'	=> __( "On a specific week...", 'church-theme-content' ),
-				),
-				'upload_button'		=> '', // text for button that opens media frame
-				'upload_title'		=> '', // title appearing at top of media frame
-				'upload_type'		=> '', // optional type of media to filter by (image, audio, video, application/pdf)
-				'default'			=> 'day', // value to pre-populate option with (before first save or on reset)
-				'no_empty'			=> true, // if user empties value, force default to be saved instead
-				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
-				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
-				'field_attributes'	=> array(), // attr => value array for field container
-				'field_class'		=> '', // class(es) to add to field container
-				'custom_sanitize'	=> '', // function to do additional sanitization
-				'custom_field'		=> '', // function for custom display of field input
-				'visibility' 		=> array( // show this field only when other field(s) have certain values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
-					'_ctc_event_recurrence' => 'monthly',
-				),
-			),
-
-			// Recur Monthly on Week
-			'_ctc_event_recurrence_monthly_week' => array(
-				'name'				=> '',
-				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
-				'desc'				=> __( 'Day of the week is the same as Start Date.', 'church-theme-content' ),
-				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
-				'checkbox_label'	=> '', // show text after checkbox
-				'options'			=> array( // array of keys/values for radio or select
-					''		=> __( 'Select a Week', '', 'church-theme-content' ),
-					'1'		=> __( 'First', 'week of month', 'church-theme-content' ),
-					'2'		=> __( 'Second', 'week of month', 'church-theme-content' ),
-					'3'		=> __( 'Third', 'week of month', 'church-theme-content' ),
-					'4'		=> __( 'Fourth', 'week of month', 'church-theme-content' ),
-					'last'	=> __( 'Last', 'week of month', 'church-theme-content' ),
-				),
-				'upload_button'		=> '', // text for button that opens media frame
-				'upload_title'		=> '', // title appearing at top of media frame
-				'upload_type'		=> '', // optional type of media to filter by (image, audio, video, application/pdf)
-				'default'			=> '', // value to pre-populate option with (before first save or on reset)
-				'no_empty'			=> true, // if user empties value, force default to be saved instead
-				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
-				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
-				'field_attributes'	=> array(), // attr => value array for field container
-				'field_class'		=> '', // class(es) to add to field container
-				'custom_sanitize'	=> '', // function to do additional sanitization
-				'custom_field'		=> '', // function for custom display of field input
-				'visibility' 		=> array( // show this field only when other field(s) have certain values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
-					'_ctc_event_recurrence'					=> 'monthly', // and...
-					'_ctc_event_recurrence_monthly_type'	=> 'week',
-				),
-			),
-
 			// Recur Until
 			'_ctc_event_recurrence_end_date' => array(
-				'name'				=> __( 'Recur Until', 'church-theme-content' ),
+				'name'				=> __( 'Recur Until', 'ctc-custom-recurring-events' ),
 				'after_name'		=> '',
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> '',
@@ -792,35 +672,6 @@ function ctc_update_event_date_time( $post_id ) {
 
 add_action( 'ctc_after_save_event', 'ctc_update_event_date_time' );
 
-/**
- * Recur Monthly Type Correction
- *
- * If "On a specific week" is chosen but no week is chosen, fall back to "On same day of the month"
- * Similarly, if "On same day of month" is chosen, set week to nothing
- *
- * @since 1.2
- * @param int $post_id Post ID
- */
-function ctc_correct_event_recurrence_monthly_type( $post_id ) {
-
-	// Get values
-	$monthly_type 	= get_post_meta( $post_id, '_ctc_event_recurrence_monthly_type', true );
-	$monthly_week 	= get_post_meta( $post_id, '_ctc_event_recurrence_monthly_week', true );
-
-	// If type is week and week is empty, set type to day
-	if ( 'week' == $monthly_type && ! $monthly_week ) {
-		update_post_meta( $post_id, '_ctc_event_recurrence_monthly_type', 'day' );
-	}
-
-	// If type is day and week is not empty, empty it (so user is forced to choose when going back)
-	elseif ( 'day' == $monthly_type && $monthly_week ) {
-		update_post_meta( $post_id, '_ctc_event_recurrence_monthly_week', '' );
-	}
-
-}
-
-add_action( 'ctc_after_save_event', 'ctc_correct_event_recurrence_monthly_type' );
-
 /**********************************
  * ADMIN COLUMNS
  **********************************/
@@ -927,7 +778,9 @@ function ctc_event_columns_content( $column ) {
 			}
 
 			if ( ! empty( $recurrence ) && $recurrence != 'none' ) {
+
 				echo '<div class="description"><i>';
+
 				switch ( $recurrence ) {
 					case 'weekly' :
 						_e( 'Recurs Weekly', 'church-theme-content' );
@@ -939,7 +792,9 @@ function ctc_event_columns_content( $column ) {
 						_e( 'Recurs Yearly', 'church-theme-content' );
 						break;
 				}
+
 				echo '</i></div>';
+
 			}
 
 			break;
@@ -1043,15 +898,15 @@ add_filter( 'request', 'ctc_event_columns_sorting_request' ); // set how to sort
  **********************************/
 
 /**
- * Set All Events Defaults
+ * Set Events Defaults (All Events)
  *
- * Version 1.2 introduced new fields.
- * This fills in defaults for the new fields.
- * This is run by the database upgrader.
- * See ctc_upgrade_1_2() in includes/upgrade.php
+ * This will ensure defaults are filled for new fields.
+ * This can be safely run by the database upgrader for any version.
  *
- * NOTE: This does not set defaults for fields that have always existed.
- * NOTE: could be modified in future to accommodate other new fields.
+ * See includes/upgrade.php for how it is used.
+ *
+ * NOTE: This does not set defaults for fields that have always existed (not necessary).
+ * NOTE: This can be modified in future to accommodate other new fields.
  *
  * @since 1.2
  */
@@ -1068,23 +923,16 @@ function ctc_set_events_defaults() {
 	foreach( $posts as $post ) {
 
 	 	// Get current values
-		$recurrence_weekly_every = get_post_meta( $post->ID, '_ctc_event_recurrence_weekly_every', true );
-		$recurrence_monthly_every = get_post_meta( $post->ID, '_ctc_event_recurrence_monthly_every', true );
-		$recurrence_monthly_type = get_post_meta( $post->ID, '_ctc_event_recurrence_monthly_type', true );
-		$recurrence_monthly_week = get_post_meta( $post->ID, '_ctc_event_recurrence_monthly_week', true );
+		// Example: $field_name = get_post_meta( $post->ID, '_ctc_event_field_name', true );
+
+		// Set defaults for new fields
+		// Example: if ( ! $field_name ) update_post_meta( $post->ID, '_ctc_event_field_name', '1' );
 
 		// Date and Time fields are combined into one field for easier ordering (simpler queries)
 		// This hidden field was introduced in 1.2
 		// If no date, value will be 0000-00-00 00:00:00
 		// If no time, value will be 2014-10-28 00:00:00
 		ctc_update_event_date_time( $post->ID );
-
-		// Set defaults for new recurrence fields
-		// These were introduced in 1.2
-		if ( ! $recurrence_weekly_every ) update_post_meta( $post->ID, '_ctc_event_recurrence_weekly_every', '1' );
-		if ( ! $recurrence_monthly_every ) update_post_meta( $post->ID, '_ctc_event_recurrence_monthly_every', '1' );
-		if ( ! $recurrence_monthly_type ) update_post_meta( $post->ID, '_ctc_event_recurrence_monthly_type', 'day' );
-		if ( ! $recurrence_monthly_week ) update_post_meta( $post->ID, '_ctc_event_recurrence_monthly_week', '' );
 
 	}
 

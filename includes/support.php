@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 /*********************************************
  * FEATURE DATA
  *********************************************/
- 
+
 /**
  * Get feature data
  *
@@ -30,52 +30,52 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @return mixed Data for feature, all features or false if failed
  */
 function ctc_get_feature_data( $feature = false ) {
- 
+
 	// Feature data
 	$features = array(
-	
+
 		'sermons' => array(
 			'theme_support'	=> 'ctc-sermons', 	// theme support feature name
 			'post_type'		=> 'ctc_sermon', 	// post type feature requires
 		),
-		
+
 		'events' => array(
 			'theme_support'	=> 'ctc-events',
 			'post_type'		=> 'ctc_event',
 		),
-		
+
 		'people' => array(
 			'theme_support'	=> 'ctc-people',
 			'post_type'		=> 'ctc_person',
 		),
-		
+
 		'locations' => array(
 			'theme_support'	=> 'ctc-locations',
 			'post_type'		=> 'ctc_location',
 		),
 
 	);
-	
+
 	// Add feature to array values for ease of use
 	foreach ( $features as $feature_key => $feature_data ) {
 		$features[$feature_key]['feature'] = $feature_key;
 	}
-	
+
 	// Return specific feature
 	if ( ! empty( $feature ) ) {
 		if ( isset( $features[$feature] ) ) { // feature data exists
 			return apply_filters( 'ctc_get_feature_data-' . $feature, $features[$feature] );
 		}
 	}
-	
+
 	// Return all features
 	else {
 		return apply_filters( 'ctc_get_feature_data', $features );
 	}
-	
+
 	// In case feature given but not valid
 	return false;
-	
+
 }
 
 /**
@@ -97,12 +97,12 @@ function ctc_get_feature_data_by_post_type( $post_type ) {
 
 		// Post type given used by this feature
 		if ( $post_type == $feature_data['post_type'] ) {
-		
+
 			$data = $feature_data;
-			
+
 			break;
 
-		}	
+		}
 	}
 
 	// Return filterable
@@ -127,22 +127,22 @@ function ctc_set_default_theme_support() {
 
 	// Theme does not support plugin
 	if ( ! current_theme_supports( 'church-theme-content' ) ) {
-	
+
 		// Loop features
 		$features = ctc_get_feature_data();
 		foreach ( $features as $feature_key => $feature_data ) {
-		
+
 			// Add support with no arguments so defaults are used (everything)
 			add_theme_support( $feature_data['theme_support'] );
-			
+
 		}
-	
+
 	}
 
 }
- 
+
 add_action( 'init', 'ctc_set_default_theme_support', 1 ); // init 1 is right after after_setup_theme when theme add support but earlier than normal plugin init at 10
- 
+
 /**
  * Get theme support data for a feature
  *
@@ -171,14 +171,14 @@ function ctc_get_theme_support( $feature, $argument = null ) {
 				$data = null; // so return value will return false for isset()
 			}
 		}
-		
+
 		// Use all arguments
 		else {
 			$data = $support;
 		}
-	
+
 	}
-	
+
 	// Return data
 	return apply_filters( 'ctc_get_theme_support', $data, $feature, $argument );
 
@@ -201,17 +201,17 @@ function ctc_get_theme_support_by_post_type( $post_type, $argument = null ) {
 	// Get feature based on post type
 	$feature_data = ctc_get_feature_data_by_post_type( $post_type );
 	if ( $feature_data ) {
-	
+
 		// Get data for feature/argument
 		$data = ctc_get_theme_support( $feature_data['theme_support'], $argument );
-		
-	}		
-	
+
+	}
+
 	// Return data
 	return apply_filters( 'ctc_get_theme_support_by_post_type', $data, $post_type, $argument );
 
 }
- 
+
 /*********************************************
  * FEATURE CHECKING
  *********************************************/
@@ -226,25 +226,25 @@ function ctc_get_theme_support_by_post_type( $post_type, $argument = null ) {
 function ctc_feature_supported( $feature ) {
 
 	$supported = false;
-	
+
 	// Get feature data
 	$feature_data = ctc_get_feature_data( $feature );
 	if ( $feature_data ) { // valid feature returns data
 
 		// Does theme support feature?
 		if ( current_theme_supports( $feature_data['theme_support'] ) ) {
-		
-			$supported = true;	
+
+			$supported = true;
 
 			// (in future could override support via plugin settings here)
-			
+
 		}
-		
+
 	}
-	
+
 	// Return filtered
 	return apply_filters( 'ctc_feature_supported', $supported, $feature );
-	
+
 }
 
 /**
@@ -258,7 +258,7 @@ function ctc_feature_supported( $feature ) {
 function ctc_taxonomy_supported( $feature, $taxonomy ) {
 
 	$supported = false;
-	
+
 	// Get feature data
 	$feature_data = ctc_get_feature_data( $feature );
 	if ( $feature_data ) { // valid feature returns data
@@ -271,23 +271,23 @@ function ctc_taxonomy_supported( $feature, $taxonomy ) {
 			if ( in_array( $taxonomy, (array) $theme_taxonomies ) ) {
 				$supported = true;
 			}
-		
+
 		}
-		
+
 		// Theme taxonomies are not specified
 		// Default is to use all taxonomies when support not explicit, so anything returns true
 		else {
-			$supported = true;				
+			$supported = true;
 		}
-		
+
 		// (if true, could override with false using plugin settings here)
 		// (checking if show_ui is true is not enhough since this is used during taxonomy registration)
 
 	}
-	
+
 	// Return filtered
 	return apply_filters( 'ctc_taxonomy_supported', $supported, $feature, $taxonomy );
-	
+
 }
 
 /**
@@ -301,7 +301,7 @@ function ctc_taxonomy_supported( $feature, $taxonomy ) {
 function ctc_field_supported( $feature, $field ) {
 
 	$supported = false;
-	
+
 	// Get feature data
 	$feature_data = ctc_get_feature_data( $feature );
 	if ( $feature_data ) { // valid feature returns data
@@ -314,28 +314,28 @@ function ctc_field_supported( $feature, $field ) {
 			if ( in_array( $field, (array) $theme_fields ) ) {
 				$supported = true;
 			}
-		
+
 		}
-		
+
 		// Theme fields are not specified
 		// Default is to use all fields when support not explicit, so anything returns true
 		else {
-			$supported = true;				
+			$supported = true;
 		}
-		
+
 		// (if true, can override with false using plugin settings here)
 
 	}
-	
+
 	// Return filtered
 	return apply_filters( 'ctc_field_supported', $supported, $feature, $field );
-	
+
 }
 
 /*********************************************
  * FIELD FILTERING
  *********************************************/
- 
+
 /**
  * Filter Meta Box Fields
  *
@@ -349,22 +349,22 @@ function ctc_filter_fields() {
 	// Loop features to filter their fields
 	$features = ctc_get_feature_data();
 	foreach ( $features as $feature_key => $feature_data ) {
-	
+
 		// Has post type, filter CT_Meta_Box configs
 		if ( isset( $feature_data['post_type'] ) ) {
-		
+
 			// Set Visible Fields
 			add_filter( 'ctmb_visible_fields-' . $feature_data['post_type'], 'ctc_set_visible_fields', 10, 2 );
-			
+
 			// Set Field Overrides
 			add_filter( 'ctmb_field_overrides-' . $feature_data['post_type'], 'ctc_set_field_overrides', 10, 2 );
-			
+
 		}
 
 	}
 
 }
- 
+
 add_action( 'init', 'ctc_filter_fields' );
 
 /**
@@ -379,16 +379,16 @@ add_action( 'init', 'ctc_filter_fields' );
  * @return array Modified $visible_fields
  */
 function ctc_set_visible_fields( $visible_fields, $post_type ) {
-	
+
 	// All fields
 	$original_visible_fields = $visible_fields;
-	
+
 	// Filter visible fields based on theme support
 	// If not set, all fields are used by default
 	// If set and empty, all fields will be hidden
 	$theme_fields = ctc_get_theme_support_by_post_type( $post_type, 'fields' );
 	if ( isset( $theme_fields ) ) {
-	
+
 		// Make new array out of fields theme supports
 		$visible_fields = $theme_fields;
 
@@ -399,11 +399,11 @@ function ctc_set_visible_fields( $visible_fields, $post_type ) {
 				$visible_fields[] = $field;
 			}
 		}
-		
+
 	}
 
 	// (here plugin settings could disable fields supported by theme)
-	
+
 	// Return default or filtered field list
 	return $visible_fields;
 

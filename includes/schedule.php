@@ -44,9 +44,6 @@ add_action( 'wp', 'ctc_schedule_recurring_events' );
  */
 function ctc_update_recurring_event_dates() {
 
-	// Instantiate recurrence class
-	$ctc_recurrence = new CT_Recurrence();
-
 	// Get all events with end date in past and have valid recurring value
 	$events_query = new WP_Query( array(
 		'post_type'	=> 'ctc_event',
@@ -70,6 +67,10 @@ function ctc_update_recurring_event_dates() {
 	// Loop events
 	if ( ! empty( $events_query->posts ) ) {
 
+		// Instantiate recurrence class
+		$ctc_recurrence = new CT_Recurrence();
+
+		// Loop events to modify dates
 		foreach ( $events_query->posts as $post ) {
 
 			// Get start and end date
@@ -78,19 +79,7 @@ function ctc_update_recurring_event_dates() {
 
 		 	// Get recurrence
 		 	$recurrence = get_post_meta( $post->ID, '_ctc_event_recurrence', true );
-			$recurrence_weekly_every = get_post_meta( $post->ID, '_ctc_event_recurrence_weekly_every', true );
-			$recurrence_monthly_every = get_post_meta( $post->ID, '_ctc_event_recurrence_monthly_every', true );
-			$recurrence_monthly_type = get_post_meta( $post->ID, '_ctc_event_recurrence_monthly_type', true );
-			$recurrence_monthly_week = get_post_meta( $post->ID, '_ctc_event_recurrence_monthly_week', true );
 			$recurrence_end_date = get_post_meta( $post->ID, '_ctc_event_recurrence_end_date', true );
-
-			// Interval
-			$interval = 1;
-			if ( 'weekly' == $recurrence ) {
-				$interval = $recurrence_weekly_every;
-			} elseif ( 'monthly' == $recurrence ) {
-				$interval = $recurrence_monthly_every;
-			}
 
 			// Difference between start and end date in seconds
 			$time_difference = strtotime( $end_date ) - strtotime( $start_date );
@@ -99,10 +88,8 @@ function ctc_update_recurring_event_dates() {
 			$args = array(
 				'start_date'			=> $start_date, // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
 				'frequency'				=> $recurrence, // weekly, monthly, yearly
-				'interval'				=> $interval, // every 1, 2 or 3, etc. weeks, months or years
-				'monthly_type'			=> $recurrence_monthly_type, // day (same day of month) or week (on a specific week); if recurrence is monthly (day is default)
-				'monthly_week'			=> $recurrence_monthly_week, // 1 - 4 or 'last'; if recurrence is monthly and monthly_type is 'week'
 			);
+			$args = apply_filters( 'ctc_event_recurrence_args', $args, $post ); // Custom Recurring Events add-on uses this
 			$new_start_date = $ctc_recurrence->calc_next_future_date( $args );
 
 			// If no new start date gotten, set it to current start date
