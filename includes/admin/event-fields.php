@@ -222,7 +222,7 @@ function ctc_add_meta_box_event_date() {
 				'name'				=> __( 'Recurrence', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
-				'desc'				=> _x( "Start and end dates will automatically move forward after the event ends.", 'event meta box', 'church-theme-content' ),
+				'desc'				=> _x( "Dates automatically move forward after event ends.", 'event meta box', 'church-theme-content' ),
 				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array( // array of keys/values for radio or select
@@ -509,6 +509,42 @@ function ctc_add_meta_box_event_location() {
 }
 
 add_action( 'admin_init', 'ctc_add_meta_box_event_location' );
+
+/**
+ * Append Custom Recurring Events note
+ *
+ * Inform user of add-on by appending note to Recurrence field's description
+ *
+ * @since 1.2
+ * @param array $field Field settings
+ * @return array Modified field settings
+ */
+function ctc_append_custom_recurrence_note( $field ) {
+
+	// Show note only when add-on is not in use
+	if ( ! defined( 'CTC_CRE_VERSION' ) ) {
+
+		// Description key may not be set
+		$field['desc'] = isset( $field['desc'] ) ? $field['desc'] : '';
+
+		// If has desc, break to new line
+		if ( ! empty( $field['desc'] ) ) {
+			$field['desc'] .= '<br>';
+		}
+
+		// Append note
+		$field['desc'] .= sprintf(
+			__( 'Install <a href="%1$s" target="_blank">Custom Recurring Events</a> for more options.', 'church-theme-content' ),
+			'http://churchthemes.com/plugins/custom-recurring-events?utm_source=ctc&utm_medium=plugin&utm_campaign=custom_recur_events&utm_content=recurrence_field'
+		);
+
+	}
+
+	return $field;
+
+}
+
+add_action( 'ctmb_field-_ctc_event_recurrence', 'ctc_append_custom_recurrence_note' );
 
 /**********************************
  * AFTER SAVING
