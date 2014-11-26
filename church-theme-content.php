@@ -127,6 +127,11 @@ class Church_Theme_Content {
 			define( 'CTMB_URL', CTC_URL . '/' . CTC_LIB_DIR . '/ct-meta-box' ); // for enqueing JS/CSS
 		}
 
+		// CT Options
+		if ( ! defined( 'CTO_URL' ) ) { // in case also used in other plugin
+			define( 'CTO_URL', CTC_URL . '/' . CTC_LIB_DIR . '/ct-options' ); // for enqueing JS/CSS
+		}
+
 	}
 
 	/**
@@ -206,10 +211,12 @@ class Church_Theme_Content {
 				CTC_ADMIN_DIR . '/location-fields.php',
 				CTC_ADMIN_DIR . '/person-fields.php',
 				CTC_ADMIN_DIR . '/sermon-fields.php',
+				CTC_ADMIN_DIR . '/settings.php',
 				CTC_ADMIN_DIR . '/upgrade.php',
 
 				// Libraries
 				CTC_LIB_DIR . '/ct-meta-box/ct-meta-box.php', // see CTMB_URL constant defined above
+				CTC_LIB_DIR . '/ct-options/ct-options.php', // see CTO_URL constant defined above
 
 			),
 
