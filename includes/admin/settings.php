@@ -40,6 +40,10 @@ function ctc_add_plugin_settings() {
 		// Plugin File
 		'plugin_file'	=> CTC_FILE_BASE,	// plugin-name/plugin-name.php
 
+		// URL for CT Plugin Settings directory
+		// This is used for loading its CSS and JS files
+		'url'			=> CTC_URL . '/' . CTC_LIB_DIR . '/ct-plugin-settings',
+
 		// Section Tabs
 		'sections' => array(
 

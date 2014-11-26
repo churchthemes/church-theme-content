@@ -128,11 +128,6 @@ class Church_Theme_Content {
 			define( 'CTMB_URL', CTC_URL . '/' . CTC_LIB_DIR . '/ct-meta-box' ); // for enqueing JS/CSS
 		}
 
-		// CT Plugin Settings
-		if ( ! defined( 'CTPS_URL' ) ) { // in case also used in other plugin
-			define( 'CTPS_URL', CTC_URL . '/' . CTC_LIB_DIR . '/ct-plugin-settings' ); // for enqueing JS/CSS
-		}
-
 	}
 
 	/**
