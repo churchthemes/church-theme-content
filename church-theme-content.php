@@ -107,8 +107,9 @@ class Church_Theme_Content {
 		define( 'CTC_VERSION', 		$this->plugin_data['Version'] );					// plugin version
 		define( 'CTC_NAME', 		$this->plugin_data['Name'] );						// plugin name
 		define( 'CTC_INFO_URL',		$this->plugin_data['PluginURI'] );					// plugin's info page URL
-		define( 'CTC_FILE', 		__FILE__ );											// plugin's main file path
-		define( 'CTC_DIR', 			dirname( plugin_basename( CTC_FILE ) ) );			// plugin's directory
+		define( 'CTC_FILE', 		__FILE__ );											// plugin's main file absolute path
+		define( 'CTC_FILE_BASE', 	plugin_basename( CTC_FILE );						// plugin's main file path relative to plugin directory
+		define( 'CTC_DIR', 			dirname( CTC_FILE_BASE );							// plugin's directory
 		define( 'CTC_PATH',			untrailingslashit( plugin_dir_path( CTC_FILE ) ) );	// plugin's directory
 		define( 'CTC_URL', 			untrailingslashit( plugin_dir_url( CTC_FILE ) ) );	// plugin's directory URL
 
