@@ -31,18 +31,14 @@ function ctc_add_plugin_settings() {
 
 		// Master Option
 		// All settings will be saved as an array under this single option ID
-		'option_id'			 => 'ctc_settings',
+		'option_id'		=> 'ctc_settings',
 
-		// Menu
-		'menu_slug'			=> CTC_DIR,			// Slug used in menu (plugin's directory slug is useful)
-		'menu_title'		=> CTC_NAME,		// Title in menu
-
-		// Page
-		'page_title' 		=> sprintf( __( '%1$s Settings', 'church-theme-content' ), CTC_NAME ),
+		// Titles
+		'page_title' 	=> sprintf( __( '%1$s Settings', 'church-theme-content' ), CTC_NAME ),
+		'menu_title'	=> CTC_NAME,
 
 		// Plugin File
-		// This is used for adding "Settings" action link in list of plugins
-		'plugin_file'		=> CTC_FILE_BASE,	// plugin-name/plugin-name.php
+		'plugin_file'	=> CTC_FILE_BASE,	// plugin-name/plugin-name.php
 
 		// Section Tabs
 		'sections' => array(
@@ -57,12 +53,12 @@ function ctc_add_plugin_settings() {
 				// Title
 				'title' => _x( 'Add-on Licenses', 'settings', 'church-theme-content' ),
 
-				// Fields
+				// Fields (Settings)
 				'fields' => array(
 
 					// Example
 					/*
-					'option_key' => array(
+					'setting_key' => array(
 						'name'				=> __( 'Field Name', 'church-theme-content' ),
 						'desc'				=> __( 'This is the description below the field.', 'church-theme-content' ),
 						'type'				=> 'text', // text, textarea, checkbox, radio, select, number
@@ -85,7 +81,7 @@ function ctc_add_plugin_settings() {
 						'checkbox_label'	=> '', //show text after checkbox //show text after checkbox
 						'options'			=> array(), // array of keys/values for radio or select
 						'default'			=> '', // value to pre-populate option with (before first save or on reset)
-						'no_empty'			=> false, // if user empties value, force default to be saved instead
+						'no_empty'			=> true, // if user empties value, force default to be saved instead
 						'allow_html'		=> false, // allow HTML to be used in the value
 						'class'				=> '', // classes to add to input
 						'custom_sanitize'	=> '', // function to do additional sanitization
@@ -162,7 +158,7 @@ function ctc_add_plugin_settings() {
 	$config = apply_filters( 'ctc_settings_config', $config );
 
 	// Add settings
-	$ctc_settings = new CT_Options( $config );
+	$ctc_settings = new CT_Plugin_Settings( $config );
 
 }
 
