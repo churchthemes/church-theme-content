@@ -198,6 +198,7 @@ class Church_Theme_Content {
 
 				// Functions
 				CTC_ADMIN_DIR . '/activation.php',
+				CTC_ADMIN_DIR . '/add-ons.php',
 				CTC_ADMIN_DIR . '/admin-helpers.php',
 				CTC_ADMIN_DIR . '/admin-menu.php',
 				CTC_ADMIN_DIR . '/admin-posts.php',
