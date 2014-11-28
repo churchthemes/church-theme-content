@@ -55,7 +55,14 @@ function ctc_add_plugin_settings() {
 			'licenses' => array(
 
 				// Title
-				'title' => _x( 'Add-on Licenses', 'settings', 'church-theme-content' ),
+				'title'	=> _x( 'Add-on Licenses', 'settings', 'church-theme-content' ),
+
+				// Description
+				'desc'	=> sprintf(
+								/* translators: %1$s is URl to Add-ons */
+								__( 'Save then activate your license keys for Church Theme Content plugin <a href="%1$s" target="_blank">Add-ons</a>. This enables one-click updates.', 'church-theme-content' ),
+								'http://churchthemes.com/plugins/?utm_source=ctc&utm_medium=plugin&utm_campaign=addons&utm_content=settings'
+							),
 
 				// Fields (Settings)
 				'fields' => array(
@@ -116,6 +123,8 @@ function ctc_add_plugin_settings() {
 
 				// Title
 				'title' => _x( 'Second Section', 'settings', 'church-theme-content' ),
+
+				'desc'	=> '',
 
 				// Fields
 				'fields' => array(

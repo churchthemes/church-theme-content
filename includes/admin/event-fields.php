@@ -535,7 +535,7 @@ function ctc_append_custom_recurrence_note( $field ) {
 		// Append note
 		$field['desc'] .= sprintf(
 			__( 'Install <a href="%1$s" target="_blank">Custom Recurring Events</a> for more options.', 'church-theme-content' ),
-			'http://churchthemes.com/plugins/custom-recurring-events?utm_source=ctc&utm_medium=plugin&utm_campaign=custom_recur_events&utm_content=recurrence_field'
+			'http://churchthemes.com/plugins/custom-recurring-events/?utm_source=ctc&utm_medium=plugin&utm_campaign=custom_recur_events&utm_content=recurrence_field'
 		);
 
 	}
