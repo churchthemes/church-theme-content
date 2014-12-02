@@ -90,28 +90,18 @@ function ctc_add_plugin_settings() {
 
 			/*
 			// Second Section
-			'second_section' => array(),
-			*/
-
-
-			// Add-on Licenses
-			'licens2es' => array(
+			'second_section' => array(
 
 				// Title
-				'title'	=> _x( 'Delete', 'settings', 'church-theme-content' ),
+				'title'	=> __( 'Second Section', 'church-theme-content' ),
 
 				// Description
-				'desc'	=> sprintf(
-								/* translators: %1$s is URl to Add-ons */
-								__( 'Other', 'church-theme-content' ),
-								'http://churchthemes.com/plugins/?utm_source=ctc&utm_medium=plugin&utm_campaign=add-ons&utm_content=settings'
-							),
+				'desc'	=> __( 'Second section description.', 'church-theme-content' ),
 
 				// Fields (Settings)
 				'fields' => array(
 
 					// Example
-
 					'setting_key' => array(
 						'name'				=> __( 'Field Name', 'church-theme-content' ),
 						'desc'				=> __( 'This is the description below the field.', 'church-theme-content' ),
@@ -126,10 +116,11 @@ function ctc_add_plugin_settings() {
 						'custom_content'	=> '', // function for custom display of field input
 					),
 
-
 				)
 
 			),
+			*/
+
 		)
 
 	);
