@@ -93,6 +93,43 @@ function ctc_add_plugin_settings() {
 			'second_section' => array(),
 			*/
 
+
+			// Add-on Licenses
+			'licens2es' => array(
+
+				// Title
+				'title'	=> _x( 'Delete', 'settings', 'church-theme-content' ),
+
+				// Description
+				'desc'	=> sprintf(
+								/* translators: %1$s is URl to Add-ons */
+								__( 'Other', 'church-theme-content' ),
+								'http://churchthemes.com/plugins/?utm_source=ctc&utm_medium=plugin&utm_campaign=add-ons&utm_content=settings'
+							),
+
+				// Fields (Settings)
+				'fields' => array(
+
+					// Example
+
+					'setting_key' => array(
+						'name'				=> __( 'Field Name', 'church-theme-content' ),
+						'desc'				=> __( 'This is the description below the field.', 'church-theme-content' ),
+						'type'				=> 'text', // text, textarea, checkbox, radio, select, number
+						'checkbox_label'	=> '', //show text after checkbox
+						'options'			=> array(), // array of keys/values for radio or select
+						'default'			=> '', // value to pre-populate option with (before first save or on reset)
+						'no_empty'			=> false, // if user empties value, force default to be saved instead
+						'allow_html'		=> false, // allow HTML to be used in the value
+						'class'				=> '', // classes to add to input
+						'custom_sanitize'	=> '', // function to do additional sanitization
+						'custom_content'	=> '', // function for custom display of field input
+					),
+
+
+				)
+
+			),
 		)
 
 	);
