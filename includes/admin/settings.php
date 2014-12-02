@@ -84,84 +84,14 @@ function ctc_add_plugin_settings() {
 					),
 					*/
 
-					// First Setting
-					'first_setting' => array(
-						'name'				=> __( 'First Setting', 'church-theme-content' ),
-						'desc'				=> '',
-						'type'				=> 'text', // text, textarea, checkbox, radio, select, number
-						'checkbox_label'	=> '', //show text after checkbox //show text after checkbox
-						'options'			=> array(), // array of keys/values for radio or select
-						'default'			=> '', // value to pre-populate option with (before first save or on reset)
-						'no_empty'			=> true, // if user empties value, force default to be saved instead
-						'allow_html'		=> false, // allow HTML to be used in the value
-						'class'				=> '', // classes to add to input
-						'custom_sanitize'	=> '', // function to do additional sanitization
-						'custom_content'	=> '' // function for custom display of field input
-					),
-
-					// Second Setting
-					'second_setting' => array(
-						'name'				=> __( 'Second Setting', 'church-theme-content' ),
-						'desc'				=> '',
-						'type'				=> 'text', // text, textarea, checkbox, radio, select, number
-						'checkbox_label'	=> '', //show text after checkbox //show text after checkbox
-						'options'			=> array(), // array of keys/values for radio or select
-						'default'			=> '', // value to pre-populate option with (before first save or on reset)
-						'no_empty'			=> false, // if user empties value, force default to be saved instead
-						'allow_html'		=> false, // allow HTML to be used in the value
-						'class'				=> '', // classes to add to input
-						'custom_sanitize'	=> '', // function to do additional sanitization
-						'custom_content'	=> '' // function for custom display of field input
-					),
-
 				)
 
 			),
 
+			/*
 			// Second Section
-			'second_section' => array(
-
-				// Title
-				'title' => _x( 'Second Section', 'settings', 'church-theme-content' ),
-
-				'desc'	=> '',
-
-				// Fields
-				'fields' => array(
-
-					// Third Setting
-					'third_setting' => array(
-						'name'				=> __( 'Third Setting', 'church-theme-content' ),
-						'desc'				=> '',
-						'type'				=> 'text', // text, textarea, checkbox, radio, select, number
-						'checkbox_label'	=> '', //show text after checkbox //show text after checkbox
-						'options'			=> array(), // array of keys/values for radio or select
-						'default'			=> '', // value to pre-populate option with (before first save or on reset)
-						'no_empty'			=> false, // if user empties value, force default to be saved instead
-						'allow_html'		=> false, // allow HTML to be used in the value
-						'class'				=> '', // classes to add to input
-						'custom_sanitize'	=> '', // function to do additional sanitization
-						'custom_content'	=> '' // function for custom display of field input
-					),
-
-					// Fourth Setting
-					'fourth_setting' => array(
-						'name'				=> __( 'Fourth Setting', 'church-theme-content' ),
-						'desc'				=> '',
-						'type'				=> 'text', // text, textarea, checkbox, radio, select, number
-						'checkbox_label'	=> '', //show text after checkbox //show text after checkbox
-						'options'			=> array(), // array of keys/values for radio or select
-						'default'			=> '', // value to pre-populate option with (before first save or on reset)
-						'no_empty'			=> false, // if user empties value, force default to be saved instead
-						'allow_html'		=> false, // allow HTML to be used in the value
-						'class'				=> '', // classes to add to input
-						'custom_sanitize'	=> '', // function to do additional sanitization
-						'custom_content'	=> '' // function for custom display of field input
-					),
-
-				)
-
-			),
+			'second_section' => array(),
+			*/
 
 		)
 
