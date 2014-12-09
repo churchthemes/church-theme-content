@@ -1,0 +1,47 @@
+/**
+ * Plugin Settings
+ */
+
+/*******************************************
+ * ADD-ON LICENSES
+ *******************************************/
+
+/* License Key Field */
+
+.ctps-section-licenses input[type=text] {
+	width: 300px; /* shorter */
+}
+
+/* License Status */
+
+.ctc-edd-license-info {
+	/* font-size: 0.9em !important; */
+}
+
+	.ctc-license-active {
+		color: #1ba31b;
+		font-weight: bold;
+	}
+
+	.ctc-license-inactive,
+	.ctc-license-expired,
+	.ctc-license-expiring-soon,
+	.ctc-license-key-missing {
+		color: #d52121;
+		font-weight: bold;
+	}
+
+	.ctc-license-expiration-label {
+		margin-left: 15px;
+	}
+
+	.ctc-license-expiration {
+		font-weight: bold;
+	}
+
+/* License Buttons */
+
+.ctc-license-button,
+input[name^=ctc_settings] {
+	margin-right: 8px !important;
+}

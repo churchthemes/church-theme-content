@@ -106,11 +106,12 @@ class Church_Theme_Content {
 		// Plugin details
 		define( 'CTC_VERSION', 		$this->plugin_data['Version'] );					// plugin version
 		define( 'CTC_NAME', 		$this->plugin_data['Name'] );						// plugin name
+		define( 'CTC_AUTHOR', 		strip_tags( $this->plugin_data['Author'] ) );		// plugin author
 		define( 'CTC_INFO_URL',		$this->plugin_data['PluginURI'] );					// plugin's info page URL
 		define( 'CTC_FILE', 		__FILE__ );											// plugin's main file absolute path
 		define( 'CTC_FILE_BASE', 	plugin_basename( CTC_FILE ) );						// plugin's main file path relative to plugin directory
 		define( 'CTC_DIR', 			dirname( CTC_FILE_BASE ) );							// plugin's directory
-		define( 'CTC_PATH',			untrailingslashit( plugin_dir_path( CTC_FILE ) ) );	// plugin's directory
+		define( 'CTC_PATH',			untrailingslashit( plugin_dir_path( CTC_FILE ) ) );	// plugin's absolute path
 		define( 'CTC_URL', 			untrailingslashit( plugin_dir_url( CTC_FILE ) ) );	// plugin's directory URL
 
 		// Directories
@@ -186,11 +187,15 @@ class Church_Theme_Content {
 				CTC_INC_DIR . '/mime-types.php',
 				CTC_INC_DIR . '/post-types.php',
 				CTC_INC_DIR . '/schedule.php',
+				CTC_INC_DIR . '/settings.php',
 				CTC_INC_DIR . '/support.php',
 				CTC_INC_DIR . '/taxonomies.php',
 
 				// Classes
 				CTC_CLASS_DIR . '/ct-recurrence.php',
+
+				// Libraries
+				CTC_LIB_DIR . '/ct-plugin-settings/ct-plugin-settings.php', // see CTPS_URL constant defined above
 
 			),
 
@@ -200,6 +205,7 @@ class Church_Theme_Content {
 				// Functions
 				CTC_ADMIN_DIR . '/activation.php',
 				CTC_ADMIN_DIR . '/admin-add-ons.php',
+				CTC_ADMIN_DIR . '/admin-enqueue-styles.php',
 				CTC_ADMIN_DIR . '/admin-helpers.php',
 				CTC_ADMIN_DIR . '/admin-menu.php',
 				CTC_ADMIN_DIR . '/admin-posts.php',
@@ -210,12 +216,10 @@ class Church_Theme_Content {
 				CTC_ADMIN_DIR . '/location-fields.php',
 				CTC_ADMIN_DIR . '/person-fields.php',
 				CTC_ADMIN_DIR . '/sermon-fields.php',
-				CTC_ADMIN_DIR . '/settings.php',
 				CTC_ADMIN_DIR . '/upgrade.php',
 
 				// Libraries
 				CTC_LIB_DIR . '/ct-meta-box/ct-meta-box.php', // see CTMB_URL constant defined above
-				CTC_LIB_DIR . '/ct-plugin-settings/ct-plugin-settings.php', // see CTPS_URL constant defined above
 
 			),
 

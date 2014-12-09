@@ -2,10 +2,9 @@
 /**
  * Plugin Settings
  *
- * Create a plugin settings page.
+ * Setup and retrieve plugin settings.
  *
  * @package    Church_Theme_Content
- * @subpackage Admin
  * @copyright  Copyright (c) 2014, churchthemes.com
  * @link       https://github.com/churchthemes/church-theme-content
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -16,15 +15,20 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**********************************
- * PLUGIN SETTINGS
+ * SETTINGS SETUP
  **********************************/
 
 /**
- * Add Plugin Settings
+ * Init settings class
+ *
+ * This will add settings page and make $ctc_settings object available for settings retrieval
  *
  * @since 1.2
+ * @global object $ctc_settings
  */
-function ctc_add_plugin_settings() {
+function ctc_settings_setup() {
+
+	global $ctc_settings;
 
 	// Configuration
 	$config = array(
@@ -38,7 +42,7 @@ function ctc_add_plugin_settings() {
 		'menu_title'	=> CTC_NAME,
 
 		// Plugin File
-		'plugin_file'	=> CTC_FILE_BASE,	// plugin-name/plugin-name.php
+		'plugin_file'	=> CTC_FILE,	// path to plugin's main file
 
 		// URL for CT Plugin Settings directory
 		// This is used for loading its CSS and JS files
@@ -48,8 +52,8 @@ function ctc_add_plugin_settings() {
 		'sections' => array(
 
 			// Future
-			// - Possibly add extendable "Add-ons" with secton for each add-on, like EDD
-			// - Then, rename "Add-on Licenses" simply to "Licenses", like EDD
+			// - Possibly add extendable "Add-on Settings" with section for each add-on, like EDD
+			// - It would sit next to the existing "Add-on Licenses" tab, like EDD
 
 			// Add-on Licenses
 			'licenses' => array(
@@ -133,4 +137,26 @@ function ctc_add_plugin_settings() {
 
 }
 
-add_action( 'init', 'ctc_add_plugin_settings' );
+add_action( 'init', 'ctc_settings_setup' );
+
+/**********************************
+ * SETTINGS DATA
+ **********************************/
+
+/**
+ * Get a setting
+ *
+ * @since 1.2
+ * @param string $setting Setting key
+ * @return mixed Setting value
+ * @global object $ctc_settings
+ */
+function ctc_setting( $setting ) {
+
+	global $ctc_settings;
+
+	$value = $ctc_settings->get( $setting );
+
+	return apply_filters( 'ctc_setting', $value, $setting );
+
+}

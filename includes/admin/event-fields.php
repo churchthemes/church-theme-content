@@ -248,7 +248,7 @@ function ctc_add_meta_box_event_date() {
 
 			// Recur Until
 			'_ctc_event_recurrence_end_date' => array(
-				'name'				=> __( 'Recur Until', 'ctc-custom-recurring-events' ),
+				'name'				=> __( 'Recur Until', 'church-theme-content' ),
 				'after_name'		=> '',
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> '',
