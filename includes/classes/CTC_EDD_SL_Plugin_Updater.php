@@ -9,8 +9,7 @@
  * - Prefixed to remind that this is modified
  * - Prefixed so this version always loads; class_exists() not necessary
  * - Added textdomain for translation
- * - Change $changelog_link to go direct to changelog in plugin guide
- * - Make $changelog_link's anchor open in new window (two instances)
+ * - Make $changelog_link go to external URL if provided, in new window
  * - No direct access
  *
  * @author Pippin Williamson
@@ -185,24 +184,36 @@ class CTC_EDD_SL_Plugin_Updater { // CTC Mod
             $wp_list_table = _get_list_table( 'WP_Plugins_List_Table' );
             echo '<tr class="plugin-update-tr"><td colspan="' . $wp_list_table->get_column_count() . '" class="plugin-update colspanchange"><div class="update-message">';
 
-            // CT Mod
-            //$changelog_link = self_admin_url( 'index.php?edd_sl_action=view_plugin_changelog&plugin=' . $this->name . '&slug=' . $this->slug . '&TB_iframe=true&width=772&height=911' );
-            $changelog_link = 'http://churchthemes.com/go/plugin-changelog/' . $this->slug;
+            $changelog_link = self_admin_url( 'index.php?edd_sl_action=view_plugin_changelog&plugin=' . $this->name . '&slug=' . $this->slug . '&TB_iframe=true&width=772&height=911' );
 
+            // CT Mod
+            // Use external changelog URL instead of post-provided changelog embedded in modal
+            $ctc_changelog_url = ctc_get_add_on( $this->slug, 'changelog_url' );
+            $ctc_changelog_link_class = 'thickbox';
+            if ( $ctc_changelog_url ) {
+                $changelog_link = $ctc_changelog_url;
+                $ctc_changelog_link_class = '';
+            }
+
+            // CT Mod
+            // 1. Added CTC textdomain
+            // 2. Added class replacement. If $changelog_link provided, class is none; otherwise class for modal is used
             if ( empty( $version_info->download_link ) ) {
                 printf(
-                    __( 'There is a new version of %1$s available. <a target="_blank" class="thickbox" href="%2$s">View version %3$s details</a>.', 'church-theme-content' ), // CTC Mod textdomain
-                    esc_html( $version_info->name ),
-                    esc_url( $changelog_link ),
-                    esc_html( $version_info->new_version )
-                );
-            } else {
-                printf(
-                    __( 'There is a new version of %1$s available. <a target="_blank" class="thickbox" href="%2$s">View version %3$s details</a> or <a href="%4$s">update now</a>.', 'church-theme-content' ), // CTC Mod textdomain
+                    __( 'There is a new version of %1$s available. <a target="_blank" class="%4$s" href="%2$s">View version %3$s details</a>.', 'church-theme-content' ), // CTC Mod textdomain
                     esc_html( $version_info->name ),
                     esc_url( $changelog_link ),
                     esc_html( $version_info->new_version ),
-                    esc_url( wp_nonce_url( self_admin_url( 'update.php?action=upgrade-plugin&plugin=' ) . $this->name, 'upgrade-plugin_' . $this->name ) )
+                    $ctc_changelog_link_class
+                );
+            } else {
+                printf(
+                    __( 'There is a new version of %1$s available. <a target="_blank" class="%5$s" href="%2$s">View version %3$s details</a> or <a href="%4$s">update now</a>.', 'church-theme-content' ), // CTC Mod textdomain
+                    esc_html( $version_info->name ),
+                    esc_url( $changelog_link ),
+                    esc_html( $version_info->new_version ),
+                    esc_url( wp_nonce_url( self_admin_url( 'update.php?action=upgrade-plugin&plugin=' ) . $this->name, 'upgrade-plugin_' . $this->name ) ),
+                    $ctc_changelog_link_class
                 );
             }
 
