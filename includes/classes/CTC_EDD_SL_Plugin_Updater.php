@@ -9,6 +9,8 @@
  * - Prefixed to remind that this is modified
  * - Prefixed so this version always loads; class_exists() not necessary
  * - Added textdomain for translation
+ * - Change $changelog_link to go direct to changelog in plugin guide
+ * - Make $changelog_link's anchor open in new window (two instances)
  * - No direct access
  *
  * @author Pippin Williamson
@@ -183,7 +185,9 @@ class CTC_EDD_SL_Plugin_Updater { // CTC Mod
             $wp_list_table = _get_list_table( 'WP_Plugins_List_Table' );
             echo '<tr class="plugin-update-tr"><td colspan="' . $wp_list_table->get_column_count() . '" class="plugin-update colspanchange"><div class="update-message">';
 
-            $changelog_link = self_admin_url( 'index.php?edd_sl_action=view_plugin_changelog&plugin=' . $this->name . '&slug=' . $this->slug . '&TB_iframe=true&width=772&height=911' );
+            // CT Mod
+            //$changelog_link = self_admin_url( 'index.php?edd_sl_action=view_plugin_changelog&plugin=' . $this->name . '&slug=' . $this->slug . '&TB_iframe=true&width=772&height=911' );
+            $changelog_link = 'http://churchthemes.com/go/plugin-changelog/' . $this->slug;
 
             if ( empty( $version_info->download_link ) ) {
                 printf(
