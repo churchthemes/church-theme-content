@@ -30,14 +30,14 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 	/**
 	 * CT Recurrence Class
 	 *
-	 * @since 0.1
+	 * @since 0.9
 	 */
 	class CT_Recurrence {
 
 		/**
 		 * Version
 		 *
-		 * @since 0.1
+		 * @since 0.9
 		 * @var string
 		 */
 		public $version;
@@ -45,14 +45,14 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 		/**
 		 * Constructor
 		 *
-		 * @since 0.1
+		 * @since 0.9
 		 * @access public
 		 * @param array $args Configuration for meta box and its fields
 		 */
 		public function __construct() {
 
 			// Version
-			$this->version = '0.1';
+			$this->version = '0.9';
 
 		}
 
@@ -62,7 +62,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 		 * This validates, sets defaults and returns arguments.
 		 * It returns false if any of the arugments are invalid.
 		 *
-		 * @since 0.1
+		 * @since 0.9
 		 * @access public
 		 * @param array $args Arguments for recurrence
 		 * @return array|bool Clean array or false if invalid
@@ -228,7 +228,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 		 *
 		 * IMPORTANT: calc_* methods have no regard for until_date (the get_* methods do)
 		 *
-		 * @since 0.1
+		 * @since 0.9
 		 * @access public
 		 * @param array $args Arguments determining recurrence
 		 * @return string|bool Date string or false if arguments invalid or no next date
@@ -386,7 +386,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 		 *
 		 * IMPORTANT: calc_* methods have no regard for until_date (the get_* methods do)
 		 *
-		 * @since 0.1
+		 * @since 0.9
 		 * @access public
 		 * @param array $args Arguments determining recurrence
 		 * @return string|bool Date string or false if arguments invalid or no next date
@@ -436,7 +436,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 		 * Get multiple recurring dates.
 		 * The start date is included in the dates returned.
 		 *
-		 * @since 0.1
+		 * @since 0.9
 		 * @access public
 		 * @param array $args Arguments determining recurrence
 		 * @return array|bool Array of dates or false if arguments invalid
@@ -512,7 +512,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 		/**
 		 * Validate date
 		 *
-		 * @since 0.1
+		 * @since 0.9
 		 * @access public
 		 * @param string $date Date in YYYY-mm-dd format
 		 * @return bool Whether or not date is valid
