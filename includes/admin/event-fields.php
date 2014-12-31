@@ -754,15 +754,13 @@ function ctc_event_columns_content( $column ) {
 
 			}
 
-
-
 			echo '<b>';
 			echo esc_html( implode( _x( ' &ndash; ', 'date range separator', 'church-theme-content' ), $dates ) );
 			echo '</b>';
 
 			// Show Start/End Time unless hidden
 			// Otherwise show Time Description
-			$time_format = 'g:i a';
+			$time_format = get_option( 'time_format' );
 			if ( $start_time && ! $hide_time_range ) {
 
 				echo '<div class="description">';
