@@ -731,7 +731,6 @@ function ctc_event_columns_content( $column ) {
 		// Dates
 		case 'ctc_event_dates' :
 
-			$dates = array();
 
 			$start_date = trim( get_post_meta( $post->ID , '_ctc_event_start_date' , true ) );
 			$end_date = get_post_meta( $post->ID , '_ctc_event_end_date' , true );
@@ -742,15 +741,24 @@ function ctc_event_columns_content( $column ) {
 			$recurrence = get_post_meta( $post->ID , '_ctc_event_recurrence' , true );
 			$recurrence_end_date = get_post_meta( $post->ID , '_ctc_event_recurrence_end_date' , true );
 
+			$dates = array();
+
 			if ( ! empty( $start_date ) ) {
+
 				$dates[] = date_i18n( get_option( 'date_format' ), strtotime( $start_date ) ); // translated date
+
+				// Don't show end date if same as start date
+				if ( ! empty( $end_date ) && $start_date != $end_date ) {
+					$dates[] = date_i18n( get_option( 'date_format' ), strtotime( $end_date ) ); // translated date
+				}
+
 			}
 
-			if ( ! empty( $end_date ) ) {
-				$dates[] = date_i18n( get_option( 'date_format' ), strtotime( $end_date ) ); // translated date
-			}
 
-			echo '<b>' . esc_html( implode( _x( ' &ndash; ', 'date range separator', 'church-theme-content' ), $dates ) ) . '</b>';
+
+			echo '<b>';
+			echo esc_html( implode( _x( ' &ndash; ', 'date range separator', 'church-theme-content' ), $dates ) );
+			echo '</b>';
 
 			// Show Start/End Time unless hidden
 			// Otherwise show Time Description
