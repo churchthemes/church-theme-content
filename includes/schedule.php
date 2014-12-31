@@ -117,6 +117,9 @@ function ctc_update_recurring_event_dates() {
 				update_post_meta( $post->ID, '_ctc_event_start_date', $new_start_date );
 				update_post_meta( $post->ID, '_ctc_event_end_date', $new_end_date );
 
+				// Update the hidden datetime fields for ordering
+				ctc_update_event_date_time( $post->ID );
+
 			}
 
 		}
