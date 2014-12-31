@@ -863,7 +863,7 @@ function ctc_event_columns_content( $column ) {
 		// Venue
 		case 'ctc_event_venue' :
 
-			echo get_post_meta( $post->ID , '_ctc_event_venue' , true );
+			echo strip_tags( get_post_meta( $post->ID , '_ctc_event_venue' , true ) );
 
 			break;
 

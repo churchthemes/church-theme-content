@@ -257,7 +257,7 @@ function ctc_person_columns_content( $column ) {
 		// Position
 		case 'ctc_person_position' :
 
-			echo get_post_meta( $post->ID , '_ctc_person_position' , true );
+			echo strip_tags( get_post_meta( $post->ID , '_ctc_person_position' , true ) );
 
 			break;
 
