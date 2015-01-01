@@ -10,7 +10,10 @@ Church Theme Content provides functionality enabling the user to manage *sermons
 
 Experienced WordPress developers agree that functionality like this does not belong in themes since themes are intended only to control the appearance of a WordPress site. Content that users might expect to take with them if they switch themes should "live" in a plugin. Similarly, our approach is not to display content using the plugin since themes offer more control for that purpose.
 
-Visit the [plugin's page on WordPress.org](http://wordpress.org/plugins/church-theme-content) for more information.
+For more information:
+
+* [Plugin details on churchthemes.com](http://churchthemes.com/plugins/church-theme-content/)
+* [Plugin's page on WordPress.org](http://wordpress.org/plugins/church-theme-content)
 
 Developers
 ----------
