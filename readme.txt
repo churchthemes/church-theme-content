@@ -48,7 +48,11 @@ The following translations are included. Please feel free to [contribute](https:
 Users can optionally install [add-ons](http://churchthemes.com/plugins/) for additional features.
 
 * [Custom Recurring Events](http://churchthemes.com/plugins/custom-recurring-events)
-* More add-ons to follow...
+* More add-ons are planned...
+
+= More information =
+
+We maintain a page for this plugin on churchthemes.com that you can view for [more information](http://churchthemes.com/plugins/church-theme-content/).
 
 = Follow us =
 
