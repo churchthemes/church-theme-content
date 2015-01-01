@@ -11,7 +11,7 @@
  * Domain Path: /languages
  *
  * @package   Church_Theme_Content
- * @copyright Copyright (c) 2013 - 2014, churchthemes.com
+ * @copyright Copyright (c) 2013 - 2015, churchthemes.com
  * @link      https://github.com/churchthemes/church-theme-content
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -183,6 +183,7 @@ class Church_Theme_Content {
 
 				// Functions
 				CTC_INC_DIR . '/add-ons.php',
+				CTC_INC_DIR . '/event-fields.php',
 				CTC_INC_DIR . '/helpers.php',
 				CTC_INC_DIR . '/mime-types.php',
 				CTC_INC_DIR . '/post-types.php',
@@ -206,16 +207,16 @@ class Church_Theme_Content {
 				CTC_ADMIN_DIR . '/activation.php',
 				CTC_ADMIN_DIR . '/admin-add-ons.php',
 				CTC_ADMIN_DIR . '/admin-enqueue-styles.php',
+				CTC_ADMIN_DIR . '/admin-event-fields.php',
 				CTC_ADMIN_DIR . '/admin-helpers.php',
+				CTC_ADMIN_DIR . '/admin-location-fields.php',
 				CTC_ADMIN_DIR . '/admin-menu.php',
+				CTC_ADMIN_DIR . '/admin-person-fields.php',
 				CTC_ADMIN_DIR . '/admin-posts.php',
+				CTC_ADMIN_DIR . '/admin-sermon-fields.php',
 				CTC_ADMIN_DIR . '/admin-support.php',
 				CTC_ADMIN_DIR . '/edd-license.php',
-				CTC_ADMIN_DIR . '/event-fields.php',
 				CTC_ADMIN_DIR . '/import.php',
-				CTC_ADMIN_DIR . '/location-fields.php',
-				CTC_ADMIN_DIR . '/person-fields.php',
-				CTC_ADMIN_DIR . '/sermon-fields.php',
 				CTC_ADMIN_DIR . '/upgrade.php',
 
 				// Libraries
