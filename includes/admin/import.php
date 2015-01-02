@@ -38,7 +38,7 @@ function ctc_after_import() {
 
 }
 
-add_action( 'import_end', 'ctc_cre_after_import' ); // WordPress Importer plugin hook
+add_action( 'import_end', 'ctc_after_import' ); // WordPress Importer plugin hook
 
 /**
  * Update event recurrence
