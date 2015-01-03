@@ -12,8 +12,8 @@ Experienced WordPress developers agree that functionality like this does not bel
 
 For more information:
 
-* [Plugin details on churchthemes.com](http://churchthemes.com/plugins/church-theme-content/)
-* [Plugin's page on WordPress.org](http://wordpress.org/plugins/church-theme-content)
+* [View on churchthemes.com](http://churchthemes.com/plugins/church-theme-content/)
+* [View on WordPress.org](http://wordpress.org/plugins/church-theme-content)
 
 Developers
 ----------
