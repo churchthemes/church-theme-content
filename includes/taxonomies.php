@@ -7,7 +7,7 @@
  * @copyright  Copyright (c) 2013 - 2015, churchthemes.com
  * @link       https://github.com/churchthemes/church-theme-content
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @since      0.9
+ * @since      0.9x
  */
 
 // No direct access
@@ -16,6 +16,54 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 /**********************************
  * SERMON TAXONOMIES
  **********************************/
+
+/**
+ * Sermon Author
+ *
+ * @since 0.9x
+ */
+function ctc_register_taxonomy_sermon_author() {
+
+	// Arguments
+	$args = array(
+		'labels' => array(
+			'name' 							=> _x( 'Sermon Author', 'taxonomy general name', 'church-theme-content' ),
+			'singular_name'					=> _x( 'Sermon Author', 'taxonomy singular name', 'church-theme-content' ),
+			'search_items' 					=> _x( 'Search Authors', 'sermons', 'church-theme-content' ),
+			'popular_items' 				=> _x( 'Popular Authors', 'sermons', 'church-theme-content' ),
+			'all_items' 					=> _x( 'All Authors', 'sermons', 'church-theme-content' ),
+			'parent_item' 					=> null,
+			'parent_item_colon' 			=> null,
+			'edit_item' 					=> _x( 'Edit Author', 'sermons', 'church-theme-content' ),
+			'update_item' 					=> _x( 'Update Author', 'sermons', 'church-theme-content' ),
+			'add_new_item' 					=> _x( 'Add Author', 'sermons', 'church-theme-content' ),
+			'new_item_name' 				=> _x( 'New Author', 'sermons', 'church-theme-content' ),
+			'separate_items_with_commas' 	=> _x( 'Separate authors with commas', 'sermons', 'church-theme-content' ),
+			'add_or_remove_items' 			=> _x( 'Add or remove authors', 'sermons', 'church-theme-content' ),
+			'choose_from_most_used' 		=> _x( 'Choose from the most used authors', 'sermons', 'church-theme-content' ),
+			'menu_name' 					=> _x( 'Authors', 'sermon menu name', 'church-theme-content' )
+		),
+		'hierarchical'	=> false, // category-style instead of tag-style
+		'public' 		=> ctc_taxonomy_supported( 'sermons', 'ctc_sermon_author' ),
+		'rewrite' 		=> array(
+			'slug' 			=> 'sermon-author',
+			'with_front' 	=> false,
+			'hierarchical' 	=> true
+		)
+	);
+	$args = apply_filters( 'ctc_taxonomy_sermon_author_args', $args ); // allow filtering
+
+	// Registration
+	register_taxonomy(
+		'ctc_sermon_author',
+		'ctc_sermon',
+		$args
+	);
+
+}
+
+add_action( 'init', 'ctc_register_taxonomy_sermon_author' );
+
 
 /**
  * Sermon topic
