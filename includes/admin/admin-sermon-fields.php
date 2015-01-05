@@ -331,6 +331,13 @@ function ctc_sermon_columns_content( $column ) {
 			echo ctc_admin_term_list( $post->ID, 'ctc_sermon_speaker' );
 
 			break;
+		
+		// Authors
+		case 'ctc_sermon_authors' :
+
+			echo ctc_admin_term_list( $post->ID, 'ctc_sermon_author' );
+
+			break;
 
 	}
 
