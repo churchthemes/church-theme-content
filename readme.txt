@@ -62,7 +62,13 @@ We maintain a page for this plugin on churchthemes.com that you can view for [mo
 
 == Installation ==
 
-Please see [Installing Plugins](http://codex.wordpress.org/Managing_Plugins#Installing_Plugins) in the WordPress Codex.
+1. Log into your WordPress admin area
+2. Go to **Plugins** > **Add New**
+3. Search for *Church Theme Content*
+4. Click **Install Now** for the plugin
+5. Click **Activate Plugin** after installation
+
+Please see [Installing Plugins](http://codex.wordpress.org/Managing_Plugins#Installing_Plugins) in the WordPress Codex for additional information on installing plugins.
 
 == Frequently Asked Questions ==
 
