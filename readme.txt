@@ -64,7 +64,7 @@ The following translations are included. Please feel free to [contribute](https:
 4. Click **Install Now** for the plugin
 5. Click **Activate Plugin** after installation
 
-Please see [Installing Plugins](http://codex.wordpress.org/Managing_Plugins#Installing_Plugins) in the WordPress Codex for additional information on installing plugins.
+Please see our [Plugin Installation](http://churchthemes.com/guides/user/plugins/plugin-installation/) guide for additional information.
 
 == Frequently Asked Questions ==
 
