@@ -95,7 +95,6 @@ Please contact the author of your theme. This plugin handles the management of c
 7. Add location
 8. People
 9. Add person
-10. Groups
 
 == Changelog ==
 
