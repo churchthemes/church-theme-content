@@ -24,7 +24,7 @@ It enables users to manage *sermons*, *events*, *people* and *locations* to be d
 
 Experienced WordPress developers agree that functionality like this does not belong in themes since themes are intended only for controlling the appearance of a WordPress site. Content that users might expect to take with them if they switch themes should "live" in a plugin in order to [avoid theme lock-in](http://churchthemes.com/2014/05/27/wordpress-theme-users-avoid-lock-in-effect/). Similarly, our approach is not to present content using the plugin since themes offer more control for that purpose. This is why a **compatible theme is required**.
 
-See the plugin's page on churchthemes.com for a [tour of features](http://churchthemes.com/plugins/church-theme-content/).
+See the [Plugin Details](http://churchthemes.com/plugins/church-theme-content/) on churchthemes.com for a tour of features. Read the [User Guide](http://churchthemes.com/guides/user/plugins/church-theme-content/) for instructions.
 
 = Add-ons =
 
@@ -41,14 +41,7 @@ You can follow development on [GitHub](https://github.com/churchthemes/church-th
 
 = Translations =
 
-The following translations are included. Please feel free to [contribute](https://churchthemes.com/contact/) your own translations.
-
-* English (default)
-* Spanish (es_ES and es_MX)
-* German (de_DE) by [Urban Life Church](http://urbanlifechurch.de)
-* French (fr_FR) by [Alexandre Koper](https://twitter.com/alexkoper)
-* Portuguese (pt_BR) by [Ministre.com.br](http://ministre.com.br)
-* Serbo-Croatian (sr_RS) by Borisa Djuraskovic of [Web Hosting Hub](http://www.webhostinghub.com)
+Several translations are included with this plugin, including English, Spanish, German, French and Portuguese. See the [Translations](http://churchthemes.com/guides/user/plugins/church-theme-content/#translations) section in the plugin's user guide for the most up-to-date list.
 
 = Follow us =
 
