@@ -672,7 +672,7 @@ function ctc_event_columns( $columns ) {
 	// insert start date, venue after title
 	$insert_array = array();
 	if ( ctc_field_supported( 'events', '_ctc_event_start_date' ) ) $insert_array['ctc_event_dates'] = _x( 'When', 'events admin column', 'church-theme-content' );
-	if ( ctc_field_supported( 'events', '_ctc_event_venue' ) ) $insert_array['ctc_event_venue'] = _x( 'Where', 'events admin column', 'church-theme-content' );
+	if ( ctc_field_supported( 'events', '_ctc_event_venue' ) || ctc_taxonomy_supported( 'events', 'ctc_event_category' ) ) $insert_array['ctc_event_details'] = _x( 'Details', 'events admin column', 'church-theme-content' );
 	$columns = ctc_array_merge_after_key( $columns, $insert_array, 'title' );
 
 	// remove author
@@ -839,10 +839,23 @@ function ctc_event_columns_content( $column ) {
 
 			break;
 
-		// Venue
-		case 'ctc_event_venue' :
+		// Details
+		case 'ctc_event_details' :
 
-			echo strip_tags( get_post_meta( $post->ID , '_ctc_event_venue' , true ) );
+			$venue = get_post_meta( $post->ID , '_ctc_event_venue' , true );
+			if ( $venue ) {
+				echo '<div>';
+				echo strip_tags( $venue );
+				echo '</div>';
+
+			}
+
+			$categories = ctc_admin_term_list( $post->ID, 'ctc_event_category' );
+			if ( $categories ) {
+				echo '<div>';
+				echo $categories;
+				echo '</div>';
+			}
 
 			break;
 
@@ -862,7 +875,6 @@ add_action( 'manage_posts_custom_column' , 'ctc_event_columns_content' ); // add
 function ctc_event_columns_sorting( $columns ) {
 
 	$columns['ctc_event_dates'] = '_ctc_event_start_date';
-	$columns['ctc_event_venue'] = '_ctc_event_venue';
 
 	return $columns;
 
@@ -898,14 +910,6 @@ function ctc_event_columns_sorting_request( $args ) {
 						$args['meta_key'] = '_ctc_event_start_date_start_time';
 						$args['meta_type'] = 'DATETIME';
 						$args['orderby'] = 'meta_value';
-
-						break;
-
-					// Venue
-					case '_ctc_event_venue' :
-
-						$args['meta_key'] = '_ctc_event_venue';
-						$args['orderby'] = 'meta_value'; // alphabetically (meta_value_num for numeric)
 
 						break;
 
