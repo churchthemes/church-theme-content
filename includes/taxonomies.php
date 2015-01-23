@@ -253,6 +253,57 @@ function ctc_register_taxonomy_sermon_tag() {
 add_action( 'init', 'ctc_register_taxonomy_sermon_tag' );
 
 /**********************************
+ * EVENT TAXONOMIES
+ **********************************/
+
+/**
+ * Event category
+ *
+ * @since 1.3
+ */
+function ctc_register_taxonomy_event_category() {
+
+	// Arguments
+	$args = array(
+		'labels' => array(
+			'name' 							=> _x( 'Event Categories', 'taxonomy general name', 'church-theme-content' ),
+			'singular_name'					=> _x( 'Event Category', 'taxonomy singular name', 'church-theme-content' ),
+			'search_items' 					=> _x( 'Search Categories', 'events', 'church-theme-content' ),
+			'popular_items' 				=> _x( 'Popular Categories', 'events', 'church-theme-content' ),
+			'all_items' 					=> _x( 'All Categories', 'events', 'church-theme-content' ),
+			'parent_item' 					=> null,
+			'parent_item_colon' 			=> null,
+			'edit_item' 					=> _x( 'Edit Event Category', 'events', 'church-theme-content' ),
+			'update_item' 					=> _x( 'Update Event Category', 'events', 'church-theme-content' ),
+			'add_new_item' 					=> _x( 'Add Category', 'events', 'church-theme-content' ),
+			'new_item_name' 				=> _x( 'New Category', 'events', 'church-theme-content' ),
+			'separate_items_with_commas' 	=> _x( 'Separate categories with commas', 'events', 'church-theme-content' ),
+			'add_or_remove_items' 			=> _x( 'Add or remove categories', 'events', 'church-theme-content' ),
+			'choose_from_most_used' 		=> _x( 'Choose from the most used categories', 'events', 'church-theme-content' ),
+			'menu_name' 					=> _x( 'Categories', 'event menu name', 'church-theme-content' )
+		),
+		'hierarchical'	=> true, // category-style instead of tag-style
+		'public' 		=> ctc_taxonomy_supported( 'events', 'ctc_event_category' ),
+		'rewrite' 		=> array(
+			'slug' 			=> 'event-category',
+			'with_front' 	=> false,
+			'hierarchical' 	=> true
+		)
+	);
+	$args = apply_filters( 'ctc_taxonomy_event_category_args', $args ); // allow filtering
+
+	// Registration
+	register_taxonomy(
+		'ctc_event_category',
+		'ctc_event',
+		$args
+	);
+
+}
+
+add_action( 'init', 'ctc_register_taxonomy_event_category' );
+
+/**********************************
  * PERSON TAXONOMIES
  **********************************/
 

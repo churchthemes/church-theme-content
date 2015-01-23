@@ -96,6 +96,7 @@ function ctc_register_post_type_event() {
 			'feeds'			=> ctc_feature_supported( 'events' ),
 		),
 		'supports' 		=> array( 'title', 'editor', 'excerpt', 'publicize', 'thumbnail', 'comments', 'author', 'revisions' ),
+		'taxonomies' 	=> array( 'ctc_event_category' ),
 		'menu_icon'		=> 'dashicons-calendar'
 	);
 	$args = apply_filters( 'ctc_post_type_event_args', $args ); // allow filtering
