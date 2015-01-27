@@ -554,7 +554,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 
 	// Instantiate class first
-	$ctc_recurrence = new CT_Recurrence();
+	$ct_recurrence = new CT_Recurrence();
 
 	// Specify arguments
 	// Note: until_date does not have effect on the calc_* methods, only the get_* methods
@@ -572,14 +572,12 @@ if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 
 	<h4>$args</h3>
 
-	<?php
-	ctc_print_array( $args );
-	?>
+	<?php echo '<pre>' . print_r( $args, true ) . '</pre>'; ?>
 
 	<h4>calc_next_date()</h3>
 
 	<?php
-	$date = $ctc_recurrence->calc_next_date( $args );
+	$date = $ct_recurrence->calc_next_date( $args );
 	?>
 
 	<pre>Start Date:<br><?php echo date( 'Y-m-d  F j, Y 	(l)', strtotime( $args['start_date'] ) ); ?></pre>
@@ -588,7 +586,7 @@ if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 	<h4>calc_next_future_date()</h3>
 
 	<?php
-	$date = $ctc_recurrence->calc_next_future_date( $args );
+	$date = $ct_recurrence->calc_next_future_date( $args );
 	?>
 
 	<pre>Start Date:<br><?php echo date( 'Y-m-d  F j, Y 	(l)', strtotime( $args['start_date'] ) ); ?></pre>
@@ -598,7 +596,7 @@ if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 
 	<?php
 
-	$dates = $ctc_recurrence->get_dates( $args );
+	$dates = $ct_recurrence->get_dates( $args );
 
 	?>
 
