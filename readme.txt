@@ -16,7 +16,7 @@ This plugin is intended for a very specific audience. If you are *not* one of th
 
 * Users of [official themes](http://churchthemes.com) from churchthemes.com
 * Users of [third-party themes](http://churchthemes.guide) from other providers made *specifically* for this plugin
-* Theme developers wanting to improve data portability among church WordPress sites
+* Theme developers wanting to improve data portability for church sites
 
 = What it does =
 
