@@ -107,9 +107,97 @@ function ctc_register_taxonomy_sermon_book() {
 		$args
 	);
 
+	add_filter('get_terms_orderby', 'get_terms_orderby_bible_book', 10, 3);
+
 }
 
 add_action( 'init', 'ctc_register_taxonomy_sermon_book' );
+
+function get_terms_orderby_bible_book( $orderby, $args, $taxonomies ) {
+	if ($taxonomies[0] == 'ctc_sermon_book' && $args['orderby'] == 'bible_book') {
+		$booksOfTheBible = array(
+			'Genesis',
+			'Exodus',
+			'Leviticus',
+			'Numbers',
+			'Deuteronomy',
+			'Joshua',
+			'Judges',
+			'Ruth',
+			'1 Samuel',
+			'2 Samuel',
+			'1 Kings',
+			'2 Kings',
+			'1 Chronicles',
+			'2 Chronicles',
+			'Ezra',
+			'Nehemiah',
+			'Esther',
+			'Job',
+			'Psalm',
+			'Proverbs',
+			'Ecclesiastes',
+			'Song of Songs',
+			'Isaiah',
+			'Jeremiah',
+			'Lamentations',
+			'Ezekiel',
+			'Daniel',
+			'Hosea',
+			'Joel',
+			'Amos',
+			'Obadiah',
+			'Jonah',
+			'Micah',
+			'Nahum',
+			'Habakkuk',
+			'Zephaniah',
+			'Haggai',
+			'Zechariah',
+			'Malachi',
+			'Matthew',
+			'Mark',
+			'Luke',
+			'John',
+			'Acts',
+			'Romans',
+			'1 Corinthians',
+			'2 Corinthians',
+			'Galatians',
+			'Ephesians',
+			'Philippians',
+			'Colossians',
+			'1 Thessalonians',
+			'2 Thessalonians',
+			'1 Timothy',
+			'2 Timothy',
+			'Titus',
+			'Philemon',
+			'Hebrews',
+			'James',
+			'1 Peter',
+			'2 Peter',
+			'1 John',
+			'2 John',
+			'3 John',
+			'Jude',
+			'Revelation'
+		);
+		// If books have been created that are not in the above list,
+		// include them at the end. To include them at the end, rather than the beginning,
+		// the SQL sort order must be DESC.
+
+		// So to change the sort order, rather than altering the SQL, alter the array.
+		if ($args['order'] != 'DESC') {
+			$booksOfTheBible = array_reverse($booksOfTheBible);
+		}
+
+		$orderby = 'FIELD(t.name, "'.implode('", "', $booksOfTheBible).'") DESC, '.$orderby;
+
+		return $orderby;
+	}
+	return $orderby;
+}
 
 /**
  * Sermon series
