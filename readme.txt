@@ -72,7 +72,7 @@ Please see our [Plugin Installation](http://churchthemes.com/guides/user/plugins
 
 No, a theme made specifically for use with this plugin is necessary for displaying content. Please see *Who this is for* in the plugin [description](http://wordpress.org/plugins/church-theme-content/).
 
-= Can make a theme that uses this plugin? =
+= Can I make a theme that uses this plugin? =
 
 Yes, please see the [Developer Guide](http://churchthemes.com/guides/developer/church-theme-content/).
 
