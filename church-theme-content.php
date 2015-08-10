@@ -53,19 +53,19 @@ class Church_Theme_Content {
 	public function __construct() {
 
 		// Set plugin data
-		add_action( 'plugins_loaded', array( &$this, 'set_plugin_data' ), 1 );
+		add_action( 'plugins_loaded', array( $this, 'set_plugin_data' ), 1 );
 
 		// Define constants
-		add_action( 'plugins_loaded', array( &$this, 'define_constants' ), 1 );
+		add_action( 'plugins_loaded', array( $this, 'define_constants' ), 1 );
 
 		// Load language file
-		add_action( 'plugins_loaded', array( &$this, 'load_textdomain' ), 1 );
+		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ), 1 );
 
 		// Set includes
-		add_action( 'plugins_loaded', array( &$this, 'set_includes' ), 1 );
+		add_action( 'plugins_loaded', array( $this, 'set_includes' ), 1 );
 
 		// Load includes
-		add_action( 'plugins_loaded', array( &$this, 'load_includes' ), 1 );
+		add_action( 'plugins_loaded', array( $this, 'load_includes' ), 1 );
 
 	}
 
