@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Church Theme Content\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-09 14:52-0600\n"
-"PO-Revision-Date: 2015-03-09 14:52-0600\n"
+"POT-Creation-Date: 2015-08-21 10:30-0500\n"
+"PO-Revision-Date: 2015-08-21 10:30-0500\n"
 "Last-Translator: churchthemes.com\n"
 "Language-Team: Emil Jonzon <emil.jonzon@gmail.com>\n"
 "Language: sv\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.8.4\n"
 "X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
 "__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
 "_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
@@ -115,7 +115,7 @@ msgstr ""
 "att hjälpa folk att hitta rätt."
 
 #: ../includes/admin/admin-event-fields.php:362
-msgctxt "event meta box"
+#: ../includes/admin/admin-location-fields.php:72
 msgid "Address"
 msgstr "Adress"
 
@@ -131,12 +131,12 @@ msgid "Show directions link"
 msgstr "Visa länk till vägbeskrivning"
 
 #: ../includes/admin/admin-event-fields.php:410
-msgctxt "event meta box"
+#: ../includes/admin/admin-location-fields.php:192
 msgid "Map Latitude"
 msgstr "Kart-latitud"
 
 #: ../includes/admin/admin-event-fields.php:413
-#: ../includes/admin/admin-location-fields.php:171
+#: ../includes/admin/admin-location-fields.php:195
 msgid ""
 "You can <a href=\"http://churchthemes.com/get-latitude-longitude\" target="
 "\"_blank\">use this</a> to convert an address into coordinates."
@@ -145,12 +145,12 @@ msgstr ""
 "\"_blank\">använda den här</a> för att konvertera en adress till koordinater."
 
 #: ../includes/admin/admin-event-fields.php:434
-msgctxt "event meta box"
+#: ../includes/admin/admin-location-fields.php:216
 msgid "Map Longitude"
 msgstr "Kart-longitud"
 
 #: ../includes/admin/admin-event-fields.php:458
-msgctxt "event meta box"
+#: ../includes/admin/admin-location-fields.php:240
 msgid "Map Type"
 msgstr "Karttyp"
 
@@ -164,7 +164,7 @@ msgstr ""
 "terräng."
 
 #: ../includes/admin/admin-event-fields.php:482
-msgctxt "event meta box"
+#: ../includes/admin/admin-location-fields.php:265
 msgid "Map Zoom"
 msgstr "Kart zoom"
 
@@ -176,7 +176,7 @@ msgstr ""
 "En lägre siffra är mer utzoomad medan en högre siffra är mer inzoomad. "
 
 #: ../includes/admin/admin-event-fields.php:669
-#: ../includes/admin/admin-location-fields.php:293
+#: ../includes/admin/admin-location-fields.php:317
 #: ../includes/admin/admin-person-fields.php:217
 #: ../includes/admin/admin-sermon-fields.php:240
 msgid "Thumbnail"
@@ -254,38 +254,22 @@ msgctxt "location meta box"
 msgid "Location Details"
 msgstr "Platsdetaljer"
 
-#: ../includes/admin/admin-location-fields.php:72
-msgctxt "location meta box"
-msgid "Address"
-msgstr "Adress"
-
 #: ../includes/admin/admin-location-fields.php:120
 #: ../includes/admin/admin-person-fields.php:121
-msgctxt "location meta box"
 msgid "Phone"
 msgstr "Telefon"
 
 #: ../includes/admin/admin-location-fields.php:144
+#: ../includes/admin/admin-person-fields.php:145
+msgid "Email"
+msgstr "E-post"
+
+#: ../includes/admin/admin-location-fields.php:168
 msgctxt "location meta box"
 msgid "Times"
 msgstr "Tider"
 
-#: ../includes/admin/admin-location-fields.php:168
-msgctxt "location meta box"
-msgid "Map Latitude"
-msgstr "Kart-latitud"
-
-#: ../includes/admin/admin-location-fields.php:192
-msgctxt "location meta box"
-msgid "Map Longitude"
-msgstr "Kart-longitud"
-
-#: ../includes/admin/admin-location-fields.php:216
-msgctxt "location meta box"
-msgid "Map Type"
-msgstr "Karttyp"
-
-#: ../includes/admin/admin-location-fields.php:219
+#: ../includes/admin/admin-location-fields.php:243
 msgctxt "location meta box"
 msgid ""
 "You can show a road map, satellite imagery, a combination of both (hybrid) "
@@ -294,35 +278,30 @@ msgstr ""
 "Du kan visa en vägkarta, satellitbild, en kombination av båda (hybrid) eller "
 "terräng."
 
-#: ../includes/admin/admin-location-fields.php:241
-msgctxt "location meta box"
-msgid "Map Zoom"
-msgstr "Kart zoom"
-
-#: ../includes/admin/admin-location-fields.php:244
+#: ../includes/admin/admin-location-fields.php:268
 msgctxt "location meta box"
 msgid ""
 "A lower number is more zoomed out while a higher number is more zoomed in."
 msgstr ""
 "En lägre siffra är mer utzoomad medan en högre siffra är mer inzoomad. "
 
-#: ../includes/admin/admin-location-fields.php:298
+#: ../includes/admin/admin-location-fields.php:322
 msgctxt "location admin column"
 msgid "Address"
 msgstr "Adress"
 
-#: ../includes/admin/admin-location-fields.php:299
+#: ../includes/admin/admin-location-fields.php:323
 msgctxt "location admin column"
 msgid "Times"
 msgstr "Tider"
 
-#: ../includes/admin/admin-location-fields.php:300
+#: ../includes/admin/admin-location-fields.php:324
 #: ../includes/admin/admin-person-fields.php:224
 msgctxt "sorting"
 msgid "Order"
 msgstr "Sortera"
 
-#: ../includes/admin/admin-location-fields.php:304
+#: ../includes/admin/admin-location-fields.php:328
 msgctxt "location admin column"
 msgid "Location"
 msgstr "Plats"
@@ -337,7 +316,7 @@ msgid "Person Details"
 msgstr "Människa detaljer"
 
 #: ../includes/admin/admin-person-fields.php:97
-#: ../includes/admin/admin-person-fields.php:222
+msgctxt "person meta box"
 msgid "Position"
 msgstr "Position"
 
@@ -346,14 +325,13 @@ msgid "Enter the person's position or title (e.g. Senior Pastor, Deacon, etc.)"
 msgstr ""
 "Fyll i personens position eller titel (ex. Föreståndare, pastor, diakon etc.)"
 
-#: ../includes/admin/admin-person-fields.php:145
-msgctxt "location meta box"
-msgid "Email"
-msgstr "E-post"
-
 #: ../includes/admin/admin-person-fields.php:169
 msgid "URLs"
 msgstr "URL-er"
+
+#: ../includes/admin/admin-person-fields.php:222
+msgid "Position"
+msgstr "Position"
 
 #: ../includes/admin/admin-person-fields.php:223
 msgctxt "people column"
@@ -1204,3 +1182,23 @@ msgstr "Välj bland de mest använda grupperna"
 msgctxt "people menu name"
 msgid "Groups"
 msgstr "Grupper"
+
+#~ msgctxt "location meta box"
+#~ msgid "Address"
+#~ msgstr "Adress"
+
+#~ msgctxt "location meta box"
+#~ msgid "Map Latitude"
+#~ msgstr "Kart-latitud"
+
+#~ msgctxt "location meta box"
+#~ msgid "Map Longitude"
+#~ msgstr "Kart-longitud"
+
+#~ msgctxt "location meta box"
+#~ msgid "Map Type"
+#~ msgstr "Karttyp"
+
+#~ msgctxt "location meta box"
+#~ msgid "Map Zoom"
+#~ msgstr "Kart zoom"

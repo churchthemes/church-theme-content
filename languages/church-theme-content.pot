@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Church Theme Content\n"
-"POT-Creation-Date: 2015-08-21 10:24-0500\n"
+"POT-Creation-Date: 2015-08-21 10:31-0500\n"
 "PO-Revision-Date: 2015-02-23 11:04-0600\n"
 "Last-Translator: churchthemes.com\n"
 "Language-Team: churchthemes.com\n"

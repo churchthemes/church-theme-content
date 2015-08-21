@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Church Theme Content\n"
-"POT-Creation-Date: 2015-02-23 11:04-0600\n"
-"PO-Revision-Date: 2015-02-23 11:04-0600\n"
+"POT-Creation-Date: 2015-08-21 10:29-0500\n"
+"PO-Revision-Date: 2015-08-21 10:29-0500\n"
 "Last-Translator: churchthemes.com\n"
 "Language-Team: Alberto <albertofdrodrigues@gmail.com>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.8.4\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_nx:1,2;_x:1,2c;_ex:1,2c;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:1,2,3c\n"
@@ -36,12 +36,10 @@ msgid "End Date"
 msgstr "Data Final"
 
 #: ../includes/admin/admin-event-fields.php:123
-#, fuzzy
 msgid "Start Time"
 msgstr "Data de Início"
 
 #: ../includes/admin/admin-event-fields.php:148
-#, fuzzy
 msgid "End Time"
 msgstr "Data Final"
 
@@ -50,7 +48,6 @@ msgid "Do not show times entered above (use only for ordering events)"
 msgstr ""
 
 #: ../includes/admin/admin-event-fields.php:200
-#, fuzzy
 msgid "Time Description"
 msgstr "Data & Horário"
 
@@ -65,7 +62,6 @@ msgid "Recurrence"
 msgstr "Recorrência"
 
 #: ../includes/admin/admin-event-fields.php:227
-#, fuzzy
 msgctxt "event meta box"
 msgid "Dates automatically move forward after event ends."
 msgstr ""
@@ -114,7 +110,7 @@ msgstr ""
 "para ajudar as pessoas a encontrar o compromisso."
 
 #: ../includes/admin/admin-event-fields.php:362
-msgctxt "event meta box"
+#: ../includes/admin/admin-location-fields.php:72
 msgid "Address"
 msgstr "Endereço"
 
@@ -126,17 +122,16 @@ msgstr ""
 "este compromisso."
 
 #: ../includes/admin/admin-event-fields.php:391
-#, fuzzy
 msgid "Show directions link"
 msgstr "Instruções"
 
 #: ../includes/admin/admin-event-fields.php:410
-msgctxt "event meta box"
+#: ../includes/admin/admin-location-fields.php:192
 msgid "Map Latitude"
 msgstr "Latitude do Mapa"
 
 #: ../includes/admin/admin-event-fields.php:413
-#: ../includes/admin/admin-location-fields.php:171
+#: ../includes/admin/admin-location-fields.php:195
 msgid ""
 "You can <a href=\"http://churchthemes.com/get-latitude-longitude\" target="
 "\"_blank\">use this</a> to convert an address into coordinates."
@@ -145,12 +140,12 @@ msgstr ""
 "\"_blank\">utilizar este site</a> para converter o endereço em coordenadas."
 
 #: ../includes/admin/admin-event-fields.php:434
-msgctxt "event meta box"
+#: ../includes/admin/admin-location-fields.php:216
 msgid "Map Longitude"
 msgstr "Longitude do Mapa"
 
 #: ../includes/admin/admin-event-fields.php:458
-msgctxt "event meta box"
+#: ../includes/admin/admin-location-fields.php:240
 msgid "Map Type"
 msgstr "Tipo do Mapa"
 
@@ -164,7 +159,7 @@ msgstr ""
 "(híbrido) ou o terreno."
 
 #: ../includes/admin/admin-event-fields.php:482
-msgctxt "event meta box"
+#: ../includes/admin/admin-location-fields.php:265
 msgid "Map Zoom"
 msgstr "Zoom do Mapa"
 
@@ -176,7 +171,7 @@ msgstr ""
 "Um número menor é menos ampliado enquanto um número maior é mais ampliado."
 
 #: ../includes/admin/admin-event-fields.php:669
-#: ../includes/admin/admin-location-fields.php:293
+#: ../includes/admin/admin-location-fields.php:317
 #: ../includes/admin/admin-person-fields.php:217
 #: ../includes/admin/admin-sermon-fields.php:240
 msgid "Thumbnail"
@@ -188,7 +183,6 @@ msgid "When"
 msgstr "Enquanto"
 
 #: ../includes/admin/admin-event-fields.php:675
-#, fuzzy
 msgctxt "events admin column"
 msgid "Details"
 msgstr "Detalhes"
@@ -199,7 +193,6 @@ msgid " &ndash; "
 msgstr " &ndash; "
 
 #: ../includes/admin/admin-event-fields.php:755
-#, fuzzy
 msgctxt "time range separator"
 msgid " &ndash; "
 msgstr " &ndash; "
@@ -225,11 +218,11 @@ msgstr ""
 #: ../includes/admin/admin-event-fields.php:817
 #, php-format
 msgid "Every year until %1$s"
-msgstr ""
+msgstr "Todo ano até %1$s"
 
 #: ../includes/admin/admin-event-fields.php:822
 msgid "Every year"
-msgstr ""
+msgstr "Todo ano"
 
 #: ../includes/admin/admin-helpers.php:66
 msgctxt "map"
@@ -256,38 +249,22 @@ msgctxt "location meta box"
 msgid "Location Details"
 msgstr "Detalhes do Local"
 
-#: ../includes/admin/admin-location-fields.php:72
-msgctxt "location meta box"
-msgid "Address"
-msgstr "Endereço"
-
 #: ../includes/admin/admin-location-fields.php:120
 #: ../includes/admin/admin-person-fields.php:121
-msgctxt "location meta box"
 msgid "Phone"
 msgstr "Telefone"
 
 #: ../includes/admin/admin-location-fields.php:144
+#: ../includes/admin/admin-person-fields.php:145
+msgid "Email"
+msgstr "E-mail"
+
+#: ../includes/admin/admin-location-fields.php:168
 msgctxt "location meta box"
 msgid "Times"
 msgstr "Horários"
 
-#: ../includes/admin/admin-location-fields.php:168
-msgctxt "location meta box"
-msgid "Map Latitude"
-msgstr "Latitude do Mapa"
-
-#: ../includes/admin/admin-location-fields.php:192
-msgctxt "location meta box"
-msgid "Map Longitude"
-msgstr "Longitude do Mapa"
-
-#: ../includes/admin/admin-location-fields.php:216
-msgctxt "location meta box"
-msgid "Map Type"
-msgstr "Tipo do Mapa"
-
-#: ../includes/admin/admin-location-fields.php:219
+#: ../includes/admin/admin-location-fields.php:243
 msgctxt "location meta box"
 msgid ""
 "You can show a road map, satellite imagery, a combination of both (hybrid) "
@@ -296,35 +273,30 @@ msgstr ""
 "Você pode mostrar as vias, as imagens de satélite, uma combinação de ambos "
 "(híbrido) ou o terreno."
 
-#: ../includes/admin/admin-location-fields.php:241
-msgctxt "location meta box"
-msgid "Map Zoom"
-msgstr "Zoom do Mapa"
-
-#: ../includes/admin/admin-location-fields.php:244
+#: ../includes/admin/admin-location-fields.php:268
 msgctxt "location meta box"
 msgid ""
 "A lower number is more zoomed out while a higher number is more zoomed in."
 msgstr ""
 "Um número menor é menos ampliado enquanto um número maior é mais ampliado."
 
-#: ../includes/admin/admin-location-fields.php:298
+#: ../includes/admin/admin-location-fields.php:322
 msgctxt "location admin column"
 msgid "Address"
 msgstr "Endereço"
 
-#: ../includes/admin/admin-location-fields.php:299
+#: ../includes/admin/admin-location-fields.php:323
 msgctxt "location admin column"
 msgid "Times"
 msgstr "Horários"
 
-#: ../includes/admin/admin-location-fields.php:300
+#: ../includes/admin/admin-location-fields.php:324
 #: ../includes/admin/admin-person-fields.php:224
 msgctxt "sorting"
 msgid "Order"
 msgstr "Ordem"
 
-#: ../includes/admin/admin-location-fields.php:304
+#: ../includes/admin/admin-location-fields.php:328
 msgctxt "location admin column"
 msgid "Location"
 msgstr "Local"
@@ -339,7 +311,7 @@ msgid "Person Details"
 msgstr "Detalhes do Líder"
 
 #: ../includes/admin/admin-person-fields.php:97
-#: ../includes/admin/admin-person-fields.php:222
+msgctxt "person meta box"
 msgid "Position"
 msgstr "Cargo"
 
@@ -349,14 +321,13 @@ msgstr ""
 "Digite o cargo ou título do líder (por exemplo, o pastor sênior, diácono, "
 "etc.)"
 
-#: ../includes/admin/admin-person-fields.php:145
-msgctxt "location meta box"
-msgid "Email"
-msgstr "E-mail"
-
 #: ../includes/admin/admin-person-fields.php:169
 msgid "URLs"
 msgstr "URLs"
+
+#: ../includes/admin/admin-person-fields.php:222
+msgid "Position"
+msgstr "Cargo"
 
 #: ../includes/admin/admin-person-fields.php:223
 msgctxt "people column"
@@ -513,7 +484,6 @@ msgid "You do not have permission to install plugin updates"
 msgstr ""
 
 #: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:352
-#, fuzzy
 msgid "Error"
 msgstr ""
 "<p><b>Erro do Google Maps:</b> atributos de <i>latitude</i> e <i>longitude</"
@@ -723,7 +693,7 @@ msgid "No people found in Trash"
 msgstr "Nenhum líder encontrado na Lixeira"
 
 #: ../includes/settings.php:41
-#, fuzzy, php-format
+#, php-format
 msgid "%1$s Settings"
 msgstr "Mais posts pro %1$s"
 
@@ -735,7 +705,6 @@ msgid ""
 msgstr ""
 
 #: ../includes/settings.php:70
-#, fuzzy
 msgctxt "settings"
 msgid "Add-on Licenses"
 msgstr "Fazer um Comentário"
@@ -1082,67 +1051,56 @@ msgid "Event Category"
 msgstr ""
 
 #: ../includes/taxonomies.php:271
-#, fuzzy
 msgctxt "events"
 msgid "Search Categories"
 msgstr "Buscar Séries"
 
 #: ../includes/taxonomies.php:272
-#, fuzzy
 msgctxt "events"
 msgid "Popular Categories"
 msgstr "Séries Populares"
 
 #: ../includes/taxonomies.php:273
-#, fuzzy
 msgctxt "events"
 msgid "All Categories"
 msgstr "Todas as Categorias"
 
 #: ../includes/taxonomies.php:276
-#, fuzzy
 msgctxt "events"
 msgid "Edit Event Category"
 msgstr "Editar Compromisso"
 
 #: ../includes/taxonomies.php:277
-#, fuzzy
 msgctxt "events"
 msgid "Update Event Category"
 msgstr "Atualizar Pregador"
 
 #: ../includes/taxonomies.php:278
-#, fuzzy
 msgctxt "events"
 msgid "Add Category"
 msgstr "Adicionar Tag"
 
 #: ../includes/taxonomies.php:279
-#, fuzzy
 msgctxt "events"
 msgid "New Category"
 msgstr "Nova Tag"
 
 #: ../includes/taxonomies.php:280
-#, fuzzy
 msgctxt "events"
 msgid "Separate categories with commas"
 msgstr "Separar séries com vírgulas"
 
 #: ../includes/taxonomies.php:281
-#, fuzzy
 msgctxt "events"
 msgid "Add or remove categories"
 msgstr "Adicionar ou ramoner séries"
 
 #: ../includes/taxonomies.php:282
-#, fuzzy
 msgctxt "events"
 msgid "Choose from the most used categories"
 msgstr "Escolher a partir das séries mais utilizadas"
 
 #: ../includes/taxonomies.php:283
-#, fuzzy
 msgctxt "event menu name"
 msgid "Categories"
 msgstr "Categorias"
@@ -1211,6 +1169,26 @@ msgstr "Escolher a partir dos grupos mais utilizados"
 msgctxt "people menu name"
 msgid "Groups"
 msgstr "Grupos"
+
+#~ msgctxt "location meta box"
+#~ msgid "Address"
+#~ msgstr "Endereço"
+
+#~ msgctxt "location meta box"
+#~ msgid "Map Latitude"
+#~ msgstr "Latitude do Mapa"
+
+#~ msgctxt "location meta box"
+#~ msgid "Map Longitude"
+#~ msgstr "Longitude do Mapa"
+
+#~ msgctxt "location meta box"
+#~ msgid "Map Type"
+#~ msgstr "Tipo do Mapa"
+
+#~ msgctxt "location meta box"
+#~ msgid "Map Zoom"
+#~ msgstr "Zoom do Mapa"
 
 #~ msgctxt "events admin column"
 #~ msgid "Where"
