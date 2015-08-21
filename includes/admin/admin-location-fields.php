@@ -139,6 +139,30 @@ function ctc_add_meta_box_location() {
 				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
 			),
 
+			// Email
+			'_ctc_location_email' => array(
+				'name'				=> _x( 'Email', 'location meta box', 'church-theme-content' ),
+				'after_name'		=> '', // (Optional), (Required), etc.
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
+				'desc'				=> '',
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'checkbox_label'	=> '', //show text after checkbox
+				'options'			=> array(), // array of keys/values for radio or select
+				'upload_button'		=> '', // text for button that opens media frame
+				'upload_title'		=> '', // title appearing at top of media frame
+				'upload_type'		=> '', // optional type of media to filter by (image, audio, video, application/pdf)
+				'default'			=> '', // value to pre-populate option with (before first save or on reset)
+				'no_empty'			=> false, // if user empties value, force default to be saved instead
+				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'class'				=> 'ctmb-medium', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
+				'field_attributes'	=> array(), // attr => value array for field container
+				'field_class'		=> '', // class(es) to add to field container
+				'custom_sanitize'	=> 'sanitize_email', // function to do additional sanitization
+				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
+			),
+
 			// Times
 			'_ctc_location_times' => array(
 				'name'				=> _x( 'Times', 'location meta box', 'church-theme-content' ),
