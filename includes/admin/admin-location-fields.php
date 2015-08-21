@@ -69,7 +69,7 @@ function ctc_add_meta_box_location() {
 
 			// Address
 			'_ctc_location_address' => array(
-				'name'				=> _x( 'Address', 'location meta box', 'church-theme-content' ),
+				'name'				=> __( 'Address', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> '',
@@ -117,7 +117,7 @@ function ctc_add_meta_box_location() {
 
 			// Phone
 			'_ctc_location_phone' => array(
-				'name'				=> _x( 'Phone', 'location meta box', 'church-theme-content' ),
+				'name'				=> __( 'Phone', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> '',
@@ -141,7 +141,7 @@ function ctc_add_meta_box_location() {
 
 			// Email
 			'_ctc_location_email' => array(
-				'name'				=> _x( 'Email', 'location meta box', 'church-theme-content' ),
+				'name'				=> __( 'Email', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> '',
@@ -189,7 +189,7 @@ function ctc_add_meta_box_location() {
 
 			// Map Latitude
 			'_ctc_location_map_lat' => array(
-				'name'				=> _x( 'Map Latitude', 'location meta box', 'church-theme-content' ),
+				'name'				=> __( 'Map Latitude', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> __( 'You can <a href="http://churchthemes.com/get-latitude-longitude" target="_blank">use this</a> to convert an address into coordinates.', 'church-theme-content' ),
@@ -213,7 +213,7 @@ function ctc_add_meta_box_location() {
 
 			// Map Longitude
 			'_ctc_location_map_lng' => array(
-				'name'				=> _x( 'Map Longitude', 'location meta box', 'church-theme-content' ),
+				'name'				=> __( 'Map Longitude', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> '',
@@ -237,7 +237,7 @@ function ctc_add_meta_box_location() {
 
 			// Map Type
 			'_ctc_location_map_type' => array(
-				'name'				=> _x( 'Map Type', 'location meta box', 'church-theme-content' ),
+				'name'				=> __( 'Map Type', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> _x( 'You can show a road map, satellite imagery, a combination of both (hybrid) or terrain.', 'location meta box', 'church-theme-content' ),
@@ -262,7 +262,7 @@ function ctc_add_meta_box_location() {
 
 			// Map Zoom
 			'_ctc_location_map_zoom' => array(
-				'name'				=> _x( 'Map Zoom', 'location meta box', 'church-theme-content' ),
+				'name'				=> __( 'Map Zoom', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> _x( 'A lower number is more zoomed out while a higher number is more zoomed in.', 'location meta box', 'church-theme-content' ),

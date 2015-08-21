@@ -1,7 +1,8 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Church Theme Content\n"
-"POT-Creation-Date: 2015-02-23 11:04-0600\n"
+"POT-Creation-Date: 2015-08-21 10:24-0500\n"
 "PO-Revision-Date: 2015-02-23 11:04-0600\n"
 "Last-Translator: churchthemes.com\n"
 "Language-Team: churchthemes.com\n"
@@ -9,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.8.4\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_nx:1,2;_x:1,2c;_ex:1,2c;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:1,2,3c\n"
@@ -106,7 +107,7 @@ msgid ""
 msgstr ""
 
 #: ../includes/admin/admin-event-fields.php:362
-msgctxt "event meta box"
+#: ../includes/admin/admin-location-fields.php:72
 msgid "Address"
 msgstr ""
 
@@ -120,24 +121,24 @@ msgid "Show directions link"
 msgstr ""
 
 #: ../includes/admin/admin-event-fields.php:410
-msgctxt "event meta box"
+#: ../includes/admin/admin-location-fields.php:192
 msgid "Map Latitude"
 msgstr ""
 
 #: ../includes/admin/admin-event-fields.php:413
-#: ../includes/admin/admin-location-fields.php:171
+#: ../includes/admin/admin-location-fields.php:195
 msgid ""
 "You can <a href=\"http://churchthemes.com/get-latitude-longitude\" target="
 "\"_blank\">use this</a> to convert an address into coordinates."
 msgstr ""
 
 #: ../includes/admin/admin-event-fields.php:434
-msgctxt "event meta box"
+#: ../includes/admin/admin-location-fields.php:216
 msgid "Map Longitude"
 msgstr ""
 
 #: ../includes/admin/admin-event-fields.php:458
-msgctxt "event meta box"
+#: ../includes/admin/admin-location-fields.php:240
 msgid "Map Type"
 msgstr ""
 
@@ -149,7 +150,7 @@ msgid ""
 msgstr ""
 
 #: ../includes/admin/admin-event-fields.php:482
-msgctxt "event meta box"
+#: ../includes/admin/admin-location-fields.php:265
 msgid "Map Zoom"
 msgstr ""
 
@@ -160,7 +161,7 @@ msgid ""
 msgstr ""
 
 #: ../includes/admin/admin-event-fields.php:669
-#: ../includes/admin/admin-location-fields.php:293
+#: ../includes/admin/admin-location-fields.php:317
 #: ../includes/admin/admin-person-fields.php:217
 #: ../includes/admin/admin-sermon-fields.php:240
 msgid "Thumbnail"
@@ -238,72 +239,51 @@ msgctxt "location meta box"
 msgid "Location Details"
 msgstr ""
 
-#: ../includes/admin/admin-location-fields.php:72
-msgctxt "location meta box"
-msgid "Address"
-msgstr ""
-
 #: ../includes/admin/admin-location-fields.php:120
 #: ../includes/admin/admin-person-fields.php:121
-msgctxt "location meta box"
 msgid "Phone"
 msgstr ""
 
 #: ../includes/admin/admin-location-fields.php:144
-msgctxt "location meta box"
-msgid "Times"
+#: ../includes/admin/admin-person-fields.php:145
+msgid "Email"
 msgstr ""
 
 #: ../includes/admin/admin-location-fields.php:168
 msgctxt "location meta box"
-msgid "Map Latitude"
+msgid "Times"
 msgstr ""
 
-#: ../includes/admin/admin-location-fields.php:192
-msgctxt "location meta box"
-msgid "Map Longitude"
-msgstr ""
-
-#: ../includes/admin/admin-location-fields.php:216
-msgctxt "location meta box"
-msgid "Map Type"
-msgstr ""
-
-#: ../includes/admin/admin-location-fields.php:219
+#: ../includes/admin/admin-location-fields.php:243
 msgctxt "location meta box"
 msgid ""
 "You can show a road map, satellite imagery, a combination of both (hybrid) "
 "or terrain."
 msgstr ""
 
-#: ../includes/admin/admin-location-fields.php:241
-msgctxt "location meta box"
-msgid "Map Zoom"
-msgstr ""
-
-#: ../includes/admin/admin-location-fields.php:244
+#: ../includes/admin/admin-location-fields.php:268
 msgctxt "location meta box"
 msgid ""
 "A lower number is more zoomed out while a higher number is more zoomed in."
 msgstr ""
 
-#: ../includes/admin/admin-location-fields.php:298
+#: ../includes/admin/admin-location-fields.php:322
 msgctxt "location admin column"
 msgid "Address"
 msgstr ""
 
-#: ../includes/admin/admin-location-fields.php:299
+#: ../includes/admin/admin-location-fields.php:323
 msgctxt "location admin column"
 msgid "Times"
 msgstr ""
 
-#: ../includes/admin/admin-location-fields.php:300
+#: ../includes/admin/admin-location-fields.php:324
 #: ../includes/admin/admin-person-fields.php:224
 msgctxt "sorting"
 msgid "Order"
 msgstr ""
 
-#: ../includes/admin/admin-location-fields.php:304
+#: ../includes/admin/admin-location-fields.php:328
 msgctxt "location admin column"
 msgid "Location"
 msgstr ""
@@ -318,7 +298,7 @@ msgid "Person Details"
 msgstr ""
 
 #: ../includes/admin/admin-person-fields.php:97
-#: ../includes/admin/admin-person-fields.php:222
+msgctxt "person meta box"
 msgid "Position"
 msgstr ""
 
@@ -326,13 +306,12 @@ msgstr ""
 msgid "Enter the person's position or title (e.g. Senior Pastor, Deacon, etc.)"
 msgstr ""
 
-#: ../includes/admin/admin-person-fields.php:145
-msgctxt "location meta box"
-msgid "Email"
-msgstr ""
-
 #: ../includes/admin/admin-person-fields.php:169
 msgid "URLs"
+msgstr ""
+
+#: ../includes/admin/admin-person-fields.php:222
+msgid "Position"
 msgstr ""
 
 #: ../includes/admin/admin-person-fields.php:223

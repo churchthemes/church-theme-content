@@ -94,7 +94,7 @@ function ctc_add_meta_box_person_details() {
 
 			// Position
 			'_ctc_person_position' => array(
-				'name'				=> __( 'Position', 'church-theme-content' ),
+				'name'				=> _x( 'Position', 'person meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> __( "Enter the person's position or title (e.g. Senior Pastor, Deacon, etc.)", 'church-theme-content' ),
@@ -118,7 +118,7 @@ function ctc_add_meta_box_person_details() {
 
 			// Phone
 			'_ctc_person_phone' => array(
-				'name'				=> _x( 'Phone', 'location meta box', 'church-theme-content' ),
+				'name'				=> __( 'Phone', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> '',
@@ -142,7 +142,7 @@ function ctc_add_meta_box_person_details() {
 
 			// Email
 			'_ctc_person_email' => array(
-				'name'				=> _x( 'Email', 'location meta box', 'church-theme-content' ),
+				'name'				=> __( 'Email', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> '',
