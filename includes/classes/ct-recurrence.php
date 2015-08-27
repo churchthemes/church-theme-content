@@ -52,7 +52,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 		public function __construct() {
 
 			// Version
-			$this->version = '1.0';
+			$this->version = '0.9';
 
 		}
 
