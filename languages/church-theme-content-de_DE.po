@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Church Theme Content\n"
-"POT-Creation-Date: 2015-08-21 10:25-0500\n"
-"PO-Revision-Date: 2015-08-21 10:30-0500\n"
+"POT-Creation-Date: 2015-09-09 17:17-0500\n"
+"PO-Revision-Date: 2015-09-09 17:17-0500\n"
 "Last-Translator: churchthemes.com\n"
 "Language-Team: Matthias Drexler <matthias.d@urbanlifechurch.de>\n"
 "Language: de_DE\n"
@@ -37,25 +37,28 @@ msgstr "Enddatum"
 
 #: ../includes/admin/admin-event-fields.php:123
 msgid "Start Time"
-msgstr "Startdatum"
+msgstr "Anfangszeit"
 
 #: ../includes/admin/admin-event-fields.php:148
 msgid "End Time"
-msgstr "Enddatum"
+msgstr "Endzeit"
 
 #: ../includes/admin/admin-event-fields.php:179
 msgid "Do not show times entered above (use only for ordering events)"
 msgstr ""
+"Obrige Zeiten ausschließlich für die Sortierung verwenden und nicht anzeigen"
 
 #: ../includes/admin/admin-event-fields.php:200
 msgid "Time Description"
-msgstr " Beschreibung"
+msgstr "Verbale Zeit"
 
 #: ../includes/admin/admin-event-fields.php:203
 msgid ""
 "Optionally describe the time (e.g. \"9:30 am and 11:00 am\" or \"After "
 "Second Service\")"
 msgstr ""
+"Verbale Beschreibung der Zeit (optional, z.B. \"9:30 Uhr und 11:00 Uhr\" "
+"oder \"Nach dem Gottesdienst\")"
 
 #: ../includes/admin/admin-event-fields.php:224
 msgid "Recurrence"
@@ -65,8 +68,8 @@ msgstr "Wiederholung"
 msgctxt "event meta box"
 msgid "Dates automatically move forward after event ends."
 msgstr ""
-"Start- und Enddatum werden automatisch aktualisiert sobald die vorangegangen "
-"Veranstaltung endet. "
+"Anfangs- und Enddatum werden automatisch aktualisiert sobald die "
+"vorangegangene Veranstaltung endet. "
 
 #: ../includes/admin/admin-event-fields.php:231
 msgctxt "event meta box"
@@ -106,20 +109,19 @@ msgid ""
 "You can provide a building name, room number or other location name to help "
 "people find the event."
 msgstr ""
-"Du kannst ein Gebäudename, Raumnummer oder anderes eintragen, sodass die "
-"Veranstaltung gefunden werden kann."
+"Gebäudename, Raumnummer oder anderes eintragen, sodass die Veranstaltung "
+"gefunden werden kann."
 
 #: ../includes/admin/admin-event-fields.php:362
 #: ../includes/admin/admin-location-fields.php:72
+#, fuzzy
 msgid "Address"
 msgstr "Adresse"
 
 #: ../includes/admin/admin-event-fields.php:365
 msgid ""
 "You can enter an address if it is necessary for people to find this event."
-msgstr ""
-"Du kannst eine Adresse eintragen, damit deine Veranstaltung gefunden werden "
-"kann."
+msgstr "Adresse eintragen, damit deine Veranstaltung gefunden werden kann."
 
 #: ../includes/admin/admin-event-fields.php:391
 msgid "Show directions link"
@@ -127,6 +129,7 @@ msgstr "Link zur Galerie anzeigen"
 
 #: ../includes/admin/admin-event-fields.php:410
 #: ../includes/admin/admin-location-fields.php:192
+#, fuzzy
 msgid "Map Latitude"
 msgstr "Breitengrade (Latitude)"
 
@@ -136,17 +139,18 @@ msgid ""
 "You can <a href=\"http://churchthemes.com/get-latitude-longitude\" target="
 "\"_blank\">use this</a> to convert an address into coordinates."
 msgstr ""
-"Du kannst <a href=\"http://churchthemes.com/get-latitude-longitude\" target="
-"\"_blank\">diesen Link</a> verwenden, um eine Adresse in Koordinaten "
-"umzuwandeln."
+"Diesen <a href=\"http://churchthemes.com/get-latitude-longitude\" target="
+"\"_blank\">Dienst</a> verwenden, um eine Adresse in Koordinaten umzuwandeln."
 
 #: ../includes/admin/admin-event-fields.php:434
 #: ../includes/admin/admin-location-fields.php:216
+#, fuzzy
 msgid "Map Longitude"
 msgstr "Längengrade (Longitude)"
 
 #: ../includes/admin/admin-event-fields.php:458
 #: ../includes/admin/admin-location-fields.php:240
+#, fuzzy
 msgid "Map Type"
 msgstr "Kartentyp"
 
@@ -156,11 +160,12 @@ msgid ""
 "You can show a road map, satellite imagery, a combination of both (hybrid) "
 "or terrain."
 msgstr ""
-"Du kannst aus einer Straßenkartenansicht, Satellitenbilder, eine Kombination "
-"aus beidem (Hybrid) oder einer Geländeansicht wählen."
+"Straßenkartenansicht, Satellitenbilder, eine Kombination aus beidem (Hybrid) "
+"oder einer Geländeansicht wählen."
 
 #: ../includes/admin/admin-event-fields.php:482
 #: ../includes/admin/admin-location-fields.php:265
+#, fuzzy
 msgid "Map Zoom"
 msgstr "Karten Vergrößerung"
 
@@ -169,7 +174,7 @@ msgctxt "event meta box"
 msgid ""
 "A lower number is more zoomed out while a higher number is more zoomed in."
 msgstr ""
-"Eine kleine Nummer zeigt einen größeren Kartenausschnitt, wohingegen eine "
+"Eine kleine Zahl zeigt einen größeren Kartenausschnitt, wohingegen eine "
 "große Nummer die Karte stark vergrößert darstellt."
 
 #: ../includes/admin/admin-event-fields.php:669
@@ -202,29 +207,29 @@ msgstr " &ndash; "
 #: ../includes/admin/admin-event-fields.php:785
 #, php-format
 msgid "Every week until %1$s"
-msgstr ""
+msgstr "Jede Woche bis %1$s "
 
 #: ../includes/admin/admin-event-fields.php:790
 msgid "Every week"
-msgstr ""
+msgstr "Jede Woche"
 
 #: ../includes/admin/admin-event-fields.php:801
 #, php-format
 msgid "Every month until %1$s"
-msgstr ""
+msgstr "Jeden Monat bis %1$s"
 
 #: ../includes/admin/admin-event-fields.php:806
 msgid "Every month"
-msgstr ""
+msgstr "Jeden Monat"
 
 #: ../includes/admin/admin-event-fields.php:817
 #, php-format
 msgid "Every year until %1$s"
-msgstr ""
+msgstr "Jedes Jahr bis %1$s"
 
 #: ../includes/admin/admin-event-fields.php:822
 msgid "Every year"
-msgstr ""
+msgstr "Jedes Jahr"
 
 #: ../includes/admin/admin-helpers.php:66
 msgctxt "map"
@@ -249,15 +254,17 @@ msgstr "Gelände"
 #: ../includes/admin/admin-location-fields.php:34
 msgctxt "location meta box"
 msgid "Location Details"
-msgstr "Ort Details"
+msgstr "Details zum Ort"
 
 #: ../includes/admin/admin-location-fields.php:120
 #: ../includes/admin/admin-person-fields.php:121
+#, fuzzy
 msgid "Phone"
 msgstr "Telefon"
 
 #: ../includes/admin/admin-location-fields.php:144
 #: ../includes/admin/admin-person-fields.php:145
+#, fuzzy
 msgid "Email"
 msgstr "Email"
 
@@ -272,8 +279,8 @@ msgid ""
 "You can show a road map, satellite imagery, a combination of both (hybrid) "
 "or terrain."
 msgstr ""
-"Du kannst aus einer Straßenkartenansicht, Satellitenbilder, eine Kombination "
-"aus beidem (Hybrid) oder einer Geländeansicht wählen."
+"Straßenkartenansicht, Satellitenbilder, eine Kombination aus beidem (Hybrid) "
+"oder einer Geländeansicht wählen."
 
 #: ../includes/admin/admin-location-fields.php:268
 msgctxt "location meta box"
@@ -311,17 +318,17 @@ msgstr "Name hier eintragen"
 #: ../includes/admin/admin-person-fields.php:59
 msgctxt "meta box"
 msgid "Person Details"
-msgstr "Person Details"
+msgstr "Details zur Person"
 
 #: ../includes/admin/admin-person-fields.php:97
+#, fuzzy
 msgctxt "person meta box"
 msgid "Position"
 msgstr "Position"
 
 #: ../includes/admin/admin-person-fields.php:100
 msgid "Enter the person's position or title (e.g. Senior Pastor, Deacon, etc.)"
-msgstr ""
-"Trage die Position oder Titel der Person ein (z.B. Pastor, Diakon, etc.)"
+msgstr "Position oder Titel der Person ein (z.B. Pastor, Diakon, etc.)"
 
 #: ../includes/admin/admin-person-fields.php:169
 msgid "URLs"
@@ -352,7 +359,7 @@ msgstr "Vollständiger Text"
 
 #: ../includes/admin/admin-sermon-fields.php:75
 msgid "Check this if you provide a complete transcript above."
-msgstr "Markiere dies, wenn du ein vollständiges Predigtskript anbietest."
+msgstr "Markieren wenn ein vollständiges Predigtskript angeboten wird."
 
 #: ../includes/admin/admin-sermon-fields.php:77
 msgid "Full sermon text provided"
@@ -382,7 +389,7 @@ msgstr "Video auswählen"
 
 #: ../includes/admin/admin-sermon-fields.php:108
 msgid "Choose an Video File"
-msgstr "Wähle eine Videodatei"
+msgstr "Videodatei auswählen"
 
 #: ../includes/admin/admin-sermon-fields.php:124
 msgid "Audio"
@@ -408,7 +415,7 @@ msgstr "Audio auswählen"
 
 #: ../includes/admin/admin-sermon-fields.php:136
 msgid "Choose an Audio File"
-msgstr "Wähle eine Audiodatei"
+msgstr "Audiodatei auswählen"
 
 #: ../includes/admin/admin-sermon-fields.php:152 ../includes/mime-types.php:74
 msgid "PDF"
@@ -428,7 +435,7 @@ msgstr "PDF auswählen"
 
 #: ../includes/admin/admin-sermon-fields.php:160
 msgid "Choose a PDF File"
-msgstr "Wähle eine PDF Datei"
+msgstr "PDF Datei auswählen"
 
 #: ../includes/admin/admin-sermon-fields.php:245
 msgctxt "sermons"
@@ -474,6 +481,8 @@ msgid ""
 "There is a new version of %1$s available. <a target=\"_blank\" class=\"%4$s"
 "\" href=\"%2$s\">View version %3$s details</a>."
 msgstr ""
+"Eine neue Version von %1$s ist verfügbar. <a target=\"_blank\" class=\"%4$s"
+"\" href=\"%2$s\">Details zu Version%3$s</a>."
 
 #: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:211
 #, php-format
@@ -482,20 +491,21 @@ msgid ""
 "\" href=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s\">update "
 "now</a>."
 msgstr ""
+"Eine Neue Version von %1$s ist verfügbar. <a target=\"_blank\" class=\"%5$s"
+"\" href=\"%2$s\">Details zu Version %3$s anzeigen</a> oder <a href=\"%4$s"
+"\">jetzt updaten</a>."
 
 #: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:352
 msgid "You do not have permission to install plugin updates"
-msgstr ""
+msgstr "Keine Rechte um Plugin-Updates zu installieren."
 
 #: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:352
 msgid "Error"
-msgstr ""
-"<p><b>Google Maps Error:</b> <i>Breitengrade</i> und  <i>Längengrade</i> "
-"werden benötigt. Hilfe erhalten Sie in der Dokumentation.</p>"
+msgstr "Fehler"
 
 #: ../includes/libraries/ct-plugin-settings/ct-plugin-settings.php:259
 msgid "Settings"
-msgstr ""
+msgstr "Einstellungen"
 
 #: ../includes/mime-types.php:75
 msgid "Manage PDFs"
@@ -699,7 +709,7 @@ msgstr "Keine Person im Papierkorb gefunden"
 #: ../includes/settings.php:41
 #, php-format
 msgid "%1$s Settings"
-msgstr "Mehr Beiträge von %1$s"
+msgstr "%1$s Einstellungen"
 
 #: ../includes/settings.php:47
 #, php-format
@@ -707,17 +717,22 @@ msgid ""
 "These settings are for the <a href=\"%1$s\" target=\"_blank\">Church Theme "
 "Content</a> plugin and its <a href=\"%2$s\" target=\"_blank\">Add-ons</a>."
 msgstr ""
+"Einstellungen für das <a href=\"%1$s\" target=\"_blank\">Church Theme "
+"Content</a> Plugin und zugehörige <a href=\"%2$s\" target=\"_blank\">Add-"
+"ons</a>."
 
 #: ../includes/settings.php:70
 msgctxt "settings"
 msgid "Add-on Licenses"
-msgstr "Ein Kommentar schreiben"
+msgstr "Add-On-Lizenz"
 
 #: ../includes/settings.php:75
 msgid ""
 "Save then activate your add-on license keys to enable one-click updates for "
 "them."
 msgstr ""
+"Add-on-Lizenzschlüssel eingeben und aktivieren um Add-on für One-Klick "
+"Updates freizuschalten."
 
 #: ../includes/taxonomies.php:30
 msgctxt "taxonomy general name"
@@ -777,7 +792,7 @@ msgstr "Themen hinzufügen oder entfernen"
 #: ../includes/taxonomies.php:43
 msgctxt "sermons"
 msgid "Choose from the most used topics"
-msgstr "Wähle aus den meist verwendeten Themen"
+msgstr "Aus den meist verwendeten Themen wählen"
 
 #: ../includes/taxonomies.php:44
 msgctxt "sermon menu name"
@@ -842,7 +857,7 @@ msgstr "Buch hinzufügen oder entfernen"
 #: ../includes/taxonomies.php:90
 msgctxt "sermons"
 msgid "Choose from the most used books"
-msgstr "Wähle aus den meist verwendeten Büchern"
+msgstr "Aus den meist verwendeten Büchern wählen"
 
 #: ../includes/taxonomies.php:91
 msgctxt "sermon menu name"
@@ -907,7 +922,7 @@ msgstr "Serien hinzufügen oder entfernen"
 #: ../includes/taxonomies.php:137
 msgctxt "sermons"
 msgid "Choose from the most used series"
-msgstr "Wähle aus den meist verwendeten Serien"
+msgstr "Aus den meist verwendeten Serien wählen"
 
 #: ../includes/taxonomies.php:138
 msgctxt "sermon menu name"
@@ -972,7 +987,7 @@ msgstr "Sprecher hinzufügen oder entfernen"
 #: ../includes/taxonomies.php:184
 msgctxt "sermons"
 msgid "Choose from the most used speakers"
-msgstr "Wähle aus den meist verwendeten Sprechern"
+msgstr "Aus den meist verwendeten Sprechern wählen"
 
 #: ../includes/taxonomies.php:185
 msgctxt "sermon menu name"
@@ -1037,7 +1052,7 @@ msgstr "Markierungen hinzufügen oder entfernen"
 #: ../includes/taxonomies.php:231
 msgctxt "sermons"
 msgid "Choose from the most used tags"
-msgstr "Wähle aus den meist verwendete Markierungen"
+msgstr "Aus den meist verwendete Markierungen wählen"
 
 #: ../includes/taxonomies.php:232
 msgctxt "sermon menu name"
@@ -1047,22 +1062,22 @@ msgstr "Markierungen"
 #: ../includes/taxonomies.php:269
 msgctxt "taxonomy general name"
 msgid "Event Categories"
-msgstr ""
+msgstr "Veranstaltungskategorien"
 
 #: ../includes/taxonomies.php:270
 msgctxt "taxonomy singular name"
 msgid "Event Category"
-msgstr ""
+msgstr "Veranstaltungskategorie"
 
 #: ../includes/taxonomies.php:271
 msgctxt "events"
 msgid "Search Categories"
-msgstr "Suche Serie"
+msgstr "Suche Kategorien"
 
 #: ../includes/taxonomies.php:272
 msgctxt "events"
 msgid "Popular Categories"
-msgstr "Beliebte Serien"
+msgstr "Beliebte Kategorien"
 
 #: ../includes/taxonomies.php:273
 msgctxt "events"
@@ -1072,22 +1087,22 @@ msgstr "Alle Kategorien"
 #: ../includes/taxonomies.php:276
 msgctxt "events"
 msgid "Edit Event Category"
-msgstr "Veranstaltung editieren"
+msgstr "Veranstaltungskategorien bearbeiten"
 
 #: ../includes/taxonomies.php:277
 msgctxt "events"
 msgid "Update Event Category"
-msgstr "Sprecher aktualisieren"
+msgstr "Veranstaltungskategorien aktualisieren"
 
 #: ../includes/taxonomies.php:278
 msgctxt "events"
 msgid "Add Category"
-msgstr "Markierung hinzufügen"
+msgstr "Kategorie hinzufügen"
 
 #: ../includes/taxonomies.php:279
 msgctxt "events"
 msgid "New Category"
-msgstr "Neue Markierung"
+msgstr "Neue Kategorie"
 
 #: ../includes/taxonomies.php:280
 msgctxt "events"
@@ -1097,12 +1112,12 @@ msgstr "Serien mit Kommas trennen"
 #: ../includes/taxonomies.php:281
 msgctxt "events"
 msgid "Add or remove categories"
-msgstr "Serien hinzufügen oder entfernen"
+msgstr "Kategorien hinzufügen oder entfernen"
 
 #: ../includes/taxonomies.php:282
 msgctxt "events"
 msgid "Choose from the most used categories"
-msgstr "Wähle aus den meist verwendeten Serien"
+msgstr "Wähle aus den meist verwendeten Kategorien"
 
 #: ../includes/taxonomies.php:283
 msgctxt "event menu name"
@@ -1167,7 +1182,7 @@ msgstr "Gruppen hinzufügen oder entfernen"
 #: ../includes/taxonomies.php:333
 msgctxt "people"
 msgid "Choose from the most used groups"
-msgstr "Wähle aus den meist verwendeten Gruppen"
+msgstr "Aus den meist verwendeten Gruppen wählen"
 
 #: ../includes/taxonomies.php:334
 msgctxt "people menu name"
