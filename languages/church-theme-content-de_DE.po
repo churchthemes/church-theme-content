@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Church Theme Content\n"
 "POT-Creation-Date: 2015-02-23 11:05-0600\n"
-"PO-Revision-Date: 2015-02-23 11:05-0600\n"
-"Last-Translator: churchthemes.com\n"
+"PO-Revision-Date: 2015-10-07 20:46+0100\n"
+"Last-Translator: Martin <webmaster@dresden.feg.de>\n"
 "Language-Team: Matthias Drexler <matthias.d@urbanlifechurch.de>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.5.5\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_nx:1,2;_x:1,2c;_ex:1,2c;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:1,2,3c\n"
@@ -36,41 +36,41 @@ msgid "End Date"
 msgstr "Enddatum"
 
 #: ../includes/admin/admin-event-fields.php:123
-#, fuzzy
 msgid "Start Time"
 msgstr "Startdatum"
 
 #: ../includes/admin/admin-event-fields.php:148
-#, fuzzy
 msgid "End Time"
 msgstr "Enddatum"
 
 #: ../includes/admin/admin-event-fields.php:179
 msgid "Do not show times entered above (use only for ordering events)"
 msgstr ""
+"Die oben angegebene Uhrzeit nicht anzeigen (die Uhrzeit wird dann nur "
+"verwendet um die Reihenfolge der Veranstaltungen zu festzulegen)"
 
 #: ../includes/admin/admin-event-fields.php:200
-#, fuzzy
 msgid "Time Description"
-msgstr " Beschreibung"
+msgstr "Beschreibung"
 
 #: ../includes/admin/admin-event-fields.php:203
 msgid ""
 "Optionally describe the time (e.g. \"9:30 am and 11:00 am\" or \"After "
 "Second Service\")"
 msgstr ""
+"Optional kann hier die Zeit beschrieben werden (z.B. \"9:30 und 11:00 Uhr\" "
+"oder \"Nach dem Gottesdienst\")"
 
 #: ../includes/admin/admin-event-fields.php:224
 msgid "Recurrence"
 msgstr "Wiederholung"
 
 #: ../includes/admin/admin-event-fields.php:227
-#, fuzzy
 msgctxt "event meta box"
 msgid "Dates automatically move forward after event ends."
 msgstr ""
 "Start- und Enddatum werden automatisch aktualisiert sobald die vorangegangen "
-"Veranstaltung endet. "
+"Veranstaltung endet."
 
 #: ../includes/admin/admin-event-fields.php:231
 msgctxt "event meta box"
@@ -126,9 +126,8 @@ msgstr ""
 "kann."
 
 #: ../includes/admin/admin-event-fields.php:391
-#, fuzzy
 msgid "Show directions link"
-msgstr "Link zur Galerie anzeigen"
+msgstr "Richtungs-Link anzeigen"
 
 #: ../includes/admin/admin-event-fields.php:410
 msgctxt "event meta box"
@@ -190,7 +189,6 @@ msgid "When"
 msgstr "Wann"
 
 #: ../includes/admin/admin-event-fields.php:675
-#, fuzzy
 msgctxt "events admin column"
 msgid "Details"
 msgstr "Details"
@@ -201,37 +199,36 @@ msgid " &ndash; "
 msgstr " &ndash; "
 
 #: ../includes/admin/admin-event-fields.php:755
-#, fuzzy
 msgctxt "time range separator"
 msgid " &ndash; "
-msgstr " &ndash; "
+msgstr " &ndash;"
 
 #: ../includes/admin/admin-event-fields.php:785
 #, php-format
 msgid "Every week until %1$s"
-msgstr ""
+msgstr "Wöchentlich bis %1$s"
 
 #: ../includes/admin/admin-event-fields.php:790
 msgid "Every week"
-msgstr ""
+msgstr "Wöchentlich"
 
 #: ../includes/admin/admin-event-fields.php:801
 #, php-format
 msgid "Every month until %1$s"
-msgstr ""
+msgstr "Monatlich bis %1$s"
 
 #: ../includes/admin/admin-event-fields.php:806
 msgid "Every month"
-msgstr ""
+msgstr "Monatlich"
 
 #: ../includes/admin/admin-event-fields.php:817
 #, php-format
 msgid "Every year until %1$s"
-msgstr ""
+msgstr "Jährlich bis %1$s"
 
 #: ../includes/admin/admin-event-fields.php:822
 msgid "Every year"
-msgstr ""
+msgstr "Jährlich"
 
 #: ../includes/admin/admin-helpers.php:66
 msgctxt "map"
@@ -325,7 +322,7 @@ msgstr "Zeiten"
 #: ../includes/admin/admin-person-fields.php:224
 msgctxt "sorting"
 msgid "Order"
-msgstr "Reinfolge"
+msgstr "Reihenfolge"
 
 #: ../includes/admin/admin-location-fields.php:304
 msgctxt "location admin column"
@@ -503,6 +500,8 @@ msgid ""
 "There is a new version of %1$s available. <a target=\"_blank\" class=\"%4$s"
 "\" href=\"%2$s\">View version %3$s details</a>."
 msgstr ""
+"Es ist eine neu Version von  %1$s verfügbar. <a target=\"_blank\" class="
+"\"%4$s\" href=\"%2$s\">Details von Version %3$s anzeigen</a>."
 
 #: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:211
 #, php-format
@@ -511,21 +510,21 @@ msgid ""
 "\" href=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s\">update "
 "now</a>."
 msgstr ""
+"Es ist eine neue Version von %1$s verfügbar. <a target=\"_blank\" class="
+"\"%5$s\" href=\"%2$s\">Details von Version %3$s anzeigen</a> or <a href="
+"\"%4$s\">Jetzt aktualisieren</a>."
 
 #: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:352
 msgid "You do not have permission to install plugin updates"
-msgstr ""
+msgstr "Ihnen fehlt die Berechtigung Plugin-Updates zu installieren"
 
 #: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:352
-#, fuzzy
 msgid "Error"
-msgstr ""
-"<p><b>Google Maps Error:</b> <i>Breitengrade</i> und  <i>Längengrade</i> "
-"werden benötigt. Hilfe erhalten Sie in der Dokumentation.</p>"
+msgstr "Fehler"
 
 #: ../includes/libraries/ct-plugin-settings/ct-plugin-settings.php:259
 msgid "Settings"
-msgstr ""
+msgstr "Einstellungen"
 
 #: ../includes/mime-types.php:75
 msgid "Manage PDFs"
@@ -727,9 +726,9 @@ msgid "No people found in Trash"
 msgstr "Keine Person im Papierkorb gefunden"
 
 #: ../includes/settings.php:41
-#, fuzzy, php-format
+#, php-format
 msgid "%1$s Settings"
-msgstr "Mehr Beiträge von %1$s"
+msgstr "%1$s Einstellungen"
 
 #: ../includes/settings.php:47
 #, php-format
@@ -737,18 +736,22 @@ msgid ""
 "These settings are for the <a href=\"%1$s\" target=\"_blank\">Church Theme "
 "Content</a> plugin and its <a href=\"%2$s\" target=\"_blank\">Add-ons</a>."
 msgstr ""
+"Diese Einstellungen sind für das <a href=\"%1$s\" target=\"_blank\">Church "
+"Theme Content</a> Plugin und dessen <a href=\"%2$s\" target=\"_blank\">Add-"
+"ons</a>."
 
 #: ../includes/settings.php:70
-#, fuzzy
 msgctxt "settings"
 msgid "Add-on Licenses"
-msgstr "Ein Kommentar schreiben"
+msgstr "Add-on Lizenzen"
 
 #: ../includes/settings.php:75
 msgid ""
 "Save then activate your add-on license keys to enable one-click updates for "
 "them."
 msgstr ""
+"Speichern Sie ihre add-on Lizenschlüssel und aktivieren Sie ihn "
+"anschliessend um one-click Updates freizuschalten."
 
 #: ../includes/taxonomies.php:30
 msgctxt "taxonomy general name"
@@ -818,12 +821,12 @@ msgstr "Themen"
 #: ../includes/taxonomies.php:77
 msgctxt "taxonomy general name"
 msgid "Sermon Books"
-msgstr "Bücher in der Predigt"
+msgstr "Predigt Bücher"
 
 #: ../includes/taxonomies.php:78
 msgctxt "taxonomy singular name"
 msgid "Sermon Book"
-msgstr "Buch in der Predigt"
+msgstr "Predigt Buch"
 
 #: ../includes/taxonomies.php:79
 msgctxt "sermons"
@@ -883,67 +886,67 @@ msgstr "Bücher"
 #: ../includes/taxonomies.php:124
 msgctxt "taxonomy general name"
 msgid "Sermon Series"
-msgstr "Predigtserien"
+msgstr "Predigtreihe"
 
 #: ../includes/taxonomies.php:125
 msgctxt "taxonomy singular name"
 msgid "Sermon Series"
-msgstr "Predigtserie"
+msgstr "Predigtreihen"
 
 #: ../includes/taxonomies.php:126
 msgctxt "sermons"
 msgid "Search Series"
-msgstr "Suche Serie"
+msgstr "Suche Predigtreihe"
 
 #: ../includes/taxonomies.php:127
 msgctxt "sermons"
 msgid "Popular Series"
-msgstr "Beliebte Serien"
+msgstr "Beliebte Predigtreihen"
 
 #: ../includes/taxonomies.php:128
 msgctxt "sermons"
 msgid "All Series"
-msgstr "Alle Serien"
+msgstr "Alle Reihen"
 
 #: ../includes/taxonomies.php:131
 msgctxt "sermons"
 msgid "Edit Series"
-msgstr "Serie bearbeiten"
+msgstr "Reihe bearbeiten"
 
 #: ../includes/taxonomies.php:132
 msgctxt "sermons"
 msgid "Update Series"
-msgstr "Serie aktualisieren"
+msgstr "Reihe aktualisieren"
 
 #: ../includes/taxonomies.php:133
 msgctxt "sermons"
 msgid "Add Series"
-msgstr "Serie hinzufügen"
+msgstr "Reihe hinzufügen"
 
 #: ../includes/taxonomies.php:134
 msgctxt "sermons"
 msgid "New Series"
-msgstr "Neue Serie"
+msgstr "Neue Reihe"
 
 #: ../includes/taxonomies.php:135
 msgctxt "sermons"
 msgid "Separate series with commas"
-msgstr "Serien mit Kommas trennen"
+msgstr "Reihen mit Kommas trennen"
 
 #: ../includes/taxonomies.php:136
 msgctxt "sermons"
 msgid "Add or remove series"
-msgstr "Serien hinzufügen oder entfernen"
+msgstr "Reihen hinzufügen oder entfernen"
 
 #: ../includes/taxonomies.php:137
 msgctxt "sermons"
 msgid "Choose from the most used series"
-msgstr "Wähle aus den meist verwendeten Serien"
+msgstr "Wähle aus den meist verwendeten Reihen"
 
 #: ../includes/taxonomies.php:138
 msgctxt "sermon menu name"
 msgid "Series"
-msgstr "Serien"
+msgstr "Reihen"
 
 #: ../includes/taxonomies.php:171
 msgctxt "taxonomy general name"
@@ -1078,75 +1081,64 @@ msgstr "Markierungen"
 #: ../includes/taxonomies.php:269
 msgctxt "taxonomy general name"
 msgid "Event Categories"
-msgstr ""
+msgstr "Veranstaltung Kategorien"
 
 #: ../includes/taxonomies.php:270
 msgctxt "taxonomy singular name"
 msgid "Event Category"
-msgstr ""
+msgstr "Veranstaltung Kategorie"
 
 #: ../includes/taxonomies.php:271
-#, fuzzy
 msgctxt "events"
 msgid "Search Categories"
-msgstr "Suche Serie"
+msgstr "Suche Kategorien"
 
 #: ../includes/taxonomies.php:272
-#, fuzzy
 msgctxt "events"
 msgid "Popular Categories"
-msgstr "Beliebte Serien"
+msgstr "Beliebte Kategorien"
 
 #: ../includes/taxonomies.php:273
-#, fuzzy
 msgctxt "events"
 msgid "All Categories"
 msgstr "Alle Kategorien"
 
 #: ../includes/taxonomies.php:276
-#, fuzzy
 msgctxt "events"
 msgid "Edit Event Category"
-msgstr "Veranstaltung editieren"
+msgstr "Veranstaltungs-Kategorie bearbeiten"
 
 #: ../includes/taxonomies.php:277
-#, fuzzy
 msgctxt "events"
 msgid "Update Event Category"
-msgstr "Sprecher aktualisieren"
+msgstr "Veranstaltungs-Kategorie aktualisieren"
 
 #: ../includes/taxonomies.php:278
-#, fuzzy
 msgctxt "events"
 msgid "Add Category"
-msgstr "Markierung hinzufügen"
+msgstr "Kategorie hinzufügen"
 
 #: ../includes/taxonomies.php:279
-#, fuzzy
 msgctxt "events"
 msgid "New Category"
-msgstr "Neue Markierung"
+msgstr "Neue Kategorie"
 
 #: ../includes/taxonomies.php:280
-#, fuzzy
 msgctxt "events"
 msgid "Separate categories with commas"
-msgstr "Serien mit Kommas trennen"
+msgstr "Kategorien mit Kommas trennen"
 
 #: ../includes/taxonomies.php:281
-#, fuzzy
 msgctxt "events"
 msgid "Add or remove categories"
-msgstr "Serien hinzufügen oder entfernen"
+msgstr "Kategorien hinzufügen oder entfernen"
 
 #: ../includes/taxonomies.php:282
-#, fuzzy
 msgctxt "events"
 msgid "Choose from the most used categories"
-msgstr "Wähle aus den meist verwendeten Serien"
+msgstr "Wähle aus den meist verwendeten Kategorien"
 
 #: ../includes/taxonomies.php:283
-#, fuzzy
 msgctxt "event menu name"
 msgid "Categories"
 msgstr "Kategorien"
