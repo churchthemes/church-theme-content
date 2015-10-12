@@ -2,215 +2,25 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Church Theme Content\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-23 11:04-0600\n"
-"PO-Revision-Date: 2015-09-21 17:16-0500\n"
+"POT-Creation-Date: 2015-10-12 10:39-0500\n"
+"PO-Revision-Date: 2015-10-12 10:39-0500\n"
 "Last-Translator: churchthemes.com <contact@churchthemes.com>\n"
 "Language-Team: churchthemes.com\n"
 "Language: es_ES\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.4\n"
-"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;__:1;"
-"_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;_x:1,2c;"
-"_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;esc_attr__:1;"
-"esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;esc_html_x:1,2c;"
-"comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Generator: Poedit 1.8.5\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
 "X-Poedit-Basepath: .\n"
 "X-Loco-Target-Locale: es_ES\n"
 "X-Poedit-SearchPath-0: ..\n"
-
-#: ../includes/admin/admin-event-fields.php:179
-msgid "Do not show times entered above (use only for ordering events)"
-msgstr ""
-"No mostrar los horarios (usarlos solo para ordenar los eventos cronológicamente)"
-
-#: ../includes/admin/admin-event-fields.php:203
-msgid ""
-"Optionally describe the time (e.g. \"9:30 am and 11:00 am\" or \"After Second "
-"Service\")"
-msgstr ""
-"Si quieres puedes describir el horario (p.ej. \"después de comer\" o \"todo el día"
-"\")"
-
-#: ../includes/admin/admin-event-fields.php:785
-#, php-format
-msgid "Every week until %1$s"
-msgstr "Cada semana hasta %1$s"
-
-#: ../includes/admin/admin-event-fields.php:790
-msgid "Every week"
-msgstr "Cada semana"
-
-#: ../includes/admin/admin-event-fields.php:801
-#, php-format
-msgid "Every month until %1$s"
-msgstr "Cada mes hasta %1$s"
-
-#: ../includes/admin/admin-event-fields.php:806
-msgid "Every month"
-msgstr "Cada mes"
-
-#: ../includes/admin/admin-event-fields.php:817
-#, php-format
-msgid "Every year until %1$s"
-msgstr "Cada año hasta %1$s"
-
-#: ../includes/admin/admin-event-fields.php:822
-msgid "Every year"
-msgstr "Cada año"
-
-#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:203
-#, php-format
-msgid ""
-"There is a new version of %1$s available. <a target=\"_blank\" class=\"%4$s\" href="
-"\"%2$s\">View version %3$s details</a>."
-msgstr ""
-"Hay una nueva versión de %1$s disponible. <a target=\"_blank\" class=\"%4$s\" href="
-"\"%2$s\">Ver detalles %3$s de la versión</a>."
-
-#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:211
-#, php-format
-msgid ""
-"There is a new version of %1$s available. <a target=\"_blank\" class=\"%5$s\" href="
-"\"%2$s\">View version %3$s details</a> or <a href=\"%4$s\">update now</a>."
-msgstr ""
-"Hay una nueva versión de %1$s disponible. <a target=\"_blank\" class=\"%5$s\" href="
-"\"%2$s\">Ver detalles %3$s de la versión</a> o <a href=\"%4$s\">actualizar ahora</"
-"a>."
-
-#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:352
-msgid "You do not have permission to install plugin updates"
-msgstr "No tienes permiso para instalar actualizaciones de plugins"
-
-#: ../includes/libraries/ct-plugin-settings/ct-plugin-settings.php:259
-msgid "Settings"
-msgstr "Configuración"
-
-#: ../includes/settings.php:47
-#, php-format
-msgid ""
-"These settings are for the <a href=\"%1$s\" target=\"_blank\">Church Theme Content</"
-"a> plugin and its <a href=\"%2$s\" target=\"_blank\">Add-ons</a>."
-msgstr ""
-"Configuración del plugin <a href=\"%1$s\" target=\"_blank\">Church Theme Content</"
-"a> y sus <a href=\"%2$s\" target=\"_blank\">Add-ons</a>."
-
-#: ../includes/settings.php:75
-msgid ""
-"Save then activate your add-on license keys to enable one-click updates for them."
-msgstr ""
-"Guarda y activa las claves de licencia de tus add-ons para habilitar "
-"actualizaciones en un clic para ellos."
-
-#: ../includes/taxonomies.php:269
-msgctxt "taxonomy general name"
-msgid "Event Categories"
-msgstr "Tipos de eventos"
-
-#: ../includes/taxonomies.php:270
-msgctxt "taxonomy singular name"
-msgid "Event Category"
-msgstr "Tipo de evento"
-
-#: ../includes/admin/admin-event-fields.php:123
-msgid "Start Time"
-msgstr "Hora de comienzo: "
-
-#: ../includes/admin/admin-event-fields.php:148
-msgid "End Time"
-msgstr "Hora de finalización: "
-
-#: ../includes/admin/admin-event-fields.php:200
-msgid "Time Description"
-msgstr "Descripción"
-
-#: ../includes/admin/admin-event-fields.php:227
-msgctxt "event meta box"
-msgid "Dates automatically move forward after event ends."
-msgstr "Las fechas se mueven hacia adelante cuando termina el evento"
-
-#: ../includes/admin/admin-event-fields.php:391
-msgid "Show directions link"
-msgstr "Mostrar un enlace"
-
-#: ../includes/admin/admin-event-fields.php:675
-msgctxt "events admin column"
-msgid "Details"
-msgstr "Detalles"
-
-#: ../includes/admin/admin-event-fields.php:755
-msgctxt "time range separator"
-msgid " &ndash; "
-msgstr " &ndash; "
-
-#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:352
-msgid "Error"
-msgstr ""
-"<p><b>Error de Google Maps:</b> los atributos de <i>latitud</i> y <i>longitud</i> "
-"son obligatorios. Vea la documentación para recibir ayuda.</p>"
-
-#: ../includes/settings.php:70
-msgctxt "settings"
-msgid "Add-on Licenses"
-msgstr "Añadir comentario"
-
-#: ../includes/taxonomies.php:271
-msgctxt "events"
-msgid "Search Categories"
-msgstr "Busca series"
-
-#: ../includes/taxonomies.php:272
-msgctxt "events"
-msgid "Popular Categories"
-msgstr "Series más vistas"
-
-#: ../includes/taxonomies.php:273
-msgctxt "events"
-msgid "All Categories"
-msgstr "Todos los tipos"
-
-#: ../includes/taxonomies.php:276
-msgctxt "events"
-msgid "Edit Event Category"
-msgstr "Editar tipo de evento"
-
-#: ../includes/taxonomies.php:277
-msgctxt "events"
-msgid "Update Event Category"
-msgstr "Actualizar tipo de evento"
-
-#: ../includes/taxonomies.php:278
-msgctxt "events"
-msgid "Add Category"
-msgstr "Añadir tipo de evento"
-
-#: ../includes/taxonomies.php:279
-msgctxt "events"
-msgid "New Category"
-msgstr "Nuevo tipo"
-
-#: ../includes/taxonomies.php:280
-msgctxt "events"
-msgid "Separate categories with commas"
-msgstr "Separa tipos con comas"
-
-#: ../includes/taxonomies.php:281
-msgctxt "events"
-msgid "Add or remove categories"
-msgstr "Añade o quita tipos"
-
-#: ../includes/taxonomies.php:282
-msgctxt "events"
-msgid "Choose from the most used categories"
-msgstr "Escoge entre los tipos más usados"
-
-#: ../includes/taxonomies.php:283
-msgctxt "event menu name"
-msgid "Categories"
-msgstr "Tipos"
 
 #: ../includes/admin/admin-event-fields.php:36
 msgctxt "event meta box"
@@ -223,15 +33,46 @@ msgstr "Fecha de comienzo"
 
 #: ../includes/admin/admin-event-fields.php:75
 msgid "(Required)"
-msgstr "(OBLIGATORIO)"
+msgstr "(Obligatorio)"
 
 #: ../includes/admin/admin-event-fields.php:99
 msgid "End Date"
 msgstr "Fecha de finalización"
 
+#: ../includes/admin/admin-event-fields.php:123
+msgid "Start Time"
+msgstr "Hora de comienzo"
+
+#: ../includes/admin/admin-event-fields.php:148
+msgid "End Time"
+msgstr "Hora de finalización"
+
+#: ../includes/admin/admin-event-fields.php:179
+msgid "Do not show times entered above (use only for ordering events)"
+msgstr ""
+"No mostrar los horarios (usarlos solo para ordenar los eventos "
+"cronológicamente)"
+
+#: ../includes/admin/admin-event-fields.php:200
+msgid "Time Description"
+msgstr "Descripción"
+
+#: ../includes/admin/admin-event-fields.php:203
+msgid ""
+"Optionally describe the time (e.g. \"9:30 am and 11:00 am\" or \"After "
+"Second Service\")"
+msgstr ""
+"Si quieres puedes describir el horario (p.ej. \"después de comer\" o \"todo "
+"el día\")"
+
 #: ../includes/admin/admin-event-fields.php:224
 msgid "Recurrence"
 msgstr "¿Se repite con regularidad?"
+
+#: ../includes/admin/admin-event-fields.php:227
+msgctxt "event meta box"
+msgid "Dates automatically move forward after event ends."
+msgstr "Las fechas se mueven hacia adelante cuando termina el evento"
 
 #: ../includes/admin/admin-event-fields.php:231
 msgctxt "event meta box"
@@ -268,65 +109,73 @@ msgstr "Local"
 
 #: ../includes/admin/admin-event-fields.php:341
 msgid ""
-"You can provide a building name, room number or other location name to help people "
-"find the event."
+"You can provide a building name, room number or other location name to help "
+"people find the event."
 msgstr ""
 "Puedes poner los datos concretos donde será el evento (ej \"Salón comedor\", "
-"\"Auditorio IEBZ\", \"Zona Joven\", etc)"
+"\"Auditorio\", \"Zona Joven\", etc)"
 
 #: ../includes/admin/admin-event-fields.php:362
-msgctxt "event meta box"
+#: ../includes/admin/admin-location-fields.php:72
 msgid "Address"
 msgstr "Dirección"
 
 #: ../includes/admin/admin-event-fields.php:365
-msgid "You can enter an address if it is necessary for people to find this event."
+msgid ""
+"You can enter an address if it is necessary for people to find this event."
 msgstr "Indica la dirección para que las personas puedan llegar."
 
+#: ../includes/admin/admin-event-fields.php:391
+msgid "Show directions link"
+msgstr "Mostrar un enlace"
+
 #: ../includes/admin/admin-event-fields.php:410
-msgctxt "event meta box"
+#: ../includes/admin/admin-location-fields.php:192
 msgid "Map Latitude"
 msgstr "Latitud"
 
 #: ../includes/admin/admin-event-fields.php:413
-#: ../includes/admin/admin-location-fields.php:171
+#: ../includes/admin/admin-location-fields.php:195
 msgid ""
-"You can <a href=\"http://churchthemes.com/get-latitude-longitude\" target=\"_blank"
-"\">use this</a> to convert an address into coordinates."
+"You can <a href=\"http://churchthemes.com/get-latitude-longitude\" target="
+"\"_blank\">use this</a> to convert an address into coordinates."
 msgstr ""
-"Puedes <a href=\"http://churchthemes.com/get-latitude-longitude\" target=\"_blank"
-"\">usar esto</a> para convertir una dirección a coordinadas."
+"Puedes <a href=\"http://churchthemes.com/get-latitude-longitude\" target="
+"\"_blank\">usar esto</a> para convertir una dirección a coordinadas."
 
 #: ../includes/admin/admin-event-fields.php:434
-msgctxt "event meta box"
+#: ../includes/admin/admin-location-fields.php:216
 msgid "Map Longitude"
 msgstr "Longitud"
 
 #: ../includes/admin/admin-event-fields.php:458
-msgctxt "event meta box"
+#: ../includes/admin/admin-location-fields.php:240
 msgid "Map Type"
 msgstr "Tipo de mapa"
 
 #: ../includes/admin/admin-event-fields.php:461
 msgctxt "event meta box"
 msgid ""
-"You can show a road map, satellite imagery, a combination of both (hybrid) or "
-"terrain."
+"You can show a road map, satellite imagery, a combination of both (hybrid) "
+"or terrain."
 msgstr ""
-"Puedes mostrar mapa de carreteras, satelite o combinación de híbrido y relieve."
+"Puedes mostrar mapa de carreteras, satelite o combinación de híbrido y "
+"relieve."
 
 #: ../includes/admin/admin-event-fields.php:482
-msgctxt "event meta box"
+#: ../includes/admin/admin-location-fields.php:265
 msgid "Map Zoom"
 msgstr "Ampliación del mapa"
 
 #: ../includes/admin/admin-event-fields.php:485
 msgctxt "event meta box"
-msgid "A lower number is more zoomed out while a higher number is more zoomed in."
-msgstr "Número bajo es más lejos, número alto es más cerca (puedes dejarlo como está)"
+msgid ""
+"A lower number is more zoomed out while a higher number is more zoomed in."
+msgstr ""
+"Número bajo es más lejos, número alto es más cerca (puedes dejarlo como está)"
 
 #: ../includes/admin/admin-event-fields.php:669
-#: ../includes/admin/admin-location-fields.php:293
+#: ../includes/admin/admin-location-fields.php:317
 #: ../includes/admin/admin-person-fields.php:217
 #: ../includes/admin/admin-sermon-fields.php:240
 msgid "Thumbnail"
@@ -337,10 +186,47 @@ msgctxt "events admin column"
 msgid "When"
 msgstr "Cuándo"
 
+#: ../includes/admin/admin-event-fields.php:675
+msgctxt "events admin column"
+msgid "Details"
+msgstr "Detalles"
+
 #: ../includes/admin/admin-event-fields.php:737
 msgctxt "date range separator"
 msgid " &ndash; "
 msgstr " &ndash; "
+
+#: ../includes/admin/admin-event-fields.php:755
+msgctxt "time range separator"
+msgid " &ndash; "
+msgstr " &ndash; "
+
+#: ../includes/admin/admin-event-fields.php:785
+#, php-format
+msgid "Every week until %1$s"
+msgstr "Cada semana hasta %1$s"
+
+#: ../includes/admin/admin-event-fields.php:790
+msgid "Every week"
+msgstr "Cada semana"
+
+#: ../includes/admin/admin-event-fields.php:801
+#, php-format
+msgid "Every month until %1$s"
+msgstr "Cada mes hasta %1$s"
+
+#: ../includes/admin/admin-event-fields.php:806
+msgid "Every month"
+msgstr "Cada mes"
+
+#: ../includes/admin/admin-event-fields.php:817
+#, php-format
+msgid "Every year until %1$s"
+msgstr "Cada año hasta %1$s"
+
+#: ../includes/admin/admin-event-fields.php:822
+msgid "Every year"
+msgstr "Cada año"
 
 #: ../includes/admin/admin-helpers.php:66
 msgctxt "map"
@@ -367,72 +253,54 @@ msgctxt "location meta box"
 msgid "Location Details"
 msgstr "Detalles de localización"
 
-#: ../includes/admin/admin-location-fields.php:72
-msgctxt "location meta box"
-msgid "Address"
-msgstr "Dirección"
-
 #: ../includes/admin/admin-location-fields.php:120
 #: ../includes/admin/admin-person-fields.php:121
-msgctxt "location meta box"
 msgid "Phone"
 msgstr "Teléfono"
 
 #: ../includes/admin/admin-location-fields.php:144
+#: ../includes/admin/admin-person-fields.php:145
+msgid "Email"
+msgstr "Email"
+
+#: ../includes/admin/admin-location-fields.php:168
 msgctxt "location meta box"
 msgid "Times"
 msgstr "Horario"
 
-#: ../includes/admin/admin-location-fields.php:168
-msgctxt "location meta box"
-msgid "Map Latitude"
-msgstr "Latitud"
-
-#: ../includes/admin/admin-location-fields.php:192
-msgctxt "location meta box"
-msgid "Map Longitude"
-msgstr "Longitud"
-
-#: ../includes/admin/admin-location-fields.php:216
-msgctxt "location meta box"
-msgid "Map Type"
-msgstr "Tipo de mapa"
-
-#: ../includes/admin/admin-location-fields.php:219
+#: ../includes/admin/admin-location-fields.php:243
 msgctxt "location meta box"
 msgid ""
-"You can show a road map, satellite imagery, a combination of both (hybrid) or "
-"terrain."
+"You can show a road map, satellite imagery, a combination of both (hybrid) "
+"or terrain."
 msgstr ""
-"Puedes mostrar mapa de carreteras, satélite o combinación de híbrido y relieve"
+"Puedes mostrar mapa de carreteras, satélite o combinación de híbrido y "
+"relieve"
 
-#: ../includes/admin/admin-location-fields.php:241
+#: ../includes/admin/admin-location-fields.php:268
 msgctxt "location meta box"
-msgid "Map Zoom"
-msgstr "Ampliación del mapa"
+msgid ""
+"A lower number is more zoomed out while a higher number is more zoomed in."
+msgstr ""
+"Número bajo es más lejos, número alto es más cerca (puedes dejarlo así)"
 
-#: ../includes/admin/admin-location-fields.php:244
-msgctxt "location meta box"
-msgid "A lower number is more zoomed out while a higher number is more zoomed in."
-msgstr "Número bajo es más lejos, número alto es más cerca (puedes dejarlo así)"
-
-#: ../includes/admin/admin-location-fields.php:298
+#: ../includes/admin/admin-location-fields.php:322
 msgctxt "location admin column"
 msgid "Address"
 msgstr "Dirección"
 
-#: ../includes/admin/admin-location-fields.php:299
+#: ../includes/admin/admin-location-fields.php:323
 msgctxt "location admin column"
 msgid "Times"
 msgstr "Horario"
 
-#: ../includes/admin/admin-location-fields.php:300
+#: ../includes/admin/admin-location-fields.php:324
 #: ../includes/admin/admin-person-fields.php:224
 msgctxt "sorting"
 msgid "Order"
 msgstr "Orden"
 
-#: ../includes/admin/admin-location-fields.php:304
+#: ../includes/admin/admin-location-fields.php:328
 msgctxt "location admin column"
 msgid "Location"
 msgstr "Localización"
@@ -447,7 +315,7 @@ msgid "Person Details"
 msgstr "Reseña personal"
 
 #: ../includes/admin/admin-person-fields.php:97
-#: ../includes/admin/admin-person-fields.php:222
+msgctxt "person meta box"
 msgid "Position"
 msgstr "Cargo"
 
@@ -455,14 +323,13 @@ msgstr "Cargo"
 msgid "Enter the person's position or title (e.g. Senior Pastor, Deacon, etc.)"
 msgstr "Introduce el cargo de la persona"
 
-#: ../includes/admin/admin-person-fields.php:145
-msgctxt "location meta box"
-msgid "Email"
-msgstr "Email"
-
 #: ../includes/admin/admin-person-fields.php:169
 msgid "URLs"
 msgstr "URLs"
+
+#: ../includes/admin/admin-person-fields.php:222
+msgid "Position"
+msgstr "Cargo"
 
 #: ../includes/admin/admin-person-fields.php:223
 msgctxt "people column"
@@ -498,13 +365,15 @@ msgstr "Video"
 #: ../includes/admin/admin-sermon-fields.php:100
 #, php-format
 msgid ""
-"Upload a file by clicking \"Choose Video\" or upload a video to one of the <a href="
-"\"%s\" target=\"_blank\">supported sites</a> (such as YouTube) then paste its URL "
-"here, or paste an embed code from another site. <a href=\"%s\" target=\"_blank"
-"\">Video Help</a>"
+"Upload a file by clicking \"Choose Video\" or upload a video to one of the "
+"<a href=\"%s\" target=\"_blank\">supported sites</a> (such as YouTube) then "
+"paste its URL here, or paste an embed code from another site. <a href=\"%s\" "
+"target=\"_blank\">Video Help</a>"
 msgstr ""
-"Pega aquí la dirección de Youtube del mensaje, o haz clic para elegir un vídeo "
-"manualmente"
+"Puedes subir un archivo haciendo clic en \"Elegir Video\" o subirlo a <a "
+"href=\"%s\" target=\"_blank\">webs soportadas</a> (como YouTube) y pegar la "
+"dirección aquí, o pegar el código de incrustación de otros sitios. <a href="
+"\"%s\" target=\"_blank\">Ayuda de vídeo</a>"
 
 #: ../includes/admin/admin-sermon-fields.php:107
 msgid "Choose Video"
@@ -521,11 +390,15 @@ msgstr "Audio"
 #: ../includes/admin/admin-sermon-fields.php:128
 #, php-format
 msgid ""
-"Upload a file by clicking \"Choose Audio\" or upload audio to one of the <a href="
-"\"%s\" target=\"_blank\">supported sites</a> (such as SoundCloud) then paste its "
-"URL here, or paste an embed code from another site. <a href=\"%s\" target=\"_blank"
-"\">Audio Help</a>"
-msgstr "Haz clic en Elegir audio para subir el mensaje en audio"
+"Upload a file by clicking \"Choose Audio\" or upload audio to one of the <a "
+"href=\"%s\" target=\"_blank\">supported sites</a> (such as SoundCloud) then "
+"paste its URL here, or paste an embed code from another site. <a href=\"%s\" "
+"target=\"_blank\">Audio Help</a>"
+msgstr ""
+"Puedes subir un archivo haciendo clie en \"Elegir audio\" o subirlo a <a "
+"href=\"%s\" target=\"_blank\">webs soportadas</a> (como SoundCloud) y pegar "
+"la dirección aquí, o pegar el código de incrustación de otros sitios. <a "
+"href=\"%s\" target=\"_blank\">Ayuda con el audio</a>"
 
 #: ../includes/admin/admin-sermon-fields.php:135
 msgid "Choose Audio"
@@ -585,11 +458,43 @@ msgstr "PDF"
 #: ../includes/admin/admin-support.php:52
 #, php-format
 msgid ""
-"The <b>%1$s</b> theme does not support the <b>%2$s</b> plugin. <a href=\"%3$s\" "
-"target=\"_blank\">More Information</a>, <a href=\"%4$s\">Dismiss</a>"
+"The <b>%1$s</b> theme does not support the <b>%2$s</b> plugin. <a href=\"%3$s"
+"\" target=\"_blank\">More Information</a>, <a href=\"%4$s\">Dismiss</a>"
 msgstr ""
-"El <b>%1$s</b> tema no soporta el <b>%2$s</b> plugin. <a href=\"%3$s\" target="
-"\"_blank\">Mas informacion</a>. <a href=\"%4$s\">Entendido</a>"
+"El <b>%1$s</b> tema no soporta el <b>%2$s</b> plugin. <a href=\"%3$s\" "
+"target=\"_blank\">Mas informacion</a>. <a href=\"%4$s\">Entendido</a>"
+
+#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:203
+#, php-format
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" class=\"%4$s"
+"\" href=\"%2$s\">View version %3$s details</a>."
+msgstr ""
+"Hay una nueva versión de %1$s disponible. <a target=\"_blank\" class=\"%4$s"
+"\" href=\"%2$s\">Ver detalles %3$s de la versión</a>."
+
+#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:211
+#, php-format
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" class=\"%5$s"
+"\" href=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s\">update "
+"now</a>."
+msgstr ""
+"Hay una nueva versión de %1$s disponible. <a target=\"_blank\" class=\"%5$s"
+"\" href=\"%2$s\">Ver detalles %3$s de la versión</a> o <a href=\"%4$s"
+"\">actualizar ahora</a>."
+
+#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:352
+msgid "You do not have permission to install plugin updates"
+msgstr "No tienes permiso para instalar actualizaciones de plugins"
+
+#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:352
+msgid "Error"
+msgstr "Error"
+
+#: ../includes/libraries/ct-plugin-settings/ct-plugin-settings.php:259
+msgid "Settings"
+msgstr "Configuración"
 
 #: ../includes/mime-types.php:75
 msgid "Manage PDFs"
@@ -794,6 +699,28 @@ msgstr "No hay responsables en la papelera"
 #, php-format
 msgid "%1$s Settings"
 msgstr "Configuración de %1$s"
+
+#: ../includes/settings.php:47
+#, php-format
+msgid ""
+"These settings are for the <a href=\"%1$s\" target=\"_blank\">Church Theme "
+"Content</a> plugin and its <a href=\"%2$s\" target=\"_blank\">Add-ons</a>."
+msgstr ""
+"Configuración del plugin <a href=\"%1$s\" target=\"_blank\">Church Theme "
+"Content</a> y sus <a href=\"%2$s\" target=\"_blank\">Add-ons</a>."
+
+#: ../includes/settings.php:70
+msgctxt "settings"
+msgid "Add-on Licenses"
+msgstr "Añadir comentario"
+
+#: ../includes/settings.php:75
+msgid ""
+"Save then activate your add-on license keys to enable one-click updates for "
+"them."
+msgstr ""
+"Guarda y activa las claves de licencia de tus add-ons para habilitar "
+"actualizaciones en un clic para ellos."
 
 #: ../includes/taxonomies.php:30
 msgctxt "taxonomy general name"
@@ -1120,6 +1047,71 @@ msgctxt "sermon menu name"
 msgid "Tags"
 msgstr "Palabras clave"
 
+#: ../includes/taxonomies.php:269
+msgctxt "taxonomy general name"
+msgid "Event Categories"
+msgstr "Tipos de eventos"
+
+#: ../includes/taxonomies.php:270
+msgctxt "taxonomy singular name"
+msgid "Event Category"
+msgstr "Tipo de evento"
+
+#: ../includes/taxonomies.php:271
+msgctxt "events"
+msgid "Search Categories"
+msgstr "Busca series"
+
+#: ../includes/taxonomies.php:272
+msgctxt "events"
+msgid "Popular Categories"
+msgstr "Series más vistas"
+
+#: ../includes/taxonomies.php:273
+msgctxt "events"
+msgid "All Categories"
+msgstr "Todos los tipos"
+
+#: ../includes/taxonomies.php:276
+msgctxt "events"
+msgid "Edit Event Category"
+msgstr "Editar tipo de evento"
+
+#: ../includes/taxonomies.php:277
+msgctxt "events"
+msgid "Update Event Category"
+msgstr "Actualizar tipo de evento"
+
+#: ../includes/taxonomies.php:278
+msgctxt "events"
+msgid "Add Category"
+msgstr "Añadir tipo de evento"
+
+#: ../includes/taxonomies.php:279
+msgctxt "events"
+msgid "New Category"
+msgstr "Nuevo tipo"
+
+#: ../includes/taxonomies.php:280
+msgctxt "events"
+msgid "Separate categories with commas"
+msgstr "Separa tipos con comas"
+
+#: ../includes/taxonomies.php:281
+msgctxt "events"
+msgid "Add or remove categories"
+msgstr "Añade o quita tipos"
+
+#: ../includes/taxonomies.php:282
+msgctxt "events"
+msgid "Choose from the most used categories"
+msgstr "Escoge entre los tipos más usados"
+
+#: ../includes/taxonomies.php:283
+msgctxt "event menu name"
+msgid "Categories"
+msgstr "Tipos"
+
 #: ../includes/taxonomies.php:320
 msgctxt "taxonomy general name"
 msgid "Groups"
@@ -1184,3 +1176,51 @@ msgstr "Escoge entres los grupos más usados"
 msgctxt "people menu name"
 msgid "Groups"
 msgstr "Grupos"
+
+#~ msgctxt "event meta box"
+#~ msgid "Address"
+#~ msgstr "Dirección"
+
+#~ msgctxt "event meta box"
+#~ msgid "Map Latitude"
+#~ msgstr "Latitud"
+
+#~ msgctxt "event meta box"
+#~ msgid "Map Longitude"
+#~ msgstr "Longitud"
+
+#~ msgctxt "event meta box"
+#~ msgid "Map Type"
+#~ msgstr "Tipo de mapa"
+
+#~ msgctxt "event meta box"
+#~ msgid "Map Zoom"
+#~ msgstr "Ampliación del mapa"
+
+#~ msgctxt "location meta box"
+#~ msgid "Address"
+#~ msgstr "Dirección"
+
+#~ msgctxt "location meta box"
+#~ msgid "Phone"
+#~ msgstr "Teléfono"
+
+#~ msgctxt "location meta box"
+#~ msgid "Map Latitude"
+#~ msgstr "Latitud"
+
+#~ msgctxt "location meta box"
+#~ msgid "Map Longitude"
+#~ msgstr "Longitud"
+
+#~ msgctxt "location meta box"
+#~ msgid "Map Type"
+#~ msgstr "Tipo de mapa"
+
+#~ msgctxt "location meta box"
+#~ msgid "Map Zoom"
+#~ msgstr "Ampliación del mapa"
+
+#~ msgctxt "location meta box"
+#~ msgid "Email"
+#~ msgstr "Email"
