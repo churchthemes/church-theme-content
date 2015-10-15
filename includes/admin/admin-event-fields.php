@@ -99,7 +99,7 @@ function ctc_add_meta_box_event_date() {
 				'name'				=> __( 'End Date', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
-				'desc'				=> '',
+				'desc'				=> __( 'Specify End Date if event will span multiple consecutive days.', 'church-theme-content' ),
 				'type'				=> 'date', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
