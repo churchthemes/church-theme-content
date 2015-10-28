@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Church Theme Content\n"
 "POT-Creation-Date: 2015-09-09 17:17-0500\n"
-"PO-Revision-Date: 2015-10-28 20:43+0100\n"
-"Last-Translator:  <webmaster@dresden.feg.de>\n"
+"PO-Revision-Date: 2015-10-28 21:38+0100\n"
+"Last-Translator: FeG Dresden <webmaster@dresden.feg.de>\n"
 "Language-Team: Matthias Drexler <matthias.d@urbanlifechurch.de>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
@@ -157,7 +157,7 @@ msgid ""
 "or terrain."
 msgstr ""
 "Straßenkartenansicht, Satellitenbilder, eine Kombination aus beidem (Hybrid) "
-"oder einer Geländeansicht wählen."
+"oder eine Geländeansicht wählen."
 
 #: ../includes/admin/admin-event-fields.php:482
 #: ../includes/admin/admin-location-fields.php:265
@@ -1044,7 +1044,7 @@ msgstr "Markierungen hinzufügen oder entfernen"
 #: ../includes/taxonomies.php:231
 msgctxt "sermons"
 msgid "Choose from the most used tags"
-msgstr "Aus den meist verwendete Markierungen wählen"
+msgstr "Aus den meist verwendeten Markierungen wählen"
 
 #: ../includes/taxonomies.php:232
 msgctxt "sermon menu name"
