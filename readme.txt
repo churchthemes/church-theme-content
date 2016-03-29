@@ -54,7 +54,7 @@ Several translations are included with this plugin, including English, Spanish, 
 
 * Visit [churchthemes.com](http://churchthemes.com) for compatible themes, add-ons and guides
 * We're on [Twitter](https://twitter.com/churchthemes), [Facebook](https://www.facebook.com/churchthemescom), [Google+](https://plus.google.com/u/0/+Churchthemes) and have a [Newsletter](http://churchthemes.com/newsletter)
-* Lead developer: [stevengliebe.com](http://stevengliebe.com), [@stevengliebe](https://twitter.com/stevengliebe)
+* Lead developer: [stevengliebe.com](http://stevengliebe.com)
 
 == Installation ==
 
