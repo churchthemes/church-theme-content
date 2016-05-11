@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Church Theme Content\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-12 10:39-0500\n"
-"PO-Revision-Date: 2015-10-12 10:41-0500\n"
+"POT-Creation-Date: 2016-05-11 12:45-0500\n"
+"PO-Revision-Date: 2016-05-11 12:45-0500\n"
 "Last-Translator: churchthemes.com <contact@churchthemes.com>\n"
 "Language-Team: churchthemes.com\n"
 "Language: es_MX\n"
@@ -38,6 +38,10 @@ msgstr "(Obligatorio)"
 #: ../includes/admin/admin-event-fields.php:99
 msgid "End Date"
 msgstr "Fecha de finalización"
+
+#: ../includes/admin/admin-event-fields.php:102
+msgid "Specify End Date if event will span multiple consecutive days."
+msgstr ""
 
 #: ../includes/admin/admin-event-fields.php:123
 msgid "Start Time"
