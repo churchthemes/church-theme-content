@@ -132,10 +132,10 @@ msgstr "Latitude"
 #: ../includes/admin/admin-event-fields.php:413
 #: ../includes/admin/admin-location-fields.php:195
 msgid ""
-"You can <a href=\"http://churchthemes.com/get-latitude-longitude\" target="
+"You can <a href=\"https://churchthemes.com/get-latitude-longitude\" target="
 "\"_blank\">use this</a> to convert an address into coordinates."
 msgstr ""
-"Vous pouvez utiliser <a href=\"http://churchthemes.com/get-latitude-longitude"
+"Vous pouvez utiliser <a href=\"https://churchthemes.com/get-latitude-longitude"
 "\" target=\"_blank\">ce lien</a> pour convertir une adresse en coordonnées."
 
 #: ../includes/admin/admin-event-fields.php:434

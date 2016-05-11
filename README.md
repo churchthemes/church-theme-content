@@ -1,7 +1,7 @@
 Church Theme Content (Plugin)
 =============================
 
-A WordPress plugin from [churchthemes.com](http://churchthemes.com) providing compatible themes with church-related post types, taxonomies and fields.
+A WordPress plugin from [churchthemes.com](https://churchthemes.com) providing compatible themes with church-related post types, taxonomies and fields.
 
 Purpose
 -------
@@ -12,7 +12,7 @@ Experienced WordPress developers agree that functionality like this does not bel
 
 For more information:
 
-* [View on churchthemes.com](http://churchthemes.com/plugins/church-theme-content/)
+* [View on churchthemes.com](https://churchthemes.com/plugins/church-theme-content/)
 * [View on WordPress.org](http://wordpress.org/plugins/church-theme-content)
 
 Developers
@@ -20,4 +20,4 @@ Developers
 
 The Church Theme Content plugin was made in a way that other church theme developers can take advantage of it. A couple benefits are that you will save time and be helping to accomplish better data portability among church websites powered by WordPress.
 
-Visit the [Developer Guide](http://churchthemes.com/guides/developer/church-theme-content/) on churchthemes.com for instructions and example code.
+Visit the [Developer Guide](https://churchthemes.com/guides/developer/church-theme-content/) on churchthemes.com for instructions and example code.

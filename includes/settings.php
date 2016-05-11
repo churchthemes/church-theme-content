@@ -45,8 +45,8 @@ function ctc_settings_setup() {
 						/* translators: %1$s is Church Theme Content plugin URL, %2$s is add-ons URL */
 		'desc'			=> sprintf(
 							__( 'These settings are for the <a href="%1$s" target="_blank">Church Theme Content</a> plugin and its <a href="%2$s" target="_blank">Add-ons</a>.', 'church-theme-content' ),
-							'http://churchthemes.com/plugins/church-theme-content/?utm_source=ctc&utm_medium=plugin&utm_campaign=church-theme-content&utm_content=settings',
-							'http://churchthemes.com/plugins/?utm_source=ctc&utm_medium=plugin&utm_campaign=add-ons&utm_content=settings'
+							'https://churchthemes.com/plugins/church-theme-content/?utm_source=ctc&utm_medium=plugin&utm_campaign=church-theme-content&utm_content=settings',
+							'https://churchthemes.com/plugins/?utm_source=ctc&utm_medium=plugin&utm_campaign=add-ons&utm_content=settings'
 						),
 
 		// Plugin File
@@ -73,7 +73,7 @@ function ctc_settings_setup() {
 				'desc'	=> sprintf(
 								/* translators: %1$s is URl to Add-ons */
 								__( 'Save then activate your add-on license keys to enable one-click updates for them.', 'church-theme-content' ),
-								'http://churchthemes.com/plugins/?utm_source=ctc&utm_medium=plugin&utm_campaign=add-ons&utm_content=settings'
+								'https://churchthemes.com/plugins/?utm_source=ctc&utm_medium=plugin&utm_campaign=add-ons&utm_content=settings'
 							),
 
 				// Fields (Settings)

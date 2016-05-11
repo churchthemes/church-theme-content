@@ -130,10 +130,10 @@ msgstr "Geo. širina mape"
 #: ../includes/admin/admin-event-fields.php:413
 #: ../includes/admin/admin-location-fields.php:195
 msgid ""
-"You can <a href=\"http://churchthemes.com/get-latitude-longitude\" target="
+"You can <a href=\"https://churchthemes.com/get-latitude-longitude\" target="
 "\"_blank\">use this</a> to convert an address into coordinates."
 msgstr ""
-"Možete da <a href=\"http://churchthemes.com/get-latitude-longitude\" target="
+"Možete da <a href=\"https://churchthemes.com/get-latitude-longitude\" target="
 "\"_blank\">koristite</a> ovo da biste konvertovati adrese u koordinatima."
 
 #: ../includes/admin/admin-event-fields.php:434

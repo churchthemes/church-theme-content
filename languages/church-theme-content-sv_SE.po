@@ -138,10 +138,10 @@ msgstr "Kart-latitud"
 #: ../includes/admin/admin-event-fields.php:413
 #: ../includes/admin/admin-location-fields.php:195
 msgid ""
-"You can <a href=\"http://churchthemes.com/get-latitude-longitude\" target="
+"You can <a href=\"https://churchthemes.com/get-latitude-longitude\" target="
 "\"_blank\">use this</a> to convert an address into coordinates."
 msgstr ""
-"Du kan <a href=\"http://churchthemes.com/get-latitude-longitude\" target="
+"Du kan <a href=\"https://churchthemes.com/get-latitude-longitude\" target="
 "\"_blank\">använda den här</a> för att konvertera en adress till koordinater."
 
 #: ../includes/admin/admin-event-fields.php:434

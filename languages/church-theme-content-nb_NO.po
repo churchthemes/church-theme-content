@@ -117,8 +117,8 @@ msgstr "Kartbreddegraf"
 
 #: ../includes/admin/admin-event-fields.php:413
 #: ../includes/admin/admin-location-fields.php:171
-msgid "You can <a href=\"http://churchthemes.com/get-latitude-longitude\" target=\"_blank\">use this</a> to convert an address into coordinates."
-msgstr "Du kan <a href=\"http://churchthemes.com/get-latitude-longitude\" target=\"_blank\">bruke denne</a> for å konvertere en adresse til koordinater."
+msgid "You can <a href=\"https://churchthemes.com/get-latitude-longitude\" target=\"_blank\">use this</a> to convert an address into coordinates."
+msgstr "Du kan <a href=\"https://churchthemes.com/get-latitude-longitude\" target=\"_blank\">bruke denne</a> for å konvertere en adresse til koordinater."
 
 #: ../includes/admin/admin-event-fields.php:434
 msgctxt "event meta box"

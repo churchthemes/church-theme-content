@@ -98,8 +98,8 @@ function ctc_add_meta_box_sermon_details() {
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> sprintf(
 											__( 'Upload a file by clicking "Choose Video" or upload a video to one of the <a href="%s" target="_blank">supported sites</a> (such as YouTube) then paste its URL here, or paste an embed code from another site. <a href="%s" target="_blank">Video Help</a>', 'church-theme-content' ),
-											apply_filters( 'ctc_sermon_video_sites_url', 'http://churchthemes.com/go/ctc-sermon-video-sites' ),
-											apply_filters( 'ctc_sermon_video_help_url', 'http://churchthemes.com/go/ctc-sermon-video-help' )
+											apply_filters( 'ctc_sermon_video_sites_url', 'https://churchthemes.com/go/ctc-sermon-video-sites' ),
+											apply_filters( 'ctc_sermon_video_help_url', 'https://churchthemes.com/go/ctc-sermon-video-help' )
 										),
 				'type'				=> 'upload_textarea', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
@@ -126,8 +126,8 @@ function ctc_add_meta_box_sermon_details() {
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> sprintf(
 											__( 'Upload a file by clicking "Choose Audio" or upload audio to one of the <a href="%s" target="_blank">supported sites</a> (such as SoundCloud) then paste its URL here, or paste an embed code from another site. <a href="%s" target="_blank">Audio Help</a>', 'church-theme-content' ),
-											apply_filters( 'ctc_sermon_audio_sites_url', 'http://churchthemes.com/go/ctc-sermon-audio-sites' ),
-											apply_filters( 'ctc_sermon_audio_help_url', 'http://churchthemes.com/go/ctc-sermon-audio-help' )
+											apply_filters( 'ctc_sermon_audio_sites_url', 'https://churchthemes.com/go/ctc-sermon-audio-sites' ),
+											apply_filters( 'ctc_sermon_audio_help_url', 'https://churchthemes.com/go/ctc-sermon-audio-help' )
 										),
 				'type'				=> 'upload_textarea', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
