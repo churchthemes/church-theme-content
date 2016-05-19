@@ -3,8 +3,9 @@ Contributors: churchthemes, stevengliebe
 Tags: church, churches, sermon, sermons, ministry, ministries
 Requires at least: 3.6
 Tested up to: 4.5.2
-Stable tag: trunk
-License: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+Stable tag: 1.4.2
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Provides compatible themes with sermon, event, person and location post types, taxonomies and fields. Requires a compatible theme for showing content.
 
