@@ -3,4 +3,4 @@ Do not add your own translations to this directory. They will be lost during plu
 Store your translations at wp-content/languages/plugins/church-theme-content-$locale.mo
 (e.g. church-theme-content-en_US.mo) to keep them safe from loss during updates.
 
-Read the https://churchthemes.com guides for more information and please contact us if you would like to contribute your translation for other churches to use.
+Read https://churchthemes.com/go/translate-plugin for more information and please contact us if you would like to contribute your translation for other churches to use.
