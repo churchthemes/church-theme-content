@@ -27,17 +27,17 @@ function ctc_register_post_type_sermon() {
 	// Arguments
 	$args = array(
 		'labels' => array(
-			'name'					=> _x( 'Sermons', 'post type general name', 'church-theme-content' ),
-			'singular_name'			=> _x( 'Sermon', 'post type singular name', 'church-theme-content' ),
-			'add_new' 				=> _x( 'Add New', 'sermon', 'church-theme-content' ),
-			'add_new_item' 			=> __( 'Add Sermon', 'church-theme-content' ),
-			'edit_item' 			=> __( 'Edit Sermon', 'church-theme-content' ),
-			'new_item' 				=> __( 'New Sermon', 'church-theme-content' ),
-			'all_items' 			=> __( 'All Sermons', 'church-theme-content' ),
-			'view_item' 			=> __( 'View Sermon', 'church-theme-content' ),
-			'search_items' 			=> __( 'Search Sermons', 'church-theme-content' ),
-			'not_found' 			=> __( 'No sermons found', 'church-theme-content' ),
-			'not_found_in_trash' 	=> __( 'No sermons found in Trash', 'church-theme-content' )
+			'name'					=> esc_html_x( 'Sermons', 'post type general name', 'church-theme-content' ),
+			'singular_name'			=> esc_html_x( 'Sermon', 'post type singular name', 'church-theme-content' ),
+			'add_new' 				=> esc_html_x( 'Add New', 'sermon', 'church-theme-content' ),
+			'add_new_item' 			=> esc_html__( 'Add Sermon', 'church-theme-content' ),
+			'edit_item' 			=> esc_html__( 'Edit Sermon', 'church-theme-content' ),
+			'new_item' 				=> esc_html__( 'New Sermon', 'church-theme-content' ),
+			'all_items' 			=> esc_html__( 'All Sermons', 'church-theme-content' ),
+			'view_item' 			=> esc_html__( 'View Sermon', 'church-theme-content' ),
+			'search_items' 			=> esc_html__( 'Search Sermons', 'church-theme-content' ),
+			'not_found' 			=> esc_html__( 'No sermons found', 'church-theme-content' ),
+			'not_found_in_trash' 	=> esc_html__( 'No sermons found in Trash', 'church-theme-content' )
 		),
 		'public' 		=> ctc_feature_supported( 'sermons' ),
 		'has_archive' 	=> ctc_feature_supported( 'sermons' ),
@@ -76,17 +76,17 @@ function ctc_register_post_type_event() {
 	// Arguments
 	$args = array(
 		'labels' => array(
-			'name'					=> _x( 'Events', 'post type general name', 'church-theme-content' ),
-			'singular_name'			=> _x( 'Event', 'post type singular name', 'church-theme-content' ),
-			'add_new' 				=> _x( 'Add New', 'event', 'church-theme-content' ),
-			'add_new_item' 			=> __( 'Add Event', 'church-theme-content' ),
-			'edit_item' 			=> __( 'Edit Event', 'church-theme-content' ),
-			'new_item' 				=> __( 'New Event', 'church-theme-content' ),
-			'all_items' 			=> __( 'All Events', 'church-theme-content' ),
-			'view_item' 			=> __( 'View Event', 'church-theme-content' ),
-			'search_items' 			=> __( 'Search Events', 'church-theme-content' ),
-			'not_found' 			=> __( 'No events found', 'church-theme-content' ),
-			'not_found_in_trash' 	=> __( 'No events found in Trash', 'church-theme-content' )
+			'name'					=> esc_html_x( 'Events', 'post type general name', 'church-theme-content' ),
+			'singular_name'			=> esc_html_x( 'Event', 'post type singular name', 'church-theme-content' ),
+			'add_new' 				=> esc_html_x( 'Add New', 'event', 'church-theme-content' ),
+			'add_new_item' 			=> esc_html__( 'Add Event', 'church-theme-content' ),
+			'edit_item' 			=> esc_html__( 'Edit Event', 'church-theme-content' ),
+			'new_item' 				=> esc_html__( 'New Event', 'church-theme-content' ),
+			'all_items' 			=> esc_html__( 'All Events', 'church-theme-content' ),
+			'view_item' 			=> esc_html__( 'View Event', 'church-theme-content' ),
+			'search_items' 			=> esc_html__( 'Search Events', 'church-theme-content' ),
+			'not_found' 			=> esc_html__( 'No events found', 'church-theme-content' ),
+			'not_found_in_trash' 	=> esc_html__( 'No events found in Trash', 'church-theme-content' )
 		),
 		'public' 		=> ctc_feature_supported( 'events' ),
 		'has_archive' 	=> ctc_feature_supported( 'events' ),
@@ -125,17 +125,17 @@ function ctc_location_post_type() {
 	// Arguments
 	$args = array(
 		'labels' => array(
-			'name'					=> _x( 'Locations', 'post type general name', 'church-theme-content' ),
-			'singular_name'			=> _x( 'Location', 'post type singular name', 'church-theme-content' ),
-			'add_new' 				=> _x( 'Add New', 'location', 'church-theme-content' ),
-			'add_new_item' 			=> __( 'Add Location', 'church-theme-content' ),
-			'edit_item' 			=> __( 'Edit Location', 'church-theme-content' ),
-			'new_item' 				=> __( 'New Location', 'church-theme-content' ),
-			'all_items' 			=> __( 'All Locations', 'church-theme-content' ),
-			'view_item' 			=> __( 'View Location', 'church-theme-content' ),
-			'search_items' 			=> __( 'Search Locations', 'church-theme-content' ),
-			'not_found' 			=> __( 'No location found', 'church-theme-content' ),
-			'not_found_in_trash' 	=> __( 'No location found in Trash', 'church-theme-content' )
+			'name'					=> esc_html_x( 'Locations', 'post type general name', 'church-theme-content' ),
+			'singular_name'			=> esc_html_x( 'Location', 'post type singular name', 'church-theme-content' ),
+			'add_new' 				=> esc_html_x( 'Add New', 'location', 'church-theme-content' ),
+			'add_new_item' 			=> esc_html__( 'Add Location', 'church-theme-content' ),
+			'edit_item' 			=> esc_html__( 'Edit Location', 'church-theme-content' ),
+			'new_item' 				=> esc_html__( 'New Location', 'church-theme-content' ),
+			'all_items' 			=> esc_html__( 'All Locations', 'church-theme-content' ),
+			'view_item' 			=> esc_html__( 'View Location', 'church-theme-content' ),
+			'search_items' 			=> esc_html__( 'Search Locations', 'church-theme-content' ),
+			'not_found' 			=> esc_html__( 'No location found', 'church-theme-content' ),
+			'not_found_in_trash' 	=> esc_html__( 'No location found in Trash', 'church-theme-content' )
 		),
 		'public' 		=> ctc_feature_supported( 'locations' ),
 		'has_archive' 	=> ctc_feature_supported( 'locations' ),
@@ -173,17 +173,17 @@ function ctc_register_post_type_person() {
 	// Arguments
 	$args = array(
 		'labels' => array(
-			'name'					=> _x( 'People', 'post type general name', 'church-theme-content' ),
-			'singular_name'			=> _x( 'Person', 'post type singular name', 'church-theme-content' ),
-			'add_new' 				=> _x( 'Add New', 'person', 'church-theme-content' ),
-			'add_new_item' 			=> __( 'Add Person', 'church-theme-content' ),
-			'edit_item' 			=> __( 'Edit Person', 'church-theme-content' ),
-			'new_item' 				=> __( 'New Person', 'church-theme-content' ),
-			'all_items' 			=> __( 'All People', 'church-theme-content' ),
-			'view_item' 			=> __( 'View Person', 'church-theme-content' ),
-			'search_items' 			=> __( 'Search People', 'church-theme-content' ),
-			'not_found' 			=> __( 'No people found', 'church-theme-content' ),
-			'not_found_in_trash' 	=> __( 'No people found in Trash', 'church-theme-content' )
+			'name'					=> esc_html_x( 'People', 'post type general name', 'church-theme-content' ),
+			'singular_name'			=> esc_html_x( 'Person', 'post type singular name', 'church-theme-content' ),
+			'add_new' 				=> esc_html_x( 'Add New', 'person', 'church-theme-content' ),
+			'add_new_item' 			=> esc_html__( 'Add Person', 'church-theme-content' ),
+			'edit_item' 			=> esc_html__( 'Edit Person', 'church-theme-content' ),
+			'new_item' 				=> esc_html__( 'New Person', 'church-theme-content' ),
+			'all_items' 			=> esc_html__( 'All People', 'church-theme-content' ),
+			'view_item' 			=> esc_html__( 'View Person', 'church-theme-content' ),
+			'search_items' 			=> esc_html__( 'Search People', 'church-theme-content' ),
+			'not_found' 			=> esc_html__( 'No people found', 'church-theme-content' ),
+			'not_found_in_trash' 	=> esc_html__( 'No people found in Trash', 'church-theme-content' )
 		),
 		'public' 		=> ctc_feature_supported( 'people' ),
 		'has_archive' 	=> ctc_feature_supported( 'people' ),
