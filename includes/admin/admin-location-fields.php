@@ -317,18 +317,18 @@ function ctc_location_columns( $columns ) {
 
 	// insert thumbnail after checkbox (before title)
 	$insert_array = array();
-	$insert_array['ctc_location_thumbnail'] = __( 'Thumbnail', 'church-theme-content' );
+	$insert_array['ctc_location_thumbnail'] = esc_html__( 'Thumbnail', 'church-theme-content' );
 	$columns = ctc_array_merge_after_key( $columns, $insert_array, 'cb' );
 
 	// insert address and order after location (title)
 	$insert_array = array();
-	if ( ctc_field_supported( 'locations', '_ctc_location_address' ) ) $insert_array['ctc_location_address'] = _x( 'Address', 'location admin column', 'church-theme-content' );
-	if ( ctc_field_supported( 'locations', '_ctc_location_times' ) ) $insert_array['ctc_location_times'] = _x( 'Times', 'location admin column', 'church-theme-content' );
-	$insert_array['ctc_location_order'] = _x( 'Order', 'sorting', 'church-theme-content' );
+	if ( ctc_field_supported( 'locations', '_ctc_location_address' ) ) $insert_array['ctc_location_address'] = esc_html_x( 'Address', 'location admin column', 'church-theme-content' );
+	if ( ctc_field_supported( 'locations', '_ctc_location_times' ) ) $insert_array['ctc_location_times'] = esc_html_x( 'Times', 'location admin column', 'church-theme-content' );
+	$insert_array['ctc_location_order'] = esc_html_x( 'Order', 'sorting', 'church-theme-content' );
 	$columns = ctc_array_merge_after_key( $columns, $insert_array, 'title' );
 
 	//change "Location" to "Location"
-	$columns['title'] = _x( 'Location', 'location admin column', 'church-theme-content' );
+	$columns['title'] = esc_html_x( 'Location', 'location admin column', 'church-theme-content' );
 
 	return $columns;
 

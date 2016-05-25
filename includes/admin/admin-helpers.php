@@ -63,10 +63,10 @@ function ctc_admin_term_list( $post_id, $taxonomy ) {
 function ctc_gmaps_types() {
 
 	$types = array(
-		'ROADMAP'	=> _x( 'Road', 'map', 'church-theme-content' ),
-		'SATELLITE'	=> _x( 'Satellite', 'map', 'church-theme-content' ),
-		'HYBRID'	=> _x( 'Hybrid', 'map', 'church-theme-content' ),
-		'TERRAIN'	=> _x( 'Terrain', 'map', 'church-theme-content' )
+		'ROADMAP'	=> esc_html_x( 'Road', 'map', 'church-theme-content' ),
+		'SATELLITE'	=> esc_html_x( 'Satellite', 'map', 'church-theme-content' ),
+		'HYBRID'	=> esc_html_x( 'Hybrid', 'map', 'church-theme-content' ),
+		'TERRAIN'	=> esc_html_x( 'Terrain', 'map', 'church-theme-content' )
 	);
 
 	return apply_filters( 'ctc_gmaps_types', $types );
