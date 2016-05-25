@@ -24,6 +24,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * Date & time
  *
+ * Note that title, description, etc. is escaped automatically by CT Meta Box class
+ * for localization security
+ *
  * @since 0.9
  */
 function ctc_add_meta_box_event_date() {
@@ -39,7 +42,6 @@ function ctc_add_meta_box_event_date() {
 		'priority'	=> 'high', // high, core, default or low (see this: http://www.wproots.com/ultimate-guide-to-meta-boxes-in-wordpress/)
 
 		// Fields
-		// Note: title, description, etc. is escaped automatically (localization security)
 		'fields' => array(
 
 			// Example

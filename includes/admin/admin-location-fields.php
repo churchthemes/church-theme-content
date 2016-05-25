@@ -22,6 +22,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * Location details
  *
+ * Note that title, description, etc. is escaped automatically by CT Meta Box class
+ * for localization security
+ *
  * @since 0.9
  */
 function ctc_add_meta_box_location() {
