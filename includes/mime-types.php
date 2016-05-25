@@ -70,6 +70,7 @@ add_filter( 'upload_mimes', 'ctc_add_mime_types' );
 function ctc_add_post_mime_types( $post_mime_types ) {
 
 	// PDF
+	// No need to escape these strings - core handles it
 	$post_mime_types['application/pdf'] = array(
 		__( 'PDF', 'church-theme-content' ),
 		__( 'Manage PDFs', 'church-theme-content' ),

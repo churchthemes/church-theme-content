@@ -38,13 +38,21 @@ function ctc_settings_setup() {
 		'option_id'		=> 'ctc_settings',
 
 		// Titles
-		'page_title' 	=> sprintf( __( '%1$s Settings', 'church-theme-content' ), CTC_NAME ),
+		'page_title' 	=> sprintf( esc_html__( '%1$s Settings', 'church-theme-content' ), CTC_NAME ),
 		'menu_title'	=> CTC_NAME,
 
 		// Settings page description
 						/* translators: %1$s is Church Theme Content plugin URL, %2$s is add-ons URL */
 		'desc'			=> sprintf(
-							__( 'These settings are for the <a href="%1$s" target="_blank">Church Theme Content</a> plugin and its <a href="%2$s" target="_blank">Add-ons</a>.', 'church-theme-content' ),
+							wp_kses(
+								__( 'These settings are for the <a href="%1$s" target="_blank">Church Theme Content</a> plugin and its <a href="%2$s" target="_blank">Add-ons</a>.', 'church-theme-content' ),
+								array(
+									'a' => array(
+										'href' => array(),
+										'target' => array()
+									)
+								)
+							),
 							'https://churchthemes.com/plugins/church-theme-content/?utm_source=ctc&utm_medium=plugin&utm_campaign=church-theme-content&utm_content=settings',
 							'https://churchthemes.com/plugins/?utm_source=ctc&utm_medium=plugin&utm_campaign=add-ons&utm_content=settings'
 						),
@@ -67,12 +75,20 @@ function ctc_settings_setup() {
 			'licenses' => array(
 
 				// Title
-				'title'	=> _x( 'Add-on Licenses', 'settings', 'church-theme-content' ),
+				'title'	=> esc_html_x( 'Add-on Licenses', 'settings', 'church-theme-content' ),
 
 				// Description
 				'desc'	=> sprintf(
-								/* translators: %1$s is URl to Add-ons */
-								__( 'Save then activate your add-on license keys to enable one-click updates for them.', 'church-theme-content' ),
+								wp_kses(
+									/* translators: %1$s is URL to Add-ons */
+									__( 'Save then activate your add-on license keys to enable one-click updates for them.', 'church-theme-content' ),
+									array(
+										'a' => array(
+											'href' => array(),
+											'target' => array()
+										)
+									)
+								),
 								'https://churchthemes.com/plugins/?utm_source=ctc&utm_medium=plugin&utm_campaign=add-ons&utm_content=settings'
 							),
 
