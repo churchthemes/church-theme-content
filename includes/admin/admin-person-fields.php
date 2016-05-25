@@ -31,7 +31,7 @@ function ctc_person_title_text( $title ) {
 	$screen = get_current_screen();
 
 	if  ( 'ctc_person' == $screen->post_type ) {
-		$title = __( 'Enter name here', 'church-theme-content' );
+		$title = esc_html__( 'Enter name here', 'church-theme-content' );
 	}
 
 	return $title;
