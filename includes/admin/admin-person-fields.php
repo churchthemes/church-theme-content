@@ -217,18 +217,18 @@ function ctc_person_columns( $columns ) {
 
 	// insert thumbnail after checkbox (before title)
 	$insert_array = array();
-	$insert_array['ctc_person_thumbnail'] = __( 'Thumbnail', 'church-theme-content' );
+	$insert_array['ctc_person_thumbnail'] = esc_html__( 'Thumbnail', 'church-theme-content' );
 	$columns = ctc_array_merge_after_key( $columns, $insert_array, 'cb' );
 
 	// insert columns after title
 	$insert_array = array();
-	if ( ctc_field_supported( 'people', '_ctc_person_position' ) ) $insert_array['ctc_person_position'] = __( 'Position', 'church-theme-content' );
-	if ( ctc_taxonomy_supported( 'people', 'ctc_person_group' ) ) $insert_array['ctc_person_group'] = _x( 'Groups', 'people column', 'church-theme-content' );
-	$insert_array['ctc_person_order'] = _x( 'Order', 'sorting', 'church-theme-content' );
+	if ( ctc_field_supported( 'people', '_ctc_person_position' ) ) $insert_array['ctc_person_position'] = esc_html__( 'Position', 'church-theme-content' );
+	if ( ctc_taxonomy_supported( 'people', 'ctc_person_group' ) ) $insert_array['ctc_person_group'] = esc_html_x( 'Groups', 'people column', 'church-theme-content' );
+	$insert_array['ctc_person_order'] = esc_html_x( 'Order', 'sorting', 'church-theme-content' );
 	$columns = ctc_array_merge_after_key( $columns, $insert_array, 'title' );
 
 	//change "title" to "name"
-	$columns['title'] = _x( 'Name', 'person', 'church-theme-content' );
+	$columns['title'] = esc_html_x( 'Name', 'person', 'church-theme-content' );
 
 	return $columns;
 
