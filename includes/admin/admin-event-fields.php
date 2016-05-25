@@ -669,13 +669,13 @@ function ctc_event_columns( $columns ) {
 
 	// insert thumbnail after checkbox (before title)
 	$insert_array = array();
-	$insert_array['ctc_event_thumbnail'] = __( 'Thumbnail', 'church-theme-content' );
+	$insert_array['ctc_event_thumbnail'] = esc_html__( 'Thumbnail', 'church-theme-content' );
 	$columns = ctc_array_merge_after_key( $columns, $insert_array, 'cb' );
 
 	// insert start date, venue after title
 	$insert_array = array();
-	if ( ctc_field_supported( 'events', '_ctc_event_start_date' ) ) $insert_array['ctc_event_dates'] = _x( 'When', 'events admin column', 'church-theme-content' );
-	if ( ctc_field_supported( 'events', '_ctc_event_venue' ) || ctc_taxonomy_supported( 'events', 'ctc_event_category' ) ) $insert_array['ctc_event_details'] = _x( 'Details', 'events admin column', 'church-theme-content' );
+	if ( ctc_field_supported( 'events', '_ctc_event_start_date' ) ) $insert_array['ctc_event_dates'] = esc_html_x( 'When', 'events admin column', 'church-theme-content' );
+	if ( ctc_field_supported( 'events', '_ctc_event_venue' ) || ctc_taxonomy_supported( 'events', 'ctc_event_category' ) ) $insert_array['ctc_event_details'] = esc_html_x( 'Details', 'events admin column', 'church-theme-content' );
 	$columns = ctc_array_merge_after_key( $columns, $insert_array, 'title' );
 
 	// remove author
@@ -737,7 +737,7 @@ function ctc_event_columns_content( $column ) {
 			}
 
 			echo '<b>';
-			echo esc_html( implode( _x( ' &ndash; ', 'date range separator', 'church-theme-content' ), $dates ) );
+			echo esc_html( implode( esc_html_x( ' &ndash; ', 'date range separator', 'church-theme-content' ), $dates ) );
 			echo '</b>';
 
 			// Show Start/End Time unless hidden
@@ -755,7 +755,7 @@ function ctc_event_columns_content( $column ) {
 
 					$end_time_formatted = date( $time_format, strtotime( $end_time ) );
 
-					echo esc_html( implode( _x( ' &ndash; ', 'time range separator', 'church-theme-content' ), array(
+					echo esc_html( implode( esc_html_x( ' &ndash; ', 'time range separator', 'church-theme-content' ), array(
 						$start_time_formatted,
 						$end_time_formatted
 					) ) );
@@ -785,12 +785,12 @@ function ctc_event_columns_content( $column ) {
 
 							/* translators: %1$s is recurrence end date */
 							$recurrence_note = sprintf(
-								__( 'Every week until %1$s', 'church-theme-content' ),
+								esc_html__( 'Every week until %1$s', 'church-theme-content' ),
 								$recurrence_end_date_localized
 							);
 
 						} else {
-							$recurrence_note = __( 'Every week', 'church-theme-content' );
+							$recurrence_note = esc_html__( 'Every week', 'church-theme-content' );
 						}
 
 						break;
@@ -801,12 +801,12 @@ function ctc_event_columns_content( $column ) {
 
 							/* translators: %1$s is recurrence end date */
 							$recurrence_note = sprintf(
-								__( 'Every month until %1$s', 'church-theme-content' ),
+								esc_html__( 'Every month until %1$s', 'church-theme-content' ),
 								$recurrence_end_date_localized
 							);
 
 						} else {
-							$recurrence_note = __( 'Every month', 'church-theme-content' );
+							$recurrence_note = esc_html__( 'Every month', 'church-theme-content' );
 						}
 
 						break;
@@ -817,12 +817,12 @@ function ctc_event_columns_content( $column ) {
 
 							/* translators: %1$s is recurrence end date */
 							$recurrence_note = sprintf(
-								__( 'Every year until %1$s', 'church-theme-content' ),
+								esc_html__( 'Every year until %1$s', 'church-theme-content' ),
 								$recurrence_end_date_localized
 							);
 
 						} else {
-							$recurrence_note = __( 'Every year', 'church-theme-content' );
+							$recurrence_note = esc_html__( 'Every year', 'church-theme-content' );
 						}
 
 						break;
