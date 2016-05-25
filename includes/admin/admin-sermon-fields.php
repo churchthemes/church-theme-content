@@ -240,16 +240,16 @@ function ctc_sermon_columns( $columns ) {
 
 	// insert thumbnail after checkbox (before title)
 	$insert_array = array();
-	$insert_array['ctc_sermon_thumbnail'] = __( 'Thumbnail', 'church-theme-content' );
+	$insert_array['ctc_sermon_thumbnail'] = esc_html__( 'Thumbnail', 'church-theme-content' );
 	$columns = ctc_array_merge_after_key( $columns, $insert_array, 'cb' );
 
 	// insert media types, speakers, topics after title
 	$insert_array = array();
-	$insert_array['ctc_sermon_types'] = _x( 'Formats', 'sermons', 'church-theme-content' );
-	if ( ctc_taxonomy_supported( 'sermons', 'ctc_sermon_topic' ) ) $insert_array['ctc_sermon_topics'] = __( 'Topics', 'church-theme-content' );
-	//if ( ctc_taxonomy_supported( 'sermons', 'ctc_sermon_book' ) ) $insert_array['ctc_sermon_books'] = _x( 'Books', 'sermons', 'church-theme-content' );
-	//if ( ctc_taxonomy_supported( 'sermons', 'ctc_sermon_series' ) ) $insert_array['ctc_sermon_series'] = _x( 'Series', 'sermons', 'church-theme-content' );
-	// little room: if ( ctc_taxonomy_supported( 'sermons', 'ctc_sermon_speaker' ) ) $insert_array['ctc_sermon_speakers'] = _x( 'Speakers', 'sermons', 'church-theme-content' );
+	$insert_array['ctc_sermon_types'] = esc_html_x( 'Formats', 'sermons', 'church-theme-content' );
+	if ( ctc_taxonomy_supported( 'sermons', 'ctc_sermon_topic' ) ) $insert_array['ctc_sermon_topics'] = esc_html__( 'Topics', 'church-theme-content' );
+	//if ( ctc_taxonomy_supported( 'sermons', 'ctc_sermon_book' ) ) $insert_array['ctc_sermon_books'] = esc_html_x( 'Books', 'sermons', 'church-theme-content' );
+	//if ( ctc_taxonomy_supported( 'sermons', 'ctc_sermon_series' ) ) $insert_array['ctc_sermon_series'] = esc_html_x( 'Series', 'sermons', 'church-theme-content' );
+	// little room: if ( ctc_taxonomy_supported( 'sermons', 'ctc_sermon_speaker' ) ) $insert_array['ctc_sermon_speakers'] = esc_html_x( 'Speakers', 'sermons', 'church-theme-content' );
 	$columns = ctc_array_merge_after_key( $columns, $insert_array, 'title' );
 
 	// remove author
@@ -288,19 +288,19 @@ function ctc_sermon_columns_content( $column ) {
 			$media_types = array();
 
 			if ( get_post_meta( $post->ID , '_ctc_sermon_text' , true ) ) {
-				$media_types[] = _x( 'Text', 'media type', 'church-theme-content' );
+				$media_types[] = esc_html_x( 'Text', 'media type', 'church-theme-content' );
 			}
 
 			if ( get_post_meta( $post->ID , '_ctc_sermon_video' , true ) ) {
-				$media_types[] = _x( 'Video', 'media type', 'church-theme-content' );
+				$media_types[] = esc_html_x( 'Video', 'media type', 'church-theme-content' );
 			}
 
 			if ( get_post_meta( $post->ID , '_ctc_sermon_audio' , true ) ) {
-				$media_types[] = _x( 'Audio', 'media type', 'church-theme-content' );
+				$media_types[] = esc_html_x( 'Audio', 'media type', 'church-theme-content' );
 			}
 
 			if ( get_post_meta( $post->ID , '_ctc_sermon_pdf' , true ) ) {
-				$media_types[] = _x( 'PDF', 'media type', 'church-theme-content' );
+				$media_types[] = esc_html_x( 'PDF', 'media type', 'church-theme-content' );
 			}
 
 			echo implode( ', ', $media_types );
