@@ -9,6 +9,7 @@
  * - Prefixed to remind that this is modified
  * - Prefixed so this version always loads; class_exists() not necessary
  * - Added textdomain for translation
+ * - Escaped translation strings
  * - Make $changelog_link go to external URL if provided, in new window
  * - No direct access
  *
@@ -200,7 +201,16 @@ class CTC_EDD_SL_Plugin_Updater { // CTC Mod
             // 2. Added class replacement. If $changelog_link provided, class is none; otherwise class for modal is used
             if ( empty( $version_info->download_link ) ) {
                 printf(
-                    __( 'There is a new version of %1$s available. <a target="_blank" class="%4$s" href="%2$s">View version %3$s details</a>.', 'church-theme-content' ), // CTC Mod textdomain
+                    wp_kses( // CTC Mod - escape translation string
+                        __( 'There is a new version of %1$s available. <a target="_blank" class="%4$s" href="%2$s">View version %3$s details</a>.', 'church-theme-content' ), // CTC Mod textdomain
+                        array(
+                            'a' => array(
+                                'href' => array(),
+                                'target' => array(),
+                                'class' => array(),
+                            )
+                        )
+                    ),
                     esc_html( $version_info->name ),
                     esc_url( $changelog_link ),
                     esc_html( $version_info->new_version ),
@@ -208,7 +218,16 @@ class CTC_EDD_SL_Plugin_Updater { // CTC Mod
                 );
             } else {
                 printf(
-                    __( 'There is a new version of %1$s available. <a target="_blank" class="%5$s" href="%2$s">View version %3$s details</a> or <a href="%4$s">update now</a>.', 'church-theme-content' ), // CTC Mod textdomain
+                    wp_kses( // CTC Mod - escape translation string
+                        __( 'There is a new version of %1$s available. <a target="_blank" class="%5$s" href="%2$s">View version %3$s details</a> or <a href="%4$s">update now</a>.', 'church-theme-content' ), // CTC Mod textdomain
+                        array(
+                            'a' => array(
+                                'href' => array(),
+                                'target' => array(),
+                                'class' => array(),
+                            )
+                        )
+                    ),
                     esc_html( $version_info->name ),
                     esc_url( $changelog_link ),
                     esc_html( $version_info->new_version ),
@@ -349,7 +368,8 @@ class CTC_EDD_SL_Plugin_Updater { // CTC Mod
         }
 
         if( ! current_user_can( 'update_plugins' ) ) {
-            wp_die( __( 'You do not have permission to install plugin updates', 'church-theme-content' ), __( 'Error', 'church-theme-content' ), array( 'response' => 403 ) ); // CTC Mod textdomain
+            // CTC Mod - esc_html on translation strings
+            wp_die( esc_html__( 'You do not have permission to install plugin updates', 'church-theme-content' ), esc_html__( 'Error', 'church-theme-content' ), array( 'response' => 403 ) ); // CTC Mod textdomain
         }
 
         $response = $this->api_request( 'plugin_latest_version', array( 'slug' => $_REQUEST['slug'] ) );
