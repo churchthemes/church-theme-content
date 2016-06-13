@@ -568,7 +568,11 @@ function ctc_add_meta_box_event_registration() {
 				'name'				=> __( 'Registration URL', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
-				'desc'				=> __( 'Enter the URL of your registration form or 3rd-party registration service (such as Eventbrite).', 'church-theme-content' ),
+				'desc'				=> sprintf(
+										__( 'Optionally link to a third-party registration form provided by your Church Management System or a service like EventBrite. <a href="%1$s" target="_blank">Learn More</a>', 'church-theme-content' ),
+										/* translators: %1$s is URL to guide about event registration solutions */
+										'https://churchthemes.com/go/ctc-event-registration'
+										),
 				'type'				=> 'url', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
