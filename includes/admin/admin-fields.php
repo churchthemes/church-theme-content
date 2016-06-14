@@ -34,10 +34,26 @@ function ctc_coordinate_field( $data ) {
 	$input = '<input type="text" ' . $data['common_atts'] . ' id="' . $data['esc_element_id'] . '" value="' . $data['esc_value'] . '" />';
 
 	// Aufofill button
-	$input .= ' <input type="button" value="' .  esc_attr_x( 'Autofill NONFUNCTIONAL', 'coordinate button', 'church-theme-content' ) . '" class="button">';
+	$input .= ' <input type="button" value="' .  esc_attr_x( 'Get From Address', 'coordinate button', 'church-theme-content' ) . '" class="button">';
 
 	return $input;
 
 }
 
 add_action( 'admin_init', 'ctc_hide_theme_support_notice' ); // before admin_notices
+
+/**
+ * Process "Get From Address"
+ *
+ * Fill latitude/longitude fields when button clicked.
+ * Uses Google Maps geocoding service.
+ *
+ * @since 1.6
+ */
+function ctc_get_coordinates_js() {
+
+
+
+}
+
+add_action( 'wp_footer', 'ctc_get_coordinates_js' ); // before admin_notices
