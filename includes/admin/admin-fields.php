@@ -86,10 +86,49 @@ function ctc_get_coordinates_js() {
 		return;
 	}
 
+	// Error messages
+	$error_no_address = __( 'Please enter an Address first.', 'church-theme-content' );
+	$error_failed = __( 'Latitide and Longitude could not be determined from Address. Please check for errors or enter manually.', 'church-theme-content' );
+
 	// JavaScript for click on "Get From Address" button
 ?>
 
 <script type="text/javascript">
+
+jQuery( document ).ready( function( $ ) {
+
+	$( '#ctc-get-coordinates-button' ).click( function() {
+
+		var address, error;
+
+		// Address entered?
+		address = $('textarea[id^="ctmb-input-_ctc_"][id$="_address"]').val().trim();
+		if ( address ) {
+
+			// Convert address to one line
+
+
+			// Get coordinates from Google Maps geocoder
+
+
+			// Failed to get coordinates
+			//error = '<?php echo esc_js( $error_failed ); ?>';
+
+		}
+
+		// No address
+		else {
+			error = '<?php echo esc_js( $error_no_address ); ?>';
+		}
+
+		// Show error
+		if ( error ) {
+			alert( error );
+		}
+
+	} );
+
+} );
 
 </script>
 
