@@ -34,7 +34,7 @@ function ctc_coordinate_field( $data ) {
 	$input = '<input type="text" ' . $data['common_atts'] . ' id="' . $data['esc_element_id'] . '" value="' . $data['esc_value'] . '" />';
 
 	// Aufofill button
-	$input .= ' <input type="button" value="' .  esc_attr_x( 'Get From Address', 'coordinate button', 'church-theme-content' ) . '" class="button">';
+	$input .= ' <input type="button" value="' .  esc_attr_x( 'Get From Address', 'coordinate button', 'church-theme-content' ) . '" id="ctc-get-coordinates-button" class="button">';
 
 	return $input;
 
@@ -90,7 +90,6 @@ function ctc_get_coordinates_js() {
 ?>
 
 <script type="text/javascript">
-
 
 </script>
 
