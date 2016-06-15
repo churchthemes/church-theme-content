@@ -52,8 +52,50 @@ add_action( 'admin_init', 'ctc_hide_theme_support_notice' ); // before admin_not
  */
 function ctc_get_coordinates_js() {
 
+	$screen = get_current_screen();
 
+	// Add/edit screen only
+	if ( $screen->base != 'post') {
+		return;
+	}
+
+	// Only event or location if theme supports necessary fields
+	if (
+		! in_array( $screen->post_type, array( 'ctc_event', 'ctc_location' ) )
+		||
+		(
+			'ctc_event' == $screen->post_type
+			&&
+			! (
+				ctc_field_supported( 'events', '_ctc_event_address' )
+				&& ctc_field_supported( 'events', '_ctc_event_map_lat' )
+				&& ctc_field_supported( 'events', '_ctc_event_map_lng' )
+			)
+		)
+		||
+		(
+			'ctc_location' == $screen->post_type
+			&&
+			! (
+				ctc_field_supported( 'locations', '_ctc_location_address' )
+				&& ctc_field_supported( 'locations', '_ctc_location_map_lat' )
+				&& ctc_field_supported( 'locations', '_ctc_location_map_lng' )
+			)
+		)
+	) {
+		return;
+	}
+
+	// JavaScript for click on "Get From Address" button
+?>
+
+<script type="text/javascript">
+
+
+</script>
+
+<?php
 
 }
 
-add_action( 'wp_footer', 'ctc_get_coordinates_js' ); // before admin_notices
+add_action( 'admin_print_footer_scripts', 'ctc_get_coordinates_js' ); // before admin_notices
