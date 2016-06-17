@@ -112,7 +112,7 @@ function ctc_get_coordinates_js() {
 
 				// Geocode address via Google Maps API
 				$.ajax( {
-					url: 'http://maps.google.com/maps/api/geocode/json',
+					url: 'https://maps.google.com/maps/api/geocode/json',
 					data: { address: address },
 					dataType: 'json',
 				} )
