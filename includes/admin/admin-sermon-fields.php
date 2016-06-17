@@ -108,7 +108,7 @@ function ctc_add_meta_box_sermon_details() {
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> __( 'Choose Video', 'church-theme-content' ), // text for button that opens media frame
-				'upload_title'		=> __( 'Choose an Video File', 'church-theme-content' ), // title appearing at top of media frame
+				'upload_title'		=> __( 'Choose a Video File', 'church-theme-content' ), // title appearing at top of media frame
 				'upload_type'		=> 'video', // optional type of media to filter by (image, audio, video, application/pdf)
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead

@@ -195,7 +195,7 @@ function ctc_add_meta_box_location() {
 				'name'				=> __( 'Map Latitude', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
-				'desc'				=> __( 'You can <a href="https://churchthemes.com/get-latitude-longitude" target="_blank">use this</a> to convert an address into coordinates.', 'church-theme-content' ),
+				'desc'				=> '',
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
@@ -210,7 +210,7 @@ function ctc_add_meta_box_location() {
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
-				'custom_field'		=> '', // function for custom display of field input
+				'custom_field'		=> 'ctc_coordinate_field', // function for custom display of field input
 				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
 			),
 
@@ -219,7 +219,11 @@ function ctc_add_meta_box_location() {
 				'name'				=> __( 'Map Longitude', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
-				'desc'				=> '',
+				'desc'				=> sprintf(
+										/* translators: %1$s is URL of tool to determine latitude or longitude */
+										__( 'Click "Get From Address" or <a href="%1$s" target="_blank">manually find</a> latitude and longitude coordinates.', 'church-theme-content' ),
+										'https://churchthemes.com/get-latitude-longitude'
+									),
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
