@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Church Theme Content\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-16 14:57-0500\n"
-"PO-Revision-Date: 2016-06-16 14:57-0500\n"
+"POT-Creation-Date: 2016-06-17 11:41-0500\n"
+"PO-Revision-Date: 2016-06-17 11:41-0500\n"
 "Last-Translator: churchthemes.com <contact@churchthemes.com>\n"
 "Language-Team: churchthemes.com\n"
 "Language: es_MX\n"
@@ -189,9 +189,9 @@ msgstr ""
 #: ../includes/admin/admin-event-fields.php:576
 #, php-format
 msgid ""
-"Optionally link to a third-party registration form provided by your Church "
-"Management System or a service like EventBrite. <a href=\"%1$s\" target="
-"\"_blank\">Learn More</a>"
+"Link to a third-party registration page from your Church Management System, "
+"EventBrite, etc. (or embed a form into the content above). <a href=\"%1$s\" "
+"target=\"_blank\">Learn More</a>"
 msgstr ""
 
 #: ../includes/admin/admin-event-fields.php:763
