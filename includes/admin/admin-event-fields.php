@@ -522,7 +522,7 @@ add_action( 'admin_init', 'ctc_add_meta_box_event_location' );
 /**
  * Registration
  *
- * @since 1.5.0
+ * @since 1.6.0
  */
 function ctc_add_meta_box_event_registration() {
 
