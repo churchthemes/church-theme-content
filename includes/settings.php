@@ -61,6 +61,42 @@ function ctc_settings_setup() {
 		// Section Tabs
 		'sections' => array(
 
+
+			// General
+			'general' => array(
+
+				// Title
+				'title'	=> _x( 'General', 'settings section title', 'church-theme-content' ),
+
+				// Description
+				'desc'	=> '',
+
+				// Fields (Settings)
+				'fields' => array(
+
+					// Example
+					'google_maps_api_key' => array(
+						'name'				=> __( 'Google Maps API Key', 'church-theme-content' ),
+						'desc'				=> sprintf(
+												/* translators: %1$s is URL to guide telling user how to get a Google Maps API Key */
+												__( 'An API Key for Google Maps is required if you want to show maps for events or locations. <a href="%1$s" target="_blank">Get an API Key</a>', 'church-theme-content' ),
+												'https://churchthemes.com/go/google-maps-api-key'
+											),
+						'type'				=> 'text', // text, textarea, checkbox, radio, select, number
+						'checkbox_label'	=> '', //show text after checkbox
+						'options'			=> array(), // array of keys/values for radio or select
+						'default'			=> '', // value to pre-populate option with (before first save or on reset)
+						'no_empty'			=> false, // if user empties value, force default to be saved instead
+						'allow_html'		=> false, // allow HTML to be used in the value
+						'class'				=> '', // classes to add to input
+						'custom_sanitize'	=> '', // function to do additional sanitization
+						'custom_content'	=> '', // function for custom display of field input
+					),
+
+				)
+
+			),
+
 			// Future
 			// - Possibly add extendable "Add-on Settings" with section for each add-on, like EDD
 			// - It would sit next to the existing "Add-on Licenses" tab, like EDD
@@ -101,39 +137,6 @@ function ctc_settings_setup() {
 				)
 
 			),
-
-			/*
-			// Second Section
-			'second_section' => array(
-
-				// Title
-				'title'	=> __( 'Second Section', 'church-theme-content' ),
-
-				// Description
-				'desc'	=> __( 'Second section description.', 'church-theme-content' ),
-
-				// Fields (Settings)
-				'fields' => array(
-
-					// Example
-					'setting_key' => array(
-						'name'				=> __( 'Field Name', 'church-theme-content' ),
-						'desc'				=> __( 'This is the description below the field.', 'church-theme-content' ),
-						'type'				=> 'text', // text, textarea, checkbox, radio, select, number
-						'checkbox_label'	=> '', //show text after checkbox
-						'options'			=> array(), // array of keys/values for radio or select
-						'default'			=> '', // value to pre-populate option with (before first save or on reset)
-						'no_empty'			=> false, // if user empties value, force default to be saved instead
-						'allow_html'		=> false, // allow HTML to be used in the value
-						'class'				=> '', // classes to add to input
-						'custom_sanitize'	=> '', // function to do additional sanitization
-						'custom_content'	=> '', // function for custom display of field input
-					),
-
-				)
-
-			),
-			*/
 
 		)
 
