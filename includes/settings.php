@@ -76,7 +76,7 @@ function ctc_settings_setup() {
 
 					// Example
 					'google_maps_api_key' => array(
-						'name'				=> __( 'Google Maps API Key', 'church-theme-content' ),
+						'name'				=> _x( 'Google Maps API Key', 'settings', 'church-theme-content' ),
 						'desc'				=> sprintf(
 												/* translators: %1$s is URL to guide telling user how to get a Google Maps API Key */
 												__( 'An API Key for Google Maps is required if you want to show maps for events or locations. <a href="%1$s" target="_blank">Get an API Key</a>', 'church-theme-content' ),

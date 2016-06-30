@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Church Theme Content\n"
-"POT-Creation-Date: 2016-06-17 11:41-0500\n"
-"PO-Revision-Date: 2016-06-17 11:41-0500\n"
+"POT-Creation-Date: 2016-06-30 10:46-0500\n"
+"PO-Revision-Date: 2016-06-30 10:46-0500\n"
 "Last-Translator: churchthemes.com <contact@churchthemes.com>\n"
 "Language-Team: Borisa Djuraskovic <borisad@webhostinghub.com>\n"
 "Language: sr_RS\n"
@@ -255,26 +255,6 @@ msgid ""
 "for errors or enter manually."
 msgstr ""
 
-#: ../includes/admin/admin-helpers.php:66
-msgctxt "map"
-msgid "Road"
-msgstr "Put"
-
-#: ../includes/admin/admin-helpers.php:67
-msgctxt "map"
-msgid "Satellite"
-msgstr "Satelit"
-
-#: ../includes/admin/admin-helpers.php:68
-msgctxt "map"
-msgid "Hybrid"
-msgstr "Hibrid"
-
-#: ../includes/admin/admin-helpers.php:69
-msgctxt "map"
-msgid "Terrain"
-msgstr "Teren"
-
 #: ../includes/admin/admin-location-fields.php:37
 msgctxt "location meta box"
 msgid "Location Details"
@@ -330,6 +310,33 @@ msgstr "Narudžbina"
 msgctxt "location admin column"
 msgid "Location"
 msgstr "Lokacija"
+
+#: ../includes/admin/admin-maps.php:29
+msgctxt "map"
+msgid "Road"
+msgstr "Put"
+
+#: ../includes/admin/admin-maps.php:30
+msgctxt "map"
+msgid "Satellite"
+msgstr "Satelit"
+
+#: ../includes/admin/admin-maps.php:31
+msgctxt "map"
+msgid "Hybrid"
+msgstr "Hibrid"
+
+#: ../includes/admin/admin-maps.php:32
+msgctxt "map"
+msgid "Terrain"
+msgstr "Teren"
+
+#: ../includes/admin/admin-maps.php:151
+#, php-format
+msgid ""
+"<strong>Google Maps API Key Not Set.</strong> You must set it in <a href="
+"\"%1$s\">Church Theme Content Settings</a> for maps to work."
+msgstr ""
 
 #: ../includes/admin/admin-person-fields.php:34
 msgid "Enter name here"
@@ -729,12 +736,29 @@ msgid ""
 "Content</a> plugin and its <a href=\"%2$s\" target=\"_blank\">Add-ons</a>."
 msgstr ""
 
-#: ../includes/settings.php:72
+#: ../includes/settings.php:69
+msgctxt "settings section title"
+msgid "General"
+msgstr ""
+
+#: ../includes/settings.php:79
+msgctxt "settings"
+msgid "Google Maps API Key"
+msgstr ""
+
+#: ../includes/settings.php:82
+#, php-format
+msgid ""
+"An API Key for Google Maps is required if you want to show maps for events "
+"or locations. <a href=\"%1$s\" target=\"_blank\">Get an API Key</a>"
+msgstr ""
+
+#: ../includes/settings.php:108
 msgctxt "settings"
 msgid "Add-on Licenses"
 msgstr "Dodaj lokaciju"
 
-#: ../includes/settings.php:77
+#: ../includes/settings.php:113
 msgid ""
 "Save then activate your add-on license keys to enable one-click updates for "
 "them."
