@@ -211,6 +211,7 @@ class Church_Theme_Content {
 				CTC_ADMIN_DIR . '/admin-fields.php',
 				CTC_ADMIN_DIR . '/admin-helpers.php',
 				CTC_ADMIN_DIR . '/admin-location-fields.php',
+				CTC_ADMIN_DIR . '/admin-maps.php',
 				CTC_ADMIN_DIR . '/admin-menu.php',
 				CTC_ADMIN_DIR . '/admin-person-fields.php',
 				CTC_ADMIN_DIR . '/admin-posts.php',
