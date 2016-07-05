@@ -78,6 +78,38 @@ function ctc_gmaps_zoom_level_default() {
 }
 
 /**********************************
+ * CONDITIONS
+ **********************************/
+
+/**
+ * Adding/editing event/location with longitude and latitude fields support?
+ *
+ * @since 1.7.1
+ * @return bool True if conditions met
+ */
+function ctc_has_lat_lng_fields() {
+
+	// Get current screen
+	$screen = get_current_screen();
+
+	// Only on Add/Edit Location or Event
+	if ( ! ( $screen->base == 'post' && in_array( $screen->post_type, array( 'ctc_event', 'ctc_location' ) ) ) ) {
+		return false;
+	}
+
+	// Only if has latitude and longitude fields supported
+	if (
+		( 'ctc_event' == $screen->post_type && ( ! ctc_field_supported( 'events', '_ctc_event_map_lat' ) || ! ctc_field_supported( 'events', '_ctc_event_map_lng' ) ) )
+		|| ( 'ctc_location' == $screen->post_type && ( ! ctc_field_supported( 'locations', '_ctc_location_map_lat' ) || ! ctc_field_supported( 'locations', '_ctc_location_map_lng' ) ) )
+	) {
+		return false;
+	}
+
+	return true;
+
+}
+
+/**********************************
  * API KEY NOTICE
  **********************************/
 
@@ -93,8 +125,10 @@ function ctc_gmaps_api_key_show_notice() {
 
 	$show = true;
 
-	// Only on Add/Edit Location or Event
+	// Get current screen
 	$screen = get_current_screen();
+
+	// Only on Add/Edit Location or Event
 	if ( ! ( $screen->base == 'post' && in_array( $screen->post_type, array( 'ctc_event', 'ctc_location' ) ) ) ) {
 		$show = false;
 	}
@@ -105,10 +139,7 @@ function ctc_gmaps_api_key_show_notice() {
 	}
 
 	// Only if latitude and longitude fields supported
-	if (
-		( 'ctc_event' == $screen->post_type && ( ! ctc_field_supported( 'events', '_ctc_event_map_lat' ) || ! ctc_field_supported( 'events', '_ctc_event_map_lng' ) ) )
-		|| ( 'ctc_location' == $screen->post_type && ( ! ctc_field_supported( 'locations', '_ctc_location_map_lat' ) || ! ctc_field_supported( 'locations', '_ctc_location_map_lng' ) ) )
-	) {
+	if ( ! ctc_has_lat_lng_fields() ) {
 		return;
 	}
 
@@ -236,13 +267,54 @@ function ctc_gmaps_api_key_dismiss_notice() {
 add_action( 'wp_ajax_ctc_gmaps_api_key_dismiss_notice', 'ctc_gmaps_api_key_dismiss_notice' );
 
 /**********************************
- * MAP BELOW FIELDS
+ * MAP AFTER FIELDS
  **********************************/
 
 // These functions facilitate a map below related fields when editing a location or event
 
+/**
+ * Add map after related fields
+ *
+ * @since 1.7.1
+ * @param object $object CT Meta Box object
+ */
+function ctc_map_after_fields( $object ) {
 
+	// Only on event or location's meta box having map fields
+	if ( ! in_array( $object->meta_box['id'], array( 'ctc_event_location', 'ctc_location' ) ) ) {
+		return;
+	}
 
+	// Only if latitude and longitude fields supported
+	if ( ! ctc_has_lat_lng_fields() ) {
+		return;
+	}
 
+	// Output map container
+	echo 'map container here';
 
+}
 
+add_action( 'ctmb_after_fields', 'ctc_map_after_fields' );
+
+/**
+ * Enqueue scripts for show map after fields
+ *
+ * @since 1.7.1
+ */
+function ctc_map_after_fields_enqueue_scripts() {
+
+	// Only if latitude and longitude fields supported
+	if ( ! ctc_has_lat_lng_fields() ) {
+		return;
+	}
+
+	// Enqueue Google Maps JavaScript API
+	wp_enqueue_script( 'google-maps', '//maps.googleapis.com/maps/api/js?key=' . ctc_setting( 'google_maps_api_key' ), false, null ); // no version, generic name to share w/plugins
+
+	// JavaScript for initializing and interacting with map
+	wp_enqueue_script( 'ctc-map-after-fields', CTC_URL . '/' . CTC_JS_DIR . '/map-after-fields.js', false, CTC_VERSION );
+
+}
+
+add_action( 'admin_enqueue_scripts', 'ctc_map_after_fields_enqueue_scripts' );
