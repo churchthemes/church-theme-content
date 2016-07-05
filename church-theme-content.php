@@ -206,6 +206,7 @@ class Church_Theme_Content {
 				// Functions
 				CTC_ADMIN_DIR . '/activation.php',
 				CTC_ADMIN_DIR . '/admin-add-ons.php',
+				CTC_ADMIN_DIR . '/admin-enqueue-scripts.php',
 				CTC_ADMIN_DIR . '/admin-enqueue-styles.php',
 				CTC_ADMIN_DIR . '/admin-event-fields.php',
 				CTC_ADMIN_DIR . '/admin-fields.php',

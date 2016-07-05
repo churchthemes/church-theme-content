@@ -275,6 +275,9 @@ add_action( 'wp_ajax_ctc_gmaps_api_key_dismiss_notice', 'ctc_gmaps_api_key_dismi
 /**
  * Add map after related fields
  *
+ * User can click "Get From Address" to plot marker and autofill latitude/longitude.
+ * They can also click on map to adjust latitude/longitude if geocoding is imperfect.
+ *
  * @since 1.7.1
  * @param object $object CT Meta Box object
  */
@@ -296,25 +299,3 @@ function ctc_map_after_fields( $object ) {
 }
 
 add_action( 'ctmb_after_fields', 'ctc_map_after_fields' );
-
-/**
- * Enqueue scripts for show map after fields
- *
- * @since 1.7.1
- */
-function ctc_map_after_fields_enqueue_scripts() {
-
-	// Only if latitude and longitude fields supported
-	if ( ! ctc_has_lat_lng_fields() ) {
-		return;
-	}
-
-	// Enqueue Google Maps JavaScript API
-	wp_enqueue_script( 'google-maps', '//maps.googleapis.com/maps/api/js?key=' . ctc_setting( 'google_maps_api_key' ), false, null ); // no version, generic name to share w/plugins
-
-	// JavaScript for initializing and interacting with map
-	wp_enqueue_script( 'ctc-map-after-fields', CTC_URL . '/' . CTC_JS_DIR . '/map-after-fields.js', false, CTC_VERSION );
-
-}
-
-add_action( 'admin_enqueue_scripts', 'ctc_map_after_fields_enqueue_scripts' );
