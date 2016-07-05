@@ -294,7 +294,7 @@ function ctc_map_after_fields( $object ) {
 	}
 
 	// Output map container
-	echo 'map container here';
+	echo '<div id="ctc-map-after-fields"></div>';
 
 }
 

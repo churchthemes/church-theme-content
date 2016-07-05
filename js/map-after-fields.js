@@ -5,10 +5,14 @@
 jQuery( document ).ready( function( $ ) {
 
 	/**************************************
-	 *
+	 * SHOW MAP
 	 **************************************/
 
-console.log( 'map after fields' );
+	// Map container exists
+	if ( $( '#ctc-map-after-fields').length ) {
 
+		console.log( 'init map' );
+
+	}
 
 } );
