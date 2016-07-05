@@ -9,9 +9,17 @@ jQuery( document ).ready( function( $ ) {
 	 **************************************/
 
 	// Map container exists
-	if ( $( '#ctc-map-after-fields').length ) {
+	if ( $( '#ctc-map-after-fields' ).length ) {
 
-		console.log( 'init map' );
+		var map;
+
+		map = new google.maps.Map( document.getElementById( 'ctc-map-after-fields' ), {
+			center: {
+				lat: -34.397,
+				lng: 150.644,
+			},
+			zoom: 8,
+		} );
 
 	}
 
