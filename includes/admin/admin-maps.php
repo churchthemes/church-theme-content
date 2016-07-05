@@ -234,3 +234,15 @@ function ctc_gmaps_api_key_dismiss_notice() {
 }
 
 add_action( 'wp_ajax_ctc_gmaps_api_key_dismiss_notice', 'ctc_gmaps_api_key_dismiss_notice' );
+
+/**********************************
+ * MAP BELOW FIELDS
+ **********************************/
+
+// These functions facilitate a map below related fields when editing a location or event
+
+
+
+
+
+
