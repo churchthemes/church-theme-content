@@ -6,7 +6,7 @@
  *
  * @package    Church_Theme_Content
  * @subpackage Admin
- * @copyright  Copyright (c) 2014, churchthemes.com
+ * @copyright  Copyright (c) 2014 - 2016, churchthemes.com
  * @link       https://github.com/churchthemes/church-theme-content
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * @since      1.2
@@ -27,7 +27,12 @@ function ctc_admin_enqueue_styles() {
 
 	// Plugin Settings
 	if ( $ctc_settings->is_settings_page() ) { // only on Plugin Settings page
-		wp_enqueue_style( 'ctc-settings', CTC_URL . '/' . CTC_CSS_DIR . '/settings.css', false, CTC_VERSION ); // bust cache on update
+		wp_enqueue_style( 'ctc-settings', CTC_URL . '/' . CTC_CSS_DIR . '/settings.css', false, CTC_VERSION );
+	}
+
+	// Styles for showing map after related fields on event/location screens
+	if ( ctc_has_lat_lng_fields() ) { // only if event/location screen with latitude and longitude fields supported
+		wp_enqueue_style( 'ctc-map-after-fields', CTC_URL . '/' . CTC_CSS_DIR . '/map-after-fields.css', false, CTC_VERSION );
 	}
 
 }
