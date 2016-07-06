@@ -4,51 +4,71 @@
 
 jQuery( document ).ready( function( $ ) {
 
-	var map;
-
 	// Only if map container exists
 	if ( ! $( '#ctc-map-after-fields' ).length ) {
 		return;
 	}
 
-	/**************************************
-	 * INITIAL MAP
-	 **************************************/
+	// Show initial map
+	ctc_show_map_after_fields();
 
-	// SHOW ONLY IF HAVE COORDS
-	// NEED TO LOCALIZE FOR DEFAULT TYPE AND ZOOM
-
-
-	map = new google.maps.Map( document.getElementById( 'ctc-map-after-fields' ), {
-		center: {
-			lat: -34.397,
-			lng: 150.644,
-		},
-		zoom: 8,
-		mapTypeId: google.maps.MapTypeId.HYBRID,
-		disableDefaultUI: true, // form fields control zoom, type, etc.
-		scrollwheel: false, // disable scroll zoom (mistake prone, let use Zoom field)
-	} );
-
-	/**************************************
-	 * CHANGE MAP (based on field changes)
-	 **************************************/
-
+	// Update map based on field changes
 	$( '.ctc-map-field' ).bind( 'change', function() {
 
 		// can bind PASTE too? That way when user pastes manual lat/lng
 		// it will update map before unfocusing the input
 
-		console.log( 'fields changed, update map' );
-
-		// Adjust map
+		// Update map
+		ctc_show_map_after_fields();
 
 	} );
 
-	/**************************************
-	 * CHANGE FIELDS (based on map changes)
-	 **************************************/
-
-
-
 } );
+
+// Show Map
+function ctc_show_map_after_fields() {
+
+	var map;
+
+	// Get Coordinates
+	lat = jQuery( '#ctmb-input-_ctc_location_map_lat' ).val();
+	lng = jQuery( '#ctmb-input-_ctc_location_map_lng' ).val();
+
+	// Get Zoom
+	zoom = 14; // default if no zoom field
+	if ( jQuery( '#ctmb-input-_ctc_location_map_zoom' ).length ) {
+		zoom = jQuery( '#ctmb-input-_ctc_location_map_zoom' ).val();
+	}
+
+	// Get Type
+	type = 'ROAD'; // default if no type field
+	if ( jQuery( '#ctmb-input-_ctc_location_map_type' ).length ) {
+		type = jQuery( '#ctmb-input-_ctc_location_map_type' ).val();
+	}
+
+	// Latitude and Longitude entered
+	if ( lat && lng ) {
+
+		// Show map container
+		jQuery( '#ctc-map-after-fields' ).show();
+
+		// Render map
+		map = new google.maps.Map( document.getElementById( 'ctc-map-after-fields' ), {
+			center: {
+				lat: parseFloat( lat ),
+				lng: parseFloat( lng ),
+			},
+			zoom: parseFloat( zoom ),
+			mapTypeId: google.maps.MapTypeId.ROAD,
+			disableDefaultUI: true, // form fields control zoom, type, etc.
+			scrollwheel: false, // disable scroll zoom (mistake prone, let use Zoom field)
+		} );
+
+	}
+
+	// Hide map container if no lat/lng
+	else {
+		jQuery( '#ctc-map-after-fields' ).hide();
+	}
+
+}
