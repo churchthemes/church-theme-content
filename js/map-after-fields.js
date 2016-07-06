@@ -59,7 +59,7 @@ function ctc_show_map_after_fields() {
 				lng: parseFloat( lng ),
 			},
 			zoom: parseFloat( zoom ),
-			mapTypeId: google.maps.MapTypeId.ROAD,
+			mapTypeId: google.maps.MapTypeId[type],
 			disableDefaultUI: true, // form fields control zoom, type, etc.
 			scrollwheel: false, // disable scroll zoom (mistake prone, let use Zoom field)
 		} );
