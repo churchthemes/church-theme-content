@@ -28,7 +28,7 @@ jQuery( document ).ready( function( $ ) {
 // Show Map
 function ctc_show_map_after_fields() {
 
-	var map;
+	var map, coordinates;
 
 	// Get Coordinates
 	lat = jQuery( '#ctmb-input-_ctc_location_map_lat' ).val();
@@ -52,17 +52,23 @@ function ctc_show_map_after_fields() {
 		// Show map container
 		jQuery( '#ctc-map-after-fields' ).show();
 
+		// Coordinates
+		coordinates = { lat: parseFloat( lat ), lng: parseFloat( lng ) };
+
 		// Render map
 		map = new google.maps.Map( document.getElementById( 'ctc-map-after-fields' ), {
-			center: {
-				lat: parseFloat( lat ),
-				lng: parseFloat( lng ),
-			},
+			center: coordinates,
 			zoom: parseFloat( zoom ),
 			mapTypeId: google.maps.MapTypeId[type],
 			disableDefaultUI: true, // form fields control zoom, type, etc.
 			scrollwheel: false, // disable scroll zoom (mistake prone, let use Zoom field)
 		} );
+
+		// Add marker
+		var marker = new google.maps.Marker( {
+			position: coordinates,
+			map: map,
+		});
 
 	}
 
