@@ -105,22 +105,20 @@ function ctc_show_map_after_fields() {
 
 	var lat, lng, zoom, type, coordinates;
 
-// CHANGE THESE TO WORK FOR LOCATION OR EVENT FIELDS...
-
 	// Get Coordinates
-	lat = jQuery( '#ctmb-input-_ctc_location_map_lat' ).val();
-	lng = jQuery( '#ctmb-input-_ctc_location_map_lng' ).val();
+	lat = jQuery( 'input[id^="ctmb-input-_ctc_"][id$="_lat"]' ).val();
+	lng = jQuery( 'input[id^="ctmb-input-_ctc_"][id$="_lng"]' ).val();
 
 	// Get Zoom
 	zoom = 14; // default if no zoom field
-	if ( jQuery( '#ctmb-input-_ctc_location_map_zoom' ).length ) {
-		zoom = jQuery( '#ctmb-input-_ctc_location_map_zoom' ).val();
+	if ( jQuery( '[id^="ctmb-input-_ctc_"][id$="_zoom"]' ).length ) {
+		zoom = jQuery( '[id^="ctmb-input-_ctc_"][id$="_zoom"]' ).val();
 	}
 
 	// Get Type
 	type = 'ROAD'; // default if no type field
-	if ( jQuery( '#ctmb-input-_ctc_location_map_type' ).length ) {
-		type = jQuery( '#ctmb-input-_ctc_location_map_type' ).val();
+	if ( jQuery( '[id^="ctmb-input-_ctc_"][id$="_type"]' ).length ) {
+		type = jQuery( '[id^="ctmb-input-_ctc_"][id$="_type"]' ).val();
 	}
 
 	// Latitude and Longitude entered
