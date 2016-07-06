@@ -19,8 +19,8 @@ jQuery( document ).ready( function( $ ) {
 	// Update map based on field changes
 	$( '.ctc-map-field' ).bind( 'change', function() {
 
-		// can bind PASTE too? That way when user pastes manual lat/lng
-		// it will update map before unfocusing the input
+// Can bind PASTE too? That way when user pastes manual lat/lng
+// It will update map before unfocusing the input
 
 		// Update map
 		ctc_show_map_after_fields();
@@ -51,25 +51,23 @@ jQuery( document ).ready( function( $ ) {
 				'address': address
 			}, function( results, status ) {
 
-				var marker;
+				var coordinates;
+
+				// Get coordinates
+				coordinates = results[0].geometry.location;
 
 				// Success
 				if ( google.maps.GeocoderStatus.OK == status ) {
 
-					// Add coordinates to fields
-// DO IT
+					// Update Latitude and Longitude fields
+					$( 'input[id^="ctmb-input-_ctc_"][id$="_lat"]' ).val( results[0].geometry.location.lat );
+					$( 'input[id^="ctmb-input-_ctc_"][id$="_lng"]' ).val( results[0].geometry.location.lng );
 
-					// Remove old marker
-// DO IT
-
-					// Add marker
-					marker = new google.maps.Marker( {
-						map: ctc_map_after_fields,
-						position: results[0].geometry.location
-					} );
+					// Move marker
+					ctc_map_after_fields_marker.setPosition( coordinates );
 
 					// Re-center map
-					ctc_map_after_fields.setCenter( results[0].geometry.location );
+					ctc_map_after_fields.setCenter( coordinates );
 
 				}
 
@@ -105,7 +103,9 @@ jQuery( document ).ready( function( $ ) {
 // Show Map
 function ctc_show_map_after_fields() {
 
-	var coordinates;
+	var lat, lng, zoom, type, coordinates;
+
+// CHANGE THESE TO WORK FOR LOCATION OR EVENT FIELDS...
 
 	// Get Coordinates
 	lat = jQuery( '#ctmb-input-_ctc_location_map_lat' ).val();
@@ -142,7 +142,7 @@ function ctc_show_map_after_fields() {
 		} );
 
 		// Add marker
-		var marker = new google.maps.Marker( {
+		ctc_map_after_fields_marker = new google.maps.Marker( {
 			position: coordinates,
 			map: ctc_map_after_fields,
 		});
