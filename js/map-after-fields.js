@@ -4,19 +4,20 @@
 
 jQuery( document ).ready( function( $ ) {
 
+	var map;
+
 	// Only if map container exists
 	if ( ! $( '#ctc-map-after-fields' ).length ) {
 		return;
 	}
 
 	/**************************************
-	 * SHOW MAP
+	 * INITIAL MAP
 	 **************************************/
 
-	// REPLACE THIS WITH ACTUAL COORDS, ETC.
+	// SHOW ONLY IF HAVE COORDS
 	// NEED TO LOCALIZE FOR DEFAULT TYPE AND ZOOM
 
-	var map;
 
 	map = new google.maps.Map( document.getElementById( 'ctc-map-after-fields' ), {
 		center: {
@@ -24,6 +25,9 @@ jQuery( document ).ready( function( $ ) {
 			lng: 150.644,
 		},
 		zoom: 8,
+		mapTypeId: google.maps.MapTypeId.HYBRID,
+		disableDefaultUI: true, // form fields control zoom, type, etc.
+		scrollwheel: false, // disable scroll zoom (mistake prone, let use Zoom field)
 	} );
 
 	/**************************************
@@ -32,7 +36,12 @@ jQuery( document ).ready( function( $ ) {
 
 	$( '.ctc-map-field' ).bind( 'change', function() {
 
+		// can bind PASTE too? That way when user pastes manual lat/lng
+		// it will update map before unfocusing the input
+
 		console.log( 'fields changed, update map' );
+
+		// Adjust map
 
 	} );
 
