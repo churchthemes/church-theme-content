@@ -97,6 +97,7 @@ function ctc_get_coordinates_js() {
 
 	jQuery( document ).ready( function( $ ) {
 
+/*
 		$( '#ctc-get-coordinates-button' ).click( function() {
 
 			var address;
@@ -148,7 +149,7 @@ function ctc_get_coordinates_js() {
 			}
 
 		} );
-
+*/
 	} );
 
 	</script>

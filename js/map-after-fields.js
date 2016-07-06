@@ -9,6 +9,10 @@ jQuery( document ).ready( function( $ ) {
 		return;
 	}
 
+	/**************************************
+	 * SHOW MAP
+	 **************************************/
+
 	// Show initial map
 	ctc_show_map_after_fields();
 
@@ -23,12 +27,85 @@ jQuery( document ).ready( function( $ ) {
 
 	} );
 
+	/**************************************
+	 * GEOCODE ADDRESS
+	 **************************************/
+
+	// Click "Get From Address" button
+	$( '#ctc-get-coordinates-button' ).click( function() {
+
+		var address;
+
+		// Get address
+		address = $( 'textarea[id^="ctmb-input-_ctc_"][id$="_address"]' ).val(); // event or location
+		address = $("<div/>").html( address ).text(); // remove HTML
+		address = address.replace( /\r?\n/g, ', ' ); // replace line breaks with commas
+		address = address.trim(); // remove whitespace
+
+		// Have address
+		if ( address ) {
+
+			// Geocode address
+	 		geocoder = new google.maps.Geocoder();
+			geocoder.geocode( {
+				'address': address
+			}, function( results, status ) {
+
+				var marker;
+
+				// Success
+				if ( google.maps.GeocoderStatus.OK == status ) {
+
+					// Add coordinates to fields
+// DO IT
+
+					// Remove old marker
+// DO IT
+
+					// Add marker
+					marker = new google.maps.Marker( {
+						map: ctc_map_after_fields,
+						position: results[0].geometry.location
+					} );
+
+					// Re-center map
+					ctc_map_after_fields.setCenter( results[0].geometry.location );
+
+				}
+
+				// Failure
+				else {
+
+					// Give instructions
+					alert( 'Address could not be converted into Latitude and Longitude coordinates. Please check the address or manually click your location on the map below.' );
+// WP LOCALIZE THIS
+
+					// Show map zoomed out so they can manually click
+// DO IT
+
+				}
+			} );
+
+		}
+
+		// No address, show alert
+		else {
+			alert( 'Please enter an Address above.' );
+// WP LOCALIZE THIS
+		}
+
+	} );
+
 } );
+
+/**************************************
+ * FUNCTIONS
+ **************************************/
 
 // Show Map
 function ctc_show_map_after_fields() {
 
-	var map, coordinates;
+	var coordinates;
 
 	// Get Coordinates
 	lat = jQuery( '#ctmb-input-_ctc_location_map_lat' ).val();
@@ -56,7 +133,7 @@ function ctc_show_map_after_fields() {
 		coordinates = { lat: parseFloat( lat ), lng: parseFloat( lng ) };
 
 		// Render map
-		map = new google.maps.Map( document.getElementById( 'ctc-map-after-fields' ), {
+		ctc_map_after_fields = new google.maps.Map( document.getElementById( 'ctc-map-after-fields' ), {
 			center: coordinates,
 			zoom: parseFloat( zoom ),
 			mapTypeId: google.maps.MapTypeId[type],
@@ -67,7 +144,7 @@ function ctc_show_map_after_fields() {
 		// Add marker
 		var marker = new google.maps.Marker( {
 			position: coordinates,
-			map: map,
+			map: ctc_map_after_fields,
 		});
 
 	}
