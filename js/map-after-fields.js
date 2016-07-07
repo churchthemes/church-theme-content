@@ -41,7 +41,7 @@ jQuery( document ).ready( function( $ ) {
 		var address;
 
 		// Get address
-		address = $( 'textarea[id^="ctmb-input-_ctc_"][id$="_address"]' ).val(); // event or location
+		address = $( '.ctc-address-field' ).val(); // event or location
 		address = $("<div/>").html( address ).text(); // remove HTML
 		address = address.replace( /\r?\n/g, ', ' ); // replace line breaks with commas
 		address = address.trim(); // remove whitespace
