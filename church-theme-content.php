@@ -209,7 +209,6 @@ class Church_Theme_Content {
 				CTC_ADMIN_DIR . '/admin-enqueue-scripts.php',
 				CTC_ADMIN_DIR . '/admin-enqueue-styles.php',
 				CTC_ADMIN_DIR . '/admin-event-fields.php',
-				CTC_ADMIN_DIR . '/admin-fields.php',
 				CTC_ADMIN_DIR . '/admin-helpers.php',
 				CTC_ADMIN_DIR . '/admin-location-fields.php',
 				CTC_ADMIN_DIR . '/admin-maps.php',
