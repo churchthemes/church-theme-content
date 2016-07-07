@@ -57,15 +57,15 @@ jQuery( document ).ready( function( $ ) {
 
 				var coordinates;
 
-				// Get coordinates
-				coordinates = results[0].geometry.location;
-
 				// Success
 				if ( google.maps.GeocoderStatus.OK == status ) {
 
 					// Update Latitude and Longitude fields
 					$( '.ctc-map-lat-field' ).val( results[0].geometry.location.lat );
 					$( '.ctc-map-lng-field' ).val( results[0].geometry.location.lng );
+
+					// Get coordinates
+					coordinates = results[0].geometry.location;
 
 					// Move marker
 					ctc_map_after_fields_marker.setPosition( coordinates );
@@ -79,21 +79,20 @@ jQuery( document ).ready( function( $ ) {
 				else {
 
 					// Give instructions
-					alert( 'Address could not be converted into Latitude and Longitude coordinates. Please check the address or manually click your location on the map below.' );
-// WP LOCALIZE THIS
+					alert( ctc_map_after_fields_data.get_from_address_failed );
 
 					// Show map zoomed out so they can manually click
 // DO IT
 
 				}
+
 			} );
 
 		}
 
 		// No address, show alert
 		else {
-			alert( 'Please enter an Address above.' );
-// WP LOCALIZE THIS
+			alert( ctc_map_after_fields_data.missing_address );
 		}
 
 	} );
