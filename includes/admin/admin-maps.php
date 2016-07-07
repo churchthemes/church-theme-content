@@ -273,7 +273,7 @@ add_action( 'wp_ajax_ctc_gmaps_api_key_dismiss_notice', 'ctc_gmaps_api_key_dismi
 // These functions facilitate a map below related fields when editing a location or event
 
 /**
- * Add map after related fields
+ * Add map container after related fields
  *
  * User can click "Get From Address" to plot marker and autofill latitude/longitude.
  * They can also click on map to adjust latitude/longitude if geocoding is imperfect.
@@ -299,3 +299,25 @@ function ctc_map_after_fields( $object ) {
 }
 
 add_action( 'ctmb_after_fields', 'ctc_map_after_fields' );
+
+/**
+ * Add "Get From Address" button after latitude for geocoding via the map
+ *
+ * Used with CT Meta Box's custom_field in Event and Location latitude/longitude fields.
+ * Replaces standard text field. <input> is same but with the button on end.
+ *
+ * @since 1.6
+ */
+function ctc_coordinate_field( $data ) {
+
+	// Text input from CT Meta Box
+	$input = '<input type="text" ' . $data['common_atts'] . ' id="' . $data['esc_element_id'] . '" value="' . $data['esc_value'] . '" />';
+
+	// Aufofill button
+	$input .= ' <input type="button" value="' .  esc_attr_x( 'Get From Address', 'coordinate button', 'church-theme-content' ) . '" id="ctc-get-coordinates-button" class="button">';
+
+	return $input;
+
+}
+
+add_action( 'admin_init', 'ctc_hide_theme_support_notice' ); // before admin_notices
