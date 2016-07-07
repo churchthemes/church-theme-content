@@ -81,7 +81,7 @@ jQuery( document ).ready( function( $ ) {
 					// Give instructions
 					alert( ctc_map_after_fields_data.get_from_address_failed );
 
-					// Show map zoomed out so they can manually click
+					// Show map zoomed out so they can manually click when geocoding fails
 // DO IT
 
 				}
