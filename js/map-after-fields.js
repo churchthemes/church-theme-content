@@ -27,7 +27,7 @@ jQuery( document ).ready( function( $ ) {
 		// Update map map after timeout
 		setTimeout( function() {
 			ctc_show_map_after_fields();
-		}, 500 );
+		}, 250 );
 
 	} );
 
