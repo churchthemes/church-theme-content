@@ -22,7 +22,7 @@ jQuery( document ).ready( function( $ ) {
 	} );
 
 	// Update map based on latitude/longitude paste
-	$( 'input[id^="ctmb-input-_ctc_"][id$="_lat"], input[id^="ctmb-input-_ctc_"][id$="_lng"]' ).bind( 'paste', function() {
+	$( '.ctc-map-lat-field, .ctc-map-lng-field' ).bind( 'paste', function() {
 
 		// Update map map after timeout
 		setTimeout( function() {
@@ -64,8 +64,8 @@ jQuery( document ).ready( function( $ ) {
 				if ( google.maps.GeocoderStatus.OK == status ) {
 
 					// Update Latitude and Longitude fields
-					$( 'input[id^="ctmb-input-_ctc_"][id$="_lat"]' ).val( results[0].geometry.location.lat );
-					$( 'input[id^="ctmb-input-_ctc_"][id$="_lng"]' ).val( results[0].geometry.location.lng );
+					$( '.ctc-map-lat-field' ).val( results[0].geometry.location.lat );
+					$( '.ctc-map-lng-field' ).val( results[0].geometry.location.lng );
 
 					// Move marker
 					ctc_map_after_fields_marker.setPosition( coordinates );
@@ -110,19 +110,19 @@ function ctc_show_map_after_fields() {
 	var lat, lng, zoom, type, coordinates;
 
 	// Get Coordinates
-	lat = jQuery( 'input[id^="ctmb-input-_ctc_"][id$="_lat"]' ).val();
-	lng = jQuery( 'input[id^="ctmb-input-_ctc_"][id$="_lng"]' ).val();
+	lat = jQuery( '.ctc-map-lat-field' ).val();
+	lng = jQuery( '.ctc-map-lng-field' ).val();
 
 	// Get Zoom
 	zoom = 14; // default if no zoom field
-	if ( jQuery( '[id^="ctmb-input-_ctc_"][id$="_zoom"]' ).length ) {
-		zoom = jQuery( '[id^="ctmb-input-_ctc_"][id$="_zoom"]' ).val();
+	if ( jQuery( 'ctc-map-zoom-field' ).length ) {
+		zoom = jQuery( 'ctc-map-zoom-field' ).val();
 	}
 
 	// Get Type
 	type = 'ROAD'; // default if no type field
-	if ( jQuery( '[id^="ctmb-input-_ctc_"][id$="_type"]' ).length ) {
-		type = jQuery( '[id^="ctmb-input-_ctc_"][id$="_type"]' ).val();
+	if ( jQuery( '.ctc-map-type-field' ).length ) {
+		type = jQuery( '.ctc-map-type-field' ).val();
 	}
 
 	// Latitude and Longitude entered
