@@ -16,14 +16,18 @@ jQuery( document ).ready( function( $ ) {
 	// Show initial map
 	ctc_show_map_after_fields();
 
-	// Update map based on field changes
-	$( '.ctc-map-field' ).bind( 'change', function() {
-
-// Can bind PASTE too? That way when user pastes manual lat/lng
-// It will update map before unfocusing the input
-
-		// Update map
+	// Update map as fields are changed
+	$( '.ctc-map-field' ).bind( 'change keyup', function() {
 		ctc_show_map_after_fields();
+	} );
+
+	// Update map based on latitude/longitude paste
+	$( 'input[id^="ctmb-input-_ctc_"][id$="_lat"], input[id^="ctmb-input-_ctc_"][id$="_lng"]' ).bind( 'paste', function() {
+
+		// Update map map after timeout
+		setTimeout( function() {
+			ctc_show_map_after_fields();
+		}, 500 );
 
 	} );
 
