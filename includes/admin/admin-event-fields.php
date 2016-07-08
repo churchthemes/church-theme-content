@@ -49,9 +49,9 @@ function ctc_add_meta_box_event_date() {
 			'option_key' => array(
 				'name'				=> __( 'Field Name', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> __( 'This is the description below the field.', 'church-theme-content' ), // description below input
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -60,7 +60,7 @@ function ctc_add_meta_box_event_date() {
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number or range type)
 				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
@@ -76,9 +76,9 @@ function ctc_add_meta_box_event_date() {
 			'_ctc_event_start_date' => array(
 				'name'				=> __( 'Start Date', 'church-theme-content' ),
 				'after_name'		=> __( '(Required)', 'church-theme-content' ), // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time) (fields: text, select, number, upload, url, date, time)
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time) (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> '', // description below input
-				'type'				=> 'date', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'type'				=> 'date', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -87,7 +87,7 @@ function ctc_add_meta_box_event_date() {
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number or range type)
 				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
@@ -101,9 +101,9 @@ function ctc_add_meta_box_event_date() {
 			'_ctc_event_end_date' => array(
 				'name'				=> __( 'End Date', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> __( 'Specify End Date if event will span multiple consecutive days.', 'church-theme-content' ),
-				'type'				=> 'date', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'type'				=> 'date', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -112,7 +112,7 @@ function ctc_add_meta_box_event_date() {
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number or range type)
 				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
@@ -125,9 +125,9 @@ function ctc_add_meta_box_event_date() {
 			'_ctc_event_start_time' => array(
 				'name'				=> __( 'Start Time', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> '',
-				'type'				=> 'time', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'type'				=> 'time', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -136,7 +136,7 @@ function ctc_add_meta_box_event_date() {
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number or range type)
 				'class'				=> 'ctmb-small', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
@@ -150,9 +150,9 @@ function ctc_add_meta_box_event_date() {
 			'_ctc_event_end_time' => array(
 				'name'				=> __( 'End Time', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> '',
-				'type'				=> 'time', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'type'				=> 'time', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -161,7 +161,7 @@ function ctc_add_meta_box_event_date() {
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number or range type)
 				'class'				=> 'ctmb-small', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
@@ -176,9 +176,9 @@ function ctc_add_meta_box_event_date() {
 			'_ctc_event_hide_time_range' => array(
 				'name'				=> '',
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> '',
-				'type'				=> 'checkbox', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'type'				=> 'checkbox', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> __( 'Do not show times entered above (use only for ordering events)', 'church-theme-content' ), //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -187,7 +187,7 @@ function ctc_add_meta_box_event_date() {
 				'default'			=> false, // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number or range type)
 				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> 'ctmb-no-top-margin', // class(es) to add to field container
@@ -202,9 +202,9 @@ function ctc_add_meta_box_event_date() {
 			'_ctc_event_time' => array(
 				'name'				=> __( 'Time Description', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> __( 'Optionally describe the time (e.g. "9:30 am and 11:00 am" or "After Second Service")', 'church-theme-content' ),
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -213,7 +213,7 @@ function ctc_add_meta_box_event_date() {
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number or range type)
 				'class'				=> 'ctmb-medium', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
@@ -226,9 +226,9 @@ function ctc_add_meta_box_event_date() {
 			'_ctc_event_recurrence' => array(
 				'name'				=> __( 'Recurrence', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> _x( "Dates automatically move forward after event ends.", 'event meta box', 'church-theme-content' ),
-				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array( // array of keys/values for radio or select
 					'none'			=> _x( 'None', 'event meta box', 'church-theme-content' ),
@@ -242,7 +242,7 @@ function ctc_add_meta_box_event_date() {
 				'default'			=> 'none', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> true, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number or range type)
 				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
@@ -255,9 +255,9 @@ function ctc_add_meta_box_event_date() {
 			'_ctc_event_recurrence_end_date' => array(
 				'name'				=> __( 'Recur Until', 'church-theme-content' ),
 				'after_name'		=> '',
-				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> '',
-				'type'				=> 'date', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'type'				=> 'date', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -266,7 +266,7 @@ function ctc_add_meta_box_event_date() {
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number or range type)
 				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
@@ -313,9 +313,9 @@ function ctc_add_meta_box_event_location() {
 			'option_key' => array(
 				'name'				=> __( 'Field Name', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> __( 'This is the description below the field.', 'church-theme-content' ),
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -324,7 +324,7 @@ function ctc_add_meta_box_event_location() {
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number or range type)
 				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
@@ -340,9 +340,9 @@ function ctc_add_meta_box_event_location() {
 			'_ctc_event_venue' => array(
 				'name'				=> __( 'Venue', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> __( 'You can provide a building name, room number or other location name to help people find the event.', 'church-theme-content' ),
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -351,7 +351,7 @@ function ctc_add_meta_box_event_location() {
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number or range type)
 				'class'				=> 'ctmb-medium', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
@@ -364,9 +364,9 @@ function ctc_add_meta_box_event_location() {
 			'_ctc_event_address' => array(
 				'name'				=> __( 'Address', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> __( 'You can enter an address if it is necessary for people to find this event.', 'church-theme-content' ),
-				'type'				=> 'textarea', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'type'				=> 'textarea', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -375,7 +375,7 @@ function ctc_add_meta_box_event_location() {
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number or range type)
 				'class'				=> 'ctmb-medium ctc-address-field', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> 'ctmb-no-bottom-margin', // class(es) to add to field container
@@ -388,9 +388,9 @@ function ctc_add_meta_box_event_location() {
 			'_ctc_event_show_directions_link' => array(
 				'name'				=> '',
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> '',
-				'type'				=> 'checkbox', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'type'				=> 'checkbox', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> __( 'Show directions link', 'church-theme-content' ), //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -399,7 +399,7 @@ function ctc_add_meta_box_event_location() {
 				'default'			=> true, // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number or range type)
 				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> 'ctmb-no-top-margin', // class(es) to add to field container
@@ -412,9 +412,9 @@ function ctc_add_meta_box_event_location() {
 			'_ctc_event_map_lat' => array(
 				'name'				=> __( 'Map Latitude', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> '',
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -423,7 +423,7 @@ function ctc_add_meta_box_event_location() {
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number or range type)
 				'class'				=> 'ctmb-medium ctc-map-field ctc-map-lat-field', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
@@ -436,13 +436,13 @@ function ctc_add_meta_box_event_location() {
 			'_ctc_event_map_lng' => array(
 				'name'				=> __( 'Map Longitude', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> sprintf(
 										/* translators: %1$s is URL of tool to determine latitude or longitude */
 										__( 'Click "Get From Address" or <a href="%1$s" target="_blank">manually find</a> latitude and longitude coordinates.', 'church-theme-content' ),
 										'https://churchthemes.com/get-latitude-longitude'
 									),
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -451,7 +451,7 @@ function ctc_add_meta_box_event_location() {
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number or range type)
 				'class'				=> 'ctmb-medium ctc-map-field ctc-map-lng-field', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
@@ -464,9 +464,9 @@ function ctc_add_meta_box_event_location() {
 			'_ctc_event_map_type' => array(
 				'name'				=> __( 'Map Type', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> '',
-				'type'				=> 'radio', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'type'				=> 'radio', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> ctc_gmaps_types(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -475,7 +475,7 @@ function ctc_add_meta_box_event_location() {
 				'default'			=> ctc_gmaps_type_default(), // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> true, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number or range type)
 				'class'				=> 'ctc-map-field ctc-map-type-field', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> 'ctc-radio-inline', // class(es) to add to field container
@@ -488,9 +488,9 @@ function ctc_add_meta_box_event_location() {
 			'_ctc_event_map_zoom' => array(
 				'name'				=> __( 'Map Zoom', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> '',
-				'type'				=> 'range', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'type'				=> 'range', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> ctc_gmaps_zoom_levels(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -503,7 +503,7 @@ function ctc_add_meta_box_event_location() {
 										'min'	=> ctc_gmaps_zoom_min(),
 										'max'	=> ctc_gmaps_zoom_max(),
 										'step'	=> 1,
-									), // attr => value array (e.g. set min/max for number type)
+									), // attr => value array (e.g. set min/max for number or range type)
 				'class'				=> 'ctc-map-field ctc-map-zoom-field', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
@@ -548,9 +548,9 @@ function ctc_add_meta_box_event_registration() {
 			'option_key' => array(
 				'name'				=> __( 'Field Name', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> __( 'This is the description below the field.', 'church-theme-content' ),
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -559,7 +559,7 @@ function ctc_add_meta_box_event_registration() {
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number or range type)
 				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
@@ -575,13 +575,13 @@ function ctc_add_meta_box_event_registration() {
 			'_ctc_event_registration_url' => array(
 				'name'				=> __( 'Registration URL', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> sprintf(
 										__( 'Link to a third-party registration page from your Church Management System, EventBrite, etc. (or embed a form into the content above). <a href="%1$s" target="_blank">Learn More</a>', 'church-theme-content' ),
 										/* translators: %1$s is URL to guide about event registration solutions */
 										'https://churchthemes.com/go/ctc-event-registration'
 										),
-				'type'				=> 'url', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'type'				=> 'url', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -590,7 +590,7 @@ function ctc_add_meta_box_event_registration() {
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number or range type)
 				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container

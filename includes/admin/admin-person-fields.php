@@ -72,9 +72,9 @@ function ctc_add_meta_box_person_details() {
 			'option_key' => array(
 				'name'				=> __( 'Field Name', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> __( 'This is the description below the field.', 'church-theme-content' ),
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -83,7 +83,7 @@ function ctc_add_meta_box_person_details() {
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number or range type)
 				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
@@ -99,9 +99,9 @@ function ctc_add_meta_box_person_details() {
 			'_ctc_person_position' => array(
 				'name'				=> _x( 'Position', 'person meta box', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> __( "Enter the person's position or title (e.g. Senior Pastor, Deacon, etc.)", 'church-theme-content' ),
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -110,7 +110,7 @@ function ctc_add_meta_box_person_details() {
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number or range type)
 				'class'				=> 'ctmb-medium', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
@@ -123,9 +123,9 @@ function ctc_add_meta_box_person_details() {
 			'_ctc_person_phone' => array(
 				'name'				=> __( 'Phone', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> '',
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -134,7 +134,7 @@ function ctc_add_meta_box_person_details() {
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number or range type)
 				'class'				=> 'ctmb-medium', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
@@ -147,9 +147,9 @@ function ctc_add_meta_box_person_details() {
 			'_ctc_person_email' => array(
 				'name'				=> __( 'Email', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> '',
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -158,7 +158,7 @@ function ctc_add_meta_box_person_details() {
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number or range type)
 				'class'				=> 'ctmb-medium', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
@@ -171,9 +171,9 @@ function ctc_add_meta_box_person_details() {
 			'_ctc_person_urls' => array(
 				'name'				=> __( 'URLs', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
-				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> '',
-				'type'				=> 'textarea', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'type'				=> 'textarea', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -182,7 +182,7 @@ function ctc_add_meta_box_person_details() {
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'attributes'		=> array(), // attr => value array (e.g. set min/max for number or range type)
 				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
