@@ -66,9 +66,6 @@ jQuery( document ).ready( function( $ ) {
 				// Success
 				if ( google.maps.GeocoderStatus.OK == status ) {
 
-					// Ensure map container is showing
-					$( '#ctc-map-after-fields' ).show();
-
 					// Update Latitude and Longitude fields
 					$( '.ctc-map-lat-field' ).val( results[0].geometry.location.lat );
 					$( '.ctc-map-lng-field' ).val( results[0].geometry.location.lng );
@@ -82,6 +79,9 @@ jQuery( document ).ready( function( $ ) {
 					// Re-center map
 					ctc_map_after_fields.setCenter( coordinates );
 
+					// Show map container in case it is not already
+					$( '#ctc-map-after-fields' ).show();
+
 				}
 
 				// Failure
@@ -89,22 +89,6 @@ jQuery( document ).ready( function( $ ) {
 
 					// Give instructions
 					alert( ctc_map_after_fields_data.get_from_address_failed );
-
-					// Show map zoomed out so they can manually click when geocoding fails
-					//default_lat = '31.768319', 35.21371;
-
-					// Remove marker if present
-
-
-					// Zoom out
-
-
-					// Center or Jerusalem
-					//ctc_map_after_fields.setCenter( coordinates );
-
-// Update map and controls
-
-// DO THIS IF NOT ALREADY SHOWING MAP - maybe they tried a similar address that did work - or just the city to get into the area
 
 				}
 
