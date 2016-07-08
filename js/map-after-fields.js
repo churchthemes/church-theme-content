@@ -112,16 +112,16 @@ function ctc_show_map_after_fields() {
 	lat = jQuery( '.ctc-map-lat-field' ).val();
 	lng = jQuery( '.ctc-map-lng-field' ).val();
 
-	// Get Zoom
-	zoom = 14; // default if no zoom field
-	if ( jQuery( 'ctc-map-zoom-field' ).length ) {
-		zoom = jQuery( 'ctc-map-zoom-field' ).val();
-	}
-
 	// Get Type
 	type = 'ROAD'; // default if no type field
-	if ( jQuery( '.ctc-map-type-field' ).length ) {
-		type = jQuery( '.ctc-map-type-field' ).val();
+	if ( jQuery( '.ctc-map-type-field' ).length ) { // field supported
+		type = jQuery( '.ctc-map-type-field:checked' ).val();
+	}
+
+	// Get Zoom
+	zoom = 14; // default if no zoom field
+	if ( jQuery( '.ctc-map-zoom-field' ).length ) { // field supported
+		zoom = jQuery( '.ctc-map-zoom-field' ).val();
 	}
 
 	// Latitude and Longitude entered
