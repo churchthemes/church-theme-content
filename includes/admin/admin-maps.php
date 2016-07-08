@@ -29,7 +29,7 @@ function ctc_gmaps_types() {
 		'ROADMAP'	=> esc_html_x( 'Road', 'map', 'church-theme-content' ),
 		'SATELLITE'	=> esc_html_x( 'Satellite', 'map', 'church-theme-content' ),
 		'HYBRID'	=> esc_html_x( 'Hybrid', 'map', 'church-theme-content' ),
-		'TERRAIN'	=> esc_html_x( 'Terrain', 'map', 'church-theme-content' )
+		'TERRAIN'	=> esc_html_x( 'Terrain', 'map', 'church-theme-content' ),
 	);
 
 	return apply_filters( 'ctc_gmaps_types', $types );

@@ -478,7 +478,7 @@ function ctc_add_meta_box_event_location() {
 				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
 				'class'				=> 'ctc-map-field ctc-map-type-field', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
-				'field_class'		=> '', // class(es) to add to field container
+				'field_class'		=> 'ctc-radio-inline', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
 				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
