@@ -17,7 +17,13 @@ jQuery( document ).ready( function( $ ) {
 	ctc_show_map_after_fields();
 
 	// Update map as fields are changed
-	$( '.ctc-map-field' ).bind( 'change keyup', function() {
+	// Don't do this for range change (see on input below)
+	$( '.ctc-map-field:not(.ctc-map-zoom-field)' ).bind( 'change keyup', function() {
+		ctc_show_map_after_fields();
+	} );
+
+	// Update map as zoom range is adjusted
+	$( '.ctc-map-zoom-field' ).on( 'input', function() { // do it as user drags, not just on release (change)
 		ctc_show_map_after_fields();
 	} );
 
