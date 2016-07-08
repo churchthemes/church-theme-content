@@ -437,11 +437,7 @@ function ctc_add_meta_box_event_location() {
 				'name'				=> __( 'Map Longitude', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
-				'desc'				=> sprintf(
-										/* translators: %1$s is URL of tool to determine latitude or longitude */
-										__( 'Click "Get From Address" or <a href="%1$s" target="_blank">manually find</a> latitude and longitude coordinates.', 'church-theme-content' ),
-										'https://churchthemes.com/get-latitude-longitude'
-									),
+				'desc'				=> '',
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
