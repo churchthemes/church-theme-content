@@ -273,7 +273,7 @@ function ctc_add_meta_box_location() {
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, upload, url, date, time)
 				'desc'				=> _x( 'A lower number is more zoomed out while a higher number is more zoomed in.', 'location meta box', 'church-theme-content' ),
-				'type'				=> 'select', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
+				'type'				=> 'range', // text, textarea, checkbox, radio, select, number, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> ctc_gmaps_zoom_levels(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -283,7 +283,11 @@ function ctc_add_meta_box_location() {
 				'default'			=> ctc_gmaps_zoom_level_default(), // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> true, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
-				'attributes'		=> array(), // attr => value array (e.g. set min/max for number type)
+				'attributes'		=> array(
+										'min'	=> ctc_gmaps_zoom_min(),
+										'max'	=> ctc_gmaps_zoom_max(),
+										'step'	=> 1,
+									), // attr => value array (e.g. set min/max for number type)
 				'class'				=> 'ctc-map-field ctc-map-zoom-field', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container

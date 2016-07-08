@@ -56,8 +56,8 @@ function ctc_gmaps_zoom_levels() {
 
 	$zoom_levels = array();
 
-	$zoom_min = 1; // 0 is actually lowest but then it's detected as not set and reverts to default
-	$zoom_max = 21;
+	$zoom_min = ctc_gmaps_zoom_min(); // 0 is actually lowest but then it's detected as not set and reverts to default
+	$zoom_max = ctc_gmaps_zoom_max();
 
 	for ( $z = $zoom_min; $z <= $zoom_max; $z++ ) {
 		$zoom_levels[$z] = $z;
@@ -65,6 +65,26 @@ function ctc_gmaps_zoom_levels() {
 
 	return apply_filters( 'ctc_gmaps_zoom_levels', $zoom_levels );
 
+}
+
+/**
+ * Zoom maximum
+ *
+ * @since 1.7.1
+ * @return int Google Maps zoom max
+ */
+function ctc_gmaps_zoom_max() {
+	return apply_filters( 'ctc_gmaps_zoom_max', 21 );
+}
+
+/**
+ * Zoom minimum
+ *
+ * @since 0.9
+ * @return int Default Google Maps zoom level
+ */
+function ctc_gmaps_zoom_min() {
+	return apply_filters( 'ctc_gmaps_zoom_min', 1 );
 }
 
 /**
