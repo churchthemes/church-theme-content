@@ -66,6 +66,9 @@ jQuery( document ).ready( function( $ ) {
 				// Success
 				if ( google.maps.GeocoderStatus.OK == status ) {
 
+					// Ensure map container is showing
+					$( '#ctc-map-after-fields' ).show();
+
 					// Update Latitude and Longitude fields
 					$( '.ctc-map-lat-field' ).val( results[0].geometry.location.lat );
 					$( '.ctc-map-lng-field' ).val( results[0].geometry.location.lng );
