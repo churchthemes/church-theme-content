@@ -18,7 +18,7 @@ jQuery( document ).ready( function( $ ) {
 
 	// Update map as fields are changed
 	// Don't do this for range change (see on input below)
-	$( '.ctc-map-field:not(.ctc-map-zoom-field)' ).bind( 'change keyup', function() {
+	$( '.ctc-map-field:not(.ctc-map-zoom-field)' ).on( 'change keyup', function() {
 		ctc_show_map_after_fields();
 	} );
 
@@ -28,7 +28,7 @@ jQuery( document ).ready( function( $ ) {
 	} );
 
 	// Update map based on latitude/longitude paste
-	$( '.ctc-map-lat-field, .ctc-map-lng-field' ).bind( 'paste', function() {
+	$( '.ctc-map-lat-field, .ctc-map-lng-field' ).on( 'paste', function() {
 
 		// Update map map after timeout
 		setTimeout( function() {
@@ -88,7 +88,20 @@ jQuery( document ).ready( function( $ ) {
 					alert( ctc_map_after_fields_data.get_from_address_failed );
 
 					// Show map zoomed out so they can manually click when geocoding fails
-// DO IT
+					//default_lat = '31.768319', 35.21371;
+
+					// Remove marker if present
+
+
+					// Zoom out
+
+
+					// Center or Jerusalem
+					//ctc_map_after_fields.setCenter( coordinates );
+
+// Update map and controls
+
+// DO THIS IF NOT ALREADY SHOWING MAP - maybe they tried a similar address that did work - or just the city to get into the area
 
 				}
 
