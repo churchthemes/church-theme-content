@@ -70,7 +70,7 @@ jQuery( document ).ready( function( $ ) {
 					$( '.ctc-map-lat-field' ).val( results[0].geometry.location.lat );
 					$( '.ctc-map-lng-field' ).val( results[0].geometry.location.lng );
 
-					// Map not showing, show it based on fields
+					// Map not showing (new Add), show it based on fields
 					if ( ! $( '#ctc-map-after-fields' ).is( ':visible' ) ) {
 						ctc_show_map_after_fields();
 					}
@@ -138,26 +138,46 @@ function ctc_show_map_after_fields() {
 	// Latitude and Longitude entered
 	if ( lat && lng ) {
 
-		// Show map container
-		jQuery( '#ctc-map-after-fields' ).show();
-
 		// Coordinates
 		coordinates = { lat: parseFloat( lat ), lng: parseFloat( lng ) };
 
-		// Render map
-		ctc_map_after_fields = new google.maps.Map( document.getElementById( 'ctc-map-after-fields' ), {
-			center: coordinates,
-			zoom: parseFloat( zoom ),
-			mapTypeId: google.maps.MapTypeId[type],
-			disableDefaultUI: true, // form fields control zoom, type, etc.
-			scrollwheel: false, // disable scroll zoom (mistake prone, let use Zoom field)
-		} );
+		// Map not showing (new Add), show it based on fields
+		if ( ! jQuery( '#ctc-map-after-fields' ).is( ':visible' ) ) {
 
-		// Add marker
-		ctc_map_after_fields_marker = new google.maps.Marker( {
-			position: coordinates,
-			map: ctc_map_after_fields,
-		});
+			// Render map first time
+			ctc_map_after_fields = new google.maps.Map( document.getElementById( 'ctc-map-after-fields' ), {
+				center: coordinates,
+				zoom: parseFloat( zoom ),
+				mapTypeId: google.maps.MapTypeId[type],
+				disableDefaultUI: true, // form fields control zoom, type, etc.
+				scrollwheel: false, // disable scroll zoom (mistake prone, let use Zoom field)
+			} );
+
+			// Add marker to new map
+			ctc_map_after_fields_marker = new google.maps.Marker( {
+				position: coordinates,
+				map: ctc_map_after_fields,
+			});
+
+			// Show map container
+			jQuery( '#ctc-map-after-fields' ).show();
+
+		}
+
+		// Map already showing, just update it by adjusting zoom, type and moving marker/center
+		else {
+
+			// Adjust type
+			ctc_map_after_fields.setMapTypeId( google.maps.MapTypeId[type] );
+
+			// Adjust zoom
+			ctc_map_after_fields.setZoom( parseFloat( zoom ) );
+
+			// Move marker and recenter
+			ctc_map_after_fields_marker.setPosition( coordinates );
+			ctc_map_after_fields.setCenter( coordinates );
+
+		}
 
 	}
 
