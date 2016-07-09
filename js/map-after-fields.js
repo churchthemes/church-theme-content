@@ -70,6 +70,8 @@ jQuery( document ).ready( function( $ ) {
 					$( '.ctc-map-lat-field' ).val( results[0].geometry.location.lat );
 					$( '.ctc-map-lng-field' ).val( results[0].geometry.location.lng );
 
+ctc_show_map_after_fields();
+/*
 					// Get coordinates
 					coordinates = results[0].geometry.location;
 
@@ -81,7 +83,7 @@ jQuery( document ).ready( function( $ ) {
 
 					// Show map container in case it is not already
 					$( '#ctc-map-after-fields' ).show();
-
+*/
 				}
 
 				// Failure
