@@ -70,20 +70,9 @@ jQuery( document ).ready( function( $ ) {
 					$( '.ctc-map-lat-field' ).val( results[0].geometry.location.lat );
 					$( '.ctc-map-lng-field' ).val( results[0].geometry.location.lng );
 
-ctc_show_map_after_fields();
-/*
-					// Get coordinates
-					coordinates = results[0].geometry.location;
+					// Show or update map
+					ctc_show_map_after_fields();
 
-					// Move marker
-					ctc_map_after_fields_marker.setPosition( coordinates );
-
-					// Re-center map
-					ctc_map_after_fields.setCenter( coordinates );
-
-					// Show map container in case it is not already
-					$( '#ctc-map-after-fields' ).show();
-*/
 				}
 
 				// Failure
