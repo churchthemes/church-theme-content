@@ -70,8 +70,22 @@ jQuery( document ).ready( function( $ ) {
 					$( '.ctc-map-lat-field' ).val( results[0].geometry.location.lat );
 					$( '.ctc-map-lng-field' ).val( results[0].geometry.location.lng );
 
-					// Show or update map
-					ctc_show_map_after_fields();
+					// Map not showing, show it based on fields
+					if ( ! $( '#ctc-map-after-fields' ).is( ':visible' ) ) {
+						ctc_show_map_after_fields();
+					}
+
+					// Map showing, just update it by moving marker/center
+					else {
+
+						// Get coordinates
+						coordinates = results[0].geometry.location;
+
+						// Move marker and recenter
+						ctc_map_after_fields_marker.setPosition( coordinates );
+						ctc_map_after_fields.setCenter( coordinates );
+
+					}
 
 				}
 
