@@ -88,7 +88,7 @@ function ctc_get_coordinates_js() {
 
 	// Error messages
 	$error_no_address = __( 'Please enter an Address first.', 'church-theme-content' );
-	$error_failed = __( 'Latitide and Longitude could not be determined from Address. Please check for errors or enter manually.', 'church-theme-content' );
+	$error_failed = __( 'Latitude and Longitude could not be determined from Address. Please check for errors or enter manually.', 'church-theme-content' );
 
 	// JavaScript for click on "Get From Address" button
 	?>
