@@ -318,11 +318,11 @@ function ctc_map_after_fields( $object ) {
 
 	<div id="ctc-map-after-fields-container">
 
+		<div id="ctc-map-after-fields"></div>
+
 		<p id="ctc-map-after-fields-description" class="description">
 			<?php esc_html_e( 'You may click the map to adjust your location (it is draggable and can be double-clicked to zoom).', 'church-theme-content' ); ?>
 		</p>
-
-		<div id="ctc-map-after-fields"></div>
 
 	</div>
 

@@ -16,3 +16,10 @@
 	max-width: 980px; /* not awkward on wide screen */
 	max-height: 65vh; /* not more than 2/3 of mobile screen */
 }
+
+
+/* Description below map */
+
+#ctc-map-after-fields-description {
+	margin-top: 7px;
+}
