@@ -5,7 +5,7 @@
 jQuery( document ).ready( function( $ ) {
 
 	// Only if map container exists
-	if ( ! $( '#ctc-map-after-fields' ).length ) {
+	if ( ! $( '#ctc-map-after-fields-container' ).length ) {
 		return;
 	}
 
@@ -75,7 +75,7 @@ jQuery( document ).ready( function( $ ) {
 					$( '.ctc-map-lng-field' ).val( results[0].geometry.location.lng );
 
 					// Map not showing (new Add), show it based on fields
-					if ( ! $( '#ctc-map-after-fields' ).is( ':visible' ) ) {
+					if ( ! $( '#ctc-map-after-fields-container' ).is( ':visible' ) ) {
 						ctc_show_map_after_fields();
 					}
 
@@ -146,12 +146,12 @@ function ctc_show_map_after_fields( update ) {
 		coordinates = { lat: parseFloat( lat ), lng: parseFloat( lng ) };
 
 		// Map not showing (new Add), show it based on fields
-		if ( ! jQuery( '#ctc-map-after-fields' ).is( ':visible' ) ) {
+		if ( ! jQuery( '#ctc-map-after-fields-container' ).is( ':visible' ) ) {
 
 			// Show map container
 			// Show container first because hidden div has no size
 			// Doing this first prevents empty gray map in some cases
-			jQuery( '#ctc-map-after-fields' ).show();
+			jQuery( '#ctc-map-after-fields-container' ).show();
 
 			// Render map first time
 			ctc_map_after_fields = new google.maps.Map( document.getElementById( 'ctc-map-after-fields' ), {
@@ -228,7 +228,7 @@ function ctc_show_map_after_fields( update ) {
 
 	// Hide map container if no lat/lng
 	else {
-		jQuery( '#ctc-map-after-fields' ).hide();
+		jQuery( '#ctc-map-after-fields-container' ).hide();
 	}
 
 }

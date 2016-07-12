@@ -313,8 +313,20 @@ function ctc_map_after_fields( $object ) {
 		return;
 	}
 
-	// Output map container
-	echo '<div id="ctc-map-after-fields"></div>';
+	// Output map elements
+	?>
+
+	<div id="ctc-map-after-fields-container">
+
+		<p id="ctc-map-after-fields-description" class="description">
+			<?php esc_html_e( 'You may click the map to adjust your location (it is draggable and can be double-clicked to zoom).', 'church-theme-content' ); ?>
+		</p>
+
+		<div id="ctc-map-after-fields"></div>
+
+	</div>
+
+	<?php
 
 }
 

@@ -2,8 +2,15 @@
  * Map After Fields (Event / Location)
  */
 
-#ctc-map-after-fields {
+/* Container for drscription and Google Map */
+
+#ctc-map-after-fields-container {
 	display: none; /* shown only when have data */
+}
+
+/* Google Map element */
+
+#ctc-map-after-fields {
 	width: 100%; /* responsive */
 	height: 400px;
 	max-width: 980px; /* not awkward on wide screen */
