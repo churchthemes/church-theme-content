@@ -16,25 +16,29 @@ jQuery( document ).ready( function( $ ) {
 	// Show initial map
 	ctc_show_map_after_fields();
 
-	// Update map as fields are changed
-	// Don't do this for range change (see on input below)
-	$( '.ctc-map-field:not(.ctc-map-zoom-field)' ).on( 'change keyup', function() {
-		ctc_show_map_after_fields();
+	// Latitude/longitude change or keyup
+	$( '.ctc-map-lat-field, .ctc-map-lng-field' ).on( 'change keyup', function() {
+		ctc_show_map_after_fields( 'coordinates' );
 	} );
 
-	// Update map as zoom range is adjusted
-	$( '.ctc-map-zoom-field' ).on( 'input', function() { // do it as user drags, not just on release (change)
-		ctc_show_map_after_fields();
-	} );
-
-	// Update map based on latitude/longitude paste
+	// Latitude/longitude paste
 	$( '.ctc-map-lat-field, .ctc-map-lng-field' ).on( 'paste', function() {
 
 		// Update map map after timeout
 		setTimeout( function() {
-			ctc_show_map_after_fields();
+			ctc_show_map_after_fields( 'coordinates' );
 		}, 250 );
 
+	} );
+
+	// Type change
+	$( '.ctc-map-type-field' ).on( 'change', function() {
+		ctc_show_map_after_fields( 'type' );
+	} );
+
+	// Zoom change
+	$( '.ctc-map-zoom-field' ).on( 'input', function() { // do it as user drags, not just on release (change)
+		ctc_show_map_after_fields( 'zoom' ); // zoom only so user can drag/zoom to manually click
 	} );
 
 	/**************************************
@@ -72,6 +76,7 @@ jQuery( document ).ready( function( $ ) {
 
 					// Map not showing (new Add), show it based on fields
 					if ( ! $( '#ctc-map-after-fields' ).is( ':visible' ) ) {
+						console.log( 'test ');
 						ctc_show_map_after_fields();
 					}
 
@@ -115,7 +120,7 @@ jQuery( document ).ready( function( $ ) {
  **************************************/
 
 // Show Map
-function ctc_show_map_after_fields() {
+function ctc_show_map_after_fields( update ) {
 
 	var lat, lng, zoom, type, coordinates;
 
@@ -144,6 +149,11 @@ function ctc_show_map_after_fields() {
 		// Map not showing (new Add), show it based on fields
 		if ( ! jQuery( '#ctc-map-after-fields' ).is( ':visible' ) ) {
 
+			// Show map container
+			// Show container first because hidden div has no size
+			// Doing this first prevents empty gray map in some cases
+			jQuery( '#ctc-map-after-fields' ).show();
+
 			// Render map first time
 			ctc_map_after_fields = new google.maps.Map( document.getElementById( 'ctc-map-after-fields' ), {
 				center: coordinates,
@@ -159,23 +169,26 @@ function ctc_show_map_after_fields() {
 				map: ctc_map_after_fields,
 			});
 
-			// Show map container
-			jQuery( '#ctc-map-after-fields' ).show();
-
 		}
 
 		// Map already showing, just update it by adjusting zoom, type and moving marker/center
 		else {
 
 			// Adjust type
-			ctc_map_after_fields.setMapTypeId( google.maps.MapTypeId[type] );
+			if ( update == 'type' || ! update ) {
+				ctc_map_after_fields.setMapTypeId( google.maps.MapTypeId[type] );
+			}
 
 			// Adjust zoom
-			ctc_map_after_fields.setZoom( parseFloat( zoom ) );
+			if ( update == 'zoom' || ! update ) {
+				ctc_map_after_fields.setZoom( parseFloat( zoom ) );
+			}
 
 			// Move marker and recenter
-			ctc_map_after_fields_marker.setPosition( coordinates );
-			ctc_map_after_fields.setCenter( coordinates );
+			if ( update == 'coordinates' || ! update ) {
+				ctc_map_after_fields_marker.setPosition( coordinates );
+				ctc_map_after_fields.setCenter( coordinates );
+			}
 
 		}
 
