@@ -341,7 +341,7 @@ function ctc_add_meta_box_event_location() {
 				'name'				=> __( 'Venue', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
-				'desc'				=> __( 'You can provide a building name, room number or other location name to help people find the event.', 'church-theme-content' ),
+				'desc'				=> __( 'Optionally provide a building name, room number or other helpful identifier.', 'church-theme-content' ),
 				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
@@ -365,7 +365,7 @@ function ctc_add_meta_box_event_location() {
 				'name'				=> __( 'Address', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
-				'desc'				=> __( 'You can enter an address if it is necessary for people to find this event.', 'church-theme-content' ),
+				'desc'				=> '',
 				'type'				=> 'textarea', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
