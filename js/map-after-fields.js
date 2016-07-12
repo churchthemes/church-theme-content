@@ -76,7 +76,6 @@ jQuery( document ).ready( function( $ ) {
 
 					// Map not showing (new Add), show it based on fields
 					if ( ! $( '#ctc-map-after-fields' ).is( ':visible' ) ) {
-						console.log( 'test ');
 						ctc_show_map_after_fields();
 					}
 
@@ -137,7 +136,7 @@ function ctc_show_map_after_fields( update ) {
 	// Get Zoom
 	zoom = 14; // default if no zoom field
 	if ( jQuery( '.ctc-map-zoom-field' ).length ) { // field supported
-		zoom = jQuery( '.ctc-map-zoom-field' ).val();
+		zoom = parseFloat( jQuery( '.ctc-map-zoom-field' ).val() );
 	}
 
 	// Latitude and Longitude entered
@@ -157,7 +156,7 @@ function ctc_show_map_after_fields( update ) {
 			// Render map first time
 			ctc_map_after_fields = new google.maps.Map( document.getElementById( 'ctc-map-after-fields' ), {
 				center: coordinates,
-				zoom: parseFloat( zoom ),
+				zoom: zoom,
 				mapTypeId: google.maps.MapTypeId[type],
 				disableDefaultUI: true, // form fields control zoom, type, etc.
 				scrollwheel: false, // disable scroll zoom (mistake prone, let use Zoom field)
@@ -181,7 +180,7 @@ function ctc_show_map_after_fields( update ) {
 
 			// Adjust zoom
 			if ( update == 'zoom' || ! update ) {
-				ctc_map_after_fields.setZoom( parseFloat( zoom ) );
+				ctc_map_after_fields.setZoom( zoom );
 			}
 
 			// Move marker and recenter
