@@ -121,7 +121,7 @@ jQuery( document ).ready( function( $ ) {
 // Show Map
 function ctc_show_map_after_fields( update ) {
 
-	var lat, lng, zoom, type, coordinates;
+	var lat, lng, zoom, type, coordinates, click_timeout;
 
 	// Get Coordinates
 	lat = jQuery( '.ctc-map-lat-field' ).val();
@@ -169,29 +169,8 @@ function ctc_show_map_after_fields( update ) {
 				map: ctc_map_after_fields,
 			});
 
-/*
 			// Move marker to point clicked
-			ctc_map_after_fields.addListener( 'click', function( event ) {
-
-				// Move marker
-				ctc_map_after_fields_marker.setPosition( event.latLng );
-
-				// Center on marker
-				setTimeout( function() {
-					ctc_map_after_fields.panTo( event.latLng );
-				}, 200 );
-
-				// Update Latitude/Longitude fields
-				jQuery( '.ctc-map-lat-field' ).val( event.latLng.lat() );
-				jQuery( '.ctc-map-lng-field' ).val( event.latLng.lng() );
-
-			} );
-*/
-
-
-
-			// Move marker to point clicked
-			var click_timeout = null;
+			click_timeout = null;
 			ctc_map_after_fields.addListener( 'click', function( event ) {
 
     			click_timeout = setTimeout(function() {
@@ -216,6 +195,11 @@ function ctc_show_map_after_fields( update ) {
 				ctc_map_after_fields.addListener( 'dblclick', function() {
 					clearTimeout( click_timeout );
 				} );
+
+			// Make double click to zoom update Zoom field
+			ctc_map_after_fields.addListener( 'zoom_changed', function() {
+				jQuery( '.ctc-map-zoom-field' ).val( ctc_map_after_fields.getZoom() );
+			} );
 
 		}
 
