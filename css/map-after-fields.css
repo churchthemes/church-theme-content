@@ -12,7 +12,7 @@
 
 #ctc-map-after-fields {
 	width: 100%; /* responsive */
-	height: 400px;
+	height: 350px;
 	max-width: 980px; /* not awkward on wide screen */
 	max-height: 65vh; /* not more than 2/3 of mobile screen */
 }
