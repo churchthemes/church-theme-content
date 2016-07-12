@@ -197,10 +197,19 @@ function ctc_gmaps_api_key_notice() {
 	<div id="ctc-gmaps-api-key-notice" class="notice notice-warning is-dismissible">
 		<p>
 			<?php
-				printf(
-					/* translators: %1$s is URL to guide showing how to get and set key */
-					__( '<strong>Google Maps API Key Not Set.</strong> You must set it in <a href="%1$s">Church Theme Content Settings</a> for maps to work.', 'church-theme-content' ),
-					admin_url( 'options-general.php?page=' . CTC_DIR )
+				echo wp_kses(
+					sprintf(
+						/* translators: %1$s is URL for plugin settings */
+						__( '<strong>Google Maps API Key Not Set.</strong> You must set it in <a href="%1$s">Church Theme Content Settings</a> for maps to work.', 'church-theme-content' ),
+						admin_url( 'options-general.php?page=' . CTC_DIR )
+					),
+					array(
+						'strong' => array(),
+						'a' => array(
+							'href' => array(),
+							'target' => array(),
+						),
+					)
 				);
 			?>
 		</p>
