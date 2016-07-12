@@ -4,11 +4,6 @@
 
 jQuery( document ).ready( function( $ ) {
 
-	// Only if map container exists
-	if ( ! $( '#ctc-map-after-fields-container' ).length ) {
-		return;
-	}
-
 	/**************************************
 	 * SHOW MAP
 	 **************************************/
@@ -49,6 +44,16 @@ jQuery( document ).ready( function( $ ) {
 	$( '#ctc-get-coordinates-button' ).click( function() {
 
 		var address;
+
+		// Show alert if no API Key
+		if ( ! ctc_map_after_fields_data.has_api_key ) {
+
+			alert( ctc_map_after_fields_data.missing_key_message );
+
+			// Don't attempt geocoding
+			return;
+
+		}
 
 		// Get address
 		address = $( '.ctc-address-field' ).val(); // event or location
@@ -122,6 +127,11 @@ jQuery( document ).ready( function( $ ) {
 function ctc_show_map_after_fields( update ) {
 
 	var lat, lng, zoom, type, coordinates, click_timeout;
+
+	// Only if map container exists
+	if ( ! jQuery( '#ctc-map-after-fields-container' ).length ) {
+		return;
+	}
 
 	// Get Coordinates
 	lat = jQuery( '.ctc-map-lat-field' ).val();
