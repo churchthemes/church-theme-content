@@ -313,20 +313,53 @@ function ctc_map_after_fields( $object ) {
 		return;
 	}
 
-	// Output map elements
-	?>
+	// Only if entered API Key
+	// This will prevent confusion for new users (which require a key)
+	// It will help old users (not requiring a key) set one up to ensure things remain smooth
+	if ( ctc_setting( 'google_maps_api_key' ) ) {
 
-	<div id="ctc-map-after-fields-container">
+		// Output map elements
+		?>
 
-		<div id="ctc-map-after-fields"></div>
+		<div id="ctc-map-after-fields-container">
 
-		<p id="ctc-map-after-fields-description" class="description">
-			<?php esc_html_e( 'You may click the map to adjust your location (it is draggable and can be double-clicked to zoom).', 'church-theme-content' ); ?>
-		</p>
+			<div id="ctc-map-after-fields"></div>
 
-	</div>
+			<p id="ctc-map-after-fields-description" class="description">
+				<?php esc_html_e( 'You may click the map to adjust your location (it is draggable and can be double-clicked to zoom).', 'church-theme-content' ); ?>
+			</p>
 
-	<?php
+		</div>
+
+		<?php
+
+	// Show message if no API key
+	} else {
+
+		?>
+
+			<p class="description">
+
+				<?php
+				echo wp_kses(
+					sprintf(
+						/* translators: %1$s is URL for plugin settings */
+						__( 'Set your <a href="%1$s" target="_blank">Google Maps API Key</a> to show a map preview here.', 'church-theme-content' ),
+						admin_url( 'options-general.php?page=' . CTC_DIR )
+					),
+					array(
+						'a' => array(
+							'href' => array(),
+							'target' => array(),
+						),
+					)
+				);
+				?>
+
+			</p>
+
+		<?php
+	}
 
 }
 
