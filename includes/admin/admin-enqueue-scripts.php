@@ -32,7 +32,7 @@ function ctc_admin_enqueue_scripts() {
 		// Script for initializing and interacting with map
 		wp_enqueue_script( 'ctc-map-after-fields', CTC_URL . '/' . CTC_JS_DIR . '/map-after-fields.js', false, CTC_VERSION );
 		wp_localize_script( 'ctc-map-after-fields', 'ctc_map_after_fields_data', array( // data to use in JS
-			'get_from_address_failed' => __( "Address could not be converted into Latitude and Longitude. Please do one of the following:\n\n- Check the Address you entered then try again.\n\n- Or, enter your city in Address (e.g. Dallas, TX), click 'Get From Address' then click your exact location on the map that appears below (zoom and drag map as needed).", 'church-theme-content' ),
+			'get_from_address_failed' => __( "Address could not be converted. Check the address or enter your city then click the map to pinpoint your location.", 'church-theme-content' ),
 			'missing_address' => __( 'Please enter an Address above.', 'church-theme-content' ),
 		) );
 
