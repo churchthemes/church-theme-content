@@ -87,7 +87,7 @@ jQuery( document ).ready( function( $ ) {
 
 						// Move marker and recenter
 						ctc_map_after_fields_marker.setPosition( coordinates );
-						ctc_map_after_fields.setCenter( coordinates );
+						ctc_map_after_fields.panTo( coordinates );
 
 					}
 
@@ -168,6 +168,18 @@ function ctc_show_map_after_fields( update ) {
 				map: ctc_map_after_fields,
 			});
 
+/*
+			map.addListener( 'center_changed', function() {
+				window.setTimeout(function() {
+				  map.panTo(marker.getPosition());
+				}, 3000);
+			} );
+
+			marker.addListener('click', function() {
+			map.setZoom(8);
+			map.setCenter(marker.getPosition());
+			});
+*/
 		}
 
 		// Map already showing, just update it by adjusting zoom, type and moving marker/center
@@ -186,7 +198,7 @@ function ctc_show_map_after_fields( update ) {
 			// Move marker and recenter
 			if ( update == 'coordinates' || ! update ) {
 				ctc_map_after_fields_marker.setPosition( coordinates );
-				ctc_map_after_fields.setCenter( coordinates );
+				ctc_map_after_fields.panTo( coordinates );
 			}
 
 		}
