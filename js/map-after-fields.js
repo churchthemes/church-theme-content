@@ -160,6 +160,7 @@ function ctc_show_map_after_fields( update ) {
 				mapTypeId: google.maps.MapTypeId[type],
 				disableDefaultUI: true, // form fields control zoom, type, etc.
 				scrollwheel: false, // disable scroll zoom (mistake prone, let use Zoom field)
+				clickableIcons: false, // place names interfere with manual location clicking
 			} );
 
 			// Add marker to new map
@@ -169,17 +170,53 @@ function ctc_show_map_after_fields( update ) {
 			});
 
 /*
-			map.addListener( 'center_changed', function() {
-				window.setTimeout(function() {
-				  map.panTo(marker.getPosition());
-				}, 3000);
+			// Move marker to point clicked
+			ctc_map_after_fields.addListener( 'click', function( event ) {
+
+				// Move marker
+				ctc_map_after_fields_marker.setPosition( event.latLng );
+
+				// Center on marker
+				setTimeout( function() {
+					ctc_map_after_fields.panTo( event.latLng );
+				}, 200 );
+
+				// Update Latitude/Longitude fields
+				jQuery( '.ctc-map-lat-field' ).val( event.latLng.lat() );
+				jQuery( '.ctc-map-lng-field' ).val( event.latLng.lng() );
+
+			} );
+*/
+
+
+
+			// Move marker to point clicked
+			var click_timeout = null;
+			ctc_map_after_fields.addListener( 'click', function( event ) {
+
+    			click_timeout = setTimeout(function() {
+
+					// Move marker
+					ctc_map_after_fields_marker.setPosition( event.latLng );
+
+					// Center on marker
+					setTimeout( function() {
+						ctc_map_after_fields.panTo( event.latLng );
+					}, 200 );
+
+					// Update Latitude/Longitude fields
+					jQuery( '.ctc-map-lat-field' ).val( event.latLng.lat() );
+					jQuery( '.ctc-map-lng-field' ).val( event.latLng.lng() );
+
+			    }, 200);
+
 			} );
 
-			marker.addListener('click', function() {
-			map.setZoom(8);
-			map.setCenter(marker.getPosition());
-			});
-*/
+				// Prevent single click from being triggered on double click
+				ctc_map_after_fields.addListener( 'dblclick', function() {
+					clearTimeout( click_timeout );
+				} );
+
 		}
 
 		// Map already showing, just update it by adjusting zoom, type and moving marker/center
