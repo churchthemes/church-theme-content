@@ -134,8 +134,8 @@ function ctc_show_map_after_fields( update ) {
 	}
 
 	// Get Coordinates
-	lat = jQuery( '.ctc-map-lat-field' ).val();
-	lng = jQuery( '.ctc-map-lng-field' ).val();
+	lat = parseFloat( jQuery( '.ctc-map-lat-field' ).val() );
+	lng = parseFloat( jQuery( '.ctc-map-lng-field' ).val() );
 
 	// Get Type
 	type = 'ROAD'; // default if no type field
@@ -153,7 +153,7 @@ function ctc_show_map_after_fields( update ) {
 	if ( lat && lng ) {
 
 		// Coordinates
-		coordinates = { lat: parseFloat( lat ), lng: parseFloat( lng ) };
+		coordinates = { lat: lat, lng: lng };
 
 		// Map not showing (new Add), show it based on fields
 		if ( ! jQuery( '#ctc-map-after-fields-container' ).is( ':visible' ) ) {
