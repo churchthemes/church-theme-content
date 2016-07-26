@@ -384,17 +384,29 @@ add_action( 'ctmb_after_fields', 'ctc_map_after_fields' );
  */
 function ctc_coordinate_field( $data ) {
 
-	// Only if latitude and longitude fields supported
-	if ( ! ctc_has_lat_lng_fields() ) {
-		return;
-	}
+	// Get current screen
+	$screen = get_current_screen();
 
 	// Text input from CT Meta Box
 	$input = '<input type="text" ' . $data['common_atts'] . ' id="' . $data['esc_element_id'] . '" value="' . $data['esc_value'] . '" />';
 
-	// Aufofill button
+	// Only if address field supported
+	if (
+		( 'ctc_event' == $screen->post_type && ! ctc_field_supported( 'events', '_ctc_event_address' ) )
+		|| ( 'ctc_location' == $screen->post_type && ! ctc_field_supported( 'locations', '_ctc_location_address' ) )
+	) {
+		return $input;
+	}
+
+	// Only if latitude and longitude fields supported
+	if ( ! ctc_has_lat_lng_fields() ) {
+		return $input;
+	}
+
+	// Append aufofill button
 	$input .= ' <input type="button" value="' .  esc_attr_x( 'Get From Address', 'coordinate button', 'church-theme-content' ) . '" id="ctc-get-coordinates-button" class="button">';
 
+	// Return input with button
 	return $input;
 
 }
