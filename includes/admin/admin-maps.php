@@ -384,6 +384,11 @@ add_action( 'ctmb_after_fields', 'ctc_map_after_fields' );
  */
 function ctc_coordinate_field( $data ) {
 
+	// Only if latitude and longitude fields supported
+	if ( ! ctc_has_lat_lng_fields() ) {
+		return;
+	}
+
 	// Text input from CT Meta Box
 	$input = '<input type="text" ' . $data['common_atts'] . ' id="' . $data['esc_element_id'] . '" value="' . $data['esc_value'] . '" />';
 
