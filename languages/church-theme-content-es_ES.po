@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Church Theme Content\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-30 10:46-0500\n"
-"PO-Revision-Date: 2016-06-30 10:46-0500\n"
+"POT-Creation-Date: 2016-08-03 11:24-0500\n"
+"PO-Revision-Date: 2016-08-03 11:24-0500\n"
 "Last-Translator: churchthemes.com <contact@churchthemes.com>\n"
 "Language-Team: churchthemes.com\n"
 "Language: es_ES\n"
@@ -21,6 +21,22 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Loco-Target-Locale: es_ES\n"
 "X-Poedit-SearchPath-0: ..\n"
+
+#: ../includes/admin/admin-enqueue-scripts.php:35
+msgid ""
+"Address could not be converted. Check the address or enter your city then "
+"click the map to pinpoint your location."
+msgstr ""
+
+#: ../includes/admin/admin-enqueue-scripts.php:36
+msgid "Please enter an Address above."
+msgstr ""
+
+#: ../includes/admin/admin-enqueue-scripts.php:37
+msgid ""
+"Go to Settings > Church Theme Content to set your Google Maps API Key in "
+"order to use this button."
+msgstr ""
 
 #: ../includes/admin/admin-event-fields.php:39
 msgctxt "event meta box"
@@ -113,21 +129,13 @@ msgstr "Local"
 
 #: ../includes/admin/admin-event-fields.php:344
 msgid ""
-"You can provide a building name, room number or other location name to help "
-"people find the event."
+"Optionally provide a building name, room number or other helpful identifier."
 msgstr ""
-"Puedes poner los datos concretos donde será el evento (ej \"Salón comedor\", "
-"\"Auditorio\", \"Zona Joven\", etc)"
 
 #: ../includes/admin/admin-event-fields.php:365
 #: ../includes/admin/admin-location-fields.php:75
 msgid "Address"
 msgstr "Dirección"
-
-#: ../includes/admin/admin-event-fields.php:368
-msgid ""
-"You can enter an address if it is necessary for people to find this event."
-msgstr "Indica la dirección para que las personas puedan llegar."
 
 #: ../includes/admin/admin-event-fields.php:394
 msgid "Show directions link"
@@ -143,39 +151,15 @@ msgstr "Latitud"
 msgid "Map Longitude"
 msgstr "Longitud"
 
-#: ../includes/admin/admin-event-fields.php:442
-#: ../includes/admin/admin-location-fields.php:224
-#, php-format
-msgid ""
-"Click \"Get From Address\" or <a href=\"%1$s\" target=\"_blank\">manually "
-"find</a> latitude and longitude coordinates."
-msgstr ""
-
-#: ../includes/admin/admin-event-fields.php:465
-#: ../includes/admin/admin-location-fields.php:247
+#: ../includes/admin/admin-event-fields.php:461
+#: ../includes/admin/admin-location-fields.php:243
 msgid "Map Type"
 msgstr "Tipo de mapa"
 
-#: ../includes/admin/admin-event-fields.php:468
-msgctxt "event meta box"
-msgid ""
-"You can show a road map, satellite imagery, a combination of both (hybrid) "
-"or terrain."
-msgstr ""
-"Puedes mostrar mapa de carreteras, satelite o combinación de híbrido y "
-"relieve."
-
-#: ../includes/admin/admin-event-fields.php:489
-#: ../includes/admin/admin-location-fields.php:272
+#: ../includes/admin/admin-event-fields.php:485
+#: ../includes/admin/admin-location-fields.php:267
 msgid "Map Zoom"
 msgstr "Ampliación del mapa"
-
-#: ../includes/admin/admin-event-fields.php:492
-msgctxt "event meta box"
-msgid ""
-"A lower number is more zoomed out while a higher number is more zoomed in."
-msgstr ""
-"Número bajo es más lejos, número alto es más cerca (puedes dejarlo como está)"
 
 #: ../includes/admin/admin-event-fields.php:534
 msgctxt "event meta box"
@@ -195,7 +179,7 @@ msgid ""
 msgstr ""
 
 #: ../includes/admin/admin-event-fields.php:763
-#: ../includes/admin/admin-location-fields.php:324
+#: ../includes/admin/admin-location-fields.php:322
 #: ../includes/admin/admin-person-fields.php:220
 #: ../includes/admin/admin-sermon-fields.php:243
 msgid "Thumbnail"
@@ -248,21 +232,6 @@ msgstr "Cada año hasta %1$s"
 msgid "Every year"
 msgstr "Cada año"
 
-#: ../includes/admin/admin-fields.php:37
-msgctxt "coordinate button"
-msgid "Get From Address"
-msgstr ""
-
-#: ../includes/admin/admin-fields.php:90
-msgid "Please enter an Address first."
-msgstr ""
-
-#: ../includes/admin/admin-fields.php:91
-msgid ""
-"Latitide and Longitude could not be determined from Address. Please check "
-"for errors or enter manually."
-msgstr ""
-
 #: ../includes/admin/admin-location-fields.php:37
 msgctxt "location meta box"
 msgid "Location Details"
@@ -283,39 +252,23 @@ msgctxt "location meta box"
 msgid "Times"
 msgstr "Horario"
 
-#: ../includes/admin/admin-location-fields.php:250
-msgctxt "location meta box"
-msgid ""
-"You can show a road map, satellite imagery, a combination of both (hybrid) "
-"or terrain."
-msgstr ""
-"Puedes mostrar mapa de carreteras, satélite o combinación de híbrido y "
-"relieve"
-
-#: ../includes/admin/admin-location-fields.php:275
-msgctxt "location meta box"
-msgid ""
-"A lower number is more zoomed out while a higher number is more zoomed in."
-msgstr ""
-"Número bajo es más lejos, número alto es más cerca (puedes dejarlo así)"
-
-#: ../includes/admin/admin-location-fields.php:329
+#: ../includes/admin/admin-location-fields.php:327
 msgctxt "location admin column"
 msgid "Address"
 msgstr "Dirección"
 
-#: ../includes/admin/admin-location-fields.php:330
+#: ../includes/admin/admin-location-fields.php:328
 msgctxt "location admin column"
 msgid "Times"
 msgstr "Horario"
 
-#: ../includes/admin/admin-location-fields.php:331
+#: ../includes/admin/admin-location-fields.php:329
 #: ../includes/admin/admin-person-fields.php:227
 msgctxt "sorting"
 msgid "Order"
 msgstr "Orden"
 
-#: ../includes/admin/admin-location-fields.php:335
+#: ../includes/admin/admin-location-fields.php:333
 msgctxt "location admin column"
 msgid "Location"
 msgstr "Localización"
@@ -340,11 +293,29 @@ msgctxt "map"
 msgid "Terrain"
 msgstr "Relieve"
 
-#: ../includes/admin/admin-maps.php:151
+#: ../includes/admin/admin-maps.php:203
 #, php-format
 msgid ""
 "<strong>Google Maps API Key Not Set.</strong> You must set it in <a href="
 "\"%1$s\">Church Theme Content Settings</a> for maps to work."
+msgstr ""
+
+#: ../includes/admin/admin-maps.php:338
+msgid ""
+"You may click the map to adjust your location (it is draggable and can be "
+"double-clicked to zoom)."
+msgstr ""
+
+#: ../includes/admin/admin-maps.php:356
+#, php-format
+msgid ""
+"Set your <a href=\"%1$s\" target=\"_blank\">Google Maps API Key</a> to show "
+"a map preview here."
+msgstr ""
+
+#: ../includes/admin/admin-maps.php:407
+msgctxt "coordinate button"
+msgid "Get From Address"
 msgstr ""
 
 #: ../includes/admin/admin-person-fields.php:34
@@ -1235,6 +1206,46 @@ msgstr "Escoge entres los grupos más usados"
 msgctxt "people menu name"
 msgid "Groups"
 msgstr "Grupos"
+
+#~ msgid ""
+#~ "You can provide a building name, room number or other location name to "
+#~ "help people find the event."
+#~ msgstr ""
+#~ "Puedes poner los datos concretos donde será el evento (ej \"Salón comedor"
+#~ "\", \"Auditorio\", \"Zona Joven\", etc)"
+
+#~ msgid ""
+#~ "You can enter an address if it is necessary for people to find this event."
+#~ msgstr "Indica la dirección para que las personas puedan llegar."
+
+#~ msgctxt "event meta box"
+#~ msgid ""
+#~ "You can show a road map, satellite imagery, a combination of both "
+#~ "(hybrid) or terrain."
+#~ msgstr ""
+#~ "Puedes mostrar mapa de carreteras, satelite o combinación de híbrido y "
+#~ "relieve."
+
+#~ msgctxt "event meta box"
+#~ msgid ""
+#~ "A lower number is more zoomed out while a higher number is more zoomed in."
+#~ msgstr ""
+#~ "Número bajo es más lejos, número alto es más cerca (puedes dejarlo como "
+#~ "está)"
+
+#~ msgctxt "location meta box"
+#~ msgid ""
+#~ "You can show a road map, satellite imagery, a combination of both "
+#~ "(hybrid) or terrain."
+#~ msgstr ""
+#~ "Puedes mostrar mapa de carreteras, satélite o combinación de híbrido y "
+#~ "relieve"
+
+#~ msgctxt "location meta box"
+#~ msgid ""
+#~ "A lower number is more zoomed out while a higher number is more zoomed in."
+#~ msgstr ""
+#~ "Número bajo es más lejos, número alto es más cerca (puedes dejarlo así)"
 
 #~ msgid ""
 #~ "You can <a href=\"https://churchthemes.com/get-latitude-longitude\" "
