@@ -48,7 +48,7 @@ function ctc_get_theme_support_notice() {
 		if ( ! get_option( $option_id  ) ) {
 
 			?>
-			<div class="error">
+			<div class="notice notice-warning">
 				<p>
 					<?php
 					printf(
