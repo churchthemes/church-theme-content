@@ -101,7 +101,7 @@ function ctc_add_meta_box_location() {
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> '',
 				'type'				=> 'checkbox', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
-				'checkbox_label'	=> 'Show directions link', //show text after checkbox
+				'checkbox_label'	=> __( 'Show directions link', 'church-theme-content' ), //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
 				'upload_title'		=> '', // title appearing at top of media frame
