@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Church Theme Content\n"
-"POT-Creation-Date: 2016-08-03 11:24-0500\n"
-"PO-Revision-Date: 2016-08-03 11:24-0500\n"
+"POT-Creation-Date: 2016-09-07 13:19+0000\n"
+"PO-Revision-Date: 2016-09-13 09:50-0500\n"
 "Last-Translator: churchthemes.com <contact@churchthemes.com>\n"
-"Language-Team: Alexandre Koper\n"
+"Language-Team: French (France)\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -14,8 +14,9 @@ msgstr ""
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:1,2,3c\n"
 "X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+"Report-Msgid-Bugs-To: \n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../includes/admin/admin-enqueue-scripts.php:35
@@ -33,6 +34,127 @@ msgid ""
 "Go to Settings > Church Theme Content to set your Google Maps API Key in "
 "order to use this button."
 msgstr ""
+
+#: ../includes/admin/admin-event-fields.php:182
+msgid "Do not show times entered above (use only for ordering events)"
+msgstr ""
+
+#: ../includes/admin/admin-event-fields.php:206
+msgid ""
+"Optionally describe the time (e.g. \"9:30 am and 11:00 am\" or \"After "
+"Second Service\")"
+msgstr ""
+
+#: ../includes/admin/admin-event-fields.php:534
+msgctxt "event meta box"
+msgid "Registration"
+msgstr ""
+
+#: ../includes/admin/admin-event-fields.php:879
+#, c-format
+msgid "Every week until %1$s"
+msgstr ""
+
+#: ../includes/admin/admin-event-fields.php:895
+#, c-format
+msgid "Every month until %1$s"
+msgstr ""
+
+#: ../includes/admin/admin-event-fields.php:911
+#, c-format
+msgid "Every year until %1$s"
+msgstr ""
+
+#: ../includes/admin/admin-maps.php:203
+#, c-format
+msgid ""
+"<strong>Google Maps API Key Not Set.</strong> You must set it in <a href="
+"\"%1$s\">Church Theme Content Settings</a> for maps to work."
+msgstr ""
+
+#: ../includes/admin/admin-maps.php:338
+msgid ""
+"You may click the map to adjust your location (it is draggable and can be "
+"double-clicked to zoom)."
+msgstr ""
+
+#: ../includes/admin/admin-maps.php:356
+#, c-format
+msgid ""
+"Set your <a href=\"%1$s\" target=\"_blank\">Google Maps API Key</a> to show "
+"a map preview here."
+msgstr ""
+
+#: ../includes/admin/admin-sermon-fields.php:111
+msgid "Choose a Video File"
+msgstr ""
+
+#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:205
+#, c-format
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" class=\"%4$s"
+"\" href=\"%2$s\">View version %3$s details</a>."
+msgstr ""
+
+#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:222
+#, c-format
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" class=\"%5$s"
+"\" href=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s\">update "
+"now</a>."
+msgstr ""
+
+#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:372
+msgid "You do not have permission to install plugin updates"
+msgstr ""
+
+#: ../includes/libraries/ct-plugin-settings/ct-plugin-settings.php:259
+msgid "Settings"
+msgstr ""
+
+#: ../includes/settings.php:49
+#, c-format
+msgid ""
+"These settings are for the <a href=\"%1$s\" target=\"_blank\">Church Theme "
+"Content</a> plugin and its <a href=\"%2$s\" target=\"_blank\">Add-ons</a>."
+msgstr ""
+
+#: ../includes/settings.php:69
+msgctxt "settings section title"
+msgid "General"
+msgstr ""
+
+#: ../includes/settings.php:79
+msgctxt "settings"
+msgid "Google Maps API Key"
+msgstr ""
+
+#: ../includes/settings.php:82
+#, c-format
+msgid ""
+"An API Key for Google Maps is required if you want to show maps for events "
+"or locations. <a href=\"%1$s\" target=\"_blank\">Get an API Key</a>"
+msgstr ""
+
+#: ../includes/settings.php:113
+msgid ""
+"Save then activate your add-on license keys to enable one-click updates for "
+"them."
+msgstr ""
+
+#: ../includes/taxonomies.php:270
+msgctxt "taxonomy singular name"
+msgid "Event Category"
+msgstr ""
+
+#: ../includes/admin/admin-event-fields.php:394
+msgid "Show directions link"
+msgstr "Afficher la direction"
+
+#: ../includes/admin/admin-maps.php:407
+msgctxt "coordinate button"
+msgid "Get From Address"
+msgstr "Obtenir l'adresse"
 
 #: ../includes/admin/admin-event-fields.php:39
 msgctxt "event meta box"
@@ -54,6 +176,8 @@ msgstr "Date de fin"
 #: ../includes/admin/admin-event-fields.php:105
 msgid "Specify End Date if event will span multiple consecutive days."
 msgstr ""
+"Indiquez la date de fin si l'événement se déroule sur plusieurs jours "
+"consécutifs"
 
 #: ../includes/admin/admin-event-fields.php:126
 msgid "Start Time"
@@ -63,19 +187,9 @@ msgstr "Date de début"
 msgid "End Time"
 msgstr "Date de fin"
 
-#: ../includes/admin/admin-event-fields.php:182
-msgid "Do not show times entered above (use only for ordering events)"
-msgstr ""
-
 #: ../includes/admin/admin-event-fields.php:203
 msgid "Time Description"
 msgstr "Date & Heure"
-
-#: ../includes/admin/admin-event-fields.php:206
-msgid ""
-"Optionally describe the time (e.g. \"9:30 am and 11:00 am\" or \"After "
-"Second Service\")"
-msgstr ""
 
 #: ../includes/admin/admin-event-fields.php:227
 msgid "Recurrence"
@@ -124,15 +238,13 @@ msgstr "Lieu"
 msgid ""
 "Optionally provide a building name, room number or other helpful identifier."
 msgstr ""
+"Fournir éventuellement un nom de bâtiment, numéro de chambre ou tout autre "
+"identifiant utile "
 
 #: ../includes/admin/admin-event-fields.php:365
 #: ../includes/admin/admin-location-fields.php:75
 msgid "Address"
 msgstr "Adresse"
-
-#: ../includes/admin/admin-event-fields.php:394
-msgid "Show directions link"
-msgstr "Directions"
 
 #: ../includes/admin/admin-event-fields.php:413
 #: ../includes/admin/admin-location-fields.php:195
@@ -154,22 +266,20 @@ msgstr "Type de carte"
 msgid "Map Zoom"
 msgstr "Zoom de carte"
 
-#: ../includes/admin/admin-event-fields.php:534
-msgctxt "event meta box"
-msgid "Registration"
-msgstr ""
-
 #: ../includes/admin/admin-event-fields.php:572
 msgid "Registration URL"
-msgstr ""
+msgstr "URL d'enregistrement"
 
 #: ../includes/admin/admin-event-fields.php:576
-#, php-format
+#, c-format
 msgid ""
 "Link to a third-party registration page from your Church Management System, "
 "EventBrite, etc. (or embed a form into the content above). <a href=\"%1$s\" "
 "target=\"_blank\">Learn More</a>"
 msgstr ""
+"Lien vers une page d'inscription tiers de votre système de gestion Church, "
+"EventBrite , etc... (ou intégrer un formulaire dans le contenu ci-dessus). "
+"<a href=\"%1$s\" target=\"_blank\">En savoir plus</a>"
 
 #: ../includes/admin/admin-event-fields.php:763
 #: ../includes/admin/admin-location-fields.php:322
@@ -198,28 +308,13 @@ msgctxt "time range separator"
 msgid " &ndash; "
 msgstr " &ndash; "
 
-#: ../includes/admin/admin-event-fields.php:879
-#, php-format
-msgid "Every week until %1$s"
-msgstr ""
-
 #: ../includes/admin/admin-event-fields.php:884
 msgid "Every week"
 msgstr "Revient toutes les 2 semaines"
 
-#: ../includes/admin/admin-event-fields.php:895
-#, php-format
-msgid "Every month until %1$s"
-msgstr ""
-
 #: ../includes/admin/admin-event-fields.php:900
 msgid "Every month"
 msgstr "Revient toutes les 2 semaines"
-
-#: ../includes/admin/admin-event-fields.php:911
-#, php-format
-msgid "Every year until %1$s"
-msgstr ""
 
 #: ../includes/admin/admin-event-fields.php:916
 msgid "Every year"
@@ -286,31 +381,6 @@ msgctxt "map"
 msgid "Terrain"
 msgstr "Terrain"
 
-#: ../includes/admin/admin-maps.php:203
-#, php-format
-msgid ""
-"<strong>Google Maps API Key Not Set.</strong> You must set it in <a href="
-"\"%1$s\">Church Theme Content Settings</a> for maps to work."
-msgstr ""
-
-#: ../includes/admin/admin-maps.php:338
-msgid ""
-"You may click the map to adjust your location (it is draggable and can be "
-"double-clicked to zoom)."
-msgstr ""
-
-#: ../includes/admin/admin-maps.php:356
-#, php-format
-msgid ""
-"Set your <a href=\"%1$s\" target=\"_blank\">Google Maps API Key</a> to show "
-"a map preview here."
-msgstr ""
-
-#: ../includes/admin/admin-maps.php:407
-msgctxt "coordinate button"
-msgid "Get From Address"
-msgstr ""
-
 #: ../includes/admin/admin-person-fields.php:34
 msgid "Enter name here"
 msgstr "Entrez une nom ici"
@@ -372,7 +442,7 @@ msgid "Video"
 msgstr "Vidéo"
 
 #: ../includes/admin/admin-sermon-fields.php:103
-#, php-format
+#, c-format
 msgid ""
 "Upload a file by clicking \"Choose Video\" or upload a video to one of the "
 "<a href=\"%s\" target=\"_blank\">supported sites</a> (such as YouTube) then "
@@ -388,16 +458,12 @@ msgstr ""
 msgid "Choose Video"
 msgstr "Envoyer une vidéo"
 
-#: ../includes/admin/admin-sermon-fields.php:111
-msgid "Choose a Video File"
-msgstr ""
-
 #: ../includes/admin/admin-sermon-fields.php:127
 msgid "Audio"
 msgstr "Audio"
 
 #: ../includes/admin/admin-sermon-fields.php:131
-#, php-format
+#, c-format
 msgid ""
 "Upload a file by clicking \"Choose Audio\" or upload audio to one of the <a "
 "href=\"%s\" target=\"_blank\">supported sites</a> (such as SoundCloud) then "
@@ -467,7 +533,7 @@ msgid "PDF"
 msgstr "PDF"
 
 #: ../includes/admin/admin-support.php:56
-#, php-format
+#, c-format
 msgid ""
 "The <b>%1$s</b> theme does not support the <b>%2$s</b> plugin. <a href=\"%3$s"
 "\" target=\"_blank\">More Information</a>, <a href=\"%4$s\">Dismiss</a>"
@@ -475,41 +541,18 @@ msgstr ""
 "Le thème <b>%1$s</b> ne supporte pas le module <b>%2$s</b>. <a href=\"%3$s\" "
 "target=\"_blank\">Plus d'information</a>, <a href=\"%4$s\">Passer</a>"
 
-#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:205
-#, php-format
-msgid ""
-"There is a new version of %1$s available. <a target=\"_blank\" class=\"%4$s"
-"\" href=\"%2$s\">View version %3$s details</a>."
-msgstr ""
-
-#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:222
-#, php-format
-msgid ""
-"There is a new version of %1$s available. <a target=\"_blank\" class=\"%5$s"
-"\" href=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s\">update "
-"now</a>."
-msgstr ""
-
-#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:372
-msgid "You do not have permission to install plugin updates"
-msgstr ""
-
 #: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:372
 msgid "Error"
 msgstr ""
 "<p><b>Erreur Google Map:</b> <i>latitude</i> et <i>longitude</i> attributs "
 "requis. Voir la documentation de l'aide.</p>"
 
-#: ../includes/libraries/ct-plugin-settings/ct-plugin-settings.php:259
-msgid "Settings"
-msgstr ""
-
 #: ../includes/mime-types.php:76
 msgid "Manage PDFs"
 msgstr "Gérer les fichiers PDF"
 
 #: ../includes/mime-types.php:77
-#, php-format
+#, c-format
 msgid "PDF <span class=\"count\">(%s)</span>"
 msgid_plural "PDFs <span class=\"count\">(%s)</span>"
 msgstr[0] "PDF <span class=\"count\">(%s)</span>"
@@ -659,7 +702,7 @@ msgstr "Pas d'emplacement trouvé dans la corbeille"
 #: ../includes/post-types.php:176
 msgctxt "post type general name"
 msgid "People"
-msgstr "Équipes"
+msgstr "Personnes"
 
 #: ../includes/post-types.php:177
 msgctxt "post type singular name"
@@ -704,44 +747,14 @@ msgid "No people found in Trash"
 msgstr "Pas de personne trouvée dans la corbeille"
 
 #: ../includes/settings.php:43
-#, php-format
+#, c-format
 msgid "%1$s Settings"
 msgstr "Plus d'articles de %s"
-
-#: ../includes/settings.php:49
-#, php-format
-msgid ""
-"These settings are for the <a href=\"%1$s\" target=\"_blank\">Church Theme "
-"Content</a> plugin and its <a href=\"%2$s\" target=\"_blank\">Add-ons</a>."
-msgstr ""
-
-#: ../includes/settings.php:69
-msgctxt "settings section title"
-msgid "General"
-msgstr ""
-
-#: ../includes/settings.php:79
-msgctxt "settings"
-msgid "Google Maps API Key"
-msgstr ""
-
-#: ../includes/settings.php:82
-#, php-format
-msgid ""
-"An API Key for Google Maps is required if you want to show maps for events "
-"or locations. <a href=\"%1$s\" target=\"_blank\">Get an API Key</a>"
-msgstr ""
 
 #: ../includes/settings.php:108
 msgctxt "settings"
 msgid "Add-on Licenses"
 msgstr "Ajouter un commentaire"
-
-#: ../includes/settings.php:113
-msgid ""
-"Save then activate your add-on license keys to enable one-click updates for "
-"them."
-msgstr ""
 
 #: ../includes/taxonomies.php:30
 msgctxt "taxonomy general name"
@@ -1071,12 +1084,7 @@ msgstr "Mots-clés"
 #: ../includes/taxonomies.php:269
 msgctxt "taxonomy general name"
 msgid "Event Categories"
-msgstr ""
-
-#: ../includes/taxonomies.php:270
-msgctxt "taxonomy singular name"
-msgid "Event Category"
-msgstr ""
+msgstr "Catégories d'événements"
 
 #: ../includes/taxonomies.php:271
 msgctxt "events"
@@ -1141,7 +1149,7 @@ msgstr "Goupes"
 #: ../includes/taxonomies.php:321
 msgctxt "taxonomy singular name"
 msgid "Group"
-msgstr "Groupe"
+msgstr "Groupes..."
 
 #: ../includes/taxonomies.php:322
 msgctxt "people"
@@ -1197,97 +1205,3 @@ msgstr "Choisissez parmis les groupes les plus utilisés"
 msgctxt "people menu name"
 msgid "Groups"
 msgstr "Groupes"
-
-#~ msgid ""
-#~ "You can provide a building name, room number or other location name to "
-#~ "help people find the event."
-#~ msgstr ""
-#~ "Vous pouvez fournir un nom d'édifice, numéro de pièce ou un autre nom de "
-#~ "lieu afin d'aider les gens à trouver l'événement."
-
-#~ msgid ""
-#~ "You can enter an address if it is necessary for people to find this event."
-#~ msgstr ""
-#~ "Vous pouvez entrer une adresse afin d'aider les personnes à trouver cet "
-#~ "événement."
-
-#~ msgctxt "event meta box"
-#~ msgid ""
-#~ "You can show a road map, satellite imagery, a combination of both "
-#~ "(hybrid) or terrain."
-#~ msgstr ""
-#~ "Vous pouvez afficher une carte, l'imagerie par satellite, une combinaison "
-#~ "des deux (hybride) ou terrain."
-
-#~ msgctxt "event meta box"
-#~ msgid ""
-#~ "A lower number is more zoomed out while a higher number is more zoomed in."
-#~ msgstr ""
-#~ "Un nombre inférieur est un zoom arrière tandis qu'un nombre plus élevé "
-#~ "est un zoom avant."
-
-#~ msgctxt "location meta box"
-#~ msgid ""
-#~ "You can show a road map, satellite imagery, a combination of both "
-#~ "(hybrid) or terrain."
-#~ msgstr ""
-#~ "Vous pouvez afficher carte, l'imagerie par satellite, une combinaison des "
-#~ "deux (hybride) ou terrain."
-
-#~ msgctxt "location meta box"
-#~ msgid ""
-#~ "A lower number is more zoomed out while a higher number is more zoomed in."
-#~ msgstr ""
-#~ "Un nombre inférieur est un zoom arrière tandis qu'un nombre plus élevé "
-#~ "est un zoom avant."
-
-#~ msgid ""
-#~ "You can <a href=\"https://churchthemes.com/get-latitude-longitude\" "
-#~ "target=\"_blank\">use this</a> to convert an address into coordinates."
-#~ msgstr ""
-#~ "Vous pouvez utiliser <a href=\"https://churchthemes.com/get-latitude-"
-#~ "longitude\" target=\"_blank\">ce lien</a> pour convertir une adresse en "
-#~ "coordonnées."
-
-#~ msgid "Choose an Video File"
-#~ msgstr "Envoyer un fichier vidéo"
-
-#~ msgctxt "location meta box"
-#~ msgid "Address"
-#~ msgstr "Adresse"
-
-#~ msgctxt "location meta box"
-#~ msgid "Map Latitude"
-#~ msgstr "Latitude"
-
-#~ msgctxt "location meta box"
-#~ msgid "Map Longitude"
-#~ msgstr "Longitude"
-
-#~ msgctxt "location meta box"
-#~ msgid "Map Type"
-#~ msgstr "Type de carte"
-
-#~ msgctxt "location meta box"
-#~ msgid "Map Zoom"
-#~ msgstr "Zomm de carte"
-
-#~ msgctxt "events admin column"
-#~ msgid "Where"
-#~ msgstr "Où"
-
-#~ msgid "Optionally provide a time such as \"8:00 am &ndash; 2:00 pm\""
-#~ msgstr "Exemple: \"8:00 &ndash; 14:00\""
-
-#~ msgctxt "event meta box"
-#~ msgid "Fortnightly"
-#~ msgstr "Toutes les 2 semaines"
-
-#~ msgid "Recurs Weekly"
-#~ msgstr "Revient chaque semaine"
-
-#~ msgid "Recurs Monthly"
-#~ msgstr "Revient chaque mois"
-
-#~ msgid "Recurs Yearly"
-#~ msgstr "Revient chaque année"
