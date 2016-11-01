@@ -49,7 +49,7 @@ You can follow development on [GitHub](https://github.com/churchthemes/church-th
 
 = Translations =
 
-Several translations are available, including English, Spanish, German, French, Portuguese, Swedish, Dutch and Serbian. See the [Translations](https://churchthemes.com/guides/user/plugins/church-theme-content/#translations) section in the plugin's user guide for a more complete list. Also see [translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/church-theme-content).
+Several translations are available, including English, Spanish, German, French, Portuguese, Swedish, Dutch, Norwegian, Serbian and Slovak. See the [Translations](https://churchthemes.com/guides/user/plugins/church-theme-content/#translations) section in the plugin's user guide for a more complete list. Also see [translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/church-theme-content).
 
 = Follow us =
 
