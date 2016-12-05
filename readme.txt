@@ -1,5 +1,5 @@
 === Church Theme Content ===
-Contributors: churchthemes, stevengliebe
+Contributors: churchthemes, stevengliebe, galengidman
 Tags: church, churches, sermon, sermons, ministry, ministries
 Requires at least: 3.6
 Tested up to: 4.6
