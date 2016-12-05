@@ -54,7 +54,7 @@ Several translations are available, including English, Spanish, German, French, 
 = Follow us =
 
 * Visit [churchthemes.com](https://churchthemes.com) for compatible themes, add-ons and guides
-* We're on [Twitter](https://twitter.com/churchthemes), [Facebook](https://www.facebook.com/churchthemescom), [Google+](https://plus.google.com/u/0/+Churchthemes) and have a [Newsletter](https://churchthemes.com/newsletter)
+* We're on [Twitter](https://twitter.com/churchthemes), [Facebook](https://www.facebook.com/churchthemescom) and have a [Newsletter](https://churchthemes.com/newsletter)
 * Lead developer: [stevengliebe.com](http://stevengliebe.com)
 
 == Installation ==
