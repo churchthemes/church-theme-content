@@ -16,7 +16,7 @@ Provides compatible themes with sermon, event, person and location post types, t
 This plugin is intended for a very specific audience. If you are *not* one of the below then this plugin will not be useful to you.
 
 * Users of [official themes](https://churchthemes.com) from churchthemes.com
-* Users of [third-party themes](http://churchthemes.guide) from other providers made *specifically* for this plugin
+* Users of [third-party themes](https://churchthemes.com/third-party-themes) from other providers made *specifically* for this plugin
 * Theme developers wanting to improve data portability for church sites
 
 = What it does =
@@ -32,7 +32,7 @@ See the [Plugin Details](https://churchthemes.com/plugins/church-theme-content/)
 A compatible theme is required for presenting content.
 
 * Official themes are provided by [churchthemes.com](https://churchthemes.com)
-* Third-party themes are listed on [churchthemes.guide](http://churchthemes.guide)
+* Third-party themes are listed at [churchthemes.com/third-party-themes](https://churchthemes.com/third-party-themes)
 
 = Add-ons =
 
