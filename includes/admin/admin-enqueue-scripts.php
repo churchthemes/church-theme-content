@@ -8,7 +8,7 @@
  * @subpackage Admin
  * @copyright  Copyright (c) 2016, churchthemes.com
  * @link       https://github.com/churchthemes/church-theme-content
- * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * @license    GPLv2 or later
  * @since      1.7.1
  */
 
