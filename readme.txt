@@ -1,6 +1,6 @@
 === Church Theme Content ===
 Contributors: churchthemes, stevengliebe, galengidman
-Tags: church, churches, sermon, sermons, ministry, ministries
+Tags: church, churches, sermon, sermons, ministry, ministries, event, events, calendar, location, locations
 Requires at least: 3.6
 Tested up to: 4.8
 Stable tag: 1.7.2
