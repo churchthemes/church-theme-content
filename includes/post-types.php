@@ -49,7 +49,8 @@ function ctc_register_post_type_sermon() {
 		),
 		'supports' 		=> array( 'title', 'editor', 'excerpt', 'publicize', 'thumbnail', 'comments', 'author', 'revisions' ), // 'editor' required for media upload button (see Meta Boxes note below about hiding)
 		'taxonomies' 	=> array( 'ctc_sermon_topic', 'ctc_sermon_book', 'ctc_sermon_series', 'ctc_sermon_speaker', 'ctc_sermon_tag' ),
-		'menu_icon'		=> 'dashicons-video-alt3'
+		'menu_icon'		=> 'dashicons-video-alt3',
+		'show_in_rest'	=> true,
 	);
 	$args = apply_filters( 'ctc_post_type_sermon_args', $args ); // allow filtering
 
@@ -99,7 +100,8 @@ function ctc_register_post_type_event() {
 		),
 		'supports' 		=> array( 'title', 'editor', 'excerpt', 'publicize', 'thumbnail', 'comments', 'author', 'revisions' ),
 		'taxonomies' 	=> array( 'ctc_event_category' ),
-		'menu_icon'		=> 'dashicons-calendar'
+		'menu_icon'		=> 'dashicons-calendar',
+		'show_in_rest'	=> true,
 	);
 	$args = apply_filters( 'ctc_post_type_event_args', $args ); // allow filtering
 
@@ -148,7 +150,8 @@ function ctc_location_post_type() {
 			'feeds'			=> ctc_feature_supported( 'locations' ),
 		),
 		'supports' 		=> array( 'title', 'editor', 'excerpt', 'thumbnail', 'page-attributes' ),
-		'menu_icon'		=> 'dashicons-location'
+		'menu_icon'		=> 'dashicons-location',
+		'show_in_rest'	=> true,
 	);
 	$args = apply_filters( 'ctc_post_type_location_args', $args ); // allow filtering
 
@@ -198,7 +201,8 @@ function ctc_register_post_type_person() {
 		),
 		'supports' 		=> array( 'title', 'editor', 'page-attributes', 'thumbnail', 'excerpt' ),
 		'taxonomies' 	=> array( 'ctc_person_group' ),
-		'menu_icon'		=> 'dashicons-admin-users'
+		'menu_icon'		=> 'dashicons-admin-users',
+		'show_in_rest'	=> true,
 	);
 	$args = apply_filters( 'ctc_post_type_person_args', $args ); // allow filtering
 
