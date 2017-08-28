@@ -25,6 +25,13 @@ function ctc_admin_enqueue_styles() {
 
 	global $ctc_settings;
 
+	$screen = get_current_screen();
+
+	// Dashboard
+	if ( 'dashboard' === $screen->base ) { // only on Dashboard screen
+		wp_enqueue_style( 'ctc-dashboard', CTC_URL . '/' . CTC_CSS_DIR . '/dashboard.css', false, CTC_VERSION );
+	}
+
 	// Plugin Settings
 	if ( $ctc_settings->is_settings_page() ) { // only on Plugin Settings page
 		wp_enqueue_style( 'ctc-settings', CTC_URL . '/' . CTC_CSS_DIR . '/settings.css', false, CTC_VERSION );

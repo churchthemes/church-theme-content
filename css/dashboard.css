@@ -1,0 +1,29 @@
+/**
+ * Dashboard
+ */
+
+/*******************************************
+ * AT A GLANCE
+ *******************************************/
+
+/* Show custom post type icons */
+
+#dashboard_right_now a.ctc_sermon-count:before,
+#dashboard_right_now span.ctc_sermon-count:before {
+  content: "\f236";
+}
+
+#dashboard_right_now a.ctc_event-count:before,
+#dashboard_right_now span.ctc_event-count:before {
+  content: "\f145";
+}
+
+#dashboard_right_now a.ctc_location-count:before,
+#dashboard_right_now span.ctc_location-count:before {
+  content: "\f230";
+}
+
+#dashboard_right_now a.ctc_person-count:before,
+#dashboard_right_now span.ctc_person-count:before {
+  content: "\f110";
+}

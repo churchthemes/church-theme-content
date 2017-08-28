@@ -217,6 +217,7 @@ class Church_Theme_Content {
 				CTC_ADMIN_DIR . '/admin-posts.php',
 				CTC_ADMIN_DIR . '/admin-sermon-fields.php',
 				CTC_ADMIN_DIR . '/admin-support.php',
+				CTC_ADMIN_DIR . '/dashboard.php',
 				CTC_ADMIN_DIR . '/edd-license.php',
 				CTC_ADMIN_DIR . '/import.php',
 				CTC_ADMIN_DIR . '/upgrade.php',

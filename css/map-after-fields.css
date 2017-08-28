@@ -2,7 +2,7 @@
  * Map After Fields (Event / Location)
  */
 
-/* Container for drscription and Google Map */
+/* Container for description and Google Map */
 
 #ctc-map-after-fields-container {
 	display: none; /* shown only when have data */
