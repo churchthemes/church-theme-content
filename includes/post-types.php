@@ -35,6 +35,7 @@ function ctc_register_post_type_sermon() {
 			'new_item' 				=> esc_html__( 'New Sermon', 'church-theme-content' ),
 			'all_items' 			=> esc_html__( 'All Sermons', 'church-theme-content' ),
 			'view_item' 			=> esc_html__( 'View Sermon', 'church-theme-content' ),
+			'view_items'			=> esc_html__( 'View Sermons', 'church-theme-content' ),
 			'search_items' 			=> esc_html__( 'Search Sermons', 'church-theme-content' ),
 			'not_found' 			=> esc_html__( 'No sermons found', 'church-theme-content' ),
 			'not_found_in_trash' 	=> esc_html__( 'No sermons found in Trash', 'church-theme-content' )
@@ -84,6 +85,7 @@ function ctc_register_post_type_event() {
 			'new_item' 				=> esc_html__( 'New Event', 'church-theme-content' ),
 			'all_items' 			=> esc_html__( 'All Events', 'church-theme-content' ),
 			'view_item' 			=> esc_html__( 'View Event', 'church-theme-content' ),
+			'view_items'			=> esc_html__( 'View Events', 'church-theme-content' ),
 			'search_items' 			=> esc_html__( 'Search Events', 'church-theme-content' ),
 			'not_found' 			=> esc_html__( 'No events found', 'church-theme-content' ),
 			'not_found_in_trash' 	=> esc_html__( 'No events found in Trash', 'church-theme-content' )
@@ -133,6 +135,7 @@ function ctc_location_post_type() {
 			'new_item' 				=> esc_html__( 'New Location', 'church-theme-content' ),
 			'all_items' 			=> esc_html__( 'All Locations', 'church-theme-content' ),
 			'view_item' 			=> esc_html__( 'View Location', 'church-theme-content' ),
+			'view_items'			=> esc_html__( 'View Locations', 'church-theme-content' ),
 			'search_items' 			=> esc_html__( 'Search Locations', 'church-theme-content' ),
 			'not_found' 			=> esc_html__( 'No location found', 'church-theme-content' ),
 			'not_found_in_trash' 	=> esc_html__( 'No location found in Trash', 'church-theme-content' )
@@ -181,6 +184,7 @@ function ctc_register_post_type_person() {
 			'new_item' 				=> esc_html__( 'New Person', 'church-theme-content' ),
 			'all_items' 			=> esc_html__( 'All People', 'church-theme-content' ),
 			'view_item' 			=> esc_html__( 'View Person', 'church-theme-content' ),
+			'view_items'			=> esc_html__( 'View People', 'church-theme-content' ),
 			'search_items' 			=> esc_html__( 'Search People', 'church-theme-content' ),
 			'not_found' 			=> esc_html__( 'No people found', 'church-theme-content' ),
 			'not_found_in_trash' 	=> esc_html__( 'No people found in Trash', 'church-theme-content' )
