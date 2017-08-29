@@ -52,19 +52,19 @@ class Church_Theme_Content {
 	 */
 	public function __construct() {
 
-		// Set plugin data
+		// Set plugin data.
 		add_action( 'plugins_loaded', array( $this, 'set_plugin_data' ), 1 );
 
-		// Define constants
+		// Define constants.
 		add_action( 'plugins_loaded', array( $this, 'define_constants' ), 1 );
 
-		// Load language file
+		// Load language file for old versions of WordPress.
 		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ), 1 );
 
-		// Set includes
+		// Set includes.
 		add_action( 'plugins_loaded', array( $this, 'set_includes' ), 1 );
 
-		// Load includes
+		// Load includes.
 		add_action( 'plugins_loaded', array( $this, 'load_includes' ), 1 );
 
 	}
@@ -134,11 +134,13 @@ class Church_Theme_Content {
 	/**
 	 * Load language file
 	 *
+	 * For WordPress versions under 4.6 only. https://make.wordpress.org/core/2016/07/06/i18n-improvements-in-4-6/
+	 *
 	 * This will load the MO file for the current locale.
 	 * The translation file must be named church-theme-content-$locale.mo.
 	 *
 	 * First it will check to see if the MO file exists in wp-content/languages/plugins.
-	 * If not, then the 'languages' direcory inside the plugin will be used.
+	 * If not, then the 'languages' directory inside the plugin will be used.
 	 * It is ideal to keep translation files outside of the plugin to avoid loss during updates.
 	 *
 	 * @since 0.9
@@ -146,23 +148,25 @@ class Church_Theme_Content {
 	 */
 	public function load_textdomain() {
 
-		// Textdomain
+		// Get version of WordPress in use.
+		$wp_version = get_bloginfo( 'version' );
+
+		// Textdomain.
 		$domain = 'church-theme-content';
 
-		// WordPress core locale filter
+		// WordPress core locale filter.
 		$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
 
-		// WordPress 3.6 and earlier don't auto-load from wp-content/languages, so check and load manually
-		// http://core.trac.wordpress.org/changeset/22346
+		// WordPress 3.6 and earlier don't auto-load from wp-content/languages, so check and load manually: http://core.trac.wordpress.org/changeset/22346.
 		$external_mofile = WP_LANG_DIR . '/plugins/'. $domain . '-' . $locale . '.mo';
-		if ( get_bloginfo( 'version' ) <= 3.6 && file_exists( $external_mofile ) ) { // external translation exists
+		if ( version_compare( $wp_version, '3.6', '<=' ) && file_exists( $external_mofile ) ) { // external translation exists.
 			load_textdomain( $domain, $external_mofile );
 		}
 
-		// Load normally
-		// Either using WordPress 3.7+ or older version with external translation
+		// Load normally.
+		// Either using WordPress 3.7+ or older version with external translation.
 		else {
-			$languages_dir = CTC_DIR . '/' . trailingslashit( CTC_LANG_DIR ); // ensure trailing slash
+			$languages_dir = CTC_DIR . '/' . trailingslashit( CTC_LANG_DIR ); // ensure trailing slash.
 			load_plugin_textdomain( $domain, false, $languages_dir );
 		}
 
