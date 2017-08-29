@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Church Theme Content\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-03 11:24-0500\n"
-"PO-Revision-Date: 2016-08-03 11:24-0500\n"
+"POT-Creation-Date: 2017-08-29 11:46-0500\n"
+"PO-Revision-Date: 2017-08-29 11:46-0500\n"
 "Last-Translator: churchthemes.com <contact@churchthemes.com>\n"
 "Language-Team: Emil Jonzon <emil.jonzon@gmail.com>\n"
 "Language: sv\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
 "__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
 "_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
@@ -27,16 +27,20 @@ msgid ""
 "Address could not be converted. Check the address or enter your city then "
 "click the map to pinpoint your location."
 msgstr ""
+"Adressen kunde inte konverteras. Kontrollera adressen eller ange din stad "
+"och klicka sedan på kartan för att hitta platsen."
 
 #: ../includes/admin/admin-enqueue-scripts.php:36
 msgid "Please enter an Address above."
-msgstr ""
+msgstr "Ange en adress ovan."
 
 #: ../includes/admin/admin-enqueue-scripts.php:37
 msgid ""
 "Go to Settings > Church Theme Content to set your Google Maps API Key in "
 "order to use this button."
 msgstr ""
+"Gå till Inställningar> Church Theme Content för att ställa in din API-nyckel "
+"för Google Maps för att kunna använda den här knappen."
 
 #: ../includes/admin/admin-event-fields.php:39
 msgctxt "event meta box"
@@ -45,48 +49,51 @@ msgstr "Datum & tid"
 
 #: ../includes/admin/admin-event-fields.php:77
 msgid "Start Date"
-msgstr "Start datum"
+msgstr "Startdatum"
 
 #: ../includes/admin/admin-event-fields.php:78
 msgid "(Required)"
-msgstr "(Obligatoriskt)"
+msgstr "(obligatoriskt)"
 
 #: ../includes/admin/admin-event-fields.php:102
 msgid "End Date"
-msgstr "Slut datum"
+msgstr "Slutdatum"
 
 #: ../includes/admin/admin-event-fields.php:105
 msgid "Specify End Date if event will span multiple consecutive days."
 msgstr ""
+"Ange slutdatum om aktiviteten sträcker sig över flera på varandra följande "
+"dagar."
 
 #: ../includes/admin/admin-event-fields.php:126
 msgid "Start Time"
-msgstr "Start tid"
+msgstr "Starttid"
 
 #: ../includes/admin/admin-event-fields.php:151
 msgid "End Time"
-msgstr "Slut tid"
+msgstr "Sluttid"
 
 #: ../includes/admin/admin-event-fields.php:182
 msgid "Do not show times entered above (use only for ordering events)"
 msgstr ""
-"Visa inte tider ifyllda här ovan (använd endast för sortering av aktiviteter)"
+"Visa inte starttid och sluttid (använd dem endast för sortering av "
+"aktiviteter)"
 
 #: ../includes/admin/admin-event-fields.php:203
 msgid "Time Description"
-msgstr "Tidsbeskrivning"
+msgstr "Tid som fritext"
 
 #: ../includes/admin/admin-event-fields.php:206
 msgid ""
 "Optionally describe the time (e.g. \"9:30 am and 11:00 am\" or \"After "
 "Second Service\")"
 msgstr ""
-"Valfritt: beskriv tiden (ex. \"09:30 och 11:00\" eller \"Efter "
-"söndagsgudstjänsten\")"
+"En valfri beskrivande tidsangivelse. T.ex. \"09:30 och 11:00\" eller \"Efter "
+"gudstjänsten\"."
 
 #: ../includes/admin/admin-event-fields.php:227
 msgid "Recurrence"
-msgstr "Upprepa"
+msgstr "Upprepning"
 
 #: ../includes/admin/admin-event-fields.php:230
 msgctxt "event meta box"
@@ -115,7 +122,7 @@ msgstr "Årligen"
 
 #: ../includes/admin/admin-event-fields.php:256
 msgid "Recur Until"
-msgstr "Upprepa tills"
+msgstr "Upprepa till och med"
 
 #: ../includes/admin/admin-event-fields.php:303
 msgctxt "event meta box"
@@ -124,12 +131,12 @@ msgstr "Plats"
 
 #: ../includes/admin/admin-event-fields.php:341
 msgid "Venue"
-msgstr "Plats"
+msgstr "Mötesplats"
 
 #: ../includes/admin/admin-event-fields.php:344
 msgid ""
 "Optionally provide a building name, room number or other helpful identifier."
-msgstr ""
+msgstr "Namn på byggnad, rumsnummer eller någon annan användbar information."
 
 #: ../includes/admin/admin-event-fields.php:365
 #: ../includes/admin/admin-location-fields.php:75
@@ -137,18 +144,19 @@ msgid "Address"
 msgstr "Adress"
 
 #: ../includes/admin/admin-event-fields.php:394
+#: ../includes/admin/admin-location-fields.php:104
 msgid "Show directions link"
 msgstr "Visa länk till vägbeskrivning"
 
 #: ../includes/admin/admin-event-fields.php:413
 #: ../includes/admin/admin-location-fields.php:195
 msgid "Map Latitude"
-msgstr "Kart-latitud"
+msgstr "Latitud"
 
 #: ../includes/admin/admin-event-fields.php:437
 #: ../includes/admin/admin-location-fields.php:219
 msgid "Map Longitude"
-msgstr "Kart-longitud"
+msgstr "Longitud"
 
 #: ../includes/admin/admin-event-fields.php:461
 #: ../includes/admin/admin-location-fields.php:243
@@ -158,16 +166,16 @@ msgstr "Karttyp"
 #: ../includes/admin/admin-event-fields.php:485
 #: ../includes/admin/admin-location-fields.php:267
 msgid "Map Zoom"
-msgstr "Kart zoom"
+msgstr "Kartzoom"
 
 #: ../includes/admin/admin-event-fields.php:534
 msgctxt "event meta box"
 msgid "Registration"
-msgstr ""
+msgstr "Anmälan"
 
 #: ../includes/admin/admin-event-fields.php:572
 msgid "Registration URL"
-msgstr ""
+msgstr "Länk till anmälningsformulär"
 
 #: ../includes/admin/admin-event-fields.php:576
 #, php-format
@@ -176,13 +184,16 @@ msgid ""
 "EventBrite, etc. (or embed a form into the content above). <a href=\"%1$s\" "
 "target=\"_blank\">Learn More</a>"
 msgstr ""
+"Ange länk till ett separat anmälningsformulär. Det går även bra att klistra "
+"in ett formulär i innehållseditorn ovan. <a href=\"%1$s\" target=\"_blank"
+"\">Läs mer</a>"
 
 #: ../includes/admin/admin-event-fields.php:763
 #: ../includes/admin/admin-location-fields.php:322
 #: ../includes/admin/admin-person-fields.php:220
 #: ../includes/admin/admin-sermon-fields.php:243
 msgid "Thumbnail"
-msgstr "Thumbnail"
+msgstr "Utvald bild"
 
 #: ../includes/admin/admin-event-fields.php:768
 msgctxt "events admin column"
@@ -192,7 +203,7 @@ msgstr "När"
 #: ../includes/admin/admin-event-fields.php:769
 msgctxt "events admin column"
 msgid "Details"
-msgstr "Detlajer"
+msgstr "Detaljer"
 
 #: ../includes/admin/admin-event-fields.php:831
 msgctxt "date range separator"
@@ -207,7 +218,7 @@ msgstr " &ndash; "
 #: ../includes/admin/admin-event-fields.php:879
 #, php-format
 msgid "Every week until %1$s"
-msgstr "Varje vecka till %1$s"
+msgstr "Varje vecka t.o.m. %1$s"
 
 #: ../includes/admin/admin-event-fields.php:884
 msgid "Every week"
@@ -216,7 +227,7 @@ msgstr "Varje vecka"
 #: ../includes/admin/admin-event-fields.php:895
 #, php-format
 msgid "Every month until %1$s"
-msgstr "Varje månad till %1$s"
+msgstr "Varje månad t.o.m. %1$s"
 
 #: ../includes/admin/admin-event-fields.php:900
 msgid "Every month"
@@ -225,7 +236,7 @@ msgstr "Varje månad"
 #: ../includes/admin/admin-event-fields.php:911
 #, php-format
 msgid "Every year until %1$s"
-msgstr "Varje år till %1$s"
+msgstr "Varje år t.o.m. %1$s"
 
 #: ../includes/admin/admin-event-fields.php:916
 msgid "Every year"
@@ -244,7 +255,7 @@ msgstr "Telefon"
 #: ../includes/admin/admin-location-fields.php:147
 #: ../includes/admin/admin-person-fields.php:148
 msgid "Email"
-msgstr "E-post"
+msgstr "E-postadress"
 
 #: ../includes/admin/admin-location-fields.php:171
 msgctxt "location meta box"
@@ -265,7 +276,7 @@ msgstr "Tider"
 #: ../includes/admin/admin-person-fields.php:227
 msgctxt "sorting"
 msgid "Order"
-msgstr "Sortera"
+msgstr "Sortering"
 
 #: ../includes/admin/admin-location-fields.php:333
 msgctxt "location admin column"
@@ -298,12 +309,17 @@ msgid ""
 "<strong>Google Maps API Key Not Set.</strong> You must set it in <a href="
 "\"%1$s\">Church Theme Content Settings</a> for maps to work."
 msgstr ""
+"<strong>API-nyckel för Google Maps har inte angetts.</strong> Du måste ange "
+"en sådan i inställningarna för <a href=\"%1$s\">Church Theme Content</a> för "
+"att kartor ska fungera."
 
 #: ../includes/admin/admin-maps.php:338
 msgid ""
 "You may click the map to adjust your location (it is draggable and can be "
 "double-clicked to zoom)."
 msgstr ""
+"Du kan klicka på kartan för att justera din plats. Klicka och dra i den för "
+"att panorera samt dubbelklicka på den för att zooma."
 
 #: ../includes/admin/admin-maps.php:356
 #, php-format
@@ -311,11 +327,13 @@ msgid ""
 "Set your <a href=\"%1$s\" target=\"_blank\">Google Maps API Key</a> to show "
 "a map preview here."
 msgstr ""
+"Ange din <a href=\"%1$s\" target=\"_blank\">API-nyckel för Google Maps</a> "
+"för att visa en förhandsgranskning av kartan här."
 
 #: ../includes/admin/admin-maps.php:407
 msgctxt "coordinate button"
 msgid "Get From Address"
-msgstr ""
+msgstr "Hämta från adress"
 
 #: ../includes/admin/admin-person-fields.php:34
 msgid "Enter name here"
@@ -324,7 +342,7 @@ msgstr "Fyll i namn här"
 #: ../includes/admin/admin-person-fields.php:62
 msgctxt "meta box"
 msgid "Person Details"
-msgstr "Människa detaljer"
+msgstr "Personuppgifter"
 
 #: ../includes/admin/admin-person-fields.php:100
 msgctxt "person meta box"
@@ -334,11 +352,11 @@ msgstr "Position"
 #: ../includes/admin/admin-person-fields.php:103
 msgid "Enter the person's position or title (e.g. Senior Pastor, Deacon, etc.)"
 msgstr ""
-"Fyll i personens position eller titel (ex. Föreståndare, pastor, diakon etc.)"
+"Fyll i personens position eller titel (t.ex. föreståndare, pastor, diakon)"
 
 #: ../includes/admin/admin-person-fields.php:172
 msgid "URLs"
-msgstr "URL-er"
+msgstr "Länkar"
 
 #: ../includes/admin/admin-person-fields.php:225
 msgid "Position"
@@ -365,7 +383,7 @@ msgstr "Helt predikoutkast"
 
 #: ../includes/admin/admin-sermon-fields.php:78
 msgid "Check this if you provide a complete transcript above."
-msgstr "Fyll i detta om du tillhandahåller ett helt predikoutkast."
+msgstr "Markera detta alternativ om du tillhandahåller ett helt predikoutkast."
 
 #: ../includes/admin/admin-sermon-fields.php:80
 msgid "Full sermon text provided"
@@ -383,10 +401,11 @@ msgid ""
 "paste its URL here, or paste an embed code from another site. <a href=\"%s\" "
 "target=\"_blank\">Video Help</a>"
 msgstr ""
-"Ladda upp en fil genom att klicka på \"Välj ljud\" eller ladda upp ljud till "
-"en av de <a href=\"%s\" target=\"_blank\">supportade webbsidorna</a> (såsom "
-"Youtube) och klistra sedan in dess URL här, eller klistra in en inbäddskod "
-"från en annan webbsida. <a href=\"%s\" target=\"_blank\">Hjälp om Ljud</a>"
+"Ladda upp en fil genom att klicka på \"Välj video\" eller ladda upp en video "
+"till en av de <a href=\"%s\" target=\"_blank\">videotjänster</a> som stöds "
+"(såsom Youtube) och klistra sedan in dess URL här. För videotjänster som "
+"inte stöds så kan videons inbäddskod klistras in istället. <a href=\"%s\" "
+"target=\"_blank\">Hjälp om video</a>"
 
 #: ../includes/admin/admin-sermon-fields.php:110
 msgid "Choose Video"
@@ -394,7 +413,7 @@ msgstr "Välj video"
 
 #: ../includes/admin/admin-sermon-fields.php:111
 msgid "Choose a Video File"
-msgstr ""
+msgstr "Välj en videofil"
 
 #: ../includes/admin/admin-sermon-fields.php:127
 msgid "Audio"
@@ -409,10 +428,10 @@ msgid ""
 "target=\"_blank\">Audio Help</a>"
 msgstr ""
 "Ladda upp en fil genom att klicka på \"Välj ljud\" eller ladda upp ljud till "
-"en av de <a href=\"%s\" target=\"_blank\">supportade webbsidorna</a> (såsom "
-"SoundCloud) och klistra sedan in dess URL här, eller klistra in en "
-"inbäddskod från en annan webbsida. <a href=\"%s\" target=\"_blank\">Hjälp om "
-"Ljud</a>"
+"en av de <a href=\"%s\" target=\"_blank\">tjänsterna</a> som stöds (såsom "
+"SoundCloud) och klistra sedan in dess URL här. För tjänster som inte stöds "
+"så kan ljudfilens inbäddskod klistras in istället. <a href=\"%s\" target="
+"\"_blank\">Hjälp om ljud</a>"
 
 #: ../includes/admin/admin-sermon-fields.php:138
 msgid "Choose Audio"
@@ -440,7 +459,7 @@ msgstr "Välj PDF"
 
 #: ../includes/admin/admin-sermon-fields.php:163
 msgid "Choose a PDF File"
-msgstr "Välj PDF-fil"
+msgstr "Välj en PDF-fil"
 
 #: ../includes/admin/admin-sermon-fields.php:248
 msgctxt "sermons"
@@ -477,8 +496,8 @@ msgid ""
 "The <b>%1$s</b> theme does not support the <b>%2$s</b> plugin. <a href=\"%3$s"
 "\" target=\"_blank\">More Information</a>, <a href=\"%4$s\">Dismiss</a>"
 msgstr ""
-"The <b>%1$s</b> theme stöder inte the <b>%2$s</b> plugin. <a href=\"%3$s\" "
-"target=\"_blank\">Mer information</a>, <a href=\"%4$s\">Avfärda</a>"
+"Temat <b>%1$s</b> stöder inte pluginet <b>%2$s</b>. <a href=\"%3$s\" target="
+"\"_blank\">Mer information</a>, <a href=\"%4$s\">Avfärda</a>"
 
 #: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:205
 #, php-format
@@ -502,7 +521,7 @@ msgstr ""
 
 #: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:372
 msgid "You do not have permission to install plugin updates"
-msgstr "Du har inte tillåtelse att installera tilläggsuppdateringar"
+msgstr "Du har inte tillåtelse att installera uppdateringar av tillägg"
 
 #: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:372
 msgid "Error"
@@ -536,7 +555,7 @@ msgstr "Predikan"
 #: ../includes/post-types.php:32
 msgctxt "sermon"
 msgid "Add New"
-msgstr "Lägg till ny"
+msgstr "Skapa ny"
 
 #: ../includes/post-types.php:33
 msgid "Add Sermon"
@@ -559,162 +578,178 @@ msgid "View Sermon"
 msgstr "Visa predikan"
 
 #: ../includes/post-types.php:38
+msgid "View Sermons"
+msgstr ""
+
+#: ../includes/post-types.php:39
 msgid "Search Sermons"
 msgstr "Sök predikningar"
 
-#: ../includes/post-types.php:39
+#: ../includes/post-types.php:40
 msgid "No sermons found"
 msgstr "Inga predikningar hittade"
 
-#: ../includes/post-types.php:40
+#: ../includes/post-types.php:41
 msgid "No sermons found in Trash"
 msgstr "Inga predikningar hittade i papperskorgen"
 
-#: ../includes/post-types.php:79
+#: ../includes/post-types.php:81
 msgctxt "post type general name"
 msgid "Events"
 msgstr "Aktiviteter"
 
-#: ../includes/post-types.php:80
+#: ../includes/post-types.php:82
 msgctxt "post type singular name"
 msgid "Event"
 msgstr "Aktivitet"
 
-#: ../includes/post-types.php:81
+#: ../includes/post-types.php:83
 msgctxt "event"
 msgid "Add New"
-msgstr "Lägg till ny"
+msgstr "Skapa ny"
 
-#: ../includes/post-types.php:82
+#: ../includes/post-types.php:84
 msgid "Add Event"
 msgstr "Lägg till aktivitet"
 
-#: ../includes/post-types.php:83
+#: ../includes/post-types.php:85
 msgid "Edit Event"
 msgstr "Ändra aktivitet"
 
-#: ../includes/post-types.php:84
+#: ../includes/post-types.php:86
 msgid "New Event"
 msgstr "Ny aktivitet"
 
-#: ../includes/post-types.php:85
+#: ../includes/post-types.php:87
 msgid "All Events"
 msgstr "Alla aktiviteter"
 
-#: ../includes/post-types.php:86
+#: ../includes/post-types.php:88
 msgid "View Event"
 msgstr "Visa aktivitet"
 
-#: ../includes/post-types.php:87
+#: ../includes/post-types.php:89
+msgid "View Events"
+msgstr ""
+
+#: ../includes/post-types.php:90
 msgid "Search Events"
 msgstr "Sök aktiviteter"
 
-#: ../includes/post-types.php:88
+#: ../includes/post-types.php:91
 msgid "No events found"
 msgstr "Inga aktiviteter hittades"
 
-#: ../includes/post-types.php:89
+#: ../includes/post-types.php:92
 msgid "No events found in Trash"
 msgstr "Inga aktiviteter hittades i papperskorgen"
 
-#: ../includes/post-types.php:128
+#: ../includes/post-types.php:132
 msgctxt "post type general name"
 msgid "Locations"
 msgstr "Platser"
 
-#: ../includes/post-types.php:129
+#: ../includes/post-types.php:133
 msgctxt "post type singular name"
 msgid "Location"
 msgstr "Plats"
 
-#: ../includes/post-types.php:130
+#: ../includes/post-types.php:134
 msgctxt "location"
 msgid "Add New"
-msgstr "Lägg till ny"
+msgstr "Skapa ny"
 
-#: ../includes/post-types.php:131
+#: ../includes/post-types.php:135
 msgid "Add Location"
 msgstr "Lägg till plats"
 
-#: ../includes/post-types.php:132
+#: ../includes/post-types.php:136
 msgid "Edit Location"
 msgstr "Ändra plats"
 
-#: ../includes/post-types.php:133
+#: ../includes/post-types.php:137
 msgid "New Location"
 msgstr "Ny plats"
 
-#: ../includes/post-types.php:134
+#: ../includes/post-types.php:138
 msgid "All Locations"
 msgstr "Alla platser"
 
-#: ../includes/post-types.php:135
+#: ../includes/post-types.php:139
 msgid "View Location"
 msgstr "Visa plats"
 
-#: ../includes/post-types.php:136
+#: ../includes/post-types.php:140
+msgid "View Locations"
+msgstr ""
+
+#: ../includes/post-types.php:141
 msgid "Search Locations"
 msgstr "Sök platser"
 
-#: ../includes/post-types.php:137
+#: ../includes/post-types.php:142
 msgid "No location found"
 msgstr "Ingen plats hittades"
 
-#: ../includes/post-types.php:138
+#: ../includes/post-types.php:143
 msgid "No location found in Trash"
-msgstr "Ingen plats funnen i Papperskorgen"
-
-#: ../includes/post-types.php:176
-msgctxt "post type general name"
-msgid "People"
-msgstr "Människor"
-
-#: ../includes/post-types.php:177
-msgctxt "post type singular name"
-msgid "Person"
-msgstr "Människa"
-
-#: ../includes/post-types.php:178
-msgctxt "person"
-msgid "Add New"
-msgstr "Lägg till ny"
-
-#: ../includes/post-types.php:179
-msgid "Add Person"
-msgstr "Lägg till människa"
-
-#: ../includes/post-types.php:180
-msgid "Edit Person"
-msgstr "Ändra människa"
-
-#: ../includes/post-types.php:181
-msgid "New Person"
-msgstr "Ny människa"
+msgstr "Ingen plats funnen i papperskorgen"
 
 #: ../includes/post-types.php:182
-msgid "All People"
-msgstr "Alla människor"
+msgctxt "post type general name"
+msgid "People"
+msgstr "Personer"
 
 #: ../includes/post-types.php:183
-msgid "View Person"
-msgstr "Visa människa"
+msgctxt "post type singular name"
+msgid "Person"
+msgstr "Person"
 
 #: ../includes/post-types.php:184
-msgid "Search People"
-msgstr "Sök människor"
+msgctxt "person"
+msgid "Add New"
+msgstr "Skapa ny"
 
 #: ../includes/post-types.php:185
-msgid "No people found"
-msgstr "Inga människor hittade"
+msgid "Add Person"
+msgstr "Lägg till person"
 
 #: ../includes/post-types.php:186
+msgid "Edit Person"
+msgstr "Ändra person"
+
+#: ../includes/post-types.php:187
+msgid "New Person"
+msgstr "Ny person"
+
+#: ../includes/post-types.php:188
+msgid "All People"
+msgstr "Alla personer"
+
+#: ../includes/post-types.php:189
+msgid "View Person"
+msgstr "Visa person"
+
+#: ../includes/post-types.php:190
+msgid "View People"
+msgstr ""
+
+#: ../includes/post-types.php:191
+msgid "Search People"
+msgstr "Sök personer"
+
+#: ../includes/post-types.php:192
+msgid "No people found"
+msgstr "Inga personer hittade"
+
+#: ../includes/post-types.php:193
 msgid "No people found in Trash"
-msgstr "Inga människor hittade i papperskorgen"
+msgstr "Inga personer hittade i papperskorgen"
 
 #: ../includes/settings.php:43
 #, php-format
 msgid "%1$s Settings"
-msgstr "%1$s Inställningar"
+msgstr "%1$s inställningar"
 
 #: ../includes/settings.php:49
 #, php-format
@@ -722,19 +757,19 @@ msgid ""
 "These settings are for the <a href=\"%1$s\" target=\"_blank\">Church Theme "
 "Content</a> plugin and its <a href=\"%2$s\" target=\"_blank\">Add-ons</a>."
 msgstr ""
-"Dessa inställningar är till the <a href=\"%1$s\" target=\"_blank\">Church "
-"Theme Content</a> plugin och dess <a href=\"%2$s\" target=\"_blank\">Add-"
-"ons</a>."
+"Dessa inställningar är för pluginet <a href=\"%1$s\" target=\"_blank"
+"\">Church Theme Content</a> och dess <a href=\"%2$s\" target=\"_blank"
+"\">tillägg</a>."
 
 #: ../includes/settings.php:69
 msgctxt "settings section title"
 msgid "General"
-msgstr ""
+msgstr "Allmänt"
 
 #: ../includes/settings.php:79
 msgctxt "settings"
 msgid "Google Maps API Key"
-msgstr ""
+msgstr "Google Maps API-nyckel"
 
 #: ../includes/settings.php:82
 #, php-format
@@ -742,6 +777,9 @@ msgid ""
 "An API Key for Google Maps is required if you want to show maps for events "
 "or locations. <a href=\"%1$s\" target=\"_blank\">Get an API Key</a>"
 msgstr ""
+"En API-nyckel för Google Maps krävs om du vill visa kartor för "
+"kalenderhändelser eller platser. <a href=\"%1$s\" target=\"_blank\">Hämta en "
+"API-nyckel</a>"
 
 #: ../includes/settings.php:108
 msgctxt "settings"
@@ -1134,7 +1172,7 @@ msgstr "Separera kategorier med kommatecken"
 #: ../includes/taxonomies.php:281
 msgctxt "events"
 msgid "Add or remove categories"
-msgstr "Lägg till eller ta bord kategorier"
+msgstr "Lägg till eller ta bort kategorier"
 
 #: ../includes/taxonomies.php:282
 msgctxt "events"
