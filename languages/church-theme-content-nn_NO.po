@@ -1,0 +1,1327 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: church-theme-content\n"
+"POT-Creation-Date: 2017-08-29 11:21-0500\n"
+"PO-Revision-Date: 2017-08-29 11:25-0500\n"
+"Last-Translator: churchthemes.com <contact@churchthemes.com>\n"
+"Language-Team: \n"
+"Language: nn_NO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: ../includes/admin/admin-enqueue-scripts.php:35
+msgid ""
+"Address could not be converted. Check the address or enter your city then "
+"click the map to pinpoint your location."
+msgstr ""
+"Adressen kunne ikkje tolkast av Google Map. Sjekk adressen eller skriv inn "
+"ein stad i nærleiken og klikk så på kartet for å markere plasseringa "
+"nøyaktig."
+
+#: ../includes/admin/admin-enqueue-scripts.php:36
+msgid "Please enter an Address above."
+msgstr "Ver venleg å skriv ein adresse ovanfor."
+
+#: ../includes/admin/admin-enqueue-scripts.php:37
+msgid ""
+"Go to Settings > Church Theme Content to set your Google Maps API Key in "
+"order to use this button."
+msgstr ""
+"Gå til Innstillingar > Church Theme Content for å sett in Google Maps API-"
+"nøkkel for å bruke denne knappen."
+
+#: ../includes/admin/admin-event-fields.php:39
+msgctxt "event meta box"
+msgid "Date & Time"
+msgstr "Dato og tidspunkt"
+
+#: ../includes/admin/admin-event-fields.php:77
+msgid "Start Date"
+msgstr "Startdato"
+
+#: ../includes/admin/admin-event-fields.php:78
+msgid "(Required)"
+msgstr "(Påkravd)"
+
+#: ../includes/admin/admin-event-fields.php:102
+msgid "End Date"
+msgstr "Sluttdato"
+
+#: ../includes/admin/admin-event-fields.php:105
+msgid "Specify End Date if event will span multiple consecutive days."
+msgstr ""
+"Fastslå sluttdato dersom arrangementet går over fleire påføljande dagar."
+
+#: ../includes/admin/admin-event-fields.php:126
+msgid "Start Time"
+msgstr "Starttid"
+
+#: ../includes/admin/admin-event-fields.php:151
+msgid "End Time"
+msgstr "Sluttid"
+
+#: ../includes/admin/admin-event-fields.php:182
+msgid "Do not show times entered above (use only for ordering events)"
+msgstr ""
+"Ikkje vis tidspunkta lagt inn ovanfor (bruk dei kun for å sortere "
+"arrangement)"
+
+#: ../includes/admin/admin-event-fields.php:203
+msgid "Time Description"
+msgstr "Tidspunktforklaring"
+
+#: ../includes/admin/admin-event-fields.php:206
+msgid ""
+"Optionally describe the time (e.g. \"9:30 am and 11:00 am\" or \"After "
+"Second Service\")"
+msgstr ""
+"Valfri forklaring av tidspunktet (f.eks. \"Kl. 9 og kl. 11 om formiddagen\" "
+"eller \"Etter den andre gudstjenesta\")"
+
+#: ../includes/admin/admin-event-fields.php:227
+msgid "Recurrence"
+msgstr "Gjentaking"
+
+#: ../includes/admin/admin-event-fields.php:230
+msgctxt "event meta box"
+msgid "Dates automatically move forward after event ends."
+msgstr ""
+"Datoar flyttar seg automatisk framover etter at arrangementet er ferdig."
+
+#: ../includes/admin/admin-event-fields.php:234
+msgctxt "event meta box"
+msgid "None"
+msgstr "Ingen"
+
+#: ../includes/admin/admin-event-fields.php:235
+msgctxt "event meta box"
+msgid "Weekly"
+msgstr "Kvar veke"
+
+#: ../includes/admin/admin-event-fields.php:236
+msgctxt "event meta box"
+msgid "Monthly"
+msgstr "Månadleg"
+
+#: ../includes/admin/admin-event-fields.php:237
+msgctxt "event meta box"
+msgid "Yearly"
+msgstr "Årleg"
+
+#: ../includes/admin/admin-event-fields.php:256
+msgid "Recur Until"
+msgstr "Gjenta til"
+
+#: ../includes/admin/admin-event-fields.php:303
+msgctxt "event meta box"
+msgid "Location"
+msgstr "Lokalitet"
+
+#: ../includes/admin/admin-event-fields.php:341
+msgid "Venue"
+msgstr "Møtestad"
+
+#: ../includes/admin/admin-event-fields.php:344
+msgid ""
+"Optionally provide a building name, room number or other helpful identifier."
+msgstr ""
+"Oppgi eventuelt eit bygningsnamn, romnummer eller annen nyttig informasjon."
+
+#: ../includes/admin/admin-event-fields.php:365
+#: ../includes/admin/admin-location-fields.php:75
+msgid "Address"
+msgstr "Adresse"
+
+#: ../includes/admin/admin-event-fields.php:394
+msgid "Show directions link"
+msgstr "Vis lenke til vegvisar"
+
+#: ../includes/admin/admin-event-fields.php:413
+#: ../includes/admin/admin-location-fields.php:195
+msgid "Map Latitude"
+msgstr "Breddegrad"
+
+#: ../includes/admin/admin-event-fields.php:437
+#: ../includes/admin/admin-location-fields.php:219
+msgid "Map Longitude"
+msgstr "Lengdegrad"
+
+#: ../includes/admin/admin-event-fields.php:461
+#: ../includes/admin/admin-location-fields.php:243
+msgid "Map Type"
+msgstr "Karttype"
+
+#: ../includes/admin/admin-event-fields.php:485
+#: ../includes/admin/admin-location-fields.php:267
+msgid "Map Zoom"
+msgstr "Zoom"
+
+#: ../includes/admin/admin-event-fields.php:534
+msgctxt "event meta box"
+msgid "Registration"
+msgstr "Registrering"
+
+#: ../includes/admin/admin-event-fields.php:572
+msgid "Registration URL"
+msgstr "Registreringslenke"
+
+#: ../includes/admin/admin-event-fields.php:576
+#, php-format
+msgid ""
+"Link to a third-party registration page from your Church Management System, "
+"EventBrite, etc. (or embed a form into the content above). <a href=\"%1$s\" "
+"target=\"_blank\">Learn More</a>"
+msgstr ""
+"Koble til ei registreringsside frå ein tredjepart for påmelding. Eksempel: "
+"Checkin.no, EventBrite ell. (eller legge inn eit skjema i innhaldet "
+"ovanfor). <a href=\"%1$s\" target=\"_blank\">Lær meir</a>"
+
+#: ../includes/admin/admin-event-fields.php:763
+#: ../includes/admin/admin-location-fields.php:322
+#: ../includes/admin/admin-person-fields.php:220
+#: ../includes/admin/admin-sermon-fields.php:243
+msgid "Thumbnail"
+msgstr "Miniatyrbilde"
+
+#: ../includes/admin/admin-event-fields.php:768
+msgctxt "events admin column"
+msgid "When"
+msgstr "Når"
+
+#: ../includes/admin/admin-event-fields.php:769
+msgctxt "events admin column"
+msgid "Details"
+msgstr "Detaljer"
+
+#: ../includes/admin/admin-event-fields.php:831
+msgctxt "date range separator"
+msgid " &ndash; "
+msgstr " &ndash; "
+
+#: ../includes/admin/admin-event-fields.php:849
+msgctxt "time range separator"
+msgid " &ndash; "
+msgstr " &ndash; "
+
+#: ../includes/admin/admin-event-fields.php:879
+#, php-format
+msgid "Every week until %1$s"
+msgstr "Kvar veke fram framtil %1$s"
+
+#: ../includes/admin/admin-event-fields.php:884
+msgid "Every week"
+msgstr "Kvar veke"
+
+#: ../includes/admin/admin-event-fields.php:895
+#, php-format
+msgid "Every month until %1$s"
+msgstr "Kvar månad framtil %1$s"
+
+#: ../includes/admin/admin-event-fields.php:900
+msgid "Every month"
+msgstr "Kvar månad"
+
+#: ../includes/admin/admin-event-fields.php:911
+#, php-format
+msgid "Every year until %1$s"
+msgstr "Kvart år framtil %1$s"
+
+#: ../includes/admin/admin-event-fields.php:916
+msgid "Every year"
+msgstr "Kvart år"
+
+#: ../includes/admin/admin-location-fields.php:37
+msgctxt "location meta box"
+msgid "Location Details"
+msgstr "Lokalitetsdetaljar"
+
+#: ../includes/admin/admin-location-fields.php:123
+#: ../includes/admin/admin-person-fields.php:124
+msgid "Phone"
+msgstr "Telefon"
+
+#: ../includes/admin/admin-location-fields.php:147
+#: ../includes/admin/admin-person-fields.php:148
+msgid "Email"
+msgstr "E-post"
+
+#: ../includes/admin/admin-location-fields.php:171
+msgctxt "location meta box"
+msgid "Times"
+msgstr "Tidspunkt"
+
+#: ../includes/admin/admin-location-fields.php:327
+msgctxt "location admin column"
+msgid "Address"
+msgstr "Adresse"
+
+#: ../includes/admin/admin-location-fields.php:328
+msgctxt "location admin column"
+msgid "Times"
+msgstr "Tidspunkt"
+
+#: ../includes/admin/admin-location-fields.php:329
+#: ../includes/admin/admin-person-fields.php:227
+msgctxt "sorting"
+msgid "Order"
+msgstr "Rekkefølge"
+
+#: ../includes/admin/admin-location-fields.php:333
+msgctxt "location admin column"
+msgid "Location"
+msgstr "Lokalitet"
+
+#: ../includes/admin/admin-maps.php:29
+msgctxt "map"
+msgid "Road"
+msgstr "Veg"
+
+#: ../includes/admin/admin-maps.php:30
+msgctxt "map"
+msgid "Satellite"
+msgstr "Satelitt"
+
+#: ../includes/admin/admin-maps.php:31
+msgctxt "map"
+msgid "Hybrid"
+msgstr "Hybrid"
+
+#: ../includes/admin/admin-maps.php:32
+msgctxt "map"
+msgid "Terrain"
+msgstr "Terreng"
+
+#: ../includes/admin/admin-maps.php:203
+#, php-format
+msgid ""
+"<strong>Google Maps API Key Not Set.</strong> You must set it in <a href="
+"\"%1$s\">Church Theme Content Settings</a> for maps to work."
+msgstr ""
+"<strong>Google Maps API-nøkkel er ikkje oppgitt.</strong> Du må sett den inn "
+"<a href=\"%1$s\">Church Theme Content Settings</a> for at kartet skal "
+"fungere."
+
+#: ../includes/admin/admin-maps.php:338
+msgid ""
+"You may click the map to adjust your location (it is draggable and can be "
+"double-clicked to zoom)."
+msgstr ""
+"Du kan klikke på kartet for å justere plasseringa (kart er flyttbart og ein "
+"kan dobbeltklikke for å zoome)."
+
+#: ../includes/admin/admin-maps.php:356
+#, php-format
+msgid ""
+"Set your <a href=\"%1$s\" target=\"_blank\">Google Maps API Key</a> to show "
+"a map preview here."
+msgstr ""
+"Oppgi <a href=\"%1$s\" target=\"_blank\">Google Maps API-nøkkel</a> for å "
+"vise eit kart forhåndsvisning her."
+
+#: ../includes/admin/admin-maps.php:407
+msgctxt "coordinate button"
+msgid "Get From Address"
+msgstr "Få koordinatar frå adresse"
+
+#: ../includes/admin/admin-person-fields.php:34
+msgid "Enter name here"
+msgstr "Skriv inn namnet her"
+
+#: ../includes/admin/admin-person-fields.php:62
+msgctxt "meta box"
+msgid "Person Details"
+msgstr "Persondetaljar"
+
+#: ../includes/admin/admin-person-fields.php:100
+msgctxt "person meta box"
+msgid "Position"
+msgstr "Stilling"
+
+#: ../includes/admin/admin-person-fields.php:103
+msgid "Enter the person's position or title (e.g. Senior Pastor, Deacon, etc.)"
+msgstr ""
+"Skriv inn stillinga til personen eller tittel (f.eks. eldste, diakon osv.)"
+
+#: ../includes/admin/admin-person-fields.php:172
+msgid "URLs"
+msgstr "URL-ar"
+
+#: ../includes/admin/admin-person-fields.php:225
+msgid "Position"
+msgstr "Stilling"
+
+#: ../includes/admin/admin-person-fields.php:226
+msgctxt "people column"
+msgid "Groups"
+msgstr "Grupper"
+
+#: ../includes/admin/admin-person-fields.php:231
+msgctxt "person"
+msgid "Name"
+msgstr "Namn"
+
+#: ../includes/admin/admin-sermon-fields.php:37
+msgctxt "meta box"
+msgid "Sermon Media"
+msgstr "Talemedia"
+
+#: ../includes/admin/admin-sermon-fields.php:75
+msgid "Full Text"
+msgstr "Fulltekst"
+
+#: ../includes/admin/admin-sermon-fields.php:78
+msgid "Check this if you provide a complete transcript above."
+msgstr ""
+"Kryss av her dersom du offentleggjer ein fullstendig transkripsjon ovanfor."
+
+#: ../includes/admin/admin-sermon-fields.php:80
+msgid "Full sermon text provided"
+msgstr "Heile teksten til tala er lagt ut"
+
+#: ../includes/admin/admin-sermon-fields.php:99
+msgid "Video"
+msgstr "Video"
+
+#: ../includes/admin/admin-sermon-fields.php:103
+#, php-format
+msgid ""
+"Upload a file by clicking \"Choose Video\" or upload a video to one of the "
+"<a href=\"%s\" target=\"_blank\">supported sites</a> (such as YouTube) then "
+"paste its URL here, or paste an embed code from another site. <a href=\"%s\" "
+"target=\"_blank\">Video Help</a>"
+msgstr ""
+"Last opp ei fil ved å klikke \"Vel video\", eller last opp ein video til ein "
+"av dei <a href=\"%s\" target=\"_blank\">støtta nettstadane</a> (som f.eks. "
+"YouTube). Lim deretter inn URL-en her, eller lim inn ein embed-kode fra ein "
+"anna nettstad. <a href=\"%s\" target=\"_blank\">Videohjelp</a>"
+
+#: ../includes/admin/admin-sermon-fields.php:110
+msgid "Choose Video"
+msgstr "Vel video"
+
+#: ../includes/admin/admin-sermon-fields.php:111
+msgid "Choose a Video File"
+msgstr "Vel ei videofil"
+
+#: ../includes/admin/admin-sermon-fields.php:127
+msgid "Audio"
+msgstr "Audio"
+
+#: ../includes/admin/admin-sermon-fields.php:131
+#, php-format
+msgid ""
+"Upload a file by clicking \"Choose Audio\" or upload audio to one of the <a "
+"href=\"%s\" target=\"_blank\">supported sites</a> (such as SoundCloud) then "
+"paste its URL here, or paste an embed code from another site. <a href=\"%s\" "
+"target=\"_blank\">Audio Help</a>"
+msgstr ""
+"Last opp ei fil ved å klikke \"Vel audio\", eller last opp ei lydfil til eit "
+"av dei <a href=\"%s\" target=\"_blank\">støtta nettstadane</a> (som f.eks. "
+"SoundCloud). Lim deretter inn URL-en her, eller lim inn ein embed-kode fra "
+"ein anna nettstad. <a href=\"%s\" target=\"_blank\">Audiohjelp</a>"
+
+#: ../includes/admin/admin-sermon-fields.php:138
+msgid "Choose Audio"
+msgstr "Vel audio"
+
+#: ../includes/admin/admin-sermon-fields.php:139
+msgid "Choose an Audio File"
+msgstr "Vel ei lydfil"
+
+#: ../includes/admin/admin-sermon-fields.php:155 ../includes/mime-types.php:75
+msgid "PDF"
+msgstr "PDF"
+
+#: ../includes/admin/admin-sermon-fields.php:158
+msgid ""
+"Upload a file by clicking \"Choose PDF\" or paste the URL to a PDF hosted on "
+"another site."
+msgstr ""
+"Last opp ei fil ved å klikke \"Vel PDF\", eller lim inn ein URL til ei PDF-"
+"fil som ligg på ein anna nettstad."
+
+#: ../includes/admin/admin-sermon-fields.php:162
+msgid "Choose PDF"
+msgstr "Vel PDF"
+
+#: ../includes/admin/admin-sermon-fields.php:163
+msgid "Choose a PDF File"
+msgstr "Vel ei PDF-fil"
+
+#: ../includes/admin/admin-sermon-fields.php:248
+msgctxt "sermons"
+msgid "Formats"
+msgstr "Format"
+
+#: ../includes/admin/admin-sermon-fields.php:249
+msgid "Topics"
+msgstr "Emne"
+
+#: ../includes/admin/admin-sermon-fields.php:291
+msgctxt "media type"
+msgid "Text"
+msgstr "Tekst"
+
+#: ../includes/admin/admin-sermon-fields.php:295
+msgctxt "media type"
+msgid "Video"
+msgstr "Video"
+
+#: ../includes/admin/admin-sermon-fields.php:299
+msgctxt "media type"
+msgid "Audio"
+msgstr "Audio"
+
+#: ../includes/admin/admin-sermon-fields.php:303
+msgctxt "media type"
+msgid "PDF"
+msgstr "PDF"
+
+#: ../includes/admin/admin-support.php:56
+#, php-format
+msgid ""
+"The <b>%1$s</b> theme does not support the <b>%2$s</b> plugin. <a href=\"%3$s"
+"\" target=\"_blank\">More Information</a>, <a href=\"%4$s\">Dismiss</a>"
+msgstr ""
+"Bunaden <b>%1$s</b> støttar ikkje utvidinga <b>%2$s</b>. <a href=\"%3$s\" "
+"target=\"_blank\">Mer informasjon</a>, <a href=\"%4$s\">Lukk</a>"
+
+#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:205
+#, php-format
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" class=\"%4$s"
+"\" href=\"%2$s\">View version %3$s details</a>."
+msgstr ""
+"Ein ny versjon av %1$s er tilgjengeleg. <a target=\"_blank\" class=\"%4$s\" "
+"href=\"%2$s\">Vis detaljar om versjon %3$s</a>."
+
+#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:222
+#, php-format
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" class=\"%5$s"
+"\" href=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s\">update "
+"now</a>."
+msgstr ""
+"Ein ny versjon av %1$s er tilgjengeleg. <a target=\"_blank\" class=\"%5$s\" "
+"href=\"%2$s\">Vis detaljar om versjon %3$s</a>, eller <a href=\"%4$s"
+"\">oppdater no</a>."
+
+#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:372
+msgid "You do not have permission to install plugin updates"
+msgstr "Du har ikkje tløyve til å installere oppdateringar for innstikk"
+
+#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:372
+msgid "Error"
+msgstr "Feil"
+
+#: ../includes/libraries/ct-plugin-settings/ct-plugin-settings.php:259
+msgid "Settings"
+msgstr "Innstillingar"
+
+#: ../includes/mime-types.php:76
+msgid "Manage PDFs"
+msgstr "Behandler PDF-er"
+
+#: ../includes/mime-types.php:77
+#, php-format
+msgid "PDF <span class=\"count\">(%s)</span>"
+msgid_plural "PDFs <span class=\"count\">(%s)</span>"
+msgstr[0] "PDF <span class=\"count\">(%s)</span>"
+msgstr[1] "PDFs <span class=\"count\">(%s)</span>"
+
+#: ../includes/post-types.php:30
+msgctxt "post type general name"
+msgid "Sermons"
+msgstr "Taler"
+
+#: ../includes/post-types.php:31
+msgctxt "post type singular name"
+msgid "Sermon"
+msgstr "Tale"
+
+#: ../includes/post-types.php:32
+msgctxt "sermon"
+msgid "Add New"
+msgstr "Legg til ei ny"
+
+#: ../includes/post-types.php:33
+msgid "Add Sermon"
+msgstr "Legg til ei tale"
+
+#: ../includes/post-types.php:34
+msgid "Edit Sermon"
+msgstr "Rediger ei tale"
+
+#: ../includes/post-types.php:35
+msgid "New Sermon"
+msgstr "Ny tale"
+
+#: ../includes/post-types.php:36
+msgid "All Sermons"
+msgstr "Alle talene"
+
+#: ../includes/post-types.php:37
+msgid "View Sermon"
+msgstr "Vis tale"
+
+#: ../includes/post-types.php:38
+msgid "Search Sermons"
+msgstr "Søk i taler"
+
+#: ../includes/post-types.php:39
+msgid "No sermons found"
+msgstr "Ingen taler funnet"
+
+#: ../includes/post-types.php:40
+msgid "No sermons found in Trash"
+msgstr "Ingen taler funne i søppelkbøtta"
+
+#: ../includes/post-types.php:79
+msgctxt "post type general name"
+msgid "Events"
+msgstr "Arrangement"
+
+#: ../includes/post-types.php:80
+msgctxt "post type singular name"
+msgid "Event"
+msgstr "Arrangement"
+
+#: ../includes/post-types.php:81
+msgctxt "event"
+msgid "Add New"
+msgstr "Legg til nytt"
+
+#: ../includes/post-types.php:82
+msgid "Add Event"
+msgstr "Legg til arrangement"
+
+#: ../includes/post-types.php:83
+msgid "Edit Event"
+msgstr "Rediger arrangement"
+
+#: ../includes/post-types.php:84
+msgid "New Event"
+msgstr "Nytt arrangement"
+
+#: ../includes/post-types.php:85
+msgid "All Events"
+msgstr "Alle arrangement"
+
+#: ../includes/post-types.php:86
+msgid "View Event"
+msgstr "Vis arrangement"
+
+#: ../includes/post-types.php:87
+msgid "Search Events"
+msgstr "Søk i arrangement"
+
+#: ../includes/post-types.php:88
+msgid "No events found"
+msgstr "Ingen arrangementer funnet"
+
+#: ../includes/post-types.php:89
+msgid "No events found in Trash"
+msgstr "Ingen arrangement funne i søppelbøtta"
+
+#: ../includes/post-types.php:128
+msgctxt "post type general name"
+msgid "Locations"
+msgstr "Lokalitetar"
+
+#: ../includes/post-types.php:129
+msgctxt "post type singular name"
+msgid "Location"
+msgstr "Lokalitet"
+
+#: ../includes/post-types.php:130
+msgctxt "location"
+msgid "Add New"
+msgstr "Legg til ny"
+
+#: ../includes/post-types.php:131
+msgid "Add Location"
+msgstr "Legg til lokalitet"
+
+#: ../includes/post-types.php:132
+msgid "Edit Location"
+msgstr "Rediger lokalitet"
+
+#: ../includes/post-types.php:133
+msgid "New Location"
+msgstr "Ny lokalitet"
+
+#: ../includes/post-types.php:134
+msgid "All Locations"
+msgstr "Alle lokalitetar"
+
+#: ../includes/post-types.php:135
+msgid "View Location"
+msgstr "Vis lokalitet"
+
+#: ../includes/post-types.php:136
+msgid "Search Locations"
+msgstr "Søk i lokalitar"
+
+#: ../includes/post-types.php:137
+msgid "No location found"
+msgstr "Ingen lokalitet funne"
+
+#: ../includes/post-types.php:138
+msgid "No location found in Trash"
+msgstr "Ingen lokalitet funne i søppelbøtta"
+
+#: ../includes/post-types.php:176
+msgctxt "post type general name"
+msgid "People"
+msgstr "Personar"
+
+#: ../includes/post-types.php:177
+msgctxt "post type singular name"
+msgid "Person"
+msgstr "Person"
+
+#: ../includes/post-types.php:178
+msgctxt "person"
+msgid "Add New"
+msgstr "Legg til ny"
+
+#: ../includes/post-types.php:179
+msgid "Add Person"
+msgstr "Legg til person"
+
+#: ../includes/post-types.php:180
+msgid "Edit Person"
+msgstr "Rediger person"
+
+#: ../includes/post-types.php:181
+msgid "New Person"
+msgstr "Ny person"
+
+#: ../includes/post-types.php:182
+msgid "All People"
+msgstr "Alle personar"
+
+#: ../includes/post-types.php:183
+msgid "View Person"
+msgstr "Vis person"
+
+#: ../includes/post-types.php:184
+msgid "Search People"
+msgstr "Søk i personar"
+
+#: ../includes/post-types.php:185
+msgid "No people found"
+msgstr "Ingen personar funne"
+
+#: ../includes/post-types.php:186
+msgid "No people found in Trash"
+msgstr "Ingen personar funne i søppelbøtta"
+
+#: ../includes/settings.php:43
+#, php-format
+msgid "%1$s Settings"
+msgstr "Innstillingar for %1$s"
+
+#: ../includes/settings.php:49
+#, php-format
+msgid ""
+"These settings are for the <a href=\"%1$s\" target=\"_blank\">Church Theme "
+"Content</a> plugin and its <a href=\"%2$s\" target=\"_blank\">Add-ons</a>."
+msgstr ""
+"Desse innstillingane er for <a href=\"%1$s\" target=\"_blank\">Church Theme "
+"Content</a> innstikket med <a href=\"%2$s\" target=\"_blank\">tillegg</a>."
+
+#: ../includes/settings.php:69
+msgctxt "settings section title"
+msgid "General"
+msgstr "Generelt"
+
+#: ../includes/settings.php:79
+msgctxt "settings"
+msgid "Google Maps API Key"
+msgstr "Google Maps API-nøkkel"
+
+#: ../includes/settings.php:82
+#, php-format
+msgid ""
+"An API Key for Google Maps is required if you want to show maps for events "
+"or locations. <a href=\"%1$s\" target=\"_blank\">Get an API Key</a>"
+msgstr ""
+"Ein API-nøkkel for Google Maps er nødvendig dersom du ønskjer å vise kart "
+"for arrangement eller plasseringar. <a href=\"%1$s\" target=\"_blank\">Få "
+"ein ein API-nøkkel</a>"
+
+#: ../includes/settings.php:108
+msgctxt "settings"
+msgid "Add-on Licenses"
+msgstr "Lisensar for innstikk"
+
+#: ../includes/settings.php:113
+msgid ""
+"Save then activate your add-on license keys to enable one-click updates for "
+"them."
+msgstr ""
+"Lagre og deretter aktiver  lisensane  for tillegga dine for å kunne bruke "
+"ettklikkoppdateringar."
+
+#: ../includes/taxonomies.php:30
+msgctxt "taxonomy general name"
+msgid "Sermon Topics"
+msgstr "Taleemne"
+
+#: ../includes/taxonomies.php:31
+msgctxt "taxonomy singular name"
+msgid "Sermon Topic"
+msgstr "Emne for tale"
+
+#: ../includes/taxonomies.php:32
+msgctxt "sermons"
+msgid "Search Topics"
+msgstr "Søk i emne"
+
+#: ../includes/taxonomies.php:33
+msgctxt "sermons"
+msgid "Popular Topics"
+msgstr "Populære emne"
+
+#: ../includes/taxonomies.php:34
+msgctxt "sermons"
+msgid "All Topics"
+msgstr "Alle emna"
+
+#: ../includes/taxonomies.php:37
+msgctxt "sermons"
+msgid "Edit Topic"
+msgstr "Rediger emne"
+
+#: ../includes/taxonomies.php:38
+msgctxt "sermons"
+msgid "Update Topic"
+msgstr "Oppdater emne"
+
+#: ../includes/taxonomies.php:39
+msgctxt "sermons"
+msgid "Add Topic"
+msgstr "Nytt emne"
+
+#: ../includes/taxonomies.php:40
+msgctxt "sermons"
+msgid "New Topic"
+msgstr "Nytt emne"
+
+#: ../includes/taxonomies.php:41
+msgctxt "sermons"
+msgid "Separate topics with commas"
+msgstr "Skil emne med komma"
+
+#: ../includes/taxonomies.php:42
+msgctxt "sermons"
+msgid "Add or remove topics"
+msgstr "Legg til eller fjern emne"
+
+#: ../includes/taxonomies.php:43
+msgctxt "sermons"
+msgid "Choose from the most used topics"
+msgstr "Vel blant dei mest brukte emna"
+
+#: ../includes/taxonomies.php:44
+msgctxt "sermon menu name"
+msgid "Topics"
+msgstr "Emne"
+
+#: ../includes/taxonomies.php:77
+msgctxt "taxonomy general name"
+msgid "Sermon Books"
+msgstr "Bibelbøker"
+
+#: ../includes/taxonomies.php:78
+msgctxt "taxonomy singular name"
+msgid "Sermon Book"
+msgstr "Bibelbok"
+
+#: ../includes/taxonomies.php:79
+msgctxt "sermons"
+msgid "Search Books"
+msgstr "Søk i bøker"
+
+#: ../includes/taxonomies.php:80
+msgctxt "sermons"
+msgid "Popular Books"
+msgstr "Populære bøker"
+
+#: ../includes/taxonomies.php:81
+msgctxt "sermons"
+msgid "All Books"
+msgstr "Alle bøkene"
+
+#: ../includes/taxonomies.php:84
+msgctxt "sermons"
+msgid "Edit Book"
+msgstr "Rediger bok"
+
+#: ../includes/taxonomies.php:85
+msgctxt "sermons"
+msgid "Update Book"
+msgstr "Oppdater bok"
+
+#: ../includes/taxonomies.php:86
+msgctxt "sermons"
+msgid "Add Book"
+msgstr "Legg til bok"
+
+#: ../includes/taxonomies.php:87
+msgctxt "sermons"
+msgid "New Book"
+msgstr "Ny bok"
+
+#: ../includes/taxonomies.php:88
+msgctxt "sermons"
+msgid "Separate books with commas"
+msgstr "Skil bøker med komma"
+
+#: ../includes/taxonomies.php:89
+msgctxt "sermons"
+msgid "Add or remove books"
+msgstr "Legg til eller fjern bøker"
+
+#: ../includes/taxonomies.php:90
+msgctxt "sermons"
+msgid "Choose from the most used books"
+msgstr "Vel blant dei mest brukte bøkene"
+
+#: ../includes/taxonomies.php:91
+msgctxt "sermon menu name"
+msgid "Books"
+msgstr "Bøker"
+
+#: ../includes/taxonomies.php:124
+msgctxt "taxonomy general name"
+msgid "Sermon Series"
+msgstr "Taleseriar"
+
+#: ../includes/taxonomies.php:125
+msgctxt "taxonomy singular name"
+msgid "Sermon Series"
+msgstr "Taleserie"
+
+#: ../includes/taxonomies.php:126
+msgctxt "sermons"
+msgid "Search Series"
+msgstr "Søk i seriar"
+
+#: ../includes/taxonomies.php:127
+msgctxt "sermons"
+msgid "Popular Series"
+msgstr "Populære seriar"
+
+#: ../includes/taxonomies.php:128
+msgctxt "sermons"
+msgid "All Series"
+msgstr "Alle seriar"
+
+#: ../includes/taxonomies.php:131
+msgctxt "sermons"
+msgid "Edit Series"
+msgstr "Rediger serie"
+
+#: ../includes/taxonomies.php:132
+msgctxt "sermons"
+msgid "Update Series"
+msgstr "Oppdater serie"
+
+#: ../includes/taxonomies.php:133
+msgctxt "sermons"
+msgid "Add Series"
+msgstr "Legg til serie"
+
+#: ../includes/taxonomies.php:134
+msgctxt "sermons"
+msgid "New Series"
+msgstr "Ny serie"
+
+#: ../includes/taxonomies.php:135
+msgctxt "sermons"
+msgid "Separate series with commas"
+msgstr "Skil seriar med komma"
+
+#: ../includes/taxonomies.php:136
+msgctxt "sermons"
+msgid "Add or remove series"
+msgstr "Legg til eller fjern serie"
+
+#: ../includes/taxonomies.php:137
+msgctxt "sermons"
+msgid "Choose from the most used series"
+msgstr "Vel blant dei mest brukte seriane"
+
+#: ../includes/taxonomies.php:138
+msgctxt "sermon menu name"
+msgid "Series"
+msgstr "Serie"
+
+#: ../includes/taxonomies.php:171
+msgctxt "taxonomy general name"
+msgid "Sermon Speakers"
+msgstr "Talarar"
+
+#: ../includes/taxonomies.php:172
+msgctxt "taxonomy singular name"
+msgid "Sermon Speaker"
+msgstr "Talar"
+
+#: ../includes/taxonomies.php:173
+msgctxt "sermons"
+msgid "Search Speakers"
+msgstr "Søk blant talarar"
+
+#: ../includes/taxonomies.php:174
+msgctxt "sermons"
+msgid "Popular Speakers"
+msgstr "Populære talarar"
+
+#: ../includes/taxonomies.php:175
+msgctxt "sermons"
+msgid "All Speakers"
+msgstr "Alle talarne"
+
+#: ../includes/taxonomies.php:178
+msgctxt "sermons"
+msgid "Edit Speaker"
+msgstr "Rediger talar"
+
+#: ../includes/taxonomies.php:179
+msgctxt "sermons"
+msgid "Update Speaker"
+msgstr "Oppdater talar"
+
+#: ../includes/taxonomies.php:180
+msgctxt "sermons"
+msgid "Add Speaker"
+msgstr "Legg til talar"
+
+#: ../includes/taxonomies.php:181
+msgctxt "sermons"
+msgid "New Speaker"
+msgstr "Ny taler"
+
+#: ../includes/taxonomies.php:182
+msgctxt "sermons"
+msgid "Separate speakers with commas"
+msgstr "Skil talarar med komma"
+
+#: ../includes/taxonomies.php:183
+msgctxt "sermons"
+msgid "Add or remove speakers"
+msgstr "Legg til eller fjern talarar"
+
+#: ../includes/taxonomies.php:184
+msgctxt "sermons"
+msgid "Choose from the most used speakers"
+msgstr "Vel blant dei mest brukte talarane"
+
+#: ../includes/taxonomies.php:185
+msgctxt "sermon menu name"
+msgid "Speakers"
+msgstr "Talarar"
+
+#: ../includes/taxonomies.php:218
+msgctxt "taxonomy general name"
+msgid "Sermon Tags"
+msgstr "Stikkord for taler"
+
+#: ../includes/taxonomies.php:219
+msgctxt "taxonomy singular name"
+msgid "Sermon Tag"
+msgstr "Stikkord for tale"
+
+#: ../includes/taxonomies.php:220
+msgctxt "sermons"
+msgid "Search Tags"
+msgstr "Søk blant stikkord"
+
+#: ../includes/taxonomies.php:221
+msgctxt "sermons"
+msgid "Popular Tags"
+msgstr "Populære stikkord"
+
+#: ../includes/taxonomies.php:222
+msgctxt "sermons"
+msgid "All Tags"
+msgstr "Alle stikkord"
+
+#: ../includes/taxonomies.php:225
+msgctxt "sermons"
+msgid "Edit Tag"
+msgstr "Rediger stikkord"
+
+#: ../includes/taxonomies.php:226
+msgctxt "sermons"
+msgid "Update Tag"
+msgstr "Oppdater stikkord"
+
+#: ../includes/taxonomies.php:227
+msgctxt "sermons"
+msgid "Add Tag"
+msgstr "Legg til stikkord"
+
+#: ../includes/taxonomies.php:228
+msgctxt "sermons"
+msgid "New Tag"
+msgstr "Nytt stikkord"
+
+#: ../includes/taxonomies.php:229
+msgctxt "sermons"
+msgid "Separate tags with commas"
+msgstr "Skil stikkord med komma"
+
+#: ../includes/taxonomies.php:230
+msgctxt "sermons"
+msgid "Add or remove tags"
+msgstr "Legg til eller fjern stikkord"
+
+#: ../includes/taxonomies.php:231
+msgctxt "sermons"
+msgid "Choose from the most used tags"
+msgstr "Vel blant dei mest brukte stikkorda"
+
+#: ../includes/taxonomies.php:232
+msgctxt "sermon menu name"
+msgid "Tags"
+msgstr "Stikkord"
+
+#: ../includes/taxonomies.php:269
+msgctxt "taxonomy general name"
+msgid "Event Categories"
+msgstr "Arrangementskategorier"
+
+#: ../includes/taxonomies.php:270
+msgctxt "taxonomy singular name"
+msgid "Event Category"
+msgstr "Arrangementskategori"
+
+#: ../includes/taxonomies.php:271
+msgctxt "events"
+msgid "Search Categories"
+msgstr "Søk i kategoriar"
+
+#: ../includes/taxonomies.php:272
+msgctxt "events"
+msgid "Popular Categories"
+msgstr "Populære kategoriar"
+
+#: ../includes/taxonomies.php:273
+msgctxt "events"
+msgid "All Categories"
+msgstr "Alle kategoriar"
+
+#: ../includes/taxonomies.php:276
+msgctxt "events"
+msgid "Edit Event Category"
+msgstr "Rediger arrangementskategori"
+
+#: ../includes/taxonomies.php:277
+msgctxt "events"
+msgid "Update Event Category"
+msgstr "Oppdater arrangementskategori"
+
+#: ../includes/taxonomies.php:278
+msgctxt "events"
+msgid "Add Category"
+msgstr "Legg til kategori"
+
+#: ../includes/taxonomies.php:279
+msgctxt "events"
+msgid "New Category"
+msgstr "Ny kategori"
+
+#: ../includes/taxonomies.php:280
+msgctxt "events"
+msgid "Separate categories with commas"
+msgstr "Skil kategoriar med komma"
+
+#: ../includes/taxonomies.php:281
+msgctxt "events"
+msgid "Add or remove categories"
+msgstr "Legg til og fjern kategoriar"
+
+#: ../includes/taxonomies.php:282
+msgctxt "events"
+msgid "Choose from the most used categories"
+msgstr "Vel blant dei mest brukte kategoriane"
+
+#: ../includes/taxonomies.php:283
+msgctxt "event menu name"
+msgid "Categories"
+msgstr "Kategoriar"
+
+#: ../includes/taxonomies.php:320
+msgctxt "taxonomy general name"
+msgid "Groups"
+msgstr "Grupper"
+
+#: ../includes/taxonomies.php:321
+msgctxt "taxonomy singular name"
+msgid "Group"
+msgstr "Gruppe"
+
+#: ../includes/taxonomies.php:322
+msgctxt "people"
+msgid "Search Groups"
+msgstr "Søk i grupper"
+
+#: ../includes/taxonomies.php:323
+msgctxt "people"
+msgid "Popular Groups"
+msgstr "Populære grupper"
+
+#: ../includes/taxonomies.php:324
+msgctxt "people"
+msgid "All Groups"
+msgstr "Alle grupper"
+
+#: ../includes/taxonomies.php:327
+msgctxt "people"
+msgid "Edit Group"
+msgstr "Rediger gruppe"
+
+#: ../includes/taxonomies.php:328
+msgctxt "people"
+msgid "Update Group"
+msgstr "Oppdater gruppe"
+
+#: ../includes/taxonomies.php:329
+msgctxt "people"
+msgid "Add Group"
+msgstr "Legg til gruppe"
+
+#: ../includes/taxonomies.php:330
+msgctxt "people"
+msgid "New Group"
+msgstr "Ny gruppe"
+
+#: ../includes/taxonomies.php:331
+msgctxt "people"
+msgid "Separate groups with commas"
+msgstr "Skil grupper med komma"
+
+#: ../includes/taxonomies.php:332
+msgctxt "people"
+msgid "Add or remove groups"
+msgstr "Legg til og fjern grupper"
+
+#: ../includes/taxonomies.php:333
+msgctxt "people"
+msgid "Choose from the most used groups"
+msgstr "Vel blant dei mest brukte gruppene"
+
+#: ../includes/taxonomies.php:334
+msgctxt "people menu name"
+msgid "Groups"
+msgstr "Grupper"
+
+#~ msgid ""
+#~ "You can provide a building name, room number or other location name to "
+#~ "help people find the event."
+#~ msgstr ""
+#~ "Du kan angi eit bygningsnamn, romnummer eller anna namn på lokaliteten "
+#~ "for å hjelpe folk å finne arrangementet."
+
+#~ msgctxt "event meta box"
+#~ msgid "Address"
+#~ msgstr "Adresse"
+
+#~ msgid ""
+#~ "You can enter an address if it is necessary for people to find this event."
+#~ msgstr ""
+#~ "Du kan angi ein adresse hvis det er nødvendig for at folk skal finne fram "
+#~ "til arrangementet."
+
+#~ msgctxt "event meta box"
+#~ msgid "Map Latitude"
+#~ msgstr "Kartbreddegrad"
+
+#~ msgid ""
+#~ "You can <a href=\"https://churchthemes.com/get-latitude-longitude\" "
+#~ "target=\"_blank\">use this</a> to convert an address into coordinates."
+#~ msgstr ""
+#~ "Du kan <a href=\"https://churchthemes.com/get-latitude-longitude\" target="
+#~ "\"_blank\">bruke denne</a> for å konvertere ein adresse til koordinater."
+
+#~ msgctxt "event meta box"
+#~ msgid "Map Longitude"
+#~ msgstr "Kartlengdegrad"
+
+#~ msgctxt "event meta box"
+#~ msgid "Map Type"
+#~ msgstr "Karttype"
+
+#~ msgctxt "event meta box"
+#~ msgid ""
+#~ "You can show a road map, satellite imagery, a combination of both "
+#~ "(hybrid) or terrain."
+#~ msgstr ""
+#~ "Du kan syne eit veikart, satelittblider, ein kombinasjon av begge "
+#~ "(hybrid), eller terreng."
+
+#~ msgctxt "event meta box"
+#~ msgid "Map Zoom"
+#~ msgstr "Kartzoom"
+
+#~ msgctxt "event meta box"
+#~ msgid ""
+#~ "A lower number is more zoomed out while a higher number is more zoomed in."
+#~ msgstr ""
+#~ "Eit lavere tall betyr at det er zoomet meir ut, mens eit høgre tall betyr "
+#~ "at det er zoomet meir inn."
+
+#~ msgctxt "location meta box"
+#~ msgid "Address"
+#~ msgstr "Adresse"
+
+#~ msgctxt "location meta box"
+#~ msgid "Phone"
+#~ msgstr "Telefon"
+
+#~ msgctxt "location meta box"
+#~ msgid "Map Latitude"
+#~ msgstr "Kartbreddegrad"
+
+#~ msgctxt "location meta box"
+#~ msgid "Map Longitude"
+#~ msgstr "Kartlengdegrad"
+
+#~ msgctxt "location meta box"
+#~ msgid "Map Type"
+#~ msgstr "Karttype"
+
+#~ msgctxt "location meta box"
+#~ msgid ""
+#~ "You can show a road map, satellite imagery, a combination of both "
+#~ "(hybrid) or terrain."
+#~ msgstr ""
+#~ "Du kan vise eit vegkart, satelittbilder, ein kombinasjon av begge "
+#~ "(hybrid), eller terreng."
+
+#~ msgctxt "location meta box"
+#~ msgid "Map Zoom"
+#~ msgstr "Kartzoom"
+
+#~ msgctxt "location meta box"
+#~ msgid ""
+#~ "A lower number is more zoomed out while a higher number is more zoomed in."
+#~ msgstr ""
+#~ "Et lavere tall betyr at det er zoomet mer ut, mens et høyere tall betyr "
+#~ "at det er zoomet mer inn."
+
+#~ msgctxt "location meta box"
+#~ msgid "Email"
+#~ msgstr "E-post"
+
+#~ msgid "Choose an Video File"
+#~ msgstr "Velg ei videofil"
