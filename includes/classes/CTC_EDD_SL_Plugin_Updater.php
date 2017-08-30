@@ -209,23 +209,52 @@ class CTC_EDD_SL_Plugin_Updater {
 
             $changelog_link = self_admin_url( 'index.php?edd_sl_action=view_plugin_changelog&plugin=' . $this->name . '&slug=' . $this->slug . '&TB_iframe=true&width=772&height=911' );
 
+            // CT Mod
+            // Use external changelog URL instead of post-provided changelog embedded in modal
+            $ctc_changelog_url = ctc_get_add_on( $this->slug, 'changelog_url' );
+            $ctc_changelog_link_class = 'thickbox';
+            if ( $ctc_changelog_url ) {
+                $changelog_link = $ctc_changelog_url;
+                $ctc_changelog_link_class = '';
+            }
+
+            // CT Mod
+            // 1. Added CTC textdomain
+            // 2. Added class replacement. If $changelog_link provided, class is none; otherwise class for modal is used
             if ( empty( $version_info->download_link ) ) {
                 printf(
-                    __( 'There is a new version of %1$s available. %2$sView version %3$s details%4$s.', 'church-theme-content' ),
+                    wp_kses( // CTC Mod - escape translation string
+                        __( 'There is a new version of %1$s available. <a target="_blank" class="%4$s" href="%2$s">View version %3$s details</a>.', 'church-theme-content' ), // CTC Mod textdomain
+                        array(
+                            'a' => array(
+                                'href' => array(),
+                                'target' => array(),
+                                'class' => array(),
+                            )
+                        )
+                    ),
                     esc_html( $version_info->name ),
-                    '<a target="_blank" class="thickbox" href="' . esc_url( $changelog_link ) . '">',
+                    esc_url( $changelog_link ),
                     esc_html( $version_info->new_version ),
-                    '</a>'
+                    $ctc_changelog_link_class
                 );
             } else {
                 printf(
-                    __( 'There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s.', 'church-theme-content' ),
+                    wp_kses( // CTC Mod - escape translation string
+                        __( 'There is a new version of %1$s available. <a target="_blank" class="%5$s" href="%2$s">View version %3$s details</a> or <a href="%4$s">update now</a>.', 'church-theme-content' ), // CTC Mod textdomain
+                        array(
+                            'a' => array(
+                                'href' => array(),
+                                'target' => array(),
+                                'class' => array(),
+                            )
+                        )
+                    ),
                     esc_html( $version_info->name ),
-                    '<a target="_blank" class="thickbox" href="' . esc_url( $changelog_link ) . '">',
+                    esc_url( $changelog_link ),
                     esc_html( $version_info->new_version ),
-                    '</a>',
-                    '<a href="' . esc_url( wp_nonce_url( self_admin_url( 'update.php?action=upgrade-plugin&plugin=' ) . $this->name, 'upgrade-plugin_' . $this->name ) ) .'">',
-                    '</a>'
+                    esc_url( wp_nonce_url( self_admin_url( 'update.php?action=upgrade-plugin&plugin=' ) . $this->name, 'upgrade-plugin_' . $this->name ) ),
+                    $ctc_changelog_link_class
                 );
             }
 
