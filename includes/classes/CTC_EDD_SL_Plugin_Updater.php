@@ -10,7 +10,6 @@
  * - Prefixed so this version always loads; class_exists() not necessary
  * - Change textdomain from easy-digital-downloads to church-theme-content
  * - Make $changelog_link go to external URL if provided, in new window
- * - Escaped translation strings
  */
 
 // Exit if accessed directly
