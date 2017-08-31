@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * Get feature data
  *
  * Used for mapping features to post types, theme support and so on.
- * Al feature data returned when $feature is empty
+ * All feature data returned when $feature is empty
  *
  * @since 0.9
  * @param string $feature Feature to get data for; if none, gets data for all features

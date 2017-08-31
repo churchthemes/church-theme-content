@@ -32,24 +32,22 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function ctc_glance_add_post_types( $items ) {
 
-	// Post types to show.
-	$post_types = array(
-		'ctc_sermon',
-		'ctc_event',
-		'ctc_person',
-		'ctc_location',
-	);
+	// Get Church Content plugin features / post types.
+	$ctc_features = ctc_get_feature_data();
 
-	// Loop post types.
-	foreach ( $post_types as $type ) {
+	// Loop features / post types.
+	foreach ( $ctc_features as $feature => $feature_data ) {
 
-		// Only if post type is registered.
-		if ( ! post_type_exists( $type ) ) {
+		// Get post type.
+		$post_type = $feature_data['post_type'];
+
+		// Only if features is supported and post type is registered.
+		if ( ! ctc_feature_supported( $feature ) || ! post_type_exists( $post_type ) ) {
 			continue;
 		}
 
 		// Get post counts (published, trash, etc.).
-		$num_posts = wp_count_posts( $type );
+		$num_posts = wp_count_posts( $post_type );
 
 		// Only if have count data.
 		if ( $num_posts ) {
@@ -58,20 +56,20 @@ function ctc_glance_add_post_types( $items ) {
 			$published = intval( $num_posts->publish );
 
 			// Get post type data.
-			$post_type = get_post_type_object( $type );
+			$post_type_data = get_post_type_object( $post_type );
 
 			// Singular or plural label based on published post count.
 			if ( 1 === $published ) {
-				$text = number_format_i18n( $published ) . ' ' . $post_type->labels->singular_name;
+				$text = number_format_i18n( $published ) . ' ' . $post_type_data->labels->singular_name;
 			} else {
-				$text = number_format_i18n( $published ) . ' ' . $post_type->labels->name;
+				$text = number_format_i18n( $published ) . ' ' . $post_type_data->labels->name;
 			}
 
 			// Show linked if user can edit posts.
-			if ( current_user_can( $post_type->cap->edit_posts ) ) {
-				$items[] = sprintf( '<a class="%1$s-count" href="edit.php?post_type=%1$s">%2$s</a>', $type, $text ) . "\n";
+			if ( current_user_can( $post_type_data->cap->edit_posts ) ) {
+				$items[] = sprintf( '<a class="%1$s-count" href="edit.php?post_type=%1$s">%2$s</a>', $post_type, $text ) . "\n";
 			} else { // Otherwise show unlinked.
-				$items[] = sprintf( '<span class="%1$s-count">%2$s</span>', $type, $text ) . "\n";
+				$items[] = sprintf( '<span class="%1$s-count">%2$s</span>', $post_type, $text ) . "\n";
 			}
 
 		}
