@@ -82,4 +82,4 @@ function ctc_glance_add_post_types( $items ) {
 
 }
 
-add_filter( 'dashboard_glance_items', 'ctc_glance_add_post_types', 10, 1 );
+//add_filter( 'dashboard_glance_items', 'ctc_glance_add_post_types', 10, 1 );
