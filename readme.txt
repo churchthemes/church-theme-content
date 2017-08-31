@@ -1,4 +1,4 @@
-=== Church Content ===
+=== Church Content - Sermons, Events and More ===
 Contributors: churchthemes, stevengliebe, galengidman
 Tags: church, churches, sermon, sermons, ministry, ministries, event, events, calendar, location, locations
 Requires at least: 3.6
