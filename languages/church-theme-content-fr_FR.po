@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Church Theme Content\n"
+"Project-Id-Version: Church Content\n"
 "POT-Creation-Date: 2016-09-07 13:19+0000\n"
 "PO-Revision-Date: 2016-09-13 09:50-0500\n"
 "Last-Translator: churchthemes.com <contact@churchthemes.com>\n"
@@ -31,7 +31,7 @@ msgstr ""
 
 #: ../includes/admin/admin-enqueue-scripts.php:37
 msgid ""
-"Go to Settings > Church Theme Content to set your Google Maps API Key in "
+"Go to Settings > Church Content to set your Google Maps API Key in "
 "order to use this button."
 msgstr ""
 
@@ -69,7 +69,7 @@ msgstr ""
 #, c-format
 msgid ""
 "<strong>Google Maps API Key Not Set.</strong> You must set it in <a href="
-"\"%1$s\">Church Theme Content Settings</a> for maps to work."
+"\"%1$s\">Church Content Settings</a> for maps to work."
 msgstr ""
 
 #: ../includes/admin/admin-maps.php:338

@@ -3,7 +3,7 @@
  * CT Recurrence Class
  *
  * This class presents future recurring dates based on given arguments.
- * It is used in the Church Theme Content, Custom Recurring Events add-on and Church Theme Framework.
+ * It is used in the Church Content, Custom Recurring Events add-on and Church Theme Framework.
  *
  * It is compatible with PHP 5.2.4, the minimum version required by WordPress.
  * PHP manual recommends using DateTime::modify() for PHP 5.2 versus strtotime().

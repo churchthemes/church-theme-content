@@ -44,9 +44,9 @@ function ctc_settings_setup() {
 		'menu_title'	=> CTC_NAME,
 
 		// Settings page description
-						/* translators: %1$s is Church Theme Content plugin URL, %2$s is add-ons URL */
+						/* translators: %1$s is Church Content plugin URL, %2$s is add-ons URL */
 		'desc'			=> sprintf(
-							__( 'These settings are for the <a href="%1$s" target="_blank">Church Theme Content</a> plugin and its <a href="%2$s" target="_blank">Add-ons</a>.', 'church-theme-content' ),
+							__( 'These settings are for the <a href="%1$s" target="_blank">Church Content</a> plugin and its <a href="%2$s" target="_blank">Add-ons</a>.', 'church-theme-content' ),
 							'https://churchthemes.com/plugins/church-theme-content/?utm_source=ctc&utm_medium=plugin&utm_campaign=church-theme-content&utm_content=settings',
 							'https://churchthemes.com/plugins/?utm_source=ctc&utm_medium=plugin&utm_campaign=add-ons&utm_content=settings'
 						),

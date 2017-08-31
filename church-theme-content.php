@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Church Theme Content
+ * Plugin Name: Church Content
  * Plugin URI: https://churchthemes.com/plugins/church-theme-content
  * Description: Provides compatible themes with sermon, event, person and location post types. A <strong>compatible theme is required</strong> for displaying content.
  * Version: 1.7.2

@@ -1,4 +1,4 @@
-=== Church Theme Content ===
+=== Church Content ===
 Contributors: churchthemes, stevengliebe, galengidman
 Tags: church, churches, sermon, sermons, ministry, ministries, event, events, calendar, location, locations
 Requires at least: 3.6
@@ -61,7 +61,7 @@ Several translations are available, including English, Spanish, German, French, 
 
 1. Log into your WordPress admin area
 2. Go to **Plugins** > **Add New**
-3. Search for *Church Theme Content*
+3. Search for *Church Content*
 4. Click **Install Now** for the plugin
 5. Click **Activate Plugin** after installation
 

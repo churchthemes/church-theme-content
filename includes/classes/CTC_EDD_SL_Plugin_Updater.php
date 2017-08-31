@@ -2,9 +2,9 @@
 /**
  * Easy Digital Downloads Software Licensing Plugin Updater
  *
- * Church Theme Content add-ons can leverage this for automatic updates.
+ * Church Content add-ons can leverage this for automatic updates.
  *
- * Modified for Church Theme Content plugin. See "CTC Mod" comments.
+ * Modified for Church Content plugin. See "CTC Mod" comments.
  *
  * - Prefixed class and filename to remind that this is modified
  * - Prefixed so this version always loads; class_exists() not necessary

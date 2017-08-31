@@ -646,8 +646,8 @@ msgid "%1$s Settings"
 msgstr "Innstillinger for %1$s"
 
 #: ../includes/settings.php:47
-msgid "These settings are for the <a href=\"%1$s\" target=\"_blank\">Church Theme Content</a> plugin and its <a href=\"%2$s\" target=\"_blank\">Add-ons</a>."
-msgstr "Disse innstillingene er for  <a href=\"%1$s\" target=\"_blank\">Church Theme Content</a>-utvidelsen og dens <a href=\"%2$s\" target=\"_blank\">tillegg</a>."
+msgid "These settings are for the <a href=\"%1$s\" target=\"_blank\">Church Content</a> plugin and its <a href=\"%2$s\" target=\"_blank\">Add-ons</a>."
+msgstr "Disse innstillingene er for  <a href=\"%1$s\" target=\"_blank\">Church Content</a>-utvidelsen og dens <a href=\"%2$s\" target=\"_blank\">tillegg</a>."
 
 #: ../includes/settings.php:70
 msgctxt "settings"

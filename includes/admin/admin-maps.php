@@ -200,7 +200,7 @@ function ctc_gmaps_api_key_notice() {
 			printf(
 				wp_kses(
 					/* translators: %1$s is URL for plugin settings */
-					__( '<strong>Google Maps API Key Not Set.</strong> You must set it in <a href="%1$s">Church Theme Content Settings</a> for maps to work.', 'church-theme-content' ),
+					__( '<strong>Google Maps API Key Not Set.</strong> You must set it in <a href="%1$s">Church Content Settings</a> for maps to work.', 'church-theme-content' ),
 					array(
 						'strong' => array(),
 						'a' => array(
