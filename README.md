@@ -12,7 +12,7 @@ Experienced WordPress developers agree that functionality like this does not bel
 
 For more information:
 
-* [View on churchthemes.com](https://churchthemes.com/plugins/church-theme-content/)
+* [View on churchthemes.com](https://churchthemes.com/plugins/church-content/)
 * [View on WordPress.org](http://wordpress.org/plugins/church-theme-content)
 
 For a list of official and third-party compatible themes, see [Best Church WordPress Themes](https://churchthemes.com/best-church-wordpress-themes/).
@@ -22,4 +22,4 @@ Developers
 
 The Church Content plugin was made in a way that other church theme developers can take advantage of it. A couple benefits are that you will save time and be helping to accomplish better data portability among church websites powered by WordPress.
 
-Visit the [Developer Guide](https://churchthemes.com/guides/developer/church-theme-content/) on churchthemes.com for instructions and example code.
+Visit the [Developer Guide](https://churchthemes.com/guides/developer/church-content/) on churchthemes.com for instructions and example code.
