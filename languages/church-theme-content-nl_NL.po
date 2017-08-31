@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Church Content\n"
-"POT-Creation-Date: 2016-08-03 11:24-0500\n"
-"PO-Revision-Date: 2016-08-03 11:24-0500\n"
+"POT-Creation-Date: 2017-08-31 14:13-0500\n"
+"PO-Revision-Date: 2017-08-31 14:13-0500\n"
 "Last-Translator: churchthemes.com <contact@churchthemes.com>\n"
 "Language-Team: Het Kruispunt\n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_nx:1,2;_x:1,2c;_ex:1,2c;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:1,2,3c\n"
@@ -30,8 +30,8 @@ msgstr ""
 
 #: ../includes/admin/admin-enqueue-scripts.php:37
 msgid ""
-"Go to Settings > Church Content to set your Google Maps API Key in "
-"order to use this button."
+"Go to Settings > Church Content to set your Google Maps API Key in order to "
+"use this button."
 msgstr ""
 
 #: ../includes/admin/admin-event-fields.php:39
@@ -132,6 +132,7 @@ msgid "Address"
 msgstr "Adres"
 
 #: ../includes/admin/admin-event-fields.php:394
+#: ../includes/admin/admin-location-fields.php:104
 msgid "Show directions link"
 msgstr "Toon link naar fotogalerij"
 
@@ -474,14 +475,14 @@ msgstr ""
 "De <b>%1$s</b> theme ondersteunt niet de <b>%2$s</b> plugin. <a href=\"%3$s"
 "\" target=\"_blank\">Meer informatie</a>, <a href=\"%4$s\">Sluiten<"
 
-#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:205
+#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:226
 #, php-format
 msgid ""
 "There is a new version of %1$s available. <a target=\"_blank\" class=\"%4$s"
 "\" href=\"%2$s\">View version %3$s details</a>."
 msgstr ""
 
-#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:222
+#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:243
 #, php-format
 msgid ""
 "There is a new version of %1$s available. <a target=\"_blank\" class=\"%5$s"
@@ -489,11 +490,11 @@ msgid ""
 "now</a>."
 msgstr ""
 
-#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:372
+#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:440
 msgid "You do not have permission to install plugin updates"
 msgstr ""
 
-#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:372
+#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:440
 msgid "Error"
 msgstr ""
 
@@ -548,155 +549,171 @@ msgid "View Sermon"
 msgstr "Bekijk samenkomsten"
 
 #: ../includes/post-types.php:38
+msgid "View Sermons"
+msgstr ""
+
+#: ../includes/post-types.php:39
 msgid "Search Sermons"
 msgstr "Zoek samenkomsten"
 
-#: ../includes/post-types.php:39
+#: ../includes/post-types.php:40
 msgid "No sermons found"
 msgstr "Geen samenkomsten gevonden"
 
-#: ../includes/post-types.php:40
+#: ../includes/post-types.php:41
 msgid "No sermons found in Trash"
 msgstr "Geen Samenkomsten gevonden in de prullenmand"
 
-#: ../includes/post-types.php:79
+#: ../includes/post-types.php:81
 msgctxt "post type general name"
 msgid "Events"
 msgstr "Activiteiten"
 
-#: ../includes/post-types.php:80
+#: ../includes/post-types.php:82
 msgctxt "post type singular name"
 msgid "Event"
 msgstr "Activiteit"
 
-#: ../includes/post-types.php:81
+#: ../includes/post-types.php:83
 msgctxt "event"
 msgid "Add New"
 msgstr "Nieuwe toevoegen"
 
-#: ../includes/post-types.php:82
+#: ../includes/post-types.php:84
 msgid "Add Event"
 msgstr "Activiteit toevoegen"
 
-#: ../includes/post-types.php:83
+#: ../includes/post-types.php:85
 msgid "Edit Event"
 msgstr "Activiteit bewerken"
 
-#: ../includes/post-types.php:84
+#: ../includes/post-types.php:86
 msgid "New Event"
 msgstr "Nieuwe activiteit"
 
-#: ../includes/post-types.php:85
+#: ../includes/post-types.php:87
 msgid "All Events"
 msgstr "Alle activiteiten"
 
-#: ../includes/post-types.php:86
+#: ../includes/post-types.php:88
 msgid "View Event"
 msgstr "Bekijk activiteit"
 
-#: ../includes/post-types.php:87
+#: ../includes/post-types.php:89
+msgid "View Events"
+msgstr ""
+
+#: ../includes/post-types.php:90
 msgid "Search Events"
 msgstr "Activiteiten zoeken"
 
-#: ../includes/post-types.php:88
+#: ../includes/post-types.php:91
 msgid "No events found"
 msgstr "Geen activiteiten gevonden"
 
-#: ../includes/post-types.php:89
+#: ../includes/post-types.php:92
 msgid "No events found in Trash"
 msgstr "Geen activiteiten gevonden in de prullenmand"
 
-#: ../includes/post-types.php:128
+#: ../includes/post-types.php:132
 msgctxt "post type general name"
 msgid "Locations"
 msgstr "Locaties"
 
-#: ../includes/post-types.php:129
+#: ../includes/post-types.php:133
 msgctxt "post type singular name"
 msgid "Location"
 msgstr "Locatie"
 
-#: ../includes/post-types.php:130
+#: ../includes/post-types.php:134
 msgctxt "location"
 msgid "Add New"
 msgstr "Nieuwe toevoegen"
 
-#: ../includes/post-types.php:131
+#: ../includes/post-types.php:135
 msgid "Add Location"
 msgstr "Locatie toevoegen"
 
-#: ../includes/post-types.php:132
+#: ../includes/post-types.php:136
 msgid "Edit Location"
 msgstr "Locatie bewerken"
 
-#: ../includes/post-types.php:133
+#: ../includes/post-types.php:137
 msgid "New Location"
 msgstr "Nieuwe locatie"
 
-#: ../includes/post-types.php:134
+#: ../includes/post-types.php:138
 msgid "All Locations"
 msgstr "Alle locaties"
 
-#: ../includes/post-types.php:135
+#: ../includes/post-types.php:139
 msgid "View Location"
 msgstr "Bekijk locatie"
 
-#: ../includes/post-types.php:136
+#: ../includes/post-types.php:140
+msgid "View Locations"
+msgstr ""
+
+#: ../includes/post-types.php:141
 msgid "Search Locations"
 msgstr "Zoek locaties"
 
-#: ../includes/post-types.php:137
+#: ../includes/post-types.php:142
 msgid "No location found"
 msgstr "Geen locatie gevonden"
 
-#: ../includes/post-types.php:138
+#: ../includes/post-types.php:143
 msgid "No location found in Trash"
 msgstr "Geen locatie gevonden in de Prullenmand"
 
-#: ../includes/post-types.php:176
+#: ../includes/post-types.php:182
 msgctxt "post type general name"
 msgid "People"
 msgstr "Personen"
 
-#: ../includes/post-types.php:177
+#: ../includes/post-types.php:183
 msgctxt "post type singular name"
 msgid "Person"
 msgstr "Persoon"
 
-#: ../includes/post-types.php:178
+#: ../includes/post-types.php:184
 msgctxt "person"
 msgid "Add New"
 msgstr "Nieuwe toevoegen"
 
-#: ../includes/post-types.php:179
+#: ../includes/post-types.php:185
 msgid "Add Person"
 msgstr "Persoon toevoegen"
 
-#: ../includes/post-types.php:180
+#: ../includes/post-types.php:186
 msgid "Edit Person"
 msgstr "Persoon bewerken"
 
-#: ../includes/post-types.php:181
+#: ../includes/post-types.php:187
 msgid "New Person"
 msgstr "Nieuwe persoon"
 
-#: ../includes/post-types.php:182
+#: ../includes/post-types.php:188
 msgid "All People"
 msgstr "Alle personen"
 
-#: ../includes/post-types.php:183
+#: ../includes/post-types.php:189
 msgid "View Person"
 msgstr "Bekijk persoon"
 
-#: ../includes/post-types.php:184
+#: ../includes/post-types.php:190
+msgid "View People"
+msgstr ""
+
+#: ../includes/post-types.php:191
 msgid "Search People"
 msgstr "Personen zoeken"
 
-#: ../includes/post-types.php:185
+#: ../includes/post-types.php:192
 msgid "No people found"
 msgstr "Geen Personen gevonden"
 
-#: ../includes/post-types.php:186
+#: ../includes/post-types.php:193
 msgid "No people found in Trash"
 msgstr "Geen personen gevonden in de prullenmand"
 
@@ -708,7 +725,7 @@ msgstr ""
 #: ../includes/settings.php:49
 #, php-format
 msgid ""
-"These settings are for the <a href=\"%1$s\" target=\"_blank\">Church Theme "
+"These settings are for the <a href=\"%1$s\" target=\"_blank\">Church "
 "Content</a> plugin and its <a href=\"%2$s\" target=\"_blank\">Add-ons</a>."
 msgstr ""
 

@@ -1,22 +1,22 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Church Content\n"
-"POT-Creation-Date: 2016-09-07 13:19+0000\n"
-"PO-Revision-Date: 2016-09-13 09:50-0500\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-31 14:13-0500\n"
+"PO-Revision-Date: 2017-08-31 14:13-0500\n"
 "Last-Translator: churchthemes.com <contact@churchthemes.com>\n"
 "Language-Team: French (France)\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_nx:1,2;_x:1,2c;_ex:1,2c;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:1,2,3c\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"Report-Msgid-Bugs-To: \n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../includes/admin/admin-enqueue-scripts.php:35
@@ -31,130 +31,9 @@ msgstr ""
 
 #: ../includes/admin/admin-enqueue-scripts.php:37
 msgid ""
-"Go to Settings > Church Content to set your Google Maps API Key in "
-"order to use this button."
+"Go to Settings > Church Content to set your Google Maps API Key in order to "
+"use this button."
 msgstr ""
-
-#: ../includes/admin/admin-event-fields.php:182
-msgid "Do not show times entered above (use only for ordering events)"
-msgstr ""
-
-#: ../includes/admin/admin-event-fields.php:206
-msgid ""
-"Optionally describe the time (e.g. \"9:30 am and 11:00 am\" or \"After "
-"Second Service\")"
-msgstr ""
-
-#: ../includes/admin/admin-event-fields.php:534
-msgctxt "event meta box"
-msgid "Registration"
-msgstr ""
-
-#: ../includes/admin/admin-event-fields.php:879
-#, c-format
-msgid "Every week until %1$s"
-msgstr ""
-
-#: ../includes/admin/admin-event-fields.php:895
-#, c-format
-msgid "Every month until %1$s"
-msgstr ""
-
-#: ../includes/admin/admin-event-fields.php:911
-#, c-format
-msgid "Every year until %1$s"
-msgstr ""
-
-#: ../includes/admin/admin-maps.php:203
-#, c-format
-msgid ""
-"<strong>Google Maps API Key Not Set.</strong> You must set it in <a href="
-"\"%1$s\">Church Content Settings</a> for maps to work."
-msgstr ""
-
-#: ../includes/admin/admin-maps.php:338
-msgid ""
-"You may click the map to adjust your location (it is draggable and can be "
-"double-clicked to zoom)."
-msgstr ""
-
-#: ../includes/admin/admin-maps.php:356
-#, c-format
-msgid ""
-"Set your <a href=\"%1$s\" target=\"_blank\">Google Maps API Key</a> to show "
-"a map preview here."
-msgstr ""
-
-#: ../includes/admin/admin-sermon-fields.php:111
-msgid "Choose a Video File"
-msgstr ""
-
-#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:205
-#, c-format
-msgid ""
-"There is a new version of %1$s available. <a target=\"_blank\" class=\"%4$s"
-"\" href=\"%2$s\">View version %3$s details</a>."
-msgstr ""
-
-#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:222
-#, c-format
-msgid ""
-"There is a new version of %1$s available. <a target=\"_blank\" class=\"%5$s"
-"\" href=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s\">update "
-"now</a>."
-msgstr ""
-
-#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:372
-msgid "You do not have permission to install plugin updates"
-msgstr ""
-
-#: ../includes/libraries/ct-plugin-settings/ct-plugin-settings.php:259
-msgid "Settings"
-msgstr ""
-
-#: ../includes/settings.php:49
-#, c-format
-msgid ""
-"These settings are for the <a href=\"%1$s\" target=\"_blank\">Church Theme "
-"Content</a> plugin and its <a href=\"%2$s\" target=\"_blank\">Add-ons</a>."
-msgstr ""
-
-#: ../includes/settings.php:69
-msgctxt "settings section title"
-msgid "General"
-msgstr ""
-
-#: ../includes/settings.php:79
-msgctxt "settings"
-msgid "Google Maps API Key"
-msgstr ""
-
-#: ../includes/settings.php:82
-#, c-format
-msgid ""
-"An API Key for Google Maps is required if you want to show maps for events "
-"or locations. <a href=\"%1$s\" target=\"_blank\">Get an API Key</a>"
-msgstr ""
-
-#: ../includes/settings.php:113
-msgid ""
-"Save then activate your add-on license keys to enable one-click updates for "
-"them."
-msgstr ""
-
-#: ../includes/taxonomies.php:270
-msgctxt "taxonomy singular name"
-msgid "Event Category"
-msgstr ""
-
-#: ../includes/admin/admin-event-fields.php:394
-msgid "Show directions link"
-msgstr "Afficher la direction"
-
-#: ../includes/admin/admin-maps.php:407
-msgctxt "coordinate button"
-msgid "Get From Address"
-msgstr "Obtenir l'adresse"
 
 #: ../includes/admin/admin-event-fields.php:39
 msgctxt "event meta box"
@@ -187,9 +66,19 @@ msgstr "Date de début"
 msgid "End Time"
 msgstr "Date de fin"
 
+#: ../includes/admin/admin-event-fields.php:182
+msgid "Do not show times entered above (use only for ordering events)"
+msgstr ""
+
 #: ../includes/admin/admin-event-fields.php:203
 msgid "Time Description"
 msgstr "Date & Heure"
+
+#: ../includes/admin/admin-event-fields.php:206
+msgid ""
+"Optionally describe the time (e.g. \"9:30 am and 11:00 am\" or \"After "
+"Second Service\")"
+msgstr ""
 
 #: ../includes/admin/admin-event-fields.php:227
 msgid "Recurrence"
@@ -246,6 +135,11 @@ msgstr ""
 msgid "Address"
 msgstr "Adresse"
 
+#: ../includes/admin/admin-event-fields.php:394
+#: ../includes/admin/admin-location-fields.php:104
+msgid "Show directions link"
+msgstr "Afficher la direction"
+
 #: ../includes/admin/admin-event-fields.php:413
 #: ../includes/admin/admin-location-fields.php:195
 msgid "Map Latitude"
@@ -266,12 +160,17 @@ msgstr "Type de carte"
 msgid "Map Zoom"
 msgstr "Zoom de carte"
 
+#: ../includes/admin/admin-event-fields.php:534
+msgctxt "event meta box"
+msgid "Registration"
+msgstr ""
+
 #: ../includes/admin/admin-event-fields.php:572
 msgid "Registration URL"
 msgstr "URL d'enregistrement"
 
 #: ../includes/admin/admin-event-fields.php:576
-#, c-format
+#, php-format
 msgid ""
 "Link to a third-party registration page from your Church Management System, "
 "EventBrite, etc. (or embed a form into the content above). <a href=\"%1$s\" "
@@ -308,13 +207,28 @@ msgctxt "time range separator"
 msgid " &ndash; "
 msgstr " &ndash; "
 
+#: ../includes/admin/admin-event-fields.php:879
+#, php-format
+msgid "Every week until %1$s"
+msgstr ""
+
 #: ../includes/admin/admin-event-fields.php:884
 msgid "Every week"
 msgstr "Revient toutes les 2 semaines"
 
+#: ../includes/admin/admin-event-fields.php:895
+#, php-format
+msgid "Every month until %1$s"
+msgstr ""
+
 #: ../includes/admin/admin-event-fields.php:900
 msgid "Every month"
 msgstr "Revient toutes les 2 semaines"
+
+#: ../includes/admin/admin-event-fields.php:911
+#, php-format
+msgid "Every year until %1$s"
+msgstr ""
 
 #: ../includes/admin/admin-event-fields.php:916
 msgid "Every year"
@@ -381,6 +295,31 @@ msgctxt "map"
 msgid "Terrain"
 msgstr "Terrain"
 
+#: ../includes/admin/admin-maps.php:203
+#, php-format
+msgid ""
+"<strong>Google Maps API Key Not Set.</strong> You must set it in <a href="
+"\"%1$s\">Church Content Settings</a> for maps to work."
+msgstr ""
+
+#: ../includes/admin/admin-maps.php:338
+msgid ""
+"You may click the map to adjust your location (it is draggable and can be "
+"double-clicked to zoom)."
+msgstr ""
+
+#: ../includes/admin/admin-maps.php:356
+#, php-format
+msgid ""
+"Set your <a href=\"%1$s\" target=\"_blank\">Google Maps API Key</a> to show "
+"a map preview here."
+msgstr ""
+
+#: ../includes/admin/admin-maps.php:407
+msgctxt "coordinate button"
+msgid "Get From Address"
+msgstr "Obtenir l'adresse"
+
 #: ../includes/admin/admin-person-fields.php:34
 msgid "Enter name here"
 msgstr "Entrez une nom ici"
@@ -442,7 +381,7 @@ msgid "Video"
 msgstr "Vidéo"
 
 #: ../includes/admin/admin-sermon-fields.php:103
-#, c-format
+#, php-format
 msgid ""
 "Upload a file by clicking \"Choose Video\" or upload a video to one of the "
 "<a href=\"%s\" target=\"_blank\">supported sites</a> (such as YouTube) then "
@@ -458,12 +397,16 @@ msgstr ""
 msgid "Choose Video"
 msgstr "Envoyer une vidéo"
 
+#: ../includes/admin/admin-sermon-fields.php:111
+msgid "Choose a Video File"
+msgstr ""
+
 #: ../includes/admin/admin-sermon-fields.php:127
 msgid "Audio"
 msgstr "Audio"
 
 #: ../includes/admin/admin-sermon-fields.php:131
-#, c-format
+#, php-format
 msgid ""
 "Upload a file by clicking \"Choose Audio\" or upload audio to one of the <a "
 "href=\"%s\" target=\"_blank\">supported sites</a> (such as SoundCloud) then "
@@ -533,7 +476,7 @@ msgid "PDF"
 msgstr "PDF"
 
 #: ../includes/admin/admin-support.php:56
-#, c-format
+#, php-format
 msgid ""
 "The <b>%1$s</b> theme does not support the <b>%2$s</b> plugin. <a href=\"%3$s"
 "\" target=\"_blank\">More Information</a>, <a href=\"%4$s\">Dismiss</a>"
@@ -541,18 +484,41 @@ msgstr ""
 "Le thème <b>%1$s</b> ne supporte pas le module <b>%2$s</b>. <a href=\"%3$s\" "
 "target=\"_blank\">Plus d'information</a>, <a href=\"%4$s\">Passer</a>"
 
-#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:372
+#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:226
+#, php-format
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" class=\"%4$s"
+"\" href=\"%2$s\">View version %3$s details</a>."
+msgstr ""
+
+#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:243
+#, php-format
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" class=\"%5$s"
+"\" href=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s\">update "
+"now</a>."
+msgstr ""
+
+#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:440
+msgid "You do not have permission to install plugin updates"
+msgstr ""
+
+#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:440
 msgid "Error"
 msgstr ""
 "<p><b>Erreur Google Map:</b> <i>latitude</i> et <i>longitude</i> attributs "
 "requis. Voir la documentation de l'aide.</p>"
+
+#: ../includes/libraries/ct-plugin-settings/ct-plugin-settings.php:259
+msgid "Settings"
+msgstr ""
 
 #: ../includes/mime-types.php:76
 msgid "Manage PDFs"
 msgstr "Gérer les fichiers PDF"
 
 #: ../includes/mime-types.php:77
-#, c-format
+#, php-format
 msgid "PDF <span class=\"count\">(%s)</span>"
 msgid_plural "PDFs <span class=\"count\">(%s)</span>"
 msgstr[0] "PDF <span class=\"count\">(%s)</span>"
@@ -594,167 +560,213 @@ msgid "View Sermon"
 msgstr "Voir une prédication"
 
 #: ../includes/post-types.php:38
+msgid "View Sermons"
+msgstr ""
+
+#: ../includes/post-types.php:39
 msgid "Search Sermons"
 msgstr "Rechercher une prédication"
 
-#: ../includes/post-types.php:39
+#: ../includes/post-types.php:40
 msgid "No sermons found"
 msgstr "Pas de prédication trouvée"
 
-#: ../includes/post-types.php:40
+#: ../includes/post-types.php:41
 msgid "No sermons found in Trash"
 msgstr "Pas de prédication trouvée dans la corbeille"
 
-#: ../includes/post-types.php:79
+#: ../includes/post-types.php:81
 msgctxt "post type general name"
 msgid "Events"
 msgstr "Évènements"
 
-#: ../includes/post-types.php:80
+#: ../includes/post-types.php:82
 msgctxt "post type singular name"
 msgid "Event"
 msgstr "Évènement"
 
-#: ../includes/post-types.php:81
+#: ../includes/post-types.php:83
 msgctxt "event"
 msgid "Add New"
 msgstr "Ajouter"
 
-#: ../includes/post-types.php:82
+#: ../includes/post-types.php:84
 msgid "Add Event"
 msgstr "Ajouter un évènement"
 
-#: ../includes/post-types.php:83
+#: ../includes/post-types.php:85
 msgid "Edit Event"
 msgstr "Modifier l'évènement"
 
-#: ../includes/post-types.php:84
+#: ../includes/post-types.php:86
 msgid "New Event"
 msgstr "Nouvel évènement"
 
-#: ../includes/post-types.php:85
+#: ../includes/post-types.php:87
 msgid "All Events"
 msgstr "Tous les évènements"
 
-#: ../includes/post-types.php:86
+#: ../includes/post-types.php:88
 msgid "View Event"
 msgstr "Voir l'évènement"
 
-#: ../includes/post-types.php:87
+#: ../includes/post-types.php:89
+msgid "View Events"
+msgstr ""
+
+#: ../includes/post-types.php:90
 msgid "Search Events"
 msgstr "Rechercher un évènement"
 
-#: ../includes/post-types.php:88
+#: ../includes/post-types.php:91
 msgid "No events found"
 msgstr "Pas d'évènement trouvé"
 
-#: ../includes/post-types.php:89
+#: ../includes/post-types.php:92
 msgid "No events found in Trash"
 msgstr "Pas d'évènement touvé dans la corbeille"
 
-#: ../includes/post-types.php:128
+#: ../includes/post-types.php:132
 msgctxt "post type general name"
 msgid "Locations"
 msgstr "Emplacements"
 
-#: ../includes/post-types.php:129
+#: ../includes/post-types.php:133
 msgctxt "post type singular name"
 msgid "Location"
 msgstr "Emplacement"
 
-#: ../includes/post-types.php:130
+#: ../includes/post-types.php:134
 msgctxt "location"
 msgid "Add New"
 msgstr "Ajouter"
 
-#: ../includes/post-types.php:131
+#: ../includes/post-types.php:135
 msgid "Add Location"
 msgstr "Ajouter un emplacement"
 
-#: ../includes/post-types.php:132
+#: ../includes/post-types.php:136
 msgid "Edit Location"
 msgstr "Modifier l'emplacement"
 
-#: ../includes/post-types.php:133
+#: ../includes/post-types.php:137
 msgid "New Location"
 msgstr "Nouvel emplacement"
 
-#: ../includes/post-types.php:134
+#: ../includes/post-types.php:138
 msgid "All Locations"
 msgstr "Tous les emplacements"
 
-#: ../includes/post-types.php:135
+#: ../includes/post-types.php:139
 msgid "View Location"
 msgstr "Voir l'emplacement"
 
-#: ../includes/post-types.php:136
+#: ../includes/post-types.php:140
+msgid "View Locations"
+msgstr ""
+
+#: ../includes/post-types.php:141
 msgid "Search Locations"
 msgstr "Rechercher un emplacement"
 
-#: ../includes/post-types.php:137
+#: ../includes/post-types.php:142
 msgid "No location found"
 msgstr "Pas d'emplacement trouvé"
 
-#: ../includes/post-types.php:138
+#: ../includes/post-types.php:143
 msgid "No location found in Trash"
 msgstr "Pas d'emplacement trouvé dans la corbeille"
 
-#: ../includes/post-types.php:176
+#: ../includes/post-types.php:182
 msgctxt "post type general name"
 msgid "People"
 msgstr "Personnes"
 
-#: ../includes/post-types.php:177
+#: ../includes/post-types.php:183
 msgctxt "post type singular name"
 msgid "Person"
 msgstr "Personne"
 
-#: ../includes/post-types.php:178
+#: ../includes/post-types.php:184
 msgctxt "person"
 msgid "Add New"
 msgstr "Ajouter"
 
-#: ../includes/post-types.php:179
+#: ../includes/post-types.php:185
 msgid "Add Person"
 msgstr "Ajouter une personne"
 
-#: ../includes/post-types.php:180
+#: ../includes/post-types.php:186
 msgid "Edit Person"
 msgstr "Modifier la personne"
 
-#: ../includes/post-types.php:181
+#: ../includes/post-types.php:187
 msgid "New Person"
 msgstr "Nouvelle personne"
 
-#: ../includes/post-types.php:182
+#: ../includes/post-types.php:188
 msgid "All People"
 msgstr "Toutes les personnes"
 
-#: ../includes/post-types.php:183
+#: ../includes/post-types.php:189
 msgid "View Person"
 msgstr "Voir la personne"
 
-#: ../includes/post-types.php:184
+#: ../includes/post-types.php:190
+msgid "View People"
+msgstr ""
+
+#: ../includes/post-types.php:191
 msgid "Search People"
 msgstr "Rechercher une personne"
 
-#: ../includes/post-types.php:185
+#: ../includes/post-types.php:192
 msgid "No people found"
 msgstr "Pas de personne trouvée"
 
-#: ../includes/post-types.php:186
+#: ../includes/post-types.php:193
 msgid "No people found in Trash"
 msgstr "Pas de personne trouvée dans la corbeille"
 
 #: ../includes/settings.php:43
-#, c-format
+#, php-format
 msgid "%1$s Settings"
 msgstr "Plus d'articles de %s"
+
+#: ../includes/settings.php:49
+#, php-format
+msgid ""
+"These settings are for the <a href=\"%1$s\" target=\"_blank\">Church "
+"Content</a> plugin and its <a href=\"%2$s\" target=\"_blank\">Add-ons</a>."
+msgstr ""
+
+#: ../includes/settings.php:69
+msgctxt "settings section title"
+msgid "General"
+msgstr ""
+
+#: ../includes/settings.php:79
+msgctxt "settings"
+msgid "Google Maps API Key"
+msgstr ""
+
+#: ../includes/settings.php:82
+#, php-format
+msgid ""
+"An API Key for Google Maps is required if you want to show maps for events "
+"or locations. <a href=\"%1$s\" target=\"_blank\">Get an API Key</a>"
+msgstr ""
 
 #: ../includes/settings.php:108
 msgctxt "settings"
 msgid "Add-on Licenses"
 msgstr "Ajouter un commentaire"
+
+#: ../includes/settings.php:113
+msgid ""
+"Save then activate your add-on license keys to enable one-click updates for "
+"them."
+msgstr ""
 
 #: ../includes/taxonomies.php:30
 msgctxt "taxonomy general name"
@@ -1085,6 +1097,11 @@ msgstr "Mots-clés"
 msgctxt "taxonomy general name"
 msgid "Event Categories"
 msgstr "Catégories d'événements"
+
+#: ../includes/taxonomies.php:270
+msgctxt "taxonomy singular name"
+msgid "Event Category"
+msgstr ""
 
 #: ../includes/taxonomies.php:271
 msgctxt "events"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Church Content\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-29 11:46-0500\n"
-"PO-Revision-Date: 2017-08-29 11:46-0500\n"
+"POT-Creation-Date: 2017-08-31 14:12-0500\n"
+"PO-Revision-Date: 2017-08-31 14:12-0500\n"
 "Last-Translator: churchthemes.com <contact@churchthemes.com>\n"
 "Language-Team: Emil Jonzon <emil.jonzon@gmail.com>\n"
 "Language: sv\n"
@@ -36,11 +36,11 @@ msgstr "Ange en adress ovan."
 
 #: ../includes/admin/admin-enqueue-scripts.php:37
 msgid ""
-"Go to Settings > Church Content to set your Google Maps API Key in "
-"order to use this button."
+"Go to Settings > Church Content to set your Google Maps API Key in order to "
+"use this button."
 msgstr ""
-"Gå till Inställningar> Church Content för att ställa in din API-nyckel "
-"för Google Maps för att kunna använda den här knappen."
+"Gå till Inställningar> Church Content för att ställa in din API-nyckel för "
+"Google Maps för att kunna använda den här knappen."
 
 #: ../includes/admin/admin-event-fields.php:39
 msgctxt "event meta box"
@@ -310,8 +310,8 @@ msgid ""
 "\"%1$s\">Church Content Settings</a> for maps to work."
 msgstr ""
 "<strong>API-nyckel för Google Maps har inte angetts.</strong> Du måste ange "
-"en sådan i inställningarna för <a href=\"%1$s\">Church Content</a> för "
-"att kartor ska fungera."
+"en sådan i inställningarna för <a href=\"%1$s\">Church Content</a> för att "
+"kartor ska fungera."
 
 #: ../includes/admin/admin-maps.php:338
 msgid ""
@@ -499,7 +499,7 @@ msgstr ""
 "Temat <b>%1$s</b> stöder inte pluginet <b>%2$s</b>. <a href=\"%3$s\" target="
 "\"_blank\">Mer information</a>, <a href=\"%4$s\">Avfärda</a>"
 
-#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:205
+#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:226
 #, php-format
 msgid ""
 "There is a new version of %1$s available. <a target=\"_blank\" class=\"%4$s"
@@ -508,7 +508,7 @@ msgstr ""
 "Det finns en ny version av %1$s tillgänglig. <a target=\"_blank\" class="
 "\"%4$s\" href=\"%2$s\">Visa detaljer för version %3$s</a>."
 
-#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:222
+#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:243
 #, php-format
 msgid ""
 "There is a new version of %1$s available. <a target=\"_blank\" class=\"%5$s"
@@ -519,11 +519,11 @@ msgstr ""
 "\"%5$s\" href=\"%2$s\">Visa detaljer för version %3$s</a> eller <a href="
 "\"%4$s\">uppdatera nu</a>."
 
-#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:372
+#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:440
 msgid "You do not have permission to install plugin updates"
 msgstr "Du har inte tillåtelse att installera uppdateringar av tillägg"
 
-#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:372
+#: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:440
 msgid "Error"
 msgstr "Fel"
 
@@ -754,12 +754,9 @@ msgstr "%1$s inställningar"
 #: ../includes/settings.php:49
 #, php-format
 msgid ""
-"These settings are for the <a href=\"%1$s\" target=\"_blank\">Church Theme "
+"These settings are for the <a href=\"%1$s\" target=\"_blank\">Church "
 "Content</a> plugin and its <a href=\"%2$s\" target=\"_blank\">Add-ons</a>."
 msgstr ""
-"Dessa inställningar är för pluginet <a href=\"%1$s\" target=\"_blank"
-"\">Church Content</a> och dess <a href=\"%2$s\" target=\"_blank"
-"\">tillägg</a>."
 
 #: ../includes/settings.php:69
 msgctxt "settings section title"
@@ -1248,6 +1245,15 @@ msgstr "Välj bland de mest använda grupperna"
 msgctxt "people menu name"
 msgid "Groups"
 msgstr "Grupper"
+
+#~ msgid ""
+#~ "These settings are for the <a href=\"%1$s\" target=\"_blank\">Church "
+#~ "Theme Content</a> plugin and its <a href=\"%2$s\" target=\"_blank\">Add-"
+#~ "ons</a>."
+#~ msgstr ""
+#~ "Dessa inställningar är för pluginet <a href=\"%1$s\" target=\"_blank"
+#~ "\">Church Content</a> och dess <a href=\"%2$s\" target=\"_blank"
+#~ "\">tillägg</a>."
 
 #~ msgid ""
 #~ "You can provide a building name, room number or other location name to "
