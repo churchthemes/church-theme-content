@@ -27,21 +27,27 @@ function ctc_admin_enqueue_styles() {
 
 	$screen = get_current_screen();
 
-	// Dashboard
-	if ( 'dashboard' === $screen->base ) { // only on Dashboard screen
+	// Chosen for user-friendly select inputs.
+	// This is used by Church Content Pro but enqueued by core plugin to be available elsewhere.
+	if ( ctc_is_cpt_add_edit() || $ctc_settings->is_settings_page() ) { // only when adding/editing a CTC-provided post or the Settings screen.
+		wp_enqueue_style( 'chosen', CTC_URL . '/' . CTC_CSS_DIR . '/chosen.min.css', false, CTC_VERSION );
+	}
+
+	// Dashboard.
+	if ( 'dashboard' === $screen->base ) { // only on Dashboard screen.
 		wp_enqueue_style( 'ctc-dashboard', CTC_URL . '/' . CTC_CSS_DIR . '/dashboard.css', false, CTC_VERSION );
 	}
 
-	// Plugin Settings
-	if ( $ctc_settings->is_settings_page() ) { // only on Plugin Settings page
+	// Plugin Settings.
+	if ( $ctc_settings->is_settings_page() ) { // only on Plugin Settings page.
 		wp_enqueue_style( 'ctc-settings', CTC_URL . '/' . CTC_CSS_DIR . '/settings.css', false, CTC_VERSION );
 	}
 
-	// Styles for showing map after related fields on event/location screens
-	if ( ctc_has_lat_lng_fields() ) { // only if event/location screen with latitude and longitude fields supported
+	// Styles for showing map after related fields on event/location screens.
+	if ( ctc_has_lat_lng_fields() ) { // only if event/location screen with latitude and longitude fields supported.
 		wp_enqueue_style( 'ctc-map-after-fields', CTC_URL . '/' . CTC_CSS_DIR . '/map-after-fields.css', false, CTC_VERSION );
 	}
 
 }
 
-add_action( 'admin_enqueue_scripts', 'ctc_admin_enqueue_styles' ); // admin-end only
+add_action( 'admin_enqueue_scripts', 'ctc_admin_enqueue_styles' ); // admin-end only.
