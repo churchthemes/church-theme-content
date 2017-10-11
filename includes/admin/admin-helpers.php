@@ -49,3 +49,34 @@ function ctc_admin_term_list( $post_id, $taxonomy ) {
 	return apply_filters( 'ctc_admin_term_list', $list, $post_id, $taxonomy );
 
 }
+
+/*********************************
+ * CONDITIONS
+ *********************************/
+
+/**
+ * Is this a Church Content plugin-provided custom post type add/edit screen?
+ *
+ * Example: Adding a sermon or editing an event.
+ *
+ * @since 1.9
+ * @global bool $multipage
+ * @return bool True if current post has multiple pages
+ */
+function ctc_is_cpt_add_edit() {
+
+	// Default result.
+	$result = false;
+
+	// Get current screen.
+	$screen = get_current_screen();
+
+	// Check of adding or editing a Church Content plugin-provided custom post type.
+	if ( 'post' === $screen->base && preg_match( '/^ctc_.*$/', $screen->post_type ) ) {
+		$result = true;
+	}
+
+	// Return filtered.
+	return apply_filters( 'ctc_is_cpt_add_edit', $result );
+
+}
