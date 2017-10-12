@@ -49,7 +49,7 @@ function ctc_add_meta_box_sermon_details() {
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> __( 'This is the description below the field.', 'church-theme-content' ),
-				'type'				=> 'text', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
+				'type'				=> 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -76,7 +76,7 @@ function ctc_add_meta_box_sermon_details() {
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> __( 'Check this if you provide a complete transcript above.', 'church-theme-content' ),
-				'type'				=> 'checkbox', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
+				'type'				=> 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> __( 'Full sermon text provided', 'church-theme-content' ), //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
@@ -104,7 +104,7 @@ function ctc_add_meta_box_sermon_details() {
 											apply_filters( 'ctc_sermon_video_sites_url', 'https://churchthemes.com/go/ctc-sermon-video-sites' ),
 											apply_filters( 'ctc_sermon_video_help_url', 'https://churchthemes.com/go/ctc-sermon-video-help' )
 										),
-				'type'				=> 'upload_textarea', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
+				'type'				=> 'upload_textarea', // text, textarea, checkbox, checkbox_multiple, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> __( 'Choose Video', 'church-theme-content' ), // text for button that opens media frame
@@ -132,7 +132,7 @@ function ctc_add_meta_box_sermon_details() {
 											apply_filters( 'ctc_sermon_audio_sites_url', 'https://churchthemes.com/go/ctc-sermon-audio-sites' ),
 											apply_filters( 'ctc_sermon_audio_help_url', 'https://churchthemes.com/go/ctc-sermon-audio-help' )
 										),
-				'type'				=> 'upload_textarea', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
+				'type'				=> 'upload_textarea', // text, textarea, checkbox, checkbox_multiple, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> __( 'Choose Audio', 'church-theme-content' ), // text for button that opens media frame
@@ -156,7 +156,7 @@ function ctc_add_meta_box_sermon_details() {
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> __( 'Upload a file by clicking "Choose PDF" or paste the URL to a PDF hosted on another site.', 'church-theme-content' ),
-				'type'				=> 'upload', // text, textarea, checkbox, radio, select, number, range, upload, upload_textarea, url, date, time
+				'type'				=> 'upload', // text, textarea, checkbox, checkbox_multiple, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> __( 'Choose PDF', 'church-theme-content' ), // text for button that opens media frame

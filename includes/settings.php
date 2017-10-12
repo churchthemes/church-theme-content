@@ -82,7 +82,7 @@ function ctc_settings_setup() {
 												__( 'An API Key for Google Maps is required if you want to show maps for events or locations. <a href="%1$s" target="_blank">Get an API Key</a>', 'church-theme-content' ),
 												'https://churchthemes.com/go/google-maps-api-key'
 											),
-						'type'				=> 'text', // text, textarea, checkbox, radio, select, number
+						'type'				=> 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number
 						'checkbox_label'	=> '', //show text after checkbox
 						'options'			=> array(), // array of keys/values for radio or select
 						'default'			=> '', // value to pre-populate option with (before first save or on reset)
@@ -122,7 +122,7 @@ function ctc_settings_setup() {
 					'setting_key' => array(
 						'name'				=> __( 'Field Name', 'church-theme-content' ),
 						'desc'				=> __( 'This is the description below the field.', 'church-theme-content' ),
-						'type'				=> 'text', // text, textarea, checkbox, radio, select, number
+						'type'				=> 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number
 						'checkbox_label'	=> '', //show text after checkbox
 						'options'			=> array(), // array of keys/values for radio or select
 						'default'			=> '', // value to pre-populate option with (before first save or on reset)
