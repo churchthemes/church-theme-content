@@ -25,12 +25,6 @@ function ctc_admin_enqueue_scripts() {
 
 	global $ctc_settings;
 
-	// Chosen for user-friendly select inputs.
-	// This is used by Church Content Pro but enqueued by core plugin to be available elsewhere.
-	if ( ctc_is_cpt_add_edit() || $ctc_settings->is_settings_page() ) { // only when adding/editing a CTC-provided post or the Settings screen.
-		wp_enqueue_script( 'chosen', CTC_URL . '/' . CTC_JS_DIR . '/chosen.jquery.min.js', false, CTC_VERSION );
-	}
-
 	// Scripts for showing map after related fields on event/location screens
 	if ( ctc_has_lat_lng_fields() ) { // only if event/location screen with latitude and longitude fields supported.
 
