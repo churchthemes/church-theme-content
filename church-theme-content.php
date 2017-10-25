@@ -196,11 +196,15 @@ class Church_Theme_Content {
 				CTC_INC_DIR . '/support.php',
 				CTC_INC_DIR . '/taxonomies.php',
 
-				// Classes
-				CTC_CLASS_DIR . '/ct-recurrence.php',
-
 				// Libraries
 				CTC_LIB_DIR . '/ct-plugin-settings/ct-plugin-settings.php', // see CTPS_URL constant defined above
+				CTC_LIB_DIR . '/php-rrule/RfcParser.php',
+				CTC_LIB_DIR . '/php-rrule/RRuleInterface.php',
+				CTC_LIB_DIR . '/php-rrule/RSet.php',
+				CTC_LIB_DIR . '/php-rrule/RRule.php',
+
+				// Classes
+				CTC_CLASS_DIR . '/ct-recurrence.php',
 
 			),
 

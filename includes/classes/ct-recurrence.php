@@ -18,8 +18,13 @@
  * @license   GPLv2 or later
  */
 
-// No direct access
-if ( ! defined( 'ABSPATH' ) ) exit;
+// No direct access.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+// php-rrule namespace.
+use RRule\RRule;
 
 /*******************************************
  * RECURRENCE CLASS
@@ -60,18 +65,18 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 		/**
 		 * Prepare arguments
 		 *
-		 * This validates, sets defaults and returns arguments.
+		 * This validates, sets defaults and returns arguments in format suitable for php-rrule.
 		 * It returns false if any of the arugments are invalid.
 		 *
 		 * @since 0.9
 		 * @access public
-		 * @param array $args Arguments for recurrence
-		 * @return array|bool Clean array or false if invalid
+		 * @param array $args Arguments for recurrence.
+		 * @return array|bool Clean array to pass onto rrule_args method before get_dates.
 		 */
 		public function prepare_args( $args ) {
 
 			// Is it a non-empty array?
-			if ( empty( $args ) || ! is_array( $args ) ) { // could be empty array; set bool
+			if ( empty( $args ) || ! is_array( $args ) ) { // could be empty array; set bool.
 				$args = false;
 			}
 
@@ -104,46 +109,71 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 			}
 			$args = $new_args;
 
-			// Start Date
-			if ( $args ) {
+			// Array to collect rrule into.
+			$rrule_args = array();
 
+			// Continue until find a bad argument.
+			$continue = true;
+
+			// Start Date
+			if ( $continue ) {
+
+				// Date is invalid.
 				if ( empty( $args['start_date'] ) || ! $this->validate_date( $args['start_date'] ) ) {
-					$args = false;
+					$continue = false;
+				}
+
+				// Date is valid.
+				else {
+
+					// Get start date's day of week (used later with rrule).
+					$start_date_day_of_week_abbrev = strtoupper( substr( date( 'D', strtotime( $args['start_date'] ) ), 0, 2 ) ); // English, two-letter code.
+
+					// Format for rrule.
+					$rrule_args['DTSTART'] = $args['start_date'];
+
 				}
 
 			}
 
-			// Until Date (optional)
-			if ( $args ) {
+			// Until Date (optional).
+			if ( $continue ) {
 
-				// Value is provided
+				// Value is provided.
 				if ( ! empty( $args['until_date'] ) ) {
 
-					// Date is invalid
+					// Date is invalid.
 					if ( ! $this->validate_date( $args['until_date'] ) ) {
-						$args = false;
+						$continue = false;
 					}
 
-					// Note: until_date can exceed start date
-					// If not allowed, would not be able to loop and check effectively
+					// Format for rrule.
+					else {
+						$rrule_args['UNTIL'] = str_replace( '-', '', $args['until_date'] ) . 'T0' . date_i18n( 'Z' ) . 'Z';
+					}
 
 				}
 
 			}
 
-			// Frequency
-			if ( $args ) {
+			// Frequency.
+			if ( $continue ) {
 
-				// Value is invalid
+				// Value is invalid.
 				if ( empty( $args['frequency'] ) || ! in_array( $args['frequency'], array( 'weekly', 'monthly', 'yearly' ) ) ) {
-					$args = false;
+					$continue = false;
+				}
+
+				// Format for rrule.
+				else {
+					$rrule_args['FREQ'] = strtoupper( $args['frequency'] );
 				}
 
 			}
 
 			// Interval
 			// Every X weeks / months / years
-			if ( $args ) {
+			if ( $continue ) {
 
 				// Default is 1 if nothing given
 				if ( empty( $args['interval'] ) ) {
@@ -152,13 +182,18 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 
 				// Invalid if not numeric or is negative
 				if ( ! is_numeric( $args['interval'] ) || $args['interval'] < 1 ) {
-					$args = false;
+					$continue = false;
+				}
+
+				// Format for rrule.
+				else {
+					$rrule_args['INTERVAL'] = $args['interval'];
 				}
 
 			}
 
 			// Monthly Type (required when frequency is monthly)
-			if ( $args ) {
+			if ( $continue ) {
 
 				// Value is required
 				if ( 'monthly' == $args['frequency'] ) {
@@ -170,7 +205,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 
 					// Value is invalid
 					if ( ! in_array( $args['monthly_type'], array( 'day', 'week' ) ) ) {
-						$args = false; // value is invalid
+						$continue = false; // value is invalid
 					}
 
 				}
@@ -183,7 +218,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 			}
 
 			// Monthly Week (required when frequency is monthly and monthly_type is week)
-			if ( $args ) {
+			if ( $continue ) {
 
 				// Value is required
 				if ( 'monthly' == $args['frequency'] && 'week' == $args['monthly_type'] ) {
@@ -199,31 +234,44 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 						$args['monthly_week'] = wp_json_encode( $args['monthly_week'] ); // JSON-encode.
 					}
 
-					// Is value valid?
+					// Value is invalid.
 					if ( empty( $args['monthly_week'] ) ) {
-						$args = false; // value is invalid.
-					} else {
+						$continue = false; // value is invalid.
+					}
+
+					// Value is valid.
+					else {
 
 						// Decode JSON array.
 						$monthly_week_decoded = json_decode( $args['monthly_week'] );
 
 						// Not an array
 						if ( ! is_array( $monthly_week_decoded ) ) {
-							$args = false; // value is invalid.
+							$continue = false; // value is invalid.
 						}
 
 						// Is an array.
 						else {
 
 							// Loop values to validate each.
+							$monthly_week_rrule = array();
 							foreach ( $monthly_week_decoded as $monthly_week_value ) {
 
 								// Is value valid?
 								if ( ! in_array( $monthly_week_value, $monthly_week_valid_values, true ) ) {
-									$args = false; // value is invalid.
+									$continue = false; // value is invalid.
 									break; // stop checking other values; they must all be valid
 								}
 
+								// Valid, add to array for rrule.
+								$monthly_week_rrule[] = str_replace( 'last', '-1', $monthly_week_value ); // -1 is last week of month.
+
+							}
+
+							// Format for rrule.
+							if ( $continue && $monthly_week_rrule ) { // values all valid.
+								$rrule_args['BYSETPOS'] = implode( ',', $monthly_week_rrule ); // 1 is week one, 2, 3, etc.; -1 is last week of month. Comma-separated.
+								$rrule_args['BYDAY'] = $start_date_day_of_week_abbrev; // start date's day of week as 2-letter abbreviation.
 							}
 
 						}
@@ -240,7 +288,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 			}
 
 			// Limit (optional)
-			if ( $args ) {
+			if ( $continue ) {
 
 				// Set default if no until date to prevent infinite loop
 				if ( empty( $args['limit'] ) && empty( $args['until_date'] ) ) {
@@ -252,219 +300,19 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 					$args['limit'] = false;
 				}
 
-			}
-
-			return $args;
-
-		}
-
-		/**
-		 * Calculate next date
-		 *
-		 * Calculate next date without regard for until_date or limit.
-		 * This may or may not be in the future.
-		 *
-		 * IMPORTANT: calc_* methods have no regard for until_date (the get_* methods do)
-		 *
-		 * @since 0.9
-		 * @access public
-		 * @param array $args Arguments determining recurrence
-		 * @return string|bool Date string or false if arguments invalid or no next date
-		 */
-		public function calc_next_date( $args ) {
-
-			$date = false;
-
-			// Validate and set default arguments
-			$args = $this->prepare_args( $args );
-
-			// Get next recurring date
-			// This may or may not be future
-			if ( $args ) { // valid args
-
-				// Get month, day and year
-				list( $start_date_y, $start_date_m, $start_date_d ) = explode( '-', $args['start_date'] );
-
-				// Calculate next recurrence
-				switch ( $args['frequency'] ) {
-
-					// Weekly
-					case 'weekly' :
-
-						// Add week(s)
-						// This will always be the same day of the week (Mon, Tue, etc.)
-						$DateTime = new DateTime( $args['start_date'] );
-						$DateTime->modify( '+' . $args['interval'] . ' weeks' );
-						list( $y, $m, $d ) = explode( '-', $DateTime->format( 'Y-m-d' ) );
-
-						break;
-
-					// Monthly
-					case 'monthly' :
-
-						// On same day of the month
-						// Move forward X month(s)
-						$DateTime = new DateTime( $args['start_date'] );
-						$DateTime->modify( '+' . $args['interval'] . ' months' );
-						list( $y, $m, $d ) = explode( '-', $DateTime->format( 'Y-m-d' ) );
-
-							// If day is less than what it was, the next month was skipped to because day of month didn't exist
-							// For example, October 31 recurring monthly became December 1, because November 31 doesn't example
-							// Another example is Feburary 29 not existing except on leap years
-							// Users should use "Last Day" instead of 29+ since they do not always exist (they can edit to correct)
-							if ( $d < $start_date_d ) {
-
-								// Move back to last day of last month
-								// It makes more helpful to stay on same month than skip to the next
-								$m--;
-								if ( 0 == $m ) {
-									$m = 12;
-									$y--;
-								}
-
-								// Get days in the prior month
-								$d = date( 't', mktime( 0, 0, 0, $m, $d, $y) );
-
-							}
-
-						// On a specific week of month's day
-						// 1st - 4th or Last day of week in the month
-						// This will adjust day of the month from "same day" to "Third Sunday", for example
-						// Note: Every month always has at least 4 full weeks (only 5 or 6 occasionally)
-						if ( 'week' == $args['monthly_type'] && ! empty( $args['monthly_week'] ) ) {
-
-							// What is start_date's day of the week
-							// 0 - 6 represents Sunday through Saturday
-							$start_date_day_of_week = date( 'w', strtotime( $args['start_date'] ) );
-
-							// Loop the days of this month
-							$week_of_month = 1;
-							$times_day_of_week_found = 0;
-							$days_in_month = date( 't', mktime( 0, 0, 0, $m, 1, $y ) );
-
-							for ( $i = 1; $i <= $days_in_month; $i++ ) {
-
-								// Get this day's day of week (0 - 6)
-								$day_of_week = date( 'w', mktime( 0, 0, 0, $m, $i, $y ) );
-
-								// This day's day of week matches start date's day of week
-								if ( $day_of_week == $start_date_day_of_week ) {
-
-									$last_day_of_week_found = $i;
-
-									// Count it
-									$times_day_of_week_found++;
-
-									// Is this the 1st - 4th day of week we're looking for?
-									if ( $args['monthly_week'] == $times_day_of_week_found ) {
-
-										$d = $i;
-
-										break;
-
-									}
-
-								}
-
-							}
-
-							// Are we looking for 'last' day of week in a month?
-							if ( 'last' == $args['monthly_week'] && ! empty( $last_day_of_week_found ) ) {
-								$d = $last_day_of_week_found;
-							}
-
-						}
-
-						break;
-
-					// Yearly
-					case 'yearly' :
-
-						// Move forward X year(s)
-						$DateTime = new DateTime( $args['start_date'] );
-						$DateTime->modify( '+' . $args['interval'] . ' years' );
-						list( $y, $m, $d ) = explode( '-', $DateTime->format( 'Y-m-d' ) );
-
-							// If day is less than what it was, the next month was skipped to because day of month didn't exist
-							// In the case of year this happens when February 29 tries to recur to next non-leap year
-							// Users should use "Last Day" instead of 29+ since they do not always exist (they can edit to correct)
-							if ( $d < $start_date_d ) {
-
-								// Move back to last day of last month
-								// It is more helpful to stay on same month than skip to the next
-								$m--;
-								if ( 0 == $m ) {
-									$m = 12;
-									$y--;
-								}
-
-								// Get days in the prior month
-								$d = date( 't', mktime( 0, 0, 0, $m, $d, $y) );
-
-							}
-
-						break;
-
-				}
-
-				// Form the date string
-				$date = date( 'Y-m-d', mktime( 0, 0, 0, $m, $d, $y ) ); // pad day, month with 0
-
-			}
-
-			return $date;
-
-		}
-
-		/**
-		 * Calculate next future date
-		 *
-		 * Calculate the next date in the future (may be today) without regard for until_date or limit.
-		 * This is helpful when cron misses a beat.
-		 *
-		 * IMPORTANT: calc_* methods have no regard for until_date (the get_* methods do)
-		 *
-		 * @since 0.9
-		 * @access public
-		 * @param array $args Arguments determining recurrence
-		 * @return string|bool Date string or false if arguments invalid or no next date
-		 */
-		public function calc_next_future_date( $args ) {
-
-			// Get next date
-			// This may or may not be future
-			$date = $this->calc_next_date( $args ); // returns false if invalid args
-
-			// Have valid date
-			if ( $date ) {
-
-				// Convert dates to timestamp for comparison
-				$today_ts = strtotime( date_i18n( 'Y-m-d' ) ); // localized
-				$date_ts = strtotime( $date );
-
-				// Continue getting next date until it is not in past
-				// This provides automatic correction in case wp-cron misses a beat
-				while ( $date_ts < $today_ts ) {
-
-					// Get next date
-					$next_args = $args;
-					$next_args['start_date'] = $date;
-					$date = $this->calc_next_date( $next_args );
-
-					// If for some reason no next date can be calculated, stop
-					// This is a safeguard to prevent an infinite loop
-					if ( empty( $date ) ) {
-						break;
-					}
-
-					// Convert new date to timestamp
-					$date_ts = strtotime( $date );
-
+				// Format for rrule.
+				else {
+					$rrule_args['COUNT'] = $args['limit'];
 				}
 
 			}
 
-			return $date;
+			// Return rrule args or false.
+			if ( $rrule_args ) {
+				return $rrule_args;
+			} else {
+				return false;
+			}
 
 		}
 
@@ -474,71 +322,36 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 		 * Get multiple recurring dates.
 		 * The start date is included in the dates returned.
 		 *
+		 * Until 2.0, this calculated dates on its own. Now it uses php-rrule.
+		 * The original argument names are still used and auto-converted to rrule format.
+		 *
 		 * @since 0.9
 		 * @access public
-		 * @param array $args Arguments determining recurrence
-		 * @return array|bool Array of dates or false if arguments invalid
+		 * @param array $args Arguments determining recurrence.
+		 * @return array|bool Array of dates or false if arguments invalid.
 		 */
 		public function get_dates( $args ) {
 
-			$dates = array();
+			// Return false if no result.
+			$dates = false;
 
-			// Validate and set default arguments
+			// Get valid arguments suitable for php-rrule.
 			$args = $this->prepare_args( $args );
 
-			// Have valid arguments?
-			// If not, return false
-			if ( ! $args ) {
-				$dates = false;
-			}
+echo '<pre>';
+print_r( $args );
+echo '</pre>';
 
-			// Get multiple recurring dates
-			if ( $args ) { // valid args
+			// Get multiple recurring dates.
+			if ( $args ) {
 
-				// Keep track of how many dates are returned
-				$i = 1;
+				// Calculate dates.
+				$results = new RRule( $args );
 
-				// Include the date provided
-				$dates[] = $args['start_date'];
-
-				// Get next dates until until_date or limit is reached (whichever is sooner)
-				$next_start_date = $args['start_date'];
-				while ( ++$i && $args['limit'] != 1) {
-
-					// Get next date
-					$next_args = $args;
-					$next_args['start_date'] = $next_start_date;
-					$next_date = $this->calc_next_date( $next_args );
-
-					// If for some reason no next date can be calculated, stop
-					// This is a safeguard to prevent an infinite loop
-					if ( empty( $next_date ) ) {
-						break;
-					}
-
-					// Has until_date been exceeded?
-					if ( ! empty( $args['until_date'] ) ) { // until date is provided
-
-						$until_date_ts = strtotime( date_i18n( 'Y-m-d', strtotime( $args['until_date'] ) ) ); // localized
-						$next_date_ts = strtotime( $next_date );
-
-						if ( $next_date_ts > $until_date_ts ) { // yes, stop loop
-							break;
-						}
-
-					}
-
-					// Add it to array
-					$dates[] = $next_date; // add it to array
-
-					// Has limit been reached?
-					if ( ! empty( $args['limit'] ) && $i == $args['limit'] ) {
-						break;
-					}
-
-					// Update start_date argument
-					$next_start_date = $next_date;
-
+				// Format and add to array.
+				$dates = array();
+				foreach ( $results as $date ) {
+					$dates[] = $date->format( 'Y-m-d' );
 				}
 
 			}
@@ -587,8 +400,6 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 
 // Copy this code to an appropriate place and go to wp-admin/?recurrence_test=1
 
-
-
 if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 
 	// Instantiate class first
@@ -597,10 +408,10 @@ if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 	// Specify arguments
 	// Note: until_date does not have effect on the calc_* methods, only the get_* methods
 	$args = array(
-		'start_date'			=> '2017-01-01', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
-		//'until_date'			=> '2017-06-01', // date recurrence should not extend beyond (has no effect on calc_* functions)
+		'start_date'			=> '2017-10-01', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
+		//'until_date'			=> '2017-12-01', // date recurrence should not extend beyond (has no effect on calc_* functions)
 		'frequency'				=> 'monthly', // weekly, monthly, yearly
-		'interval'				=> '1', // every 1, 2 or 3 weeks, months or years
+		'interval'				=> '', // every 1, 2 or 3 weeks, months or years
 		'monthly_type'			=> 'week', // day (same day of month) or week (on a specific week); if recurrence is monthly (day is default)
 		//'monthly_week'		=> '1', // was formerly a single value as string - test this for back-compat, 1 - 4 or 'last'; if recurrence is monthly and monthly_type is 'week'
 		'monthly_week'			=> wp_json_encode( array( // data is now stored as JSON-encoded array with one or more values
@@ -618,24 +429,6 @@ if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 	<h4>$args</h3>
 
 	<?php echo '<pre>' . print_r( $args, true ) . '</pre>'; ?>
-
-	<h4>calc_next_date()</h3>
-
-	<?php
-	$date = $ct_recurrence->calc_next_date( $args );
-	?>
-
-	<pre>Start Date:<br><?php echo date( 'Y-m-d  F j, Y 	(l)', strtotime( $args['start_date'] ) ); ?></pre>
-	<pre>Recur Date:<br><?php echo date( 'Y-m-d  F j, Y 	(l)', strtotime( $date ) ); ?></pre>
-
-	<h4>calc_next_future_date()</h3>
-
-	<?php
-	$date = $ct_recurrence->calc_next_future_date( $args );
-	?>
-
-	<pre>Start Date:<br><?php echo date( 'Y-m-d  F j, Y 	(l)', strtotime( $args['start_date'] ) ); ?></pre>
-	<pre>Recur Date:<br><?php echo date( 'Y-m-d  F j, Y 	(l)', strtotime( $date ) ); ?></pre>
 
 	<h4>get_dates()</h3>
 
@@ -659,4 +452,5 @@ if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 	exit;
 
 }
+
 
