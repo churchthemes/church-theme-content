@@ -130,5 +130,5 @@ function ctc_update_recurring_event_dates() {
 
 add_action( 'ctc_update_recurring_event_dates', 'ctc_update_recurring_event_dates' );
 
-// Uncomment for debugging. Recurrence will run on every page load.
+// Uncomment for development and debugging. Recurrence will run on every page load.
 //add_action( 'admin_init', 'ctc_update_recurring_event_dates' );

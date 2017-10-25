@@ -14,7 +14,7 @@
  *
  * See example usage at bottom of this file.
  *
- * @copyright Copyright (c) 2014 - 2016 churchthemes.com
+ * @copyright Copyright (c) 2014 - 2017 churchthemes.com
  * @license   GPLv2 or later
  */
 
@@ -87,7 +87,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 			);
 
 			// Loop arguments
-			// Sanitize and set all keys
+			// Sanitize and set all keys.
 			$new_args = array();
 			foreach( $acceptable_args as $arg ) {
 
@@ -188,9 +188,46 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 				// Value is required
 				if ( 'monthly' == $args['frequency'] && 'week' == $args['monthly_type'] ) {
 
+					// Monthly week valid values.
+					$monthly_week_valid_values = array( '1', '2', '3', '4', 'last' );
+
+					// First, if value is single string, convert to JSON-encoded array.
+					// Church Content Pro converted to this format to accommodate multiple weeks of month.
+					// This is to create some backwards compatability between this class and old Custom Recurring Events users.
+					if ( ! empty( $args['monthly_week'] ) && in_array( $args['monthly_week'], $monthly_week_valid_values ) ) {
+						$args['monthly_week'] = (array) $args['monthly_week']; // convert single value to array.
+						$args['monthly_week'] = wp_json_encode( $args['monthly_week'] ); // JSON-encode.
+					}
+
 					// Is value valid?
-					if ( empty( $args['monthly_week'] ) || ! in_array( $args['monthly_week'], array( '1', '2', '3', '4', 'last' ) ) ) {
-						$args = false; // value is invalid
+					if ( empty( $args['monthly_week'] ) ) {
+						$args = false; // value is invalid.
+					} else {
+
+						// Decode JSON array.
+						$monthly_week_decoded = json_decode( $args['monthly_week'] );
+
+						// Not an array
+						if ( ! is_array( $monthly_week_decoded ) ) {
+							$args = false; // value is invalid.
+						}
+
+						// Is an array.
+						else {
+
+							// Loop values to validate each.
+							foreach ( $monthly_week_decoded as $monthly_week_value ) {
+
+								// Is value valid?
+								if ( ! in_array( $monthly_week_value, $monthly_week_valid_values, true ) ) {
+									$args = false; // value is invalid.
+									break; // stop checking other values; they must all be valid
+								}
+
+							}
+
+						}
+
 					}
 
 				}
@@ -550,7 +587,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 
 // Copy this code to an appropriate place and go to wp-admin/?recurrence_test=1
 
-/*
+
 
 if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 
@@ -560,12 +597,19 @@ if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 	// Specify arguments
 	// Note: until_date does not have effect on the calc_* methods, only the get_* methods
 	$args = array(
-		'start_date'			=> '2014-01-01', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
-		//'until_date'			=> '2014-06-01', // date recurrence should not extend beyond (has no effect on calc_* functions)
+		'start_date'			=> '2017-01-01', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
+		//'until_date'			=> '2017-06-01', // date recurrence should not extend beyond (has no effect on calc_* functions)
 		'frequency'				=> 'monthly', // weekly, monthly, yearly
 		'interval'				=> '1', // every 1, 2 or 3 weeks, months or years
 		'monthly_type'			=> 'week', // day (same day of month) or week (on a specific week); if recurrence is monthly (day is default)
-		'monthly_week'			=> '1', // 1 - 4 or 'last'; if recurrence is monthly and monthly_type is 'week'
+		//'monthly_week'		=> '1', // was formerly a single value as string - test this for back-compat, 1 - 4 or 'last'; if recurrence is monthly and monthly_type is 'week'
+		'monthly_week'			=> wp_json_encode( array( // data is now stored as JSON-encoded array with one or more values
+									'1',
+									'2',
+									'3',
+									'4',
+									'last',
+								) ),
 		'limit'					=> '20', // maximum dates to return (if no until_date, default is 100 to prevent infinite loop)
 	);
 
@@ -616,4 +660,3 @@ if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 
 }
 
-*/
