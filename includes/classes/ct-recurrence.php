@@ -3,13 +3,14 @@
  * CT Recurrence Class
  *
  * This class presents future recurring dates based on given arguments.
- * It is used in the Church Content, Custom Recurring Events add-on and Church Theme Framework.
+ * It also considers excluded dates which may or may not relate to recurrence.
+ * It is used in the Church Content, Church Content Pro add-on and Church Theme Framework.
  *
  * It is compatible with PHP 5.2.4, the minimum version required by WordPress.
  * PHP manual recommends using DateTime::modify() for PHP 5.2 versus strtotime().
  * See last note on http://php.net/manual/en/function.strtotime.php
  *
- * Otherwise, simshaun/recurr or tplaner/When would be a good choice.
+ * Otherwise, simshaun/recurr, tplaner/When or a newer one could be a good choice.
  *
  * See example usage at bottom of this file.
  *
@@ -52,7 +53,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 		public function __construct() {
 
 			// Version
-			$this->version = '0.9';
+			$this->version = '2.0';
 
 		}
 
