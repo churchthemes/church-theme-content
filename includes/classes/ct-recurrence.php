@@ -149,7 +149,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 
 					// Format for rrule.
 					else {
-						$rrule_args['UNTIL'] = str_replace( '-', '', $args['until_date'] ) . 'T0' . date_i18n( 'Z' ) . 'Z';
+						$rrule_args['UNTIL'] = $args['until_date'];
 					}
 
 				}
@@ -302,7 +302,12 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 
 				// Format for rrule.
 				else {
-					$rrule_args['COUNT'] = $args['limit'];
+
+					// Only if UNTIL not set; cannot use both with rrule.
+					if ( empty( $rrule_args['UNTIL'] ) ) {
+						$rrule_args['COUNT'] = $args['limit'];
+					}
+
 				}
 
 			}
@@ -336,23 +341,32 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 			$dates = false;
 
 			// Get valid arguments suitable for php-rrule.
-			$args = $this->prepare_args( $args );
+			$rrule_args = $this->prepare_args( $args );
 
 echo '<pre>';
-print_r( $args );
+print_r( $rrule_args );
 echo '</pre>';
 
 			// Get multiple recurring dates.
-			if ( $args ) {
+			if ( $rrule_args ) {
 
 				// Calculate dates.
-				$results = new RRule( $args );
+				$results = new RRule( $rrule_args );
 
 				// Format and add to array.
 				$dates = array();
+				$count = 0;
 				foreach ( $results as $date ) {
 					$dates[] = $date->format( 'Y-m-d' );
 				}
+
+				// Limit results.
+				// With rrule, limit has no effect when until_date is in use, so it's possible limit is exceeded when using until_date.
+				// This ensure limit is always enforced.
+				if ( ! empty( $args['limit'] ) && is_numeric( $args['limit'] ) && $args['limit'] > 0 ) { // given, is number, not negative.
+					$dates = array_slice( $dates, 0, $args['limit'] );
+				}
+
 
 			}
 
@@ -409,7 +423,8 @@ if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 	// Note: until_date does not have effect on the calc_* methods, only the get_* methods
 	$args = array(
 		'start_date'			=> '2017-10-01', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
-		//'until_date'			=> '2017-12-01', // date recurrence should not extend beyond (has no effect on calc_* functions)
+		'until_date'			=> '2017-12-31', // date recurrence should not extend beyond (has no effect on calc_* functions)
+		//'frequency'			=> 'monthly', // weekly, monthly, yearly
 		'frequency'				=> 'monthly', // weekly, monthly, yearly
 		'interval'				=> '', // every 1, 2 or 3 weeks, months or years
 		'monthly_type'			=> 'week', // day (same day of month) or week (on a specific week); if recurrence is monthly (day is default)
@@ -440,9 +455,13 @@ if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 
 	<pre><?php
 
-		foreach( $dates as $date ) {
-			echo date( 'Y-m-d  F j, Y 	(l)', strtotime( $date ) );
-			echo '<br>';
+		if ( $dates ) {
+
+			foreach( $dates as $date ) {
+				echo date( 'Y-m-d  F j, Y 	(l)', strtotime( $date ) );
+				echo '<br>';
+			}
+
 		}
 
 	?></pre>
