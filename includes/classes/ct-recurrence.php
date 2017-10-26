@@ -23,8 +23,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// php-rrule namespace.
-use RRule\RRule;
+// Prepare for php-rrule.
+use RRule\RSet;
 
 /*******************************************
  * RECURRENCE CLASS
@@ -89,8 +89,8 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 				'weekly_day',
 				'monthly_type',
 				'monthly_week',
-				'limit',
 				'excluded_dates',
+				'limit',
 			);
 
 			// Loop arguments
@@ -389,7 +389,25 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 
 			}
 
-			// Limit (optional)
+			// Excluded dates.
+			if ( $continue ) {
+
+				// Convert string to array.
+				$args['excluded_dates'] = (array) $args['excluded_dates'];
+
+				// Loop each.
+				foreach ( $args['excluded_dates'] as $k => $excluded_date ) {
+
+					// Invalid date.
+					if ( ! $this->validate_date( $excluded_date ) ) {
+						unset( $args['excluded_dates'][$k] ); // remove from array.
+					}
+
+				}
+
+			}
+
+			// Limit (optional).
 			if ( $continue ) {
 
 				// Set default if no until date to prevent infinite loop
@@ -414,9 +432,14 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 
 			}
 
-			// Return rrule args or false.
-			if ( $rrule_args ) {
-				return $rrule_args;
+			// Return args or false.
+			if ( $continue ) {
+
+				return array(
+					'args' => $args,
+					'rrule_args' => $rrule_args,
+				);
+
 			} else {
 				return false;
 			}
@@ -442,23 +465,25 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 			// Return false if no result.
 			$dates = false;
 
-			// Get valid arguments suitable for php-rrule.
-			$rrule_args = $this->prepare_args( $args );
-
-echo '<pre>';
-print_r( $rrule_args );
-echo '</pre>';
+			// Get prepared arguments.
+			$args = $this->prepare_args( $args );
+			$rrule_args = $args['rrule_args']; // rrule args to add to RSet.
+			$args = $args['args']; // original arguments prepared.
 
 			// Get multiple recurring dates.
 			if ( $rrule_args ) {
 
-				// Calculate dates.
-				$results = new RRule( $rrule_args );
+				// Start building RSet
+				$rset = new RSet();
+				$rset->addRRule( $rrule_args );
+
+				// Exclude dates.
+				foreach ( $args['excluded_dates'] as $excluded_date ) {
+					$rset->addExDate( $excluded_date );
+				}
 
 				// Format and add to array.
-				$dates = array();
-				$count = 0;
-				foreach ( $results as $date ) {
+				foreach ( $rset as $date ) {
 					$dates[] = $date->format( 'Y-m-d' );
 				}
 
@@ -525,7 +550,7 @@ if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 	$args = array(
 		'start_date'			=> '2017-10-01', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
 		'until_date'			=> '2017-12-31', // date recurrence should not extend beyond (has no effect on calc_* functions)
-		'frequency'				=> 'weekly', // weekly, monthly, yearly
+		'frequency'				=> 'monthly', // weekly, monthly, yearly
 		'interval'				=> '1', // every X weeks, months or years
 		'weekly_day'			=> wp_json_encode( array( // single value, array or JSON-encoded array of day of week in 2-letter format (SU, MO, TU, etc.). If empty, uses same day of week.
 										//'SU',
@@ -540,30 +565,36 @@ if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 		//'monthly_week'		=> '1', // was formerly a single value as string - test this for back-compat, 1 - 4 or 'last'; if recurrence is monthly and monthly_type is 'week'
 		'monthly_week'			=> wp_json_encode( array( // single value, array or JSON-encoded array of numeric week(s) of month (or 'last') (1, 3, last, etc.).
 									'1',
-									'2',
-									'3',
-									'4',
+									//'2',
+									//'3',
+									//'4',
 									'last',
 								) ),
+		'excluded_dates'		=> array(
+									//'2017-10-01',
+									//'2017-11-05',
+								),
 		'limit'					=> '20', // maximum dates to return (if no until_date, default is 100 to prevent infinite loop)
-		'excluded_dates'		=> array( // single date in YYYY-mm-dd format, array of dates, JSON-encoded array or comma-separated list of dates
-										'2017-10-01',
-										'2017-10-10',
-										'2017-10-12',
-										'2017-11-01',
-										'2017-11-02',
-										'2017-12-05',
-										'2017-12-31',
-								   ),
 	);
+
+	// Get prepared args for display purposes (get_dates() does this itself)
+	$prepared_args = $ct_recurrence->prepare_args( $args );
 
 	?>
 
-	<h4>$args</h3>
+	<h4>$args passed in</h4>
 
 	<?php echo '<pre>' . print_r( $args, true ) . '</pre>'; ?>
 
-	<h4>get_dates()</h3>
+	<h4>$args prepared</h4>
+
+	<?php echo '<pre>' . print_r( $prepared_args['args'], true ) . '</pre>'; ?>
+
+	<h4>$rrule_args</h4>
+
+	<?php echo '<pre>' . print_r( $prepared_args['rrule_args'], true ) . '</pre>'; ?>
+
+	<h4>get_dates()</h4>
 
 	<?php
 
