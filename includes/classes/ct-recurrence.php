@@ -90,6 +90,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 				'monthly_type',
 				'monthly_week',
 				'limit',
+				'excluded_dates',
 			);
 
 			// Loop arguments
@@ -104,8 +105,35 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 					$new_args[$arg] = '';
 				}
 
-				// Trim value
-				$args[$arg] = trim( $new_args[$arg] );
+				// Convert and sanitize.
+				if ( ! empty( $new_args[$arg] ) ) {
+
+					// If JSON, decode it.
+					if ( is_string( $new_args[$arg] ) && preg_match( '/^(\[|\{)/', $new_args[$arg] ) ) {
+						$new_args[$arg] = json_decode( $new_args[$arg] );
+					}
+
+					// If comma, separated list, convert to array.
+					if ( is_string( $new_args[$arg] ) && preg_match( '/,/', $new_args[$arg] ) ) {
+						$new_args[$arg] = explode( ',', $new_args[$arg] );
+					}
+
+					// Trim string value.
+					if ( is_string( $new_args[$arg] ) ) {
+						$new_args[$arg] = trim( $new_args[$arg] );
+					}
+
+					// Trim array values.
+					if ( is_array( $new_args[$arg] ) ) {
+
+						// Trim each value in array.
+						foreach ( $new_args[$arg] as $key => $value ) {
+							$new_args[$arg][$key] = trim( $value );
+						}
+
+					}
+
+				}
 
 			}
 			$args = $new_args;
@@ -235,19 +263,21 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 						'SA',
 					);
 
+					// If value is string, cast to array.
+					if ( ! empty( $args['weekly_day'] ) && is_string( $args['weekly_day'] ) ) {
+						$args['weekly_day'] = (array) $args['weekly_day'];
+					}
+
 					// If value is empty, assume Start Date's day of week.
 					if ( empty( $args['weekly_day'] ) && ! empty( $rrule_args['DTSTART'] ) ) {
-						$args['weekly_day'] = wp_json_encode( array( $start_date_day_of_week_abbrev ) );
+						$args['weekly_day'] = array( $start_date_day_of_week_abbrev );
 					}
 
 					// Have value.
 					if ( ! empty( $args['weekly_day'] ) ) {
 
-						// Decode JSON array.
-						$weekly_day_decoded = json_decode( $args['weekly_day'] );
-
 						// Not an array
-						if ( ! is_array( $weekly_day_decoded ) ) {
+						if ( ! is_array( $args['weekly_day'] ) ) {
 							$continue = false; // value is invalid.
 						}
 
@@ -256,7 +286,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 
 							// Loop 2-letter day of week code(s).
 							$weekly_day_rrule = array();
-							foreach ( $weekly_day_decoded as $weekly_day_value ) {
+							foreach ( $args['weekly_day'] as $weekly_day_value ) {
 
 								// Day of week code is invalid.
 								// All must be valid to continue.
@@ -300,12 +330,12 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 					// Monthly week valid values.
 					$monthly_week_valid_values = array( '1', '2', '3', '4', 'last' );
 
-					// First, if value is single string, convert to JSON-encoded array.
+					// First, if value is single string, convert to array.
 					// Church Content Pro converted to this format to accommodate multiple weeks of month.
 					// This is to create some backwards compatability between this class and old Custom Recurring Events users.
 					if ( ! empty( $args['monthly_week'] ) && in_array( $args['monthly_week'], $monthly_week_valid_values ) ) {
 						$args['monthly_week'] = (array) $args['monthly_week']; // convert single value to array.
-						$args['monthly_week'] = wp_json_encode( $args['monthly_week'] ); // JSON-encode.
+
 					}
 
 					// Value is invalid.
@@ -316,11 +346,8 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 					// Value is valid.
 					else {
 
-						// Decode JSON array.
-						$monthly_week_decoded = json_decode( $args['monthly_week'] );
-
 						// Not an array
-						if ( ! is_array( $monthly_week_decoded ) ) {
+						if ( ! is_array( $args['monthly_week'] ) ) {
 							$continue = false; // value is invalid.
 						}
 
@@ -329,7 +356,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 
 							// Loop values to validate each.
 							$monthly_week_rrule = array();
-							foreach ( $monthly_week_decoded as $monthly_week_value ) {
+							foreach ( $args['monthly_week'] as $monthly_week_value ) {
 
 								// Is value valid?
 								if ( ! in_array( $monthly_week_value, $monthly_week_valid_values, true ) ) {
@@ -498,21 +525,20 @@ if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 	$args = array(
 		'start_date'			=> '2017-10-01', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
 		'until_date'			=> '2017-12-31', // date recurrence should not extend beyond (has no effect on calc_* functions)
-		//'frequency'			=> 'monthly', // weekly, monthly, yearly
 		'frequency'				=> 'weekly', // weekly, monthly, yearly
-		'interval'				=> '1', // every 1, 2 or 3 weeks, months or years
-		'weekly_day'			=> wp_json_encode( array( // data is now stored as JSON-encoded array with one or more values
-									//'SU',
-									//'MO',
-									'TU',
-									//'WE',
-									'TH',
-									//'FR',
-									//'SA',
-								) ),
+		'interval'				=> '1', // every X weeks, months or years
+		'weekly_day'			=> wp_json_encode( array( // single value, array or JSON-encoded array of day of week in 2-letter format (SU, MO, TU, etc.). If empty, uses same day of week.
+										//'SU',
+										//'MO',
+										'TU',
+										//'WE',
+										'TH',
+										//'FR',
+										//'SA',
+									) ),
 		'monthly_type'			=> 'week', // day (same day of month) or week (on a specific week); if recurrence is monthly (day is default)
 		//'monthly_week'		=> '1', // was formerly a single value as string - test this for back-compat, 1 - 4 or 'last'; if recurrence is monthly and monthly_type is 'week'
-		'monthly_week'			=> wp_json_encode( array( // data is now stored as JSON-encoded array with one or more values
+		'monthly_week'			=> wp_json_encode( array( // single value, array or JSON-encoded array of numeric week(s) of month (or 'last') (1, 3, last, etc.).
 									'1',
 									'2',
 									'3',
@@ -520,6 +546,15 @@ if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 									'last',
 								) ),
 		'limit'					=> '20', // maximum dates to return (if no until_date, default is 100 to prevent infinite loop)
+		'excluded_dates'		=> array( // single date in YYYY-mm-dd format, array of dates, JSON-encoded array or comma-separated list of dates
+										'2017-10-01',
+										'2017-10-10',
+										'2017-10-12',
+										'2017-11-01',
+										'2017-11-02',
+										'2017-12-05',
+										'2017-12-31',
+								   ),
 	);
 
 	?>
