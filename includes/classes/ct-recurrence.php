@@ -86,6 +86,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 				'until_date',
 				'frequency',
 				'interval',
+				'weekly_day',
 				'monthly_type',
 				'monthly_week',
 				'limit',
@@ -217,10 +218,83 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 
 			}
 
-			// Monthly Week (required when frequency is monthly and monthly_type is week)
+			// Weekly Day(s) (value when frequency is weekly).
 			if ( $continue ) {
 
-				// Value is required
+				// Value is required.
+				if ( 'weekly' == $args['frequency'] ) {
+
+					// Weekly day valid values.
+					$weekly_day_valid_values = array(
+						'SU',
+						'MO',
+						'TU',
+						'WE',
+						'TH',
+						'FR',
+						'SA',
+					);
+
+					// If value is empty, assume Start Date's day of week.
+					if ( empty( $args['weekly_day'] ) && ! empty( $rrule_args['DTSTART'] ) ) {
+						$args['weekly_day'] = wp_json_encode( array( $start_date_day_of_week_abbrev ) );
+					}
+
+					// Have value.
+					if ( ! empty( $args['weekly_day'] ) ) {
+
+						// Decode JSON array.
+						$weekly_day_decoded = json_decode( $args['weekly_day'] );
+
+						// Not an array
+						if ( ! is_array( $weekly_day_decoded ) ) {
+							$continue = false; // value is invalid.
+						}
+
+						// Is an array.
+						else {
+
+							// Loop 2-letter day of week code(s).
+							$weekly_day_rrule = array();
+							foreach ( $weekly_day_decoded as $weekly_day_value ) {
+
+								// Day of week code is invalid.
+								// All must be valid to continue.
+								if ( ! in_array( $weekly_day_value, $weekly_day_valid_values ) ) {
+									$continue = false;
+									$weekly_day_rrule = array();
+									break;
+								}
+
+								// Valid, add to array for rrule.
+								else {
+									$weekly_day_rrule[] = $weekly_day_value;
+								}
+
+							}
+
+							// Format for rrule.
+							if ( $continue && $weekly_day_rrule ) { // values all valid.
+								$rrule_args['BYDAY'] = $weekly_day_rrule;
+							}
+
+						}
+
+					}
+
+				}
+
+				// Not required in this case
+				else {
+					$args['weekly_day'] = '';
+				}
+
+			}
+
+			// Monthly Week(s) (required when frequency is monthly and monthly_type is week).
+			if ( $continue ) {
+
+				// Value is required.
 				if ( 'monthly' == $args['frequency'] && 'week' == $args['monthly_type'] ) {
 
 					// Monthly week valid values.
@@ -260,6 +334,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 								// Is value valid?
 								if ( ! in_array( $monthly_week_value, $monthly_week_valid_values, true ) ) {
 									$continue = false; // value is invalid.
+									$monthly_week_rrule = array();
 									break; // stop checking other values; they must all be valid
 								}
 
@@ -280,7 +355,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 
 				}
 
-				// Not required in this case
+				// Not required in this case.
 				else {
 					$args['monthly_week'] = '';
 				}
@@ -367,7 +442,6 @@ echo '</pre>';
 					$dates = array_slice( $dates, 0, $args['limit'] );
 				}
 
-
 			}
 
 			return $dates;
@@ -425,8 +499,17 @@ if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 		'start_date'			=> '2017-10-01', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015)
 		'until_date'			=> '2017-12-31', // date recurrence should not extend beyond (has no effect on calc_* functions)
 		//'frequency'			=> 'monthly', // weekly, monthly, yearly
-		'frequency'				=> 'monthly', // weekly, monthly, yearly
-		'interval'				=> '', // every 1, 2 or 3 weeks, months or years
+		'frequency'				=> 'weekly', // weekly, monthly, yearly
+		'interval'				=> '1', // every 1, 2 or 3 weeks, months or years
+		'weekly_day'			=> wp_json_encode( array( // data is now stored as JSON-encoded array with one or more values
+									//'SU',
+									//'MO',
+									'TU',
+									//'WE',
+									'TH',
+									//'FR',
+									//'SA',
+								) ),
 		'monthly_type'			=> 'week', // day (same day of month) or week (on a specific week); if recurrence is monthly (day is default)
 		//'monthly_week'		=> '1', // was formerly a single value as string - test this for back-compat, 1 - 4 or 'last'; if recurrence is monthly and monthly_type is 'week'
 		'monthly_week'			=> wp_json_encode( array( // data is now stored as JSON-encoded array with one or more values
