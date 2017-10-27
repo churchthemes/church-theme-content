@@ -4,3 +4,6 @@
 [submodule "includes/libraries/ct-plugin-settings"]
 	path = includes/libraries/ct-plugin-settings
 	url = https://github.com/churchthemes/ct-plugin-settings.git
+[submodule "includes/libraries/ct-recurrence"]
+	path = includes/libraries/ct-recurrence
+	url = https://github.com/churchthemes/ct-recurrence.git
