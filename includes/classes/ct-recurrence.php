@@ -329,7 +329,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 				if ( 'monthly' == $args['frequency'] && 'week' == $args['monthly_type'] ) {
 
 					// Monthly week valid values.
-					$monthly_week_valid_values = array( '1', '2', '3', '4', 'last' );
+					$monthly_week_valid_values = array( '1', '2', '3', '4', '5', 'last' );
 
 					// First, if value is single string, convert to array.
 					// Church Content Pro converted to this format to accommodate multiple weeks of month.
@@ -614,8 +614,8 @@ if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 	// Note: until_date does not have effect on the calc_* methods, only the get_* methods.
 	$args = array(
 		'start_date'			=> '2017-10-01', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015).
-		'until_date'			=> '2018-01-31', // date recurrence should not extend beyond (has no effect on calc_* functions).
-		'frequency'				=> 'weekly', // weekly, monthly, yearly.
+		'until_date'			=> '2018-05-31', // date recurrence should not extend beyond (has no effect on calc_* functions).
+		'frequency'				=> 'monthly', // weekly, monthly, yearly.
 		'interval'				=> '1', // every X weeks, months or years.
 		'weekly_day'			=> wp_json_encode( array( // single value, array or JSON-encoded array of day of week in 2-letter format (SU, MO, TU, etc.). If empty, uses same day of week.
 										//'SU',
@@ -627,19 +627,20 @@ if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 										//'SA',
 									) ),
 		'monthly_type'			=> 'week', // day (same day of month) or week (on a specific week); if recurrence is monthly (day is default).
-		//'monthly_week'		=> '1', // was formerly a single value as string - test this for back-compat, 1 - 4 or 'last'; if recurrence is monthly and monthly_type is 'week'.
+		//'monthly_week'		=> '1', // was formerly a single value as string - test this for back-compat, 1 - 5 or 'last'; if recurrence is monthly and monthly_type is 'week'.
 		'monthly_week'			=> wp_json_encode( array( // single value, array or JSON-encoded array of numeric week(s) of month (or 'last') (1, 3, last, etc.).
 									'1',
 									//'2',
 									//'3',
 									//'4',
-									'last',
+									'5',
+									//'last',
 								) ),
 		'excluded_dates'		=> array(
 									//'2017-10-01',
 									//'2017-11-05',
 								),
-		'limit'					=> '20', // maximum dates to return (if no until_date, default is 1000 to prevent infinite loop).
+		'limit'					=> '50', // maximum dates to return (if no until_date, default is 1000 to prevent infinite loop).
 	);
 
 	// Get prepared args for display purposes (get_dates() does this itself).
