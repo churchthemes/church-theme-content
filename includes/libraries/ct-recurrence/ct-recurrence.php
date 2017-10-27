@@ -2,19 +2,13 @@
 /**
  * CT Recurrence Class
  *
- * This class gets future recurring dates based on given arguments. It also considers excluded dates.
- * It is used in the Church Content plugin (and Pro add-on) and Church Theme Framework.
+ * A class utilizing php-rrule to handle recurring event dates in the Church Content plugin and Church Theme Framework.
  *
- * Version 2.0 adopted the use of php-rrule (MIT): https://github.com/rlanvin/php-rrule.
- * Versions before that (0.9) used more simplistic, proprietary calculations.
- * get_dates(), calc_next_future_date() and their arguments are backwards-compatible.
+ * See README.md and example usage at bottom of this file for more details.
  *
- * Be aware that version 2.0 requires PHP 5.3+ so you should prompt to update if necessary.
- * Earlier versions (0.9) were compatible with PHP 5.2.4, like WordPress itself.
- *
- * See example usage at bottom of this file.
- *
- * @copyright Copyright (c) 2014 - 2017 churchthemes.com
+ * @package   CT_Recurrence
+ * @copyright Copyright (c) 2014 - 2017, churchthemes.com
+ * @link      https://github.com/churchthemes/ct-recurrence
  * @license   GPLv2 or later
  */
 
@@ -30,7 +24,7 @@ use RRule\RSet;
  * RECURRENCE CLASS
  *******************************************/
 
-// Class may be used in both theme and plugin(s)
+// Class may be used in both theme and plugin(s).
 if ( ! class_exists( 'CT_Recurrence' ) ) {
 
 	/**
@@ -81,12 +75,14 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 		 * Prepare arguments
 		 *
 		 * This validates, sets defaults and returns arguments in format suitable for php-rrule.
+		 * It also returns the original arguments, sanitized, for debugging purposes.
+		 *
 		 * It returns false if any of the arugments are invalid.
 		 *
 		 * @since 0.9
 		 * @access public
 		 * @param array $args Arguments for recurrence.
-		 * @return array|bool Clean array to pass onto rrule_args method before get_dates.
+		 * @return array|bool $args['args'] and $args['rrule_args'] or false if invalid.
 		 */
 		public function prepare_args( $args ) {
 
@@ -95,7 +91,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 				$args = false;
 			}
 
-			// Acceptable arguments
+			// Acceptable arguments.
 			$acceptable_args = array(
 				'start_date',
 				'until_date',
@@ -111,39 +107,39 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 			// Loop arguments
 			// Sanitize and set all keys.
 			$new_args = array();
-			foreach( $acceptable_args as $arg ) {
+			foreach ( $acceptable_args as $arg ) {
 
-				// If no key, set it
-				if ( ! empty( $args[$arg] ) ) {
-					$new_args[$arg] = $args[$arg];
+				// If no key, set it.
+				if ( ! empty( $args[ $arg ] ) ) {
+					$new_args[ $arg ] = $args[ $arg ];
 				} else {
-					$new_args[$arg] = '';
+					$new_args[ $arg ] = '';
 				}
 
 				// Convert and sanitize.
-				if ( ! empty( $new_args[$arg] ) ) {
+				if ( ! empty( $new_args[ $arg ] ) ) {
 
 					// If JSON, decode it.
-					if ( is_string( $new_args[$arg] ) && preg_match( '/^(\[|\{)/', $new_args[$arg] ) ) {
-						$new_args[$arg] = json_decode( $new_args[$arg] );
+					if ( is_string( $new_args[ $arg ] ) && preg_match( '/^(\[|\{)/', $new_args[ $arg ] ) ) {
+						$new_args[ $arg ] = json_decode( $new_args[ $arg ] );
 					}
 
 					// If comma, separated list, convert to array.
-					if ( is_string( $new_args[$arg] ) && preg_match( '/,/', $new_args[$arg] ) ) {
-						$new_args[$arg] = explode( ',', $new_args[$arg] );
+					if ( is_string( $new_args[ $arg ] ) && preg_match( '/,/', $new_args[ $arg ] ) ) {
+						$new_args[ $arg ] = explode( ',', $new_args[ $arg ] );
 					}
 
 					// Trim string value.
-					if ( is_string( $new_args[$arg] ) ) {
-						$new_args[$arg] = trim( $new_args[$arg] );
+					if ( is_string( $new_args[ $arg ] ) ) {
+						$new_args[ $arg ] = trim( $new_args[ $arg ] );
 					}
 
 					// Trim array values.
-					if ( is_array( $new_args[$arg] ) ) {
+					if ( is_array( $new_args[ $arg ] ) ) {
 
 						// Trim each value in array.
-						foreach ( $new_args[$arg] as $key => $value ) {
-							$new_args[$arg][$key] = trim( $value );
+						foreach ( $new_args[ $arg ] as $key => $value ) {
+							$new_args[ $arg ][ $key ] = trim( $value );
 						}
 
 					}
@@ -159,7 +155,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 			// Continue until find a bad argument.
 			$continue = true;
 
-			// Start Date
+			// Start Date.
 			if ( $continue ) {
 
 				// Date is invalid.
@@ -203,8 +199,15 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 			// Frequency.
 			if ( $continue ) {
 
+				// Valid frequencies.
+				$valid_frequencies = array(
+					'weekly',
+					'monthly',
+					'yearly',
+				);
+
 				// Value is invalid.
-				if ( empty( $args['frequency'] ) || ! in_array( $args['frequency'], array( 'weekly', 'monthly', 'yearly' ) ) ) {
+				if ( empty( $args['frequency'] ) || ! in_array( $args['frequency'], $valid_frequencies, true ) ) {
 					$continue = false;
 				}
 
@@ -215,16 +218,16 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 
 			}
 
-			// Interval
-			// Every X weeks / months / years
+			// Interval.
+			// Every X weeks / months / years.
 			if ( $continue ) {
 
-				// Default is 1 if nothing given
+				// Default is 1 if nothing given.
 				if ( empty( $args['interval'] ) ) {
 					$args['interval'] = 1;
 				}
 
-				// Invalid if not numeric or is negative
+				// Invalid if not numeric or is negative.
 				if ( ! is_numeric( $args['interval'] ) || $args['interval'] < 1 ) {
 					$continue = false;
 				}
@@ -236,25 +239,31 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 
 			}
 
-			// Monthly Type (required when frequency is monthly)
+			// Monthly Type (required when frequency is monthly).
 			if ( $continue ) {
 
-				// Value is required
-				if ( 'monthly' == $args['frequency'] ) {
+				// Value is required.
+				if ( 'monthly' === $args['frequency'] ) {
 
-					// Default to day if none
+					// Valid monthly types.
+					$valid_monthly_types = array(
+						'day',
+						'week'
+					);
+
+					// Default to day if none.
 					if ( empty( $args['monthly_type'] ) ) {
 						$args['monthly_type'] = 'day';
 					}
 
-					// Value is invalid
-					if ( ! in_array( $args['monthly_type'], array( 'day', 'week' ) ) ) {
-						$continue = false; // value is invalid
+					// Value is invalid.
+					if ( ! in_array( $args['monthly_type'], $valid_monthly_types, true ) ) {
+						$continue = false; // value is invalid.
 					}
 
 				}
 
-				// Not required in this case
+				// Monthly type not required if frequency isn't monthly.
 				else {
 					$args['monthly_type'] = '';
 				}
@@ -265,7 +274,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 			if ( $continue ) {
 
 				// Value is required.
-				if ( 'weekly' == $args['frequency'] ) {
+				if ( 'weekly' === $args['frequency'] ) {
 
 					// Weekly day valid values.
 					$weekly_day_valid_values = array(
@@ -288,10 +297,10 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 						$args['weekly_day'] = array( $start_date_day_of_week_abbrev );
 					}
 
-					// Have value.
+					// Have weekly day value.
 					if ( ! empty( $args['weekly_day'] ) ) {
 
-						// Not an array
+						// Not an array, invalid.
 						if ( ! is_array( $args['weekly_day'] ) ) {
 							$continue = false; // value is invalid.
 						}
@@ -306,9 +315,12 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 								// Day of week code is invalid.
 								// All must be valid to continue.
 								if ( ! in_array( $weekly_day_value, $weekly_day_valid_values ) ) {
+
 									$continue = false;
 									$weekly_day_rrule = array();
+
 									break;
+
 								}
 
 								// Valid, add to array for rrule.
@@ -329,7 +341,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 
 				}
 
-				// Not required in this case
+				// Weekly day not needed when frequency not weekly.
 				else {
 					$args['weekly_day'] = '';
 				}
@@ -339,29 +351,28 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 			// Monthly Week(s) (required when frequency is monthly and monthly_type is week).
 			if ( $continue ) {
 
-				// Value is required.
-				if ( 'monthly' == $args['frequency'] && 'week' == $args['monthly_type'] ) {
+				// Monthly type value is required.
+				if ( 'monthly' === $args['frequency'] && 'week' === $args['monthly_type'] ) {
 
 					// Monthly week valid values.
 					$monthly_week_valid_values = array( '1', '2', '3', '4', '5', 'last' );
 
 					// First, if value is single string, convert to array.
 					// Church Content Pro converted to this format to accommodate multiple weeks of month.
-					// This is to create some backwards compatability between this class and old Custom Recurring Events users.
-					if ( ! empty( $args['monthly_week'] ) && in_array( $args['monthly_week'], $monthly_week_valid_values ) ) {
+					// This is to create some backwards compatibility between this class and old Custom Recurring Events users.
+					if ( ! empty( $args['monthly_week'] ) && in_array( $args['monthly_week'], $monthly_week_valid_values, true ) ) {
 						$args['monthly_week'] = (array) $args['monthly_week']; // convert single value to array.
-
 					}
 
-					// Value is invalid.
+					// Monthly week value is invalid.
 					if ( empty( $args['monthly_week'] ) ) {
 						$continue = false; // value is invalid.
 					}
 
-					// Value is valid.
+					// Monthly week value is invalid, continue...
 					else {
 
-						// Not an array
+						// Not an array.
 						if ( ! is_array( $args['monthly_week'] ) ) {
 							$continue = false; // value is invalid.
 						}
@@ -369,19 +380,24 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 						// Is an array.
 						else {
 
-							// Loop values to validate each.
+							// Array to collect monthly week values for rrule (BYSETPOS).
 							$monthly_week_rrule = array();
+
+							// Loop values to validate each and add to array.
 							foreach ( $args['monthly_week'] as $monthly_week_value ) {
 
 								// Is value valid?
 								if ( ! in_array( $monthly_week_value, $monthly_week_valid_values, true ) ) {
+
 									$continue = false; // value is invalid.
 									$monthly_week_rrule = array();
-									break; // stop checking other values; they must all be valid
+
+									break; // stop checking other values; they must all be valid.
+
 								}
 
 								// Valid, add to array for rrule.
-								$monthly_week_rrule[] = str_replace( 'last', '-1', $monthly_week_value ); // -1 is last week of month.
+								$monthly_week_rrule[] = str_replace( 'last', '-1', $monthly_week_value ); // convert 'last' to -1 for rrule last week of month in BYSETPOS.
 
 							}
 
@@ -397,7 +413,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 
 				}
 
-				// Not required in this case.
+				// Monthly week not required in this case.
 				else {
 					$args['monthly_week'] = '';
 				}
@@ -405,6 +421,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 			}
 
 			// Excluded dates.
+			// See get_dates() for how Rset uses this.
 			if ( $continue ) {
 
 				// Convert string to array.
@@ -415,7 +432,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 
 					// Invalid date.
 					if ( ! $this->validate_date( $excluded_date ) ) {
-						unset( $args['excluded_dates'][$k] ); // remove from array.
+						unset( $args['excluded_dates'][ $k ] ); // remove from array.
 					}
 
 				}
@@ -439,6 +456,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 				else {
 
 					// Only if UNTIL not set; cannot use both with rrule.
+					// get_pages() will enforce limit when UNTIL is used.
 					if ( empty( $rrule_args['UNTIL'] ) ) {
 						$rrule_args['COUNT'] = $args['limit'];
 					}
@@ -447,28 +465,36 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 
 			}
 
-			// Return args or false.
+			// Have valid arguments.
 			if ( $continue ) {
 
-				return array(
-					'args' => $args,
-					'rrule_args' => $rrule_args,
+				// Combine args and rrule_args into an array.
+				$prepared_args = array(
+					'args' => ! empty( $args ) ? $args : array(),
+					'rrule_args' => ! empty( $rrule_args ) ? $rrule_args : array(),
 				);
 
-			} else {
-				return false;
 			}
+
+			// Arguments were invalid.
+			else {
+				$prepared_args = false;
+			}
+
+			// Return arrays of prepared arguments, or false if invalid.
+			return $prepared_args;
 
 		}
 
 		/**
 		 * Get dates
 		 *
-		 * Get multiple recurring dates.
+		 * Get multiple recurring dates based on given arguments.
 		 * The start date is included in the dates returned.
 		 *
-		 * Until 2.0, this calculated dates on its own. Now it uses php-rrule.
-		 * The original argument names are still used and auto-converted to rrule format.
+		 * Until 2.0, this calculated dates using its own proprietary calculations. Now it uses php-rrule.
+		 * The original argument names are still used and auto-converted to rrule format so the results
+		 * from the newer versions are backwards compatible.
 		 *
 		 * @since 0.9
 		 * @access public
@@ -481,32 +507,39 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 			$dates = false;
 
 			// Get prepared arguments.
-			$args = $this->prepare_args( $args );
-			$rrule_args = $args['rrule_args']; // rrule args to add to RSet.
-			$args = $args['args']; // original arguments prepared.
+			$prepared_args = $this->prepare_args( $args );
 
-			// Get multiple recurring dates.
-			if ( $rrule_args ) {
+			// Have valid arguments.
+			if ( $prepared_args ) {
 
-				// Start building RSet
-				$rset = new RSet();
-				$rset->addRRule( $rrule_args );
+				// Get cleaned and rrule args.
+				$args = $prepared_args['args']; // original arguments prepared.
+				$rrule_args = $prepared_args['rrule_args']; // rrule args to add to RSet.
 
-				// Exclude dates.
-				foreach ( $args['excluded_dates'] as $excluded_date ) {
-					$rset->addExDate( $excluded_date );
-				}
+				// Get multiple recurring dates.
+				if ( $rrule_args ) {
 
-				// Format and add to array.
-				foreach ( $rset as $date ) {
-					$dates[] = $date->format( 'Y-m-d' );
-				}
+					// Start building RSet.
+					$rset = new RSet();
+					$rset->addRRule( $rrule_args );
 
-				// Limit results.
-				// With rrule, limit has no effect when until_date is in use, so it's possible limit is exceeded when using until_date.
-				// This ensure limit is always enforced.
-				if ( ! empty( $args['limit'] ) && is_numeric( $args['limit'] ) && $args['limit'] > 0 ) { // given, is number, not negative.
-					$dates = array_slice( $dates, 0, $args['limit'] );
+					// Exclude dates.
+					foreach ( $args['excluded_dates'] as $excluded_date ) {
+						$rset->addExDate( $excluded_date );
+					}
+
+					// Format and add to array.
+					foreach ( $rset as $date ) {
+						$dates[] = $date->format( 'Y-m-d' );
+					}
+
+					// Limit results.
+					// With rrule, limit has no effect when until_date is in use, so it's possible limit is exceeded when using until_date.
+					// This ensure limit is always enforced.
+					if ( ! empty( $args['limit'] ) && is_numeric( $args['limit'] ) && $args['limit'] > 0 ) { // given, is number, not negative.
+						$dates = array_slice( $dates, 0, $args['limit'] );
+					}
+
 				}
 
 			}
@@ -518,30 +551,31 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 		/**
 		 * Calculate next future date
 		 *
-		 * Calculate the next date in the future (may be today) without regard for until_date or limit.
+		 * Calculate the next date in the future (may be today) without regard for until_date or limit (practically speaking).
 		 * This is helpful when cron misses a beat.
-		 *
-		 * IMPORTANT: calc_* methods have no regard for until_date (the get_* methods do)
 		 *
 		 * @since 0.9
 		 * @access public
 		 * @param array $args Arguments determining recurrence
-		 * @return string|bool Date string or false if arguments invalid or no next date
+		 * @return string|bool YYYY-mm-dd Date string or false if arguments invalid or no next date
 		 */
 		public function calc_next_future_date( $args ) {
 
+			// Return false if cannot determine next future date.
 			$next_future_date = false;
 
 			// Validate and set default arguments.
-			$args = $this->prepare_args( $args ); // false if invalid.
-			$args = $args['args'];
+			$prepared_args = $this->prepare_args( $args ); // false if invalid.
 
-			// Remove the bounds of until_date and limit.
-			$args['until_date'] = ''; // old version of plugin disregarded until_date, keeping this behavior.
-			$args['limit'] = '1000'; // 1000 is virtually unlimited without significant performance hit and while avoiding infinite loop.
+			// Have valid arguments.
+			if ( ! empty( $prepared_args['args'] ) ) {
 
-			// Have valid args.
-			if ( $args ) {
+				// Replace given args with prepared args.
+				$args = $prepared_args['args'];
+
+				// Remove the bounds of until_date and limit.
+				$args['until_date'] = ''; // old version of class before php-rrule disregarded until_date, keeping this behavior.
+				$args['limit'] = '1000'; // 1000 is virtually unlimited without significant performance hit, to avoid infinite loop.
 
 				// Convert today's date to localized timestamp for comparison.
 				$today_ts = strtotime( date_i18n( 'Y-m-d' ) ); // localized.
@@ -575,25 +609,29 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 
 			}
 
+			// Return date or false if none.
 			return $next_future_date;
 
 		}
 
 		/**
-		 * Validate date
+		 * Validate date.
+		 *
+		 * It must not be empty, must be in YYYY-mm-dd format (e.g. not 2017-1-1) and be a valid date (e.g. not February 30).
 		 *
 		 * @since 0.9
 		 * @access public
 		 * @param string $date Date in YYYY-mm-dd format
-		 * @return bool Whether or not date is valid
+		 * @return bool True if date is valid.
 		 */
 		public function validate_date( $date ) {
 
+			// False if fails validation.
 			$valid = false;
 
 			// Check format.
 			// 2014-1-1 is not valid.
-			if ( preg_match( '/([0-9]{4})-([0-9]{2})-([0-9]{2})/', $date ) ) {
+			if ( ! empty( $date ) && preg_match( '/([0-9]{4})-([0-9]{2})-([0-9]{2})/', $date ) ) {
 
 				// Get year, month, day.
 				list( $y, $m, $d ) = explode( '-', $date );
@@ -605,6 +643,7 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 
 			}
 
+			// Return true or false.
 			return $valid;
 
 		}
@@ -617,47 +656,46 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
  * EXAMPLE USAGE
  *******************************************/
 
-// Copy this code to an appropriate place and go to wp-admin/?recurrence_test=1
-
+// Uncomment or copy elsewhere then go to /wp-admin/?recurrence_test=1
+/*
 if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 
-	// Instantiate class first
+	// Instantiate class first.
 	$ct_recurrence = new CT_Recurrence();
 
 	// Specify arguments
-	// Note: until_date does not have effect on the calc_* methods, only the get_* methods.
+	// Note: until_date does not have effect on calc_next_future_date, only get_dates().
 	$args = array(
-		'start_date'			=> '2017-10-01', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015).
-		'until_date'			=> '2018-05-31', // date recurrence should not extend beyond (has no effect on calc_* functions).
-		'frequency'				=> 'monthly', // weekly, monthly, yearly.
-		'interval'				=> '1', // every X weeks, months or years.
-		'weekly_day'			=> wp_json_encode( array( // single value, array or JSON-encoded array of day of week in 2-letter format (SU, MO, TU, etc.). If empty, uses same day of week.
-										//'SU',
-										'MO',
-										//'TU',
-										//'WE',
-										//'TH',
-										'FR',
-										//'SA',
-									) ),
-		'monthly_type'			=> 'week', // day (same day of month) or week (on a specific week); if recurrence is monthly (day is default).
-		//'monthly_week'		=> '1', // was formerly a single value as string - test this for back-compat, 1 - 5 or 'last'; if recurrence is monthly and monthly_type is 'week'.
-		'monthly_week'			=> wp_json_encode( array( // single value, array or JSON-encoded array of numeric week(s) of month (or 'last') (1, 3, last, etc.).
-									'1',
-									//'2',
-									//'3',
-									//'4',
-									'5',
-									//'last',
-								) ),
-		'excluded_dates'		=> array(
-									//'2017-10-01',
-									//'2017-11-05',
+		'start_date'     => '2017-10-01', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015).
+		'until_date'     => '2018-05-31', // date recurrence should not extend beyond (has no effect on calc_next_future_date method).
+		'frequency'      => 'monthly', // weekly, monthly, yearly.
+		'interval'       => '1', // every X weeks, months or years.
+		'weekly_day'     => array( // single value, array or JSON-encoded array of day of week in 2-letter format (SU, MO, TU, etc.). If empty, uses same day of week.
+								//'SU',
+								'MO',
+								//'TU',
+								//'WE',
+								//'TH',
+								//'FR',
+								//'SA',
+							),
+		'monthly_type'   => 'week', // day (same day of month) or week (on specific week(s)); if recurrence is monthly (day is default).
+		'monthly_week'   => array( // single value, array or JSON-encoded array of numeric week(s) of month (or 'last') (e.g. 1, 2, 3, 4, 5 or last).
+								'1',
+								//'2',
+								//'3',
+								//'4',
+								'5',
+								//'last',
+							),
+		'excluded_dates' => array(
+								//'2017-10-01',
+								//'2017-11-05',
 								),
-		'limit'					=> '50', // maximum dates to return (if no until_date, default is 1000 to prevent infinite loop).
+		'limit'          => '30', // maximum dates to return (if no until_date, default is 1000 to prevent infinite loop).
 	);
 
-	// Get prepared args for display purposes (get_dates() does this itself).
+	// Get prepared args for display purposes only (get_dates() and calc_next_future_date() do this on their own).
 	$prepared_args = $ct_recurrence->prepare_args( $args );
 
 	?>
@@ -677,9 +715,7 @@ if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 	<h4>get_dates()</h4>
 
 	<?php
-
 	$dates = $ct_recurrence->get_dates( $args );
-
 	?>
 
 	<pre><?php
@@ -712,3 +748,4 @@ if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 	exit;
 
 }
+*/
