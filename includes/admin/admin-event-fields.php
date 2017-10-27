@@ -645,7 +645,7 @@ function ctc_add_meta_box_event_registration() {
 add_action( 'admin_init', 'ctc_add_meta_box_event_registration' );
 
 /**********************************
- * AFTER SAVING
+ * DATA CORRECTION
  **********************************/
 
 /**
@@ -687,38 +687,48 @@ function ctc_after_save_event( $post_id, $post ) {
 		return;
 	}
 
-	// Action hook
+	// Action to hook on save event, after nonce, permissions, etc.
+	// This is used by ctc_correct_event() and by Church Content Pro add-on to correct data after saving.
 	do_action( 'ctc_after_save_event', $post_id, $post );
 
 }
 
-add_action( 'save_post', 'ctc_after_save_event', 11, 2 ); // after save at default 10
+add_action( 'save_post', 'ctc_after_save_event', 11, 2 ); // after save at default 10.
 
 /**
- * End Date Correction
+ * Correct event data.
  *
- * This is to be run after event is saved (ctc_after_save_event hook).
- * In order for this to work properly, End Date must be after Start Date so that the saved/sanitized
- * Start Date value is available in database.
+ * This is also run by ctc_correct_all_events() on plugin install / database upgrade.
+ * As such, some data correction mayonly apply to an install / upgrade situation, not a post save.
  *
- * @since 0.9.1
- * @param int $post_id Post ID
- * @param object $post Data for post being saved
+ * @since 1.9
+ * @param int $post_id Post ID.
  */
-function ctc_correct_event_end_date( $post_id, $post ) {
+function ctc_correct_event( $post_id ) {
 
-	// Get start and end dates already saved by CT Meta Box
+	/**
+	 * Values
+	 */
+
+	// Get current values.
 	$start_date = get_post_meta( $post_id, '_ctc_event_start_date', true );
 	$end_date = get_post_meta( $post_id, '_ctc_event_end_date', true );
+	$start_time = get_post_meta( $post_id, '_ctc_event_start_time', true );
+	$end_time = get_post_meta( $post_id, '_ctc_event_end_time', true );
+	$recurrence_end_date = get_post_meta( $post_id, '_ctc_event_recurrence_end_date', true );
 
-	// If end date given but start date empty, make end date start date
+	/**
+	 * End Date
+	 */
+
+	// If end date given but start date empty, make end date start date.
 	if ( empty( $start_date ) && ! empty( $end_date ) ) {
 		$start_date = $end_date;
 		$end_date = '';
 	}
 
-	// If end date is empty or earlier than start date, use start date as end date
-	// Note: end date is required for proper ordering
+	// If end date is empty or earlier than start date, use start date as end date.
+	// Note: end date is required for proper ordering.
 	if ( ! empty( $start_date )
 		 && (
 			empty( $end_date )
@@ -728,65 +738,32 @@ function ctc_correct_event_end_date( $post_id, $post ) {
 		$end_date = $start_date;
 	}
 
-	// Update dates in case changed
+	// Update dates in case changed.
 	update_post_meta( $post_id, '_ctc_event_start_date', $start_date );
 	update_post_meta( $post_id, '_ctc_event_end_date', $end_date );
 
-}
+	/**
+	 * End Time
+	 */
 
-add_action( 'ctc_after_save_event', 'ctc_correct_event_end_date', 10, 2 );
-
-/**
- * End Time Correction
- *
- * This is to be run after event is saved (ctc_after_save_event hook).
- * In order for this to work properly, End Time must be after Start Time so that the saved/sanitized
- * Start Time value is available in database.
- *
- * @since 1.2
- * @param int $post_id Post ID
- * @param object $post Data for post being saved
- */
-function ctc_correct_event_end_time( $post_id, $post ) {
-
-	// Get start and end times already saved by CT Meta Box
-	$start_time = get_post_meta( $post_id, '_ctc_event_start_time', true );
-	$end_time = get_post_meta( $post_id, '_ctc_event_end_time', true );
-
-	// If end time given but start time empty, empty end time
+	// If end time given but start time empty, empty end time.
 	if ( empty( $start_time ) && ! empty( $end_time ) ) {
 		$end_time = '';
 	}
 
-	// If end time is same as or earlier than start time, empty end time
+	// If end time is same as or earlier than start time, empty end time.
 	if ( ! empty( $start_time ) && $end_time <= $start_time ) {
 		$end_time = '';
 	}
 
-	// Uptime times in case changed
-	update_post_meta( $post_id, '_ctc_event_start_time', $start_time );
+	// Uptime times in case changed.
 	update_post_meta( $post_id, '_ctc_event_end_time', $end_time );
 
-}
+	/**
+	 * Recur Until Date
+	 */
 
-add_action( 'ctc_after_save_event', 'ctc_correct_event_end_time', 10, 2 );
-
-/**
- * Recur Until Date Correction
- *
- * Empty Recur Until date if no Start Date or if Recurl Until is earlier than Start Date.
- *
- * @since 1.9
- * @param int $post_id Post ID
- * @param object $post Data for post being saved
- */
-function ctc_correct_event_recurrence_end_date( $post_id, $post ) {
-
-	// Get Start Date and Recur Until date.
-	$start_date = get_post_meta( $post_id, '_ctc_event_start_date', true );
-	$recurrence_end_date = get_post_meta( $post_id, '_ctc_event_recurrence_end_date', true );
-
-	// Also empty it if no Start Date.
+	// If Start Date is empty, also empty Recur Until.
 	if ( empty( $start_date ) ) {
 		$recurrence_end_date = '';
 	}
@@ -799,21 +776,63 @@ function ctc_correct_event_recurrence_end_date( $post_id, $post ) {
 	// Update in case changed.
 	update_post_meta( $post_id, '_ctc_event_recurrence_end_date', $recurrence_end_date );
 
+	/**
+	 * Hidden Fields
+	 *
+	 * Hidden Date and Time fields are combined into one field for easier ordering (simpler queries).
+	 * This hidden field was introduced in 1.2.
+	 * If no date, value will be 0000-00-00 00:00:00.
+	 * If no time, value will be 2014-10-28 00:00:00.
+	 */
+
+	ctc_update_event_date_time( $post_id );
+
 }
 
-add_action( 'ctc_after_save_event', 'ctc_correct_event_recurrence_end_date', 10, 2 );
+add_action( 'ctc_after_save_event', 'ctc_correct_event' ); // run after event post is saved.
 
 /**
- * Update hidden date/time fields after saving
+ * Correct event data for all events
  *
- * @since 1.2
- * @param int $post_id Post ID
+ * Loop all events to run ctc_correct_event() on each.
+ * This corrects values in consideration of one another and sets defaults as needed.
+ *
+ * This is run by the database upgrader.
+ * See ctc_upgrade_1_2() in includes/upgrade.php for example.
+ *
+ * @since 1.9
  */
-function ctc_update_event_date_time_after_save( $post_id ) {
-	ctc_update_event_date_time( $post_id );
-}
+function ctc_correct_all_events() {
 
-add_action( 'ctc_after_save_event', 'ctc_update_event_date_time_after_save' );
+	global $post;
+
+	// Get all event posts.
+	$query = new WP_Query( array(
+		'post_type'   => 'ctc_event',
+		'post_status' => 'publish,pending,draft,auto-draft,future,private,inherit,trash', // all to be safe.
+		'nopaging' => true, // get all posts.
+	) );
+
+	// Have event posts.
+	if ( $query->have_posts() ) {
+
+		// Loop event posts.
+		while ( $query->have_posts() ) {
+
+			// Set $post variable.
+			$query->the_post();
+
+			// Correct event's data.
+			ctc_correct_event( $post->ID );
+
+		}
+
+		// Restore original post data.
+		wp_reset_postdata();
+
+	}
+
+}
 
 /**********************************
  * ADMIN COLUMNS
@@ -1100,48 +1119,3 @@ function ctc_event_columns_sorting_request( $args ) {
 }
 
 add_filter( 'request', 'ctc_event_columns_sorting_request' ); // set how to sort columns
-
-/**********************************
- * DATABASE UPGRADES
- **********************************/
-
-/**
- * Set Events Defaults (All Events)
- *
- * This will ensure defaults are filled for new fields.
- * This can be safely run by the database upgrader for any version.
- *
- * See includes/admin/upgrade.php for how it is used.
- *
- * NOTE: This does not set defaults for fields that have always existed (not necessary).
- * NOTE: This can be modified in future to accommodate other new fields.
- *
- * @since 1.2
- */
-function ctc_set_events_defaults() {
-
-	// Select all events to check/update
-	$posts = get_posts( array(
-		'post_type'			=> 'ctc_event',
-		'post_status'		=> 'publish,pending,draft,auto-draft,future,private,inherit,trash', // all to be safe
-		'numberposts'		=> -1 // no limit
-	) );
-
-	// Loop each post to update fields
-	foreach( $posts as $post ) {
-
-		// Get current values
-		// Example: $field_name = get_post_meta( $post->ID, '_ctc_event_field_name', true );
-
-		// Set defaults for new fields
-		// Example: if ( ! $field_name ) update_post_meta( $post->ID, '_ctc_event_field_name', '1' );
-
-		// Date and Time fields are combined into one field for easier ordering (simpler queries)
-		// This hidden field was introduced in 1.2
-		// If no date, value will be 0000-00-00 00:00:00
-		// If no time, value will be 2014-10-28 00:00:00
-		ctc_update_event_date_time( $post->ID );
-
-	}
-
-}

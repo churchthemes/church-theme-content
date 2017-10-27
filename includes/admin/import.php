@@ -33,8 +33,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  */
 function ctc_after_import() {
 
-	// Set defaults for event fields that did not always exist
-	ctc_set_events_defaults();
+	// Set defaults for event fields that did not always exist.
+	ctc_correct_all_events();
 
 }
 
