@@ -53,12 +53,27 @@ if ( ! class_exists( 'CT_Recurrence' ) ) {
 		 *
 		 * @since 0.9
 		 * @access public
-		 * @param array $args Configuration for meta box and its fields.
 		 */
 		public function __construct() {
 
-			// Version
+			// Version.
 			$this->version = '2.0';
+
+			// Includes to load.
+			$includes = array(
+
+				// php-rrule includes.
+				'RfcParser.php',
+				'RRuleInterface.php',
+				'RSet.php',
+				'RRule.php',
+
+			);
+
+			// Load includes.
+			foreach ( $includes as $include ) {
+				require_once trailingslashit( CTC_PATH ) . CTC_LIB_DIR . '/ct-recurrence/php-rrule/' . $include;
+			}
 
 		}
 
