@@ -772,6 +772,38 @@ function ctc_correct_event_end_time( $post_id, $post ) {
 add_action( 'ctc_after_save_event', 'ctc_correct_event_end_time', 10, 2 );
 
 /**
+ * Recur Until Date Correction
+ *
+ * Empty Recur Until date if no Start Date or if Recurl Until is earlier than Start Date.
+ *
+ * @since 1.9
+ * @param int $post_id Post ID
+ * @param object $post Data for post being saved
+ */
+function ctc_correct_event_recurrence_end_date( $post_id, $post ) {
+
+	// Get Start Date and Recur Until date.
+	$start_date = get_post_meta( $post_id, '_ctc_event_start_date', true );
+	$recurrence_end_date = get_post_meta( $post_id, '_ctc_event_recurrence_end_date', true );
+
+	// Also empty it if no Start Date.
+	if ( empty( $start_date ) ) {
+		$recurrence_end_date = '';
+	}
+
+	// If Recur Until given but earlier than Start Date, empty it.
+	elseif ( ! empty( $recurrence_end_date ) && ( strtotime( $recurrence_end_date ) < strtotime( $start_date ) ) ) {
+		$recurrence_end_date = '';
+	}
+
+	// Update in case changed.
+	update_post_meta( $post_id, '_ctc_event_recurrence_end_date', $recurrence_end_date );
+
+}
+
+add_action( 'ctc_after_save_event', 'ctc_correct_event_recurrence_end_date', 10, 2 );
+
+/**
  * Update hidden date/time fields after saving
  *
  * @since 1.2
@@ -1098,7 +1130,7 @@ function ctc_set_events_defaults() {
 	// Loop each post to update fields
 	foreach( $posts as $post ) {
 
-	 	// Get current values
+		// Get current values
 		// Example: $field_name = get_post_meta( $post->ID, '_ctc_event_field_name', true );
 
 		// Set defaults for new fields
