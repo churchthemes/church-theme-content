@@ -614,7 +614,7 @@ if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 	// Note: until_date does not have effect on the calc_* methods, only the get_* methods.
 	$args = array(
 		'start_date'			=> '2017-10-01', // first day of event, YYYY-mm-dd (ie. 2015-07-20 for July 15, 2015).
-		'until_date'			=> '2017-12-31', // date recurrence should not extend beyond (has no effect on calc_* functions).
+		'until_date'			=> '2018-01-31', // date recurrence should not extend beyond (has no effect on calc_* functions).
 		'frequency'				=> 'weekly', // weekly, monthly, yearly.
 		'interval'				=> '1', // every X weeks, months or years.
 		'weekly_day'			=> wp_json_encode( array( // single value, array or JSON-encoded array of day of week in 2-letter format (SU, MO, TU, etc.). If empty, uses same day of week.
