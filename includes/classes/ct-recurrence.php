@@ -4,13 +4,14 @@
  *
  * This class presents future recurring dates based on given arguments.
  * It also considers excluded dates which may or may not relate to recurrence.
- * It is used in the Church Content, Church Content Pro add-on and Church Theme Framework.
+ * It is used in the Church Content plugin (and Pro add-on) and Church Theme Framework.
  *
- * It is compatible with PHP 5.2.4, the minimum version required by WordPress.
- * PHP manual recommends using DateTime::modify() for PHP 5.2 versus strtotime().
- * See last note on http://php.net/manual/en/function.strtotime.php
+ * Version 2.0 began using php-rrule (MIT): https://github.com/rlanvin/php-rrule.
+ * Versions before that (0.9) used more simplistic, proprietary calculations.
+ * get_dates(), calc_next_future_date() and their arguments are backwards-compatible.
  *
- * Otherwise, simshaun/recurr, tplaner/When or a newer one could be a good choice.
+ * Be aware that version 2.0 requires PHP 5.3+ so you should prompt to update if necessary.
+ * Earlier versions (0.9) worked with PHP 5.2.4, like WordPress itself.
  *
  * See example usage at bottom of this file.
  *
@@ -617,13 +618,13 @@ if ( is_admin() && ! empty( $_GET['recurrence_test' ] ) ) {
 		'frequency'				=> 'weekly', // weekly, monthly, yearly.
 		'interval'				=> '1', // every X weeks, months or years.
 		'weekly_day'			=> wp_json_encode( array( // single value, array or JSON-encoded array of day of week in 2-letter format (SU, MO, TU, etc.). If empty, uses same day of week.
-										'SU',
+										//'SU',
 										'MO',
-										'TU',
-										'WE',
-										'TH',
+										//'TU',
+										//'WE',
+										//'TH',
 										'FR',
-										'SA',
+										//'SA',
 									) ),
 		'monthly_type'			=> 'week', // day (same day of month) or week (on a specific week); if recurrence is monthly (day is default).
 		//'monthly_week'		=> '1', // was formerly a single value as string - test this for back-compat, 1 - 4 or 'last'; if recurrence is monthly and monthly_type is 'week'.
