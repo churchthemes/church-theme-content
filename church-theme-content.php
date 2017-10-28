@@ -198,7 +198,7 @@ class Church_Theme_Content {
 
 				// Libraries
 				CTC_LIB_DIR . '/ct-plugin-settings/ct-plugin-settings.php', // see CTPS_URL constant defined above
-				CTC_LIB_DIR . '/ct-recurrence/ct-recurrence.php', // see CTPS_URL constant defined above
+				CTC_LIB_DIR . '/ct-recurrence/ct-recurrence.php',
 
 				// Classes
 
