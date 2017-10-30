@@ -101,7 +101,6 @@ function ctc_add_meta_box_event_date() {
 			),
 
 			// End Date
-			// Note: ctc_correct_event_end_date() callback corrects end and start dates (ie. end date but no start or end is sooner than start)
 			'_ctc_event_end_date' => array(
 				'name'				=> __( 'End Date', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
@@ -154,7 +153,6 @@ function ctc_add_meta_box_event_date() {
 			),
 
 			// End Time
-			// Note: ctc_correct_event_end_time() corrects end and start times (ie. end time but no start or end is sooner than start)
 			'_ctc_event_end_time' => array(
 				'name'				=> __( 'End Time', 'church-theme-content' ),
 				'after_name'		=> '', // (Optional), (Required), etc.
@@ -698,8 +696,11 @@ add_action( 'save_post', 'ctc_after_save_event', 11, 2 ); // after save at defau
 /**
  * Correct event data.
  *
- * This is also run by ctc_correct_all_events() on plugin install / database upgrade.
- * As such, some data correction mayonly apply to an install / upgrade situation, not a post save.
+ * This corrects values in consideration of one another and sets defaults as needed.
+ *
+ * It is run on event post save and by ctc_correct_all_events() in different situations.
+ *
+ * Note the ctc_correct_event action which lets add-ons like Pro run additional corrections.
  *
  * @since 1.9
  * @param int $post_id Post ID.
@@ -787,6 +788,15 @@ function ctc_correct_event( $post_id ) {
 
 	ctc_update_event_date_time( $post_id );
 
+	/**
+	 * Hook for add-ons.
+	 *
+	 * Let add-ons like Pro run additional corrections whenever this function run.
+	 * An add-on might also run this function directly in order to make it's corrections run.
+	 */
+
+	do_action( 'ctc_correct_event', $post_id );
+
 }
 
 add_action( 'ctc_after_save_event', 'ctc_correct_event' ); // run after event post is saved.
@@ -795,10 +805,11 @@ add_action( 'ctc_after_save_event', 'ctc_correct_event' ); // run after event po
  * Correct event data for all events
  *
  * Loop all events to run ctc_correct_event() on each.
- * This corrects values in consideration of one another and sets defaults as needed.
  *
- * This is run by the database upgrader.
- * See ctc_upgrade_1_2() in includes/upgrade.php for example.
+ * This is run when needed by the database upgrader, on sample content import, etc.
+ *
+ * Note that the ctc_correct_event action in ctc_correct_event() lets add-ons like Pro
+ * run additional corrections. When this is run, corrections from Pro are also run.
  *
  * @since 1.9
  */
@@ -823,6 +834,7 @@ function ctc_correct_all_events() {
 			$query->the_post();
 
 			// Correct event's data.
+			// Note that this will also run Pro plugin's correct functions via 'ctc_correct_event' action.
 			ctc_correct_event( $post->ID );
 
 		}
