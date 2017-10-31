@@ -34,6 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 function ctc_after_import() {
 
 	// Set defaults for event fields that did not always exist.
+	// This will also cause Pro plugin's corrections to be made.
 	ctc_correct_all_events();
 
 }

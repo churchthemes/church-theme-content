@@ -197,8 +197,8 @@ class Church_Theme_Content {
 				CTC_INC_DIR . '/taxonomies.php',
 
 				// Libraries
-				CTC_LIB_DIR . '/ct-plugin-settings/ct-plugin-settings.php', // see CTPS_URL constant defined above
-				CTC_LIB_DIR . '/ct-recurrence/ct-recurrence.php',
+				CTC_LIB_DIR . '/ct-plugin-settings/ct-plugin-settings.php', // see CTPS_URL constant defined above.
+				CTC_LIB_DIR . '/ct-recurrence/ct-recurrence-load.php', // don't load ct-recurrence.php directly.
 
 				// Classes
 
@@ -224,6 +224,7 @@ class Church_Theme_Content {
 				CTC_ADMIN_DIR . '/dashboard.php',
 				CTC_ADMIN_DIR . '/edd-license.php',
 				CTC_ADMIN_DIR . '/import.php',
+				CTC_ADMIN_DIR . '/notices.php',
 				CTC_ADMIN_DIR . '/upgrade.php',
 
 				// Libraries
