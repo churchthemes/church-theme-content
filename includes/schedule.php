@@ -122,6 +122,10 @@ function ctc_update_recurring_event_dates() {
 
 			}
 
+			// Action after process a single recurring event.
+			// Example: Pro hooks into this to remove past excluded dates.
+			do_action( 'ctc_update_recurring_event_dates_after', $post->ID );
+
 		}
 
 	}
@@ -131,4 +135,5 @@ function ctc_update_recurring_event_dates() {
 add_action( 'ctc_update_recurring_event_dates', 'ctc_update_recurring_event_dates' );
 
 // Uncomment for development and debugging. Recurrence will run on every page load.
+// Or, install the Crontrol plugin to execute the scheduled cron event on demand.
 //add_action( 'admin_init', 'ctc_update_recurring_event_dates' );

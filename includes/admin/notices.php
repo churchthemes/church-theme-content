@@ -56,7 +56,7 @@ function ctc_recurrence_php_notice() {
 			printf(
 				wp_kses(
 					/* translators: %1$s is minimum required version of PHP, %2$s is URL with information on updating PHP. */
-					__( '<strong>Event recurrence is disabled.</strong> PHP %1$s or newer is required for recurrence to work. <a href="%2$s" target="_blank">Update PHP</a> to fix.', 'church-theme-content' ),
+					__( '<strong>Event recurrence is disabled.</strong> PHP %1$s or newer is required for recurrence to work. <a href="%2$s" target="_blank">Update PHP</a> to resolve.', 'church-theme-content' ),
 					array(
 						'strong' => array(),
 						'a' => array(
