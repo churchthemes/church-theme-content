@@ -284,7 +284,9 @@ function ctc_add_meta_box_event_date() {
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
 				'attributes'		=> array(), // attr => value array (e.g. set min/max for number or range type)
 				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
-				'field_attributes'	=> array(), // attr => value array for field container
+				'field_attributes'	=> array( // attr => value array for field container
+					'style' => 'margin-top: 15px',
+				),
 				'field_class'		=> '', // class(es) to add to field container
 				'custom_sanitize'	=> '', // function to do additional sanitization
 				'custom_field'		=> '', // function for custom display of field input
