@@ -818,20 +818,17 @@ function ctc_correct_all_events() {
 	global $post;
 
 	// Get all event posts.
-	$query = new WP_Query( array(
+	$events_query = new WP_Query( array(
 		'post_type'   => 'ctc_event',
 		'post_status' => 'publish,pending,draft,auto-draft,future,private,inherit,trash', // all to be safe.
 		'nopaging' => true, // get all posts.
 	) );
 
 	// Have event posts.
-	if ( $query->have_posts() ) {
+	if ( ! empty( $events_query->posts ) ) {
 
 		// Loop event posts.
-		while ( $query->have_posts() ) {
-
-			// Set $post variable.
-			$query->the_post();
+		foreach ( $events_query->posts as $post ) {
 
 			// Correct event's data.
 			// Note that this will also run Pro plugin's correct functions via 'ctc_correct_event' action.
