@@ -904,7 +904,6 @@ function ctc_event_columns_content( $column ) {
 		// Dates
 		case 'ctc_event_dates' :
 
-
 			$start_date = trim( get_post_meta( $post->ID , '_ctc_event_start_date' , true ) );
 			$end_date = get_post_meta( $post->ID , '_ctc_event_end_date' , true );
 			$time = get_post_meta( $post->ID , '_ctc_event_time' , true );
