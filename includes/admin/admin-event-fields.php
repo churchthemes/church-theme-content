@@ -958,7 +958,8 @@ function ctc_event_columns_content( $column ) {
 				echo '<div class="description">' . esc_html( $time ) . '</div>';
 			}
 
-			if ( ! empty( $recurrence ) && $recurrence != 'none' && $start_date ) { // show nothing if no start date entered
+			// Add recurrence notes.
+			if ( ctc_field_supported( 'events', '_ctc_event_recurrence' ) && ! empty( $recurrence ) && $recurrence != 'none' && $start_date ) { // show nothing if no start date entered
 
 				echo '<div class="description"><i>';
 
