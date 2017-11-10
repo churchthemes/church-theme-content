@@ -44,6 +44,11 @@ add_action( 'wp', 'ctc_schedule_recurring_events' );
  */
 function ctc_update_recurring_event_dates() {
 
+	// Only if recurrence is supported.
+	if ( ! ctc_field_supported( 'events', '_ctc_event_recurrence' ) ) {
+		return;
+	}
+
 	// Get all events with end date in past and have valid recurring value.
 	$events_query = new WP_Query( array(
 		'post_type'       => 'ctc_event',
