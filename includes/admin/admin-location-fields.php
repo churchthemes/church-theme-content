@@ -374,7 +374,7 @@ function ctc_location_columns_content( $column ) {
 		case 'ctc_location_thumbnail' :
 
 			if ( has_post_thumbnail() ) {
-				echo '<a href="' . get_edit_post_link( $post->ID ) . '">' . get_the_post_thumbnail( $post->ID, array( 80, 80 ) ) . '</a>';
+				echo '<a href="' . get_edit_post_link( $post->ID ) . '">' . get_the_post_thumbnail( $post->ID, array( 60, 60 ) ) . '</a>';
 			}
 
 			break;
