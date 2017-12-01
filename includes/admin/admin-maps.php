@@ -410,5 +410,3 @@ function ctc_coordinate_field( $data ) {
 	return $input;
 
 }
-
-add_action( 'admin_init', 'ctc_hide_theme_support_notice' ); // before admin_notices
