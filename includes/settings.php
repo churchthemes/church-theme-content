@@ -62,7 +62,7 @@ function ctc_settings_setup() {
 		// Settings page description.
 		'desc' => sprintf(
 			/* translators: %1$s is Church Content plugin URL, %2$s is note about upgrading to Pro (if not active), %3$s is URL to Customizer. */
-			__( 'These settings are for the <a href="%1$s" target="_blank">Church Content</a> plugin. %2$s See the <a href="%3$s">Customizer</a> for theme-provided appearance settings.', 'church-theme-content' ),
+			__( 'These settings are for the <a href="%1$s" target="_blank">Church Content</a> plugin. %2$s Use the <a href="%3$s">Customizer</a> for theme-provided appearance settings.', 'church-theme-content' ),
 			'https://churchthemes.com/plugins/church-content/?utm_source=ctc&utm_medium=plugin&utm_campaign=church-theme-content&utm_content=settings',
 			$pro_upgrade_desc_note,
 			esc_url( admin_url( 'customize.php' ) )
@@ -115,6 +115,38 @@ function ctc_settings_setup() {
 
 			),
 
+			// Sermons.
+			'sermons' => array(
+
+				// Title.
+				'title' => _x( 'Sermons', 'settings section title', 'church-theme-content' ),
+
+				// Description.
+				'desc' => '',
+
+				// Fields (Settings).
+				'fields' => array(
+
+				),
+
+			),
+
+			// Events.
+			'events' => array(
+
+				// Title.
+				'title' => _x( 'Events', 'settings section title', 'church-theme-content' ),
+
+				// Description.
+				'desc' => '',
+
+				// Fields (Settings).
+				'fields' => array(
+
+				),
+
+			),
+
 			// Locations.
 			'locations' => array(
 
@@ -132,7 +164,7 @@ function ctc_settings_setup() {
 						'name'            => _x( 'Google Maps API Key', 'settings', 'church-theme-content' ),
 						'desc'            => sprintf(
 							/* translators: %1$s is URL to guide telling user how to get a Google Maps API Key */
-							__( 'An API Key for Google Maps is required if you want to show maps for events or locations. <a href="%1$s" target="_blank">Get an API Key</a>', 'church-theme-content' ),
+							__( 'An API Key for Google Maps is required if you want to show maps for locations or events. <a href="%1$s" target="_blank">Get an API Key</a>', 'church-theme-content' ),
 							'https://churchthemes.com/go/google-maps-api-key'
 						),
 						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
@@ -145,6 +177,38 @@ function ctc_settings_setup() {
 						'custom_sanitize' => '', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
 					),
+
+				),
+
+			),
+
+			// People.
+			'people' => array(
+
+				// Title.
+				'title' => _x( 'People', 'settings section title', 'church-theme-content' ),
+
+				// Description.
+				'desc' => '',
+
+				// Fields (Settings).
+				'fields' => array(
+
+				),
+
+			),
+
+			// Podcasting.
+			'podcasting' => array(
+
+				// Title.
+				'title' => _x( 'Podcasting', 'settings section title', 'church-theme-content' ),
+
+				// Description.
+				'desc' => '',
+
+				// Fields (Settings).
+				'fields' => array(
 
 				),
 
