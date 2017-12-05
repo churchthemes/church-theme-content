@@ -114,10 +114,10 @@ function ctc_settings_setup() {
 			),
 
 			// General
-			'general' => array(
+			'locations' => array(
 
 				// Title
-				'title'	=> _x( 'General', 'settings section title', 'church-theme-content' ),
+				'title'	=> _x( 'Locations', 'settings section title', 'church-theme-content' ),
 
 				// Description
 				'desc'	=> '',
