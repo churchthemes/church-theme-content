@@ -2,7 +2,7 @@
 /**
  * Plugin Settings
  *
- * Setup and retrieve plugin settings.
+ * Setup and retrieve plugin settings. Also handles WordPress settings.
  *
  * @package    Church_Theme_Content
  * @copyright  Copyright (c) 2014 - 2017, churchthemes.com
@@ -277,3 +277,59 @@ function ctc_change_wp_per_page_label( $translated_text, $text, $domain ) {
 }
 
 add_filter( 'gettext', 'ctc_change_wp_per_page_label', 20, 3 );
+
+/**
+ * Insert note on Settings > Reading to say use Church Content settings to change "per page" per post type.
+ *
+ * A description is added after the "Blog pages show at most" input, which we renamed to "Posts per page".
+ *
+ * @since 1.9.
+ */
+function ctc_add_wp_per_page_desc() {
+
+	// Get current screen.
+	$screen = get_current_screen();
+
+	// On settings screen only.
+	if ( 'options-reading' !== $screen->base ) {
+		return;
+	}
+
+	// Note to append.
+	$note = sprintf(
+		wp_kses(
+			/* translators: %1$s is URL for Church Content Settings */
+			__( 'Use <a href="%1$s">Church Content Settings</a> to override this for specific post types (sermons, events, etc.)', 'church-theme-content' ),
+			array(
+				'a' => array(
+					'href' => array(),
+				),
+			)
+		),
+		admin_url( 'options-general.php?page=' . CTC_DIR )
+	);
+
+	?>
+
+	<script type="text/javascript">
+
+	jQuery( document ).ready( function( $ ) {
+
+		// Get posts_per_page input element.
+		var $per_page_input = $( 'input[name=posts_per_page]' );
+
+		// Get parent td of input.
+		var $container = $per_page_input.parent( 'td' );
+
+		// Append note to bottom of td as description.
+		$container.append( '<p class="description"><?php echo $note; ?></p>' );
+
+	} );
+
+	</script>
+
+	<?php
+
+}
+
+add_action( 'admin_print_footer_scripts', 'ctc_add_wp_per_page_desc' );
