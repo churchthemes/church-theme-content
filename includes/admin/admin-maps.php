@@ -209,7 +209,7 @@ function ctc_gmaps_api_key_notice() {
 						),
 					)
 				),
-				admin_url( 'options-general.php?page=' . CTC_DIR )
+				admin_url( 'options-general.php?page=' . CTC_DIR . '#locations' )
 			);
 			?>
 		</p>

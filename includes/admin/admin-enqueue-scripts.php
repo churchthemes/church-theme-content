@@ -36,7 +36,7 @@ function ctc_admin_enqueue_scripts() {
 		wp_localize_script( 'ctc-map-after-fields', 'ctc_map_after_fields_data', array( // data to use in JS.
 			'get_from_address_failed' => __( 'Address could not be converted. Check the address or enter your city then click the map to pinpoint your location.', 'church-theme-content' ),
 			'missing_address'         => __( 'Please enter an Address above.', 'church-theme-content' ),
-			'missing_key_message'     => __( 'Go to Settings > Church Content to set your Google Maps API Key in order to use this button.', 'church-theme-content' ),
+			'missing_key_message'     => __( 'Go to Settings > Church Content > Locations to set your Google Maps API Key to use this button.', 'church-theme-content' ),
 			'has_api_key'             => ctc_setting( 'google_maps_api_key' ) ? true : false,
 		) );
 
