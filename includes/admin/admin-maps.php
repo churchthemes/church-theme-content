@@ -354,7 +354,7 @@ function ctc_map_after_fields( $object ) {
 					sprintf(
 						/* translators: %1$s is URL for plugin settings */
 						__( 'Set your <a href="%1$s" target="_blank">Google Maps API Key</a> to show a map preview here.', 'church-theme-content' ),
-						admin_url( 'options-general.php?page=' . CTC_DIR )
+						admin_url( 'options-general.php?page=' . CTC_DIR . '#locations' )
 					),
 					array(
 						'a' => array(
