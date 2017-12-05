@@ -249,3 +249,31 @@ function ctc_setting( $setting ) {
 	return apply_filters( 'ctc_setting', $value, $setting );
 
 }
+
+/**********************************
+ * WORDPRESS SETTINGS
+ **********************************/
+
+/**
+ * Change WordPress "Blog pages show at most" label text.
+ *
+ * "Posts per page" makes more sense when using multiple post types.
+ *
+ * @since 1.9.
+ */
+function ctc_change_wp_per_page_label( $translated_text, $text, $domain ) {
+
+	switch ( $translated_text ) {
+
+		case 'Blog pages show at most':
+			/* translators: This replaces "Blog pages show at most" in WordPress Settings > Reading" */
+			$translated_text = __( 'Posts per page', 'church-theme-content' );
+			break;
+
+	}
+
+	return $translated_text;
+
+}
+
+add_filter( 'gettext', 'ctc_change_wp_per_page_label', 20, 3 );
