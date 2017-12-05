@@ -11,8 +11,10 @@
  * @since      1.2
  */
 
-// No direct access
-if ( ! defined( 'ABSPATH' ) ) exit;
+// No direct access.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**********************************
  * SETTINGS SETUP
@@ -67,11 +69,11 @@ function ctc_settings_setup() {
 		),
 
 		// Plugin File
-		'plugin_file'   => CTC_FILE,	// path to plugin's main file
+		'plugin_file' => CTC_FILE, // path to plugin's main file.
 
-		// URL for CT Plugin Settings directory
-		// This is used for loading its CSS and JS files
-		'url'			=> CTC_URL . '/' . CTC_LIB_DIR . '/ct-plugin-settings',
+		// URL for CT Plugin Settings directory.
+		// This is used for loading its CSS and JS files.
+		'url' => CTC_URL . '/' . CTC_LIB_DIR . '/ct-plugin-settings',
 
 		// Section Tabs.
 		'sections' => array(
@@ -80,14 +82,14 @@ function ctc_settings_setup() {
 			'licenses' => array(
 
 				// Title.
-				'title'	=> _x( 'Licenses', 'settings', 'church-theme-content' ),
+				'title' => _x( 'Licenses', 'settings', 'church-theme-content' ),
 
 				// Description.
-				'desc'	=> sprintf(
-								/* translators: %1$s is URL to Add-ons */
-								__( 'Save then activate your add-on license key to enable one-click updates.', 'church-theme-content' ),
-								'https://churchthemes.com/plugins/?utm_source=ctc&utm_medium=plugin&utm_campaign=add-ons&utm_content=settings'
-							),
+				'desc' => sprintf(
+					/* translators: %1$s is URL to Add-ons */
+					__( "Save then activate your add-on's license key to enable one-click updates for it.", 'church-theme-content' ),
+					'https://churchthemes.com/plugins/?utm_source=ctc&utm_medium=plugin&utm_campaign=add-ons&utm_content=settings'
+				),
 
 				// Fields (Settings).
 				'fields' => array(
@@ -95,67 +97,67 @@ function ctc_settings_setup() {
 					// Example
 					/*
 					'setting_key' => array(
-						'name'				=> __( 'Field Name', 'church-theme-content' ),
-						'desc'				=> __( 'This is the description below the field.', 'church-theme-content' ),
-						'type'				=> 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number
-						'checkbox_label'	=> '', //show text after checkbox
-						'options'			=> array(), // array of keys/values for radio or select
-						'default'			=> '', // value to pre-populate option with (before first save or on reset)
-						'no_empty'			=> false, // if user empties value, force default to be saved instead
-						'allow_html'		=> false, // allow HTML to be used in the value
-						'class'				=> '', // classes to add to input
-						'custom_sanitize'	=> '', // function to do additional sanitization
-						'custom_content'	=> '', // function for custom display of field input
+						'name'            => __( 'Field Name', 'church-theme-content' ),
+						'desc'            => __( 'This is the description below the field.', 'church-theme-content' ),
+						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number
+						'checkbox_label'  => '', //show text after checkbox
+						'options'         => array(), // array of keys/values for radio or select
+						'default'         => '', // value to pre-populate option with (before first save or on reset)
+						'no_empty'        => false, // if user empties value, force default to be saved instead
+						'allow_html'      => false, // allow HTML to be used in the value
+						'class'           => '', // classes to add to input
+						'custom_sanitize' => '', // function to do additional sanitization
+						'custom_content'  => '', // function for custom display of field input
 					),
 					*/
 
-				)
+				),
 
 			),
 
-			// General
+			// Locations.
 			'locations' => array(
 
-				// Title
-				'title'	=> _x( 'Locations', 'settings section title', 'church-theme-content' ),
+				// Title.
+				'title' => _x( 'Locations', 'settings section title', 'church-theme-content' ),
 
-				// Description
-				'desc'	=> '',
+				// Description.
+				'desc' => '',
 
-				// Fields (Settings)
+				// Fields (Settings).
 				'fields' => array(
 
-					// Example
+					// Example.
 					'google_maps_api_key' => array(
-						'name'				=> _x( 'Google Maps API Key', 'settings', 'church-theme-content' ),
-						'desc'				=> sprintf(
-												/* translators: %1$s is URL to guide telling user how to get a Google Maps API Key */
-												__( 'An API Key for Google Maps is required if you want to show maps for events or locations. <a href="%1$s" target="_blank">Get an API Key</a>', 'church-theme-content' ),
-												'https://churchthemes.com/go/google-maps-api-key'
-											),
-						'type'				=> 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number
-						'checkbox_label'	=> '', //show text after checkbox
-						'options'			=> array(), // array of keys/values for radio or select
-						'default'			=> '', // value to pre-populate option with (before first save or on reset)
-						'no_empty'			=> false, // if user empties value, force default to be saved instead
-						'allow_html'		=> false, // allow HTML to be used in the value
-						'class'				=> '', // classes to add to input
-						'custom_sanitize'	=> '', // function to do additional sanitization
-						'custom_content'	=> '', // function for custom display of field input
+						'name'            => _x( 'Google Maps API Key', 'settings', 'church-theme-content' ),
+						'desc'            => sprintf(
+							/* translators: %1$s is URL to guide telling user how to get a Google Maps API Key */
+							__( 'An API Key for Google Maps is required if you want to show maps for events or locations. <a href="%1$s" target="_blank">Get an API Key</a>', 'church-theme-content' ),
+							'https://churchthemes.com/go/google-maps-api-key'
+						),
+						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
+						'checkbox_label'  => '', // show text after checkbox.
+						'options'         => array(), // array of keys/values for radio or select.
+						'default'         => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'        => false, // if user empties value, force default to be saved instead.
+						'allow_html'      => false, // allow HTML to be used in the value.
+						'class'           => '', // classes to add to input.
+						'custom_sanitize' => '', // function to do additional sanitization.
+						'custom_content'  => '', // function for custom display of field input.
 					),
 
-				)
+				),
 
 			),
 
-		)
+		),
 
 	);
 
-	// Filter config
+	// Filter config.
 	$config = apply_filters( 'ctc_settings_config', $config );
 
-	// Add settings
+	// Add settings.
 	$ctc_settings = new CT_Plugin_Settings( $config );
 
 }
@@ -170,9 +172,9 @@ add_action( 'init', 'ctc_settings_setup' );
  * Get a setting
  *
  * @since 1.2
- * @param string $setting Setting key
- * @return mixed Setting value
- * @global object $ctc_settings
+ * @param string $setting Setting key.
+ * @return mixed Setting value.
+ * @global object $ctc_settings.
  */
 function ctc_setting( $setting ) {
 
