@@ -4,7 +4,7 @@
  *
  * @package    Church_Theme_Content
  * @subpackage Admin
- * @copyright  Copyright (c) 2013, churchthemes.com
+ * @copyright  Copyright (c) 2013 - 2017, churchthemes.com
  * @link       https://github.com/churchthemes/church-theme-content
  * @license    GPLv2 or later
  * @since      0.9.3
@@ -12,6 +12,61 @@
 
 // No direct access
 if ( ! defined( 'ABSPATH' ) ) exit;
+
+/*******************************************
+ * INSERTIONS
+ *******************************************/
+
+/**
+ * Add links to setting pages into custom post type menus
+ *
+ * For example, add "Settings" and "Podcasting" links to Sermons
+ * linking to Church Content plugin settings tabs.
+ *
+ * @since 1.9
+ * @global array $submenu Existing menu items.
+ * @return array Modified array of menu items.
+ */
+function ctc_add_settings_menu_links() {
+
+	global $submenu;
+
+	// Create new array to modify.
+	$new_submenu = $submenu;
+
+	// Options page URI.
+	$settings_page_uri = 'options-general.php?page=' . CTC_DIR;
+
+	// Capability.
+	$capability = 'manage_options'; // role/capability with access.
+
+	// Setting word for all post types.
+	$settings_word = _x( 'Settings', 'custom post type menu', 'church-theme-content' );
+
+	// Sermons.
+	$key = 'edit.php?post_type=ctc_sermon';
+
+		// Podcasting.
+		$new_submenu[ $key ][] = array(
+			_x( 'Podcasting', 'custom post type menu', 'church-theme-content' ),
+			$capability,
+			admin_url( $settings_page_uri . '#podcasting' ),
+		);
+
+		// Settings.
+		$new_submenu[ $key ][] = array(
+			$settings_word,
+			$capability,
+			admin_url( $settings_page_uri . '#sermons' ),
+		);
+
+	// Return modified array.
+	return $new_submenu;
+
+
+}
+
+add_action( 'admin_menu', 'ctc_add_settings_menu_links' );
 
 /*******************************************
  * REORDERING

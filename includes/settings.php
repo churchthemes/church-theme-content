@@ -131,6 +131,22 @@ function ctc_settings_setup() {
 
 			),
 
+			// Podcasting.
+			'podcasting' => array(
+
+				// Title.
+				'title' => _x( 'Podcasting', 'settings section title', 'church-theme-content' ),
+
+				// Description.
+				'desc' => '',
+
+				// Fields (Settings).
+				'fields' => array(
+
+				),
+
+			),
+
 			// Events.
 			'events' => array(
 
@@ -187,22 +203,6 @@ function ctc_settings_setup() {
 
 				// Title.
 				'title' => _x( 'People', 'settings section title', 'church-theme-content' ),
-
-				// Description.
-				'desc' => '',
-
-				// Fields (Settings).
-				'fields' => array(
-
-				),
-
-			),
-
-			// Podcasting.
-			'podcasting' => array(
-
-				// Title.
-				'title' => _x( 'Podcasting', 'settings section title', 'church-theme-content' ),
 
 				// Description.
 				'desc' => '',
