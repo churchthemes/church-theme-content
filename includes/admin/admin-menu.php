@@ -25,17 +25,14 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  *
  * @since 1.9
  * @global array $submenu Existing menu items.
- * @return array Modified array of menu items.
  */
 function ctc_add_settings_menu_links() {
 
 	global $submenu;
 
-	// Create new array to modify.
-	$new_submenu = $submenu;
-
 	// Options page URI.
-	$settings_page_uri = 'options-general.php?page=' . CTC_DIR;
+	$rand = rand( 0, 9999999 ); // assists reload when already on settings page (e.g. Sermons > Settings then Sermons > Podcasting).
+	$settings_page_uri = 'options-general.php?page=' . CTC_DIR . '&rand=' . $rand;
 
 	// Capability.
 	$capability = 'manage_options'; // role/capability with access.
@@ -47,22 +44,48 @@ function ctc_add_settings_menu_links() {
 	$key = 'edit.php?post_type=ctc_sermon';
 
 		// Podcasting.
-		$new_submenu[ $key ][] = array(
+		$submenu[ $key ][] = array(
 			_x( 'Podcasting', 'custom post type menu', 'church-theme-content' ),
 			$capability,
 			admin_url( $settings_page_uri . '#podcasting' ),
 		);
 
 		// Settings.
-		$new_submenu[ $key ][] = array(
+		$submenu[ $key ][] = array(
 			$settings_word,
 			$capability,
 			admin_url( $settings_page_uri . '#sermons' ),
 		);
 
-	// Return modified array.
-	return $new_submenu;
+	// Events.
+	$key = 'edit.php?post_type=ctc_event';
 
+		// Settings.
+		$submenu[ $key ][] = array(
+			$settings_word,
+			$capability,
+			admin_url( $settings_page_uri . '#events' ),
+		);
+
+	// Locations.
+	$key = 'edit.php?post_type=ctc_location';
+
+		// Settings.
+		$submenu[ $key ][] = array(
+			$settings_word,
+			$capability,
+			admin_url( $settings_page_uri . '#locations' ),
+		);
+
+	// People.
+	$key = 'edit.php?post_type=ctc_person';
+
+		// Settings.
+		$submenu[ $key ][] = array(
+			$settings_word,
+			$capability,
+			admin_url( $settings_page_uri . '#people' ),
+		);
 
 }
 
