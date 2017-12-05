@@ -35,14 +35,24 @@ function ctc_settings_setup() {
 	global $ctc_settings;
 
 	// Note to add to page description for Pro add-on when not active.
-	$pro_upgrade_desc_note = '';
+	$pro_upgrade_note = '';
 	if ( ! defined( 'CCP_VERSION' ) ) { // plugin not active.
-		$pro_upgrade_desc_note = sprintf(
+		$pro_upgrade_note = sprintf(
 			/* translators: %1$s is URL for Church Content Pro info. */
 			__( '<a href="%1$s" target="_blank">Upgrade to Pro</a> to enable extra settings and features.', 'church-theme-content' ),
 			'https://churchthemes.com/plugins/church-content-pro/?utm_source=ctc&utm_medium=plugin&utm_campaign=church_content_pro&utm_content=settings'
 		);
 	}
+
+	// Pro tag to show after field labels.
+	$pro_tag = _x( '(Pro)', 'settings', 'church-theme-content' );
+
+	// SEO setting description. Same for all post types.
+	$seo_desc = sprintf(
+		/* translators: %1$s is URL with information about SEO with JSON-LD */
+		__( 'Improves search engine optimization by providing schema.org structured data. <a href="%1$s">Learn more</a>', 'church-theme-content' ),
+		'https://churchthemes.com/go/seo-setting/?utm_source=ctc&utm_medium=plugin&utm_campaign=church_content_pro&utm_content=settings'
+	);
 
 	// Configuration.
 	$config = array(
@@ -64,7 +74,7 @@ function ctc_settings_setup() {
 			/* translators: %1$s is Church Content plugin URL, %2$s is note about upgrading to Pro (if not active), %3$s is URL to Customizer. */
 			__( 'These settings are for the <a href="%1$s" target="_blank">Church Content</a> plugin. %2$s Use the <a href="%3$s">Customizer</a> for theme-provided appearance settings.', 'church-theme-content' ),
 			'https://churchthemes.com/plugins/church-content/?utm_source=ctc&utm_medium=plugin&utm_campaign=church-theme-content&utm_content=settings',
-			$pro_upgrade_desc_note,
+			$pro_upgrade_note,
 			esc_url( admin_url( 'customize.php' ) )
 		),
 
@@ -98,6 +108,7 @@ function ctc_settings_setup() {
 					/*
 					'setting_key' => array(
 						'name'            => __( 'Field Name', 'church-theme-content' ),
+						'after_name'      => '', // (Optional), (Required), etc.
 						'desc'            => __( 'This is the description below the field.', 'church-theme-content' ),
 						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number
 						'checkbox_label'  => '', //show text after checkbox
@@ -122,10 +133,26 @@ function ctc_settings_setup() {
 				'title' => _x( 'Sermons', 'settings section title', 'church-theme-content' ),
 
 				// Description.
-				'desc' => '',
+				'desc' => __( 'MAYBE SAY: Settings for Pro features disabled. Install Church Content Pro to enable.', 'church-theme-content' ),
 
 				// Fields (Settings).
 				'fields' => array(
+
+					// SEO.
+					'sermons_seo' => array(
+						'name'            => _x( 'SEO with JSON-LD', 'settings', 'church-theme-content' ),
+						'after_name'      => $pro_tag, // (Optional), (Required), etc.
+						'desc'            => $seo_desc,
+						'type'            => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
+						'checkbox_label'  => __( 'Enable for Sermons (Recommended)', 'church-theme-content' ), // show text after checkbox.
+						'options'         => array(), // array of keys/values for radio or select.
+						'default'         => false, // value to pre-populate option with (before first save or on reset).
+						'no_empty'        => false, // if user empties value, force default to be saved instead.
+						'allow_html'      => false, // allow HTML to be used in the value.
+						'class'           => '', // classes to add to input.
+						'custom_sanitize' => '', // function to do additional sanitization.
+						'custom_content'  => '', // function for custom display of field input.
+					),
 
 				),
 
@@ -178,6 +205,7 @@ function ctc_settings_setup() {
 					// Example.
 					'google_maps_api_key' => array(
 						'name'            => _x( 'Google Maps API Key', 'settings', 'church-theme-content' ),
+						'after_name'      => '', // (Optional), (Required), etc.
 						'desc'            => sprintf(
 							/* translators: %1$s is URL to guide telling user how to get a Google Maps API Key */
 							__( 'An API Key for Google Maps is required if you want to show maps for locations or events. <a href="%1$s" target="_blank">Get an API Key</a>', 'church-theme-content' ),
