@@ -496,8 +496,8 @@ function ctc_add_wp_per_page_desc() {
 		admin_url( 'options-general.php?page=' . CTC_DIR )
 	);
 
+	// Output JS to footer to insert description below input.
 	?>
-
 	<script type="text/javascript">
 
 	jQuery( document ).ready( function( $ ) {
@@ -514,9 +514,61 @@ function ctc_add_wp_per_page_desc() {
 	} );
 
 	</script>
-
 	<?php
 
 }
 
 add_action( 'admin_print_footer_scripts', 'ctc_add_wp_per_page_desc' );
+
+/**
+ * Add settings section to Permalink Settings.
+ *
+ * This tells the user there are permalink settings for custom post types in Church Content plugin settings.
+ *
+ * @since 1.9.
+ */
+function ctc_add_permalink_setting_section() {
+
+	// Add section to Permalink Settings.
+	add_settings_section(
+		'ctc_permalink_setting_section',
+		__( 'Church Content Settings', 'church-theme-content' ),
+		'ctc_permalink_setting_section_output',
+		'permalink'
+	);
+
+}
+
+add_action( 'admin_init', 'ctc_add_permalink_setting_section' );
+
+/**
+ * Output content for ctc_add_permalink_setting_section();
+ *
+ * @since 1.9.
+ */
+function ctc_permalink_setting_section_output( $arg ) {
+
+	?>
+
+	<p>
+
+		<?php
+		printf(
+			wp_kses(
+				/* translators: %1$s is URL for Church Content Settings */
+				__( 'Go to <a href="%1$s">Church Content Settings</a> to set custom URL slugs for sermons, events, etc.', 'church-theme-content' ),
+				array(
+					'a' => array(
+						'href' => array(),
+					),
+				)
+			),
+			admin_url( 'options-general.php?page=' . CTC_DIR )
+		);
+		?>
+
+	</p>
+
+	<?php
+
+}
