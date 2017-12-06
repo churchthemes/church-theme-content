@@ -18,11 +18,13 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  **********************************/
 
 /**
- * Register sermon post type
+ * Sermon post type arguments.
  *
- * @since 0.9
+ * @since 1.9
+ * @param bool $unfiltered Set true to return arguments without being filtered.
+ * @return array Post type registration arguments.
  */
-function ctc_register_post_type_sermon() {
+function ctc_sermon_post_type_args( $unfiltered = false ) {
 
 	// Arguments
 	$args = array(
@@ -52,7 +54,25 @@ function ctc_register_post_type_sermon() {
 		'menu_icon'		=> 'dashicons-video-alt3',
 		'show_in_rest'	=> true,
 	);
-	$args = apply_filters( 'ctc_post_type_sermon_args', $args ); // allow filtering
+
+	// Filter arguments.
+	if ( ! $unfiltered ) {
+		$args = apply_filters( 'ctc_post_type_sermon_args', $args ); // allow filtering
+	}
+
+	return $args;
+
+}
+
+/**
+ * Register sermon post type
+ *
+ * @since 0.9
+ */
+function ctc_register_post_type_sermon() {
+
+	// Arguments
+	$args = ctc_sermon_post_type_args();
 
 	// Registration
 	register_post_type(
