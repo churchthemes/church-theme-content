@@ -34,28 +34,76 @@ function ctc_settings_setup() {
 
 	global $ctc_settings;
 
+	/**********************************
+	 * SHARED
+ 	 **********************************/
+
+	// Pro tag to show after field labels.
+	$pro_tag = _x( '(Pro)', 'settings', 'church-theme-content' );
+
+	// SEO Structured Data.
+	$seo_field = array(
+		'name'            => _x( 'SEO Structured Data', 'settings', 'church-theme-content' ),
+		'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
+		'desc'            => sprintf(
+			/* translators: %1$s is URL with information about SEO with JSON-LD */
+			__( 'Automatically improves Search Engine Optimization (SEO) with Schema.org structured data via JSON-LD. <a href="%1$s">Learn more</a>', 'church-theme-content' ),
+			'https://churchthemes.com/go/seo-setting/?utm_source=ctc&utm_medium=plugin&utm_campaign=church_content_pro&utm_content=settings'
+		),
+		'type'            => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
+		'checkbox_label'  => '',
+		'options'         => array(), // array of keys/values for radio or select.
+		'default'         => false, // value to pre-populate option with (before first save or on reset).
+		'no_empty'        => false, // if user empties value, force default to be saved instead.
+		'allow_html'      => false, // allow HTML to be used in the value.
+		'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
+		'class'           => '', // classes to add to input.
+		'content'         => '', // custom content instead of input (HTML allowed).
+		'custom_sanitize' => '', // function to do additional sanitization.
+		'custom_content'  => '', // function for custom display of field input.
+	);
+
+	// Per Page
+	// Re-use this for sermons, events, etc., changing just name.
+	$per_page_field = array(
+		'name'            => '',
+		'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
+		'desc'            => sprintf(
+			/* translators: %1$s is URL to Setting > Reading */
+			__( 'This overrides the global "Posts per page" setting in <a href="%1$s">Reading Settings</a>. Leave blank to use the global setting.', 'church-theme-content' ),
+			admin_url( 'options-reading.php' )
+		),
+		'type'            => 'number', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
+		'checkbox_label'  => '', // show text after checkbox.
+		'options'         => array(), // array of keys/values for radio or select.
+		'default'         => '', // value to pre-populate option with (before first save or on reset).
+		'no_empty'        => false, // if user empties value, force default to be saved instead.
+		'allow_html'      => false, // allow HTML to be used in the value.
+		'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+			'min' => '1',
+			'placeholder' => get_option( 'posts_per_page' ),
+		),
+		'class'           => '', // classes to add to input.
+		'content'         => '', // custom content instead of input (HTML allowed).
+		'custom_sanitize' => '', // function to do additional sanitization.
+		'custom_content'  => '', // function for custom display of field input.
+	);
+
+	/**********************************
+	 * SETTINGS
+	 **********************************/
+
 	// Note to add to page description for Pro add-on when not active.
 	$pro_upgrade_note = '';
 	if ( ! defined( 'CCP_VERSION' ) ) { // plugin not active.
+
 		$pro_upgrade_note = sprintf(
 			/* translators: %1$s is URL for Church Content Pro info. */
 			__( '<a href="%1$s" target="_blank">Upgrade to Pro</a> to enable extra settings and features.', 'church-theme-content' ),
 			'https://churchthemes.com/plugins/church-content-pro/?utm_source=ctc&utm_medium=plugin&utm_campaign=church_content_pro&utm_content=settings'
 		);
+
 	}
-
-	// Pro tag to show after field labels.
-	$pro_tag = _x( '(Pro)', 'settings', 'church-theme-content' );
-
-	// SEO setting title.
-	$seo_title = _x( 'SEO Structured Data', 'settings', 'church-theme-content' );
-
-	// SEO setting description. Same for all post types.
-	$seo_desc = sprintf(
-		/* translators: %1$s is URL with information about SEO with JSON-LD */
-		__( 'Automatically improves Search Engine Optimization (SEO) with Schema.org structured data via JSON-LD. <a href="%1$s">Learn more</a>', 'church-theme-content' ),
-		'https://churchthemes.com/go/seo-setting/?utm_source=ctc&utm_medium=plugin&utm_campaign=church_content_pro&utm_content=settings'
-	);
 
 	// Configuration.
 	$config = array(
@@ -105,28 +153,8 @@ function ctc_settings_setup() {
 				),
 
 				// Fields (Settings).
-				'fields' => array(
-
-					// Example
-					/*
-					'setting_key' => array(
-						'name'            => __( 'Field Name', 'church-theme-content' ),
-						'after_name'      => '', // (Optional), (Required), etc.
-						'desc'            => __( 'This is the description below the field.', 'church-theme-content' ),
-						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number
-						'checkbox_label'  => '', //show text after checkbox
-						'options'         => array(), // array of keys/values for radio or select
-						'default'         => '', // value to pre-populate option with (before first save or on reset)
-						'no_empty'        => false, // if user empties value, force default to be saved instead
-						'allow_html'      => false, // allow HTML to be used in the value
-						'class'           => '', // classes to add to input
-						'content'         => '', // custom content instead of input (HTML allowed).
-						'custom_sanitize' => '', // function to do additional sanitization
-						'custom_content'  => '', // function for custom display of field input
-					),
-					*/
-
-				),
+				// These are filtered in.
+				'fields' => array(),
 
 			),
 
@@ -142,39 +170,33 @@ function ctc_settings_setup() {
 				// Fields (Settings).
 				'fields' => array(
 
-					// SEO.
-					'sermons_seo' => array(
-						'name'            => $seo_title,
-						'after_name'      => $pro_tag, // (Optional), (Required), etc.
-						'desc'            => $seo_desc,
-						'type'            => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
-						'checkbox_label'  => __( 'Enable for Sermons (Recommended)', 'church-theme-content' ), // show text after checkbox.
+					// SEO Structured Data.
+					'sermons_seo' => array_merge( $seo_field, array(
+						'checkbox_label' => __( 'Enable for Sermons (Recommended)', 'church-theme-content' ), // show text after checkbox.
+					) ),
+
+					// Sermon Podcasting (Shortcut).
+					'podcasting_shortcut' => array(
+						'name'            => _x( 'Sermon Podcasting', 'settings', 'church-theme-content' ),
+						'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
+						'desc'            => '',
+						'type'            => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'checkbox_label'  => '', // show text after checkbox.
 						'options'         => array(), // array of keys/values for radio or select.
-						'default'         => false, // value to pre-populate option with (before first save or on reset).
+						'default'         => '', // value to pre-populate option with (before first save or on reset).
 						'no_empty'        => false, // if user empties value, force default to be saved instead.
 						'allow_html'      => false, // allow HTML to be used in the value.
+						'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
 						'class'           => '', // classes to add to input.
-						'content'         => '', // custom content instead of input (HTML allowed).
+						'content'         => __( '<a href="#">Podcasting Settings</a>', 'church-theme-content' ), // custom content instead of input (HTML allowed).
 						'custom_sanitize' => '', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
 					),
 
-					// SEO.
-					'podcasting_shortcut' => array(
-						'name'            => __( 'Sermon Podcasting', 'settings', 'church-theme-content' ),
-						'after_name'      => $pro_tag, // (Optional), (Required), etc.
-						'desc'            => __( '', 'settings', 'church-theme-content' ),
-						'type'            => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
-						'checkbox_label'  => '', // show text after checkbox.
-						'options'         => array(), // array of keys/values for radio or select.
-						'default'         => false, // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => false, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
-						'class'           => '', // classes to add to input.
-						'content'         => __( '<a href="#">Podcasting Settings</a>', 'settings', 'church-theme-content' ), // custom content instead of input (HTML allowed).
-						'custom_sanitize' => '', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-					),
+					// Sermons Per Page.
+					'sermons_per_page' => array_merge( $per_page_field, array(
+						'name' => __( 'Sermons Per Page', 'church-theme-content' ),
+					) ),
 
 				),
 
@@ -208,6 +230,16 @@ function ctc_settings_setup() {
 				// Fields (Settings).
 				'fields' => array(
 
+					// SEO Structured Data.
+					'events_seo' => array_merge( $seo_field, array(
+						'checkbox_label' => __( 'Enable for Events (Recommended)', 'church-theme-content' ), // show text after checkbox.
+					) ),
+
+					// Events Per Page.
+					'events_per_page' => array_merge( $per_page_field, array(
+						'name' => __( 'Events Per Page', 'church-theme-content' ),
+					) ),
+
 				),
 
 			),
@@ -227,7 +259,7 @@ function ctc_settings_setup() {
 					// Example.
 					'google_maps_api_key' => array(
 						'name'            => _x( 'Google Maps API Key', 'settings', 'church-theme-content' ),
-						'after_name'      => '', // (Optional), (Required), etc.
+						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => sprintf(
 							/* translators: %1$s is URL to guide telling user how to get a Google Maps API Key */
 							__( 'An API Key for Google Maps is required if you want to show maps for locations or events. <a href="%1$s" target="_blank">Get an API Key</a>', 'church-theme-content' ),
@@ -239,6 +271,7 @@ function ctc_settings_setup() {
 						'default'         => '', // value to pre-populate option with (before first save or on reset).
 						'no_empty'        => false, // if user empties value, force default to be saved instead.
 						'allow_html'      => false, // allow HTML to be used in the value.
+						'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
 						'class'           => '', // classes to add to input.
 						'content'         => '', // custom content instead of input (HTML allowed).
 						'custom_sanitize' => '', // function to do additional sanitization.
