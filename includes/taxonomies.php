@@ -64,7 +64,7 @@ function ctc_taxonomy_sermon_topic_args( $unfiltered = false ) {
 }
 
 /**
- * Sermon topic
+ * Sermon topic registration.
  *
  * @since 0.9
  */
@@ -83,7 +83,6 @@ function ctc_register_taxonomy_sermon_topic() {
 }
 
 add_action( 'init', 'ctc_register_taxonomy_sermon_topic' );
-
 
 /**
  * Sermon book arguments.
@@ -132,14 +131,14 @@ function ctc_taxonomy_sermon_book_args( $unfiltered = false ) {
 }
 
 /**
- * Sermon book
+ * Sermon book registration.
  *
  * @since 0.9
  */
 function ctc_register_taxonomy_sermon_book() {
 
 	// Arguments.
-	$args = ctc_taxonomy_sermon_book_args();;
+	$args = ctc_taxonomy_sermon_book_args();
 
 	// Registration.
 	register_taxonomy(
@@ -153,13 +152,15 @@ function ctc_register_taxonomy_sermon_book() {
 add_action( 'init', 'ctc_register_taxonomy_sermon_book' );
 
 /**
- * Sermon series
+ * Sermon series arguments.
  *
- * @since 0.9
+ * @since 1.9
+ * @param bool $unfiltered Set true to return arguments without being filtered.
+ * @return array Taxonomy registration arguments.
  */
-function ctc_register_taxonomy_sermon_series() {
+function ctc_taxonomy_sermon_series_args( $unfiltered = false ) {
 
-	// Arguments
+	// Arguments.
 	$args = array(
 		'labels' => array(
 			'name' 							=> esc_html_x( 'Sermon Series', 'taxonomy general name', 'church-theme-content' ),
@@ -178,7 +179,7 @@ function ctc_register_taxonomy_sermon_series() {
 			'choose_from_most_used' 		=> esc_html_x( 'Choose from the most used series', 'sermons', 'church-theme-content' ),
 			'menu_name' 					=> esc_html_x( 'Series', 'sermon menu name', 'church-theme-content' )
 		),
-		'hierarchical'	=> true, // category-style instead of tag-style
+		'hierarchical'	=> true, // category-style instead of tag-style.
 		'public' 		=> ctc_taxonomy_supported( 'sermons', 'ctc_sermon_series' ),
 		'rewrite' 		=> array(
 			'slug' 			=> 'sermon-series',
@@ -186,9 +187,27 @@ function ctc_register_taxonomy_sermon_series() {
 			'hierarchical' 	=> true
 		)
 	);
-	$args = apply_filters( 'ctc_taxonomy_sermon_series_args', $args ); // allow filtering
 
-	// Registration
+	// Filter arguments.
+	if ( ! $unfiltered ) {
+		$args = apply_filters( 'ctc_taxonomy_sermon_series_args', $args );
+	}
+
+	return $args;
+
+}
+
+/**
+ * Sermon series registration.
+ *
+ * @since 0.9
+ */
+function ctc_register_taxonomy_sermon_series() {
+
+	// Arguments.
+	$args = ctc_taxonomy_sermon_series_args();
+
+	// Registration.
 	register_taxonomy(
 		'ctc_sermon_series',
 		'ctc_sermon',
@@ -200,13 +219,15 @@ function ctc_register_taxonomy_sermon_series() {
 add_action( 'init', 'ctc_register_taxonomy_sermon_series' );
 
 /**
- * Sermon speaker
+ * Sermon speaker arguments.
  *
- * @since 0.9
+ * @since 1.9
+ * @param bool $unfiltered Set true to return arguments without being filtered.
+ * @return array Taxonomy registration arguments.
  */
-function ctc_register_taxonomy_sermon_speaker() {
+function ctc_taxonomy_sermon_speaker_args( $unfiltered = false ) {
 
-	// Arguments
+	// Arguments.
 	$args = array(
 		'labels' => array(
 			'name' 							=> esc_html_x( 'Sermon Speakers', 'taxonomy general name', 'church-theme-content' ),
@@ -233,9 +254,27 @@ function ctc_register_taxonomy_sermon_speaker() {
 			'hierarchical' 	=> true
 		)
 	);
-	$args = apply_filters( 'ctc_taxonomy_sermon_speaker_args', $args ); // allow filtering
 
-	// Registration
+	// Filter arguments.
+	if ( ! $unfiltered ) {
+		$args = apply_filters( 'ctc_taxonomy_sermon_speaker_args', $args ); // allow filtering.
+	}
+
+	return $args;
+
+}
+
+/**
+ * Sermon speaker registration.
+ *
+ * @since 0.9
+ */
+function ctc_register_taxonomy_sermon_speaker() {
+
+	// Arguments.
+	$args = ctc_taxonomy_sermon_speaker_args();
+
+	// Registration.
 	register_taxonomy(
 		'ctc_sermon_speaker',
 		'ctc_sermon',
@@ -247,13 +286,15 @@ function ctc_register_taxonomy_sermon_speaker() {
 add_action( 'init', 'ctc_register_taxonomy_sermon_speaker' );
 
 /**
- * Sermon tag
+ * Sermon tag arguments.
  *
- * @since 0.9
+ * @since 1.9
+ * @param bool $unfiltered Set true to return arguments without being filtered.
+ * @return array Taxonomy registration arguments.
  */
-function ctc_register_taxonomy_sermon_tag() {
+function ctc_taxonomy_sermon_tag_args( $unfiltered = false ) {
 
-	// Arguments
+	// Arguments.
 	$args = array(
 		'labels' => array(
 			'name' 							=> esc_html_x( 'Sermon Tags', 'taxonomy general name', 'church-theme-content' ),
@@ -280,9 +321,27 @@ function ctc_register_taxonomy_sermon_tag() {
 			'hierarchical' 	=> true
 		)
 	);
-	$args = apply_filters( 'ctc_taxonomy_sermon_tag_args', $args ); // allow filtering
 
-	// Registration
+	// Filter arguments.
+	if ( ! $unfiltered ) {
+		$args = apply_filters( 'ctc_taxonomy_sermon_tag_args', $args ); // allow filtering.
+	}
+
+	return $args;
+
+}
+
+/**
+ * Sermon tag registration.
+ *
+ * @since 0.9
+ */
+function ctc_register_taxonomy_sermon_tag() {
+
+	// Arguments.
+	$args = ctc_taxonomy_sermon_tag_args();
+
+	// Registration.
 	register_taxonomy(
 		'ctc_sermon_tag',
 		'ctc_sermon',
@@ -298,13 +357,15 @@ add_action( 'init', 'ctc_register_taxonomy_sermon_tag' );
  **********************************/
 
 /**
- * Event category
+ * Event category arguments.
  *
- * @since 1.3
+ * @since 1.9
+ * @param bool $unfiltered Set true to return arguments without being filtered.
+ * @return array Taxonomy registration arguments.
  */
-function ctc_register_taxonomy_event_category() {
+function ctc_taxonomy_event_category_args( $unfiltered = false ) {
 
-	// Arguments
+	// Arguments.
 	$args = array(
 		'labels' => array(
 			'name' 							=> esc_html_x( 'Event Categories', 'taxonomy general name', 'church-theme-content' ),
@@ -331,9 +392,27 @@ function ctc_register_taxonomy_event_category() {
 			'hierarchical' 	=> true
 		)
 	);
-	$args = apply_filters( 'ctc_taxonomy_event_category_args', $args ); // allow filtering
 
-	// Registration
+	// Filter arguments.
+	if ( ! $unfiltered ) {
+		$args = apply_filters( 'ctc_taxonomy_event_category_args', $args );
+	}
+
+	return $args;
+
+}
+
+/**
+ * Event category registration.
+ *
+ * @since 1.3
+ */
+function ctc_register_taxonomy_event_category() {
+
+	// Arguments.
+	$args = ctc_taxonomy_event_category_args();
+
+	// Registration.
 	register_taxonomy(
 		'ctc_event_category',
 		'ctc_event',
@@ -349,13 +428,15 @@ add_action( 'init', 'ctc_register_taxonomy_event_category' );
  **********************************/
 
 /**
- * Person group
+ * Person group arguments.
  *
- * @since 0.9
+ * @since 1.9
+ * @param bool $unfiltered Set true to return arguments without being filtered.
+ * @return array Taxonomy registration arguments.
  */
-function ctc_register_taxonomy_person_group() {
+function ctc_taxonomy_person_group_args( $unfiltered = false ) {
 
-	// Arguments
+	// Arguments.
 	$args = array(
 		'labels' => array(
 			'name' 							=> esc_html_x( 'Groups', 'taxonomy general name', 'church-theme-content' ),
@@ -382,9 +463,27 @@ function ctc_register_taxonomy_person_group() {
 			'hierarchical' 	=> true
 		)
 	);
-	$args = apply_filters( 'ctc_taxonomy_person_group_args', $args ); // allow filtering
 
-	// Registration
+	// Filter arguments.
+	if ( ! $unfiltered ) {
+		$args = apply_filters( 'ctc_taxonomy_person_group_args', $args );
+	}
+
+	return $args;
+
+}
+
+/**
+ * Person group registration.
+ *
+ * @since 0.9
+ */
+function ctc_register_taxonomy_person_group() {
+
+	// Arguments.
+	$args = ctc_taxonomy_person_group_args();
+
+	// Registration.
 	register_taxonomy(
 		'ctc_person_group',
 		'ctc_person',
