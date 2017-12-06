@@ -38,10 +38,17 @@ function ctc_settings_setup() {
 	 * SHARED
  	 **********************************/
 
+	// Default sermon wording and slug.
+	// We get this from post type registration before the values are filtered.
+	$sermon_cpt_args_unfiltered = ctc_sermon_post_type_args( 'unfiltered' );
+	$sermon_word_singular_default = $sermon_cpt_args_unfiltered['labels']['singular_name'];
+	$sermon_word_plural_default   = $sermon_cpt_args_unfiltered['labels']['name'];
+	$sermon_url_slug_default = $sermon_cpt_args_unfiltered['rewrite']['slug'];
+
 	// Pro tag to show after field labels.
 	$pro_tag = _x( '(Pro)', 'settings', 'church-theme-content' );
 
-	// SEO Structured Data.
+	// SEO Structured Data field.
 	$seo_field = array(
 		'name'            => _x( 'SEO Structured Data', 'settings', 'church-theme-content' ),
 		'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
@@ -63,7 +70,7 @@ function ctc_settings_setup() {
 		'custom_content'  => '', // function for custom display of field input.
 	);
 
-	// Per Page
+	// Per Page field
 	// Re-use this for sermons, events, etc., changing just name.
 	$per_page_field = array(
 		'name'            => '',
@@ -89,6 +96,27 @@ function ctc_settings_setup() {
 		'custom_content'  => '', // function for custom display of field input.
 	);
 
+	// URL Slug description.
+	$url_slug_desc = __( 'Optionally change the default "%1$s" slug in URLs. Example: %2$s', 'church-theme-content' );
+
+	// Hide in Admin Menu field.
+	$hide_admin_field = array(
+		'name'            => __( 'Hide in Admin Menu', 'church-theme-content' ),
+		'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
+		'desc'            => __( 'This can be useful if you are not using the feature.', 'church-theme-content' ),
+		'type'            => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
+		'checkbox_label'  => '',
+		'options'         => array(), // array of keys/values for radio or select.
+		'default'         => false, // value to pre-populate option with (before first save or on reset).
+		'no_empty'        => false, // if user empties value, force default to be saved instead.
+		'allow_html'      => false, // allow HTML to be used in the value.
+		'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
+		'class'           => '', // classes to add to input.
+		'content'         => '', // custom content instead of input (HTML allowed).
+		'custom_sanitize' => '', // function to do additional sanitization.
+		'custom_content'  => '', // function for custom display of field input.
+	);
+
 	/**********************************
 	 * SETTINGS
 	 **********************************/
@@ -104,11 +132,6 @@ function ctc_settings_setup() {
 		);
 
 	}
-
-	// Standard sermon wording.
-	// Taken from post-types.php.
-	$sermon_word_singular = _x( 'Sermon', 'post type singular name', 'church-theme-content' );
-	$sermon_word_plural   = _x( 'Sermons', 'post type general name', 'church-theme-content' );
 
 	// Configuration.
 	$config = array(
@@ -215,7 +238,7 @@ function ctc_settings_setup() {
 						'no_empty'        => false, // if user empties value, force default to be saved instead.
 						'allow_html'      => false, // allow HTML to be used in the value.
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
-							'placeholder' => $sermon_word_singular, // show the standard value if they leave blank.
+							'placeholder' => $sermon_word_singular_default, // show the standard value if they leave blank.
 						),
 						'class'           => '', // classes to add to input.
 						'content'         => '', // custom content instead of input (HTML allowed).
@@ -230,8 +253,8 @@ function ctc_settings_setup() {
 						'desc'            => sprintf(
 							/* translators: %1$s is "Sermon" and %2$s is "Sermons" (translated). */
 							__( 'Optionally enter alternative wording for "%1$s" and "%2$s" (e.g. "Message" and "Messages").', 'church-theme-content' ),
-							$sermon_word_singular,
-							$sermon_word_plural
+							$sermon_word_singular_default,
+							$sermon_word_plural_default
 						),
 						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
@@ -240,13 +263,43 @@ function ctc_settings_setup() {
 						'no_empty'        => false, // if user empties value, force default to be saved instead.
 						'allow_html'      => false, // allow HTML to be used in the value.
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
-							'placeholder' => $sermon_word_plural, // show the standard value if they leave blank.
+							'placeholder' => $sermon_word_plural_default, // show the standard value if they leave blank.
 						),
 						'class'           => '', // classes to add to input.
 						'content'         => '', // custom content instead of input (HTML allowed).
 						'custom_sanitize' => '', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
 					),
+
+					// Sermon URL Slug
+					'sermon_url_slug' => array(
+						'name'            => __( 'Sermon URL Slug', 'church-theme-content' ),
+						'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
+						'desc'            => sprintf(
+							/* translators: %1$s is default slug, %2$s is example URL showing how post type slug is used. */
+							$url_slug_desc,
+							$sermon_url_slug_default,
+							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $sermon_url_slug_default . '</b>/', get_post_type_archive_link( 'ctc_sermon' ) ) // make slug bold.
+						),
+						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'checkbox_label'  => '', // show text after checkbox.
+						'options'         => array(), // array of keys/values for radio or select.
+						'default'         => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'        => false, // if user empties value, force default to be saved instead.
+						'allow_html'      => false, // allow HTML to be used in the value.
+						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+							'placeholder' => $sermon_url_slug_default, // show the standard value if they leave blank.
+						),
+						'class'           => '', // classes to add to input.
+						'content'         => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize' => '', // function to do additional sanitization.
+						'custom_content'  => '', // function for custom display of field input.
+					),
+
+					// Hide in Admin Menu.
+					'sermons_admin_hide' => array_merge( $hide_admin_field, array(
+						'checkbox_label' => __( 'Hide Sermons', 'church-theme-content' ), // show text after checkbox.
+					) ),
 
 				),
 
