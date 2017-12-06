@@ -38,12 +38,24 @@ function ctc_settings_setup() {
 	 * SHARED
  	 **********************************/
 
-	// Default sermon wording and slug.
+	// Default sermon post type wording and slug.
 	// We get this from post type registration before the values are filtered.
 	$sermon_cpt_args_unfiltered = ctc_post_type_sermon_args( 'unfiltered' );
 	$sermon_word_singular_default = $sermon_cpt_args_unfiltered['labels']['singular_name'];
 	$sermon_word_plural_default   = $sermon_cpt_args_unfiltered['labels']['name'];
 	$sermon_url_slug_default = $sermon_cpt_args_unfiltered['rewrite']['slug'];
+
+	// Default sermon taxonomy slugs.
+	$sermon_topic_args_unfiltered = ctc_taxonomy_sermon_topic_args( 'unfiltered' );
+	$sermon_series_args_unfiltered = ctc_taxonomy_sermon_series_args( 'unfiltered' );
+	$sermon_book_args_unfiltered = ctc_taxonomy_sermon_book_args( 'unfiltered' );
+	$sermon_speaker_args_unfiltered = ctc_taxonomy_sermon_speaker_args( 'unfiltered' );
+	$sermon_tag_args_unfiltered = ctc_taxonomy_sermon_tag_args( 'unfiltered' );
+	$sermon_topic_url_slug_default = $sermon_topic_args_unfiltered['rewrite']['slug'];
+	$sermon_series_url_slug_default = $sermon_series_args_unfiltered['rewrite']['slug'];
+	$sermon_book_url_slug_default = $sermon_book_args_unfiltered['rewrite']['slug'];
+	$sermon_speaker_url_slug_default = $sermon_speaker_args_unfiltered['rewrite']['slug'];
+	$sermon_tag_url_slug_default = $sermon_tag_args_unfiltered['rewrite']['slug'];
 
 	// Pro tag to show after field labels.
 	$pro_tag = _x( '(Pro)', 'settings', 'church-theme-content' );
@@ -96,8 +108,42 @@ function ctc_settings_setup() {
 		'custom_content'  => '', // function for custom display of field input.
 	);
 
-	// URL Slug description.
+	// URL Slug field.
 	$url_slug_desc = __( 'Optionally change the default "%1$s" slug in URLs. Example: %2$s', 'church-theme-content' );
+	$url_slug_field = array(
+		'name'            => '',
+		'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
+		'desc'            => '',
+		'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+		'checkbox_label'  => '', // show text after checkbox.
+		'options'         => array(), // array of keys/values for radio or select.
+		'default'         => '', // value to pre-populate option with (before first save or on reset).
+		'no_empty'        => false, // if user empties value, force default to be saved instead.
+		'allow_html'      => false, // allow HTML to be used in the value.
+		'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
+		'class'           => '', // classes to add to input.
+		'content'         => '', // custom content instead of input (HTML allowed).
+		'custom_sanitize' => '', // function to do additional sanitization.
+		'custom_content'  => '', // function for custom display of field input.
+	);
+
+	// Taxonomy URL Slug field.
+	$taxonomy_url_slug_field = array(
+		'name'            => '',
+		'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
+		'desc'            => '',
+		'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+		'checkbox_label'  => '', // show text after checkbox.
+		'options'         => array(), // array of keys/values for radio or select.
+		'default'         => '', // value to pre-populate option with (before first save or on reset).
+		'no_empty'        => false, // if user empties value, force default to be saved instead.
+		'allow_html'      => false, // allow HTML to be used in the value.
+		'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
+		'class'           => '', // classes to add to input.
+		'content'         => '', // custom content instead of input (HTML allowed).
+		'custom_sanitize' => '', // function to do additional sanitization.
+		'custom_content'  => '', // function for custom display of field input.
+	);
 
 	// Hide in Admin Menu field.
 	$hide_admin_field = array(
@@ -271,30 +317,59 @@ function ctc_settings_setup() {
 						'custom_content'  => '', // function for custom display of field input.
 					),
 
-					// Sermon URL Slug
-					'sermon_url_slug' => array(
+					// Sermon URL Slug.
+					'sermon_url_slug' => array_merge( $url_slug_field, array(
 						'name'            => __( 'Sermon URL Slug', 'church-theme-content' ),
-						'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
 						'desc'            => sprintf(
 							/* translators: %1$s is default slug, %2$s is example URL showing how post type slug is used. */
 							$url_slug_desc,
 							$sermon_url_slug_default,
 							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $sermon_url_slug_default . '</b>/', get_post_type_archive_link( 'ctc_sermon' ) ) // make slug bold.
 						),
-						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
-						'checkbox_label'  => '', // show text after checkbox.
-						'options'         => array(), // array of keys/values for radio or select.
-						'default'         => '', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => false, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_url_slug_default, // show the standard value if they leave blank.
 						),
-						'class'           => '', // classes to add to input.
-						'content'         => '', // custom content instead of input (HTML allowed).
-						'custom_sanitize' => '', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-					),
+					) ),
+
+					// Sermon Topic URL Slug.
+					'sermon_topic_url_slug' => array_merge( $taxonomy_url_slug_field, array(
+						'name'            => __( 'Sermon Topic URL Slug', 'church-theme-content' ),
+						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+							'placeholder' => $sermon_topic_url_slug_default, // show the standard value if they leave blank.
+						),
+					) ),
+
+					// Sermon Series URL Slug.
+					'sermon_series_url_slug' => array_merge( $taxonomy_url_slug_field, array(
+						'name'            => __( 'Sermon Series URL Slug', 'church-theme-content' ),
+						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+							'placeholder' => $sermon_series_url_slug_default, // show the standard value if they leave blank.
+						),
+					) ),
+
+					// Sermon Book URL Slug.
+					'sermon_book_url_slug' => array_merge( $taxonomy_url_slug_field, array(
+						'name'            => __( 'Sermon Book URL Slug', 'church-theme-content' ),
+						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+							'placeholder' => $sermon_book_url_slug_default, // show the standard value if they leave blank.
+						),
+					) ),
+
+					// Sermon Speaker URL Slug.
+					'sermon_speaker_url_slug' => array_merge( $taxonomy_url_slug_field, array(
+						'name'            => __( 'Sermon Speaker URL Slug', 'church-theme-content' ),
+						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+							'placeholder' => $sermon_speaker_url_slug_default, // show the standard value if they leave blank.
+						),
+					) ),
+
+					// Sermon Tag URL Slug.
+					'sermon_tag_url_slug' => array_merge( $taxonomy_url_slug_field, array(
+						'name'            => __( 'Sermon Tag URL Slug', 'church-theme-content' ),
+						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+							'placeholder' => $sermon_tag_url_slug_default, // show the standard value if they leave blank.
+						),
+					) ),
 
 					// Hide in Admin Menu.
 					'sermons_admin_hide' => array_merge( $hide_admin_field, array(
