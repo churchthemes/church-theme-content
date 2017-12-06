@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @param bool $unfiltered Set true to return arguments without being filtered.
  * @return array Post type registration arguments.
  */
-function ctc_sermon_post_type_args( $unfiltered = false ) {
+function ctc_post_type_sermon_args( $unfiltered = false ) {
 
 	// Arguments
 	$args = array(
@@ -72,7 +72,7 @@ function ctc_sermon_post_type_args( $unfiltered = false ) {
 function ctc_register_post_type_sermon() {
 
 	// Arguments.
-	$args = ctc_sermon_post_type_args();
+	$args = ctc_post_type_sermon_args();
 
 	// Registration.
 	register_post_type(
@@ -95,7 +95,7 @@ add_action( 'init', 'ctc_register_post_type_sermon' ); // register post type.
  * @param bool $unfiltered Set true to return arguments without being filtered.
  * @return array Post type registration arguments.
  */
-function ctc_event_post_type_args( $unfiltered = false ) {
+function ctc_post_type_event_args( $unfiltered = false ) {
 
 	// Arguments
 	$args = array(
@@ -143,7 +143,7 @@ function ctc_event_post_type_args( $unfiltered = false ) {
 function ctc_register_post_type_event() {
 
 	// Arguments.
-	$args = ctc_event_post_type_args();
+	$args = ctc_post_type_event_args();
 
 	// Registration.
 	register_post_type(
@@ -166,7 +166,7 @@ add_action( 'init', 'ctc_register_post_type_event' ); // register post type.
  * @param bool $unfiltered Set true to return arguments without being filtered.
  * @return array Post type registration arguments.
  */
-function ctc_location_post_type_args( $unfiltered = false ) {
+function ctc_post_type_location_args( $unfiltered = false ) {
 
 	// Arguments
 	$args = array(
@@ -213,7 +213,7 @@ function ctc_location_post_type_args( $unfiltered = false ) {
 function ctc_location_post_type() {
 
 	// Arguments.
-	$args = ctc_location_post_type_args();
+	$args = ctc_post_type_location_args();
 
 	// Registration.
 	register_post_type(
@@ -236,7 +236,7 @@ add_action( 'init', 'ctc_location_post_type' ); // register post type.
  * @param bool $unfiltered Set true to return arguments without being filtered.
  * @return array Post type registration arguments.
  */
-function ctc_person_post_type_args( $unfiltered = false ) {
+function ctc_post_type_person_args( $unfiltered = false ) {
 
 	// Arguments
 	$args = array(
@@ -284,7 +284,7 @@ function ctc_person_post_type_args( $unfiltered = false ) {
 function ctc_register_post_type_person() {
 
 	// Arguments.
-	$args = ctc_person_post_type_args();
+	$args = ctc_post_type_person_args();
 
 	// Registration.
 	register_post_type(

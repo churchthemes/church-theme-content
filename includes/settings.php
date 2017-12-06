@@ -40,7 +40,7 @@ function ctc_settings_setup() {
 
 	// Default sermon wording and slug.
 	// We get this from post type registration before the values are filtered.
-	$sermon_cpt_args_unfiltered = ctc_sermon_post_type_args( 'unfiltered' );
+	$sermon_cpt_args_unfiltered = ctc_post_type_sermon_args( 'unfiltered' );
 	$sermon_word_singular_default = $sermon_cpt_args_unfiltered['labels']['singular_name'];
 	$sermon_word_plural_default   = $sermon_cpt_args_unfiltered['labels']['name'];
 	$sermon_url_slug_default = $sermon_cpt_args_unfiltered['rewrite']['slug'];
