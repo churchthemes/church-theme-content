@@ -25,6 +25,14 @@ function ctc_admin_enqueue_scripts() {
 
 	global $ctc_settings;
 
+	// Get current screen.
+	$screen = get_current_screen();
+
+	// Plugin settings.
+	if ( $ctc_settings->is_settings_page() ) { // only on Plugin Settings page.
+		wp_enqueue_script( 'ctc-settings', CTC_URL . '/' . CTC_JS_DIR . '/settings.js', array( 'jquery' ), CTC_VERSION ); // bust cache on update.
+	}
+
 	// Scripts for showing map after related fields on event/location screens
 	if ( ctc_has_lat_lng_fields() ) { // only if event/location screen with latitude and longitude fields supported.
 
