@@ -210,7 +210,7 @@ function ctc_post_type_location_args( $unfiltered = false ) {
  *
  * @since 0.9
  */
-function ctc_location_post_type() {
+function ctc_register_location_post_type() {
 
 	// Arguments.
 	$args = ctc_post_type_location_args();
@@ -223,7 +223,7 @@ function ctc_location_post_type() {
 
 }
 
-add_action( 'init', 'ctc_location_post_type' ); // register post type.
+add_action( 'init', 'ctc_register_location_post_type' ); // register post type.
 
 /**********************************
  * PERSON
