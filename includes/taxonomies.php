@@ -84,14 +84,17 @@ function ctc_register_taxonomy_sermon_topic() {
 
 add_action( 'init', 'ctc_register_taxonomy_sermon_topic' );
 
-/**
- * Sermon book
- *
- * @since 0.9
- */
-function ctc_register_taxonomy_sermon_book() {
 
-	// Arguments
+/**
+ * Sermon book arguments.
+ *
+ * @since 1.9
+ * @param bool $unfiltered Set true to return arguments without being filtered.
+ * @return array Taxonomy registration arguments.
+ */
+function ctc_taxonomy_sermon_book_args( $unfiltered = false ) {
+
+	// Arguments.
 	$args = array(
 		'labels' => array(
 			'name' 							=> esc_html_x( 'Sermon Books', 'taxonomy general name', 'church-theme-content' ),
@@ -118,9 +121,27 @@ function ctc_register_taxonomy_sermon_book() {
 			'hierarchical' 	=> true
 		)
 	);
-	$args = apply_filters( 'ctc_taxonomy_sermon_book_args', $args ); // allow filtering
 
-	// Registration
+	// Filter arguments.
+	if ( ! $unfiltered ) {
+		$args = apply_filters( 'ctc_taxonomy_sermon_book_args', $args );
+	}
+
+	return $args;
+
+}
+
+/**
+ * Sermon book
+ *
+ * @since 0.9
+ */
+function ctc_register_taxonomy_sermon_book() {
+
+	// Arguments.
+	$args = ctc_taxonomy_sermon_book_args();;
+
+	// Registration.
 	register_taxonomy(
 		'ctc_sermon_book',
 		'ctc_sermon',
