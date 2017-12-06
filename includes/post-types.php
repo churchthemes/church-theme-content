@@ -57,7 +57,7 @@ function ctc_sermon_post_type_args( $unfiltered = false ) {
 
 	// Filter arguments.
 	if ( ! $unfiltered ) {
-		$args = apply_filters( 'ctc_post_type_sermon_args', $args ); // allow filtering
+		$args = apply_filters( 'ctc_post_type_sermon_args', $args );
 	}
 
 	return $args;
@@ -65,16 +65,16 @@ function ctc_sermon_post_type_args( $unfiltered = false ) {
 }
 
 /**
- * Register sermon post type
+ * Register sermon post type.
  *
  * @since 0.9
  */
 function ctc_register_post_type_sermon() {
 
-	// Arguments
+	// Arguments.
 	$args = ctc_sermon_post_type_args();
 
-	// Registration
+	// Registration.
 	register_post_type(
 		'ctc_sermon',
 		$args
@@ -82,18 +82,20 @@ function ctc_register_post_type_sermon() {
 
 }
 
-add_action( 'init', 'ctc_register_post_type_sermon' ); // register post type
+add_action( 'init', 'ctc_register_post_type_sermon' ); // register post type.
 
 /**********************************
  * EVENT
  **********************************/
 
 /**
- * Register event post type
+ * Event post type arguments.
  *
- * @since 0.9
+ * @since 1.9
+ * @param bool $unfiltered Set true to return arguments without being filtered.
+ * @return array Post type registration arguments.
  */
-function ctc_register_post_type_event() {
+function ctc_event_post_type_args( $unfiltered = false ) {
 
 	// Arguments
 	$args = array(
@@ -123,9 +125,27 @@ function ctc_register_post_type_event() {
 		'menu_icon'		=> 'dashicons-calendar',
 		'show_in_rest'	=> true,
 	);
-	$args = apply_filters( 'ctc_post_type_event_args', $args ); // allow filtering
 
-	// Registration
+	// Filter arguments.
+	if ( ! $unfiltered ) {
+		$args = apply_filters( 'ctc_post_type_event_args', $args );
+	}
+
+	return $args;
+
+}
+
+/**
+ * Register event post type.
+ *
+ * @since 0.9
+ */
+function ctc_register_post_type_event() {
+
+	// Arguments.
+	$args = ctc_event_post_type_args();
+
+	// Registration.
 	register_post_type(
 		'ctc_event',
 		$args
@@ -133,18 +153,20 @@ function ctc_register_post_type_event() {
 
 }
 
-add_action( 'init', 'ctc_register_post_type_event' ); // register post type
+add_action( 'init', 'ctc_register_post_type_event' ); // register post type.
 
 /**********************************
  * LOCATION
  **********************************/
 
 /**
- * Register location post type
+ * Location post type arguments.
  *
- * @since 0.9
+ * @since 1.9
+ * @param bool $unfiltered Set true to return arguments without being filtered.
+ * @return array Post type registration arguments.
  */
-function ctc_location_post_type() {
+function ctc_location_post_type_args( $unfiltered = false ) {
 
 	// Arguments
 	$args = array(
@@ -173,9 +195,27 @@ function ctc_location_post_type() {
 		'menu_icon'		=> 'dashicons-location',
 		'show_in_rest'	=> true,
 	);
-	$args = apply_filters( 'ctc_post_type_location_args', $args ); // allow filtering
 
-	// Registration
+	// Filter arguments.
+	if ( ! $unfiltered ) {
+		$args = apply_filters( 'ctc_post_type_location_args', $args );
+	}
+
+	return $args;
+
+}
+
+/**
+ * Register location post type.
+ *
+ * @since 0.9
+ */
+function ctc_location_post_type() {
+
+	// Arguments.
+	$args = ctc_location_post_type_args();
+
+	// Registration.
 	register_post_type(
 		'ctc_location',
 		$args
@@ -183,18 +223,20 @@ function ctc_location_post_type() {
 
 }
 
-add_action( 'init', 'ctc_location_post_type' ); // register post type
+add_action( 'init', 'ctc_location_post_type' ); // register post type.
 
 /**********************************
  * PERSON
  **********************************/
 
 /**
- * Register person post type
+ * Person post type arguments.
  *
- * @since 0.9
+ * @since 1.9
+ * @param bool $unfiltered Set true to return arguments without being filtered.
+ * @return array Post type registration arguments.
  */
-function ctc_register_post_type_person() {
+function ctc_person_post_type_args( $unfiltered = false ) {
 
 	// Arguments
 	$args = array(
@@ -224,9 +266,27 @@ function ctc_register_post_type_person() {
 		'menu_icon'		=> 'dashicons-admin-users',
 		'show_in_rest'	=> true,
 	);
-	$args = apply_filters( 'ctc_post_type_person_args', $args ); // allow filtering
 
-	// Registration
+	// Filter arguments.
+	if ( ! $unfiltered ) {
+		$args = apply_filters( 'ctc_post_type_person_args', $args );
+	}
+
+	return $args;
+
+}
+
+/**
+ * Register person post type.
+ *
+ * @since 0.9
+ */
+function ctc_register_post_type_person() {
+
+	// Arguments.
+	$args = ctc_person_post_type_args();
+
+	// Registration.
 	register_post_type(
 		'ctc_person',
 		$args
@@ -234,4 +294,4 @@ function ctc_register_post_type_person() {
 
 }
 
-add_action( 'init', 'ctc_register_post_type_person' ); // register post type
+add_action( 'init', 'ctc_register_post_type_person' ); // register post type.
