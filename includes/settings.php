@@ -53,7 +53,7 @@ function ctc_settings_setup() {
 	// SEO setting description. Same for all post types.
 	$seo_desc = sprintf(
 		/* translators: %1$s is URL with information about SEO with JSON-LD */
-		__( 'Automatically improves Search Engine Optimization (SEO) with schema.org structured data via JSON-LD. <a href="%1$s">Learn more</a>', 'church-theme-content' ),
+		__( 'Automatically improves Search Engine Optimization (SEO) with Schema.org structured data via JSON-LD. <a href="%1$s">Learn more</a>', 'church-theme-content' ),
 		'https://churchthemes.com/go/seo-setting/?utm_source=ctc&utm_medium=plugin&utm_campaign=church_content_pro&utm_content=settings'
 	);
 
@@ -120,6 +120,7 @@ function ctc_settings_setup() {
 						'no_empty'        => false, // if user empties value, force default to be saved instead
 						'allow_html'      => false, // allow HTML to be used in the value
 						'class'           => '', // classes to add to input
+						'content'         => '', // custom content instead of input (HTML allowed).
 						'custom_sanitize' => '', // function to do additional sanitization
 						'custom_content'  => '', // function for custom display of field input
 					),
@@ -136,7 +137,7 @@ function ctc_settings_setup() {
 				'title' => _x( 'Sermons', 'settings section title', 'church-theme-content' ),
 
 				// Description.
-				'desc' => __( 'MAYBE SAY: Settings for Pro features disabled. Install Church Content Pro to enable.', 'church-theme-content' ),
+				'desc' => '',
 
 				// Fields (Settings).
 				'fields' => array(
@@ -153,6 +154,24 @@ function ctc_settings_setup() {
 						'no_empty'        => false, // if user empties value, force default to be saved instead.
 						'allow_html'      => false, // allow HTML to be used in the value.
 						'class'           => '', // classes to add to input.
+						'content'         => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize' => '', // function to do additional sanitization.
+						'custom_content'  => '', // function for custom display of field input.
+					),
+
+					// SEO.
+					'podcasting_shortcut' => array(
+						'name'            => __( 'Sermon Podcasting', 'settings', 'church-theme-content' ),
+						'after_name'      => $pro_tag, // (Optional), (Required), etc.
+						'desc'            => __( '', 'settings', 'church-theme-content' ),
+						'type'            => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'checkbox_label'  => '', // show text after checkbox.
+						'options'         => array(), // array of keys/values for radio or select.
+						'default'         => false, // value to pre-populate option with (before first save or on reset).
+						'no_empty'        => false, // if user empties value, force default to be saved instead.
+						'allow_html'      => false, // allow HTML to be used in the value.
+						'class'           => '', // classes to add to input.
+						'content'         => __( '<a href="#">Podcasting Settings</a>', 'settings', 'church-theme-content' ), // custom content instead of input (HTML allowed).
 						'custom_sanitize' => '', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
 					),
@@ -221,6 +240,7 @@ function ctc_settings_setup() {
 						'no_empty'        => false, // if user empties value, force default to be saved instead.
 						'allow_html'      => false, // allow HTML to be used in the value.
 						'class'           => '', // classes to add to input.
+						'content'         => '', // custom content instead of input (HTML allowed).
 						'custom_sanitize' => '', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
 					),
