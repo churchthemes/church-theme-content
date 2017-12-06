@@ -47,10 +47,13 @@ function ctc_settings_setup() {
 	// Pro tag to show after field labels.
 	$pro_tag = _x( '(Pro)', 'settings', 'church-theme-content' );
 
+	// SEO setting title.
+	$seo_title = _x( 'SEO Structured Data', 'settings', 'church-theme-content' );
+
 	// SEO setting description. Same for all post types.
 	$seo_desc = sprintf(
 		/* translators: %1$s is URL with information about SEO with JSON-LD */
-		__( 'Improves search engine optimization by providing schema.org structured data. <a href="%1$s">Learn more</a>', 'church-theme-content' ),
+		__( 'Automatically improves Search Engine Optimization (SEO) with schema.org structured data via JSON-LD. <a href="%1$s">Learn more</a>', 'church-theme-content' ),
 		'https://churchthemes.com/go/seo-setting/?utm_source=ctc&utm_medium=plugin&utm_campaign=church_content_pro&utm_content=settings'
 	);
 
@@ -140,7 +143,7 @@ function ctc_settings_setup() {
 
 					// SEO.
 					'sermons_seo' => array(
-						'name'            => _x( 'SEO with JSON-LD', 'settings', 'church-theme-content' ),
+						'name'            => $seo_title,
 						'after_name'      => $pro_tag, // (Optional), (Required), etc.
 						'desc'            => $seo_desc,
 						'type'            => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
