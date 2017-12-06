@@ -105,6 +105,11 @@ function ctc_settings_setup() {
 
 	}
 
+	// Standard sermon wording.
+	// Taken from post-types.php.
+	$sermon_word_singular = _x( 'Sermon', 'post type singular name', 'church-theme-content' );
+	$sermon_word_plural   = _x( 'Sermons', 'post type general name', 'church-theme-content' );
+
 	// Configuration.
 	$config = array(
 
@@ -197,6 +202,51 @@ function ctc_settings_setup() {
 					'sermons_per_page' => array_merge( $per_page_field, array(
 						'name' => __( 'Sermons Per Page', 'church-theme-content' ),
 					) ),
+
+					// Alternative Wording - Singular
+					'sermon_word_singular' => array(
+						'name'            => __( 'Alternative Wording', 'church-theme-content' ),
+						'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
+						'desc'            => '',
+						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'checkbox_label'  => '', // show text after checkbox.
+						'options'         => array(), // array of keys/values for radio or select.
+						'default'         => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'        => false, // if user empties value, force default to be saved instead.
+						'allow_html'      => false, // allow HTML to be used in the value.
+						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+							'placeholder' => $sermon_word_singular, // show the standard value if they leave blank.
+						),
+						'class'           => '', // classes to add to input.
+						'content'         => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize' => '', // function to do additional sanitization.
+						'custom_content'  => '', // function for custom display of field input.
+					),
+
+					// Alternative Wording - Plural
+					'sermon_word_plural' => array(
+						'name'            => '',
+						'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
+						'desc'            => sprintf(
+							/* translators: %1$s is "Sermon" and %2$s is "Sermons" (translated). */
+							__( 'Optionally enter alternative wording for "%1$s" and "%2$s" (e.g. "Message" and "Messages").', 'church-theme-content' ),
+							$sermon_word_singular,
+							$sermon_word_plural
+						),
+						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'checkbox_label'  => '', // show text after checkbox.
+						'options'         => array(), // array of keys/values for radio or select.
+						'default'         => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'        => false, // if user empties value, force default to be saved instead.
+						'allow_html'      => false, // allow HTML to be used in the value.
+						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+							'placeholder' => $sermon_word_plural, // show the standard value if they leave blank.
+						),
+						'class'           => '', // classes to add to input.
+						'content'         => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize' => '', // function to do additional sanitization.
+						'custom_content'  => '', // function for custom display of field input.
+					),
 
 				),
 
