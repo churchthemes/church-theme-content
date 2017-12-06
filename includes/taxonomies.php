@@ -18,13 +18,15 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  **********************************/
 
 /**
- * Sermon topic
+ * Sermon topic arguments.
  *
- * @since 0.9
+ * @since 1.9
+ * @param bool $unfiltered Set true to return arguments without being filtered.
+ * @return array Taxonomy registration arguments.
  */
-function ctc_register_taxonomy_sermon_topic() {
+function ctc_taxonomy_sermon_topic_args( $unfiltered = false ) {
 
-	// Arguments
+	// Arguments.
 	$args = array(
 		'labels' => array(
 			'name' 							=> esc_html_x( 'Sermon Topics', 'taxonomy general name', 'church-theme-content' ),
@@ -51,9 +53,27 @@ function ctc_register_taxonomy_sermon_topic() {
 			'hierarchical' 	=> true
 		)
 	);
-	$args = apply_filters( 'ctc_taxonomy_sermon_topic_args', $args ); // allow filtering
 
-	// Registration
+	// Filter arguments.
+	if ( ! $unfiltered ) {
+		$args = apply_filters( 'ctc_taxonomy_sermon_topic_args', $args );
+	}
+
+	return $args;
+
+}
+
+/**
+ * Sermon topic
+ *
+ * @since 0.9
+ */
+function ctc_register_taxonomy_sermon_topic() {
+
+	// Arguments.
+	$args = ctc_taxonomy_sermon_topic_args();
+
+	// Registration.
 	register_taxonomy(
 		'ctc_sermon_topic',
 		'ctc_sermon',
