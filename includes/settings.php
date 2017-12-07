@@ -123,7 +123,7 @@ function ctc_settings_setup() {
 		'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
 		'class'           => '', // classes to add to input.
 		'content'         => '', // custom content instead of input (HTML allowed).
-		'custom_sanitize' => '', // function to do additional sanitization.
+		'custom_sanitize' => 'ctc_sanitize_setting_url_slug', // function to do additional sanitization.
 		'custom_content'  => '', // function for custom display of field input.
 	);
 
@@ -141,7 +141,7 @@ function ctc_settings_setup() {
 		'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
 		'class'           => '', // classes to add to input.
 		'content'         => '', // custom content instead of input (HTML allowed).
-		'custom_sanitize' => '', // function to do additional sanitization.
+		'custom_sanitize' => 'ctc_sanitize_setting_url_slug', // function to do additional sanitization.
 		'custom_content'  => '', // function for custom display of field input.
 	);
 
@@ -331,41 +331,41 @@ function ctc_settings_setup() {
 						),
 					) ),
 
-					// Sermon Topic URL Slug.
+					// Topic URL Slug.
 					'sermon_topic_url_slug' => array_merge( $taxonomy_url_slug_field, array(
-						'name'            => __( 'Sermon Topic URL Slug', 'church-theme-content' ),
+						'name'            => __( 'Topic URL Slug', 'church-theme-content' ),
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_topic_url_slug_default, // show the standard value if they leave blank.
 						),
 					) ),
 
-					// Sermon Series URL Slug.
+					// Series URL Slug.
 					'sermon_series_url_slug' => array_merge( $taxonomy_url_slug_field, array(
-						'name'            => __( 'Sermon Series URL Slug', 'church-theme-content' ),
+						'name'            => __( 'Series URL Slug', 'church-theme-content' ),
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_series_url_slug_default, // show the standard value if they leave blank.
 						),
 					) ),
 
-					// Sermon Book URL Slug.
+					// Book URL Slug.
 					'sermon_book_url_slug' => array_merge( $taxonomy_url_slug_field, array(
-						'name'            => __( 'Sermon Book URL Slug', 'church-theme-content' ),
+						'name'            => __( 'Book URL Slug', 'church-theme-content' ),
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_book_url_slug_default, // show the standard value if they leave blank.
 						),
 					) ),
 
-					// Sermon Speaker URL Slug.
+					// Speaker URL Slug.
 					'sermon_speaker_url_slug' => array_merge( $taxonomy_url_slug_field, array(
-						'name'            => __( 'Sermon Speaker URL Slug', 'church-theme-content' ),
+						'name'            => __( 'Speaker URL Slug', 'church-theme-content' ),
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_speaker_url_slug_default, // show the standard value if they leave blank.
 						),
 					) ),
 
-					// Sermon Tag URL Slug.
+					// Tag URL Slug.
 					'sermon_tag_url_slug' => array_merge( $taxonomy_url_slug_field, array(
-						'name'            => __( 'Sermon Tag URL Slug', 'church-theme-content' ),
+						'name'            => __( 'Tag URL Slug', 'church-theme-content' ),
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_tag_url_slug_default, // show the standard value if they leave blank.
 						),
@@ -493,6 +493,25 @@ add_action( 'init', 'ctc_settings_setup' );
 /**********************************
  * SETTINGS DATA
  **********************************/
+
+/**
+ * Sanitize URL slug.
+ *
+ * @since 1.9
+ * @param string $setting Setting key.
+ * @return mixed Setting value.
+ * @global object $ctc_settings.
+ */
+function ctc_sanitize_setting_url_slug( $value, $field ) {
+
+	// Lowercase, replace space with -, remove special chars, etc.
+	// This is what WordPress uses to change post title into URL slug.
+	$value = sanitize_title( $value );
+
+	// Return sanitized value.
+	return $value;
+
+}
 
 /**
  * Get a setting
