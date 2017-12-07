@@ -79,7 +79,7 @@ function ctc_settings_setup() {
 		'desc'            => sprintf(
 			/* translators: %1$s is URL with information about SEO with JSON-LD */
 			__( 'Improve Search Engine Optimization (SEO) automatically with Schema.org structured data via JSON-LD. <a href="%1$s" target="_blank">Learn more</a>', 'church-theme-content' ),
-			'https://churchthemes.com/go/seo-setting/?utm_source=ctc&utm_medium=plugin&utm_campaign=church_content_pro&utm_content=settings'
+			esc_url( ctc_ctcom_url( 'seo-setting' ) )
 		),
 		'type'            => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
 		'checkbox_label'  => '',
@@ -186,7 +186,7 @@ function ctc_settings_setup() {
 		$pro_upgrade_note = sprintf(
 			/* translators: %1$s is URL for Church Content Pro info. */
 			__( '<a href="%1$s" target="_blank">Upgrade to Pro</a> to enable extra settings and features.', 'church-theme-content' ),
-			'https://churchthemes.com/plugins/church-content-pro/?utm_source=ctc&utm_medium=plugin&utm_campaign=church_content_pro&utm_content=settings'
+			esc_url( ctc_ctcom_url( 'church-content-pro', array( 'utm_content' => 'settings' ) ) )
 		);
 
 	}
@@ -201,13 +201,13 @@ function ctc_settings_setup() {
 		$event_recurrence_desc = sprintf(
 			/* translators: %1$s is URL with info on upgrading from Custom Recurring Events to Church Content Pro */
 			__( 'Upgrade to <a href="%1$s" target="_blank">Church Content Pro</a> for even more recurrence options.'),
-			'https://churchthemes.com/go/cre-to-pro/?utm_source=ctc&utm_medium=plugin&utm_campaign=church_content_pro&utm_content=settings'
+			esc_url( ctc_ctcom_url( 'cre-to-pro', array( 'utm_content' => 'settings' ) ) )
 		);
 	} else { // No plugin active for recurring events.
 		$event_recurrence_content = sprintf(
 			/* translators: %1$s is URL for Church Content Pro info */
 			_x( 'Install <a href="%1$s" target="_blank">Church Content Pro</a> to Enable', 'recurrence setting', 'church-theme-content' ),
-			'https://churchthemes.com/plugins/church-content-pro/?utm_source=ctc&utm_medium=plugin&utm_campaign=church_content_pro&utm_content=settings'
+			esc_url( ctc_ctcom_url( 'church-content-pro', array( 'utm_content' => 'settings' ) ) )
 		);
 	}
 
@@ -230,7 +230,7 @@ function ctc_settings_setup() {
 		'desc' => sprintf(
 			/* translators: %1$s is Church Content plugin URL, %2$s is note about upgrading to Pro (if not active), %3$s is URL to Customizer. */
 			__( 'These settings are for the <a href="%1$s" target="_blank">Church Content</a> plugin. %2$s Use the <a href="%3$s">Customizer</a> for theme-provided appearance settings.', 'church-theme-content' ),
-			'https://churchthemes.com/plugins/church-content/?utm_source=ctc&utm_medium=plugin&utm_campaign=church-theme-content&utm_content=settings',
+			esc_url( ctc_ctcom_url( 'church-content', array( 'utm_content' => 'settings' ) ) ),
 			$pro_upgrade_note,
 			esc_url( admin_url( 'customize.php' ) )
 		),
@@ -252,11 +252,7 @@ function ctc_settings_setup() {
 				'title' => _x( 'Licenses', 'settings', 'church-theme-content' ),
 
 				// Description.
-				'desc' => sprintf(
-					/* translators: %1$s is URL to Add-ons */
-					__( "Save then activate your add-on's license key to enable one-click updates for it.", 'church-theme-content' ),
-					'https://churchthemes.com/plugins/?utm_source=ctc&utm_medium=plugin&utm_campaign=add-ons&utm_content=settings'
-				),
+				'desc' => __( "Save then activate your add-on's license key to enable one-click updates for it.", 'church-theme-content' ),
 
 				// Fields (Settings).
 				// These are filtered in.
@@ -529,14 +525,14 @@ function ctc_settings_setup() {
 				// Fields (Settings).
 				'fields' => array(
 
-					// Example.
+					// Google Maps API Key.
 					'google_maps_api_key' => array(
 						'name'            => _x( 'Google Maps API Key', 'settings', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => sprintf(
 							/* translators: %1$s is URL to guide telling user how to get a Google Maps API Key */
 							__( 'An API Key for Google Maps is required if you want to show maps for locations or events. <a href="%1$s" target="_blank">Get an API Key</a>', 'church-theme-content' ),
-							'https://churchthemes.com/go/google-maps-api-key'
+							esc_url( ctc_ctcom_url( 'google-maps-api-key' ) ) // how to get API key.
 						),
 						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
 						'checkbox_label'  => '', // show text after checkbox.

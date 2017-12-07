@@ -63,6 +63,59 @@ function ctc_file_path( $file, $directory = false ) {
 	return apply_filters( 'ctc_file_path', $path, $file, $directory );
 }
 
+/**
+ * churchthemes.com URLs.
+ *
+ * @since 1.9
+ * @param array $path_key Which URL this is for.
+ * @param array $query_args Parameters to add or replace in URL.
+ * @return string URL.
+ */
+function ctc_ctcom_url( $path_key, $query_args = array() ) {
+
+	// Base URL.
+	$url = 'https://churchthemes.com';
+
+	// Google Analytics tracking base query string.
+	// When calling ctc_ctcom_url(), can use $query_args to add utm_campaign and utm_content.
+	$utm_base_query = '?utm_source=ctc&utm_medium=plugin';
+
+	// Paths by key.
+	$paths = array(
+
+		// How to get a Google Maps API key.
+		'google-maps-api-key' => '/go/google-maps-api-key/',
+
+		// Church Content product page.
+		'church-content'      => '/plugins/church-content/' . $utm_base_query . '&utm_campaign=church-theme-content',
+
+		// Church Content Pro product page.
+		'church-content-pro'  => '/plugins/church-content-pro/' . $utm_base_query . '&utm_campaign=church_content_pro',
+
+		// How to upgrade from Custom Recurring Events to Pro.
+		'cre-to-pro'          => '/go/cre-to-pro/' . $utm_base_query . '&utm_campaign=church_content_pro',
+
+		// What SEO Structured Data setting does.
+		'seo-setting'         => '/go/seo-setting/' . $utm_base_query . '&utm_campaign=church_content_pro&utm_content=settings',
+
+
+	);
+
+	// Make URL.
+	if ( isset( $paths[ $path_key ] ) ) {
+		$url .= $paths[ $path_key ];
+	}
+
+	// Add or replace params.
+	if ( isset( $query_args ) && is_array( $query_args ) ) {
+		$url = add_query_arg( $query_args, $url );
+	}
+
+	// Return filtered.
+	return apply_filters( 'ctc_ctcom_url', $url, $path_key, $query_args );
+
+}
+
 /*************************************************
  * ARRAYS
  *************************************************/
