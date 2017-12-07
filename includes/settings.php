@@ -57,6 +57,14 @@ function ctc_settings_setup() {
 	$sermon_speaker_url_slug_default = $sermon_speaker_args_unfiltered['rewrite']['slug'];
 	$sermon_tag_url_slug_default = $sermon_tag_args_unfiltered['rewrite']['slug'];
 
+	// Default event post type slug.
+	$event_cpt_args_unfiltered = ctc_post_type_event_args( 'unfiltered' );
+	$event_url_slug_default = $event_cpt_args_unfiltered['rewrite']['slug'];
+
+	// Default event taxonomy slugs.
+	$event_category_args_unfiltered = ctc_taxonomy_event_category_args( 'unfiltered' );
+	$event_category_url_slug_default = $event_category_args_unfiltered['rewrite']['slug'];
+
 	// Pro tag to show after field labels.
 	$pro_tag = _x( '(Pro)', 'settings', 'church-theme-content' );
 
@@ -413,9 +421,37 @@ function ctc_settings_setup() {
 						'checkbox_label' => __( 'Enable for Events (Recommended)', 'church-theme-content' ), // show text after checkbox.
 					) ),
 
+
 					// Events Per Page.
 					'events_per_page' => array_merge( $per_page_field, array(
 						'name' => __( 'Events Per Page', 'church-theme-content' ),
+					) ),
+
+					// Event URL Slug.
+					'event_url_slug' => array_merge( $url_slug_field, array(
+						'name'            => __( 'Event URL Slug', 'church-theme-content' ),
+						'desc'            => sprintf(
+							/* translators: %1$s is default slug, %2$s is example URL showing how post type slug is used. */
+							$url_slug_desc,
+							$event_url_slug_default,
+							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $event_url_slug_default . '</b>/', get_post_type_archive_link( 'ctc_event' ) ) // make slug bold.
+						),
+						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+							'placeholder' => $event_url_slug_default, // show the standard value if they leave blank.
+						),
+					) ),
+
+					// Category URL Slug.
+					'event_category_url_slug' => array_merge( $taxonomy_url_slug_field, array(
+						'name'            => __( 'Category URL Slug', 'church-theme-content' ),
+						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+							'placeholder' => $event_category_url_slug_default, // show the standard value if they leave blank.
+						),
+					) ),
+
+					// Hide in Admin Menu.
+					'events_admin_hide' => array_merge( $hide_admin_field, array(
+						'checkbox_label' => __( 'Hide Events', 'church-theme-content' ), // show text after checkbox.
 					) ),
 
 				),
