@@ -191,9 +191,9 @@ function ctc_settings_setup() {
 	// Show different info depending on status of Church Content Pro or Custom Recurring Events plugin.
 	$event_recurrence_desc = __( 'Save time by setting events to repeat automatically (e.g. "Every month on last Sunday except December 25").', 'church-theme-content' );
 	if ( ctc_pro_is_active() ) { // Pro plugin active.
-		$event_recurrence_content = _x( 'Enabled by Church Content Pro <span class="ctps-light ctps-italic">(Always On)</span>', 'recurrence setting', 'church-theme-content' );
+		$event_recurrence_content = _x( 'Enabled by <b>Church Content Pro</b> <span class="ctps-light ctps-italic">(Always On)</span>', 'recurrence setting', 'church-theme-content' );
 	} elseif ( ctc_cre_is_active() ) { // Custom Recurring Events plugin active, not Pro.
-		$event_recurrence_content = __( 'Partially Enabled by Custom Recurring Events Add-on', 'church-theme-content' );
+		$event_recurrence_content = __( 'Partially Enabled by <b>Custom Recurring Events</b> Add-on', 'church-theme-content' );
 		$event_recurrence_desc = sprintf(
 			/* translators: %1$s is URL with info on upgrading from Custom Recurring Events to Church Content Pro */
 			__( 'Upgrade to <a href="%1$s" target="_blank">Church Content Pro</a> for even more recurrence options.'),
@@ -202,7 +202,7 @@ function ctc_settings_setup() {
 	} else { // No plugin active for recurring events.
 		$event_recurrence_content = sprintf(
 			/* translators: %1$s is URL for Church Content Pro info */
-			_x( 'Install <a href="%1$s" target="_blank">Church Content Pro</a> to Enable', 'recurrence setting', 'church-theme-content' ),
+			_x( 'Install <a href="%1$s" target="_blank">Church Content Pro</a> to Enable <span class="ctps-light ctps-italic">(Recommended)</span>', 'recurrence setting', 'church-theme-content' ),
 			esc_url( ctc_ctcom_url( 'church-content-pro', array( 'utm_content' => 'settings' ) ) )
 		);
 	}
