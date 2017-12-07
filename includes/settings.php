@@ -626,6 +626,44 @@ function ctc_settings_setup() {
 				// Fields (Settings).
 				'fields' => array(
 
+					// SEO Structured Data.
+					'people_seo' => array_merge( $seo_field, array(
+						'checkbox_label' => __( 'Improve SEO for People <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
+					) ),
+
+					// People Per Page.
+					'people_per_page' => array_merge( $per_page_field, array(
+						'name' => __( 'People Per Page', 'church-theme-content' ),
+					) ),
+
+					// Person URL Slug.
+					'person_url_slug' => array_merge( $url_slug_field, array(
+						'name'            => __( 'Person URL Slug', 'church-theme-content' ),
+						'desc'            => sprintf(
+							/* translators: %1$s is default slug, %2$s is example URL showing how post type slug is used. */
+							$url_slug_desc,
+							$person_url_slug_default,
+							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $person_url_slug_default . '</b>/', get_post_type_archive_link( 'ctc_person' ) ) // make slug bold.
+						),
+						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+							'placeholder' => $person_url_slug_default, // show the standard value if they leave blank.
+						),
+					) ),
+
+					// Group URL Slug.
+					'person_group_url_slug' => array_merge( $taxonomy_url_slug_field, array(
+						'name'            => __( 'Group URL Slug', 'church-theme-content' ),
+						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+							'placeholder' => $person_group_url_slug_default, // show the standard value if they leave blank.
+						),
+					) ),
+
+					// Hide in Admin Menu.
+					'people_admin_hide' => array_merge( $hide_admin_field, array(
+						'checkbox_label' => __( 'Hide People', 'church-theme-content' ), // show text after checkbox.
+					) ),
+
+
 				),
 
 			),
