@@ -61,9 +61,22 @@ function ctc_settings_setup() {
 	$event_cpt_args_unfiltered = ctc_post_type_event_args( 'unfiltered' );
 	$event_url_slug_default = $event_cpt_args_unfiltered['rewrite']['slug'];
 
-	// Default event taxonomy slugs.
+	// Default event category taxonomy slug.
 	$event_category_args_unfiltered = ctc_taxonomy_event_category_args( 'unfiltered' );
 	$event_category_url_slug_default = $event_category_args_unfiltered['rewrite']['slug'];
+
+	// Default location post type slug.
+	$location_cpt_args_unfiltered = ctc_post_type_location_args( 'unfiltered' );
+	$location_url_slug_default = $location_cpt_args_unfiltered['rewrite']['slug'];
+
+	// Default person post type slug.
+	$person_cpt_args_unfiltered = ctc_post_type_person_args( 'unfiltered' );
+	$person_url_slug_default = $person_cpt_args_unfiltered['rewrite']['slug'];
+
+	// Default people group taxonomy slug.
+	$person_group_args_unfiltered = ctc_taxonomy_person_group_args( 'unfiltered' );
+	$person_group_url_slug_default = $person_group_args_unfiltered['rewrite']['slug'];
+
 
 	// Pro tag to show after field labels.
 	$pro_tag = _x( '(Pro)', 'settings', 'church-theme-content' );
@@ -74,7 +87,7 @@ function ctc_settings_setup() {
 		'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
 		'desc'            => sprintf(
 			/* translators: %1$s is URL with information about SEO with JSON-LD */
-			__( 'Improve Search Engine Optimization (SEO) automatically with Schema.org structured data via JSON-LD. <a href="%1$s" target="_blank">Learn more</a>', 'church-theme-content' ),
+			__( 'Automatic Search Engine Optimization (SEO) with Schema.org structured data via JSON-LD. <a href="%1$s" target="_blank">Learn More</a>', 'church-theme-content' ),
 			esc_url( ctc_ctcom_url( 'seo-setting' ) )
 		),
 		'type'            => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
@@ -191,20 +204,45 @@ function ctc_settings_setup() {
 	// Show different info depending on status of Church Content Pro or Custom Recurring Events plugin.
 	$event_recurrence_desc = __( 'Save time by setting events to repeat automatically (e.g. "Every month on last Sunday except December 25").', 'church-theme-content' );
 	if ( ctc_pro_is_active() ) { // Pro plugin active.
+
 		$event_recurrence_content = _x( 'Enabled by <b>Church Content Pro</b> <span class="ctps-light ctps-italic">(Always On)</span>', 'recurrence setting', 'church-theme-content' );
+
 	} elseif ( ctc_cre_is_active() ) { // Custom Recurring Events plugin active, not Pro.
+
 		$event_recurrence_content = __( 'Partially Enabled by <b>Custom Recurring Events</b> Add-on', 'church-theme-content' );
+
 		$event_recurrence_desc = sprintf(
 			/* translators: %1$s is URL with info on upgrading from Custom Recurring Events to Church Content Pro */
-			__( 'Upgrade to <a href="%1$s" target="_blank">Church Content Pro</a> for even more recurrence options.'),
+			__( 'Upgrade to <a href="%1$s" target="_blank">Church Content Pro</a> for the complete set of recurrence and exclusion options.'),
 			esc_url( ctc_ctcom_url( 'cre-to-pro', array( 'utm_content' => 'settings' ) ) )
 		);
+
 	} else { // No plugin active for recurring events.
-		$event_recurrence_content = sprintf(
-			/* translators: %1$s is URL for Church Content Pro info */
-			_x( 'Install <a href="%1$s" target="_blank">Church Content Pro</a> to Enable <span class="ctps-light ctps-italic">(Recommended)</span>', 'recurrence setting', 'church-theme-content' ),
-			esc_url( ctc_ctcom_url( 'church-content-pro', array( 'utm_content' => 'settings' ) ) )
-		);
+
+		// Basic recurrence enabled either by grandfathering or theme support.
+		if ( ctc_field_supported( 'events', '_ctc_event_recurrence' ) ) {
+
+			$event_recurrence_content = __( 'Basic Recurrence Only <span class="ctps-light ctps-italic">(Pro Recurrence Inactive)</span>', 'church-theme-content' );
+
+			$event_recurrence_desc = sprintf(
+				/* translators: %1$s is URL for Church Content Pro */
+				__( 'Install <a href="%1$s" target="_blank">Church Content Pro</a> for full recurrence (e.g. "Every month on last Sunday except December 25").'),
+				esc_url( ctc_ctcom_url( 'church-content-pro', array( 'utm_content' => 'settings' ) ) )
+			);
+
+		}
+
+		// No recurrence of any kind is enabled.
+		else {
+
+			$event_recurrence_content = sprintf(
+				/* translators: %1$s is URL for Church Content Pro info */
+				_x( 'Install <a href="%1$s" target="_blank">Church Content Pro</a> to Enable <span class="ctps-light ctps-italic">(Recommended)</span>', 'recurrence setting', 'church-theme-content' ),
+				esc_url( ctc_ctcom_url( 'church-content-pro', array( 'utm_content' => 'settings' ) ) )
+			);
+
+		}
+
 	}
 
 	// Configuration.
@@ -270,7 +308,7 @@ function ctc_settings_setup() {
 
 					// SEO Structured Data.
 					'sermons_seo' => array_merge( $seo_field, array(
-						'checkbox_label' => __( 'Enable for Sermons <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
+						'checkbox_label' => __( 'Improve SEO for Sermons <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
 					) ),
 
 					// Sermon Podcasting (Shortcut).
@@ -452,7 +490,7 @@ function ctc_settings_setup() {
 
 					// SEO Structured Data.
 					'events_seo' => array_merge( $seo_field, array(
-						'checkbox_label' => __( 'Enable for Events <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
+						'checkbox_label' => __( 'Improve SEO for Events <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
 					) ),
 
 					// Location Memory.
@@ -521,6 +559,11 @@ function ctc_settings_setup() {
 				// Fields (Settings).
 				'fields' => array(
 
+					// SEO Structured Data.
+					'locations_seo' => array_merge( $seo_field, array(
+						'checkbox_label' => __( 'Improve SEO for Locations <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
+					) ),
+
 					// Google Maps API Key.
 					'google_maps_api_key' => array(
 						'name'            => _x( 'Google Maps API Key', 'settings', 'church-theme-content' ),
@@ -542,6 +585,30 @@ function ctc_settings_setup() {
 						'custom_sanitize' => '', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
 					),
+
+					// Locations Per Page.
+					'locations_per_page' => array_merge( $per_page_field, array(
+						'name' => __( 'Locations Per Page', 'church-theme-content' ),
+					) ),
+
+					// Location URL Slug.
+					'location_url_slug' => array_merge( $url_slug_field, array(
+						'name'            => __( 'Location URL Slug', 'church-theme-content' ),
+						'desc'            => sprintf(
+							/* translators: %1$s is default slug, %2$s is example URL showing how post type slug is used. */
+							$url_slug_desc,
+							$location_url_slug_default,
+							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $location_url_slug_default . '</b>/', get_post_type_archive_link( 'ctc_location' ) ) // make slug bold.
+						),
+						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+							'placeholder' => $location_url_slug_default, // show the standard value if they leave blank.
+						),
+					) ),
+
+					// Hide in Admin Menu.
+					'locations_admin_hide' => array_merge( $hide_admin_field, array(
+						'checkbox_label' => __( 'Hide Locations', 'church-theme-content' ), // show text after checkbox.
+					) ),
 
 				),
 
