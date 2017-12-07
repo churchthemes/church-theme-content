@@ -38,6 +38,10 @@ function ctc_settings_setup() {
 	 * SHARED
  	 **********************************/
 
+	// Which add-on(s) are active.
+	$pro_active = defined( 'CCP_VERSION' ) ? true : false;
+	$cre_active = defined( 'CTC_CRE_VERSION' ) ? true : false;
+
 	// Default sermon post type wording and slug.
 	// We get this from post type registration before the values are filtered.
 	$sermon_cpt_args_unfiltered = ctc_post_type_sermon_args( 'unfiltered' );
@@ -74,7 +78,7 @@ function ctc_settings_setup() {
 		'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
 		'desc'            => sprintf(
 			/* translators: %1$s is URL with information about SEO with JSON-LD */
-			__( 'Automatically improves Search Engine Optimization (SEO) with Schema.org structured data via JSON-LD. <a href="%1$s">Learn more</a>', 'church-theme-content' ),
+			__( 'Improve Search Engine Optimization (SEO) automatically with Schema.org structured data via JSON-LD. <a href="%1$s" target="_blank">Learn more</a>', 'church-theme-content' ),
 			'https://churchthemes.com/go/seo-setting/?utm_source=ctc&utm_medium=plugin&utm_campaign=church_content_pro&utm_content=settings'
 		),
 		'type'            => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
@@ -97,7 +101,7 @@ function ctc_settings_setup() {
 		'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
 		'desc'            => sprintf(
 			/* translators: %1$s is URL to Setting > Reading */
-			__( 'This overrides the global "Posts per page" setting in <a href="%1$s">Reading Settings</a>. Leave blank to use the global setting.', 'church-theme-content' ),
+			__( 'Override the global "Posts per page" setting in <a href="%1$s">Reading Settings</a>. Leave blank to use the global setting.', 'church-theme-content' ),
 			admin_url( 'options-reading.php' )
 		),
 		'type'            => 'number', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
@@ -187,6 +191,26 @@ function ctc_settings_setup() {
 
 	}
 
+	// Event recurrence content and description.
+	// Show different info depending on status of Church Content Pro or Custom Recurring Events plugin.
+	$event_recurrence_desc = __( 'Save time by setting events to repeat automatically (e.g. "Every month on last Sunday except December 25").', 'church-theme-content' );
+	if ( $pro_active ) { // Pro plugin active.
+		$event_recurrence_content = _x( 'Enabled by Church Content Pro', 'recurrence setting', 'church-theme-content' );
+	} elseif ( $cre_active ) { // Custom Recurring Events plugin active, not Pro.
+		$event_recurrence_content = __( 'Partially Enabled by Custom Recurring Events Add-on', 'church-theme-content' );
+		$event_recurrence_desc = sprintf(
+			/* translators: %1$s is URL with info on upgrading from Custom Recurring Events to Church Content Pro */
+			__( 'Upgrade to <a href="%1$s" target="_blank">Church Content Pro</a> for even more recurrence options.'),
+			'https://churchthemes.com/go/cre-to-pro/?utm_source=ctc&utm_medium=plugin&utm_campaign=church_content_pro&utm_content=settings'
+		);
+	} else { // No plugin active for recurring events.
+		$event_recurrence_content = sprintf(
+			/* translators: %1$s is URL for Church Content Pro info */
+			_x( 'Install <a href="%1$s" target="_blank">Church Content Pro</a> to Enable', 'recurrence setting', 'church-theme-content' ),
+			'https://churchthemes.com/plugins/church-content-pro/?utm_source=ctc&utm_medium=plugin&utm_campaign=church_content_pro&utm_content=settings'
+		);
+	}
+
 	// Configuration.
 	$config = array(
 
@@ -258,7 +282,7 @@ function ctc_settings_setup() {
 					) ),
 
 					// Sermon Podcasting (Shortcut).
-					'podcasting_shortcut' => array(
+					'podcasting_content' => array(
 						'name'            => _x( 'Sermon Podcasting', 'settings', 'church-theme-content' ),
 						'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
 						'desc'            => '',
@@ -416,11 +440,11 @@ function ctc_settings_setup() {
 				// Fields (Settings).
 				'fields' => array(
 
-					// Recurring Events
+					// Recurring Events.
 					'event_recurrence_content' => array(
 						'name'            => _x( 'Recurring Events', 'settings', 'church-theme-content' ),
 						'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
-						'desc'            => '',
+						'desc'            => $event_recurrence_desc,
 						'type'            => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'options'         => array(), // array of keys/values for radio or select.
@@ -429,7 +453,7 @@ function ctc_settings_setup() {
 						'allow_html'      => false, // allow HTML to be used in the value.
 						'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
 						'class'           => '', // classes to add to input.
-						'content'         => __( '"Install Church Content Pro to Enable" or "Enabled by Church Content Pro" (always on)', 'church-theme-content' ), // custom content instead of input (HTML allowed).
+						'content'         => $event_recurrence_content, // custom content instead of input (HTML allowed).
 						'custom_sanitize' => '', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
 					),
@@ -439,7 +463,7 @@ function ctc_settings_setup() {
 						'checkbox_label' => __( 'Enable for Events (Recommended)', 'church-theme-content' ), // show text after checkbox.
 					) ),
 
-					// Location Memory
+					// Location Memory.
 					'event_location_memory' => array(
 						'name'            => __( 'Location Memory', 'church-theme-content' ),
 						'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
