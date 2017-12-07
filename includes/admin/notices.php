@@ -66,7 +66,7 @@ function ctc_recurrence_php_notice() {
 					)
 				),
 				esc_html( $ct_recurrence->php_min_version ),
-				'https://churchthemes.com/go/recurrence-php-update/'
+				esc_url( ctc_ctcom_url( 'update-php', array( 'utm_content' => 'recurrence' ) ) )
 			);
 			?>
 		</p>

@@ -84,7 +84,7 @@ function ctc_ctcom_url( $path_key, $query_args = array() ) {
 	$paths = array(
 
 		// How to get a Google Maps API key.
-		'google-maps-api-key' => '/go/google-maps-api-key/',
+		'google-maps-api-key' => '/go/google-maps-api-key/' . $utm_base_query . '&utm_campaign=church-theme-content',
 
 		// Church Content product page.
 		'church-content'      => '/plugins/church-content/' . $utm_base_query . '&utm_campaign=church-theme-content',
@@ -98,6 +98,17 @@ function ctc_ctcom_url( $path_key, $query_args = array() ) {
 		// What SEO Structured Data setting does.
 		'seo-setting'         => '/go/seo-setting/' . $utm_base_query . '&utm_campaign=church_content_pro&utm_content=settings',
 
+		// How to handle event registration.
+		'event-registration'  => '/go/ctc-event-registration/' . $utm_base_query . '&utm_campaign=church-theme-content',
+
+		// How to update PHP.
+		'update-php'          => '/go/update-php/' . $utm_base_query . '&utm_campaign=church-theme-content',
+
+		// URLs for sermon media field descriptions.
+		'sermon-video-sites'  => '/go/ctc-sermon-video-sites/', // external.
+		'sermon-video-help'   => '/go/ctc-sermon-video-help/' . $utm_base_query . '&utm_campaign=church-theme-content&utm_content=sermon',
+		'sermon-audio-sites'  => '/go/ctc-sermon-audio-sites/', // external.
+		'sermon-audio-help'   => '/go/ctc-sermon-audio-help/' . $utm_base_query . '&utm_campaign=church-theme-content&utm_content=sermon',
 
 	);
 

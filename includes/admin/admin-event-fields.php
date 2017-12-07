@@ -609,10 +609,10 @@ function ctc_add_meta_box_event_registration() {
 				'after_name'		=> '', // (Optional), (Required), etc.
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> sprintf(
-										__( 'Link to a third-party registration page from your Church Management System, EventBrite, etc. (or embed a form into the content above). <a href="%1$s" target="_blank">Learn More</a>', 'church-theme-content' ),
-										/* translators: %1$s is URL to guide about event registration solutions */
-										'https://churchthemes.com/go/ctc-event-registration'
-										),
+					/* translators: %1$s is URL to guide about event registration solutions */
+					__( 'Link to a third-party registration page from your Church Management System, EventBrite, etc. (or embed a form into the content above). <a href="%1$s" target="_blank">Learn More</a>', 'church-theme-content' ),
+					esc_url( ctc_ctcom_url( 'event-registration', array( 'utm_content' => 'event' ) ) )
+				),
 				'type'				=> 'url', // text, textarea, checkbox, checkbox_multiple, radio, select, number, range, upload, upload_textarea, url, date, time
 				'checkbox_label'	=> '', //show text after checkbox
 				'options'			=> array(), // array of keys/values for radio or select
@@ -620,7 +620,7 @@ function ctc_add_meta_box_event_registration() {
 				'upload_title'		=> '', // title appearing at top of media frame
 				'upload_type'		=> '', // optional type of media to filter by (image, audio, video, application/pdf)
 				'date_multiple'		=> false, // whether or not to allow date field type to select multiple dates, to be saved as comma-separated list.
-			'date_button'       => '', // text for button user clicks to open datepicker calendar.
+				'date_button'       => '', // text for button user clicks to open datepicker calendar.
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
