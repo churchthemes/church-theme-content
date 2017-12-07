@@ -235,3 +235,43 @@ function ctc_function_available( $function ) {
 	return apply_filters( 'ctc_function_available', $available, $function );
 
 }
+
+/*************************************************
+ * PLUGINS
+ *************************************************/
+
+/**
+ * Check if Church Content Pro plugin active.
+ *
+ * @since 1.9
+ * @return bool True if plugin installed and active.
+ */
+function ctc_pro_is_active() {
+
+	$active = false;
+
+	if ( defined( 'CCP_VERSION' ) ) {
+		$active = true;
+	}
+
+	return $active;
+
+}
+
+/**
+ * Check if Custom Recurring Events plugin is active.
+ *
+ * @since 1.9
+ * @return bool True if plugin installed and active.
+ */
+function ctc_cre_is_active() {
+
+	$active = false;
+
+	if ( defined( 'CTC_CRE_VERSION' ) ) {
+		$active = true;
+	}
+
+	return $active;
+
+}
