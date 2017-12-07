@@ -416,11 +416,46 @@ function ctc_settings_setup() {
 				// Fields (Settings).
 				'fields' => array(
 
+					// Recurring Events
+					'event_recurrence_content' => array(
+						'name'            => _x( 'Recurring Events', 'settings', 'church-theme-content' ),
+						'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
+						'desc'            => '',
+						'type'            => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'checkbox_label'  => '', // show text after checkbox.
+						'options'         => array(), // array of keys/values for radio or select.
+						'default'         => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'        => false, // if user empties value, force default to be saved instead.
+						'allow_html'      => false, // allow HTML to be used in the value.
+						'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
+						'class'           => '', // classes to add to input.
+						'content'         => __( '"Install Church Content Pro to Enable" or "Enabled by Church Content Pro" (always on)', 'church-theme-content' ), // custom content instead of input (HTML allowed).
+						'custom_sanitize' => '', // function to do additional sanitization.
+						'custom_content'  => '', // function for custom display of field input.
+					),
+
 					// SEO Structured Data.
 					'events_seo' => array_merge( $seo_field, array(
 						'checkbox_label' => __( 'Enable for Events (Recommended)', 'church-theme-content' ), // show text after checkbox.
 					) ),
 
+					// Location Memory
+					'event_location_memory' => array(
+						'name'            => __( 'Location Memory', 'church-theme-content' ),
+						'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
+						'desc'            => __( 'Save time when adding events by choosing from previously used locations.', 'church-theme-content' ),
+						'type'            => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
+						'checkbox_label'  => __( 'Enable "Choose" Button and Autocomplete', 'church-theme-content' ),
+						'options'         => array(), // array of keys/values for radio or select.
+						'default'         => false, // value to pre-populate option with (before first save or on reset).
+						'no_empty'        => false, // if user empties value, force default to be saved instead.
+						'allow_html'      => false, // allow HTML to be used in the value.
+						'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
+						'class'           => '', // classes to add to input.
+						'content'         => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize' => '', // function to do additional sanitization.
+						'custom_content'  => '', // function for custom display of field input.
+					),
 
 					// Events Per Page.
 					'events_per_page' => array_merge( $per_page_field, array(
