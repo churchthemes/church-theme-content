@@ -38,10 +38,6 @@ function ctc_settings_setup() {
 	 * SHARED
  	 **********************************/
 
-	// Which add-on(s) are active.
-	$pro_active = defined( 'CCP_VERSION' ) ? true : false;
-	$cre_active = defined( 'CTC_CRE_VERSION' ) ? true : false;
-
 	// Default sermon post type wording and slug.
 	// We get this from post type registration before the values are filtered.
 	$sermon_cpt_args_unfiltered = ctc_post_type_sermon_args( 'unfiltered' );
@@ -181,7 +177,7 @@ function ctc_settings_setup() {
 
 	// Note to add to page description for Pro add-on when not active.
 	$pro_upgrade_note = '';
-	if ( ! defined( 'CCP_VERSION' ) ) { // plugin not active.
+	if ( ! ctc_pro_is_active() ) { // plugin not active.
 
 		$pro_upgrade_note = sprintf(
 			/* translators: %1$s is URL for Church Content Pro info. */
@@ -194,9 +190,9 @@ function ctc_settings_setup() {
 	// Event recurrence content and description.
 	// Show different info depending on status of Church Content Pro or Custom Recurring Events plugin.
 	$event_recurrence_desc = __( 'Save time by setting events to repeat automatically (e.g. "Every month on last Sunday except December 25").', 'church-theme-content' );
-	if ( $pro_active ) { // Pro plugin active.
+	if ( ctc_pro_is_active() ) { // Pro plugin active.
 		$event_recurrence_content = _x( 'Enabled by Church Content Pro', 'recurrence setting', 'church-theme-content' );
-	} elseif ( $cre_active ) { // Custom Recurring Events plugin active, not Pro.
+	} elseif ( ctc_cre_is_active() ) { // Custom Recurring Events plugin active, not Pro.
 		$event_recurrence_content = __( 'Partially Enabled by Custom Recurring Events Add-on', 'church-theme-content' );
 		$event_recurrence_desc = sprintf(
 			/* translators: %1$s is URL with info on upgrading from Custom Recurring Events to Church Content Pro */
