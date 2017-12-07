@@ -191,7 +191,7 @@ function ctc_settings_setup() {
 	// Show different info depending on status of Church Content Pro or Custom Recurring Events plugin.
 	$event_recurrence_desc = __( 'Save time by setting events to repeat automatically (e.g. "Every month on last Sunday except December 25").', 'church-theme-content' );
 	if ( ctc_pro_is_active() ) { // Pro plugin active.
-		$event_recurrence_content = _x( 'Enabled by Church Content Pro', 'recurrence setting', 'church-theme-content' );
+		$event_recurrence_content = _x( 'Enabled by Church Content Pro <span class="ctps-light ctps-italic">(Always On)</span>', 'recurrence setting', 'church-theme-content' );
 	} elseif ( ctc_cre_is_active() ) { // Custom Recurring Events plugin active, not Pro.
 		$event_recurrence_content = __( 'Partially Enabled by Custom Recurring Events Add-on', 'church-theme-content' );
 		$event_recurrence_desc = sprintf(
@@ -270,7 +270,7 @@ function ctc_settings_setup() {
 
 					// SEO Structured Data.
 					'sermons_seo' => array_merge( $seo_field, array(
-						'checkbox_label' => __( 'Enable for Sermons (Recommended)', 'church-theme-content' ), // show text after checkbox.
+						'checkbox_label' => __( 'Enable for Sermons <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
 					) ),
 
 					// Sermon Podcasting (Shortcut).
@@ -452,7 +452,7 @@ function ctc_settings_setup() {
 
 					// SEO Structured Data.
 					'events_seo' => array_merge( $seo_field, array(
-						'checkbox_label' => __( 'Enable for Events (Recommended)', 'church-theme-content' ), // show text after checkbox.
+						'checkbox_label' => __( 'Enable for Events <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
 					) ),
 
 					// Location Memory.
@@ -461,7 +461,7 @@ function ctc_settings_setup() {
 						'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
 						'desc'            => __( 'Save time when adding events by choosing from previously used locations.', 'church-theme-content' ),
 						'type'            => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
-						'checkbox_label'  => __( 'Enable "Choose" Button and Autocomplete', 'church-theme-content' ),
+						'checkbox_label'  => __( 'Enable "Choose" Button and Autocomplete <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ),
 						'options'         => array(), // array of keys/values for radio or select.
 						'default'         => false, // value to pre-populate option with (before first save or on reset).
 						'no_empty'        => false, // if user empties value, force default to be saved instead.
@@ -524,7 +524,7 @@ function ctc_settings_setup() {
 					// Google Maps API Key.
 					'google_maps_api_key' => array(
 						'name'            => _x( 'Google Maps API Key', 'settings', 'church-theme-content' ),
-						'after_name'      => '', // append (Optional) or (Pro), etc.
+						'after_name'      => __( '(Required)', 'setting label', 'church-theme-content' ), // append (Optional) or (Pro), etc.
 						'desc'            => sprintf(
 							/* translators: %1$s is URL to guide telling user how to get a Google Maps API Key */
 							__( 'An API Key for Google Maps is required if you want to show maps for locations or events. <a href="%1$s" target="_blank">Get an API Key</a>', 'church-theme-content' ),
