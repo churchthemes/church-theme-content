@@ -76,10 +76,10 @@ function ctc_settings_config() {
 	$person_group_url_slug_default = $person_group_args_unfiltered['rewrite']['slug'];
 
 	// Feature support.
-	$sermons_supported = ctc_feature_supported( 'ctc-sermons' );
-	$events_supported = ctc_feature_supported( 'ctc-events' );
-	$locations_supported = ctc_feature_supported( 'ctc-locations' );
-	$people_supported = ctc_feature_supported( 'ctc-people' );
+	$sermons_supported = ctc_feature_supported( 'sermons' );
+	$events_supported = ctc_feature_supported( 'events' );
+	$locations_supported = ctc_feature_supported( 'locations' );
+	$people_supported = ctc_feature_supported( 'people' );
 
 	// Pro tag to show after field labels.
 	$pro_tag = _x( '(Pro)', 'settings', 'church-theme-content' );
@@ -307,7 +307,7 @@ function ctc_settings_config() {
 					// SEO Structured Data.
 					'sermons_seo' => array_merge( $seo_field, array(
 						'checkbox_label' => __( 'Improve SEO for Sermons <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
-						'unsupported'   => ! $sermons_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'    => ! $sermons_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Sermon Podcasting (Shortcut).
@@ -406,7 +406,7 @@ function ctc_settings_config() {
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_topic_url_slug_default, // show the standard value if they leave blank.
 						),
-						'unsupported'    => ! ctc_taxonomy_supported( 'sermons', '_ctc_sermon_topic' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'    => ! ctc_taxonomy_supported( 'sermons', 'ctc_sermon_topic' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Series URL Slug.
@@ -415,7 +415,7 @@ function ctc_settings_config() {
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_series_url_slug_default, // show the standard value if they leave blank.
 						),
-						'unsupported'    => ! ctc_taxonomy_supported( 'sermons', '_ctc_sermon_series' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'    => ! ctc_taxonomy_supported( 'sermons', 'ctc_sermon_series' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Book URL Slug.
@@ -424,7 +424,7 @@ function ctc_settings_config() {
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_book_url_slug_default, // show the standard value if they leave blank.
 						),
-						'unsupported'    => ! ctc_taxonomy_supported( 'sermons', '_ctc_sermon_book' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'    => ! ctc_taxonomy_supported( 'sermons', 'ctc_sermon_book' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Speaker URL Slug.
@@ -433,7 +433,7 @@ function ctc_settings_config() {
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_speaker_url_slug_default, // show the standard value if they leave blank.
 						),
-						'unsupported'    => ! ctc_taxonomy_supported( 'sermons', '_ctc_sermon_speaker' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'    => ! ctc_taxonomy_supported( 'sermons', 'ctc_sermon_speaker' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Tag URL Slug.
@@ -442,7 +442,7 @@ function ctc_settings_config() {
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_tag_url_slug_default, // show the standard value if they leave blank.
 						),
-						'unsupported'    => ! ctc_taxonomy_supported( 'sermons', '_ctc_sermon_tag' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'    => ! ctc_taxonomy_supported( 'sermons', 'ctc_sermon_tag' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Hide in Admin Menu.
@@ -558,7 +558,7 @@ function ctc_settings_config() {
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $event_category_url_slug_default, // show the standard value if they leave blank.
 						),
-						'unsupported'     => ! ctc_taxonomy_supported( 'events', '_ctc_event_category' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'     => ! ctc_taxonomy_supported( 'events', 'ctc_event_category' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Hide in Admin Menu.
@@ -688,7 +688,7 @@ function ctc_settings_config() {
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $person_group_url_slug_default, // show the standard value if they leave blank.
 						),
-						'unsupported'     => ! ctc_taxonomy_supported( 'people', '_ctc_person_group' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'     => ! ctc_taxonomy_supported( 'people', 'ctc_person_group' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Hide in Admin Menu.
@@ -728,58 +728,74 @@ function ctc_settings_setup() {
 	// This is for CT_Plugin_Settings class.
 	$config = ctc_settings_config();
 
-	// Disable Pro inputs when Pro not active.
-	// Also trigger message at top of section explaining (Pro) denotation.
-	if ( ! ctc_pro_is_active() ) {
+	// Loop sections to disable inputs and add to section description.
+	foreach ( $config['sections'] as $section_id => $section ) {
 
-		// Loop sections.
-		foreach ( $config['sections'] as $section_id => $section ) {
+		// Track number of settings inactive.
+		$unsupported_settings = 0;
+		$pro_inactive_settings = 0;
 
-			// Track number of Pro settings inactive.
-			$pro_settings_inactive = 0;
+		// Have fields.
+		if ( isset( $section['fields'] ) ) {
 
-			// Have fields.
-			if ( isset( $section['fields'] ) ) {
+			// Loop fields.
+			foreach ( $section['fields'] as $field_id => $field ) {
 
-				// Loop fields.
-				foreach ( $section['fields'] as $field_id => $field ) {
+				// Field is Pro.
+				if ( ! empty( $field['pro'] ) ) {
 
-					// Field is Pro.
-					if ( ! empty( $field['pro'] ) ) {
+					// Setting not supported by theme.
+					// 'unsupported' arg was set true due to lack of theme support for CTC feature, field or taxonomy.
+					if ( ! empty( $field['unsupported'] ) ) {
 
-						// Make readonly so cannot change.
-						$config['sections'][ $section_id ]['fields'][ $field_id ]['attributes'] = array_merge( $field['attributes'], array(
-							'readonly' => 'readonly', // append attribute to array.
-						) );
+echo $field_id . ': unsupported, ';
+						$readonly = true;
+
+					}
+
+					// Pro is inactive.
+					elseif ( ! ctc_pro_is_active() ) {
+
+						$readonly = true;
 
 						// Add class to warn this requires Pro upgrade.
 						$config['sections'][ $section_id ]['fields'][ $field_id ]['class'] = ' ctc-pro-setting-inactive'; // preceding space in case already have class (CT_Plugin_Settings will trim).
 
 						// Count inactive settings due to Pro not being active.
-						$pro_settings_inactive++;
+						$pro_inactive_settings++;
+
+					}
+
+					// Make readonly so cannot change.
+					if ( $readonly ) {
+
+						// Append attribute to array.
+						$config['sections'][ $section_id ]['fields'][ $field_id ]['attributes'] = array_merge( $field['attributes'], array(
+							'readonly' => 'readonly',
+						) );
 
 					}
 
 				}
 
-				// Show note at top of section explaining (Pro) denotation.
-				if ( $pro_settings_inactive ) { // at least one settings that requires Pro plugin is used.
+			}
 
-					// Have description. Add space before appending new note...
-					if ( ! empty( $config['sections'][ $section_id ]['desc'] ) ) {
-						$config['sections'][ $section_id ]['desc'] .= ' ';
-					} else {
-						$config['sections'][ $section_id ]['desc'] = '';
-					}
+			// Show note at top of section explaining (Pro) denotation.
+			if ( $pro_inactive_settings ) { // at least one settings that requires Pro plugin is used.
 
-					// Add note.
-					$config['sections'][ $section_id ]['desc'] .= '<span class="ctc-pro-setting-inactive-message">' . sprintf(
-						/* %1$s is URL to Church Content Pro plugin info */
-						__( 'Settings labeled as "Pro" require the <a href="%1$s" target="_blank">Church Content Pro</a> plugin. Install it to use Pro features.', 'church-theme-content' ),
-						esc_url( ctc_ctcom_url( 'church-content-pro', array( 'utm_content' => 'settings' ) ) )
-					) . '</span>';
-
+				// Have description. Add space before appending new note...
+				if ( ! empty( $config['sections'][ $section_id ]['desc'] ) ) {
+					$config['sections'][ $section_id ]['desc'] .= ' ';
+				} else {
+					$config['sections'][ $section_id ]['desc'] = '';
 				}
+
+				// Add note.
+				$config['sections'][ $section_id ]['desc'] .= '<span class="ctc-pro-setting-inactive-message">' . sprintf(
+					/* %1$s is URL to Church Content Pro plugin info */
+					__( 'Settings labeled as "Pro" require the <a href="%1$s" target="_blank">Church Content Pro</a> plugin. Install it to use Pro features.', 'church-theme-content' ),
+					esc_url( ctc_ctcom_url( 'church-content-pro', array( 'utm_content' => 'settings' ) ) )
+				) . '</span>';
 
 			}
 
