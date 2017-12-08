@@ -706,6 +706,36 @@ function ctc_settings_setup() {
 	// This is for CT_Plugin_Settings class.
 	$config = ctc_settings_config();
 
+	// Disable Pro inputs when Pro not active.
+	if ( ! ctc_pro_is_active() ) {
+
+		// Loop sections.
+		foreach ( $config['sections'] as $section_id => $section ) {
+
+			// Have fields.
+			if ( isset( $section['fields'] ) ) {
+
+				// Loop fields.
+				foreach ( $section['fields'] as $field_id => $field ) {
+
+					// Field is Pro.
+					if ( ! empty( $field['pro'] ) ) {
+
+						// Add class to warn this requires Pro upgrade.
+						$class = isset( $field['class'] ) ? $field['class'] : '';
+						$class .= ' ctc-pro-setting-inactive';
+						$config['sections'][ $section_id ]['fields'][ $field_id ]['class'] = trim( $class );
+
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
 	// Add settings.
 	$ctc_settings = new CT_Plugin_Settings( $config );
 
