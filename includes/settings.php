@@ -327,7 +327,7 @@ function ctc_settings_config() {
 						'custom_sanitize'  => '', // function to do additional sanitization.
 						'custom_content'   => '', // function for custom display of field input.
 						'pro'              => true, // field input element disabled when Pro not active.
-						'unsupported'     => '', // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'      => ! ctc_field_supported( 'sermons', '_ctc_sermon_audio' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// Sermons Per Page.
@@ -741,40 +741,48 @@ function ctc_settings_setup() {
 			// Loop fields.
 			foreach ( $section['fields'] as $field_id => $field ) {
 
-				// Field is Pro.
-				if ( ! empty( $field['pro'] ) ) {
+				$readonly = false;
 
-					// Setting not supported by theme.
-					// 'unsupported' arg was set true due to lack of theme support for CTC feature, field or taxonomy.
-					if ( ! empty( $field['unsupported'] ) ) {
+				// Setting not supported by theme.
+				// 'unsupported' arg was set true due to lack of theme support for CTC feature, field or taxonomy.
+				if ( ! empty( $field['unsupported'] ) ) {
 
-echo $field_id . ': unsupported, ';
-						$readonly = true;
+					// Don't let user change field value.
+					$readonly = true;
 
-					}
+					// Replace description with message saying theme does not support this setting.
+					// We leave the "(Pro)" after_name so they know that even if they do switch themes, they have to use Pro.
+					$config['sections'][ $section_id ]['fields'][ $field_id ]['desc'] = __( '<b>Note:</b> This is not supported by your theme and will have no effect.', 'church-theme-content' );
 
-					// Pro is inactive.
-					elseif ( ! ctc_pro_is_active() ) {
+					// Count inactive settings due to missing theme support.
+					$unsupported_settings++;
 
-						$readonly = true;
+				}
 
-						// Add class to warn this requires Pro upgrade.
-						$config['sections'][ $section_id ]['fields'][ $field_id ]['class'] = ' ctc-pro-setting-inactive'; // preceding space in case already have class (CT_Plugin_Settings will trim).
+				// Field is Pro but Pro plugin is inactive.
+				elseif ( ! empty( $field['pro'] ) && ! ctc_pro_is_active() ) {
 
-						// Count inactive settings due to Pro not being active.
-						$pro_inactive_settings++;
+					// Don't let user change field value.
+					$readonly = true;
 
-					}
+					// Add class to warn this requires Pro upgrade.
+					$config['sections'][ $section_id ]['fields'][ $field_id ]['class'] .= ' ctc-pro-setting-inactive'; // preceding space in case already have class (CT_Plugin_Settings will trim).
 
-					// Make readonly so cannot change.
-					if ( $readonly ) {
+					// Count inactive settings due to Pro not being active.
+					$pro_inactive_settings++;
 
-						// Append attribute to array.
-						$config['sections'][ $section_id ]['fields'][ $field_id ]['attributes'] = array_merge( $field['attributes'], array(
-							'readonly' => 'readonly',
-						) );
+				}
 
-					}
+				// Make readonly so cannot change.
+				if ( $readonly ) {
+
+					// Append readonly attribute to array.
+					$config['sections'][ $section_id ]['fields'][ $field_id ]['attributes'] = array_merge( $field['attributes'], array(
+						'readonly' => 'readonly',
+					) );
+
+					// Add class to stop changes to checkbox inputs (readonly doesn't stop state changes).
+					$config['sections'][ $section_id ]['fields'][ $field_id ]['class'] .= ' ctc-setting-readonly'; // preceding space in case already have class (CT_Plugin_Settings will trim).
 
 				}
 
