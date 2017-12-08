@@ -721,10 +721,13 @@ function ctc_settings_setup() {
 					// Field is Pro.
 					if ( ! empty( $field['pro'] ) ) {
 
+						// Make readonly so cannot change.
+						$config['sections'][ $section_id ]['fields'][ $field_id ]['attributes'] = array_merge( $field['attributes'], array(
+							'readonly' => 'readonly', // append attribute to array.
+						) );
+
 						// Add class to warn this requires Pro upgrade.
-						$class = isset( $field['class'] ) ? $field['class'] : '';
-						$class .= ' ctc-pro-setting-inactive';
-						$config['sections'][ $section_id ]['fields'][ $field_id ]['class'] = trim( $class );
+						$config['sections'][ $section_id ]['fields'][ $field_id ]['class'] = ' ctc-pro-setting-inactive'; // preceding space in case already have class (CT_Plugin_Settings will trim).
 
 					}
 
