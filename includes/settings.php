@@ -80,6 +80,7 @@ function ctc_settings_setup() {
 
 	// Pro tag to show after field labels.
 	$pro_tag = _x( '(Pro)', 'settings', 'church-theme-content' );
+	$pro_tag = '<a href="' . esc_url( ctc_ctcom_url( 'church-content-pro', array( 'utm_content' => 'settings' ) ) ) . '" target="_blank">' . $pro_tag . '</a>';
 
 	// SEO Structured Data field.
 	$seo_field = array(
