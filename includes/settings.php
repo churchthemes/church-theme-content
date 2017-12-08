@@ -707,10 +707,14 @@ function ctc_settings_setup() {
 	$config = ctc_settings_config();
 
 	// Disable Pro inputs when Pro not active.
+	// Also trigger message at top of section explaining (Pro) denotation.
 	if ( ! ctc_pro_is_active() ) {
 
 		// Loop sections.
 		foreach ( $config['sections'] as $section_id => $section ) {
+
+			// Track number of Pro settings inactive.
+			$pro_settings_inactive = 0;
 
 			// Have fields.
 			if ( isset( $section['fields'] ) ) {
@@ -729,7 +733,29 @@ function ctc_settings_setup() {
 						// Add class to warn this requires Pro upgrade.
 						$config['sections'][ $section_id ]['fields'][ $field_id ]['class'] = ' ctc-pro-setting-inactive'; // preceding space in case already have class (CT_Plugin_Settings will trim).
 
+						// Count inactive settings due to Pro not being active.
+						$pro_settings_inactive++;
+
 					}
+
+				}
+
+				// Show note at top of section explaining (Pro) denotation.
+				if ( $pro_settings_inactive ) { // at least one settings that requires Pro plugin is used.
+
+					// Have description. Add space before appending new note...
+					if ( ! empty( $config['sections'][ $section_id ]['desc'] ) ) {
+						$config['sections'][ $section_id ]['desc'] .= ' ';
+					} else {
+						$config['sections'][ $section_id ]['desc'] = '';
+					}
+
+					// Add note.
+					$config['sections'][ $section_id ]['desc'] .= '<span class="ctc-pro-setting-inactive-message">' . sprintf(
+						/* %1$s is URL to Church Content Pro plugin info */
+						__( 'Settings labeled as "Pro" require the <a href="%1$s" target="_blank">Church Content Pro</a> plugin. Install it to use Pro features.', 'church-theme-content' ),
+						esc_url( ctc_ctcom_url( 'church-content-pro', array( 'utm_content' => 'settings' ) ) )
+					) . '</span>';
 
 				}
 
