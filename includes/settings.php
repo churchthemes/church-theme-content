@@ -193,18 +193,6 @@ function ctc_settings_config() {
 	 * SETTINGS
 	 **********************************/
 
-	// Note to add to page description for Pro add-on when not active.
-	$pro_upgrade_note = '';
-	if ( ! ctc_pro_is_active() ) { // plugin not active.
-
-		$pro_upgrade_note = sprintf(
-			/* translators: %1$s is URL for Church Content Pro info. */
-			__( '<a href="%1$s" target="_blank">Upgrade to Pro</a> to enable extra settings and features.', 'church-theme-content' ),
-			esc_url( ctc_ctcom_url( 'church-content-pro', array( 'utm_content' => 'settings' ) ) )
-		);
-
-	}
-
 	// Event recurrence content and description.
 	// Show different info depending on status of Church Content Pro or Custom Recurring Events plugin.
 	$event_recurrence_desc = __( 'Save time by setting events to repeat automatically (e.g. "Every month on last Sunday except December 25").', 'church-theme-content' );
@@ -267,10 +255,9 @@ function ctc_settings_config() {
 
 		// Settings page description.
 		'desc' => sprintf(
-			/* translators: %1$s is Church Content plugin URL, %2$s is note about upgrading to Pro (if not active), %3$s is URL to Customizer. */
-			__( 'These settings are for the <a href="%1$s" target="_blank">Church Content</a> plugin. %2$s Use the <a href="%3$s">Customizer</a> for theme-provided appearance settings.', 'church-theme-content' ),
+			/* translators: %1$s is Church Content plugin URL, %2$s is URL to Customizer. */
+			__( 'These settings are for the <a href="%1$s" target="_blank">Church Content</a> plugin. Use the <a href="%2$s">Customizer</a> for theme-provided appearance settings.', 'church-theme-content' ),
 			esc_url( ctc_ctcom_url( 'church-content', array( 'utm_content' => 'settings' ) ) ),
-			$pro_upgrade_note,
 			esc_url( admin_url( 'customize.php' ) )
 		),
 

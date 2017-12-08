@@ -10,6 +10,16 @@
 	font-weight: normal;
 }
 
+.ctc-pro-setting-inactive-message-inline {
+	display: inline-block;
+	margin: 6px 0 0 0;
+	padding: 10px 12px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	font-size: 0.95em;
+
+}
+
 /*******************************************
  * LICENSES
  *******************************************/

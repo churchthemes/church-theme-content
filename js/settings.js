@@ -27,7 +27,20 @@ jQuery( document ).ready( function( $ ) {
 	// The Pro fields have readonly attribute so cannot be changed, but will be saved.
 	$( '.ctc-pro-setting-inactive' ).focus( function( e ) {
 
-		console.log( 'tried change pro' );
+		// Remove previous instance of message before showing new.
+		$( '.ctc-pro-setting-inactive-message-inline' ).remove();
+
+		// Get parent cell.
+		var $field_container = $( this ).parents( 'td' );
+
+		// Get message from section description.
+		var $message = $( '.ctc-pro-setting-inactive-message:visible' ).html();
+
+		// Copy message below field.
+		$field_container.append( '<span class="ctc-pro-setting-inactive-message-inline">' + $message + '</span>' );
+
+		// Fade it in.
+		$( '.ctc-pro-setting-inactive-message-inline' ).hide().fadeIn( 'fast' );
 
 	} );
 
