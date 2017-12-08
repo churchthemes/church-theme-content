@@ -75,31 +75,37 @@ function ctc_settings_config() {
 	$person_group_args_unfiltered = ctc_taxonomy_person_group_args( 'unfiltered' );
 	$person_group_url_slug_default = $person_group_args_unfiltered['rewrite']['slug'];
 
+	// Feature support.
+	$sermons_supported = ctc_feature_supported( 'ctc-sermons' );
+	$events_supported = ctc_feature_supported( 'ctc-events' );
+	$locations_supported = ctc_feature_supported( 'ctc-locations' );
+	$people_supported = ctc_feature_supported( 'ctc-people' );
+
 	// Pro tag to show after field labels.
 	$pro_tag = _x( '(Pro)', 'settings', 'church-theme-content' );
 	$pro_tag = '<a href="' . esc_url( ctc_ctcom_url( 'church-content-pro', array( 'utm_content' => 'settings' ) ) ) . '" target="">' . $pro_tag . '</a>';
 
 	// SEO Structured Data field.
 	$seo_field = array(
-		'name'            => _x( 'SEO Structured Data', 'settings', 'church-theme-content' ),
-		'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
-		'desc'            => sprintf(
+		'name'             => _x( 'SEO Structured Data', 'settings', 'church-theme-content' ),
+		'after_name'       => $pro_tag, // append (Optional) or (Pro), etc.
+		'desc'             => sprintf(
 			/* translators: %1$s is URL with information about SEO with JSON-LD */
 			__( 'Automatic Search Engine Optimization (SEO) with Schema.org structured data via JSON-LD. <a href="%1$s" target="_blank">Learn More</a>', 'church-theme-content' ),
 			esc_url( ctc_ctcom_url( 'seo-setting' ) )
 		),
-		'type'            => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
-		'checkbox_label'  => '',
-		'options'         => array(), // array of keys/values for radio or select.
-		'default'         => false, // value to pre-populate option with (before first save or on reset).
-		'no_empty'        => false, // if user empties value, force default to be saved instead.
-		'allow_html'      => false, // allow HTML to be used in the value.
-		'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
-		'class'           => '', // classes to add to input.
-		'content'         => '', // custom content instead of input (HTML allowed).
-		'custom_sanitize' => '', // function to do additional sanitization.
-		'custom_content'  => '', // function for custom display of field input.
-		'pro'             => array( // field input element disabled when Pro not active.
+		'type'             => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
+		'checkbox_label'   => '',
+		'options'          => array(), // array of keys/values for radio or select.
+		'default'          => false, // value to pre-populate option with (before first save or on reset).
+		'no_empty'         => false, // if user empties value, force default to be saved instead.
+		'allow_html'       => false, // allow HTML to be used in the value.
+		'attributes'       => array(), // attr => value array (e.g. set min/max for number or range type).
+		'class'            => '', // classes to add to input.
+		'content'          => '', // custom content instead of input (HTML allowed).
+		'custom_sanitize'  => '', // function to do additional sanitization.
+		'custom_content'   => '', // function for custom display of field input.
+		'pro'              => array( // field input element disabled when Pro not active.
 			'default' => true, // value to set by Pro when first activated.
 		),
 	);
@@ -299,32 +305,35 @@ function ctc_settings_config() {
 				'fields' => array(
 
 					// SEO Structured Data.
-					'sermon_seo' => array_merge( $seo_field, array(
+					'sermons_seo' => array_merge( $seo_field, array(
 						'checkbox_label' => __( 'Improve SEO for Sermons <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
+						'unnsupported'   => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Sermon Podcasting (Shortcut).
 					'podcasting_content' => array(
-						'name'            => _x( 'Sermon Podcasting', 'settings', 'church-theme-content' ),
-						'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
-						'desc'            => '',
-						'type'            => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
-						'checkbox_label'  => '', // show text after checkbox.
-						'options'         => array(), // array of keys/values for radio or select.
-						'default'         => '', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => false, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
-						'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
-						'class'           => '', // classes to add to input.
-						'content'         => __( '<a href="#">Podcasting Settings</a>', 'church-theme-content' ), // custom content instead of input (HTML allowed).
-						'custom_sanitize' => '', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => true, // field input element disabled when Pro not active.
+						'name'             => _x( 'Sermon Podcasting', 'settings', 'church-theme-content' ),
+						'after_name'       => $pro_tag, // append (Optional) or (Pro), etc.
+						'desc'             => '',
+						'type'             => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'checkbox_label'   => '', // show text after checkbox.
+						'options'          => array(), // array of keys/values for radio or select.
+						'default'          => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'         => false, // if user empties value, force default to be saved instead.
+						'allow_html'       => false, // allow HTML to be used in the value.
+						'attributes'       => array(), // attr => value array (e.g. set min/max for number or range type).
+						'class'            => '', // classes to add to input.
+						'content'          => __( '<a href="#">Podcasting Settings</a>', 'church-theme-content' ), // custom content instead of input (HTML allowed).
+						'custom_sanitize'  => '', // function to do additional sanitization.
+						'custom_content'   => '', // function for custom display of field input.
+						'pro'              => true, // field input element disabled when Pro not active.
+						'unnsupported'     => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// Sermons Per Page.
 					'sermons_per_page' => array_merge( $per_page_field, array(
-						'name' => __( 'Sermons Per Page', 'church-theme-content' ),
+						'name'         => __( 'Sermons Per Page', 'church-theme-content' ),
+						'unnsupported' => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Alternative Wording - Singular
@@ -346,6 +355,7 @@ function ctc_settings_config() {
 						'custom_sanitize' => '', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
 						'pro'             => true, // field input element disabled when Pro not active.
+						'unnsupported'    => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// Alternative Wording - Plural
@@ -372,6 +382,7 @@ function ctc_settings_config() {
 						'custom_sanitize' => '', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
 						'pro'             => true, // field input element disabled when Pro not active.
+						'unnsupported'    => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// Sermon URL Slug.
@@ -386,6 +397,7 @@ function ctc_settings_config() {
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_url_slug_default, // show the standard value if they leave blank.
 						),
+						'unnsupported'    => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Topic URL Slug.
@@ -394,6 +406,7 @@ function ctc_settings_config() {
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_topic_url_slug_default, // show the standard value if they leave blank.
 						),
+						'unnsupported'    => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Series URL Slug.
@@ -402,6 +415,7 @@ function ctc_settings_config() {
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_series_url_slug_default, // show the standard value if they leave blank.
 						),
+						'unnsupported'    => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Book URL Slug.
@@ -410,6 +424,7 @@ function ctc_settings_config() {
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_book_url_slug_default, // show the standard value if they leave blank.
 						),
+						'unnsupported'    => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Speaker URL Slug.
@@ -418,6 +433,7 @@ function ctc_settings_config() {
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_speaker_url_slug_default, // show the standard value if they leave blank.
 						),
+						'unnsupported'    => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Tag URL Slug.
@@ -426,11 +442,13 @@ function ctc_settings_config() {
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_tag_url_slug_default, // show the standard value if they leave blank.
 						),
+						'unnsupported'    => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Hide in Admin Menu.
 					'sermons_admin_hide' => array_merge( $hide_admin_field, array(
 						'checkbox_label' => __( 'Hide Sermons', 'church-theme-content' ), // show text after checkbox.
+						'unnsupported'   => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 				),
@@ -482,11 +500,13 @@ function ctc_settings_config() {
 						'custom_sanitize' => '', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
 						'pro'             => true, // field input element disabled when Pro not active.
+						'unnsupported'    => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// SEO Structured Data.
-					'event_seo' => array_merge( $seo_field, array(
+					'events_seo' => array_merge( $seo_field, array(
 						'checkbox_label' => __( 'Improve SEO for Events <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
+						'unnsupported'   => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Location Memory.
@@ -508,11 +528,13 @@ function ctc_settings_config() {
 						'pro'             => array( // field input element disabled when Pro not active.
 							'default' => true, // value to set by Pro when first activated.
 						),
+						'unnsupported'    => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// Events Per Page.
 					'events_per_page' => array_merge( $per_page_field, array(
 						'name' => __( 'Events Per Page', 'church-theme-content' ),
+						'unnsupported'     => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Event URL Slug.
@@ -527,6 +549,7 @@ function ctc_settings_config() {
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $event_url_slug_default, // show the standard value if they leave blank.
 						),
+						'unnsupported'    => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Category URL Slug.
@@ -535,11 +558,13 @@ function ctc_settings_config() {
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $event_category_url_slug_default, // show the standard value if they leave blank.
 						),
+						'unnsupported'    => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Hide in Admin Menu.
 					'events_admin_hide' => array_merge( $hide_admin_field, array(
 						'checkbox_label' => __( 'Hide Events', 'church-theme-content' ), // show text after checkbox.
+						'unnsupported'   => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 				),
@@ -559,8 +584,9 @@ function ctc_settings_config() {
 				'fields' => array(
 
 					// SEO Structured Data.
-					'location_seo' => array_merge( $seo_field, array(
+					'locations_seo' => array_merge( $seo_field, array(
 						'checkbox_label' => __( 'Improve SEO for Locations <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
+						'unnsupported'   => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Google Maps API Key.
@@ -583,11 +609,13 @@ function ctc_settings_config() {
 						'content'         => '', // custom content instead of input (HTML allowed).
 						'custom_sanitize' => '', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
+						'unnsupported'    => '', // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// Locations Per Page.
 					'locations_per_page' => array_merge( $per_page_field, array(
-						'name' => __( 'Locations Per Page', 'church-theme-content' ),
+						'name'         => __( 'Locations Per Page', 'church-theme-content' ),
+						'unnsupported' => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Location URL Slug.
@@ -602,11 +630,13 @@ function ctc_settings_config() {
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $location_url_slug_default, // show the standard value if they leave blank.
 						),
+						'unnsupported'    => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Hide in Admin Menu.
 					'locations_admin_hide' => array_merge( $hide_admin_field, array(
 						'checkbox_label' => __( 'Hide Locations', 'church-theme-content' ), // show text after checkbox.
+						'unnsupported'   => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 				),
@@ -626,13 +656,15 @@ function ctc_settings_config() {
 				'fields' => array(
 
 					// SEO Structured Data.
-					'person_seo' => array_merge( $seo_field, array(
+					'people_seo' => array_merge( $seo_field, array(
 						'checkbox_label' => __( 'Improve SEO for People <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
+						'unnsupported' => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// People Per Page.
-					'people_per_page' => array_merge( $per_page_field, array(
+					'people_per_page'  => array_merge( $per_page_field, array(
 						'name' => __( 'People Per Page', 'church-theme-content' ),
+						'unnsupported' => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Person URL Slug.
@@ -647,6 +679,7 @@ function ctc_settings_config() {
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $person_url_slug_default, // show the standard value if they leave blank.
 						),
+						'unnsupported'    => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Group URL Slug.
@@ -655,11 +688,13 @@ function ctc_settings_config() {
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $person_group_url_slug_default, // show the standard value if they leave blank.
 						),
+						'unnsupported'    => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Hide in Admin Menu.
 					'people_admin_hide' => array_merge( $hide_admin_field, array(
 						'checkbox_label' => __( 'Hide People', 'church-theme-content' ), // show text after checkbox.
+						'unnsupported'   => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 				),
