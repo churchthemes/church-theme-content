@@ -80,7 +80,7 @@ function ctc_settings_setup() {
 
 	// Pro tag to show after field labels.
 	$pro_tag = _x( '(Pro)', 'settings', 'church-theme-content' );
-	$pro_tag = '<a href="' . esc_url( ctc_ctcom_url( 'church-content-pro', array( 'utm_content' => 'settings' ) ) ) . '" target="_blank">' . $pro_tag . '</a>';
+	$pro_tag = '<a href="' . esc_url( ctc_ctcom_url( 'church-content-pro', array( 'utm_content' => 'settings' ) ) ) . '" target="">' . $pro_tag . '</a>';
 
 	// SEO Structured Data field.
 	$seo_field = array(
@@ -308,7 +308,7 @@ function ctc_settings_setup() {
 				'fields' => array(
 
 					// SEO Structured Data.
-					'sermons_seo' => array_merge( $seo_field, array(
+					'sermon_seo' => array_merge( $seo_field, array(
 						'checkbox_label' => __( 'Improve SEO for Sermons <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
 					) ),
 
@@ -490,7 +490,7 @@ function ctc_settings_setup() {
 					),
 
 					// SEO Structured Data.
-					'events_seo' => array_merge( $seo_field, array(
+					'event_seo' => array_merge( $seo_field, array(
 						'checkbox_label' => __( 'Improve SEO for Events <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
 					) ),
 
@@ -561,7 +561,7 @@ function ctc_settings_setup() {
 				'fields' => array(
 
 					// SEO Structured Data.
-					'locations_seo' => array_merge( $seo_field, array(
+					'location_seo' => array_merge( $seo_field, array(
 						'checkbox_label' => __( 'Improve SEO for Locations <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
 					) ),
 
@@ -628,7 +628,7 @@ function ctc_settings_setup() {
 				'fields' => array(
 
 					// SEO Structured Data.
-					'people_seo' => array_merge( $seo_field, array(
+					'person_seo' => array_merge( $seo_field, array(
 						'checkbox_label' => __( 'Improve SEO for People <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
 					) ),
 
