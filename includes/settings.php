@@ -21,18 +21,16 @@ if ( ! defined( 'ABSPATH' ) ) {
  **********************************/
 
 /**
- * Init settings class
+ * Settings config for CT Plugin Settings class.
  *
- * This will add settings page and make $ctc_settings object available for settings retrieval
+ * This is used by:
+ * - ctc_settings_setup() to make settings available to user
+ * - ctc_get_settings() to get flat array of settings without sections.
  *
- * Note that title, description, etc. are escaped by CT Plugin Settings for translation security.
- *
- * @since 1.2
- * @global object $ctc_settings
+ * @since 1.9
+ * @return array Settings array.
  */
-function ctc_settings_setup() {
-
-	global $ctc_settings;
+function ctc_settings_config() {
 
 	/**********************************
 	 * SHARED
@@ -77,7 +75,6 @@ function ctc_settings_setup() {
 	$person_group_args_unfiltered = ctc_taxonomy_person_group_args( 'unfiltered' );
 	$person_group_url_slug_default = $person_group_args_unfiltered['rewrite']['slug'];
 
-
 	// Pro tag to show after field labels.
 	$pro_tag = _x( '(Pro)', 'settings', 'church-theme-content' );
 	$pro_tag = '<a href="' . esc_url( ctc_ctcom_url( 'church-content-pro', array( 'utm_content' => 'settings' ) ) ) . '" target="">' . $pro_tag . '</a>';
@@ -102,6 +99,9 @@ function ctc_settings_setup() {
 		'content'         => '', // custom content instead of input (HTML allowed).
 		'custom_sanitize' => '', // function to do additional sanitization.
 		'custom_content'  => '', // function for custom display of field input.
+		'pro'             => array( // field input element disabled when Pro not active.
+			'default' => true, // value to set by Pro when first activated.
+		),
 	);
 
 	// Per Page field
@@ -128,6 +128,7 @@ function ctc_settings_setup() {
 		'content'         => '', // custom content instead of input (HTML allowed).
 		'custom_sanitize' => '', // function to do additional sanitization.
 		'custom_content'  => '', // function for custom display of field input.
+		'pro'             => true, // field input element disabled when Pro not active.
 	);
 
 	// URL Slug field.
@@ -147,6 +148,7 @@ function ctc_settings_setup() {
 		'content'         => '', // custom content instead of input (HTML allowed).
 		'custom_sanitize' => 'ctc_sanitize_setting_url_slug', // function to do additional sanitization.
 		'custom_content'  => '', // function for custom display of field input.
+		'pro'             => true, // field input element disabled when Pro not active.
 	);
 
 	// Taxonomy URL Slug field.
@@ -165,6 +167,7 @@ function ctc_settings_setup() {
 		'content'         => '', // custom content instead of input (HTML allowed).
 		'custom_sanitize' => 'ctc_sanitize_setting_url_slug', // function to do additional sanitization.
 		'custom_content'  => '', // function for custom display of field input.
+		'pro'             => true, // field input element disabled when Pro not active.
 	);
 
 	// Hide in Admin Menu field.
@@ -183,6 +186,7 @@ function ctc_settings_setup() {
 		'content'         => '', // custom content instead of input (HTML allowed).
 		'custom_sanitize' => '', // function to do additional sanitization.
 		'custom_content'  => '', // function for custom display of field input.
+		'pro'             => true, // field input element disabled when Pro not active.
 	);
 
 	/**********************************
@@ -328,6 +332,7 @@ function ctc_settings_setup() {
 						'content'         => __( '<a href="#">Podcasting Settings</a>', 'church-theme-content' ), // custom content instead of input (HTML allowed).
 						'custom_sanitize' => '', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
+						'pro'             => true, // field input element disabled when Pro not active.
 					),
 
 					// Sermons Per Page.
@@ -353,6 +358,7 @@ function ctc_settings_setup() {
 						'content'         => '', // custom content instead of input (HTML allowed).
 						'custom_sanitize' => '', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
+						'pro'             => true, // field input element disabled when Pro not active.
 					),
 
 					// Alternative Wording - Plural
@@ -378,6 +384,7 @@ function ctc_settings_setup() {
 						'content'         => '', // custom content instead of input (HTML allowed).
 						'custom_sanitize' => '', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
+						'pro'             => true, // field input element disabled when Pro not active.
 					),
 
 					// Sermon URL Slug.
@@ -487,6 +494,7 @@ function ctc_settings_setup() {
 						'content'         => $event_recurrence_content, // custom content instead of input (HTML allowed).
 						'custom_sanitize' => '', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
+						'pro'             => true, // field input element disabled when Pro not active.
 					),
 
 					// SEO Structured Data.
@@ -510,6 +518,9 @@ function ctc_settings_setup() {
 						'content'         => '', // custom content instead of input (HTML allowed).
 						'custom_sanitize' => '', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
+						'pro'             => array( // field input element disabled when Pro not active.
+							'default' => true, // value to set by Pro when first activated.
+						),
 					),
 
 					// Events Per Page.
@@ -664,7 +675,6 @@ function ctc_settings_setup() {
 						'checkbox_label' => __( 'Hide People', 'church-theme-content' ), // show text after checkbox.
 					) ),
 
-
 				),
 
 			),
@@ -673,8 +683,28 @@ function ctc_settings_setup() {
 
 	);
 
-	// Filter config.
-	$config = apply_filters( 'ctc_settings_config', $config );
+	// Return filtered.
+	return apply_filters( 'ctc_settings_config', $config );
+
+}
+
+/**
+ * Init settings class
+ *
+ * This will add settings page and make $ctc_settings object available for settings retrieval.
+ *
+ * Note that title, description, etc. are escaped by CT Plugin Settings for translation security.
+ *
+ * @since 1.2
+ * @global object $ctc_settings
+ */
+function ctc_settings_setup() {
+
+	global $ctc_settings;
+
+	// Get settings config with sections and fields.
+	// This is for CT_Plugin_Settings class.
+	$config = ctc_settings_config();
 
 	// Add settings.
 	$ctc_settings = new CT_Plugin_Settings( $config );
@@ -684,7 +714,7 @@ function ctc_settings_setup() {
 add_action( 'init', 'ctc_settings_setup' );
 
 /**********************************
- * SETTINGS DATA
+ * SAVING SETTINGS
  **********************************/
 
 /**
@@ -703,6 +733,29 @@ function ctc_sanitize_setting_url_slug( $value, $field ) {
 
 	// Return sanitized value.
 	return $value;
+
+}
+
+/**********************************
+ * GETTING SETTINGS
+ **********************************/
+
+/**
+ * Get settings data
+ *
+ * This returns flat array of settings from ctc_settings_config(), without sections.
+ *
+ * This is used by:
+ *
+ * - ctc_setting() to force non-Pro default when Pro inactive.
+ * - Pro plugin to change certain values when first activated.
+ *
+ * @since 1.9
+ * @return array Settings array.
+ */
+function ctc_get_settings() {
+
+
 
 }
 
