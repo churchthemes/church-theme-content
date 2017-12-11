@@ -110,33 +110,6 @@ function ctc_settings_config() {
 		),
 	);
 
-	// Per Page field
-	// Re-use this for sermons, events, etc., changing just name.
-	$per_page_field = array(
-		'name'            => '',
-		'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
-		'desc'            => sprintf(
-			/* translators: %1$s is URL to Setting > Reading */
-			__( 'Override the global "Posts per page" setting in <a href="%1$s">Reading Settings</a>. Leave blank to use the global setting.', 'church-theme-content' ),
-			admin_url( 'options-reading.php' )
-		),
-		'type'            => 'number', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
-		'checkbox_label'  => '', // show text after checkbox.
-		'options'         => array(), // array of keys/values for radio or select.
-		'default'         => '', // value to pre-populate option with (before first save or on reset).
-		'no_empty'        => false, // if user empties value, force default to be saved instead.
-		'allow_html'      => false, // allow HTML to be used in the value.
-		'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
-			'min' => '1',
-			'placeholder' => get_option( 'posts_per_page' ),
-		),
-		'class'           => '', // classes to add to input.
-		'content'         => '', // custom content instead of input (HTML allowed).
-		'custom_sanitize' => '', // function to do additional sanitization.
-		'custom_content'  => '', // function for custom display of field input.
-		'pro'             => true, // field input element disabled when Pro not active.
-	);
-
 	// URL Slug field.
 	$url_slug_desc = __( 'Optionally change the default "%1$s" slug in URLs. Example: %2$s', 'church-theme-content' );
 	$url_slug_field = array(
@@ -329,12 +302,6 @@ function ctc_settings_config() {
 						'pro'              => true, // field input element disabled when Pro not active.
 						'unsupported'      => ! ctc_field_supported( 'sermons', '_ctc_sermon_audio' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
-
-					// Sermons Per Page.
-					'sermons_per_page' => array_merge( $per_page_field, array(
-						'name'         => __( 'Sermons Per Page', 'church-theme-content' ),
-						'unsupported' => ! $sermons_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
-					) ),
 
 					// Alternative Wording - Singular
 					'sermon_word_singular' => array(
@@ -531,12 +498,6 @@ function ctc_settings_config() {
 						'unsupported'    => ! ( ctc_field_supported( 'events', '_ctc_event_address' ) || ctc_field_supported( 'events', '_ctc_event_venue' ) ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
-					// Events Per Page.
-					'events_per_page' => array_merge( $per_page_field, array(
-						'name'        => __( 'Events Per Page', 'church-theme-content' ),
-						'unsupported' => ! $events_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
-					) ),
-
 					// Event URL Slug.
 					'event_url_slug' => array_merge( $url_slug_field, array(
 						'name'            => __( 'Event URL Slug', 'church-theme-content' ),
@@ -612,12 +573,6 @@ function ctc_settings_config() {
 						'unsupported'     => '', // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
-					// Locations Per Page.
-					'locations_per_page' => array_merge( $per_page_field, array(
-						'name'        => __( 'Locations Per Page', 'church-theme-content' ),
-						'unsupported' => ! $locations_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
-					) ),
-
 					// Location URL Slug.
 					'location_url_slug' => array_merge( $url_slug_field, array(
 						'name'            => __( 'Location URL Slug', 'church-theme-content' ),
@@ -658,12 +613,6 @@ function ctc_settings_config() {
 					// SEO Structured Data.
 					'people_seo' => array_merge( $seo_field, array(
 						'checkbox_label' => __( 'Improve SEO for People <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
-						'unsupported' => ! $locations_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
-					) ),
-
-					// People Per Page.
-					'people_per_page'  => array_merge( $per_page_field, array(
-						'name' => __( 'People Per Page', 'church-theme-content' ),
 						'unsupported' => ! $locations_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
