@@ -151,7 +151,7 @@ function ctc_settings_config() {
 
 	// Hide in Admin Menu field.
 	$hide_admin_field = array(
-		'name'            => __( 'Hide in Admin Menu', 'church-theme-content' ),
+		'name'            => __( 'Hide in Admin', 'church-theme-content' ),
 		'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
 		'desc'            => __( 'This can be useful if you are not using the feature.', 'church-theme-content' ),
 		'type'            => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
@@ -165,7 +165,7 @@ function ctc_settings_config() {
 		'content'         => '', // custom content instead of input (HTML allowed).
 		'custom_sanitize' => '', // function to do additional sanitization.
 		'custom_content'  => '', // function for custom display of field input.
-		'pro'             => true, // field input element disabled when Pro not active.
+		'pro'             => false, // field input element disabled when Pro not active.
 	);
 
 	/**********************************
@@ -414,8 +414,8 @@ function ctc_settings_config() {
 
 					// Hide in Admin Menu.
 					'sermons_admin_hide' => array_merge( $hide_admin_field, array(
-						'checkbox_label' => __( 'Hide Sermons', 'church-theme-content' ), // show text after checkbox.
-						'unsupported'   => ! $sermons_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'checkbox_label' => __( 'Hide Sermons in Admin Menu', 'church-theme-content' ), // show text after checkbox.
+						'unsupported'    => ! $sermons_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 				),
@@ -524,7 +524,7 @@ function ctc_settings_config() {
 
 					// Hide in Admin Menu.
 					'events_admin_hide' => array_merge( $hide_admin_field, array(
-						'checkbox_label' => __( 'Hide Events', 'church-theme-content' ), // show text after checkbox.
+						'checkbox_label' => __( 'Hide Events in Admin Menu', 'church-theme-content' ), // show text after checkbox.
 						'unsupported'    => ! $events_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
@@ -590,7 +590,7 @@ function ctc_settings_config() {
 
 					// Hide in Admin Menu.
 					'locations_admin_hide' => array_merge( $hide_admin_field, array(
-						'checkbox_label' => __( 'Hide Locations', 'church-theme-content' ), // show text after checkbox.
+						'checkbox_label' => __( 'Hide Locations in Admin Menu', 'church-theme-content' ), // show text after checkbox.
 						'unsupported'    => ! $locations_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
@@ -642,7 +642,7 @@ function ctc_settings_config() {
 
 					// Hide in Admin Menu.
 					'people_admin_hide' => array_merge( $hide_admin_field, array(
-						'checkbox_label' => __( 'Hide People', 'church-theme-content' ), // show text after checkbox.
+						'checkbox_label' => __( 'Hide People in Admin Menu', 'church-theme-content' ), // show text after checkbox.
 						'unsupported'   => ! $locations_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
