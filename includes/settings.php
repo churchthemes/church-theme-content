@@ -801,7 +801,7 @@ function ctc_settings_setup() {
 				// Add note.
 				$config['sections'][ $section_id ]['desc'] .= '<span class="ctc-pro-setting-inactive-message">' . sprintf(
 					/* %1$s is URL to Church Content Pro plugin info */
-					__( 'Settings labeled as "Pro" require the <a href="%1$s" target="_blank">Church Content Pro</a> plugin. Install it to use Pro features.', 'church-theme-content' ),
+					__( 'Settings labeled "Pro" require the <a href="%1$s" target="_blank">Church Content Pro</a> plugin. Install it to add Pro features.', 'church-theme-content' ),
 					esc_url( ctc_ctcom_url( 'church-content-pro', array( 'utm_content' => 'settings' ) ) )
 				) . '</span>';
 
@@ -859,7 +859,6 @@ function ctc_sanitize_setting_url_slug( $value, $field ) {
  * @return array Settings array.
  */
 function ctc_get_settings() {
-
 
 
 }
@@ -963,7 +962,9 @@ function ctc_add_wp_per_page_desc() {
 
 }
 
-add_action( 'admin_print_footer_scripts', 'ctc_add_wp_per_page_desc' );
+// Disabled. Settings don't exist (better via theme in Customizer).
+// This still serves as good example of how to add a description.
+//add_action( 'admin_print_footer_scripts', 'ctc_add_wp_per_page_desc' );
 
 /**
  * Add settings section to Permalink Settings.
