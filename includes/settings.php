@@ -815,7 +815,7 @@ function ctc_setting( $setting ) {
 		// Get field data.
 		$field = $ctc_settings->fields[ $setting ];
 
-		// Is Pro setting and have default value.
+		// Is Pro setting.
 		if ( ! empty( $field['pro'] ) ) {
 
 			// Get non-Pro default value.
