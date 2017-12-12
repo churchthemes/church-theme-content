@@ -807,20 +807,26 @@ function ctc_sanitize_setting_url_slug( $value, $field ) {
  */
 function ctc_force_non_pro_setting_default( $value, $setting, $instance ) {
 
-	// Pro plugin is inactive.
-	if ( ! ctc_pro_is_active() ) {
+	// On Church Content settings only.
+	// (just in case another plugin uses CT Plugin Settings).
+	if ( 'ctc_settings' === $instance->config['option_id'] ) {
 
-		// Get field data.
-		$field = $instance->fields[ $setting ];
+		// Pro plugin is inactive.
+		if ( ! ctc_pro_is_active() ) {
 
-		// Is Pro setting.
-		if ( ! empty( $field['pro'] ) ) {
+			// Get field data.
+			$field = $instance->fields[ $setting ];
 
-			// Get non-Pro default value.
-			$default = isset( $field['default'] ) ? $field['default'] : '';
+			// Is Pro setting.
+			if ( ! empty( $field['pro'] ) ) {
 
-			// Force default value.
-			$value = $default;
+				// Get non-Pro default value.
+				$default = isset( $field['default'] ) ? $field['default'] : '';
+
+				// Force default value.
+				$value = $default;
+
+			}
 
 		}
 
