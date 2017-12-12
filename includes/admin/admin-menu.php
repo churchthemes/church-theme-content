@@ -10,8 +10,10 @@
  * @since      0.9.3
  */
 
-// No direct access
-if ( ! defined( 'ABSPATH' ) ) exit;
+// No direct access.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /*******************************************
  * INSERTIONS
@@ -194,5 +196,89 @@ function ctc_move_admin_menu_item( &$menu_ord, $move_item, $target_item, $positi
 
 	// return manipulated menu or original menu if no manipulation done
 	return apply_filters( 'ctc_move_admin_menu_item', $menu_ord, $menu_ord, $move_item, $target_item, $position );
+
+}
+
+/*******************************************
+ * HIDING
+ *******************************************/
+
+/**
+ * Hide sermons in admin area.
+ *
+ * Apply setting to hide post type in admin area.
+ * Useful when not using a particular feature (e.g. using a third-party plugin.
+ *
+ * This filters post type registration arguments.
+ *
+ * @since 1.9
+ * @param array $args Current post type arguments.
+ * @return array Modified post type arguments.
+ */
+function ctc_admin_hide_sermons( $args ) {
+	return ctc_admin_hide_post_type_args( 'sermons_admin_hide', $args );
+}
+
+add_filter( 'ctc_post_type_sermon_args', 'ctc_admin_hide_sermons' );
+
+/**
+ * Hide events in admin area.
+ *
+ * @since 1.9
+ * @param array $args Current post type arguments.
+ * @return array Modified post type arguments.
+ */
+function ctc_admin_hide_events( $args ) {
+	return ctc_admin_hide_post_type_args( 'events_admin_hide', $args );
+}
+
+add_filter( 'ctc_post_type_event_args', 'ctc_admin_hide_events' );
+
+/**
+ * Hide locations in admin area.
+ *
+ * @since 1.9
+ * @param array $args Current post type arguments.
+ * @return array Modified post type arguments.
+ */
+function ctc_admin_hide_locations( $args ) {
+	return ctc_admin_hide_post_type_args( 'locations_admin_hide', $args );
+}
+
+add_filter( 'ctc_post_type_location_args', 'ctc_admin_hide_locations' );
+
+/**
+ * Hide people in admin area.
+ *
+ * @since 1.9
+ * @param array $args Current post type arguments.
+ * @return array Modified post type arguments.
+ */
+function ctc_admin_hide_people( $args ) {
+	return ctc_admin_hide_post_type_args( 'people_admin_hide', $args );
+}
+
+add_filter( 'ctc_post_type_person_args', 'ctc_admin_hide_people' );
+
+/**
+ * Update post type arguments array to hide in admin, when a setting is true.
+ *
+ * @since 1.9
+ * @param string $setting Setting ID to check for true value on.
+ * @param array $args Arguments to merge into.
+ * @return array Modified post type arguments.
+ */
+function ctc_admin_hide_post_type_args( $setting, $args ) {
+
+	// Setting is active.
+	if ( ctc_setting( $setting ) ) {
+
+		// Change post type registration arguments.
+		$args['show_ui'] = false;
+		$args['show_in_nav_menus'] = false;
+
+	}
+
+	return $args;
 
 }
