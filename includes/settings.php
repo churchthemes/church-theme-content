@@ -104,7 +104,7 @@ function ctc_settings_config() {
 		'custom_sanitize'  => '', // function to do additional sanitization.
 		'custom_content'   => '', // function for custom display of field input.
 		'pro'              => array( // field input element disabled when Pro not active.
-			'default' => true, // value to set by Pro when first activated.
+			'default' => true, // default to use instead, when Pro plugin (Pro plugin will also set this on first installation).
 		),
 	);
 
@@ -491,7 +491,7 @@ function ctc_settings_config() {
 						'custom_sanitize' => '', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
 						'pro'             => array( // field input element disabled when Pro not active.
-							'default' => true, // value to set by Pro when first activated.
+							'default' => true, // default to use instead, when Pro plugin (Pro plugin will also set this on first installation).
 						),
 						'unsupported'    => ! ( ctc_field_supported( 'events', '_ctc_event_address' ) || ctc_field_supported( 'events', '_ctc_event_venue' ) ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
