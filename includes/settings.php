@@ -105,6 +105,7 @@ function ctc_settings_config() {
 	);
 
 	// URL Slug field.
+	/* translators: %1$s is default slug, %2$s is example URL showing how post type slug is used. */
 	$url_slug_desc = __( 'Optionally change the default "%1$s" slug in URLs. Example: %2$s', 'church-theme-content' );
 	$url_slug_field = array(
 		'name'            => '',
@@ -350,10 +351,9 @@ function ctc_settings_config() {
 					'sermon_url_slug' => array_merge( $url_slug_field, array(
 						'name'            => __( 'Sermon URL Slug', 'church-theme-content' ),
 						'desc'            => sprintf(
-							/* translators: %1$s is default slug, %2$s is example URL showing how post type slug is used. */
 							$url_slug_desc,
 							$sermon_url_slug_default,
-							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $sermon_url_slug_default . '</b>/', get_post_type_archive_link( 'ctc_sermon' ) ) // make slug bold.
+							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $sermon_url_slug_default . '</b>/', trailingslashit( home_url( $sermon_url_slug_default ) ) ) // make slug bold.
 						),
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_url_slug_default, // show the standard value if they leave blank.
@@ -496,7 +496,6 @@ function ctc_settings_config() {
 					'event_url_slug' => array_merge( $url_slug_field, array(
 						'name'            => __( 'Event URL Slug', 'church-theme-content' ),
 						'desc'            => sprintf(
-							/* translators: %1$s is default slug, %2$s is example URL showing how post type slug is used. */
 							$url_slug_desc,
 							$event_url_slug_default,
 							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $event_url_slug_default . '</b>/', get_post_type_archive_link( 'ctc_event' ) ) // make slug bold.
@@ -571,7 +570,6 @@ function ctc_settings_config() {
 					'location_url_slug' => array_merge( $url_slug_field, array(
 						'name'            => __( 'Location URL Slug', 'church-theme-content' ),
 						'desc'            => sprintf(
-							/* translators: %1$s is default slug, %2$s is example URL showing how post type slug is used. */
 							$url_slug_desc,
 							$location_url_slug_default,
 							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $location_url_slug_default . '</b>/', get_post_type_archive_link( 'ctc_location' ) ) // make slug bold.
@@ -614,7 +612,6 @@ function ctc_settings_config() {
 					'person_url_slug' => array_merge( $url_slug_field, array(
 						'name'            => __( 'Person URL Slug', 'church-theme-content' ),
 						'desc'            => sprintf(
-							/* translators: %1$s is default slug, %2$s is example URL showing how post type slug is used. */
 							$url_slug_desc,
 							$person_url_slug_default,
 							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $person_url_slug_default . '</b>/', get_post_type_archive_link( 'ctc_person' ) ) // make slug bold.
