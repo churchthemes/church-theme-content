@@ -23,9 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Settings config for CT Plugin Settings class.
  *
- * This is used by:
- * - ctc_settings_setup() to make settings available to user
- * - ctc_get_settings() to get flat array of settings without sections.
+ * This is used by ctc_settings_setup() to make settings available to user.
  *
  * @since 1.9
  * @return array Settings array.
@@ -795,25 +793,25 @@ function ctc_sanitize_setting_url_slug( $value, $field ) {
  **********************************/
 
 /**
- * Get a setting
+ * Force non-Pro default on Pro settings while Pro plugin is inactive.
  *
- * @since 1.2
- * @param string $setting Setting key.
- * @return mixed Setting value.
- * @global object $ctc_settings.
+ * This will make form inputs use default values and and ctc_setting() to return defaults.
+ * If a user re-activated Pro, their saved values will work again - unless they've saved form w/defaults.
+ *
+ * Church Content plugin doesn't use Pro setting values, but this cleans things up nicely just in case.
+ *
+ * @param array $value Current value.
+ * @param string $setting Setting name (field ID).
+ * @param object $instance Passing $this.
+ * @return string Non-Pro default if necessary.
  */
-function ctc_setting( $setting ) {
+function ctc_force_non_pro_setting_default( $value, $setting, $instance ) {
 
-	global $ctc_settings;
-
-	// Get value.
-	$value = $ctc_settings->get( $setting );
-
-	// Force non-Pro default if is Pro setting while Pro plugin is inactive.
-	if ( ! ctc_pro_is_active() ) { // plugin not active.
+	// Pro plugin is inactive.
+	if ( ! ctc_pro_is_active() ) {
 
 		// Get field data.
-		$field = $ctc_settings->fields[ $setting ];
+		$field = $instance->fields[ $setting ];
 
 		// Is Pro setting.
 		if ( ! empty( $field['pro'] ) ) {
@@ -827,6 +825,27 @@ function ctc_setting( $setting ) {
 		}
 
 	}
+
+	return $value;
+
+}
+
+add_filter( 'ctps_get', 'ctc_force_non_pro_setting_default', 10, 3 );
+
+/**
+ * Get a setting
+ *
+ * @since 1.2
+ * @param string $setting Setting key.
+ * @return mixed Setting value.
+ * @global object $ctc_settings.
+ */
+function ctc_setting( $setting ) {
+
+	global $ctc_settings;
+
+	// Get value.
+	$value = $ctc_settings->get( $setting );
 
 	// Return filtered.
 	return apply_filters( 'ctc_setting', $value, $setting );
