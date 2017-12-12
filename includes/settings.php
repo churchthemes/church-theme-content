@@ -763,7 +763,7 @@ function ctc_settings_setup() {
 
 }
 
-add_action( 'init', 'ctc_settings_setup' );
+add_action( 'init', 'ctc_settings_setup', 1 ); // early so later actions can use it.
 
 /**********************************
  * SAVING SETTINGS
