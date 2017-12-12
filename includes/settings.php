@@ -498,7 +498,7 @@ function ctc_settings_config() {
 						'desc'            => sprintf(
 							$url_slug_desc,
 							$event_url_slug_default,
-							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $event_url_slug_default . '</b>/', get_post_type_archive_link( 'ctc_event' ) ) // make slug bold.
+							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $event_url_slug_default . '</b>/', trailingslashit( home_url( $event_url_slug_default ) ) ) // make slug bold.
 						),
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $event_url_slug_default, // show the standard value if they leave blank.
@@ -572,7 +572,7 @@ function ctc_settings_config() {
 						'desc'            => sprintf(
 							$url_slug_desc,
 							$location_url_slug_default,
-							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $location_url_slug_default . '</b>/', get_post_type_archive_link( 'ctc_location' ) ) // make slug bold.
+							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $location_url_slug_default . '</b>/', trailingslashit( home_url( $location_url_slug_default ) ) ) // make slug bold.
 						),
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $location_url_slug_default, // show the standard value if they leave blank.
@@ -614,7 +614,7 @@ function ctc_settings_config() {
 						'desc'            => sprintf(
 							$url_slug_desc,
 							$person_url_slug_default,
-							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $person_url_slug_default . '</b>/', get_post_type_archive_link( 'ctc_person' ) ) // make slug bold.
+							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $person_url_slug_default . '</b>/', trailingslashit( home_url( $person_url_slug_default ) ) ) // make slug bold.
 						),
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $person_url_slug_default, // show the standard value if they leave blank.
@@ -750,7 +750,7 @@ function ctc_settings_setup() {
 				// Add note.
 				$config['sections'][ $section_id ]['desc'] .= '<span class="ctc-pro-setting-inactive-message">' . sprintf(
 					/* %1$s is URL to Church Content Pro plugin info */
-					__( 'Settings labeled "Pro" are provided by <a href="%1$s" target="_blank">Church Content Pro</a> plugin. Install it to add Pro features.', 'church-theme-content' ),
+					__( 'Settings labeled "Pro" are provided by the <a href="%1$s" target="_blank">Church Content Pro</a> plugin. Install it to add Pro features.', 'church-theme-content' ),
 					esc_url( ctc_ctcom_url( 'church-content-pro', array( 'utm_content' => 'settings' ) ) )
 				) . '</span>';
 
