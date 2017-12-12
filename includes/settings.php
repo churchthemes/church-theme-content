@@ -750,7 +750,7 @@ function ctc_settings_setup() {
 				// Add note.
 				$config['sections'][ $section_id ]['desc'] .= '<span class="ctc-pro-setting-inactive-message">' . sprintf(
 					/* %1$s is URL to Church Content Pro plugin info */
-					__( 'Settings labeled "Pro" require the <a href="%1$s" target="_blank">Church Content Pro</a> plugin. Install it to add Pro features.', 'church-theme-content' ),
+					__( 'Settings labeled "Pro" are provided by <a href="%1$s" target="_blank">Church Content Pro</a> plugin. Install it to add Pro features.', 'church-theme-content' ),
 					esc_url( ctc_ctcom_url( 'church-content-pro', array( 'utm_content' => 'settings' ) ) )
 				) . '</span>';
 
