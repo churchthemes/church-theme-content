@@ -79,14 +79,10 @@ function ctc_settings_config() {
 	$locations_supported = ctc_feature_supported( 'locations' );
 	$people_supported = ctc_feature_supported( 'people' );
 
-	// Pro tag to show after field labels.
-	$pro_tag = _x( '(Pro)', 'settings', 'church-theme-content' );
-	$pro_tag = '<a href="' . esc_url( ctc_ctcom_url( 'church-content-pro', array( 'utm_content' => 'settings' ) ) ) . '" target="">' . $pro_tag . '</a>';
-
 	// SEO Structured Data field.
 	$seo_field = array(
 		'name'             => _x( 'SEO Structured Data', 'settings', 'church-theme-content' ),
-		'after_name'       => $pro_tag, // append (Optional) or (Pro), etc.
+		'after_name'       => '', // append (Optional) or (Pro), etc.
 		'desc'             => sprintf(
 			/* translators: %1$s is URL with information about SEO with JSON-LD */
 			__( 'Automatic Search Engine Optimization (SEO) with Schema.org structured data via JSON-LD. <a href="%1$s" target="_blank">Learn More</a>', 'church-theme-content' ),
@@ -112,7 +108,7 @@ function ctc_settings_config() {
 	$url_slug_desc = __( 'Optionally change the default "%1$s" slug in URLs. Example: %2$s', 'church-theme-content' );
 	$url_slug_field = array(
 		'name'            => '',
-		'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
+		'after_name'      => '', // append (Optional) or (Pro), etc.
 		'desc'            => '',
 		'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 		'checkbox_label'  => '', // show text after checkbox.
@@ -131,7 +127,7 @@ function ctc_settings_config() {
 	// Taxonomy URL Slug field.
 	$taxonomy_url_slug_field = array(
 		'name'            => '',
-		'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
+		'after_name'      => '', // append (Optional) or (Pro), etc.
 		'desc'            => '',
 		'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 		'checkbox_label'  => '', // show text after checkbox.
@@ -284,7 +280,7 @@ function ctc_settings_config() {
 					// Sermon Podcasting (Shortcut).
 					'podcasting_content' => array(
 						'name'             => _x( 'Sermon Podcasting', 'settings', 'church-theme-content' ),
-						'after_name'       => $pro_tag, // append (Optional) or (Pro), etc.
+						'after_name'       => '', // append (Optional) or (Pro), etc.
 						'desc'             => '',
 						'type'             => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'   => '', // show text after checkbox.
@@ -304,7 +300,7 @@ function ctc_settings_config() {
 					// Alternative Wording - Singular
 					'sermon_word_singular' => array(
 						'name'            => __( 'Alternative Wording', 'church-theme-content' ),
-						'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
+						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => '',
 						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
@@ -326,7 +322,7 @@ function ctc_settings_config() {
 					// Alternative Wording - Plural
 					'sermon_word_plural' => array(
 						'name'            => '',
-						'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
+						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => sprintf(
 							/* translators: %1$s is "Sermon" and %2$s is "Sermons" (translated). */
 							__( 'Optionally enter alternative wording for "%1$s" and "%2$s" (e.g. "Message" and "Messages").', 'church-theme-content' ),
@@ -451,7 +447,7 @@ function ctc_settings_config() {
 					// Recurring Events.
 					'event_recurrence_content' => array(
 						'name'            => _x( 'Recurring Events', 'settings', 'church-theme-content' ),
-						'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
+						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => $event_recurrence_desc,
 						'type'            => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
@@ -477,7 +473,7 @@ function ctc_settings_config() {
 					// Location Memory.
 					'event_location_memory' => array(
 						'name'            => __( 'Location Memory', 'church-theme-content' ),
-						'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
+						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => __( 'Save time when adding events by choosing from previously used locations.', 'church-theme-content' ),
 						'type'            => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
 						'checkbox_label'  => __( 'Enable "Choose" Button and Autocomplete <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ),
@@ -675,7 +671,11 @@ function ctc_settings_setup() {
 	// This is for CT_Plugin_Settings class.
 	$config = ctc_settings_config();
 
-	// Loop sections to disable inputs and add to section description.
+	// Pro tag to show after field labels.
+	$pro_tag = _x( '(Pro)', 'settings', 'church-theme-content' );
+	$pro_tag = '<a href="' . esc_url( ctc_ctcom_url( 'church-content-pro', array( 'utm_content' => 'settings' ) ) ) . '" target="">' . $pro_tag . '</a>';
+
+	// Loop sections to add "Pro" tags, disable inputs and add to section description.
 	foreach ( $config['sections'] as $section_id => $section ) {
 
 		// Track number of settings inactive.
@@ -689,6 +689,11 @@ function ctc_settings_setup() {
 			foreach ( $section['fields'] as $field_id => $field ) {
 
 				$readonly = false;
+
+				// Add Pro tag is is Pro setting.
+				if ( ! empty( $field['pro'] ) ) {
+					$config['sections'][ $section_id ]['fields'][ $field_id ]['after_name'] = $pro_tag;
+				}
 
 				// Setting not supported by theme.
 				// 'unsupported' arg was set true due to lack of theme support for CTC feature, field or taxonomy.
