@@ -150,7 +150,7 @@ function ctc_settings_config() {
 	// Hide in Admin Menu field.
 	$hide_admin_field = array(
 		'name'            => __( 'Hide in Admin', 'church-theme-content' ),
-		'after_name'      => $pro_tag, // append (Optional) or (Pro), etc.
+		'after_name'      => '', // append (Optional) or (Pro), etc.
 		'desc'            => __( 'This can be useful if you are not using the feature.', 'church-theme-content' ),
 		'type'            => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
 		'checkbox_label'  => '',
