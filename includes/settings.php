@@ -795,24 +795,6 @@ function ctc_sanitize_setting_url_slug( $value, $field ) {
  **********************************/
 
 /**
- * Get settings data
- *
- * This returns flat array of settings from ctc_settings_config(), without sections.
- *
- * This is used by:
- *
- * - ctc_setting() to force non-Pro default when Pro inactive.
- * - Pro plugin to change certain values when first activated.
- *
- * @since 1.9
- * @return array Settings array.
- */
-function ctc_get_settings() {
-
-
-}
-
-/**
  * Get a setting
  *
  * @since 1.2
@@ -824,8 +806,29 @@ function ctc_setting( $setting ) {
 
 	global $ctc_settings;
 
+	// Get value.
 	$value = $ctc_settings->get( $setting );
 
+	// Force non-Pro default if is Pro setting while Pro plugin is inactive.
+	if ( ! ctc_pro_is_active() ) { // plugin not active.
+
+		// Get field data.
+		$field = $ctc_settings->fields[ $setting ];
+
+		// Is Pro setting and have default value.
+		if ( ! empty( $field['pro'] ) ) {
+
+			// Get non-Pro default value.
+			$default = isset( $field['default'] ) ? $field['default'] : '';
+
+			// Force default value.
+			$value = $default;
+
+		}
+
+	}
+
+	// Return filtered.
 	return apply_filters( 'ctc_setting', $value, $setting );
 
 }
