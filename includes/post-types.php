@@ -14,7 +14,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**********************************
- * SERMON
+ * SERMON POST TYPE
  **********************************/
 
 /**
@@ -85,7 +85,7 @@ function ctc_register_post_type_sermon() {
 add_action( 'init', 'ctc_register_post_type_sermon' ); // register post type.
 
 /**********************************
- * EVENT
+ * EVENT POST TYPE
  **********************************/
 
 /**
@@ -156,7 +156,7 @@ function ctc_register_post_type_event() {
 add_action( 'init', 'ctc_register_post_type_event' ); // register post type.
 
 /**********************************
- * LOCATION
+ * LOCATION POST TYPE
  **********************************/
 
 /**
@@ -226,7 +226,7 @@ function ctc_register_location_post_type() {
 add_action( 'init', 'ctc_register_location_post_type' ); // register post type.
 
 /**********************************
- * PERSON
+ * PERSON POST TYPE
  **********************************/
 
 /**
