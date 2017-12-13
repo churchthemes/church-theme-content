@@ -106,7 +106,7 @@ function ctc_settings_config() {
 
 	// URL Slug field.
 	/* translators: %1$s is default slug, %2$s is example URL showing how post type slug is used. */
-	$url_slug_desc = __( 'Optionally change "%1$s" in URLs. Example: %2$s', 'church-theme-content' );
+	$url_slug_desc = __( 'Change "%1$s" in URLs. Example: %2$s', 'church-theme-content' );
 	$url_slug_title = trailingslashit( sanitize_title( __( 'Title' ) ) ); // use core translation.
 	$url_slug_name = trailingslashit( sanitize_title(
 		/* translators: Appended as example event, location or person name in URL. Examples: https://yourname.com/events/name/ and https://yourname.com/people/name/ */
@@ -331,7 +331,7 @@ function ctc_settings_config() {
 						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => sprintf(
 							/* translators: %1$s is "Sermon" and %2$s is "Sermons" (translated). */
-							__( 'Optionally enter alternative wording for "%1$s" and "%2$s" (e.g. "Message" and "Messages").', 'church-theme-content' ),
+							__( 'Enter alternative wording for "%1$s" and "%2$s" (e.g. "Message" and "Messages").', 'church-theme-content' ),
 							$sermon_word_singular_default,
 							$sermon_word_plural_default
 						),
