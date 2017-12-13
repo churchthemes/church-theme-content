@@ -836,6 +836,30 @@ function ctc_sanitize_setting_url_slug( $value, $field ) {
 
 }
 
+/**
+ * Flush rewrite rules on save.
+ *
+ * Do this in case URL slug setting(s) have changed.
+ *
+ * @since 1.0
+ * @global object $ctc_settings
+ */
+function ctc_settings_flush_rewrite_rules() {
+
+	global $ctc_settings;
+
+	// Is this plugin settings page?
+	if ( ! $ctc_settings->is_settings_page() ) {
+		return;
+	}
+
+	// Flush rules.
+	flush_rewrite_rules();
+
+}
+
+add_action( 'ctps_after_save', 'ctc_settings_flush_rewrite_rules' );
+
 /**********************************
  * GETTING SETTINGS
  **********************************/
