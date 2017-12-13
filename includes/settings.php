@@ -106,7 +106,12 @@ function ctc_settings_config() {
 
 	// URL Slug field.
 	/* translators: %1$s is default slug, %2$s is example URL showing how post type slug is used. */
-	$url_slug_desc = __( 'Optionally change the default "%1$s" slug in URLs. Example: %2$s', 'church-theme-content' );
+	$url_slug_desc = __( 'Optionally change "%1$s" in URLs. Example: %2$s', 'church-theme-content' );
+	$url_slug_title = trailingslashit( sanitize_title( __( 'Title' ) ) ); // use core translation.
+	$url_slug_name = trailingslashit( sanitize_title(
+		/* translators: Appended as example event, location or person name in URL. Examples: https://yourname.com/events/name/ and https://yourname.com/people/name/ */
+		_x( 'name', 'url slug setting', 'church-theme-content' ) ) // append /name/ to end of URL (use core translated string).
+	);
 	$url_slug_field = array(
 		'name'            => '',
 		'after_name'      => '', // append (Optional) or (Pro), etc.
@@ -353,7 +358,7 @@ function ctc_settings_config() {
 						'desc'            => sprintf(
 							$url_slug_desc,
 							$sermon_url_slug_default,
-							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $sermon_url_slug_default . '</b>/', trailingslashit( home_url( $sermon_url_slug_default ) ) ) // make slug bold.
+							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $sermon_url_slug_default . '</b>/', trailingslashit( home_url( $sermon_url_slug_default ) ) ) . $url_slug_title // make slug bold.
 						),
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_url_slug_default, // show the standard value if they leave blank.
@@ -498,7 +503,7 @@ function ctc_settings_config() {
 						'desc'            => sprintf(
 							$url_slug_desc,
 							$event_url_slug_default,
-							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $event_url_slug_default . '</b>/', trailingslashit( home_url( $event_url_slug_default ) ) ) // make slug bold.
+							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $event_url_slug_default . '</b>/', trailingslashit( home_url( $event_url_slug_default ) ) ) . $url_slug_name // make slug bold.
 						),
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $event_url_slug_default, // show the standard value if they leave blank.
@@ -572,7 +577,7 @@ function ctc_settings_config() {
 						'desc'            => sprintf(
 							$url_slug_desc,
 							$location_url_slug_default,
-							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $location_url_slug_default . '</b>/', trailingslashit( home_url( $location_url_slug_default ) ) ) // make slug bold.
+							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $location_url_slug_default . '</b>/', trailingslashit( home_url( $location_url_slug_default ) ) ) . $url_slug_name // make slug bold.
 						),
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $location_url_slug_default, // show the standard value if they leave blank.
@@ -614,7 +619,7 @@ function ctc_settings_config() {
 						'desc'            => sprintf(
 							$url_slug_desc,
 							$person_url_slug_default,
-							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $person_url_slug_default . '</b>/', trailingslashit( home_url( $person_url_slug_default ) ) ) // make slug bold.
+							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $person_url_slug_default . '</b>/', trailingslashit( home_url( $person_url_slug_default ) ) ) . $url_slug_name // make slug bold.
 						),
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $person_url_slug_default, // show the standard value if they leave blank.
