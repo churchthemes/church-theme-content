@@ -19,6 +19,14 @@
 	font-size: 0.95em;
 }
 
+.ctps-section .description code {
+	font-style: normal;
+}
+
+.ctps-section .description b {
+	color: #000;
+}
+
 /*******************************************
  * LICENSES
  *******************************************/

@@ -106,7 +106,7 @@ function ctc_settings_config() {
 
 	// URL Base field.
 	/* translators: %1$s is default slug, %2$s is example URL showing how post type slug is used. */
-	$url_slug_desc = __( 'Change "%1$s" in URLs. Example: %2$s', 'church-theme-content' );
+	$url_slug_desc = __( 'Change "%1$s" in URLs. Example: <code>%2$s</code>', 'church-theme-content' );
 	$url_slug_title = trailingslashit( sanitize_title( __( 'Title' ) ) ); // use core translation.
 	$url_slug_name = trailingslashit( sanitize_title(
 		/* translators: Appended as example event, location or person name in URL. Examples: https://yourname.com/events/name/ and https://yourname.com/people/name/ */
