@@ -17,7 +17,6 @@
 	background-color: #fff;
 	border: 1px solid #ddd;
 	font-size: 0.95em;
-
 }
 
 /*******************************************
@@ -79,3 +78,20 @@ tr.ctps-field-sermon_word_plural th,
 tr.ctps-field-sermon_word_plural td {
 	padding-top: 7px;
 }
+
+/* Make sermon taxonomy URL slug fields closer */
+
+tr.ctps-field-sermon_topic_url_slug > *, /* all but last */
+tr.ctps-field-sermon_series_url_slug > *,
+tr.ctps-field-sermon_book_url_slug > *,
+tr.ctps-field-sermon_speaker_url_slug > * {
+	padding-bottom: 0;
+}
+
+tr.ctps-field-sermon_series_url_slug > *, /* all but first */
+tr.ctps-field-sermon_book_url_slug > *,
+tr.ctps-field-sermon_speaker_url_slug > *,
+tr.ctps-field-sermon_tag_url_slug > * {
+	padding-top: 14px;
+}
+

@@ -368,7 +368,7 @@ function ctc_settings_config() {
 
 					// Topic URL Slug.
 					'sermon_topic_url_slug' => array_merge( $taxonomy_url_slug_field, array(
-						'name'            => __( 'Topic URL Slug', 'church-theme-content' ),
+						'name'            => __( 'Category URL Slugs', 'church-theme-content' ),
 						'desc'            => sprintf(
 							$url_slug_desc,
 							$sermon_topic_url_slug_default,
@@ -382,7 +382,7 @@ function ctc_settings_config() {
 
 					// Series URL Slug.
 					'sermon_series_url_slug' => array_merge( $taxonomy_url_slug_field, array(
-						'name'            => __( 'Series URL Slug', 'church-theme-content' ),
+						'name'            => '',
 						'desc'            => sprintf(
 							$url_slug_desc,
 							$sermon_series_url_slug_default,
@@ -396,7 +396,7 @@ function ctc_settings_config() {
 
 					// Book URL Slug.
 					'sermon_book_url_slug' => array_merge( $taxonomy_url_slug_field, array(
-						'name'            => __( 'Book URL Slug', 'church-theme-content' ),
+						'name'            => '',
 						'desc'            => sprintf(
 							$url_slug_desc,
 							$sermon_book_url_slug_default,
@@ -410,7 +410,7 @@ function ctc_settings_config() {
 
 					// Speaker URL Slug.
 					'sermon_speaker_url_slug' => array_merge( $taxonomy_url_slug_field, array(
-						'name'            => __( 'Speaker URL Slug', 'church-theme-content' ),
+						'name'            => '',
 						'desc'            => sprintf(
 							$url_slug_desc,
 							$sermon_speaker_url_slug_default,
@@ -424,7 +424,7 @@ function ctc_settings_config() {
 
 					// Tag URL Slug.
 					'sermon_tag_url_slug' => array_merge( $taxonomy_url_slug_field, array(
-						'name'            => __( 'Tag URL Slug', 'church-theme-content' ),
+						'name'            => '',
 						'desc'            => sprintf(
 							$url_slug_desc,
 							$sermon_tag_url_slug_default,
