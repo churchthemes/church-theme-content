@@ -358,7 +358,7 @@ function ctc_settings_config() {
 						'desc'            => sprintf(
 							$url_slug_desc,
 							$sermon_url_slug_default,
-							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $sermon_url_slug_default . '</b>/', trailingslashit( home_url( $sermon_url_slug_default ) ) ) . $url_slug_title // make slug bold.
+							ctc_make_url_slug_bold( $sermon_url_slug_default ) . $url_slug_title // make slug bold.
 						),
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_url_slug_default, // show the standard value if they leave blank.
@@ -369,6 +369,11 @@ function ctc_settings_config() {
 					// Topic URL Slug.
 					'sermon_topic_url_slug' => array_merge( $taxonomy_url_slug_field, array(
 						'name'            => __( 'Topic URL Slug', 'church-theme-content' ),
+						'desc'            => sprintf(
+							$url_slug_desc,
+							$sermon_topic_url_slug_default,
+							ctc_make_url_slug_bold( $sermon_topic_url_slug_default ) . $url_slug_name // make slug bold.
+						),
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_topic_url_slug_default, // show the standard value if they leave blank.
 						),
@@ -378,6 +383,11 @@ function ctc_settings_config() {
 					// Series URL Slug.
 					'sermon_series_url_slug' => array_merge( $taxonomy_url_slug_field, array(
 						'name'            => __( 'Series URL Slug', 'church-theme-content' ),
+						'desc'            => sprintf(
+							$url_slug_desc,
+							$sermon_series_url_slug_default,
+							ctc_make_url_slug_bold( $sermon_series_url_slug_default ) . $url_slug_name // make slug bold.
+						),
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_series_url_slug_default, // show the standard value if they leave blank.
 						),
@@ -387,6 +397,11 @@ function ctc_settings_config() {
 					// Book URL Slug.
 					'sermon_book_url_slug' => array_merge( $taxonomy_url_slug_field, array(
 						'name'            => __( 'Book URL Slug', 'church-theme-content' ),
+						'desc'            => sprintf(
+							$url_slug_desc,
+							$sermon_book_url_slug_default,
+							ctc_make_url_slug_bold( $sermon_book_url_slug_default ) . $url_slug_name // make slug bold.
+						),
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_book_url_slug_default, // show the standard value if they leave blank.
 						),
@@ -396,6 +411,11 @@ function ctc_settings_config() {
 					// Speaker URL Slug.
 					'sermon_speaker_url_slug' => array_merge( $taxonomy_url_slug_field, array(
 						'name'            => __( 'Speaker URL Slug', 'church-theme-content' ),
+						'desc'            => sprintf(
+							$url_slug_desc,
+							$sermon_speaker_url_slug_default,
+							ctc_make_url_slug_bold( $sermon_speaker_url_slug_default ) . $url_slug_name // make slug bold.
+						),
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_speaker_url_slug_default, // show the standard value if they leave blank.
 						),
@@ -405,6 +425,11 @@ function ctc_settings_config() {
 					// Tag URL Slug.
 					'sermon_tag_url_slug' => array_merge( $taxonomy_url_slug_field, array(
 						'name'            => __( 'Tag URL Slug', 'church-theme-content' ),
+						'desc'            => sprintf(
+							$url_slug_desc,
+							$sermon_tag_url_slug_default,
+							ctc_make_url_slug_bold( $sermon_tag_url_slug_default ) . $url_slug_name // make slug bold.
+						),
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_tag_url_slug_default, // show the standard value if they leave blank.
 						),
@@ -503,7 +528,7 @@ function ctc_settings_config() {
 						'desc'            => sprintf(
 							$url_slug_desc,
 							$event_url_slug_default,
-							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $event_url_slug_default . '</b>/', trailingslashit( home_url( $event_url_slug_default ) ) ) . $url_slug_name // make slug bold.
+							ctc_make_url_slug_bold( $event_url_slug_default ) . $url_slug_name // make slug bold.
 						),
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $event_url_slug_default, // show the standard value if they leave blank.
@@ -514,6 +539,11 @@ function ctc_settings_config() {
 					// Category URL Slug.
 					'event_category_url_slug' => array_merge( $taxonomy_url_slug_field, array(
 						'name'            => __( 'Category URL Slug', 'church-theme-content' ),
+						'desc'            => sprintf(
+							$url_slug_desc,
+							$event_category_url_slug_default,
+							ctc_make_url_slug_bold( $event_category_url_slug_default ) . $url_slug_name // make slug bold.
+						),
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $event_category_url_slug_default, // show the standard value if they leave blank.
 						),
@@ -577,7 +607,7 @@ function ctc_settings_config() {
 						'desc'            => sprintf(
 							$url_slug_desc,
 							$location_url_slug_default,
-							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $location_url_slug_default . '</b>/', trailingslashit( home_url( $location_url_slug_default ) ) ) . $url_slug_name // make slug bold.
+							ctc_make_url_slug_bold( $location_url_slug_default ) . $url_slug_name // make slug bold.
 						),
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $location_url_slug_default, // show the standard value if they leave blank.
@@ -619,7 +649,7 @@ function ctc_settings_config() {
 						'desc'            => sprintf(
 							$url_slug_desc,
 							$person_url_slug_default,
-							preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $person_url_slug_default . '</b>/', trailingslashit( home_url( $person_url_slug_default ) ) ) . $url_slug_name // make slug bold.
+							ctc_make_url_slug_bold( $person_url_slug_default ) . $url_slug_name // make slug bold.
 						),
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $person_url_slug_default, // show the standard value if they leave blank.
@@ -630,6 +660,11 @@ function ctc_settings_config() {
 					// Group URL Slug.
 					'person_group_url_slug' => array_merge( $taxonomy_url_slug_field, array(
 						'name'            => __( 'Group URL Slug', 'church-theme-content' ),
+						'desc'            => sprintf(
+							$url_slug_desc,
+							$person_group_url_slug_default,
+							ctc_make_url_slug_bold( $person_group_url_slug_default ) . $url_slug_name // make slug bold.
+						),
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $person_group_url_slug_default, // show the standard value if they leave blank.
 						),

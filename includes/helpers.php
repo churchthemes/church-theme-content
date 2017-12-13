@@ -127,6 +127,21 @@ function ctc_ctcom_url( $path_key, $query_args = array() ) {
 
 }
 
+/**
+ * Make slug in URL bold.
+ *
+ * This is used by settings descriptions for URL slug change examples.
+ *
+ * Make https://yourname.com/slug/ into https://yourname.com/<b>slug</b>/
+ *
+ * @since 1.9
+ * @param string $slug Slug to append to home_url().
+ * @return string URL with slug made bold.
+ */
+function ctc_make_url_slug_bold( $slug ) {
+	return preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $slug . '</b>/', trailingslashit( home_url( $slug ) ) );
+}
+
 /*************************************************
  * ARRAYS
  *************************************************/
