@@ -122,8 +122,10 @@ function ctc_settings_config() {
 		'default'         => '', // value to pre-populate option with (before first save or on reset).
 		'no_empty'        => false, // if user empties value, force default to be saved instead.
 		'allow_html'      => false, // allow HTML to be used in the value.
-		'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
-		'class'           => '', // classes to add to input.
+		'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+			'maxlength'   => '30',
+		),
+		'class'           => 'ctps-width-200', // classes to add to input.
 		'content'         => '', // custom content instead of input (HTML allowed).
 		'custom_sanitize' => 'ctc_sanitize_setting_url_slug', // function to do additional sanitization.
 		'custom_content'  => '', // function for custom display of field input.
@@ -141,8 +143,10 @@ function ctc_settings_config() {
 		'default'         => '', // value to pre-populate option with (before first save or on reset).
 		'no_empty'        => false, // if user empties value, force default to be saved instead.
 		'allow_html'      => false, // allow HTML to be used in the value.
-		'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
-		'class'           => '', // classes to add to input.
+		'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+			'maxlength'   => '30',
+		),
+		'class'           => 'ctps-width-200', // classes to add to input.
 		'content'         => '', // custom content instead of input (HTML allowed).
 		'custom_sanitize' => 'ctc_sanitize_setting_url_slug', // function to do additional sanitization.
 		'custom_content'  => '', // function for custom display of field input.
@@ -316,8 +320,9 @@ function ctc_settings_config() {
 						'allow_html'      => false, // allow HTML to be used in the value.
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_word_singular_default, // show the standard value if they leave blank.
+							'maxlength'   => '30',
 						),
-						'class'           => '', // classes to add to input.
+						'class'           => 'ctps-width-200', // classes to add to input.
 						'content'         => '', // custom content instead of input (HTML allowed).
 						'custom_sanitize' => '', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
@@ -343,8 +348,9 @@ function ctc_settings_config() {
 						'allow_html'      => false, // allow HTML to be used in the value.
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_word_plural_default, // show the standard value if they leave blank.
+							'maxlength'   => '30',
 						),
-						'class'           => '', // classes to add to input.
+						'class'           => 'ctps-width-200', // classes to add to input.
 						'content'         => '', // custom content instead of input (HTML allowed).
 						'custom_sanitize' => '', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
@@ -360,9 +366,9 @@ function ctc_settings_config() {
 							$sermon_url_slug_default,
 							ctc_make_url_slug_bold( $sermon_url_slug_default ) . $url_slug_title // make slug bold.
 						),
-						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+						'attributes'      => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_url_slug_default, // show the standard value if they leave blank.
-						),
+						) ),
 						'unsupported'    => ! $sermons_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
@@ -374,9 +380,9 @@ function ctc_settings_config() {
 							$sermon_topic_url_slug_default,
 							ctc_make_url_slug_bold( $sermon_topic_url_slug_default ) . $url_slug_name // make slug bold.
 						),
-						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+						'attributes'      => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_topic_url_slug_default, // show the standard value if they leave blank.
-						),
+						) ),
 						'unsupported'    => ! ctc_taxonomy_supported( 'sermons', 'ctc_sermon_topic' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
@@ -388,9 +394,9 @@ function ctc_settings_config() {
 							$sermon_series_url_slug_default,
 							ctc_make_url_slug_bold( $sermon_series_url_slug_default ) . $url_slug_name // make slug bold.
 						),
-						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+						'attributes'      => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_series_url_slug_default, // show the standard value if they leave blank.
-						),
+						) ),
 						'unsupported'    => ! ctc_taxonomy_supported( 'sermons', 'ctc_sermon_series' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
@@ -402,9 +408,9 @@ function ctc_settings_config() {
 							$sermon_book_url_slug_default,
 							ctc_make_url_slug_bold( $sermon_book_url_slug_default ) . $url_slug_name // make slug bold.
 						),
-						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+						'attributes'      => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_book_url_slug_default, // show the standard value if they leave blank.
-						),
+						) ),
 						'unsupported'    => ! ctc_taxonomy_supported( 'sermons', 'ctc_sermon_book' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
@@ -416,9 +422,9 @@ function ctc_settings_config() {
 							$sermon_speaker_url_slug_default,
 							ctc_make_url_slug_bold( $sermon_speaker_url_slug_default ) . $url_slug_name // make slug bold.
 						),
-						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+						'attributes'      => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_speaker_url_slug_default, // show the standard value if they leave blank.
-						),
+						) ),
 						'unsupported'    => ! ctc_taxonomy_supported( 'sermons', 'ctc_sermon_speaker' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
@@ -430,9 +436,9 @@ function ctc_settings_config() {
 							$sermon_tag_url_slug_default,
 							ctc_make_url_slug_bold( $sermon_tag_url_slug_default ) . $url_slug_name // make slug bold.
 						),
-						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+						'attributes'      => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_tag_url_slug_default, // show the standard value if they leave blank.
-						),
+						) ),
 						'unsupported'    => ! ctc_taxonomy_supported( 'sermons', 'ctc_sermon_tag' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
@@ -530,9 +536,9 @@ function ctc_settings_config() {
 							$event_url_slug_default,
 							ctc_make_url_slug_bold( $event_url_slug_default ) . $url_slug_name // make slug bold.
 						),
-						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+						'attributes'      => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $event_url_slug_default, // show the standard value if they leave blank.
-						),
+						) ),
 						'unsupported'     => ! $events_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
@@ -544,9 +550,9 @@ function ctc_settings_config() {
 							$event_category_url_slug_default,
 							ctc_make_url_slug_bold( $event_category_url_slug_default ) . $url_slug_name // make slug bold.
 						),
-						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+						'attributes'      => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $event_category_url_slug_default, // show the standard value if they leave blank.
-						),
+						) ),
 						'unsupported'     => ! ctc_taxonomy_supported( 'events', 'ctc_event_category' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
@@ -609,9 +615,9 @@ function ctc_settings_config() {
 							$location_url_slug_default,
 							ctc_make_url_slug_bold( $location_url_slug_default ) . $url_slug_name // make slug bold.
 						),
-						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+						'attributes'      => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $location_url_slug_default, // show the standard value if they leave blank.
-						),
+						) ),
 						'unsupported'     => ! $locations_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
@@ -651,9 +657,9 @@ function ctc_settings_config() {
 							$person_url_slug_default,
 							ctc_make_url_slug_bold( $person_url_slug_default ) . $url_slug_name // make slug bold.
 						),
-						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+						'attributes'      => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $person_url_slug_default, // show the standard value if they leave blank.
-						),
+						) ),
 						'unsupported'    => ! $locations_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
@@ -665,9 +671,9 @@ function ctc_settings_config() {
 							$person_group_url_slug_default,
 							ctc_make_url_slug_bold( $person_group_url_slug_default ) . $url_slug_name // make slug bold.
 						),
-						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+						'attributes'      => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $person_group_url_slug_default, // show the standard value if they leave blank.
-						),
+						) ),
 						'unsupported'     => ! ctc_taxonomy_supported( 'people', 'ctc_person_group' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
