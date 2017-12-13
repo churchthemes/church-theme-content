@@ -104,7 +104,7 @@ function ctc_settings_config() {
 		),
 	);
 
-	// URL Slug field.
+	// URL Base field.
 	/* translators: %1$s is default slug, %2$s is example URL showing how post type slug is used. */
 	$url_slug_desc = __( 'Change "%1$s" in URLs. Example: %2$s', 'church-theme-content' );
 	$url_slug_title = trailingslashit( sanitize_title( __( 'Title' ) ) ); // use core translation.
@@ -130,7 +130,7 @@ function ctc_settings_config() {
 		'pro'             => true, // field input element disabled when Pro not active.
 	);
 
-	// Taxonomy URL Slug field.
+	// Taxonomy URL Base field.
 	$taxonomy_url_slug_field = array(
 		'name'            => '',
 		'after_name'      => '', // append (Optional) or (Pro), etc.
@@ -352,9 +352,9 @@ function ctc_settings_config() {
 						'unsupported'    => ! $sermons_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
-					// Sermon URL Slug.
+					// Sermon URL Base (Slug).
 					'sermon_url_slug' => array_merge( $url_slug_field, array(
-						'name'            => __( 'Sermon URL Slug', 'church-theme-content' ),
+						'name'            => __( 'Sermon URL Base', 'church-theme-content' ), // "Base" makes more sense to users than "Slug" and that's what it's called in Permalink settings, for consistency.
 						'desc'            => sprintf(
 							$url_slug_desc,
 							$sermon_url_slug_default,
@@ -366,9 +366,9 @@ function ctc_settings_config() {
 						'unsupported'    => ! $sermons_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
-					// Topic URL Slug.
+					// Topic URL Base (Slug).
 					'sermon_topic_url_slug' => array_merge( $taxonomy_url_slug_field, array(
-						'name'            => __( 'Category URL Slugs', 'church-theme-content' ),
+						'name'            => __( 'Category URL Bases', 'church-theme-content' ),
 						'desc'            => sprintf(
 							$url_slug_desc,
 							$sermon_topic_url_slug_default,
@@ -380,7 +380,7 @@ function ctc_settings_config() {
 						'unsupported'    => ! ctc_taxonomy_supported( 'sermons', 'ctc_sermon_topic' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
-					// Series URL Slug.
+					// Series URL Base (Slug).
 					'sermon_series_url_slug' => array_merge( $taxonomy_url_slug_field, array(
 						'name'            => '',
 						'desc'            => sprintf(
@@ -394,7 +394,7 @@ function ctc_settings_config() {
 						'unsupported'    => ! ctc_taxonomy_supported( 'sermons', 'ctc_sermon_series' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
-					// Book URL Slug.
+					// Book URL Base (Slug).
 					'sermon_book_url_slug' => array_merge( $taxonomy_url_slug_field, array(
 						'name'            => '',
 						'desc'            => sprintf(
@@ -408,7 +408,7 @@ function ctc_settings_config() {
 						'unsupported'    => ! ctc_taxonomy_supported( 'sermons', 'ctc_sermon_book' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
-					// Speaker URL Slug.
+					// Speaker URL Base (Slug).
 					'sermon_speaker_url_slug' => array_merge( $taxonomy_url_slug_field, array(
 						'name'            => '',
 						'desc'            => sprintf(
@@ -422,7 +422,7 @@ function ctc_settings_config() {
 						'unsupported'    => ! ctc_taxonomy_supported( 'sermons', 'ctc_sermon_speaker' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
-					// Tag URL Slug.
+					// Tag URL Base (Slug).
 					'sermon_tag_url_slug' => array_merge( $taxonomy_url_slug_field, array(
 						'name'            => '',
 						'desc'            => sprintf(
@@ -522,9 +522,9 @@ function ctc_settings_config() {
 						'unsupported'    => ! ( ctc_field_supported( 'events', '_ctc_event_address' ) || ctc_field_supported( 'events', '_ctc_event_venue' ) ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
-					// Event URL Slug.
+					// Event URL Base (Slug).
 					'event_url_slug' => array_merge( $url_slug_field, array(
-						'name'            => __( 'Event URL Slug', 'church-theme-content' ),
+						'name'            => __( 'Event URL Base', 'church-theme-content' ), // "Base" makes more sense to users than "Slug" and that's what it's called in Permalink settings, for consistency.
 						'desc'            => sprintf(
 							$url_slug_desc,
 							$event_url_slug_default,
@@ -536,9 +536,9 @@ function ctc_settings_config() {
 						'unsupported'     => ! $events_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
-					// Category URL Slug.
+					// Category URL Base (Slug).
 					'event_category_url_slug' => array_merge( $taxonomy_url_slug_field, array(
-						'name'            => __( 'Category URL Slug', 'church-theme-content' ),
+						'name'            => __( 'Category URL Base', 'church-theme-content' ), // "Base" makes more sense to users than "Slug" and that's what it's called in Permalink settings, for consistency.
 						'desc'            => sprintf(
 							$url_slug_desc,
 							$event_category_url_slug_default,
@@ -601,9 +601,9 @@ function ctc_settings_config() {
 						'unsupported'     => '', // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
-					// Location URL Slug.
+					// Location URL Base (Slug).
 					'location_url_slug' => array_merge( $url_slug_field, array(
-						'name'            => __( 'Location URL Slug', 'church-theme-content' ),
+						'name'            => __( 'Location URL Base', 'church-theme-content' ), // "Base" makes more sense to users than "Slug" and that's what it's called in Permalink settings, for consistency.
 						'desc'            => sprintf(
 							$url_slug_desc,
 							$location_url_slug_default,
@@ -643,9 +643,9 @@ function ctc_settings_config() {
 						'unsupported' => ! $locations_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
-					// Person URL Slug.
+					// Person URL Base (Slug).
 					'person_url_slug' => array_merge( $url_slug_field, array(
-						'name'            => __( 'Person URL Slug', 'church-theme-content' ),
+						'name'            => __( 'Person URL Base', 'church-theme-content' ), // "Base" makes more sense to users than "Slug" and that's what it's called in Permalink settings, for consistency.
 						'desc'            => sprintf(
 							$url_slug_desc,
 							$person_url_slug_default,
@@ -657,9 +657,9 @@ function ctc_settings_config() {
 						'unsupported'    => ! $locations_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
-					// Group URL Slug.
+					// Group URL Base (Slug).
 					'person_group_url_slug' => array_merge( $taxonomy_url_slug_field, array(
-						'name'            => __( 'Group URL Slug', 'church-theme-content' ),
+						'name'            => __( 'Group URL Base', 'church-theme-content' ), // "Base" makes more sense to users than "Slug" and that's what it's called in Permalink settings, for consistency.
 						'desc'            => sprintf(
 							$url_slug_desc,
 							$person_group_url_slug_default,
@@ -1021,14 +1021,14 @@ function ctc_permalink_setting_section_output( $arg ) {
 		printf(
 			wp_kses(
 				/* translators: %1$s is URL for Church Content Settings */
-				__( 'Go to <a href="%1$s">Church Content Settings</a> to set custom URL slugs for sermons, events, etc.', 'church-theme-content' ),
+				__( 'Go to <a href="%1$s">Church Content Settings</a> to set custom URL bases for sermons, events, etc.', 'church-theme-content' ),
 				array(
 					'a' => array(
 						'href' => array(),
 					),
 				)
 			),
-			admin_url( 'options-general.php?page=' . CTC_DIR )
+			admin_url( 'options-general.php?page=' . CTC_DIR . '#sermons' ) // start at sermons, not licenses.
 		);
 		?>
 
