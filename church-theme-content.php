@@ -68,6 +68,7 @@ class Church_Theme_Content {
 		add_action( 'plugins_loaded', array( $this, 'load_includes' ), 1 );
 
 		// Trigger flushing of rewrite rules on plugin activation.
+		// This must be done early (not on plugins_loaded or init).
 		register_activation_hook( __FILE__, array( &$this, 'trigger_flush_rewrite_rules' ) );
 
 		// Check if rewrite rules should be flushed.
@@ -314,13 +315,10 @@ class Church_Theme_Content {
 	 *
 	 * Doing this on activation makes post type rewrite slugs take effect.
 	 *
-	 * Add-ons can also call this method on activation or deactivation.
-	 * Pro add-on does this on activation and deactivation for slug settings.
-	 *
 	 * @since 1.0
 	 * @access public
 	 */
-	public function trigger_flush_rewrite_rules() {
+	public static function trigger_flush_rewrite_rules() {
 
 		// Tell to flush rules after post types registered.
 		update_option( 'ctc_flush_rewrite_rules', '1' );
@@ -350,5 +348,5 @@ class Church_Theme_Content {
 
 }
 
-// Instantiate the main class
+// Instantiate the main class.
 new Church_Theme_Content();
