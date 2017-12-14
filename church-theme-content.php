@@ -67,6 +67,12 @@ class Church_Theme_Content {
 		// Load includes.
 		add_action( 'plugins_loaded', array( $this, 'load_includes' ), 1 );
 
+		// Trigger flushing of rewrite rules on plugin activation.
+		register_activation_hook( __FILE__, array( &$this, 'trigger_flush_rewrite_rules' ) );
+
+		// Check if rewrite rules should be flushed.
+		add_action( 'init', array( $this, 'ctc_check_flush_rewrite_rules' ), 1 );
+
 	}
 
 	/**
@@ -208,7 +214,6 @@ class Church_Theme_Content {
 			'admin' => array(
 
 				// Functions
-				CTC_ADMIN_DIR . '/activation.php',
 				CTC_ADMIN_DIR . '/admin-add-ons.php',
 				CTC_ADMIN_DIR . '/admin-enqueue-scripts.php',
 				CTC_ADMIN_DIR . '/admin-enqueue-styles.php',
@@ -299,6 +304,45 @@ class Church_Theme_Content {
 				}
 
 			}
+
+		}
+
+	}
+
+	/**
+	 * Trigger flushing of rewrite rules.
+	 *
+	 * Doing this on activation makes post type rewrite slugs take effect.
+	 *
+	 * Add-ons can also call this method on activation or deactivation.
+	 * Pro add-on does this on activation and deactivation for slug settings.
+	 *
+	 * @since 1.0
+	 * @access public
+	 */
+	public function trigger_flush_rewrite_rules() {
+
+		// Tell to flush rules after post types registered.
+		update_option( 'ctc_flush_rewrite_rules', '1' );
+
+	}
+
+	/**
+	 * Check if rewrite rules should be flushed.
+	 *
+	 * This checks if ctc_flush_rewrite_rules option has been set earlier
+	 * so that the rewrite rules can be flushed later.
+	 */
+	public function ctc_check_flush_rewrite_rules() {
+
+		// Check if option was set.
+		if ( get_option( 'ctc_flush_rewrite_rules' ) ) {
+
+			// Flush rewrite rules.
+			flush_rewrite_rules();
+
+			// Delete option so this doesn't run again.
+			delete_option( 'ctc_flush_rewrite_rules' );
 
 		}
 
