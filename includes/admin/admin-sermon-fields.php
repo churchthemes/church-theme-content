@@ -37,7 +37,7 @@ function ctc_add_meta_box_sermon_details() {
 		'title' 	=> esc_html( sprintf(
 			/* translators: %s is singular word for "Sermon", possibly changed in settings. Always use %s and not "Sermon" directly. */
 			_x( '%s Media', 'meta box', 'church-theme-content' ),
-			ctc_post_type_label( 'ctc_sermon', 'singular' )
+			ctc_sermon_word_singular()
 		) ),
 		'post_type'	=> 'ctc_sermon',
 		'context'	=> 'normal', // where the meta box appear: normal (left above standard meta boxes), advanced (left below standard boxes), side

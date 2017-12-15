@@ -137,6 +137,26 @@ function ctc_register_post_type_sermon() {
 
 add_action( 'init', 'ctc_register_post_type_sermon' ); // register post type.
 
+/**
+ * "Sermon" plural label.
+ *
+ * @since 1.9
+ * @return string Translated label or what is set in settings.
+ */
+function ctc_sermon_word_singular() {
+	return ctc_post_type_label( 'ctc_sermon', 'singular' );
+}
+
+/**
+ * "Sermon" singular label.
+ *
+ * @since 1.9
+ * @return string Translated label or what is set in settings.
+ */
+function ctc_sermon_word_plural() {
+	return ctc_post_type_label( 'ctc_sermon', 'plural' );
+}
+
 /**********************************
  * EVENT POST TYPE
  **********************************/

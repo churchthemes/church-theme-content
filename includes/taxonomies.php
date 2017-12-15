@@ -26,6 +26,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  */
 function ctc_taxonomy_sermon_topic_args( $unfiltered = false ) {
 
+	// Sermon wording.
+	// Settings can override this.
+	$sermon_label_singular = ctc_post_type_label( 'ctc_sermon', 'singular' );
+	$sermon_label_plural = ctc_post_type_label( 'ctc_sermon', 'plural' );
+
 	// Arguments.
 	$args = array(
 		'labels' => array(
