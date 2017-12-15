@@ -88,11 +88,12 @@ function ctc_post_type_sermon_args( $unfiltered = false ) {
 				_x( 'No %s found', 'sermons', 'church-theme-content' ),
 				$plural_lowercase
 			) ),
-			'not_found_in_trash'          => esc_html( sprintf(
+			'not_found_in_trash' => esc_html( sprintf(
 				/* translators: %s is lowercase plural word for "sermons", possibly changed via settings. Always use %s and not "sermons" directly. */
 				_x( 'No %s found in Trash', 'sermons', 'church-theme-content' ),
 				$plural_lowercase
 			) ),
+			// Note: WordPress now offers additional labels that may be worth defining: https://codex.wordpress.org/Function_Reference/register_post_type#Arguments.
 		),
 		'public'       => ctc_feature_supported( 'sermons' ),
 		'has_archive'  => ctc_feature_supported( 'sermons' ),
