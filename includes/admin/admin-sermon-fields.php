@@ -33,8 +33,12 @@ function ctc_add_meta_box_sermon_details() {
 	$meta_box = array(
 
 		// Meta Box
-		'id' 		=> 'ctc_sermon_options', // unique ID
-		'title' 	=> _x( 'Sermon Media', 'meta box', 'church-theme-content' ),
+		'id' 		=> 'ctc_sermon_options', // unique ID.
+		'title' 	=> esc_html( sprintf(
+			/* translators: %s is singular word for "Sermon", possibly changed in settings. Always use %s and not "Sermon" directly. */
+			_x( '%s Media', 'meta box', 'church-theme-content' ),
+			ctc_post_type_label( 'ctc_sermon', 'singular' )
+		) ),
 		'post_type'	=> 'ctc_sermon',
 		'context'	=> 'normal', // where the meta box appear: normal (left above standard meta boxes), advanced (left below standard boxes), side
 		'priority'	=> 'high', // high, core, default or low (see this: http://www.wproots.com/ultimate-guide-to-meta-boxes-in-wordpress/)

@@ -348,3 +348,47 @@ function ctc_register_post_type_person() {
 }
 
 add_action( 'init', 'ctc_register_post_type_person' ); // register post type.
+
+/**********************************
+ * POST TYPE HELPERS
+ **********************************/
+
+/**
+ * Get post type label (plural or singular).
+ *
+ * This will get the label used when registering post type.
+ * The value may be the default or what Pro settings provide.
+ *
+ * @since 1.9
+ * @param string $post_type Post type to get label for.
+ * @param string $form 'singular' or 'plural' (can also leave empty to get plural).
+ * @return string Singular or plural label for post type.
+ */
+function ctc_post_type_label( $post_type, $form = false ) {
+
+	// Empty if cannot get name.
+	$name = '';
+
+	// Get post type object.
+	$obj = get_post_type_object( $post_type );
+
+	// Have object.
+	if ( ! empty( $obj ) ) {
+
+		// Singular form.
+		if ( 'singular' === $form && isset( $obj->labels->singular_name ) ) {
+			$name = $obj->labels->singular_name;
+		}
+
+		// Plural form.
+		// If not singular, assume plural.
+		elseif ( isset( $obj->labels->name ) ) {
+			$name = $obj->labels->name;
+		}
+
+	}
+
+	// Return filtered.
+	return apply_filters( 'ctc_post_type_label', $name );
+
+}
