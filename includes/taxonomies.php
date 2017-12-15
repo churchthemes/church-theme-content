@@ -27,9 +27,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 function ctc_taxonomy_sermon_topic_args( $unfiltered = false ) {
 
 	// Sermon wording.
-	// Settings can override this.
-	$sermon_label_singular = ctc_post_type_label( 'ctc_sermon', 'singular' );
-	$sermon_label_plural = ctc_post_type_label( 'ctc_sermon', 'plural' );
+	$sermon_word_singular = ctc_sermon_word_singular();
+	$sermon_word_plural = ctc_sermon_word_plural();
 
 	// Arguments.
 	$args = array(
@@ -98,6 +97,10 @@ add_action( 'init', 'ctc_register_taxonomy_sermon_topic' );
  */
 function ctc_taxonomy_sermon_book_args( $unfiltered = false ) {
 
+	// Sermon wording.
+	$sermon_word_singular = ctc_sermon_word_singular();
+	$sermon_word_plural = ctc_sermon_word_plural();
+
 	// Arguments.
 	$args = array(
 		'labels' => array(
@@ -164,6 +167,10 @@ add_action( 'init', 'ctc_register_taxonomy_sermon_book' );
  * @return array Taxonomy registration arguments.
  */
 function ctc_taxonomy_sermon_series_args( $unfiltered = false ) {
+
+	// Sermon wording.
+	$sermon_word_singular = ctc_sermon_word_singular();
+	$sermon_word_plural = ctc_sermon_word_plural();
 
 	// Arguments.
 	$args = array(
@@ -232,6 +239,10 @@ add_action( 'init', 'ctc_register_taxonomy_sermon_series' );
  */
 function ctc_taxonomy_sermon_speaker_args( $unfiltered = false ) {
 
+	// Sermon wording.
+	$sermon_word_singular = ctc_sermon_word_singular();
+	$sermon_word_plural = ctc_sermon_word_plural();
+
 	// Arguments.
 	$args = array(
 		'labels' => array(
@@ -298,6 +309,10 @@ add_action( 'init', 'ctc_register_taxonomy_sermon_speaker' );
  * @return array Taxonomy registration arguments.
  */
 function ctc_taxonomy_sermon_tag_args( $unfiltered = false ) {
+
+	// Sermon wording.
+	$sermon_word_singular = ctc_sermon_word_singular();
+	$sermon_word_plural = ctc_sermon_word_plural();
 
 	// Arguments.
 	$args = array(
