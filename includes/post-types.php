@@ -26,33 +26,85 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  */
 function ctc_post_type_sermon_args( $unfiltered = false ) {
 
-	// Arguments
+	// Sermon wording.
+	/* translators: This singular "Sermon" word is the replacement in "Add %s", "Edit "%s", etc. */
+	$singular = _x( 'Sermon', 'post type singular', 'church-theme-content' );
+	/* translators: This plural "Sermons" word is the replacement in "All %s", "View "%s", etc. */
+	$plural   = _x( 'Sermons', 'post type plural', 'church-theme-content' );
+
+	// Filterable wording.
+	if ( ! $unfiltered ) {
+		$singular = apply_filters( 'ctc_post_type_sermon_singular', $singular );
+		$plural = apply_filters( 'ctc_post_type_sermon_plural', $plural );
+	}
+
+	// Lowercase variants.
+	$singular_lowercase = strtolower( $singular );
+	$plural_lowercase = strtolower( $plural );
+
+	// Arguments.
 	$args = array(
 		'labels' => array(
-			'name'					=> esc_html_x( 'Sermons', 'post type general name', 'church-theme-content' ),
-			'singular_name'			=> esc_html_x( 'Sermon', 'post type singular name', 'church-theme-content' ),
-			'add_new' 				=> esc_html_x( 'Add New', 'sermon', 'church-theme-content' ),
-			'add_new_item' 			=> esc_html__( 'Add Sermon', 'church-theme-content' ),
-			'edit_item' 			=> esc_html__( 'Edit Sermon', 'church-theme-content' ),
-			'new_item' 				=> esc_html__( 'New Sermon', 'church-theme-content' ),
-			'all_items' 			=> esc_html__( 'All Sermons', 'church-theme-content' ),
-			'view_item' 			=> esc_html__( 'View Sermon', 'church-theme-content' ),
-			'view_items'			=> esc_html__( 'View Sermons', 'church-theme-content' ),
-			'search_items' 			=> esc_html__( 'Search Sermons', 'church-theme-content' ),
-			'not_found' 			=> esc_html__( 'No sermons found', 'church-theme-content' ),
-			'not_found_in_trash' 	=> esc_html__( 'No sermons found in Trash', 'church-theme-content' )
+			'name'               => esc_html( $plural ),
+			'singular_name'      => esc_html( $singular ),
+			'add_new'            => esc_html_x( 'Add New', 'sermon', 'church-theme-content' ),
+			'add_new_item'       => esc_html( sprintf(
+				/* translators: %s is singular word for "Sermon", possibly changed via settings. Always use %s and not "Sermon" directly. */
+				_x( 'Add %s', 'sermon', 'church-theme-content' ),
+				$singular
+			) ),
+			'edit_item'          => esc_html( sprintf(
+				/* translators: %s is singular word for "Sermon", possibly changed via settings. Always use %s and not "Sermon" directly. */
+				_x( 'Edit %s', 'sermon', 'church-theme-content' ),
+				$singular
+			) ),
+			'new_item'           => esc_html( sprintf(
+				/* translators: %s is singular word for "Sermon", possibly changed via settings. Always use %s and not "Sermon" directly. */
+				_x( 'New %s', 'sermon', 'church-theme-content' ),
+				$singular
+			) ),
+			'all_items'          => esc_html( sprintf(
+				/* translators: %s is plural word for "Sermons", possibly changed via settings. Always use %s and not "Sermons" directly. */
+				_x( 'All %s', 'sermons', 'church-theme-content' ),
+				$plural
+			) ),
+			'view_item'          => esc_html( sprintf(
+				/* translators: %s is singular word for "Sermon", possibly changed via settings. Always use %s and not "Sermon" directly. */
+				_x( 'View %s', 'sermon', 'church-theme-content' ),
+				$singular
+			) ),
+			'view_items'         => esc_html( sprintf(
+				/* translators: %s is plural word for "Sermons", possibly changed via settings. Always use %s and not "Sermons" directly. */
+				_x( 'View %s', 'sermons', 'church-theme-content' ),
+				$plural
+			) ),
+			'search_items'       => esc_html( sprintf(
+				/* translators: %s is plural word for "Sermons", possibly changed via settings. Always use %s and not "Sermons" directly. */
+				_x( 'Search %s', 'sermons', 'church-theme-content' ),
+				$plural
+			) ),
+			'not_found'          => esc_html( sprintf(
+				/* translators: %s is lowercase plural word for "sermons", possibly changed via settings. Always use %s and not "sermons" directly. */
+				_x( 'No %s found', 'sermons', 'church-theme-content' ),
+				$plural_lowercase
+			) ),
+			'not_found_in_trash'          => esc_html( sprintf(
+				/* translators: %s is lowercase plural word for "sermons", possibly changed via settings. Always use %s and not "sermons" directly. */
+				_x( 'No %s found in Trash', 'sermons', 'church-theme-content' ),
+				$plural_lowercase
+			) ),
 		),
-		'public' 		=> ctc_feature_supported( 'sermons' ),
-		'has_archive' 	=> ctc_feature_supported( 'sermons' ),
-		'rewrite'		=> array(
-			'slug' 			=> 'sermons',
-			'with_front' 	=> false,
-			'feeds'			=> ctc_feature_supported( 'sermons' )
+		'public'       => ctc_feature_supported( 'sermons' ),
+		'has_archive'  => ctc_feature_supported( 'sermons' ),
+		'rewrite'      => array(
+			'slug'       => 'sermons',
+			'with_front' => false,
+			'feeds'      => ctc_feature_supported( 'sermons' ),
 		),
-		'supports' 		=> array( 'title', 'editor', 'excerpt', 'publicize', 'thumbnail', 'comments', 'author', 'revisions' ), // 'editor' required for media upload button (see Meta Boxes note below about hiding)
-		'taxonomies' 	=> array( 'ctc_sermon_topic', 'ctc_sermon_book', 'ctc_sermon_series', 'ctc_sermon_speaker', 'ctc_sermon_tag' ),
-		'menu_icon'		=> 'dashicons-video-alt3',
-		'show_in_rest'	=> true,
+		'supports'     => array( 'title', 'editor', 'excerpt', 'publicize', 'thumbnail', 'comments', 'author', 'revisions' ), // 'editor' required for media upload button (see Meta Boxes note below about hiding)
+		'taxonomies'   => array( 'ctc_sermon_topic', 'ctc_sermon_book', 'ctc_sermon_series', 'ctc_sermon_speaker', 'ctc_sermon_tag' ),
+		'menu_icon'    => 'dashicons-video-alt3',
+		'show_in_rest' => true,
 	);
 
 	// Filter arguments.
