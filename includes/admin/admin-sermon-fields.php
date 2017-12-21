@@ -29,6 +29,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  */
 function ctc_add_meta_box_sermon_details() {
 
+	// Sermon wording.
+	$sermon_word_singular = ctc_sermon_word_singular();
+	$sermon_word_plural = ctc_sermon_word_plural();
+
 	// Configure Meta Box
 	$meta_box = array(
 
@@ -83,7 +87,11 @@ function ctc_add_meta_box_sermon_details() {
 				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
 				'desc'				=> __( 'Check this if you provide a complete transcript above.', 'church-theme-content' ),
 				'type'				=> 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number, range, upload, upload_textarea, url, date, time
-				'checkbox_label'	=> __( 'Full sermon text provided', 'church-theme-content' ), //show text after checkbox
+				'checkbox_label'    => sprintf(
+					/* translators: %s is lowercase singular word for "sermon", possibly changed via settings. Always use %s and not "sermon" directly. */
+					_x( 'Full %s text provided', 'sermon taxonomy general name', 'church-theme-content' ),
+					strtolower( $sermon_word_singular )
+				),
 				'options'			=> array(), // array of keys/values for radio or select
 				'upload_button'		=> '', // text for button that opens media frame
 				'upload_title'		=> '', // title appearing at top of media frame
