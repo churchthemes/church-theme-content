@@ -33,8 +33,16 @@ function ctc_taxonomy_sermon_topic_args( $unfiltered = false ) {
 	// Arguments.
 	$args = array(
 		'labels' => array(
-			'name' 							=> esc_html_x( 'Sermon Topics', 'taxonomy general name', 'church-theme-content' ),
-			'singular_name'					=> esc_html_x( 'Sermon Topic', 'taxonomy singular name', 'church-theme-content' ),
+			'name'       					=> esc_html( sprintf(
+				/* translators: %s is singular word for "Sermon", possibly changed via settings. Always use %s and not "Sermon" directly. */
+				_x( '%s Topics', 'sermon taxonomy general name', 'church-theme-content' ),
+				$sermon_word_singular
+			) ),
+			'singular_name'       			=> esc_html( sprintf(
+				/* translators: %s is singular word for "Sermon", possibly changed via settings. Always use %s and not "Sermon" directly. */
+				_x( '%s Topic', 'sermon taxonomy singular name', 'church-theme-content' ),
+				$sermon_word_singular
+			) ),
 			'search_items' 					=> esc_html_x( 'Search Topics', 'sermons', 'church-theme-content' ),
 			'popular_items' 				=> esc_html_x( 'Popular Topics', 'sermons', 'church-theme-content' ),
 			'all_items' 					=> esc_html_x( 'All Topics', 'sermons', 'church-theme-content' ),
@@ -104,8 +112,16 @@ function ctc_taxonomy_sermon_book_args( $unfiltered = false ) {
 	// Arguments.
 	$args = array(
 		'labels' => array(
-			'name' 							=> esc_html_x( 'Sermon Books', 'taxonomy general name', 'church-theme-content' ),
-			'singular_name'					=> esc_html_x( 'Sermon Book', 'taxonomy singular name', 'church-theme-content' ),
+			'name'       					=> esc_html( sprintf(
+				/* translators: %s is singular word for "Sermon", possibly changed via settings. Always use %s and not "Sermon" directly. */
+				_x( '%s Books', 'sermon taxonomy general name', 'church-theme-content' ),
+				$sermon_word_singular
+			) ),
+			'singular_name'       			=> esc_html( sprintf(
+				/* translators: %s is singular word for "Sermon", possibly changed via settings. Always use %s and not "Sermon" directly. */
+				_x( '%s Book', 'sermon taxonomy general name', 'church-theme-content' ),
+				$sermon_word_singular
+			) ),
 			'search_items' 					=> esc_html_x( 'Search Books', 'sermons', 'church-theme-content' ),
 			'popular_items' 				=> esc_html_x( 'Popular Books', 'sermons', 'church-theme-content' ),
 			'all_items' 					=> esc_html_x( 'All Books', 'sermons', 'church-theme-content' ),
@@ -175,8 +191,16 @@ function ctc_taxonomy_sermon_series_args( $unfiltered = false ) {
 	// Arguments.
 	$args = array(
 		'labels' => array(
-			'name' 							=> esc_html_x( 'Sermon Series', 'taxonomy general name', 'church-theme-content' ),
-			'singular_name'					=> esc_html_x( 'Sermon Series', 'taxonomy singular name', 'church-theme-content' ),
+			'name'       					=> esc_html( sprintf(
+				/* translators: %s is singular word for "Sermon", possibly changed via settings. Always use %s and not "Sermon" directly. */
+				_x( '%s Series', 'sermon taxonomy general name', 'church-theme-content' ),
+				$sermon_word_singular
+			) ),
+			'singular_name'       			=> esc_html( sprintf(
+				/* translators: %s is singular word for "Sermon", possibly changed via settings. Always use %s and not "Sermon" directly. */
+				_x( '%s Series', 'sermon taxonomy general name', 'church-theme-content' ),
+				$sermon_word_singular
+			) ),
 			'search_items' 					=> esc_html_x( 'Search Series', 'sermons', 'church-theme-content' ),
 			'popular_items' 				=> esc_html_x( 'Popular Series', 'sermons', 'church-theme-content' ),
 			'all_items' 					=> esc_html_x( 'All Series', 'sermons', 'church-theme-content' ),
@@ -246,9 +270,16 @@ function ctc_taxonomy_sermon_speaker_args( $unfiltered = false ) {
 	// Arguments.
 	$args = array(
 		'labels' => array(
-			'name' 							=> esc_html_x( 'Sermon Speakers', 'taxonomy general name', 'church-theme-content' ),
-			'singular_name'					=> esc_html_x( 'Sermon Speaker', 'taxonomy singular name', 'church-theme-content' ),
-			'search_items' 					=> esc_html_x( 'Search Speakers', 'sermons', 'church-theme-content' ),
+			'name'       					=> esc_html( sprintf(
+				/* translators: %s is singular word for "Sermon", possibly changed via settings. Always use %s and not "Sermon" directly. */
+				_x( '%s Speakers', 'sermon taxonomy general name', 'church-theme-content' ),
+				$sermon_word_singular
+			) ),
+			'singular_name'       			=> esc_html( sprintf(
+				/* translators: %s is singular word for "Sermon", possibly changed via settings. Always use %s and not "Sermon" directly. */
+				_x( '%s Speaker', 'sermon taxonomy general name', 'church-theme-content' ),
+				$sermon_word_singular
+			) ),			'search_items' 					=> esc_html_x( 'Search Speakers', 'sermons', 'church-theme-content' ),
 			'popular_items' 				=> esc_html_x( 'Popular Speakers', 'sermons', 'church-theme-content' ),
 			'all_items' 					=> esc_html_x( 'All Speakers', 'sermons', 'church-theme-content' ),
 			'parent_item' 					=> null,
@@ -317,8 +348,16 @@ function ctc_taxonomy_sermon_tag_args( $unfiltered = false ) {
 	// Arguments.
 	$args = array(
 		'labels' => array(
-			'name' 							=> esc_html_x( 'Sermon Tags', 'taxonomy general name', 'church-theme-content' ),
-			'singular_name'					=> esc_html_x( 'Sermon Tag', 'taxonomy singular name', 'church-theme-content' ),
+			'name'       					=> esc_html( sprintf(
+				/* translators: %s is singular word for "Sermon", possibly changed via settings. Always use %s and not "Sermon" directly. */
+				_x( '%s Tags', 'sermon taxonomy general name', 'church-theme-content' ),
+				$sermon_word_singular
+			) ),
+			'singular_name'       			=> esc_html( sprintf(
+				/* translators: %s is singular word for "Sermon", possibly changed via settings. Always use %s and not "Sermon" directly. */
+				_x( '%s Tag', 'sermon taxonomy general name', 'church-theme-content' ),
+				$sermon_word_singular
+			) ),
 			'search_items' 					=> esc_html_x( 'Search Tags', 'sermons', 'church-theme-content' ),
 			'popular_items' 				=> esc_html_x( 'Popular Tags', 'sermons', 'church-theme-content' ),
 			'all_items' 					=> esc_html_x( 'All Tags', 'sermons', 'church-theme-content' ),

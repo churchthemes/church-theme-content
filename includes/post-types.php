@@ -27,10 +27,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 function ctc_post_type_sermon_args( $unfiltered = false ) {
 
 	// Sermon wording.
-	/* translators: This singular "Sermon" word is the replacement in "Add %s", "Edit "%s", etc. */
-	$singular = _x( 'Sermon', 'post type singular', 'church-theme-content' );
-	/* translators: This plural "Sermons" word is the replacement in "All %s", "View "%s", etc. */
-	$plural   = _x( 'Sermons', 'post type plural', 'church-theme-content' );
+	$singular = ctc_sermon_word_singular();
+	$plural = ctc_sermon_word_plural();
 
 	// Filterable wording.
 	if ( ! $unfiltered ) {
@@ -138,23 +136,43 @@ function ctc_register_post_type_sermon() {
 add_action( 'init', 'ctc_register_post_type_sermon' ); // register post type.
 
 /**
- * "Sermon" plural label.
+ * "Sermon" singular label from post type.
  *
  * @since 1.9
- * @return string Translated label or what is set in settings.
+ * @return string Default, translated or what is set in settings.
  */
 function ctc_sermon_word_singular() {
-	return ctc_post_type_label( 'ctc_sermon', 'singular' );
+
+	// Get post type label, possibly changed by Pro settings.
+	$word = ctc_post_type_label( 'ctc_sermon', 'singular' );
+
+	// Get default word in case post type not registered yet.
+	if ( ! $word ) {
+		$word = _x( 'Sermon', 'post type singular', 'church-theme-content' );
+	}
+
+	return $word;
+
 }
 
 /**
- * "Sermon" singular label.
+ * "Sermons" plural label from post type.
  *
  * @since 1.9
- * @return string Translated label or what is set in settings.
+ * @return string Default, translated or what is set in settings.
  */
 function ctc_sermon_word_plural() {
-	return ctc_post_type_label( 'ctc_sermon', 'plural' );
+
+	// Get post type label, possibly changed by Pro settings.
+	$word = ctc_post_type_label( 'ctc_sermon', 'plural' );
+
+	// Get default word in case post type not registered yet.
+	if ( ! $word ) {
+		$word = _x( 'Sermons', 'post type plural', 'church-theme-content' );
+	}
+
+	return $word;
+
 }
 
 /**********************************
@@ -378,6 +396,8 @@ add_action( 'init', 'ctc_register_post_type_person' ); // register post type.
  *
  * This will get the label used when registering post type.
  * The value may be the default or what Pro settings provide.
+ *
+ * Will return empty if post type not yet registered.
  *
  * @since 1.9
  * @param string $post_type Post type to get label for.
