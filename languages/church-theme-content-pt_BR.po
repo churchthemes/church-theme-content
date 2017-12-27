@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Church Content\n"
-"POT-Creation-Date: 2017-08-31 14:12-0500\n"
-"PO-Revision-Date: 2017-08-31 14:12-0500\n"
+"POT-Creation-Date: 2017-12-27 11:38-0600\n"
+"PO-Revision-Date: 2017-12-27 11:39-0600\n"
 "Last-Translator: churchthemes.com <contact@churchthemes.com>\n"
 "Language-Team: Alberto <albertofdrodrigues@gmail.com>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.4\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_nx:1,2;_x:1,2c;_ex:1,2c;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:1,2,3c\n"
@@ -18,20 +18,34 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../includes/admin/admin-enqueue-scripts.php:35
+#: ../includes/admin/admin-add-ons.php:1
+#, php-format
+msgid ""
+"Upgrade to <a href=\"%1$s\" target=\"_blank\">Church Content Pro</a> to save "
+"time with recurring events."
+msgstr ""
+
+#: ../includes/admin/admin-add-ons.php:1
+#, php-format
+msgid ""
+"Upgrade to <a href=\"%1$s\" target=\"_blank\">Church Content Pro</a> to save "
+"time by selecting previously used locations."
+msgstr ""
+
+#: ../includes/admin/admin-enqueue-scripts.php:45
 msgid ""
 "Address could not be converted. Check the address or enter your city then "
 "click the map to pinpoint your location."
 msgstr ""
 
-#: ../includes/admin/admin-enqueue-scripts.php:36
+#: ../includes/admin/admin-enqueue-scripts.php:46
 msgid "Please enter an Address above."
 msgstr ""
 
-#: ../includes/admin/admin-enqueue-scripts.php:37
+#: ../includes/admin/admin-enqueue-scripts.php:47
 msgid ""
-"Go to Settings > Church Content to set your Google Maps API Key in order to "
-"use this button."
+"Go to Settings > Church Content > Locations to set your Google Maps API Key "
+"to use this button."
 msgstr ""
 
 #: ../includes/admin/admin-event-fields.php:39
@@ -39,133 +53,140 @@ msgctxt "event meta box"
 msgid "Date & Time"
 msgstr "Data & Horário"
 
-#: ../includes/admin/admin-event-fields.php:77
+#: ../includes/admin/admin-event-fields.php:79
 msgid "Start Date"
 msgstr "Data de Início"
 
-#: ../includes/admin/admin-event-fields.php:78
+#: ../includes/admin/admin-event-fields.php:80 ../includes/settings.php:590
 msgid "(Required)"
 msgstr "(Obrigatório)"
 
-#: ../includes/admin/admin-event-fields.php:102
+#: ../includes/admin/admin-event-fields.php:90
+#: ../includes/admin/admin-event-fields.php:116
+#: ../includes/admin/admin-event-fields.php:281
+msgctxt "datepicker"
+msgid "Choose Date"
+msgstr ""
+
+#: ../includes/admin/admin-event-fields.php:105
 msgid "End Date"
 msgstr "Data Final"
 
-#: ../includes/admin/admin-event-fields.php:105
+#: ../includes/admin/admin-event-fields.php:108
 msgid "Specify End Date if event will span multiple consecutive days."
 msgstr ""
 
-#: ../includes/admin/admin-event-fields.php:126
+#: ../includes/admin/admin-event-fields.php:131
 msgid "Start Time"
 msgstr "Data de Início"
 
-#: ../includes/admin/admin-event-fields.php:151
+#: ../includes/admin/admin-event-fields.php:157
 msgid "End Time"
 msgstr "Data Final"
 
-#: ../includes/admin/admin-event-fields.php:182
+#: ../includes/admin/admin-event-fields.php:190
 msgid "Do not show times entered above (use only for ordering events)"
 msgstr ""
 
-#: ../includes/admin/admin-event-fields.php:203
+#: ../includes/admin/admin-event-fields.php:213
 msgid "Time Description"
 msgstr "Data & Horário"
 
-#: ../includes/admin/admin-event-fields.php:206
+#: ../includes/admin/admin-event-fields.php:216
 msgid ""
 "Optionally describe the time (e.g. \"9:30 am and 11:00 am\" or \"After "
 "Second Service\")"
 msgstr ""
 
-#: ../includes/admin/admin-event-fields.php:227
+#: ../includes/admin/admin-event-fields.php:239
 msgid "Recurrence"
 msgstr "Recorrência"
 
-#: ../includes/admin/admin-event-fields.php:230
+#: ../includes/admin/admin-event-fields.php:242
 msgctxt "event meta box"
 msgid "Dates automatically move forward after event ends."
 msgstr ""
 "Datas de início e de fim serão automaticamente movidas para a frente após o "
 "evento terminar."
 
-#: ../includes/admin/admin-event-fields.php:234
+#: ../includes/admin/admin-event-fields.php:246
 msgctxt "event meta box"
 msgid "None"
 msgstr "Nenhum"
 
-#: ../includes/admin/admin-event-fields.php:235
+#: ../includes/admin/admin-event-fields.php:247
 msgctxt "event meta box"
 msgid "Weekly"
 msgstr "Semanalmente"
 
-#: ../includes/admin/admin-event-fields.php:236
+#: ../includes/admin/admin-event-fields.php:248
 msgctxt "event meta box"
 msgid "Monthly"
 msgstr "Mensalmente"
 
-#: ../includes/admin/admin-event-fields.php:237
+#: ../includes/admin/admin-event-fields.php:249
 msgctxt "event meta box"
 msgid "Yearly"
 msgstr "Anualmente"
 
-#: ../includes/admin/admin-event-fields.php:256
+#: ../includes/admin/admin-event-fields.php:270
 msgid "Recur Until"
 msgstr "Repetir Até"
 
-#: ../includes/admin/admin-event-fields.php:303
+#: ../includes/admin/admin-event-fields.php:321
 msgctxt "event meta box"
 msgid "Location"
 msgstr "Local"
 
-#: ../includes/admin/admin-event-fields.php:341
+#: ../includes/admin/admin-event-fields.php:361
 msgid "Venue"
 msgstr "Ponto de encontro"
 
-#: ../includes/admin/admin-event-fields.php:344
+#: ../includes/admin/admin-event-fields.php:364
 msgid ""
 "Optionally provide a building name, room number or other helpful identifier."
 msgstr ""
 
-#: ../includes/admin/admin-event-fields.php:365
-#: ../includes/admin/admin-location-fields.php:75
+#: ../includes/admin/admin-event-fields.php:387
+#: ../includes/admin/admin-location-fields.php:77
 msgid "Address"
 msgstr "Endereço"
 
-#: ../includes/admin/admin-event-fields.php:394
-#: ../includes/admin/admin-location-fields.php:104
+#: ../includes/admin/admin-event-fields.php:418
+#: ../includes/admin/admin-location-fields.php:108
 msgid "Show directions link"
 msgstr "Instruções"
 
-#: ../includes/admin/admin-event-fields.php:413
-#: ../includes/admin/admin-location-fields.php:195
+#: ../includes/admin/admin-event-fields.php:439
+#: ../includes/admin/admin-location-fields.php:207
 msgid "Map Latitude"
 msgstr "Latitude do Mapa"
 
-#: ../includes/admin/admin-event-fields.php:437
-#: ../includes/admin/admin-location-fields.php:219
+#: ../includes/admin/admin-event-fields.php:465
+#: ../includes/admin/admin-location-fields.php:233
 msgid "Map Longitude"
 msgstr "Longitude do Mapa"
 
-#: ../includes/admin/admin-event-fields.php:461
-#: ../includes/admin/admin-location-fields.php:243
+#: ../includes/admin/admin-event-fields.php:491
+#: ../includes/admin/admin-location-fields.php:259
 msgid "Map Type"
 msgstr "Tipo do Mapa"
 
-#: ../includes/admin/admin-event-fields.php:485
-#: ../includes/admin/admin-location-fields.php:267
+#: ../includes/admin/admin-event-fields.php:517
+#: ../includes/admin/admin-location-fields.php:285
 msgid "Map Zoom"
 msgstr "Zoom do Mapa"
 
-#: ../includes/admin/admin-event-fields.php:534
+#: ../includes/admin/admin-event-fields.php:568
 msgctxt "event meta box"
 msgid "Registration"
 msgstr ""
 
-#: ../includes/admin/admin-event-fields.php:572
+#: ../includes/admin/admin-event-fields.php:608
 msgid "Registration URL"
 msgstr ""
 
-#: ../includes/admin/admin-event-fields.php:576
+#: ../includes/admin/admin-event-fields.php:613
 #, php-format
 msgid ""
 "Link to a third-party registration page from your Church Management System, "
@@ -173,57 +194,57 @@ msgid ""
 "target=\"_blank\">Learn More</a>"
 msgstr ""
 
-#: ../includes/admin/admin-event-fields.php:763
-#: ../includes/admin/admin-location-fields.php:322
-#: ../includes/admin/admin-person-fields.php:220
-#: ../includes/admin/admin-sermon-fields.php:243
+#: ../includes/admin/admin-event-fields.php:863
+#: ../includes/admin/admin-location-fields.php:342
+#: ../includes/admin/admin-person-fields.php:230
+#: ../includes/admin/admin-sermon-fields.php:265
 msgid "Thumbnail"
 msgstr "Thumbnail"
 
-#: ../includes/admin/admin-event-fields.php:768
+#: ../includes/admin/admin-event-fields.php:868
 msgctxt "events admin column"
 msgid "When"
 msgstr "Enquanto"
 
-#: ../includes/admin/admin-event-fields.php:769
+#: ../includes/admin/admin-event-fields.php:869
 msgctxt "events admin column"
 msgid "Details"
 msgstr "Detalhes"
 
-#: ../includes/admin/admin-event-fields.php:831
+#: ../includes/admin/admin-event-fields.php:930
 msgctxt "date range separator"
 msgid " &ndash; "
 msgstr " &ndash; "
 
-#: ../includes/admin/admin-event-fields.php:849
+#: ../includes/admin/admin-event-fields.php:948
 msgctxt "time range separator"
 msgid " &ndash; "
 msgstr " &ndash; "
 
-#: ../includes/admin/admin-event-fields.php:879
+#: ../includes/admin/admin-event-fields.php:979
 #, php-format
 msgid "Every week until %1$s"
 msgstr ""
 
-#: ../includes/admin/admin-event-fields.php:884
+#: ../includes/admin/admin-event-fields.php:984
 msgid "Every week"
 msgstr ""
 
-#: ../includes/admin/admin-event-fields.php:895
+#: ../includes/admin/admin-event-fields.php:995
 #, php-format
 msgid "Every month until %1$s"
 msgstr ""
 
-#: ../includes/admin/admin-event-fields.php:900
+#: ../includes/admin/admin-event-fields.php:1000
 msgid "Every month"
 msgstr ""
 
-#: ../includes/admin/admin-event-fields.php:911
+#: ../includes/admin/admin-event-fields.php:1011
 #, php-format
 msgid "Every year until %1$s"
 msgstr "Todo ano até %1$s"
 
-#: ../includes/admin/admin-event-fields.php:916
+#: ../includes/admin/admin-event-fields.php:1016
 msgid "Every year"
 msgstr "Todo ano"
 
@@ -232,38 +253,38 @@ msgctxt "location meta box"
 msgid "Location Details"
 msgstr "Detalhes do Local"
 
-#: ../includes/admin/admin-location-fields.php:123
-#: ../includes/admin/admin-person-fields.php:124
+#: ../includes/admin/admin-location-fields.php:129
+#: ../includes/admin/admin-person-fields.php:128
 msgid "Phone"
 msgstr "Telefone"
 
-#: ../includes/admin/admin-location-fields.php:147
-#: ../includes/admin/admin-person-fields.php:148
+#: ../includes/admin/admin-location-fields.php:155
+#: ../includes/admin/admin-person-fields.php:154
 msgid "Email"
 msgstr "E-mail"
 
-#: ../includes/admin/admin-location-fields.php:171
+#: ../includes/admin/admin-location-fields.php:181
 msgctxt "location meta box"
 msgid "Times"
 msgstr "Horários"
 
-#: ../includes/admin/admin-location-fields.php:327
+#: ../includes/admin/admin-location-fields.php:347
 msgctxt "location admin column"
 msgid "Address"
 msgstr "Endereço"
 
-#: ../includes/admin/admin-location-fields.php:328
+#: ../includes/admin/admin-location-fields.php:348
 msgctxt "location admin column"
 msgid "Times"
 msgstr "Horários"
 
-#: ../includes/admin/admin-location-fields.php:329
-#: ../includes/admin/admin-person-fields.php:227
+#: ../includes/admin/admin-location-fields.php:349
+#: ../includes/admin/admin-person-fields.php:237
 msgctxt "sorting"
 msgid "Order"
 msgstr "Ordem"
 
-#: ../includes/admin/admin-location-fields.php:333
+#: ../includes/admin/admin-location-fields.php:353
 msgctxt "location admin column"
 msgid "Location"
 msgstr "Local"
@@ -313,6 +334,16 @@ msgctxt "coordinate button"
 msgid "Get From Address"
 msgstr ""
 
+#: ../includes/admin/admin-menu.php:43
+msgctxt "custom post type menu"
+msgid "Settings"
+msgstr ""
+
+#: ../includes/admin/admin-menu.php:50
+msgctxt "custom post type menu"
+msgid "Podcasting"
+msgstr ""
+
 #: ../includes/admin/admin-person-fields.php:34
 msgid "Enter name here"
 msgstr "Digite o nome aqui"
@@ -322,57 +353,60 @@ msgctxt "meta box"
 msgid "Person Details"
 msgstr "Detalhes do Líder"
 
-#: ../includes/admin/admin-person-fields.php:100
+#: ../includes/admin/admin-person-fields.php:102
 msgctxt "person meta box"
 msgid "Position"
 msgstr "Cargo"
 
-#: ../includes/admin/admin-person-fields.php:103
+#: ../includes/admin/admin-person-fields.php:105
 msgid "Enter the person's position or title (e.g. Senior Pastor, Deacon, etc.)"
 msgstr ""
 "Digite o cargo ou título do líder (por exemplo, o pastor sênior, diácono, "
 "etc.)"
 
-#: ../includes/admin/admin-person-fields.php:172
+#: ../includes/admin/admin-person-fields.php:180
 msgid "URLs"
 msgstr "URLs"
 
-#: ../includes/admin/admin-person-fields.php:225
+#: ../includes/admin/admin-person-fields.php:235
 msgid "Position"
 msgstr "Cargo"
 
-#: ../includes/admin/admin-person-fields.php:226
+#: ../includes/admin/admin-person-fields.php:236
 msgctxt "people column"
 msgid "Groups"
 msgstr "Grupos"
 
-#: ../includes/admin/admin-person-fields.php:231
+#: ../includes/admin/admin-person-fields.php:241
 msgctxt "person"
 msgid "Name"
 msgstr "Nome"
 
-#: ../includes/admin/admin-sermon-fields.php:37
+#: ../includes/admin/admin-sermon-fields.php:43
+#, php-format
 msgctxt "meta box"
-msgid "Sermon Media"
-msgstr "Mídia do Sermão de"
+msgid "%s Media"
+msgstr "Mídia do %s de"
 
-#: ../includes/admin/admin-sermon-fields.php:75
+#: ../includes/admin/admin-sermon-fields.php:85
 msgid "Full Text"
 msgstr "Texto Completo"
 
-#: ../includes/admin/admin-sermon-fields.php:78
+#: ../includes/admin/admin-sermon-fields.php:88
 msgid "Check this if you provide a complete transcript above."
 msgstr "Marque esta opção se você fornecer uma transcrição completa acima."
 
-#: ../includes/admin/admin-sermon-fields.php:80
-msgid "Full sermon text provided"
-msgstr "Texto completo do sermão fornecido"
+#: ../includes/admin/admin-sermon-fields.php:92
+#, php-format
+msgctxt "sermon taxonomy general name"
+msgid "Full %s text provided"
+msgstr ""
 
-#: ../includes/admin/admin-sermon-fields.php:99
+#: ../includes/admin/admin-sermon-fields.php:115
 msgid "Video"
 msgstr "Vídeo"
 
-#: ../includes/admin/admin-sermon-fields.php:103
+#: ../includes/admin/admin-sermon-fields.php:119
 #, php-format
 msgid ""
 "Upload a file by clicking \"Choose Video\" or upload a video to one of the "
@@ -385,19 +419,19 @@ msgstr ""
 "o YouTube), em seguida, cole sua URL aqui, ou cole um código embed de outro "
 "site. <a href=\"%s\" target=\"_blank\">Ajuda para Vídeos</a>"
 
-#: ../includes/admin/admin-sermon-fields.php:110
+#: ../includes/admin/admin-sermon-fields.php:126
 msgid "Choose Video"
 msgstr "Escolha o Vídeo"
 
-#: ../includes/admin/admin-sermon-fields.php:111
+#: ../includes/admin/admin-sermon-fields.php:127
 msgid "Choose a Video File"
 msgstr ""
 
-#: ../includes/admin/admin-sermon-fields.php:127
+#: ../includes/admin/admin-sermon-fields.php:145
 msgid "Audio"
 msgstr "Áudio"
 
-#: ../includes/admin/admin-sermon-fields.php:131
+#: ../includes/admin/admin-sermon-fields.php:149
 #, php-format
 msgid ""
 "Upload a file by clicking \"Choose Audio\" or upload audio to one of the <a "
@@ -410,19 +444,19 @@ msgstr ""
 "o SoundCloud), em seguida, cole sua URL aqui, ou cole um código embed de "
 "outro site. <a href=\"%s\" target=\"_blank\">Ajuda para Áudios</a>"
 
-#: ../includes/admin/admin-sermon-fields.php:138
+#: ../includes/admin/admin-sermon-fields.php:156
 msgid "Choose Audio"
 msgstr "Escolha o Áudio"
 
-#: ../includes/admin/admin-sermon-fields.php:139
+#: ../includes/admin/admin-sermon-fields.php:157
 msgid "Choose an Audio File"
 msgstr "Escolha o Arquivo de Áudio"
 
-#: ../includes/admin/admin-sermon-fields.php:155 ../includes/mime-types.php:75
+#: ../includes/admin/admin-sermon-fields.php:175 ../includes/mime-types.php:75
 msgid "PDF"
 msgstr "PDF"
 
-#: ../includes/admin/admin-sermon-fields.php:158
+#: ../includes/admin/admin-sermon-fields.php:178
 msgid ""
 "Upload a file by clicking \"Choose PDF\" or paste the URL to a PDF hosted on "
 "another site."
@@ -430,39 +464,39 @@ msgstr ""
 "Faça o upload de um arquivo clicando \"Escolher PDF\" ou cole a URL de um "
 "PDF hospedado em um outro site."
 
-#: ../includes/admin/admin-sermon-fields.php:162
+#: ../includes/admin/admin-sermon-fields.php:182
 msgid "Choose PDF"
 msgstr "Escolha o PDF"
 
-#: ../includes/admin/admin-sermon-fields.php:163
+#: ../includes/admin/admin-sermon-fields.php:183
 msgid "Choose a PDF File"
 msgstr "Escolha o Arquivo em PDF"
 
-#: ../includes/admin/admin-sermon-fields.php:248
+#: ../includes/admin/admin-sermon-fields.php:270
 msgctxt "sermons"
 msgid "Formats"
 msgstr "Formatos"
 
-#: ../includes/admin/admin-sermon-fields.php:249
+#: ../includes/admin/admin-sermon-fields.php:271
 msgid "Topics"
 msgstr "Tópicos"
 
-#: ../includes/admin/admin-sermon-fields.php:291
+#: ../includes/admin/admin-sermon-fields.php:313
 msgctxt "media type"
 msgid "Text"
 msgstr "Texto"
 
-#: ../includes/admin/admin-sermon-fields.php:295
+#: ../includes/admin/admin-sermon-fields.php:317
 msgctxt "media type"
 msgid "Video"
 msgstr "Vídeo"
 
-#: ../includes/admin/admin-sermon-fields.php:299
+#: ../includes/admin/admin-sermon-fields.php:321
 msgctxt "media type"
 msgid "Audio"
 msgstr "Áudio"
 
-#: ../includes/admin/admin-sermon-fields.php:303
+#: ../includes/admin/admin-sermon-fields.php:325
 msgctxt "media type"
 msgid "PDF"
 msgstr "PDF"
@@ -475,6 +509,14 @@ msgid ""
 msgstr ""
 "O tema <b>%1$s</b> não suporta o plugin <b>%2$s</b>. <a href=\"%3$s\" target="
 "\"_blank\">Mais Informações</a>, <a href=\"%4$s\">Dispensar</a>"
+
+#: ../includes/admin/notices.php:59
+#, php-format
+msgid ""
+"<strong>Event recurrence is disabled.</strong> PHP %1$s or newer is required "
+"for recurrence to work. <a href=\"%2$s\" target=\"_blank\">Update PHP</a> to "
+"resolve."
+msgstr ""
 
 #: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:226
 #, php-format
@@ -501,7 +543,7 @@ msgstr ""
 "<p><b>Erro do Google Maps:</b> atributos de <i>latitude</i> e <i>longitude</"
 "i> são obrigatórios. Consulte a documentação para obter ajuda.</p>"
 
-#: ../includes/libraries/ct-plugin-settings/ct-plugin-settings.php:259
+#: ../includes/libraries/ct-plugin-settings/ct-plugin-settings.php:261
 msgid "Settings"
 msgstr ""
 
@@ -516,704 +558,1056 @@ msgid_plural "PDFs <span class=\"count\">(%s)</span>"
 msgstr[0] "PDF <span class=\"count\">(%s)</span>"
 msgstr[1] "PDFs <span class=\"count\">(%s)</span>"
 
-#: ../includes/post-types.php:30
-msgctxt "post type general name"
-msgid "Sermons"
-msgstr "Sermões"
-
-#: ../includes/post-types.php:31
-msgctxt "post type singular name"
-msgid "Sermon"
-msgstr "Sermão"
-
-#: ../includes/post-types.php:32
+#: ../includes/post-types.php:48
 msgctxt "sermon"
 msgid "Add New"
 msgstr "Adicionar Novo"
 
-#: ../includes/post-types.php:33
-msgid "Add Sermon"
-msgstr "Adicionar Sermão"
-
-#: ../includes/post-types.php:34
-msgid "Edit Sermon"
-msgstr "Editar Sermão"
-
-#: ../includes/post-types.php:35
-msgid "New Sermon"
-msgstr "Novo Sermão"
-
-#: ../includes/post-types.php:36
-msgid "All Sermons"
-msgstr "Todos os Sermões"
-
-#: ../includes/post-types.php:37
-msgid "View Sermon"
-msgstr "Ver Sermão"
-
-#: ../includes/post-types.php:38
-msgid "View Sermons"
+#: ../includes/post-types.php:51
+#, php-format
+msgctxt "sermon"
+msgid "Add %s"
 msgstr ""
 
-#: ../includes/post-types.php:39
-msgid "Search Sermons"
-msgstr "Buscar Sermões"
+#: ../includes/post-types.php:56
+#, php-format
+msgctxt "sermon"
+msgid "Edit %s"
+msgstr ""
 
-#: ../includes/post-types.php:40
-msgid "No sermons found"
-msgstr "Nenhum sermão encontrado"
+#: ../includes/post-types.php:61
+#, php-format
+msgctxt "sermon"
+msgid "New %s"
+msgstr ""
 
-#: ../includes/post-types.php:41
-msgid "No sermons found in Trash"
-msgstr "Nenhum sermão encontrado na Lixeira"
+#: ../includes/post-types.php:66
+#, php-format
+msgctxt "sermons"
+msgid "All %s"
+msgstr ""
+
+#: ../includes/post-types.php:71
+#, php-format
+msgctxt "sermon"
+msgid "View %s"
+msgstr ""
+
+#: ../includes/post-types.php:76
+#, php-format
+msgctxt "sermons"
+msgid "View %s"
+msgstr ""
 
 #: ../includes/post-types.php:81
+#, php-format
+msgctxt "sermons"
+msgid "Search %s"
+msgstr ""
+
+#: ../includes/post-types.php:86
+#, php-format
+msgctxt "sermons"
+msgid "No %s found"
+msgstr ""
+
+#: ../includes/post-types.php:91
+#, php-format
+msgctxt "sermons"
+msgid "No %s found in Trash"
+msgstr ""
+
+#: ../includes/post-types.php:151
+msgctxt "post type singular"
+msgid "Sermon"
+msgstr ""
+
+#: ../includes/post-types.php:171
+msgctxt "post type plural"
+msgid "Sermons"
+msgstr ""
+
+#: ../includes/post-types.php:194
 msgctxt "post type general name"
 msgid "Events"
 msgstr "Agenda"
 
-#: ../includes/post-types.php:82
+#: ../includes/post-types.php:195
 msgctxt "post type singular name"
 msgid "Event"
 msgstr "Comprimisso"
 
-#: ../includes/post-types.php:83
+#: ../includes/post-types.php:196
 msgctxt "event"
 msgid "Add New"
 msgstr "Adicionar Novo"
 
-#: ../includes/post-types.php:84
+#: ../includes/post-types.php:197
 msgid "Add Event"
 msgstr "Adicionar Compromisso"
 
-#: ../includes/post-types.php:85
+#: ../includes/post-types.php:198
 msgid "Edit Event"
 msgstr "Editar Compromisso"
 
-#: ../includes/post-types.php:86
+#: ../includes/post-types.php:199
 msgid "New Event"
 msgstr "Novo Compromisso"
 
-#: ../includes/post-types.php:87
+#: ../includes/post-types.php:200
 msgid "All Events"
 msgstr "Todos os Compromissos"
 
-#: ../includes/post-types.php:88
+#: ../includes/post-types.php:201
 msgid "View Event"
 msgstr "Ver Compromisso"
 
-#: ../includes/post-types.php:89
+#: ../includes/post-types.php:202
 msgid "View Events"
 msgstr ""
 
-#: ../includes/post-types.php:90
+#: ../includes/post-types.php:203
 msgid "Search Events"
 msgstr "Buscar Compromissos"
 
-#: ../includes/post-types.php:91
+#: ../includes/post-types.php:204
 msgid "No events found"
 msgstr "Nenhum compromisso encontrado"
 
-#: ../includes/post-types.php:92
+#: ../includes/post-types.php:205
 msgid "No events found in Trash"
 msgstr "Nenhum compromisso encontrado na Lixeira"
 
-#: ../includes/post-types.php:132
+#: ../includes/post-types.php:265
 msgctxt "post type general name"
 msgid "Locations"
 msgstr "Locais"
 
-#: ../includes/post-types.php:133
+#: ../includes/post-types.php:266
 msgctxt "post type singular name"
 msgid "Location"
 msgstr "Local"
 
-#: ../includes/post-types.php:134
+#: ../includes/post-types.php:267
 msgctxt "location"
 msgid "Add New"
 msgstr "Adicionar Novo"
 
-#: ../includes/post-types.php:135
+#: ../includes/post-types.php:268
 msgid "Add Location"
 msgstr "Adicionar Local"
 
-#: ../includes/post-types.php:136
+#: ../includes/post-types.php:269
 msgid "Edit Location"
 msgstr "Editar Local"
 
-#: ../includes/post-types.php:137
+#: ../includes/post-types.php:270
 msgid "New Location"
 msgstr "Novo Local"
 
-#: ../includes/post-types.php:138
+#: ../includes/post-types.php:271
 msgid "All Locations"
 msgstr "Todos os Locais"
 
-#: ../includes/post-types.php:139
+#: ../includes/post-types.php:272
 msgid "View Location"
 msgstr "Ver Local"
 
-#: ../includes/post-types.php:140
+#: ../includes/post-types.php:273
 msgid "View Locations"
 msgstr ""
 
-#: ../includes/post-types.php:141
+#: ../includes/post-types.php:274
 msgid "Search Locations"
 msgstr "Buscar Locais"
 
-#: ../includes/post-types.php:142
+#: ../includes/post-types.php:275
 msgid "No location found"
 msgstr "Nenhum local encontrado"
 
-#: ../includes/post-types.php:143
+#: ../includes/post-types.php:276
 msgid "No location found in Trash"
 msgstr "Nenhum local encontrado na Lixeira"
 
-#: ../includes/post-types.php:182
+#: ../includes/post-types.php:335
 msgctxt "post type general name"
 msgid "People"
 msgstr "Líderes"
 
-#: ../includes/post-types.php:183
+#: ../includes/post-types.php:336
 msgctxt "post type singular name"
 msgid "Person"
 msgstr "Líder"
 
-#: ../includes/post-types.php:184
+#: ../includes/post-types.php:337
 msgctxt "person"
 msgid "Add New"
 msgstr "Adicionar Novo"
 
-#: ../includes/post-types.php:185
+#: ../includes/post-types.php:338
 msgid "Add Person"
 msgstr "Adicionar Líder"
 
-#: ../includes/post-types.php:186
+#: ../includes/post-types.php:339
 msgid "Edit Person"
 msgstr "Editar Líder"
 
-#: ../includes/post-types.php:187
+#: ../includes/post-types.php:340
 msgid "New Person"
 msgstr "Novo Líder"
 
-#: ../includes/post-types.php:188
+#: ../includes/post-types.php:341
 msgid "All People"
 msgstr "Todos os Líderes"
 
-#: ../includes/post-types.php:189
+#: ../includes/post-types.php:342
 msgid "View Person"
 msgstr "Ver Líder"
 
-#: ../includes/post-types.php:190
+#: ../includes/post-types.php:343
 msgid "View People"
 msgstr ""
 
-#: ../includes/post-types.php:191
+#: ../includes/post-types.php:344
 msgid "Search People"
 msgstr "Buscar Líderes"
 
-#: ../includes/post-types.php:192
+#: ../includes/post-types.php:345
 msgid "No people found"
 msgstr "Nenhum líder encontrado"
 
-#: ../includes/post-types.php:193
+#: ../includes/post-types.php:346
 msgid "No people found in Trash"
 msgstr "Nenhum líder encontrado na Lixeira"
 
-#: ../includes/settings.php:43
+#: ../includes/settings.php:84
+msgctxt "settings"
+msgid "SEO Structured Data"
+msgstr ""
+
+#: ../includes/settings.php:88
+#, php-format
+msgid ""
+"Automatic Search Engine Optimization (SEO) with Schema.org structured data "
+"via JSON-LD. <a href=\"%1$s\" target=\"_blank\">Learn More</a>"
+msgstr ""
+
+#: ../includes/settings.php:109
+#, php-format
+msgid "Change \"%1$s\" in URLs. Example: <code>%2$s</code>"
+msgstr ""
+
+#: ../includes/settings.php:110
+msgid "Title"
+msgstr ""
+
+#: ../includes/settings.php:113
+msgctxt "url slug setting"
+msgid "name"
+msgstr ""
+
+#: ../includes/settings.php:158
+msgid "Hide in Admin"
+msgstr ""
+
+#: ../includes/settings.php:160
+msgid "This can be useful if you are not using the feature."
+msgstr ""
+
+#: ../includes/settings.php:181
+msgid ""
+"Save time by setting events to repeat automatically (e.g. \"Every month on "
+"last Sunday except December 25\")."
+msgstr ""
+
+#: ../includes/settings.php:184
+msgctxt "recurrence setting"
+msgid ""
+"Enabled by <b>Church Content Pro</b> <span class=\"ctps-light ctps-italic"
+"\">(Always On)</span>"
+msgstr ""
+
+#: ../includes/settings.php:188
+msgid "Partially Enabled by <b>Custom Recurring Events</b> Add-on"
+msgstr ""
+
+#: ../includes/settings.php:192
+#, php-format
+msgid ""
+"Upgrade to <a href=\"%1$s\" target=\"_blank\">Church Content Pro</a> for the "
+"complete set of recurrence and exclusion options."
+msgstr ""
+
+#: ../includes/settings.php:201
+msgid ""
+"Basic Recurrence Only <span class=\"ctps-light ctps-italic\">(Pro Recurrence "
+"Inactive)</span>"
+msgstr ""
+
+#: ../includes/settings.php:205
+#, php-format
+msgid ""
+"Install <a href=\"%1$s\" target=\"_blank\">Church Content Pro</a> for full "
+"recurrence (e.g. \"Every month on last Sunday except December 25\")."
+msgstr ""
+
+#: ../includes/settings.php:216
+#, php-format
+msgctxt "recurrence setting"
+msgid ""
+"Install <a href=\"%1$s\" target=\"_blank\">Church Content Pro</a> to Enable "
+"<span class=\"ctps-light ctps-italic\">(Recommended)</span>"
+msgstr ""
+
+#: ../includes/settings.php:234
 #, php-format
 msgid "%1$s Settings"
 msgstr "Mais posts pro %1$s"
 
-#: ../includes/settings.php:49
+#: ../includes/settings.php:242
 #, php-format
 msgid ""
 "These settings are for the <a href=\"%1$s\" target=\"_blank\">Church "
-"Content</a> plugin and its <a href=\"%2$s\" target=\"_blank\">Add-ons</a>."
+"Content</a> plugin. Use the <a href=\"%2$s\">Customizer</a> for theme-"
+"provided appearance settings."
 msgstr ""
 
-#: ../includes/settings.php:69
+#: ../includes/settings.php:261
+msgctxt "settings"
+msgid "Licenses"
+msgstr ""
+
+#: ../includes/settings.php:264
+msgid ""
+"Save then activate your add-on's license key to enable one-click updates for "
+"it."
+msgstr ""
+
+#: ../includes/settings.php:276
 msgctxt "settings section title"
-msgid "General"
+msgid "Sermons"
 msgstr ""
 
-#: ../includes/settings.php:79
+#: ../includes/settings.php:286
+msgid ""
+"Improve SEO for Sermons <span class=\"ctps-light ctps-italic"
+"\">(Recommended)</span>"
+msgstr ""
+
+#: ../includes/settings.php:292
+msgctxt "settings"
+msgid "Sermon Podcasting"
+msgstr ""
+
+#: ../includes/settings.php:303
+msgid "<a href=\"#\">Podcasting Settings</a>"
+msgstr ""
+
+#: ../includes/settings.php:312
+msgid "Alternative Wording"
+msgstr ""
+
+#: ../includes/settings.php:339
+#, php-format
+msgid ""
+"Enter alternative wording for \"%1$s\" and \"%2$s\" (e.g. \"Message\" and "
+"\"Messages\")."
+msgstr ""
+
+#: ../includes/settings.php:363
+msgid "Sermon URL Base"
+msgstr ""
+
+#: ../includes/settings.php:377
+msgid "Category URL Bases"
+msgstr ""
+
+#: ../includes/settings.php:447
+msgid "Hide Sermons in Admin Menu"
+msgstr ""
+
+#: ../includes/settings.php:459
+msgctxt "settings section title"
+msgid "Podcasting"
+msgstr ""
+
+#: ../includes/settings.php:475
+msgctxt "settings section title"
+msgid "Events"
+msgstr ""
+
+#: ../includes/settings.php:485
+msgctxt "settings"
+msgid "Recurring Events"
+msgstr ""
+
+#: ../includes/settings.php:505
+msgid ""
+"Improve SEO for Events <span class=\"ctps-light ctps-italic\">(Recommended)</"
+"span>"
+msgstr ""
+
+#: ../includes/settings.php:511
+msgid "Location Memory"
+msgstr ""
+
+#: ../includes/settings.php:513
+msgid ""
+"Save time when adding events by choosing from previously used locations."
+msgstr ""
+
+#: ../includes/settings.php:515
+msgid ""
+"Enable \"Choose\" Button and Autocomplete <span class=\"ctps-light ctps-"
+"italic\">(Recommended)</span>"
+msgstr ""
+
+#: ../includes/settings.php:533
+msgid "Event URL Base"
+msgstr ""
+
+#: ../includes/settings.php:547
+msgid "Category URL Base"
+msgstr ""
+
+#: ../includes/settings.php:561
+msgid "Hide Events in Admin Menu"
+msgstr ""
+
+#: ../includes/settings.php:573
+msgctxt "settings section title"
+msgid "Locations"
+msgstr ""
+
+#: ../includes/settings.php:583
+msgid ""
+"Improve SEO for Locations <span class=\"ctps-light ctps-italic"
+"\">(Recommended)</span>"
+msgstr ""
+
+#: ../includes/settings.php:589
 msgctxt "settings"
 msgid "Google Maps API Key"
 msgstr ""
 
-#: ../includes/settings.php:82
+#: ../includes/settings.php:593
 #, php-format
 msgid ""
-"An API Key for Google Maps is required if you want to show maps for events "
-"or locations. <a href=\"%1$s\" target=\"_blank\">Get an API Key</a>"
+"An API Key for Google Maps is required if you want to show maps for "
+"locations or events. <a href=\"%1$s\" target=\"_blank\">Get an API Key</a>"
 msgstr ""
 
-#: ../includes/settings.php:108
-msgctxt "settings"
-msgid "Add-on Licenses"
-msgstr "Fazer um Comentário"
+#: ../includes/settings.php:612
+msgid "Location URL Base"
+msgstr ""
 
-#: ../includes/settings.php:113
+#: ../includes/settings.php:626
+msgid "Hide Locations in Admin Menu"
+msgstr ""
+
+#: ../includes/settings.php:638
+msgctxt "settings section title"
+msgid "People"
+msgstr ""
+
+#: ../includes/settings.php:648
 msgid ""
-"Save then activate your add-on license keys to enable one-click updates for "
-"them."
+"Improve SEO for People <span class=\"ctps-light ctps-italic\">(Recommended)</"
+"span>"
 msgstr ""
 
-#: ../includes/taxonomies.php:30
-msgctxt "taxonomy general name"
-msgid "Sermon Topics"
-msgstr "Tópicos do Sermão"
+#: ../includes/settings.php:654
+msgid "Person URL Base"
+msgstr ""
 
-#: ../includes/taxonomies.php:31
-msgctxt "taxonomy singular name"
-msgid "Sermon Topic"
-msgstr "Tópico do Sermão"
+#: ../includes/settings.php:668
+msgid "Group URL Base"
+msgstr ""
 
-#: ../includes/taxonomies.php:32
+#: ../includes/settings.php:682
+msgid "Hide People in Admin Menu"
+msgstr ""
+
+#: ../includes/settings.php:718
+msgctxt "settings"
+msgid "(Pro)"
+msgstr ""
+
+#: ../includes/settings.php:750
+msgid ""
+"<b>Note:</b> This is not supported by your theme and will have no effect."
+msgstr ""
+
+#: ../includes/settings.php:799
+#, php-format
+msgid ""
+"Settings labeled \"Pro\" are provided by the <a href=\"%1$s\" target=\"_blank"
+"\">Church Content Pro</a> plugin. Install it to add Pro features."
+msgstr ""
+
+#: ../includes/settings.php:950
+msgid "Posts per page"
+msgstr ""
+
+#: ../includes/settings.php:982
+#, php-format
+msgid ""
+"Use <a href=\"%1$s\">Church Content Settings</a> to override this for "
+"specific post types (sermons, events, etc.)"
+msgstr ""
+
+#: ../includes/settings.php:1030
+msgid "Church Content Settings"
+msgstr ""
+
+#: ../includes/settings.php:1054
+#, php-format
+msgid ""
+"Go to <a href=\"%1$s\">Church Content Settings</a> to set custom URL bases "
+"for sermons, events, etc."
+msgstr ""
+
+#: ../includes/taxonomies.php:38
+#, php-format
+msgctxt "sermon taxonomy general name"
+msgid "%s Topics"
+msgstr ""
+
+#: ../includes/taxonomies.php:43
+#, php-format
+msgctxt "sermon taxonomy singular name"
+msgid "%s Topic"
+msgstr ""
+
+#: ../includes/taxonomies.php:46
 msgctxt "sermons"
 msgid "Search Topics"
 msgstr "Buscar Tópicos"
 
-#: ../includes/taxonomies.php:33
+#: ../includes/taxonomies.php:47
 msgctxt "sermons"
 msgid "Popular Topics"
 msgstr "Tópicos Populares"
 
-#: ../includes/taxonomies.php:34
+#: ../includes/taxonomies.php:48
 msgctxt "sermons"
 msgid "All Topics"
 msgstr "Todos os Tópicos"
 
-#: ../includes/taxonomies.php:37
+#: ../includes/taxonomies.php:51
 msgctxt "sermons"
 msgid "Edit Topic"
 msgstr "Editar Tópico"
 
-#: ../includes/taxonomies.php:38
+#: ../includes/taxonomies.php:52
 msgctxt "sermons"
 msgid "Update Topic"
 msgstr "Atualizar Tópico"
 
-#: ../includes/taxonomies.php:39
+#: ../includes/taxonomies.php:53
 msgctxt "sermons"
 msgid "Add Topic"
 msgstr "Adicionar Tópico"
 
-#: ../includes/taxonomies.php:40
+#: ../includes/taxonomies.php:54
 msgctxt "sermons"
 msgid "New Topic"
 msgstr "Novo Tópico"
 
-#: ../includes/taxonomies.php:41
+#: ../includes/taxonomies.php:55
 msgctxt "sermons"
 msgid "Separate topics with commas"
 msgstr "Separar tópicos com vírgulas"
 
-#: ../includes/taxonomies.php:42
+#: ../includes/taxonomies.php:56
 msgctxt "sermons"
 msgid "Add or remove topics"
 msgstr "Adicionar ou remover tópicos"
 
-#: ../includes/taxonomies.php:43
+#: ../includes/taxonomies.php:57
 msgctxt "sermons"
 msgid "Choose from the most used topics"
 msgstr "Escolher a partir dos tópicos mais utilizados"
 
-#: ../includes/taxonomies.php:44
+#: ../includes/taxonomies.php:58
 msgctxt "sermon menu name"
 msgid "Topics"
 msgstr "Tópicos"
 
-#: ../includes/taxonomies.php:77
-msgctxt "taxonomy general name"
-msgid "Sermon Books"
-msgstr "Livros do Sermão"
+#: ../includes/taxonomies.php:117
+#, php-format
+msgctxt "sermon taxonomy general name"
+msgid "%s Books"
+msgstr ""
 
-#: ../includes/taxonomies.php:78
-msgctxt "taxonomy singular name"
-msgid "Sermon Book"
-msgstr "Livro do Sermão"
+#: ../includes/taxonomies.php:122
+#, php-format
+msgctxt "sermon taxonomy general name"
+msgid "%s Book"
+msgstr ""
 
-#: ../includes/taxonomies.php:79
+#: ../includes/taxonomies.php:125
 msgctxt "sermons"
 msgid "Search Books"
 msgstr "Buscar Livros"
 
-#: ../includes/taxonomies.php:80
+#: ../includes/taxonomies.php:126
 msgctxt "sermons"
 msgid "Popular Books"
 msgstr "Livros Populares"
 
-#: ../includes/taxonomies.php:81
+#: ../includes/taxonomies.php:127
 msgctxt "sermons"
 msgid "All Books"
 msgstr "Todos os Livros"
 
-#: ../includes/taxonomies.php:84
+#: ../includes/taxonomies.php:130
 msgctxt "sermons"
 msgid "Edit Book"
 msgstr "Editar Livro"
 
-#: ../includes/taxonomies.php:85
+#: ../includes/taxonomies.php:131
 msgctxt "sermons"
 msgid "Update Book"
 msgstr "Atualizar Livro"
 
-#: ../includes/taxonomies.php:86
+#: ../includes/taxonomies.php:132
 msgctxt "sermons"
 msgid "Add Book"
 msgstr "Adicionar Livro"
 
-#: ../includes/taxonomies.php:87
+#: ../includes/taxonomies.php:133
 msgctxt "sermons"
 msgid "New Book"
 msgstr "Novo Livro"
 
-#: ../includes/taxonomies.php:88
+#: ../includes/taxonomies.php:134
 msgctxt "sermons"
 msgid "Separate books with commas"
 msgstr "Separar livros com vírgulas"
 
-#: ../includes/taxonomies.php:89
+#: ../includes/taxonomies.php:135
 msgctxt "sermons"
 msgid "Add or remove books"
 msgstr "Adicionar ou remover livros"
 
-#: ../includes/taxonomies.php:90
+#: ../includes/taxonomies.php:136
 msgctxt "sermons"
 msgid "Choose from the most used books"
 msgstr "Escolher a partir dos livros mais utilizados"
 
-#: ../includes/taxonomies.php:91
+#: ../includes/taxonomies.php:137
 msgctxt "sermon menu name"
 msgid "Books"
 msgstr "Livros"
 
-#: ../includes/taxonomies.php:124
-msgctxt "taxonomy general name"
-msgid "Sermon Series"
-msgstr "Séries dos Sermões"
+#: ../includes/taxonomies.php:196 ../includes/taxonomies.php:201
+#, php-format
+msgctxt "sermon taxonomy general name"
+msgid "%s Series"
+msgstr ""
 
-#: ../includes/taxonomies.php:125
-msgctxt "taxonomy singular name"
-msgid "Sermon Series"
-msgstr "Série do Sermão"
-
-#: ../includes/taxonomies.php:126
+#: ../includes/taxonomies.php:204
 msgctxt "sermons"
 msgid "Search Series"
 msgstr "Buscar Séries"
 
-#: ../includes/taxonomies.php:127
+#: ../includes/taxonomies.php:205
 msgctxt "sermons"
 msgid "Popular Series"
 msgstr "Séries Populares"
 
-#: ../includes/taxonomies.php:128
+#: ../includes/taxonomies.php:206
 msgctxt "sermons"
 msgid "All Series"
 msgstr "Todas as Séries"
 
-#: ../includes/taxonomies.php:131
+#: ../includes/taxonomies.php:209
 msgctxt "sermons"
 msgid "Edit Series"
 msgstr "Editar Série"
 
-#: ../includes/taxonomies.php:132
+#: ../includes/taxonomies.php:210
 msgctxt "sermons"
 msgid "Update Series"
 msgstr "Atualizar Série"
 
-#: ../includes/taxonomies.php:133
+#: ../includes/taxonomies.php:211
 msgctxt "sermons"
 msgid "Add Series"
 msgstr "Adicionar Série"
 
-#: ../includes/taxonomies.php:134
+#: ../includes/taxonomies.php:212
 msgctxt "sermons"
 msgid "New Series"
 msgstr "Nova Série"
 
-#: ../includes/taxonomies.php:135
+#: ../includes/taxonomies.php:213
 msgctxt "sermons"
 msgid "Separate series with commas"
 msgstr "Separar séries com vírgulas"
 
-#: ../includes/taxonomies.php:136
+#: ../includes/taxonomies.php:214
 msgctxt "sermons"
 msgid "Add or remove series"
 msgstr "Adicionar ou ramoner séries"
 
-#: ../includes/taxonomies.php:137
+#: ../includes/taxonomies.php:215
 msgctxt "sermons"
 msgid "Choose from the most used series"
 msgstr "Escolher a partir das séries mais utilizadas"
 
-#: ../includes/taxonomies.php:138
+#: ../includes/taxonomies.php:216
 msgctxt "sermon menu name"
 msgid "Series"
 msgstr "Séries"
 
-#: ../includes/taxonomies.php:171
-msgctxt "taxonomy general name"
-msgid "Sermon Speakers"
-msgstr "Pregadores dos Sermões"
+#: ../includes/taxonomies.php:275
+#, php-format
+msgctxt "sermon taxonomy general name"
+msgid "%s Speakers"
+msgstr ""
 
-#: ../includes/taxonomies.php:172
-msgctxt "taxonomy singular name"
-msgid "Sermon Speaker"
-msgstr "Pregador do Sermão"
+#: ../includes/taxonomies.php:280
+#, php-format
+msgctxt "sermon taxonomy general name"
+msgid "%s Speaker"
+msgstr ""
 
-#: ../includes/taxonomies.php:173
+#: ../includes/taxonomies.php:282
 msgctxt "sermons"
 msgid "Search Speakers"
 msgstr "Buscar Pregadores"
 
-#: ../includes/taxonomies.php:174
+#: ../includes/taxonomies.php:283
 msgctxt "sermons"
 msgid "Popular Speakers"
 msgstr "Pregadores Populares"
 
-#: ../includes/taxonomies.php:175
+#: ../includes/taxonomies.php:284
 msgctxt "sermons"
 msgid "All Speakers"
 msgstr "Todos os Pregadores"
 
-#: ../includes/taxonomies.php:178
+#: ../includes/taxonomies.php:287
 msgctxt "sermons"
 msgid "Edit Speaker"
 msgstr "Editar Pregador"
 
-#: ../includes/taxonomies.php:179
+#: ../includes/taxonomies.php:288
 msgctxt "sermons"
 msgid "Update Speaker"
 msgstr "Atualizar Pregador"
 
-#: ../includes/taxonomies.php:180
+#: ../includes/taxonomies.php:289
 msgctxt "sermons"
 msgid "Add Speaker"
 msgstr "Adicionar Pregador"
 
-#: ../includes/taxonomies.php:181
+#: ../includes/taxonomies.php:290
 msgctxt "sermons"
 msgid "New Speaker"
 msgstr "Novo Pregador"
 
-#: ../includes/taxonomies.php:182
+#: ../includes/taxonomies.php:291
 msgctxt "sermons"
 msgid "Separate speakers with commas"
 msgstr "Separar pregadores com vírgulas"
 
-#: ../includes/taxonomies.php:183
+#: ../includes/taxonomies.php:292
 msgctxt "sermons"
 msgid "Add or remove speakers"
 msgstr "Adicionar ou remover pregadores"
 
-#: ../includes/taxonomies.php:184
+#: ../includes/taxonomies.php:293
 msgctxt "sermons"
 msgid "Choose from the most used speakers"
 msgstr "Escolher a partir dos pregadores mais utilizados"
 
-#: ../includes/taxonomies.php:185
+#: ../includes/taxonomies.php:294
 msgctxt "sermon menu name"
 msgid "Speakers"
 msgstr "Pregadores"
 
-#: ../includes/taxonomies.php:218
-msgctxt "taxonomy general name"
-msgid "Sermon Tags"
-msgstr "Tags dos Sermões"
+#: ../includes/taxonomies.php:353
+#, php-format
+msgctxt "sermon taxonomy general name"
+msgid "%s Tags"
+msgstr ""
 
-#: ../includes/taxonomies.php:219
-msgctxt "taxonomy singular name"
-msgid "Sermon Tag"
-msgstr "Tag do Sermão"
+#: ../includes/taxonomies.php:358
+#, php-format
+msgctxt "sermon taxonomy general name"
+msgid "%s Tag"
+msgstr ""
 
-#: ../includes/taxonomies.php:220
+#: ../includes/taxonomies.php:361
 msgctxt "sermons"
 msgid "Search Tags"
 msgstr "Buscar Tags"
 
-#: ../includes/taxonomies.php:221
+#: ../includes/taxonomies.php:362
 msgctxt "sermons"
 msgid "Popular Tags"
 msgstr "Tags Populares"
 
-#: ../includes/taxonomies.php:222
+#: ../includes/taxonomies.php:363
 msgctxt "sermons"
 msgid "All Tags"
 msgstr "Todas as Tags"
 
-#: ../includes/taxonomies.php:225
+#: ../includes/taxonomies.php:366
 msgctxt "sermons"
 msgid "Edit Tag"
 msgstr "Editar Tag"
 
-#: ../includes/taxonomies.php:226
+#: ../includes/taxonomies.php:367
 msgctxt "sermons"
 msgid "Update Tag"
 msgstr "Atualizar Tag"
 
-#: ../includes/taxonomies.php:227
+#: ../includes/taxonomies.php:368
 msgctxt "sermons"
 msgid "Add Tag"
 msgstr "Adicionar Tag"
 
-#: ../includes/taxonomies.php:228
+#: ../includes/taxonomies.php:369
 msgctxt "sermons"
 msgid "New Tag"
 msgstr "Nova Tag"
 
-#: ../includes/taxonomies.php:229
+#: ../includes/taxonomies.php:370
 msgctxt "sermons"
 msgid "Separate tags with commas"
 msgstr "Separar tags com vírgulas"
 
-#: ../includes/taxonomies.php:230
+#: ../includes/taxonomies.php:371
 msgctxt "sermons"
 msgid "Add or remove tags"
 msgstr "Adicionar ou remover tags"
 
-#: ../includes/taxonomies.php:231
+#: ../includes/taxonomies.php:372
 msgctxt "sermons"
 msgid "Choose from the most used tags"
 msgstr "Escolher a partir das tags mais utilizadas"
 
-#: ../includes/taxonomies.php:232
+#: ../includes/taxonomies.php:373
 msgctxt "sermon menu name"
 msgid "Tags"
 msgstr "Tags"
 
-#: ../includes/taxonomies.php:269
+#: ../includes/taxonomies.php:430
 msgctxt "taxonomy general name"
 msgid "Event Categories"
 msgstr ""
 
-#: ../includes/taxonomies.php:270
+#: ../includes/taxonomies.php:431
 msgctxt "taxonomy singular name"
 msgid "Event Category"
 msgstr ""
 
-#: ../includes/taxonomies.php:271
+#: ../includes/taxonomies.php:432
 msgctxt "events"
 msgid "Search Categories"
 msgstr "Buscar Séries"
 
-#: ../includes/taxonomies.php:272
+#: ../includes/taxonomies.php:433
 msgctxt "events"
 msgid "Popular Categories"
 msgstr "Séries Populares"
 
-#: ../includes/taxonomies.php:273
+#: ../includes/taxonomies.php:434
 msgctxt "events"
 msgid "All Categories"
 msgstr "Todas as Categorias"
 
-#: ../includes/taxonomies.php:276
+#: ../includes/taxonomies.php:437
 msgctxt "events"
 msgid "Edit Event Category"
 msgstr "Editar Compromisso"
 
-#: ../includes/taxonomies.php:277
+#: ../includes/taxonomies.php:438
 msgctxt "events"
 msgid "Update Event Category"
 msgstr "Atualizar Pregador"
 
-#: ../includes/taxonomies.php:278
+#: ../includes/taxonomies.php:439
 msgctxt "events"
 msgid "Add Category"
 msgstr "Adicionar Tag"
 
-#: ../includes/taxonomies.php:279
+#: ../includes/taxonomies.php:440
 msgctxt "events"
 msgid "New Category"
 msgstr "Nova Tag"
 
-#: ../includes/taxonomies.php:280
+#: ../includes/taxonomies.php:441
 msgctxt "events"
 msgid "Separate categories with commas"
 msgstr "Separar séries com vírgulas"
 
-#: ../includes/taxonomies.php:281
+#: ../includes/taxonomies.php:442
 msgctxt "events"
 msgid "Add or remove categories"
 msgstr "Adicionar ou ramoner séries"
 
-#: ../includes/taxonomies.php:282
+#: ../includes/taxonomies.php:443
 msgctxt "events"
 msgid "Choose from the most used categories"
 msgstr "Escolher a partir das séries mais utilizadas"
 
-#: ../includes/taxonomies.php:283
+#: ../includes/taxonomies.php:444
 msgctxt "event menu name"
 msgid "Categories"
 msgstr "Categorias"
 
-#: ../includes/taxonomies.php:320
+#: ../includes/taxonomies.php:501
 msgctxt "taxonomy general name"
 msgid "Groups"
 msgstr "Grupos"
 
-#: ../includes/taxonomies.php:321
+#: ../includes/taxonomies.php:502
 msgctxt "taxonomy singular name"
 msgid "Group"
 msgstr "Grupo"
 
-#: ../includes/taxonomies.php:322
+#: ../includes/taxonomies.php:503
 msgctxt "people"
 msgid "Search Groups"
 msgstr "Buscar Grupos"
 
-#: ../includes/taxonomies.php:323
+#: ../includes/taxonomies.php:504
 msgctxt "people"
 msgid "Popular Groups"
 msgstr "Grupos Populares"
 
-#: ../includes/taxonomies.php:324
+#: ../includes/taxonomies.php:505
 msgctxt "people"
 msgid "All Groups"
 msgstr "Todos os Grupos"
 
-#: ../includes/taxonomies.php:327
+#: ../includes/taxonomies.php:508
 msgctxt "people"
 msgid "Edit Group"
 msgstr "Editar Grupo"
 
-#: ../includes/taxonomies.php:328
+#: ../includes/taxonomies.php:509
 msgctxt "people"
 msgid "Update Group"
 msgstr "Atualizar Grupo"
 
-#: ../includes/taxonomies.php:329
+#: ../includes/taxonomies.php:510
 msgctxt "people"
 msgid "Add Group"
 msgstr "Adicionar Grupo"
 
-#: ../includes/taxonomies.php:330
+#: ../includes/taxonomies.php:511
 msgctxt "people"
 msgid "New Group"
 msgstr "Novo Grupo"
 
-#: ../includes/taxonomies.php:331
+#: ../includes/taxonomies.php:512
 msgctxt "people"
 msgid "Separate groups with commas"
 msgstr "Separar grupos com vírgulas"
 
-#: ../includes/taxonomies.php:332
+#: ../includes/taxonomies.php:513
 msgctxt "people"
 msgid "Add or remove groups"
 msgstr "Adicionar ou remover grupos"
 
-#: ../includes/taxonomies.php:333
+#: ../includes/taxonomies.php:514
 msgctxt "people"
 msgid "Choose from the most used groups"
 msgstr "Escolher a partir dos grupos mais utilizados"
 
-#: ../includes/taxonomies.php:334
+#: ../includes/taxonomies.php:515
 msgctxt "people menu name"
 msgid "Groups"
 msgstr "Grupos"
+
+#~ msgctxt "meta box"
+#~ msgid "Sermon Media"
+#~ msgstr "Mídia do Sermão de"
+
+#~ msgid "Full sermon text provided"
+#~ msgstr "Texto completo do sermão fornecido"
+
+#~ msgctxt "post type general name"
+#~ msgid "Sermons"
+#~ msgstr "Sermões"
+
+#~ msgctxt "post type singular name"
+#~ msgid "Sermon"
+#~ msgstr "Sermão"
+
+#~ msgid "Add Sermon"
+#~ msgstr "Adicionar Sermão"
+
+#~ msgid "Edit Sermon"
+#~ msgstr "Editar Sermão"
+
+#~ msgid "New Sermon"
+#~ msgstr "Novo Sermão"
+
+#~ msgid "All Sermons"
+#~ msgstr "Todos os Sermões"
+
+#~ msgid "View Sermon"
+#~ msgstr "Ver Sermão"
+
+#~ msgid "Search Sermons"
+#~ msgstr "Buscar Sermões"
+
+#~ msgid "No sermons found"
+#~ msgstr "Nenhum sermão encontrado"
+
+#~ msgid "No sermons found in Trash"
+#~ msgstr "Nenhum sermão encontrado na Lixeira"
+
+#~ msgctxt "settings"
+#~ msgid "Add-on Licenses"
+#~ msgstr "Fazer um Comentário"
+
+#~ msgctxt "taxonomy general name"
+#~ msgid "Sermon Topics"
+#~ msgstr "Tópicos do Sermão"
+
+#~ msgctxt "taxonomy singular name"
+#~ msgid "Sermon Topic"
+#~ msgstr "Tópico do Sermão"
+
+#~ msgctxt "taxonomy general name"
+#~ msgid "Sermon Books"
+#~ msgstr "Livros do Sermão"
+
+#~ msgctxt "taxonomy singular name"
+#~ msgid "Sermon Book"
+#~ msgstr "Livro do Sermão"
+
+#~ msgctxt "taxonomy general name"
+#~ msgid "Sermon Series"
+#~ msgstr "Séries dos Sermões"
+
+#~ msgctxt "taxonomy singular name"
+#~ msgid "Sermon Series"
+#~ msgstr "Série do Sermão"
+
+#~ msgctxt "taxonomy general name"
+#~ msgid "Sermon Speakers"
+#~ msgstr "Pregadores dos Sermões"
+
+#~ msgctxt "taxonomy singular name"
+#~ msgid "Sermon Speaker"
+#~ msgstr "Pregador do Sermão"
+
+#~ msgctxt "taxonomy general name"
+#~ msgid "Sermon Tags"
+#~ msgstr "Tags dos Sermões"
+
+#~ msgctxt "taxonomy singular name"
+#~ msgid "Sermon Tag"
+#~ msgstr "Tag do Sermão"
 
 #~ msgid ""
 #~ "You can provide a building name, room number or other location name to "
