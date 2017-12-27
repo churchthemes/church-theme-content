@@ -497,7 +497,7 @@ function ctc_settings_config() {
 						'custom_sanitize' => '', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
 						'pro'             => true, // field input element disabled when Pro not active.
-						'unsupported'     => '', // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'     => ! $events_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// SEO Structured Data.
@@ -646,7 +646,7 @@ function ctc_settings_config() {
 					// SEO Structured Data.
 					'people_seo' => array_merge( $seo_field, array(
 						'checkbox_label' => __( 'Improve SEO for People <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
-						'unsupported' => ! $locations_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported' => ! $people_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Person URL Base (Slug).
@@ -660,7 +660,7 @@ function ctc_settings_config() {
 						'attributes'      => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $person_url_slug_default, // show the standard value if they leave blank.
 						) ),
-						'unsupported'    => ! $locations_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'    => ! $people_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Group URL Base (Slug).
@@ -680,7 +680,7 @@ function ctc_settings_config() {
 					// Hide in Admin Menu.
 					'people_admin_hide' => array_merge( $hide_admin_field, array(
 						'checkbox_label' => __( 'Hide People in Admin Menu', 'church-theme-content' ), // show text after checkbox.
-						'unsupported'   => ! $locations_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'   => ! $people_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 				),
