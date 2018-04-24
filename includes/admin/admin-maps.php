@@ -148,8 +148,8 @@ function ctc_gmaps_api_key_show_notice() {
 	// Get current screen
 	$screen = get_current_screen();
 
-	// Only on Add/Edit Location or Event
-	if ( ! ( $screen->base == 'post' && in_array( $screen->post_type, array( 'ctc_event', 'ctc_location' ) ) ) ) {
+	// Only on List or Add/Edit Location or Event
+	if ( ! ( in_array( $screen->base, array( 'edit', 'post' ) ) && in_array( $screen->post_type, array( 'ctc_event', 'ctc_location' ) ) ) ) {
 		$show = false;
 	}
 
@@ -158,8 +158,9 @@ function ctc_gmaps_api_key_show_notice() {
 		return;
 	}
 
-	// Only if latitude and longitude fields supported
-	if ( ! ctc_has_lat_lng_fields() ) {
+	// Only if latitude and longitude fields supported.
+	// Skip this test on list of events/locations, since ctc_has_lat_lng_fields() checks that screen is add/edit.
+	if ( 'edit' !== $screen->base && ! ctc_has_lat_lng_fields() ) {
 		return;
 	}
 
