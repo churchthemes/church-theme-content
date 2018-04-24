@@ -20,12 +20,13 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * Content for PHP update notice when CT Recurrence class needs it.
  *
- * This is shown in admin notice via ctc_recurrence_php_notice() and description
- * for recurrence field in Gutenberg since admin_notices does not work there.
+ * This is shown in admin notice via ctc_recurrence_php_notice().
  *
  * @since 1.9
  */
-function ctc_recurrence_php_notice_content() {
+function ctc_recurrence_php_note() {
+
+	$content = '';
 
 	// Instantiate class.
 	$ct_recurrence = new CT_Recurrence();
@@ -53,35 +54,21 @@ function ctc_recurrence_php_notice_content() {
 	// Show notice.
 	if ( $show ) {
 
-		// Build notice.
-		ob_start();
-		?>
-		<div id="ctc-recurrence-php-notice" class="notice notice-error is-dismissible">
-			<p>
-				<?php
-				printf(
-					wp_kses(
-						/* translators: %1$s is minimum required version of PHP, %2$s is URL with information on updating PHP. */
-						__( '<strong>Event recurrence is disabled.</strong> PHP %1$s or newer is required for recurrence to work. <a href="%2$s" target="_blank">Update PHP</a> to resolve.', 'church-theme-content' ),
-						array(
-							'strong' => array(),
-							'a' => array(
-								'href' => array(),
-								'target' => array(),
-							),
-						)
+		$content = sprintf(
+			wp_kses(
+				/* translators: %1$s is minimum required version of PHP, %2$s is URL with information on updating PHP. */
+				__( '<strong>Event recurrence is disabled.</strong> PHP %1$s or newer is required for recurrence to work. <a href="%2$s" target="_blank">Update PHP</a> to resolve.', 'church-theme-content' ),
+				array(
+					'strong' => array(),
+					'a' => array(
+						'href' => array(),
+						'target' => array(),
 					),
-					esc_html( $ct_recurrence->php_min_version ),
-					esc_url( ctc_ctcom_url( 'update-php', array( 'utm_content' => 'recurrence' ) ) )
-				);
-				?>
-			</p>
-		</div>
-
-		<?php
-		// Get content.
-		$content = ob_get_contents();
-		ob_end_clean();
+				)
+			),
+			esc_html( $ct_recurrence->php_min_version ),
+			esc_url( ctc_ctcom_url( 'update-php', array( 'utm_content' => 'recurrence' ) ) )
+		);
 
 	}
 
@@ -101,11 +88,19 @@ function ctc_recurrence_php_notice_content() {
 function ctc_recurrence_php_notice() {
 
 	// Get notice if it is to be shown.
-	$notice = ctc_recurrence_php_notice_content();
+	$notice = ctc_recurrence_php_note();
 
 	// Have notice.
 	if ( $notice ) {
-		echo $notice;
+
+		?>
+		<div id="ctc-recurrence-php-notice" class="notice notice-error is-dismissible">
+			<p>
+				<?php echo $notice; ?>
+			</p>
+		</div>
+		<?php
+
 	}
 
 }
