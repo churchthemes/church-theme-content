@@ -84,7 +84,7 @@ function ctc_ctcom_url( $path_key, $query_args = array() ) {
 	$paths = array(
 
 		// How to get a Google Maps API key.
-		'google-maps-api-key' => '/go/google-maps-api-key/' . $utm_base_query . '&utm_campaign=church-theme-content',
+		'google-maps-api-key' => '/go/google-maps-api-key/', // no utm, messes up redirect.
 
 		// Church Content product page.
 		'church-content'      => '/plugins/church-content/' . $utm_base_query . '&utm_campaign=church-theme-content',

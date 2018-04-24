@@ -591,7 +591,7 @@ function ctc_settings_config() {
 						'desc'            => sprintf(
 							/* translators: %1$s is URL to guide telling user how to get a Google Maps API Key */
 							__( 'An API Key for Google Maps is required if you want to show maps for locations or events. <a href="%1$s" target="_blank">Get an API Key</a>', 'church-theme-content' ),
-							esc_url( ctc_ctcom_url( 'google-maps-api-key', array( 'utm_content' => 'settings' ) ) ) // how to get API key.
+							esc_url( ctc_ctcom_url( 'google-maps-api-key' ) ) // how to get API key.
 						),
 						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
 						'checkbox_label'  => '', // show text after checkbox.
