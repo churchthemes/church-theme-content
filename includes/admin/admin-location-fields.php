@@ -38,6 +38,7 @@ function ctc_add_meta_box_location() {
 		'post_type'	=> 'ctc_location',
 		'context'	=> 'normal', // where the meta box appear: normal (left above standard meta boxes), advanced (left below standard boxes), side
 		'priority'	=> 'high', // high, core, default or low (see this: http://www.wproots.com/ultimate-guide-to-meta-boxes-in-wordpress/)
+		'block_editor_compatible' => true, // meta box works in Gutenberg editor.
 
 		// Fields
 		'fields' => array(
