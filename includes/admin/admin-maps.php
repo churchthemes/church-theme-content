@@ -350,20 +350,23 @@ function ctc_map_after_fields( $object ) {
 			<p class="description">
 
 				<?php
-				echo wp_kses(
-					sprintf(
+				printf(
+					wp_kses(
 						/* translators: %1$s is URL for plugin settings */
-						__( 'Set your <a href="%1$s" target="_blank">Google Maps API Key</a> to show a map preview here.', 'church-theme-content' ),
-						admin_url( 'options-general.php?page=' . CTC_DIR . '#locations' )
+						__( '<strong>Important:</strong> You must set your Google Maps API Key in <a href="%1$s" target="_blank">Church Content Settings</a> for maps to work.', 'church-theme-content' ),
+						array(
+							'strong' => array(),
+							'a' => array(
+								'href' => array(),
+								'target' => array(),
+							),
+						)
 					),
-					array(
-						'a' => array(
-							'href' => array(),
-							'target' => array(),
-						),
-					)
+					admin_url( 'options-general.php?page=' . CTC_DIR . '#locations' )
 				);
 				?>
+
+
 
 			</p>
 
