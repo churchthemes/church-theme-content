@@ -48,8 +48,8 @@ function ctc_title_placeholder( $placeholder ) {
 		 	// Gutenberg editor.
 			if ( $block_editor ) {
 				$placeholder = sprintf(
-					/* translators: %1$s is "Sermon" (singular) word, possibly changed by setting or translation. Always use %1$s and not "Sermon" */
-					__( '%s Title', 'church-theme-content' ),
+					/* translators: For title placeholder when adding new sermon with block editor (example result: "Sermon Title"). %1$s is "Sermon" (singular) word, possibly changed by settings or translation. Always use %1$s and not "Sermon". */
+					_x( '%1$s Title', 'sermon title placeholder', 'church-theme-content' ),
 					ctc_sermon_word_singular()
 				);
 			}
@@ -65,9 +65,9 @@ function ctc_title_placeholder( $placeholder ) {
 		 	// Gutenberg editor.
 			if ( $block_editor ) {
 				$placeholder = sprintf(
-					/* translators: %1$s is "Event" (singular) word, possibly changed by translation. Always use %1$s and not "Event" */
-					__( '%s Name', 'church-theme-content' ),
-					 ctc_post_type_label( 'ctc_event', 'singular' )
+					/* translators: For title placeholder when adding new event with block editor (example result: "Event Title"). %1$s is "Event" (singular) word, possibly changed by translation. Always use %1$s and not "Event". */
+					_x( '%1$s Name', 'event title placeholder', 'church-theme-content' ),
+					ctc_post_type_label( 'ctc_event', 'singular' )
 				);
 			}
 
@@ -86,9 +86,9 @@ function ctc_title_placeholder( $placeholder ) {
 		 	// Gutenberg editor.
 			if ( $block_editor ) {
 				$placeholder = sprintf(
-					/* translators: %1$s is "Location" (singular) word, possibly changed by translation. Always use %1$s and not "Location" */
-					__( '%s Name', 'church-theme-content' ),
-					 ctc_post_type_label( 'ctc_location', 'singular' )
+					/* translators: For title placeholder when adding new location with block editor (example result: "Location Name"). %1$s is "Location" (singular) word, possibly changed by translation. Always use %1$s and not "Location" */
+					_x( '%1$s Name', 'location title placeholder', 'church-theme-content' ),
+					ctc_post_type_label( 'ctc_location', 'singular' )
 				);
 			}
 
@@ -107,9 +107,9 @@ function ctc_title_placeholder( $placeholder ) {
 		 	// Gutenberg editor.
 			if ( $block_editor ) {
 				$placeholder = sprintf(
-					/* translators: %1$s is "Person" (singular) word, possibly changed by translation. Always use %1$s and not "Person" */
-					__( "%s's Name", 'church-theme-content' ),
-					 ctc_post_type_label( 'ctc_person', 'singular' )
+					/* translators: For title placeholder when adding new person with block editor (example result: "Person's Name"). %s is "Person" (singular) word, possibly changed by translation. Always use %s and not "Person" */
+					_x( "%s's Name", 'person title placeholder', 'church-theme-content' ),
+					ctc_post_type_label( 'ctc_person', 'singular' )
 				);
 			}
 
@@ -136,13 +136,71 @@ add_filter( 'enter_title_here', 'ctc_title_placeholder' );
  *
  * This generic form is more suitable for pages, sermons, events, etc.
  *
+ * Note: The filter this uses is for Gutenberg only.
+ *
  * @since 1.9
  * @param string $placeholder Default body placeholder
  * @return string Modified placeholder
  */
 function ctc_body_placeholder( $placeholder ) {
 
-	$placeholder = __( 'Add content', 'church-theme-content' );
+	// Get current screen.
+	$screen = get_current_screen();
+
+	// Switch post type possibilities.
+	switch ( $screen->post_type ) {
+
+		// Sermon.
+		case 'ctc_sermon':
+
+			$placeholder = sprintf(
+				/* translators: For content placeholder when adding new sermon with block editor (example result: "Enter sermon transcript or details here"). %1$s is "sermon" word (singular, lowercase), possibly changed by settings or translation. Always use %1$s and not "sermon". */
+				__( 'Enter %1$s transcript or details', 'church-theme-content' ),
+				strtolower( ctc_sermon_word_singular() )
+			);
+
+			break;
+
+
+		// Event.
+		case 'ctc_event':
+
+			$placeholder = sprintf(
+				/* translators: For content placeholder when adding new event with block editor (example result: "Describe the event"). %1$s is "event" word (singular, lowercase), possibly changed by translation. Always use %1$s and not "event". */
+				_x( 'Describe the %1$s', 'event body placeholder', 'church-theme-content' ),
+				strtolower( ctc_post_type_label( 'ctc_event', 'singular' ) )
+			);
+
+			break;
+
+		// Location.
+		case 'ctc_location':
+
+			$placeholder = sprintf(
+				/* translators: For content placeholder when adding new location with block editor (example result: "Describe the location"). %1$s is "location" word (singular, lowercase), possibly changed by translation. Always use %1$s and not "location". */
+				_x( 'Describe the %1$s', 'location body placeholder', 'church-theme-content' ),
+				strtolower( ctc_post_type_label( 'ctc_location', 'singular' ) )
+			);
+
+			break;
+
+		// Location.
+		case 'ctc_person':
+
+			/* translators: For content placeholder when adding new person with block editor. */
+			$placeholder = __( 'Write a biography', 'church-theme-content' );
+
+			break;
+
+		// Other post types (post, page).
+		default:
+
+			// "Add content" makes more sense than "Write your story" for any post type.
+			$placeholder = __( 'Add content', 'church-theme-content' );
+
+			break;
+
+	}
 
 	return $placeholder;
 
