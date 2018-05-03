@@ -18,56 +18,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**********************************
- * BLOCK EDITOR (GUTENBERG)
+ * PLACEHOLDERS
  **********************************/
 
 /**
- * Change "Add Title" in block editor.
- */
-function ctc_block_editor_title_placeholder( $placeholder ) {
-
-	$screen = get_current_screen();
-
-	if  ( 'ctc_person' === $screen->post_type ) {
-		$placeholder = esc_html__( 'Add Name', 'church-theme-content' );
-	}
-
-	return $placeholder;
-
-}
-
-add_filter( 'enter_title_here', 'ctc_editor_title_text' );
-
-/*
-		'titlePlaceholder'    => apply_filters( 'enter_title_here', __( 'Add title', 'gutenberg' ), $post ),
-  951: 		'bodyPlaceholder'     => apply_filters( 'write_your_story', __( 'Write your story', 'gutenberg' ),
-
-
-
-  Sermon Title
-
-
-  Person
-  - Add Name (not "Add Title")
-
-
-  "Add content"
-*/
-
-/**********************************
- * CLASSIC EDITOR
- **********************************/
-
-/**
- * Change "Add Title" to "Add Name" when adding a person in block editor.
+ * Change "Add Title" placeholder to make sense for various post types.
  *
- * Change "Enter title here" to "Enter name here" when adding person in classic editor.
- *
- * @since 0.9
+ * @since 1.9
  * @param string $title Default title placeholder
  * @return string Modified placeholder
  */
-function ctc_person_title_text( $title ) {
+function ctc_title_placeholder( $title ) {
 
 	$screen = get_current_screen();
 
@@ -86,11 +47,14 @@ function ctc_person_title_text( $title ) {
 
 	}
 
+	// Unchanged for other post types.
+
+	// Return.
 	return $title;
 
 }
 
-add_filter( 'enter_title_here', 'ctc_person_title_text' );
+add_filter( 'enter_title_here', 'ctc_title_placeholder' );
 
 /*******************************************
  * HELPERS
