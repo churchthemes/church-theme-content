@@ -42,6 +42,38 @@ function ctc_title_placeholder( $placeholder ) {
 	// Switch post type possibilities.
 	switch ( $screen->post_type ) {
 
+		// Page.
+		case 'page':
+
+		 	// Gutenberg editor.
+			if ( $block_editor ) {
+				$placeholder = sprintf(
+					/* translators: For title placeholder when adding new page with block editor (example result: "Page Title"). %1$s is "Page" (singular) word, possibly changed by translation. Always use %1$s and not "Page" */
+					_x( '%1$s Title', 'page title placeholder', 'church-theme-content' ),
+					ctc_post_type_label( 'page', 'singular' )
+				);
+			}
+
+			// Classic editor unchanged: "Enter title here".
+
+			break;
+
+		// Post.
+		case 'post':
+
+		 	// Gutenberg editor.
+			if ( $block_editor ) {
+				$placeholder = sprintf(
+					/* translators: For title placeholder when adding new post with block editor (example result: "Post Title"). %1$s is "Post" (singular) word, possibly changed by translation. Always use %1$s and not "Post" */
+					_x( '%1$s Title', 'post title placeholder', 'church-theme-content' ),
+					ctc_post_type_label( 'post', 'singular' )
+				);
+			}
+
+			// Classic editor unchanged: "Enter title here".
+
+			break;
+
 		// Sermon.
 		case 'ctc_sermon':
 
@@ -76,8 +108,6 @@ function ctc_title_placeholder( $placeholder ) {
 				$placeholder = $enter_name_here; // "event name" is more common than "event title".
 			}
 
-			// Classic editor unchanged.
-
 			break;
 
 		// Location.
@@ -96,8 +126,6 @@ function ctc_title_placeholder( $placeholder ) {
 			else {
 				$placeholder = $enter_name_here; // "location name" is more common than "location title".
 			}
-
-			// Classic editor unchanged.
 
 			break;
 
@@ -160,7 +188,6 @@ function ctc_body_placeholder( $placeholder ) {
 			);
 
 			break;
-
 
 		// Event.
 		case 'ctc_event':
