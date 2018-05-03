@@ -30,20 +30,95 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function ctc_title_placeholder( $placeholder ) {
 
+	// Get current screen.
 	$screen = get_current_screen();
 
-	// Person.
-	if  ( 'ctc_person' === $screen->post_type ) {
+	// Using Gutenberg?
+	$block_editor = ctc_is_block_editor();
 
-		// Block Editor.
-		if ( ctc_is_block_editor() ) {
-			$placeholder = __( 'Add Name', 'church-theme-content' );
-		}
+	// "Enter name here" string.
+	$enter_name_here = __( 'Enter name here', 'church-theme-content' );
 
-		// Classic Editor
-		else {
-			$placeholder = __( 'Enter name here', 'church-theme-content' );
-		}
+	// Switch post type possibilities.
+	switch ( $screen->post_type ) {
+
+		// Sermon.
+		case 'ctc_sermon':
+
+		 	// Gutenberg editor.
+			if ( $block_editor ) {
+				$placeholder = sprintf(
+					/* translators: %1$s is "Sermon" (singular) word, possibly changed by setting or translation. Always use %1$s and not "Sermon" */
+					__( '%s Title', 'church-theme-content' ),
+					ctc_sermon_word_singular()
+				);
+			}
+
+			// Classic editor unchanged: "Enter title here".
+
+			break;
+
+
+		// Event.
+		case 'ctc_event':
+
+		 	// Gutenberg editor.
+			if ( $block_editor ) {
+				$placeholder = sprintf(
+					/* translators: %1$s is "Event" (singular) word, possibly changed by translation. Always use %1$s and not "Event" */
+					__( '%s Name', 'church-theme-content' ),
+					 ctc_post_type_label( 'ctc_event', 'singular' )
+				);
+			}
+
+			// Classic editor.
+			else {
+				$placeholder = $enter_name_here; // "event name" is more common than "event title".
+			}
+
+			// Classic editor unchanged.
+
+			break;
+
+		// Location.
+		case 'ctc_location':
+
+		 	// Gutenberg editor.
+			if ( $block_editor ) {
+				$placeholder = sprintf(
+					/* translators: %1$s is "Location" (singular) word, possibly changed by translation. Always use %1$s and not "Location" */
+					__( '%s Name', 'church-theme-content' ),
+					 ctc_post_type_label( 'ctc_location', 'singular' )
+				);
+			}
+
+			// Classic editor.
+			else {
+				$placeholder = $enter_name_here; // "location name" is more common than "location title".
+			}
+
+			// Classic editor unchanged.
+
+			break;
+
+		// Person.
+		case 'ctc_person':
+
+		 	// Gutenberg editor.
+			if ( $block_editor ) {
+				$placeholder = sprintf(
+					/* translators: %1$s is "Person" (singular) word, possibly changed by translation. Always use %1$s and not "Person" */
+					__( "%s's Name", 'church-theme-content' ),
+					 ctc_post_type_label( 'ctc_person', 'singular' )
+				);
+			}
+
+			// Classic editor.
+			else {
+				$placeholder = $enter_name_here;
+			}
+
+			break;
 
 	}
 
