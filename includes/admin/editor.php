@@ -25,10 +25,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Change "Add Title" placeholder to make sense for various post types.
  *
  * @since 1.9
- * @param string $title Default title placeholder
+ * @param string $placeholder Default title placeholder
  * @return string Modified placeholder
  */
-function ctc_title_placeholder( $title ) {
+function ctc_title_placeholder( $placeholder ) {
 
 	$screen = get_current_screen();
 
@@ -37,12 +37,12 @@ function ctc_title_placeholder( $title ) {
 
 		// Block Editor.
 		if ( ctc_is_block_editor() ) {
-			$title = esc_html__( 'Add Name', 'church-theme-content' );
+			$placeholder = __( 'Add Name', 'church-theme-content' );
 		}
 
 		// Classic Editor
 		else {
-			$title = esc_html__( 'Enter name here', 'church-theme-content' );
+			$placeholder = __( 'Enter name here', 'church-theme-content' );
 		}
 
 	}
@@ -50,11 +50,30 @@ function ctc_title_placeholder( $title ) {
 	// Unchanged for other post types.
 
 	// Return.
-	return $title;
+	return $placeholder;
 
 }
 
 add_filter( 'enter_title_here', 'ctc_title_placeholder' );
+
+/**
+ * Change "Write your story" to "Add content" when adding a new post in block editor.
+ *
+ * This generic form is more suitable for pages, sermons, events, etc.
+ *
+ * @since 1.9
+ * @param string $placeholder Default body placeholder
+ * @return string Modified placeholder
+ */
+function ctc_body_placeholder( $placeholder ) {
+
+	$placeholder = __( 'Add content', 'church-theme-content' );
+
+	return $placeholder;
+
+}
+
+add_filter( 'write_your_story', 'ctc_body_placeholder' );
 
 /*******************************************
  * HELPERS
