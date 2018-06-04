@@ -197,6 +197,7 @@ class Church_Theme_Content {
 				CTC_INC_DIR . '/event-fields.php',
 				CTC_INC_DIR . '/helpers.php',
 				CTC_INC_DIR . '/mime-types.php',
+				CTC_INC_DIR . '/podcast.php',
 				CTC_INC_DIR . '/post-types.php',
 				CTC_INC_DIR . '/schedule.php',
 				CTC_INC_DIR . '/settings.php',

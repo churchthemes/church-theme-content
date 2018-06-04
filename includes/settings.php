@@ -181,7 +181,7 @@ function ctc_settings_config() {
 	$podcast_supported = $sermons_supported && $sermon_audio_supported ? true : false;
 
 	// Podcast feed URL.
-	$podcast_feed_url = 'https://feedurl';
+	$podcast_feed_url = ctc_podcast_feed_url();
 
 	// Podcast feed description.
 	$podcast_feed_desc = __( 'Submit the podcast feed URL to iTunes, Google Play, etc. Read the <a href="%1$s">Podcasting Guide</a> to learn how.', 'church-theme-content' );
