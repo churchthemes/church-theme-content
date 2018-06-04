@@ -8,14 +8,14 @@ jQuery( document ).ready( function( $ ) {
 	 * SERMONS
 	 **************************************/
 
-	// Open Podcasting section when "Podcasting Settings" link clicked in Sermons section.
-	$( '.ctps-field-podcasting_content a' ).click( function( e ) {
+	// Open Podcast section when "Podcast Settings" link clicked in Sermons section.
+	$( '.ctps-field-podcast_content a' ).click( function( e ) {
 
 		// Prevent regular click action.
 		e.preventDefault();
 
-		// Switch to Podcasting tab.
-		ctps_switch_section( 'podcasting' );
+		// Switch to Podcast tab.
+		ctps_switch_section( 'podcast' );
 
 	} );
 

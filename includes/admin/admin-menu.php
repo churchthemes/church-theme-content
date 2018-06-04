@@ -4,7 +4,7 @@
  *
  * @package    Church_Theme_Content
  * @subpackage Admin
- * @copyright  Copyright (c) 2013 - 2017, churchthemes.com
+ * @copyright  Copyright (c) 2013 - 2018, churchthemes.com
  * @link       https://github.com/churchthemes/church-theme-content
  * @license    GPLv2 or later
  * @since      0.9.3
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Add links to setting pages into custom post type menus
  *
- * For example, add "Settings" and "Podcasting" links to Sermons
+ * For example, add "Settings" and "Podcast" links to Sermons
  * linking to Church Content plugin settings tabs.
  *
  * @since 1.9
@@ -33,7 +33,7 @@ function ctc_add_settings_menu_links() {
 	global $submenu;
 
 	// Options page URI.
-	$rand = rand( 0, 9999999 ); // assists reload when already on settings page (e.g. Sermons > Settings then Sermons > Podcasting).
+	$rand = rand( 0, 9999999 ); // assists reload when already on settings page (e.g. Sermons > Settings then Sermons > Podcast).
 	$settings_page_uri = 'options-general.php?page=' . CTC_DIR . '&rand=' . $rand;
 
 	// Capability.
@@ -45,11 +45,11 @@ function ctc_add_settings_menu_links() {
 	// Sermons.
 	$key = 'edit.php?post_type=ctc_sermon';
 
-		// Podcasting.
+		// Podcast.
 		$submenu[ $key ][] = array(
-			_x( 'Podcasting', 'custom post type menu', 'church-theme-content' ),
+			_x( 'Podcast', 'custom post type menu', 'church-theme-content' ),
 			$capability,
-			admin_url( $settings_page_uri . '#podcasting' ),
+			admin_url( $settings_page_uri . '#podcast' ),
 		);
 
 		// Settings.

@@ -211,14 +211,14 @@ function ctc_add_meta_box_sermon_details() {
 add_action( 'admin_init', 'ctc_add_meta_box_sermon_details' );
 
 /**********************************
- * PODCASTING ENCLOSURE
+ * PODCAST ENCLOSURE
  **********************************/
 
 /**
- * Save enclosure for sermon podcasting
+ * Save enclosure for sermon podcast.
  *
  * When audio URL is provided, save its data to the 'enclosure' field.
- * WordPress automatically uses this data to make feeds useful for podcasting.
+ * WordPress automatically uses this data to make feeds useful for podcast.
  *
  * @since 0.9
  * @param int $post_id ID of post being saved

@@ -103,3 +103,10 @@ tr.ctps-field-sermon_tag_url_slug > * {
 	padding-top: 14px;
 }
 
+/*******************************************
+ * PODCAST
+ *******************************************/
+
+#ctc-settings-podcast-feed-buttons {
+	margin-top: 4px;
+}

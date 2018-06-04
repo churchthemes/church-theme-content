@@ -5,7 +5,7 @@
  * Setup and retrieve plugin settings. Also handles WordPress settings.
  *
  * @package    Church_Theme_Content
- * @copyright  Copyright (c) 2014 - 2017, churchthemes.com
+ * @copyright  Copyright (c) 2014 - 2018, churchthemes.com
  * @link       https://github.com/churchthemes/church-theme-content
  * @license    GPLv2 or later
  * @since      1.2
@@ -176,6 +176,20 @@ function ctc_settings_config() {
 	 * SETTINGS
 	 **********************************/
 
+	// Podcast feed URL.
+	$podcast_feed_url = 'https://feedurl';
+
+	// Podcast feed description.
+	$podcast_feed_desc = __( 'Submit the podcast feed URL to iTunes, Google Play, etc. Read the <a href="%1$s">Podcasting Guide</a> to learn how.', 'church-theme-content' );
+
+	// Podcast feed content.
+	$podcast_feed_content  = '<div id="ctc-settings-podcast-feed-url">' . $podcast_feed_url . '</div>';
+	$podcast_feed_content .= '<div id="ctc-settings-podcast-feed-buttons">';
+	$podcast_feed_content .= '	<a href="' . esc_url( $podcast_feed_url ) . '" class="button" target="_blank">' . __( 'View', 'podcast feed URL', 'church-theme-content' ) . '</a>';
+	$podcast_feed_content .= '	<a href="" class="button">' . __( 'Copy', 'podcast feed URL', 'church-theme-content' ) . '</a>';
+	$podcast_feed_content .= '	<a href="" class="button" target="_blank">' . __( 'Validate', 'podcast feed URL', 'church-theme-content' ) . '</a>';
+	$podcast_feed_content .= '</div>';
+
 	// Event recurrence content and description.
 	// Show different info depending on status of Church Content Pro or Custom Recurring Events plugin.
 	$event_recurrence_desc = __( 'Save time by setting events to repeat automatically (e.g. "Every month on last Sunday except December 25").', 'church-theme-content' );
@@ -287,9 +301,9 @@ function ctc_settings_config() {
 						'unsupported'    => ! $sermons_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
-					// Sermon Podcasting (Shortcut).
-					'podcasting_content' => array(
-						'name'             => _x( 'Sermon Podcasting', 'settings', 'church-theme-content' ),
+					// Sermon Podcast (Shortcut).
+					'podcast_content' => array(
+						'name'             => _x( 'Sermon Podcast', 'settings', 'church-theme-content' ),
 						'after_name'       => '', // append (Optional) or (Pro), etc.
 						'desc'             => '',
 						'type'             => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
@@ -300,7 +314,7 @@ function ctc_settings_config() {
 						'allow_html'       => false, // allow HTML to be used in the value.
 						'attributes'       => array(), // attr => value array (e.g. set min/max for number or range type).
 						'class'            => '', // classes to add to input.
-						'content'          => __( '<a href="#">Podcasting Settings</a>', 'church-theme-content' ), // custom content instead of input (HTML allowed).
+						'content'          => __( '<a href="#">Podcast Settings</a>', 'church-theme-content' ), // custom content instead of input (HTML allowed).
 						'custom_sanitize'  => '', // function to do additional sanitization.
 						'custom_content'   => '', // function for custom display of field input.
 						'pro'              => true, // field input element disabled when Pro not active.
@@ -452,17 +466,37 @@ function ctc_settings_config() {
 
 			),
 
-			// Podcasting.
-			'podcasting' => array(
+			// Podcast.
+			'podcast' => array(
 
 				// Title.
-				'title' => _x( 'Podcasting', 'settings section title', 'church-theme-content' ),
+				'title' => _x( 'Podcast', 'settings section title', 'church-theme-content' ),
 
 				// Description.
 				'desc' => '',
 
 				// Fields (Settings).
 				'fields' => array(
+
+					// Recurring Events.
+					'podcast_feed_content' => array(
+						'name'            => _x( 'Feed URL', 'settings', 'church-theme-content' ),
+						'after_name'      => '', // append (Optional) or (Pro), etc.
+						'desc'            => $podcast_feed_desc,
+						'type'            => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'checkbox_label'  => '', // show text after checkbox.
+						'options'         => array(), // array of keys/values for radio or select.
+						'default'         => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'        => false, // if user empties value, force default to be saved instead.
+						'allow_html'      => false, // allow HTML to be used in the value.
+						'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
+						'class'           => '', // classes to add to input.
+						'content'         => $podcast_feed_content, // custom content instead of input (HTML allowed).
+						'custom_sanitize' => '', // function to do additional sanitization.
+						'custom_content'  => '', // function for custom display of field input.
+						'pro'             => true, // field input element disabled when Pro not active.
+						'unsupported'     => ! $sermons_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+					),
 
 				),
 
