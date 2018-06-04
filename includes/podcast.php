@@ -35,6 +35,30 @@ function ctc_podcast_feed_url() {
 
 }
 
+/**
+ * Podcast content supported?
+ *
+ * Determine if content necessary for podcast is supported by theme.
+ * Sermon feature and audio field must be supported.
+ *
+ * Note that this does NOT consider whether or not Pro plugin is active or not.
+ *
+ * @since 1.9
+ * @return bool True if supported.
+ */
+function ctc_podcast_content_supported() {
+
+	$supported = false;
+
+	// Audio field and thus sermon feature supported?
+	if ( ctc_field_supported( 'sermons', '_ctc_sermon_audio' ) ) {
+		$supported = true;
+	}
+
+	return apply_filters( 'ctc_podcast_content_supported', $supported );
+
+}
+
 /*********************************************
  * PODCAST FEED
  *********************************************/

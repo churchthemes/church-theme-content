@@ -176,11 +176,8 @@ function ctc_settings_config() {
 	 * SETTINGS
 	 **********************************/
 
-	// Podcasting supported when sermons supported and audio URL field supported.
-	$sermon_audio_supported = ctc_field_supported( 'sermons', '_ctc_sermon_audio' );
-	$podcast_supported = $sermons_supported && $sermon_audio_supported ? true : false;
-
-	// Podcast feed URL.
+	// Podcast data.
+	$podcast_supported = ctc_podcast_content_supported();
 	$podcast_feed_url = ctc_podcast_feed_url();
 
 	// Podcast feed description.
@@ -188,7 +185,7 @@ function ctc_settings_config() {
 
 	// Podcast feed content.
 	$podcast_feed_content  = '<div id="ctc-settings-podcast-feed-url">' . $podcast_feed_url . '</div>';
-	if ( $sermon_audio_supported ) {
+	if ( $podcast_supported && ctc_pro_is_active() ) {
 		$podcast_feed_content .= '<div id="ctc-settings-podcast-feed-buttons">';
 		$podcast_feed_content .= '	<a href="' . esc_url( $podcast_feed_url ) . '" class="button" target="_blank">' . __( 'View', 'podcast feed URL', 'church-theme-content' ) . '</a>';
 		$podcast_feed_content .= '	<a href="" class="button">' . __( 'Copy', 'podcast feed URL', 'church-theme-content' ) . '</a>';
