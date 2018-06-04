@@ -176,6 +176,10 @@ function ctc_settings_config() {
 	 * SETTINGS
 	 **********************************/
 
+	// Podcasting supported when sermons supported and audio URL field supported.
+	$sermon_audio_supported = ctc_field_supported( 'sermons', '_ctc_sermon_audio' );
+	$podcast_supported = $sermons_supported && $sermon_audio_supported ? true : false;
+
 	// Podcast feed URL.
 	$podcast_feed_url = 'https://feedurl';
 
@@ -184,11 +188,13 @@ function ctc_settings_config() {
 
 	// Podcast feed content.
 	$podcast_feed_content  = '<div id="ctc-settings-podcast-feed-url">' . $podcast_feed_url . '</div>';
-	$podcast_feed_content .= '<div id="ctc-settings-podcast-feed-buttons">';
-	$podcast_feed_content .= '	<a href="' . esc_url( $podcast_feed_url ) . '" class="button" target="_blank">' . __( 'View', 'podcast feed URL', 'church-theme-content' ) . '</a>';
-	$podcast_feed_content .= '	<a href="" class="button">' . __( 'Copy', 'podcast feed URL', 'church-theme-content' ) . '</a>';
-	$podcast_feed_content .= '	<a href="" class="button" target="_blank">' . __( 'Validate', 'podcast feed URL', 'church-theme-content' ) . '</a>';
-	$podcast_feed_content .= '</div>';
+	if ( $sermon_audio_supported ) {
+		$podcast_feed_content .= '<div id="ctc-settings-podcast-feed-buttons">';
+		$podcast_feed_content .= '	<a href="' . esc_url( $podcast_feed_url ) . '" class="button" target="_blank">' . __( 'View', 'podcast feed URL', 'church-theme-content' ) . '</a>';
+		$podcast_feed_content .= '	<a href="" class="button">' . __( 'Copy', 'podcast feed URL', 'church-theme-content' ) . '</a>';
+		$podcast_feed_content .= '	<a href="" class="button" target="_blank">' . __( 'Validate', 'podcast feed URL', 'church-theme-content' ) . '</a>';
+		$podcast_feed_content .= '</div>';
+	}
 
 	// Event recurrence content and description.
 	// Show different info depending on status of Church Content Pro or Custom Recurring Events plugin.
@@ -495,7 +501,7 @@ function ctc_settings_config() {
 						'custom_sanitize' => '', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
 						'pro'             => true, // field input element disabled when Pro not active.
-						'unsupported'     => ! $sermons_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 				),
