@@ -184,13 +184,26 @@ function ctc_settings_config() {
 	$podcast_feed_desc = __( 'Submit the podcast feed URL to iTunes, Google Play, etc. Read the <a href="%1$s">Podcasting Guide</a> to learn how.', 'church-theme-content' );
 
 	// Podcast feed content.
-	$podcast_feed_content  = '<div id="ctc-settings-podcast-feed-url">' . $podcast_feed_url . '</div>';
-	if ( $podcast_supported && ctc_pro_is_active() ) {
-		$podcast_feed_content .= '<div id="ctc-settings-podcast-feed-buttons">';
-		$podcast_feed_content .= '	<a href="' . esc_url( $podcast_feed_url ) . '" class="button" target="_blank">' . __( 'View', 'podcast feed URL', 'church-theme-content' ) . '</a>';
-		$podcast_feed_content .= '	<a href="" class="button">' . __( 'Copy', 'podcast feed URL', 'church-theme-content' ) . '</a>';
-		$podcast_feed_content .= '	<a href="" class="button" target="_blank">' . __( 'Validate', 'podcast feed URL', 'church-theme-content' ) . '</a>';
-		$podcast_feed_content .= '</div>';
+	if ( ctc_pro_is_active() ) {
+
+		$podcast_feed_content  = '<div id="ctc-settings-podcast-feed-url">' . $podcast_feed_url . '</div>';
+
+		if ( $podcast_supported && ctc_pro_is_active() ) {
+			$podcast_feed_content .= '<div id="ctc-settings-podcast-feed-buttons">';
+			$podcast_feed_content .= '	<a href="' . esc_url( $podcast_feed_url ) . '" class="button" target="_blank">' . __( 'View', 'podcast feed URL', 'church-theme-content' ) . '</a>';
+			$podcast_feed_content .= '	<a href="" class="button">' . __( 'Copy', 'podcast feed URL', 'church-theme-content' ) . '</a>';
+			$podcast_feed_content .= '	<a href="" class="button" target="_blank">' . __( 'Validate', 'podcast feed URL', 'church-theme-content' ) . '</a>';
+			$podcast_feed_content .= '</div>';
+		}
+
+	} else {
+
+		$podcast_feed_content = sprintf(
+			/* translators: %1$s is URL for Church Content Pro info */
+			__( 'Install <a href="%1$s" target="_blank">Church Content Pro</a> for Sermon Podcasting', 'church-theme-content' ),
+			esc_url( ctc_ctcom_url( 'church-content-pro', array( 'utm_content' => 'settings' ) ) )
+		);
+
 	}
 
 	// Event recurrence content and description.
