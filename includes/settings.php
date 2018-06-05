@@ -205,7 +205,7 @@ function ctc_settings_config() {
 	$podcast_feed_content .= '	<span id="ctc-podcast-url-copied">' . __( 'Copied to Clipboard', 'church-theme-content' ) . '</span>';
 	$podcast_feed_content .= '</div>';
 	$podcast_feed_content .= '<div id="ctc-settings-podcast-feed-buttons">';
-	$podcast_feed_content .= '	<a href="#" id="ctc-copy-podcast-url-button" class="button ' . esc_attr( $podcast_button_classes ) . '" data-clipboard-text="' . esc_attr( $podcast_feed_url ) . '">' . _x( 'Copy URL', 'podcast feed URL', 'church-theme-content' ) . '</a>';
+	$podcast_feed_content .= '	<a href="#" id="ctc-copy-podcast-url-button" class="button ' . esc_attr( $podcast_button_classes ) . '" data-clipboard-text="' . esc_attr( $podcast_feed_url ) . '">' . _x( 'Copy', 'podcast feed URL', 'church-theme-content' ) . '</a>';
 	$podcast_feed_content .= '	<a href="' . esc_url( $itunes_submit_url ) . '" class="button ' . esc_attr( $podcast_button_classes ) . '" target="_blank">' . __( 'Submit to iTunes', 'church-theme-content' ) . '</a>';
 	$podcast_feed_content .= '	<a href="' . esc_url( $google_submit_url ) . '" class="button ' . esc_attr( $podcast_button_classes ) . '" target="_blank">' . __( 'Submit to Google Play', 'church-theme-content' ) . '</a>';
 	$podcast_feed_content .= '</div>';
