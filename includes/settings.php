@@ -178,19 +178,24 @@ function ctc_settings_config() {
 
 	// Podcast data.
 	$podcast_supported = ctc_podcast_content_supported();
-	$podcast_feed_url = ctc_podcast_feed_url();
 
 	// Podcast feed content.
 	if ( ctc_pro_is_active() ) {
 
-		// Podcast feed URL.
+		// URLs.
+		$podcast_feed_url = ctc_podcast_feed_url();
+		$itunes_submit_url = 'https://podcastsconnect.apple.com/my-podcasts/new-feed?submitfeed=' . urlencode( $podcast_feed_url );
+		$google_submit_url = 'https://play.google.com/music/podcasts/publish';
+
+		// Show URL.
 		$podcast_feed_content  = '<div id="ctc-settings-podcast-feed-url"><a href="' . esc_url( $podcast_feed_url ) . '" target="_blank">' . esc_html( $podcast_feed_url ) . '</div>';
 
-		// Podcasting supported so show buttons.
+		// Show buttons when podcasting supported.
 		if ( $podcast_supported && ctc_pro_is_active() ) {
 			$podcast_feed_content .= '<div id="ctc-settings-podcast-feed-buttons">';
-			$podcast_feed_content .= '	<a href="" class="button">' . __( 'Copy', 'podcast feed URL', 'church-theme-content' ) . '</a>';
-			$podcast_feed_content .= '	<a href="" class="button" target="_blank">' . __( 'Validate', 'podcast feed URL', 'church-theme-content' ) . '</a>';
+			$podcast_feed_content .= '	<a href="" class="button">' . _x( 'Copy URL', 'podcast feed URL', 'church-theme-content' ) . '</a>';
+			$podcast_feed_content .= '	<a href="' . esc_url( $itunes_submit_url ) . '" class="button" target="_blank">' . __( 'Submit to iTunes', 'church-theme-content' ) . '</a>';
+			$podcast_feed_content .= '	<a href="' . esc_url( $google_submit_url ) . '" class="button" target="_blank">' . __( 'Submit to Google Play', 'church-theme-content' ) . '</a>';
 			$podcast_feed_content .= '</div>';
 		}
 
