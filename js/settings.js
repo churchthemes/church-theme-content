@@ -10,7 +10,10 @@ jQuery( document ).ready( function( $ ) {
 
 	// Show notice when user engages field requiring Pro while Pro is inactive.
 	// The Pro fields have readonly attribute so cannot be changed, but will be saved.
-	$( '.ctc-pro-setting-inactive' ).focus( function( e ) {
+	$( '.ctc-pro-setting-inactive' ).on( 'focus, click', function( e ) {
+
+		// Prevent clicks on links from having effect.
+		e.preventDefault();
 
 		// Remove previous instance of message before showing new.
 		$( '.ctc-pro-setting-inactive-message-inline' ).remove();
@@ -21,11 +24,16 @@ jQuery( document ).ready( function( $ ) {
 		// Get message from section description.
 		var $message = $( '.ctc-pro-setting-inactive-message:visible' ).html();
 
-		// Copy message below field.
-		$field_container.append( '<span class="ctc-pro-setting-inactive-message-inline">' + $message + '</span>' );
+		// Have message.
+		if ( $message ) {
 
-		// Fade it in.
-		$( '.ctc-pro-setting-inactive-message-inline' ).hide().fadeIn( 'fast' );
+			// Copy message below field.
+			$field_container.append( '<span class="ctc-pro-setting-inactive-message-inline">' + $message + '</span>' );
+
+			// Fade it in.
+			$( '.ctc-pro-setting-inactive-message-inline' ).hide().fadeIn( 'fast' );
+
+		}
 
 	} );
 
@@ -77,6 +85,11 @@ jQuery( document ).ready( function( $ ) {
 		$( '#ctc-copy-podcast-url-button' ).on( 'click', function( e ) {
 			e.preventDefault();
 		} );
+
+	// Prevent clicks on disabled podcast feed URL buttons.
+	$( '#ctc-settings-podcast-feed-buttons a.button-disabled' ).on( 'click', function( e ) {
+		e.preventDefault();
+	} );
 
 
 } );

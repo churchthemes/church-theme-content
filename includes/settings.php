@@ -34,6 +34,9 @@ function ctc_settings_config() {
 	 * SHARED
  	 **********************************/
 
+	// Pro plugin is active.
+	$pro_is_active = ctc_pro_is_active();
+
 	// Default sermon post type wording and slug.
 	// We get this from post type registration before the values are filtered.
 	$sermon_cpt_args_unfiltered = ctc_post_type_sermon_args( 'unfiltered' );
@@ -178,47 +181,39 @@ function ctc_settings_config() {
 
 	// Podcast data.
 	$podcast_supported = ctc_podcast_content_supported();
+	$podcast_feed_url = ctc_podcast_feed_url();
+	$itunes_submit_url = 'https://podcastsconnect.apple.com/my-podcasts/new-feed?submitfeed=' . urlencode( $podcast_feed_url );
+	$google_submit_url = 'https://play.google.com/music/podcasts/publish';
 
-	// Podcast feed content.
-	if ( ctc_pro_is_active() ) {
-
-		// URLs.
-		$podcast_feed_url = ctc_podcast_feed_url();
-		$itunes_submit_url = 'https://podcastsconnect.apple.com/my-podcasts/new-feed?submitfeed=' . urlencode( $podcast_feed_url );
-		$google_submit_url = 'https://play.google.com/music/podcasts/publish';
-
-		// Show URL.
-		$podcast_feed_content  = '<div id="ctc-settings-podcast-feed-url">';
-		$podcast_feed_content .= '	<a href="' . esc_url( $podcast_feed_url ) . '" target="_blank" id="ctc-settings-podcast-feed-link">' . esc_html( $podcast_feed_url ) . '</a>';
-		$podcast_feed_content .= '	<span id="ctc-podcast-url-copied">' . __( 'Copied to Clipboard', 'church-theme-content' ) . '</span>';
-		$podcast_feed_content .= '</div>';
-
-		// Show buttons when podcasting supported.
-		if ( $podcast_supported && ctc_pro_is_active() ) {
-
-			$podcast_feed_content .= '<div id="ctc-settings-podcast-feed-buttons">';
-			$podcast_feed_content .= '	<a href="#" id="ctc-copy-podcast-url-button" class="button" data-clipboard-text="' . esc_attr( $podcast_feed_url ) . '">' . _x( 'Copy URL', 'podcast feed URL', 'church-theme-content' ) . '</a>';
-			$podcast_feed_content .= '	<a href="' . esc_url( $itunes_submit_url ) . '" class="button" target="_blank">' . __( 'Submit to iTunes', 'church-theme-content' ) . '</a>';
-			$podcast_feed_content .= '	<a href="' . esc_url( $google_submit_url ) . '" class="button" target="_blank">' . __( 'Submit to Google Play', 'church-theme-content' ) . '</a>';
-			$podcast_feed_content .= '</div>';
-
-		}
-
-	} else {
-
-		// Pro not active, tell to install.
-		$podcast_feed_content = sprintf(
-			/* translators: %1$s is URL for Church Content Pro info */
-			__( 'Install <a href="%1$s" target="_blank">Church Content Pro</a> for Sermon Podcasting', 'church-theme-content' ),
-			esc_url( ctc_ctcom_url( 'church-content-pro', array( 'utm_content' => 'settings' ) ) )
-		);
-
+	// Podcast Feed URL link.
+	$podcast_feed_link = '<a href="' . esc_url( $podcast_feed_url ) . '" target="_blank" id="ctc-settings-podcast-feed-link">' . esc_html( $podcast_feed_url ) . '</a>';
+	if ( ! $pro_is_active || ! $podcast_supported ) { // linked only if Pro active and theme supports sermon audio.
+		$podcast_feed_link = strip_tags( $podcast_feed_link );
 	}
+
+	// Podcast Feed URL button classes.
+	$podcast_button_classes = 'button';
+	if ( ! $pro_is_active ) {
+		$podcast_button_classes = ' ctc-pro-setting-inactive button-disabled';
+	} elseif ( ! $podcast_supported ) {
+		$podcast_button_classes = ' button-disabled';
+	}
+
+	// Podcast Feed URL content.
+	$podcast_feed_content  = '<div id="ctc-settings-podcast-feed-url">';
+	$podcast_feed_content .= '	' . $podcast_feed_link;
+	$podcast_feed_content .= '	<span id="ctc-podcast-url-copied">' . __( 'Copied to Clipboard', 'church-theme-content' ) . '</span>';
+	$podcast_feed_content .= '</div>';
+	$podcast_feed_content .= '<div id="ctc-settings-podcast-feed-buttons">';
+	$podcast_feed_content .= '	<a href="#" id="ctc-copy-podcast-url-button" class="button ' . esc_attr( $podcast_button_classes ) . '" data-clipboard-text="' . esc_attr( $podcast_feed_url ) . '">' . _x( 'Copy URL', 'podcast feed URL', 'church-theme-content' ) . '</a>';
+	$podcast_feed_content .= '	<a href="' . esc_url( $itunes_submit_url ) . '" class="button ' . esc_attr( $podcast_button_classes ) . '" target="_blank">' . __( 'Submit to iTunes', 'church-theme-content' ) . '</a>';
+	$podcast_feed_content .= '	<a href="' . esc_url( $google_submit_url ) . '" class="button ' . esc_attr( $podcast_button_classes ) . '" target="_blank">' . __( 'Submit to Google Play', 'church-theme-content' ) . '</a>';
+	$podcast_feed_content .= '</div>';
 
 	// Event recurrence content and description.
 	// Show different info depending on status of Church Content Pro or Custom Recurring Events plugin.
 	$event_recurrence_desc = __( 'Save time by setting events to repeat automatically (e.g. "Every month on last Sunday except December 25").', 'church-theme-content' );
-	if ( ctc_pro_is_active() ) { // Pro plugin active.
+	if ( $pro_is_active ) { // Pro plugin active.
 
 		$event_recurrence_content = _x( 'Enabled by <b>Church Content Pro</b> <span class="ctps-light ctps-italic">(Always On)</span>', 'recurrence setting', 'church-theme-content' );
 
@@ -525,6 +520,29 @@ function ctc_settings_config() {
 						'custom_content'  => '', // function for custom display of field input.
 						'pro'             => true, // field input element disabled when Pro not active.
 						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+					),
+
+					// Title
+					'podcast_title' => array(
+						'name'            => __( 'Title', 'church-theme-content' ),
+						'after_name'      => '', // append (Optional) or (Pro), etc.
+						'desc'            => '',
+						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'checkbox_label'  => '', // show text after checkbox.
+						'options'         => array(), // array of keys/values for radio or select.
+						'default'         => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'        => false, // if user empties value, force default to be saved instead.
+						'allow_html'      => false, // allow HTML to be used in the value.
+						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+							'placeholder' => $sermon_word_singular_default, // show the standard value if they leave blank.
+							'maxlength'   => '30',
+						),
+						'class'           => 'ctps-width-200', // classes to add to input.
+						'content'         => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize' => '', // function to do additional sanitization.
+						'custom_content'  => '', // function for custom display of field input.
+						'pro'             => true, // field input element disabled when Pro not active.
+						'unsupported'    => ! $sermons_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 				),
