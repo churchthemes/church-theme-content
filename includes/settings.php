@@ -498,7 +498,7 @@ function ctc_settings_config() {
 				// Fields (Settings).
 				'fields' => array(
 
-					// Recurring Events.
+					// Feed URL.
 					'podcast_feed_content' => array(
 						'name'            => _x( 'Feed URL', 'settings', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
@@ -522,11 +522,11 @@ function ctc_settings_config() {
 						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
-					// Title
+					// Title.
 					'podcast_title' => array(
 						'name'            => __( 'Title', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => '',
+						'desc'            => __( 'The title of your sermon podcast. Example: "Grace Church Sermons" or "Faith Church Podcast".', 'church-theme-content' ),
 						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'options'         => array(), // array of keys/values for radio or select.
@@ -534,15 +534,15 @@ function ctc_settings_config() {
 						'no_empty'        => false, // if user empties value, force default to be saved instead.
 						'allow_html'      => false, // allow HTML to be used in the value.
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
-							'placeholder' => $sermon_word_singular_default, // show the standard value if they leave blank.
-							'maxlength'   => '30',
+							'placeholder' => ctc_podcast_title_default(), // show the standard value if they leave blank.
+							'maxlength'   => '60',
 						),
-						'class'           => 'ctps-width-200', // classes to add to input.
+						'class'           => '', // classes to add to input.
 						'content'         => '', // custom content instead of input (HTML allowed).
 						'custom_sanitize' => '', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
 						'pro'             => true, // field input element disabled when Pro not active.
-						'unsupported'    => ! $sermons_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'    => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 				),
