@@ -5,21 +5,6 @@
 jQuery( document ).ready( function( $ ) {
 
 	/**************************************
-	 * SERMONS
-	 **************************************/
-
-	// Open Podcast section when "Podcast Settings" link clicked in Sermons section.
-	$( '.ctps-field-podcast_content a' ).click( function( e ) {
-
-		// Prevent regular click action.
-		e.preventDefault();
-
-		// Switch to Podcast tab.
-		ctps_switch_section( 'podcast' );
-
-	} );
-
-	/**************************************
 	 * PRO SETTINGS
 	 **************************************/
 
@@ -44,11 +29,54 @@ jQuery( document ).ready( function( $ ) {
 
 	} );
 
-	// Prevent checkbox changes on inactive fields (due to missin theme support or Pro being required).
+	// Prevent checkbox changes on inactive fields (due to missing theme support or Pro being required).
 	// readonly attribute does not stop changes to checkbox states.
 	$( 'input[type=checkbox].ctc-setting-readonly' ).click( function( e ) {
 		return false;
 	} );
+
+	/**************************************
+	 * PODCAST SETTINGS
+	 **************************************/
+
+	// Open Podcast section when "Podcast Settings" link clicked in Sermons section.
+	$( '.ctps-field-podcast_content a' ).click( function( e ) {
+
+		// Prevent regular click action.
+		e.preventDefault();
+
+		// Switch to Podcast tab.
+		ctps_switch_section( 'podcast' );
+
+	} );
+
+	// Copy Feed URL to clipboard.
+	var clipboard = new ClipboardJS( '#ctc-copy-podcast-url-button', {
+
+		// Get URL.
+		text: function( trigger ) {
+			return $( '#ctc-settings-podcast-feed-link' ).attr( 'href' );
+		}
+
+	} ).on( 'success', function( e ) {
+
+		// Show message.
+	    $( '#ctc-podcast-url-copied' ).fadeIn( 'fast' );
+
+	    // Hide message.
+	    setTimeout( function() {
+	    	$( '#ctc-podcast-url-copied' ).fadeOut( 'fast' );
+	    }, 3000 );
+
+		// Stop click.
+		return false;
+
+	} );
+
+		// Stop click to # on Copy button.
+		$( '#ctc-copy-podcast-url-button' ).on( 'click', function( e ) {
+			e.preventDefault();
+		} );
 
 
 } );

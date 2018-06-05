@@ -108,5 +108,16 @@ tr.ctps-field-sermon_tag_url_slug > * {
  *******************************************/
 
 #ctc-settings-podcast-feed-buttons {
-	margin-top: 4px;
+	margin-top: 6px;
+}
+
+#ctc-settings-podcast-feed-link {
+	padding-right: 4px;
+}
+
+#ctc-podcast-url-copied {
+	display: none;
+	font-size: 0.9em;
+	color: #666;
+	white-space: nowrap;
 }
