@@ -110,6 +110,9 @@ function ctc_ctcom_url( $path_key, $query_args = array() ) {
 		'sermon-audio-sites'  => '/go/ctc-sermon-audio-sites/', // external.
 		'sermon-audio-help'   => '/go/ctc-sermon-audio-help/' . $utm_base_query . '&utm_campaign=church-theme-content&utm_content=sermon',
 
+		// Podcasting guide.
+		'podcast-guide'  => '/go/podcast-guide/' . $utm_base_query . '&utm_campaign=church-theme-content',
+
 	);
 
 	// Make URL.

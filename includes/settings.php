@@ -180,14 +180,13 @@ function ctc_settings_config() {
 	$podcast_supported = ctc_podcast_content_supported();
 	$podcast_feed_url = ctc_podcast_feed_url();
 
-	// Podcast feed description.
-	$podcast_feed_desc = __( 'Submit the podcast feed URL to iTunes, Google Play, etc. Read the <a href="%1$s">Podcasting Guide</a> to learn how.', 'church-theme-content' );
-
 	// Podcast feed content.
 	if ( ctc_pro_is_active() ) {
 
+		// Podcast feed URL.
 		$podcast_feed_content  = '<div id="ctc-settings-podcast-feed-url">' . $podcast_feed_url . '</div>';
 
+		// Podcasting supported so show buttons.
 		if ( $podcast_supported && ctc_pro_is_active() ) {
 			$podcast_feed_content .= '<div id="ctc-settings-podcast-feed-buttons">';
 			$podcast_feed_content .= '	<a href="' . esc_url( $podcast_feed_url ) . '" class="button" target="_blank">' . __( 'View', 'podcast feed URL', 'church-theme-content' ) . '</a>';
@@ -198,6 +197,7 @@ function ctc_settings_config() {
 
 	} else {
 
+		// Pro not active, tell to install.
 		$podcast_feed_content = sprintf(
 			/* translators: %1$s is URL for Church Content Pro info */
 			__( 'Install <a href="%1$s" target="_blank">Church Content Pro</a> for Sermon Podcasting', 'church-theme-content' ),
@@ -498,7 +498,11 @@ function ctc_settings_config() {
 					'podcast_feed_content' => array(
 						'name'            => _x( 'Feed URL', 'settings', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => $podcast_feed_desc,
+						'desc'            => sprintf(
+							/* translators: %1$s is URL to guide about sermon podcasting. */
+							__( 'Submit the podcast feed URL to iTunes, Google Play, etc. Read the <a href="%1$s" target="_blank">Podcasting Guide</a> to learn how.', 'church-theme-content' ),
+							esc_url( ctc_ctcom_url( 'podcast-guide', array( 'utm_content' => 'settings' ) ) )
+						),
 						'type'            => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'options'         => array(), // array of keys/values for radio or select.
