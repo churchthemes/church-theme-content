@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /*********************************************
- * PODCAST SETTINGS
+ * FEED HELPERS
  *********************************************/
 
 /**
@@ -29,7 +29,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function ctc_podcast_feed_url() {
 
-	$podcast_feed_url = 'https://feedurl';
+	$feed_name = ctc_podcast_feed_name();
+	$podcast_feed_url = get_feed_link( $feed_name );
 
 	return apply_filters( 'ctc_podcast_feed_url', $podcast_feed_url );
 
@@ -60,7 +61,21 @@ function ctc_podcast_content_supported() {
 }
 
 /*********************************************
- * PODCAST FEED
+ * FEED GENERATION
  *********************************************/
 
+/**
+ * Podcast feed name.
+ *
+ * Filterable feed name used with add_feed() and get_feed_link().
+ *
+ * @since 1.9
+ * @return string Feed name.
+ */
+function ctc_podcast_feed_name() {
 
+	$name = 'sermon-podcast';
+
+	return apply_filters( 'ctc_podcast_feed_name', $name );
+
+}
