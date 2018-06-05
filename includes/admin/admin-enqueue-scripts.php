@@ -6,7 +6,7 @@
  *
  * @package    Church_Theme_Content
  * @subpackage Admin
- * @copyright  Copyright (c) 2016 - 2017, churchthemes.com
+ * @copyright  Copyright (c) 2016 - 2018, churchthemes.com
  * @link       https://github.com/churchthemes/church-theme-content
  * @license    GPLv2 or later
  * @since      1.7.1
@@ -30,7 +30,13 @@ function ctc_admin_enqueue_scripts() {
 
 	// Plugin settings.
 	if ( $ctc_settings->is_settings_page() ) { // only on Plugin Settings page.
+
+		// Settings script.
 		wp_enqueue_script( 'ctc-settings', CTC_URL . '/' . CTC_JS_DIR . '/settings.js', array( 'jquery' ), CTC_VERSION ); // bust cache on update.
+
+		// Clipboard.js
+		wp_enqueue_script( 'clipboard-js', CTC_URL . '/' . CTC_JS_DIR . '/lib/clipboard.min.js', false, CTC_VERSION );
+
 	}
 
 	// Scripts for showing map after related fields on event/location screens
