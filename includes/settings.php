@@ -184,12 +184,11 @@ function ctc_settings_config() {
 	if ( ctc_pro_is_active() ) {
 
 		// Podcast feed URL.
-		$podcast_feed_content  = '<div id="ctc-settings-podcast-feed-url">' . $podcast_feed_url . '</div>';
+		$podcast_feed_content  = '<div id="ctc-settings-podcast-feed-url"><a href="' . esc_url( $podcast_feed_url ) . '" target="_blank">' . esc_html( $podcast_feed_url ) . '</div>';
 
 		// Podcasting supported so show buttons.
 		if ( $podcast_supported && ctc_pro_is_active() ) {
 			$podcast_feed_content .= '<div id="ctc-settings-podcast-feed-buttons">';
-			$podcast_feed_content .= '	<a href="' . esc_url( $podcast_feed_url ) . '" class="button" target="_blank">' . __( 'View', 'podcast feed URL', 'church-theme-content' ) . '</a>';
 			$podcast_feed_content .= '	<a href="" class="button">' . __( 'Copy', 'podcast feed URL', 'church-theme-content' ) . '</a>';
 			$podcast_feed_content .= '	<a href="" class="button" target="_blank">' . __( 'Validate', 'podcast feed URL', 'church-theme-content' ) . '</a>';
 			$podcast_feed_content .= '</div>';
