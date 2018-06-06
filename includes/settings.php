@@ -504,7 +504,7 @@ function ctc_settings_config() {
 						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => sprintf(
 							/* translators: %1$s is URL to guide about sermon podcasting. */
-							__( 'Submit the podcast feed URL to iTunes, Google Play, etc. Read the <a href="%1$s" target="_blank">Podcasting Guide</a> to learn how.', 'church-theme-content' ),
+							__( 'Submit your podcast feed URL to iTunes, Google Play, etc. Read the <a href="%1$s" target="_blank">Podcasting Guide</a> to learn how.', 'church-theme-content' ),
 							esc_url( ctc_ctcom_url( 'podcast-guide', array( 'utm_content' => 'settings' ) ) )
 						),
 						'type'            => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
@@ -526,7 +526,7 @@ function ctc_settings_config() {
 					'podcast_title' => array(
 						'name'            => __( 'Title', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => __( 'The title of your sermon podcast. Example: "Grace Church Sermons" or "Faith Church Podcast".', 'church-theme-content' ),
+						'desc'            => __( 'The title of your sermon podcast. Example: "Grace Church Sermons" or "Cornerstone Church Podcast".', 'church-theme-content' ),
 						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'options'         => array(), // array of keys/values for radio or select.
@@ -540,6 +540,28 @@ function ctc_settings_config() {
 						'class'           => '', // classes to add to input.
 						'content'         => '', // custom content instead of input (HTML allowed).
 						'custom_sanitize' => '', // function to do additional sanitization.
+						'custom_content'  => '', // function for custom display of field input.
+						'pro'             => true, // field input element disabled when Pro not active.
+						'unsupported'    => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+					),
+
+					// Subtitle.
+					'podcast_subtitle' => array(
+						'name'            => __( 'Subtitle', 'church-theme-content' ),
+						'after_name'      => '', // append (Optional) or (Pro), etc.
+						'desc'            => __( 'A one sentence summary of your podcast. Example: "Weekly sermons by Pastor Bob Smith at Grace Church in Orlando, FL."', 'church-theme-content' ),
+						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'checkbox_label'  => '', // show text after checkbox.
+						'options'         => array(), // array of keys/values for radio or select.
+						'default'         => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'        => false, // if user empties value, force default to be saved instead.
+						'allow_html'      => false, // allow HTML to be used in the value.
+						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+							'maxlength'   => '255', // enforce with custom_sanitize
+						),
+						'class'           => 'ctc-podcast-subtitle-input', // classes to add to input.
+						'content'         => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize' => 'ctc_sanitize_podcast_subtitle', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
 						'pro'             => true, // field input element disabled when Pro not active.
 						'unsupported'    => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
@@ -911,6 +933,24 @@ function ctc_sanitize_setting_url_slug( $value, $field ) {
 	// Lowercase, replace space with -, remove special chars, etc.
 	// This is what WordPress uses to change post title into URL slug.
 	$value = sanitize_title( $value );
+
+	// Return sanitized value.
+	return $value;
+
+}
+
+/**
+ * Sanitize Podcast Subtitle.
+ *
+ * @since 1.9
+ * @param string $setting Setting key.
+ * @return mixed Setting value.
+ * @global object $ctc_settings.
+ */
+function ctc_sanitize_podcast_subtitle( $value, $field ) {
+
+	// Max 255 characters for iTunes.
+	$value = substr( $value, 0, 255 );
 
 	// Return sanitized value.
 	return $value;

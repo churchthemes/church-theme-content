@@ -121,3 +121,7 @@ tr.ctps-field-sermon_tag_url_slug > * {
 	color: #666;
 	white-space: nowrap;
 }
+
+.ctc-podcast-subtitle-input {
+	width: 500px;
+}
