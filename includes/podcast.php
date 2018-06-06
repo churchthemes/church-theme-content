@@ -77,7 +77,7 @@ function ctc_podcast_content_supported() {
 }
 
 /**
- * Default podcast title.
+ * Default Podcast Title.
  *
  * Title to use when no podcast title saved in settings.
  *
@@ -87,17 +87,40 @@ function ctc_podcast_content_supported() {
  * The user can easily change this from their church name to one of the examples "Grace Church Sermons" if they want.
  *
  * @since 1.9
- * @return string Podcast title default.
+ * @return string Default string.
  */
 function ctc_podcast_title_default() {
 
-	// Get site name and sermom wording.
+	// Get site name.
 	$site_name = get_bloginfo( 'name' ); // assumed to be church name.
 
 	// Build default title string.
-	$default_title = $site_name;
+	$default = $site_name;
 
 	// Return filterable.
-	return apply_filters( 'ctc_podcast_title_default', $default_title );
+	return apply_filters( 'ctc_podcast_title_default', $default );
+
+}
+
+/**
+ * Default Podcast Author,
+ *
+ * Author to use when no podcast author saved in settings.
+ *
+ * Default is site name which is assumed to be church name.
+ *
+ * @since 1.9
+ * @return string Default string.
+ */
+function ctc_podcast_author_default() {
+
+	// Get site name.
+	$site_name = get_bloginfo( 'name' ); // assumed to be church name.
+
+	// Build default title string.
+	$default = $site_name;
+
+	// Return filterable.
+	return apply_filters( 'ctc_podcast_author_default', $default );
 
 }

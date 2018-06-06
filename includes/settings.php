@@ -524,7 +524,7 @@ function ctc_settings_config() {
 
 					// Title.
 					'podcast_title' => array(
-						'name'            => __( 'Title', 'church-theme-content' ),
+						'name'            => _x( 'Title', 'podcast settings', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => __( 'The title of your sermon podcast. Example: "Grace Church Sermons" or "Cornerstone Church Podcast".', 'church-theme-content' ),
 						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
@@ -547,7 +547,7 @@ function ctc_settings_config() {
 
 					// Subtitle.
 					'podcast_subtitle' => array(
-						'name'            => __( 'Subtitle', 'church-theme-content' ),
+						'name'            => _x( 'Subtitle', 'podcast settings', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => __( 'A short description of your podcast. Example: "Weekly sermons by Pastor Bob Smith at Grace Church in Orlando, FL."', 'church-theme-content' ),
 						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
@@ -569,9 +569,9 @@ function ctc_settings_config() {
 
 					// Description (Summary).
 					'podcast_summary' => array(
-						'name'            => __( 'Description', 'church-theme-content' ),
+						'name'            => _x( 'Description', 'podcast settings', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => __( 'A full description of your podcast. You can write about your church and mission, your pastor, link to your website, etc.', 'church-theme-content' ),
+						'desc'            => __( 'A full description of your podcast. You can write about your church, mission and pastor, link to your website, etc.', 'church-theme-content' ),
 						'type'            => 'textarea', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'options'         => array(), // array of keys/values for radio or select.
@@ -584,6 +584,29 @@ function ctc_settings_config() {
 						'class'           => 'ctc-podcast-summary-input', // classes to add to input.
 						'content'         => '', // custom content instead of input (HTML allowed).
 						'custom_sanitize' => 'ctc_sanitize_podcast_summary', // function to do additional sanitization.
+						'custom_content'  => '', // function for custom display of field input.
+						'pro'             => true, // field input element disabled when Pro not active.
+						'unsupported'    => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+					),
+
+					// Author.
+					'podcast_author' => array(
+						'name'            => _x( 'Provider', 'podcast settings', 'church-theme-content' ),
+						'after_name'      => '', // append (Optional) or (Pro), etc.
+						'desc'            => __( 'The name of your church and/or pastor. Example: "Grace Church - Pastor Bob Smith".', 'church-theme-content' ),
+						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'checkbox_label'  => '', // show text after checkbox.
+						'options'         => array(), // array of keys/values for radio or select.
+						'default'         => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'        => false, // if user empties value, force default to be saved instead.
+						'allow_html'      => false, // allow HTML to be used in the value.
+						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+							'placeholder' => ctc_podcast_author_default(), // show the standard value if they leave blank.
+							'maxlength'   => '60',
+						),
+						'class'           => '', // classes to add to input.
+						'content'         => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize' => '', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
 						'pro'             => true, // field input element disabled when Pro not active.
 						'unsupported'    => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
