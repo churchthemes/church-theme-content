@@ -325,7 +325,7 @@ function ctc_settings_config() {
 					'podcast_content' => array(
 						'name'             => _x( 'Sermon Podcast', 'settings', 'church-theme-content' ),
 						'after_name'       => '', // append (Optional) or (Pro), etc.
-						'desc'             => '',
+						'desc'             => __( 'Reach more people by automatically podcasting your sermons on iTunes, Google Play and elsewhere.', 'church-theme-content' ),
 						'type'             => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'   => '', // show text after checkbox.
 						'options'          => array(), // array of keys/values for radio or select.
