@@ -127,14 +127,25 @@ tr.ctps-field-sermon_tag_url_slug > * {
 	white-space: nowrap;
 }
 
-.ctc-podcast-subtitle-input {
-	width: 500px;
+/* Make filtering select fields closer */
+
+tr.ctps-field-podcast_topic th,
+tr.ctps-field-podcast_topic td {
+	padding-bottom: 0;
 }
 
-@media only screen and ( min-width: 783px ) {
-
-	.ctc-podcast-summary-input {
-		width: 500px !important;
-	}
-
+tr.ctps-field-podcast_book th,
+tr.ctps-field-podcast_book td,
+tr.ctps-field-podcast_series th,
+tr.ctps-field-podcast_series td,
+tr.ctps-field-podcast_speaker th,
+tr.ctps-field-podcast_speaker td {
+	padding-top: 7px;
+	padding-bottom: 0;
 }
+
+tr.ctps-field-podcast_tag th,
+tr.ctps-field-podcast_tag td {
+	padding-top: 7px;
+}
+
