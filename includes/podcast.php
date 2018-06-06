@@ -95,7 +95,10 @@ function ctc_podcast_title_default() {
 	$site_name = get_bloginfo( 'name' ); // assumed to be church name.
 
 	// Build default title string.
-	$default = $site_name;
+	$default = '';
+	if ( 'WordPress Site' !== $site_name ) { // not default title
+		$default = $site_name;
+	}
 
 	// Return filterable.
 	return apply_filters( 'ctc_podcast_title_default', $default );
@@ -122,5 +125,28 @@ function ctc_podcast_author_default() {
 
 	// Return filterable.
 	return apply_filters( 'ctc_podcast_author_default', $default );
+
+}
+
+/**
+ * Podcast category options.
+ *
+ * Array of select options for podcast settings.
+ *
+ * Only iTunes subcategories relevant to Church Content plugin users are presented.
+ * https://help.apple.com/itc/podcasts_connect/#/itc9267a2f12
+ *
+ * @since 1.9
+ * @return array Key and value pairs.
+ */
+function ctc_podcast_category_options() {
+
+	$options = array(
+		'' => '',
+		'Religion & Spirituality|Christianity' => 'Christianity',
+		'Government & Organizations|Non-Profit' => 'Non-Profit',
+	);
+
+	return apply_filters( 'ctc_podcast_category_options', $options );
 
 }

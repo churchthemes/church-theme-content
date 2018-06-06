@@ -616,7 +616,7 @@ function ctc_settings_config() {
 					'podcast_image' => array(
 						'name'            => _x( 'Image', 'podcast settings', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => __( 'Image must be between 1400x1400 and 3000x3000 pixels and in JPG or PNG format. Required by iTunes.', 'church-theme-content' ),
+						'desc'            => __( 'Image must be between 1400x1400 and 3000x3000 pixels and in JPG or PNG format. <b>Required by iTunes</b>.', 'church-theme-content' ),
 						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'options'         => array(), // array of keys/values for radio or select.
@@ -634,9 +634,9 @@ function ctc_settings_config() {
 
 					// Owner Email.
 					'podcast_email' => array(
-						'name'            => __( 'Technical Email', 'church-theme-content' ),
+						'name'            => _x( 'Email', 'podcast settings', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => __( 'Email to receive notifications from iTunes / Google Play. Not shown to public (but is in Feed URL). Required by Google Play.', 'church-theme-content' ),
+						'desc'            => __( 'Email to receive notifications from iTunes / Google Play. Not shown to public (but is in Feed URL). <b>Required by Google Play</b>.', 'church-theme-content' ),
 						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'options'         => array(), // array of keys/values for radio or select.
@@ -748,7 +748,7 @@ function ctc_settings_config() {
 					'podcast_tag' => array(
 						'name'            => '',
 						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => __( 'You may choose to limit which sermons are included in your podcast..', 'church-theme-content' ),
+						'desc'            => __( 'You may choose to limit which sermons are included in your podcast.', 'church-theme-content' ),
 						'type'            => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'options'         => ctc_term_options( 'sermons', 'ctc_sermon_tag', array( // array of keys/values for radio or select.
@@ -767,6 +767,26 @@ function ctc_settings_config() {
 					),
 
 					*/
+
+					// Category.
+					'podcast_category' => array(
+						'name'            => _x( 'Category', 'sermon settings', 'church-theme-content' ),
+						'after_name'      => '', // append (Optional) or (Pro), etc.
+						'desc'            => __( 'Setting a category for your podcast is <b>required by iTunes</b> and can help users find it.', 'church-theme-content' ),
+						'type'            => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'checkbox_label'  => '', // show text after checkbox.
+						'options'         => ctc_podcast_category_options(), // array of keys/values for radio or select.
+						'default'         => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'        => false, // if user empties value, force default to be saved instead.
+						'allow_html'      => false, // allow HTML to be used in the value.
+						'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
+						'class'           => '', // classes to add to input.
+						'content'         => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize' => '', // function to do additional sanitization.
+						'custom_content'  => '', // function for custom display of field input.
+						'pro'             => true, // field input element disabled when Pro not active.
+						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+					),
 
 				),
 
