@@ -3,6 +3,10 @@
  */
 
 /*******************************************
+ * INPUTS
+ *******************************************/
+
+/*******************************************
  * TEXT
  *******************************************/
 
@@ -124,4 +128,12 @@ tr.ctps-field-sermon_tag_url_slug > * {
 
 .ctc-podcast-subtitle-input {
 	width: 500px;
+}
+
+@media only screen and ( min-width: 783px ) {
+
+	.ctc-podcast-summary-input {
+		width: 500px !important;
+	}
+
 }
