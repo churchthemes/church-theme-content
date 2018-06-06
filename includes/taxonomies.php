@@ -552,3 +552,43 @@ function ctc_register_taxonomy_person_group() {
 }
 
 add_action( 'init', 'ctc_register_taxonomy_person_group' );
+
+'options' => ctfw_term_options( 'ctc_sermon_topic', array( // array of keys/values for radio or select
+	'all' => _x( 'All Topics', 'sermons widget', 'church-theme-framework' )
+) ),
+
+/**********************************
+ * TAXONOMY HELPERS
+ **********************************/
+
+/**
+ * Taxonomy term options
+ *
+ * Returns ID/name pairs useful for creating select options and sanitizing.
+ *
+ * @since 1.9
+ * @param string $taxonomy_name Taxonomy slug
+ * @param array $prepend Array to start with such as "All" or similar
+ * @return array ID/name pairs
+ */
+function ctc_term_options( $taxonomy_name, $prepend = array() ) {
+
+	$options = array();
+
+	if ( ! preg_match( '/^ctc_/', $taxonomy_name ) || ctc_taxonomy_supported( $taxonomy_name ) ) { // make sure taxonomy supported.
+
+		$terms = $categories = get_terms( $taxonomy_name );
+
+		if ( ! empty( $prepend ) ) {
+			$options = $prepend;
+		}
+
+		foreach ( $terms as $term ) {
+			$options[ $term->term_id ] = $term->name;
+		}
+
+	}
+
+	return apply_filters( 'ctc_term_options', $options, $taxonomy_name, $prepend );
+
+}
