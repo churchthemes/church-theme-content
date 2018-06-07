@@ -72,6 +72,32 @@ function ctc_podcast_author_default() {
 }
 
 /**
+ * Default Podcast Subtitle.
+ *
+ * Subtitle to use when no subtitle saved in settings.
+ *
+ * Default is tagline from General Settings.
+ *
+ * @since 1.9
+ * @return string Default string.
+ */
+function ctc_podcast_subtitle_default() {
+
+	// Get tagline.
+	$tagline = get_bloginfo( 'description' );
+
+	// Build default string.
+	$default = '';
+	if ( 'Just another WordPress site' !== $tagline ) { // not default title.
+		$default = $tagline;
+	}
+
+	// Return filterable.
+	return apply_filters( 'ctc_podcast_subtitle_default', $default );
+
+}
+
+/**
  * Default Podcast Language.
  *
  * Language to use when no podcast language saved in settings.

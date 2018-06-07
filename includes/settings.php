@@ -540,9 +540,10 @@ function ctc_settings_config() {
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
 						'default'         => '', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => false, // if user empties value, force default to be saved instead.
+						'no_empty'        => true, // if user empties value, force default to be saved instead.
 						'allow_html'      => false, // allow HTML to be used in the value.
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+							'placeholder' => ctc_podcast_title_default(),
 							'maxlength'   => '60',
 						),
 						'class'           => '', // classes to add to input.
@@ -565,16 +566,19 @@ function ctc_settings_config() {
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
 						'default'         => '', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => false, // if user empties value, force default to be saved instead.
+						'no_empty'        => true, // if user empties value, force default to be saved instead.
 						'allow_html'      => false, // allow HTML to be used in the value.
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+							'placeholder' => ctc_podcast_subtitle_default(),
 							'maxlength'   => '255', // enforce with custom_sanitize
 						),
 						'class'           => 'ctps-width-500', // classes to add to input.
 						'content'         => '', // custom content instead of input (HTML allowed).
 						'custom_sanitize' => 'ctc_sanitize_podcast_subtitle', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => true, // field input element disabled when Pro not active.
+						'pro'             => array( // field input element disabled when Pro not active.
+							'default' => ctc_podcast_subtitle_default(), // use tagline as default when Pro active.
+						),
 						'unsupported'    => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
@@ -601,7 +605,7 @@ function ctc_settings_config() {
 						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
-					// Author.
+					// Provider (Author).
 					'podcast_author' => array(
 						'name'            => _x( 'Provider', 'podcast settings', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
@@ -611,9 +615,10 @@ function ctc_settings_config() {
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
 						'default'         => '', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => false, // if user empties value, force default to be saved instead.
+						'no_empty'        => true, // if user empties value, force default to be saved instead.
 						'allow_html'      => false, // allow HTML to be used in the value.
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+							'placeholder' => ctc_podcast_subtitle_default(),
 							'maxlength'   => '60',
 						),
 						'class'           => '', // classes to add to input.
