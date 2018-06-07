@@ -526,7 +526,7 @@ function ctc_settings_config() {
 					'podcast_title' => array(
 						'name'            => _x( 'Title', 'podcast settings', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => __( 'The title of your sermon podcast. Example: "Grace Church Sermons" or "Cornerstone Church Podcast".', 'church-theme-content' ),
+						'desc'            => __( 'The title of your sermon podcast. Example: "Grace Church Sermons" or "Cornerstone Church Podcast". <b>Required</b>.', 'church-theme-content' ),
 						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'options'         => array(), // array of keys/values for radio or select.
@@ -593,7 +593,7 @@ function ctc_settings_config() {
 					'podcast_author' => array(
 						'name'            => _x( 'Provider', 'podcast settings', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => __( 'The name of your church and/or pastor. Example: "Grace Church - Pastor Bob Smith".', 'church-theme-content' ),
+						'desc'            => __( 'The name of your church and/or pastor. Example: "Grace Church - Pastor Bob Smith". <b>Required</b>.', 'church-theme-content' ),
 						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'options'         => array(), // array of keys/values for radio or select.
@@ -773,18 +773,38 @@ function ctc_settings_config() {
 						'name'            => _x( 'Category', 'sermon settings', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => __( 'Setting a category for your podcast is <b>required by iTunes</b> and can help users find it.', 'church-theme-content' ),
-						'type'            => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'type'            => 'radio', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'options'         => ctc_podcast_category_options(), // array of keys/values for radio or select.
-						'default'         => '', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => false, // if user empties value, force default to be saved instead.
+						'default'         => 'Religion & Spirituality|Christianity', // value to pre-populate option with (before first save or on reset).
+						'no_empty'        => true, // if user empties value, force default to be saved instead.
 						'allow_html'      => false, // allow HTML to be used in the value.
 						'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
 						'class'           => '', // classes to add to input.
 						'content'         => '', // custom content instead of input (HTML allowed).
 						'custom_sanitize' => '', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => true, // field input element disabled when Pro not active.
+						'pro'             => true,
+						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+					),
+
+					// Content Rating.
+					'podcast_explicit' => array(
+						'name'            => _x( 'Explicit', 'sermon settings', 'church-theme-content' ),
+						'after_name'      => '', // append (Optional) or (Pro), etc.
+						'desc'            => __( 'Whether or not your podcast contains explicit content is <b>required by iTunes</b>.', 'church-theme-content' ),
+						'type'            => 'radio', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'checkbox_label'  => '', // show text after checkbox.
+						'options'         => ctc_podcast_explicit_options(), // array of keys/values for radio or select.
+						'default'         => 'no', // value to pre-populate option with (before first save or on reset).
+						'no_empty'        => true, // if user empties value, force default to be saved instead.
+						'allow_html'      => false, // allow HTML to be used in the value.
+						'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
+						'class'           => '', // classes to add to input.
+						'content'         => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize' => '', // function to do additional sanitization.
+						'custom_content'  => '', // function for custom display of field input.
+						'pro'             => true,
 						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 

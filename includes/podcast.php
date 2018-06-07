@@ -142,11 +142,30 @@ function ctc_podcast_author_default() {
 function ctc_podcast_category_options() {
 
 	$options = array(
-		'' => '',
-		'Religion & Spirituality|Christianity' => 'Christianity',
-		'Government & Organizations|Non-Profit' => 'Non-Profit',
+		'Religion & Spirituality|Christianity' => __( 'Christianity', 'podcast category', 'church-theme-content' ),
+		'Government & Organizations|Non-Profit' => __( 'Non-Profit', 'podcast category', 'church-theme-content' ),
+		'' => __( 'None', 'podcast category', 'church-theme-content' ),
 	);
 
 	return apply_filters( 'ctc_podcast_category_options', $options );
+
+}
+
+/**
+ * Podcast excplicit options.
+ *
+ * Array of select options for podcast settings.
+ *
+ * @since 1.9
+ * @return array Key and value pairs.
+ */
+function ctc_podcast_explicit_options() {
+
+	$options = array(
+		'no' => __( 'No', 'podcast explicit', 'church-theme-content' ),
+		'yes' => __( 'Yes', 'podcast explicit', 'church-theme-content' ),
+	);
+
+	return apply_filters( 'ctc_podcast_explicit_options', $options );
 
 }
