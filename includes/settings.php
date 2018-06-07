@@ -93,6 +93,7 @@ function ctc_settings_config() {
 		),
 		'type'             => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
 		'checkbox_label'   => '',
+		'inline'           => false, // make radio inputs inline instead of stacked.
 		'options'          => array(), // array of keys/values for radio or select.
 		'default'          => false, // value to pre-populate option with (before first save or on reset).
 		'no_empty'         => false, // if user empties value, force default to be saved instead.
@@ -121,6 +122,7 @@ function ctc_settings_config() {
 		'desc'            => '',
 		'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 		'checkbox_label'  => '', // show text after checkbox.
+		'inline'          => false, // make radio inputs inline instead of stacked.
 		'options'         => array(), // array of keys/values for radio or select.
 		'default'         => '', // value to pre-populate option with (before first save or on reset).
 		'no_empty'        => false, // if user empties value, force default to be saved instead.
@@ -142,6 +144,7 @@ function ctc_settings_config() {
 		'desc'            => '',
 		'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 		'checkbox_label'  => '', // show text after checkbox.
+		'inline'          => false, // make radio inputs inline instead of stacked.
 		'options'         => array(), // array of keys/values for radio or select.
 		'default'         => '', // value to pre-populate option with (before first save or on reset).
 		'no_empty'        => false, // if user empties value, force default to be saved instead.
@@ -163,6 +166,7 @@ function ctc_settings_config() {
 		'desc'            => __( 'This can be useful if you are not using the feature.', 'church-theme-content' ),
 		'type'            => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
 		'checkbox_label'  => '',
+		'inline'          => false, // make radio inputs inline instead of stacked.
 		'options'         => array(), // array of keys/values for radio or select.
 		'default'         => false, // value to pre-populate option with (before first save or on reset).
 		'no_empty'        => false, // if user empties value, force default to be saved instead.
@@ -328,6 +332,7 @@ function ctc_settings_config() {
 						'desc'             => __( 'Reach more people by automatically podcasting your sermons on iTunes, Google Play and elsewhere.', 'church-theme-content' ),
 						'type'             => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'   => '', // show text after checkbox.
+						'inline'           => false, // make radio inputs inline instead of stacked.
 						'options'          => array(), // array of keys/values for radio or select.
 						'default'          => '', // value to pre-populate option with (before first save or on reset).
 						'no_empty'         => false, // if user empties value, force default to be saved instead.
@@ -348,6 +353,7 @@ function ctc_settings_config() {
 						'desc'            => '',
 						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
+						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
 						'default'         => '', // value to pre-populate option with (before first save or on reset).
 						'no_empty'        => false, // if user empties value, force default to be saved instead.
@@ -376,6 +382,7 @@ function ctc_settings_config() {
 						),
 						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
+						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
 						'default'         => '', // value to pre-populate option with (before first save or on reset).
 						'no_empty'        => false, // if user empties value, force default to be saved instead.
@@ -509,6 +516,7 @@ function ctc_settings_config() {
 						),
 						'type'            => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
+						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
 						'default'         => '', // value to pre-populate option with (before first save or on reset).
 						'no_empty'        => false, // if user empties value, force default to be saved instead.
@@ -529,6 +537,7 @@ function ctc_settings_config() {
 						'desc'            => __( 'The title of your sermon podcast. Example: "Grace Church Sermons" or "Cornerstone Church Podcast". <b>Required</b>.', 'church-theme-content' ),
 						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
+						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
 						'default'         => '', // value to pre-populate option with (before first save or on reset).
 						'no_empty'        => false, // if user empties value, force default to be saved instead.
@@ -553,6 +562,7 @@ function ctc_settings_config() {
 						'desc'            => __( 'A short description of your podcast. Example: "Weekly sermons by Pastor Bob Smith at Grace Church in Orlando, FL."', 'church-theme-content' ),
 						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
+						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
 						'default'         => '', // value to pre-populate option with (before first save or on reset).
 						'no_empty'        => false, // if user empties value, force default to be saved instead.
@@ -575,6 +585,7 @@ function ctc_settings_config() {
 						'desc'            => __( 'A full description of your podcast. You can write about your church, mission and pastor, link to your website, etc.', 'church-theme-content' ),
 						'type'            => 'textarea', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
+						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
 						'default'         => '', // value to pre-populate option with (before first save or on reset).
 						'no_empty'        => false, // if user empties value, force default to be saved instead.
@@ -597,6 +608,7 @@ function ctc_settings_config() {
 						'desc'            => __( 'The name of your church and/or pastor. Example: "Grace Church - Pastor Bob Smith". <b>Required</b>.', 'church-theme-content' ),
 						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
+						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
 						'default'         => '', // value to pre-populate option with (before first save or on reset).
 						'no_empty'        => false, // if user empties value, force default to be saved instead.
@@ -621,6 +633,7 @@ function ctc_settings_config() {
 						'desc'            => __( 'Image must be between 1400x1400 and 3000x3000 pixels and in JPG or PNG format. <b>Required by iTunes</b>.', 'church-theme-content' ),
 						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
+						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
 						'default'         => '', // value to pre-populate option with (before first save or on reset).
 						'no_empty'        => false, // if user empties value, force default to be saved instead.
@@ -641,6 +654,7 @@ function ctc_settings_config() {
 						'desc'            => __( 'Email to receive notifications from iTunes / Google Play. Not shown to public (but is in Feed URL). <b>Required by Google Play</b>.', 'church-theme-content' ),
 						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
+						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
 						'default'         => '', // value to pre-populate option with (before first save or on reset).
 						'no_empty'        => false, // if user empties value, force default to be saved instead.
@@ -665,6 +679,7 @@ function ctc_settings_config() {
 						'desc'            => '',
 						'type'            => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
+						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => ctc_term_options( 'sermons', 'ctc_sermon_topic', array( // array of keys/values for radio or select.
 							'all' => _x( 'All Topics', 'podcast settings', 'church-theme-content' )
 						) ),
@@ -687,6 +702,7 @@ function ctc_settings_config() {
 						'desc'            => '',
 						'type'            => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
+						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => ctc_term_options( 'sermons', 'ctc_sermon_book', array( // array of keys/values for radio or select.
 							'all' => _x( 'All Books', 'podcast settings', 'church-theme-content' )
 						) ),
@@ -709,6 +725,7 @@ function ctc_settings_config() {
 						'desc'            => '',
 						'type'            => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
+						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => ctc_term_options( 'sermons', 'ctc_sermon_series', array( // array of keys/values for radio or select.
 							'all' => _x( 'All Series', 'podcast settings', 'church-theme-content' )
 						) ),
@@ -731,6 +748,7 @@ function ctc_settings_config() {
 						'desc'            => '',
 						'type'            => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
+						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => ctc_term_options( 'sermons', 'ctc_sermon_speaker', array( // array of keys/values for radio or select.
 							'all' => _x( 'All Speakers', 'podcast settings', 'church-theme-content' )
 						) ),
@@ -753,6 +771,7 @@ function ctc_settings_config() {
 						'desc'            => __( 'You may choose to limit which sermons are included in your podcast.', 'church-theme-content' ),
 						'type'            => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
+						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => ctc_term_options( 'sermons', 'ctc_sermon_tag', array( // array of keys/values for radio or select.
 							'all' => _x( 'All Tags', 'podcast settings', 'church-theme-content' )
 						) ),
@@ -774,9 +793,10 @@ function ctc_settings_config() {
 					'podcast_category' => array(
 						'name'            => _x( 'Category', 'sermon settings', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => __( 'Setting a category for your podcast is <b>required by iTunes</b> and can help users find it.', 'church-theme-content' ),
+						'desc'            => __( 'Choosing a category for your podcast is <b>required by iTunes</b> and can help users find it.', 'church-theme-content' ),
 						'type'            => 'radio', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
+						'inline'          => true, // make radio inputs inline instead of stacked.
 						'options'         => ctc_podcast_category_options(), // array of keys/values for radio or select.
 						'default'         => 'Religion & Spirituality|Christianity', // value to pre-populate option with (before first save or on reset).
 						'no_empty'        => true, // if user empties value, force default to be saved instead.
@@ -797,6 +817,7 @@ function ctc_settings_config() {
 						'desc'            => __( 'Declaring whether or not your podcast contains explicit content is <b>required by iTunes</b>.', 'church-theme-content' ),
 						'type'            => 'radio', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
+						'inline'          => true, // make radio inputs inline instead of stacked.
 						'options'         => ctc_podcast_explicit_options(), // array of keys/values for radio or select.
 						'default'         => 'no', // value to pre-populate option with (before first save or on reset).
 						'no_empty'        => true, // if user empties value, force default to be saved instead.
@@ -833,6 +854,7 @@ function ctc_settings_config() {
 						'desc'            => $event_recurrence_desc,
 						'type'            => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
+						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
 						'default'         => '', // value to pre-populate option with (before first save or on reset).
 						'no_empty'        => false, // if user empties value, force default to be saved instead.
@@ -859,6 +881,7 @@ function ctc_settings_config() {
 						'desc'            => __( 'Save time when adding events by choosing from previously used locations.', 'church-theme-content' ),
 						'type'            => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
 						'checkbox_label'  => __( 'Enable "Choose" Button and Autocomplete <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ),
+						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
 						'default'         => false, // value to pre-populate option with (before first save or on reset).
 						'no_empty'        => false, // if user empties value, force default to be saved instead.
@@ -941,6 +964,7 @@ function ctc_settings_config() {
 						),
 						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
 						'checkbox_label'  => '', // show text after checkbox.
+						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
 						'default'         => '', // value to pre-populate option with (before first save or on reset).
 						'no_empty'        => false, // if user empties value, force default to be saved instead.
