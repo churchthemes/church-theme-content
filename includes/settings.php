@@ -493,7 +493,7 @@ function ctc_settings_config() {
 				'title' => _x( 'Podcast', 'settings section title', 'church-theme-content' ),
 
 				// Description.
-				'desc' => '',
+				'desc' => __( 'Reach more people by automatically podcasting your sermons on iTunes, Google Play and elsewhere. It is recommended that you complete all fields.', 'church-theme-content' ),
 
 				// Fields (Settings).
 				'fields' => array(
