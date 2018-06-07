@@ -64,7 +64,10 @@ function ctc_podcast_author_default() {
 	$site_name = get_bloginfo( 'name' ); // assumed to be church name.
 
 	// Build default title string.
-	$default = $site_name;
+	$default = '';
+	if ( 'WordPress Site' !== $site_name ) { // not default title
+		$default = $site_name;
+	}
 
 	// Return filterable.
 	return apply_filters( 'ctc_podcast_author_default', $default );
@@ -117,6 +120,30 @@ function ctc_podcast_language_default() {
 
 	// Return filterable.
 	return apply_filters( 'ctc_podcast_language_default', $default );
+
+}
+
+/**
+ * Default Podcast Copyright.
+ *
+ * Copyright notice to use when no copyright saved in settings.
+ *
+ * @since 1.9
+ * @return string Default string.
+ */
+function ctc_podcast_copyright_default() {
+
+	// Get site name.
+	$site_name = get_bloginfo( 'name' ); // assumed to be church name.
+
+	// Build default title string.
+	$default = '';
+	if ( $site_name && 'WordPress Site' !== $site_name ) { // have site name and not default title
+		$default = '&copy; ' . $site_name;
+	}
+
+	// Return filterable.
+	return apply_filters( 'ctc_podcast_copyright_default', $default );
 
 }
 
