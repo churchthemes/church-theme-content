@@ -16,7 +16,109 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /*********************************************
- * HELPERS
+ * SETTINGS
+ *********************************************/
+
+/**
+ * Default Podcast Title.
+ *
+ * Title to use when no podcast title saved in settings.
+ *
+ * Default is site name which is assumed to be church name.
+ *
+ * Not using sermon plural word because it's too early to show that in settings placeholder.
+ * The user can easily change this from their church name to one of the examples "Grace Church Sermons" if they want.
+ *
+ * @since 1.9
+ * @return string Default string.
+ */
+function ctc_podcast_title_default() {
+
+	// Get site name.
+	$site_name = get_bloginfo( 'name' ); // assumed to be church name.
+
+	// Build default title string.
+	$default = '';
+	if ( 'WordPress Site' !== $site_name ) { // not default title
+		$default = $site_name;
+	}
+
+	// Return filterable.
+	return apply_filters( 'ctc_podcast_title_default', $default );
+
+}
+
+/**
+ * Default Podcast Author.
+ *
+ * Author to use when no podcast author saved in settings.
+ *
+ * Default is site name which is assumed to be church name.
+ *
+ * @since 1.9
+ * @return string Default string.
+ */
+function ctc_podcast_author_default() {
+
+	// Get site name.
+	$site_name = get_bloginfo( 'name' ); // assumed to be church name.
+
+	// Build default title string.
+	$default = $site_name;
+
+	// Return filterable.
+	return apply_filters( 'ctc_podcast_author_default', $default );
+
+}
+
+/**
+ * Default Podcast Language.
+ *
+ * Language to use when no podcast language saved in settings.
+ *
+ * Default is from Settings > General.
+ *
+ * @since 1.9
+ * @return string Default string.
+ */
+function ctc_podcast_language_default() {
+
+	// Get language setting from Settings > General.
+	$language = get_bloginfo( 'language' ); // assumed to be church name.
+
+	// Build default string.
+	$default = $language;
+
+	// Return filterable.
+	return apply_filters( 'ctc_podcast_language_default', $default );
+
+}
+
+/**
+ * Podcast category options.
+ *
+ * Array of select options for podcast settings.
+ *
+ * Only iTunes subcategories relevant to Church Content plugin users are presented.
+ * https://help.apple.com/itc/podcasts_connect/#/itc9267a2f12
+ *
+ * @since 1.9
+ * @return array Key and value pairs.
+ */
+function ctc_podcast_category_options() {
+
+	$options = array(
+		'Religion & Spirituality|Christianity' => __( 'Christianity', 'podcast category', 'church-theme-content' ),
+		'Government & Organizations|Non-Profit' => __( 'Non-Profit', 'podcast category', 'church-theme-content' ),
+		'none' => __( 'None', 'podcast category', 'church-theme-content' ),
+	);
+
+	return apply_filters( 'ctc_podcast_category_options', $options );
+
+}
+
+/*********************************************
+ * FEED
  *********************************************/
 
 /**
@@ -52,6 +154,10 @@ function ctc_podcast_feed_url() {
 
 }
 
+/*********************************************
+ * HELPERS
+ *********************************************/
+
 /**
  * Podcast content supported?
  *
@@ -73,99 +179,5 @@ function ctc_podcast_content_supported() {
 	}
 
 	return apply_filters( 'ctc_podcast_content_supported', $supported );
-
-}
-
-/**
- * Default Podcast Title.
- *
- * Title to use when no podcast title saved in settings.
- *
- * Default is site name which is assumed to be church name.
- *
- * Not using sermon plural word because it's too early to show that in settings placeholder.
- * The user can easily change this from their church name to one of the examples "Grace Church Sermons" if they want.
- *
- * @since 1.9
- * @return string Default string.
- */
-function ctc_podcast_title_default() {
-
-	// Get site name.
-	$site_name = get_bloginfo( 'name' ); // assumed to be church name.
-
-	// Build default title string.
-	$default = '';
-	if ( 'WordPress Site' !== $site_name ) { // not default title
-		$default = $site_name;
-	}
-
-	// Return filterable.
-	return apply_filters( 'ctc_podcast_title_default', $default );
-
-}
-
-/**
- * Default Podcast Author,
- *
- * Author to use when no podcast author saved in settings.
- *
- * Default is site name which is assumed to be church name.
- *
- * @since 1.9
- * @return string Default string.
- */
-function ctc_podcast_author_default() {
-
-	// Get site name.
-	$site_name = get_bloginfo( 'name' ); // assumed to be church name.
-
-	// Build default title string.
-	$default = $site_name;
-
-	// Return filterable.
-	return apply_filters( 'ctc_podcast_author_default', $default );
-
-}
-
-/**
- * Podcast category options.
- *
- * Array of select options for podcast settings.
- *
- * Only iTunes subcategories relevant to Church Content plugin users are presented.
- * https://help.apple.com/itc/podcasts_connect/#/itc9267a2f12
- *
- * @since 1.9
- * @return array Key and value pairs.
- */
-function ctc_podcast_category_options() {
-
-	$options = array(
-		'Religion & Spirituality|Christianity' => __( 'Christianity', 'podcast category', 'church-theme-content' ),
-		'Government & Organizations|Non-Profit' => __( 'Non-Profit', 'podcast category', 'church-theme-content' ),
-		'none' => __( 'None', 'podcast category', 'church-theme-content' ),
-	);
-
-	return apply_filters( 'ctc_podcast_category_options', $options );
-
-}
-
-/**
- * Podcast excplicit options.
- *
- * Array of select options for podcast settings.
- *
- * @since 1.9
- * @return array Key and value pairs.
- */
-function ctc_podcast_explicit_options() {
-
-	$options = array(
-		'no' => __( 'No', 'podcast explicit', 'church-theme-content' ),
-		'yes' => __( 'Yes', 'podcast explicit', 'church-theme-content' ),
-	);
-
-	return apply_filters( 'ctc_podcast_explicit_options', $options );
 
 }
