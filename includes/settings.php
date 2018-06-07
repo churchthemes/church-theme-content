@@ -762,6 +762,29 @@ function ctc_settings_config() {
 						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
+					// Link (Website URL).
+					'podcast_link' => array(
+						'name'            => _x( 'Link', 'podcast settings', 'church-theme-content' ),
+						'after_name'      => '', // append (Optional) or (Pro), etc.
+						'desc'            => __( 'Provide a URL if you want your podcast to link to somewhere other than your website homepage.', 'church-theme-content' ),
+						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'checkbox_label'  => '', // show text after checkbox.
+						'inline'          => false, // make radio inputs inline instead of stacked.
+						'options'         => array(), // array of keys/values for radio or select.
+						'default'         => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'        => false, // if user empties value, force default to be saved instead.
+						'allow_html'      => false, // allow HTML to be used in the value.
+						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+							'placeholder' => ctc_podcast_link_default(),
+						),
+						'class'           => '', // classes to add to input.
+						'content'         => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize' => '', // function to do additional sanitization.
+						'custom_content'  => '', // function for custom display of field input.
+						'pro'             => true, // field input element disabled when Pro not active.
+						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+					),
+
 					/* Future possibility. Problem: ctc_term_options() cannot get terms because taxonomies not registered this early. Would need to hide any taxonomies not supported by theme.
 
 					// Filter Topics.

@@ -124,6 +124,27 @@ function ctc_podcast_language_default() {
 }
 
 /**
+ * Default Podcast Link.
+ *
+ * URL used for link on podcast. Default is homepage.
+ *
+ * @since 1.9
+ * @return string Default string.
+ */
+function ctc_podcast_link_default() {
+
+	// Get homepage URL.
+	$home_url = home_url();
+
+	// Build default string.
+	$default = trailingslashit( $home_url );
+
+	// Return filterable.
+	return apply_filters( 'ctc_podcast_link_default', $default );
+
+}
+
+/**
  * Default Podcast Copyright.
  *
  * Copyright notice to use when no copyright saved in settings.
