@@ -539,10 +539,11 @@ function ctc_settings_config() {
 						'checkbox_label'  => '', // show text after checkbox.
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
-						'default'         => ctc_podcast_title_default(), // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => true, // if user empties value, force default to be saved instead.
+						'default'         => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'        => false, // if user empties value, force default to be saved instead.
 						'allow_html'      => false, // allow HTML to be used in the value.
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+							'placeholder' => ctc_podcast_title_default(),
 							'maxlength'   => '60',
 						),
 						'class'           => '', // classes to add to input.
@@ -562,10 +563,11 @@ function ctc_settings_config() {
 						'checkbox_label'  => '', // show text after checkbox.
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
-						'default'         => ctc_podcast_subtitle_default(), // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => true, // if user empties value, force default to be saved instead.
+						'default'         => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'        => false, // if user empties value, force default to be saved instead.
 						'allow_html'      => false, // allow HTML to be used in the value.
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+							'placeholder' => ctc_podcast_subtitle_default(),
 							'maxlength'   => '255', // enforce with custom_sanitize
 						),
 						'class'           => 'ctps-width-500', // classes to add to input.
@@ -608,10 +610,11 @@ function ctc_settings_config() {
 						'checkbox_label'  => '', // show text after checkbox.
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
-						'default'         => ctc_podcast_author_default(), // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => true, // if user empties value, force default to be saved instead.
+						'default'         => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'        => false, // if user empties value, force default to be saved instead.
 						'allow_html'      => false, // allow HTML to be used in the value.
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+							'placeholder' => ctc_podcast_author_default(),
 							'maxlength'   => '60',
 						),
 						'class'           => '', // classes to add to input.
@@ -748,10 +751,11 @@ function ctc_settings_config() {
 						'checkbox_label'  => '', // show text after checkbox.
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
-						'default'         => ctc_podcast_copyright_default(), // value to pre-populate option with (before first save or on reset).
+						'default'         => '', // value to pre-populate option with (before first save or on reset).
 						'no_empty'        => false, // if user empties value, force default to be saved instead.
 						'allow_html'      => false, // allow HTML to be used in the value.
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+							'placeholder' => ctc_podcast_copyright_default(),
 							'maxlength'   => '60',
 						),
 						'class'           => '', // classes to add to input.
