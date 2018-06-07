@@ -144,7 +144,7 @@ function ctc_podcast_category_options() {
 	$options = array(
 		'Religion & Spirituality|Christianity' => __( 'Christianity', 'podcast category', 'church-theme-content' ),
 		'Government & Organizations|Non-Profit' => __( 'Non-Profit', 'podcast category', 'church-theme-content' ),
-		'' => __( 'None', 'podcast category', 'church-theme-content' ),
+		'none' => __( 'None', 'podcast category', 'church-theme-content' ),
 	);
 
 	return apply_filters( 'ctc_podcast_category_options', $options );

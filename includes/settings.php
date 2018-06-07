@@ -1247,7 +1247,7 @@ add_action( 'ctps_after_save', 'ctc_settings_flush_rewrite_rules' );
 /**
  * Force non-Pro default on Pro settings while Pro plugin is inactive.
  *
- * This will make form inputs use default values and and ctc_setting() to return defaults.
+ * This will make form inputs use default values and ctc_setting() to return defaults.
  * If a user re-activated Pro, their saved values will work again - unless they've saved form w/defaults.
  *
  * Church Content plugin doesn't use Pro setting values, but this cleans things up nicely just in case.
