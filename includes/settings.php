@@ -534,14 +534,15 @@ function ctc_settings_config() {
 						'no_empty'        => false, // if user empties value, force default to be saved instead.
 						'allow_html'      => false, // allow HTML to be used in the value.
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
-							'placeholder' => ctc_podcast_title_default(), // show the standard value if they leave blank.
 							'maxlength'   => '60',
 						),
 						'class'           => '', // classes to add to input.
 						'content'         => '', // custom content instead of input (HTML allowed).
 						'custom_sanitize' => '', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => true, // field input element disabled when Pro not active.
+						'pro'             => array( // field input element disabled when Pro not active.
+							'default' => ctc_podcast_title_default(), // set when Pro active if value not already saved.
+						),
 						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
@@ -601,14 +602,15 @@ function ctc_settings_config() {
 						'no_empty'        => false, // if user empties value, force default to be saved instead.
 						'allow_html'      => false, // allow HTML to be used in the value.
 						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
-							'placeholder' => ctc_podcast_author_default(), // show the standard value if they leave blank.
 							'maxlength'   => '60',
 						),
 						'class'           => '', // classes to add to input.
 						'content'         => '', // custom content instead of input (HTML allowed).
 						'custom_sanitize' => '', // function to do additional sanitization.
 						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => true, // field input element disabled when Pro not active.
+						'pro'             => array( // field input element disabled when Pro not active.
+							'default' => ctc_podcast_title_default(), // set when Pro active if value not already saved.
+						),
 						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
@@ -792,7 +794,7 @@ function ctc_settings_config() {
 					'podcast_explicit' => array(
 						'name'            => _x( 'Explicit', 'sermon settings', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => __( 'Whether or not your podcast contains explicit content is <b>required by iTunes</b>.', 'church-theme-content' ),
+						'desc'            => __( 'Declaring whether or not your podcast contains explicit content is <b>required by iTunes</b>.', 'church-theme-content' ),
 						'type'            => 'radio', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'options'         => ctc_podcast_explicit_options(), // array of keys/values for radio or select.
