@@ -120,7 +120,7 @@ function ctc_settings_config() {
 		'name'            => '',
 		'after_name'      => '', // append (Optional) or (Pro), etc.
 		'desc'            => '',
-		'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+		'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 		'checkbox_label'  => '', // show text after checkbox.
 		'inline'          => false, // make radio inputs inline instead of stacked.
 		'options'         => array(), // array of keys/values for radio or select.
@@ -142,7 +142,7 @@ function ctc_settings_config() {
 		'name'            => '',
 		'after_name'      => '', // append (Optional) or (Pro), etc.
 		'desc'            => '',
-		'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+		'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 		'checkbox_label'  => '', // show text after checkbox.
 		'inline'          => false, // make radio inputs inline instead of stacked.
 		'options'         => array(), // array of keys/values for radio or select.
@@ -330,7 +330,7 @@ function ctc_settings_config() {
 						'name'             => _x( 'Sermon Podcast', 'settings', 'church-theme-content' ),
 						'after_name'       => '', // append (Optional) or (Pro), etc.
 						'desc'             => __( 'Reach more people by automatically podcasting your sermons on iTunes, Google Play and elsewhere.', 'church-theme-content' ),
-						'type'             => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'type'             => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'   => '', // show text after checkbox.
 						'inline'           => false, // make radio inputs inline instead of stacked.
 						'options'          => array(), // array of keys/values for radio or select.
@@ -351,7 +351,7 @@ function ctc_settings_config() {
 						'name'            => __( 'Alternative Wording', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => '',
-						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
@@ -380,7 +380,7 @@ function ctc_settings_config() {
 							$sermon_word_singular_default,
 							$sermon_word_plural_default
 						),
-						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
@@ -514,7 +514,7 @@ function ctc_settings_config() {
 							__( 'Submit your podcast feed URL to iTunes, Google Play, etc. Read the <a href="%1$s" target="_blank">Podcasting Guide</a> to learn how.', 'church-theme-content' ),
 							esc_url( ctc_ctcom_url( 'podcast-guide', array( 'utm_content' => 'settings' ) ) )
 						),
-						'type'            => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'type'            => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
@@ -535,10 +535,13 @@ function ctc_settings_config() {
 						'name'            => _x( 'Image', 'podcast settings', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => __( 'Image must be between 1400x1400 and 3000x3000 pixels and in JPG or PNG format. <b>Required by iTunes</b>.', 'church-theme-content' ),
-						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'type'            => 'upload', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
+						'upload_button'   => __( 'Choose Image', 'church-theme-content' ), // text for button that opens media frame.
+						'upload_title'    => __( 'Choose an Image File', 'church-theme-content' ), // title appearing at top of media frame.
+						'upload_type'     => 'image', // optional type of media to filter by (image, audio, video, application/pdf).
 						'default'         => '', // value to pre-populate option with (before first save or on reset).
 						'no_empty'        => false, // if user empties value, force default to be saved instead.
 						'allow_html'      => false, // allow HTML to be used in the value.
@@ -556,7 +559,7 @@ function ctc_settings_config() {
 						'name'            => _x( 'Title', 'podcast settings', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => __( 'The title of your sermon podcast. Example: "Grace Church Sermons" or "Cornerstone Church Podcast". <b>Required</b>.', 'church-theme-content' ),
-						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
@@ -580,7 +583,7 @@ function ctc_settings_config() {
 						'name'            => _x( 'Subtitle', 'podcast settings', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => __( 'A short description of your podcast. Example: "Weekly sermons by Pastor Bob Smith at Grace Church in Orlando, FL."', 'church-theme-content' ),
-						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
@@ -604,7 +607,7 @@ function ctc_settings_config() {
 						'name'            => _x( 'Description', 'podcast settings', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => __( 'A full description of your podcast. You can write about your church, mission and pastor, link to your website, etc.', 'church-theme-content' ),
-						'type'            => 'textarea', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'type'            => 'textarea', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
@@ -627,7 +630,7 @@ function ctc_settings_config() {
 						'name'            => _x( 'Provider', 'podcast settings', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => __( 'The name of your church and/or pastor. Example: "Grace Church - Pastor Bob Smith". <b>Required</b>.', 'church-theme-content' ),
-						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
@@ -653,7 +656,7 @@ function ctc_settings_config() {
 						'name'            => _x( 'Copyright', 'podcast settings', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => __( 'Copyright notice for your podcast. Example: "&copy; Grace Church"', 'church-theme-content' ),
-						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
@@ -677,7 +680,7 @@ function ctc_settings_config() {
 						'name'            => _x( 'Link', 'podcast settings', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => __( 'Provide a URL if you want your podcast to link to somewhere other than your website homepage.', 'church-theme-content' ),
-						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'type'            => 'url', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
@@ -700,7 +703,7 @@ function ctc_settings_config() {
 						'name'            => _x( 'Email', 'podcast settings', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => __( 'Email to receive notifications from iTunes / Google Play. Not shown to public (but is in feed). <b>Required by Google Play</b>.', 'church-theme-content' ),
-						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
@@ -723,7 +726,7 @@ function ctc_settings_config() {
 						'name'            => _x( 'Category', 'sermon settings', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => __( 'Choosing a category for your podcast is <b>required by iTunes</b> and can help users find it.', 'church-theme-content' ),
-						'type'            => 'radio', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'type'            => 'radio', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'inline'          => true, // make radio inputs inline instead of stacked.
 						'options'         => ctc_podcast_category_options(), // array of keys/values for radio or select.
@@ -744,7 +747,7 @@ function ctc_settings_config() {
 						'name'            => _x( 'Clean', 'sermon settings', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => __( 'iTunes needs to know if a podcast contains explicit content or not.', 'church-theme-content' ),
-						'type'            => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'type'            => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'  => __( 'Podcast does <em>not</em> contain explicit content', 'church-theme-content' ), // show text after checkbox.
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
@@ -770,7 +773,7 @@ function ctc_settings_config() {
 							'http://www.loc.gov/standards/iso639-2/php/code_list.php',
 							esc_url( admin_url( 'options-general.php' ) )
 						),
-						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
@@ -798,7 +801,7 @@ function ctc_settings_config() {
 							__( 'Include the X most recent sermons in your podcast feed. Defaults to "Syndication feeds..." in <a href="%1$s" target="_blank">Reading Settings</a>.', 'church-theme-content' ),
 							esc_url( admin_url( 'options-reading.php' ) )
 						),
-						'type'            => 'number', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'type'            => 'number', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
@@ -828,7 +831,7 @@ function ctc_settings_config() {
 							htmlspecialchars( '<itunes:new-feed-url>' ),
 							'https://help.apple.com/itc/podcasts_connect/#/itca489031e0'
 						),
-						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'type'            => 'url', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
@@ -851,7 +854,7 @@ function ctc_settings_config() {
 						'name'            => _x( 'Filtering', 'podcast settings', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => '',
-						'type'            => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'type'            => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => ctc_term_options( 'sermons', 'ctc_sermon_topic', array( // array of keys/values for radio or select.
@@ -874,7 +877,7 @@ function ctc_settings_config() {
 						'name'            => '',
 						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => '',
-						'type'            => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'type'            => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => ctc_term_options( 'sermons', 'ctc_sermon_book', array( // array of keys/values for radio or select.
@@ -897,7 +900,7 @@ function ctc_settings_config() {
 						'name'            => '',
 						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => '',
-						'type'            => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'type'            => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => ctc_term_options( 'sermons', 'ctc_sermon_series', array( // array of keys/values for radio or select.
@@ -920,7 +923,7 @@ function ctc_settings_config() {
 						'name'            => '',
 						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => '',
-						'type'            => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'type'            => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => ctc_term_options( 'sermons', 'ctc_sermon_speaker', array( // array of keys/values for radio or select.
@@ -943,7 +946,7 @@ function ctc_settings_config() {
 						'name'            => '',
 						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => __( 'You may choose to limit which sermons are included in your podcast.', 'church-theme-content' ),
-						'type'            => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'type'            => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => ctc_term_options( 'sermons', 'ctc_sermon_tag', array( // array of keys/values for radio or select.
@@ -983,7 +986,7 @@ function ctc_settings_config() {
 						'name'            => _x( 'Recurring Events', 'settings', 'church-theme-content' ),
 						'after_name'      => '', // append (Optional) or (Pro), etc.
 						'desc'            => $event_recurrence_desc,
-						'type'            => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'type'            => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'  => '', // show text after checkbox.
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
