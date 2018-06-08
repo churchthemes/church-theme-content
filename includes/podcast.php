@@ -169,6 +169,29 @@ function ctc_podcast_copyright_default() {
 }
 
 /**
+ * Default Podcast Limit.
+ *
+ * Limit to use when no limit saved in settings.
+ *
+ * Use posts_per_rss "Syndication feeds..." in Reading Settings as default.
+ *
+ * @since 1.9
+ * @return string Default string.
+ */
+function ctc_podcast_limit_default() {
+
+	// Get site name.
+	$rss_limit = get_option( 'posts_per_rss' ); // assumed to be church name.
+
+	// Build default title string.
+	$default = $rss_limit;
+
+	// Return filterable.
+	return apply_filters( 'ctc_podcast_limit_default', $default );
+
+}
+
+/**
  * Podcast category options.
  *
  * Array of select options for podcast settings.
