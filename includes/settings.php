@@ -84,26 +84,30 @@ function ctc_settings_config() {
 
 	// SEO Structured Data field.
 	$seo_field = array(
-		'name'             => _x( 'SEO Structured Data', 'settings', 'church-theme-content' ),
-		'after_name'       => '', // append (Optional) or (Pro), etc.
-		'desc'             => sprintf(
+		'name'              => _x( 'SEO Structured Data', 'settings', 'church-theme-content' ),
+		'after_name'        => '', // append (Optional) or (Pro), etc.
+		'desc'              => sprintf(
 			/* translators: %1$s is URL with information about SEO with JSON-LD */
 			__( 'Automatic Search Engine Optimization (SEO) with Schema.org structured data via JSON-LD. <a href="%1$s" target="_blank">Learn More</a>', 'church-theme-content' ),
 			esc_url( ctc_ctcom_url( 'seo-setting' ) )
 		),
-		'type'             => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
-		'checkbox_label'   => '',
-		'inline'           => false, // make radio inputs inline instead of stacked.
-		'options'          => array(), // array of keys/values for radio or select.
-		'default'          => false, // value to pre-populate option with (before first save or on reset).
-		'no_empty'         => false, // if user empties value, force default to be saved instead.
-		'allow_html'       => false, // allow HTML to be used in the value.
-		'attributes'       => array(), // attr => value array (e.g. set min/max for number or range type).
-		'class'            => '', // classes to add to input.
-		'content'          => '', // custom content instead of input (HTML allowed).
-		'custom_sanitize'  => '', // function to do additional sanitization.
-		'custom_content'   => '', // function for custom display of field input.
-		'pro'              => array( // field input element disabled when Pro not active.
+		'type'              => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
+		'checkbox_label'    => '',
+		'inline'            => false, // make radio inputs inline instead of stacked.
+		'options'           => array(), // array of keys/values for radio or select.
+		'upload_button'     => '', // text for button that opens media chooser.
+		'upload_title'      => '', // title appearing at top of media chooser.
+		'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+		'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+		'default'           => false, // value to pre-populate option with (before first save or on reset).
+		'no_empty'          => false, // if user empties value, force default to be saved instead.
+		'allow_html'        => false, // allow HTML to be used in the value.
+		'attributes'        => array(), // attr => value array (e.g. set min/max for number or range type).
+		'class'             => '', // classes to add to input.
+		'content'           => '', // custom content instead of input (HTML allowed).
+		'custom_sanitize'   => '', // function to do additional sanitization.
+		'custom_content'    => '', // function for custom display of field input.
+		'pro'               => array( // field input element disabled when Pro not active.
 			'default' => true, // default to use instead, when Pro plugin (Pro plugin will also set this on first installation).
 		),
 	);
@@ -117,66 +121,78 @@ function ctc_settings_config() {
 		_x( 'name', 'url slug setting', 'church-theme-content' ) ) // append /name/ to end of URL (use core translated string).
 	);
 	$url_slug_field = array(
-		'name'            => '',
-		'after_name'      => '', // append (Optional) or (Pro), etc.
-		'desc'            => '',
-		'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
-		'checkbox_label'  => '', // show text after checkbox.
-		'inline'          => false, // make radio inputs inline instead of stacked.
-		'options'         => array(), // array of keys/values for radio or select.
-		'default'         => '', // value to pre-populate option with (before first save or on reset).
-		'no_empty'        => false, // if user empties value, force default to be saved instead.
-		'allow_html'      => false, // allow HTML to be used in the value.
-		'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
-			'maxlength'   => '30',
+		'name'              => '',
+		'after_name'        => '', // append (Optional) or (Pro), etc.
+		'desc'              => '',
+		'type'              => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+		'checkbox_label'    => '', // show text after checkbox.
+		'inline'            => false, // make radio inputs inline instead of stacked.
+		'options'           => array(), // array of keys/values for radio or select.
+		'upload_button'     => '', // text for button that opens media chooser.
+		'upload_title'      => '', // title appearing at top of media chooser.
+		'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+		'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+		'default'           => '', // value to pre-populate option with (before first save or on reset).
+		'no_empty'          => false, // if user empties value, force default to be saved instead.
+		'allow_html'        => false, // allow HTML to be used in the value.
+		'attributes'        => array( // attr => value array (e.g. set min/max for number or range type).
+			'maxlength' => '30',
 		),
-		'class'           => 'ctps-width-200', // classes to add to input.
-		'content'         => '', // custom content instead of input (HTML allowed).
-		'custom_sanitize' => 'ctc_sanitize_setting_url_slug', // function to do additional sanitization.
-		'custom_content'  => '', // function for custom display of field input.
-		'pro'             => true, // field input element disabled when Pro not active.
+		'class'             => 'ctps-width-200', // classes to add to input.
+		'content'           => '', // custom content instead of input (HTML allowed).
+		'custom_sanitize'   => 'ctc_sanitize_setting_url_slug', // function to do additional sanitization.
+		'custom_content'    => '', // function for custom display of field input.
+		'pro'               => true, // field input element disabled when Pro not active.
 	);
 
 	// Taxonomy URL Base field.
 	$taxonomy_url_slug_field = array(
-		'name'            => '',
-		'after_name'      => '', // append (Optional) or (Pro), etc.
-		'desc'            => '',
-		'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
-		'checkbox_label'  => '', // show text after checkbox.
-		'inline'          => false, // make radio inputs inline instead of stacked.
-		'options'         => array(), // array of keys/values for radio or select.
-		'default'         => '', // value to pre-populate option with (before first save or on reset).
-		'no_empty'        => false, // if user empties value, force default to be saved instead.
-		'allow_html'      => false, // allow HTML to be used in the value.
-		'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
-			'maxlength'   => '30',
+		'name'              => '',
+		'after_name'        => '', // append (Optional) or (Pro), etc.
+		'desc'              => '',
+		'type'              => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+		'checkbox_label'    => '', // show text after checkbox.
+		'inline'            => false, // make radio inputs inline instead of stacked.
+		'options'           => array(), // array of keys/values for radio or select.
+		'upload_button'     => '', // text for button that opens media chooser.
+		'upload_title'      => '', // title appearing at top of media chooser.
+		'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+		'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+		'default'           => '', // value to pre-populate option with (before first save or on reset).
+		'no_empty'          => false, // if user empties value, force default to be saved instead.
+		'allow_html'        => false, // allow HTML to be used in the value.
+		'attributes'        => array( // attr => value array (e.g. set min/max for number or range type).
+			'maxlength' => '30',
 		),
-		'class'           => 'ctps-width-200', // classes to add to input.
-		'content'         => '', // custom content instead of input (HTML allowed).
-		'custom_sanitize' => 'ctc_sanitize_setting_url_slug', // function to do additional sanitization.
-		'custom_content'  => '', // function for custom display of field input.
-		'pro'             => true, // field input element disabled when Pro not active.
+		'class'             => 'ctps-width-200', // classes to add to input.
+		'content'           => '', // custom content instead of input (HTML allowed).
+		'custom_sanitize'   => 'ctc_sanitize_setting_url_slug', // function to do additional sanitization.
+		'custom_content'    => '', // function for custom display of field input.
+		'pro'               => true, // field input element disabled when Pro not active.
 	);
 
 	// Hide in Admin Menu field.
 	$hide_admin_field = array(
-		'name'            => __( 'Hide in Admin', 'church-theme-content' ),
-		'after_name'      => '', // append (Optional) or (Pro), etc.
-		'desc'            => __( 'This can be useful if you are not using the feature.', 'church-theme-content' ),
-		'type'            => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
-		'checkbox_label'  => '',
-		'inline'          => false, // make radio inputs inline instead of stacked.
-		'options'         => array(), // array of keys/values for radio or select.
-		'default'         => false, // value to pre-populate option with (before first save or on reset).
-		'no_empty'        => false, // if user empties value, force default to be saved instead.
-		'allow_html'      => false, // allow HTML to be used in the value.
-		'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
-		'class'           => '', // classes to add to input.
-		'content'         => '', // custom content instead of input (HTML allowed).
-		'custom_sanitize' => '', // function to do additional sanitization.
-		'custom_content'  => '', // function for custom display of field input.
-		'pro'             => false, // field input element disabled when Pro not active.
+		'name'              => __( 'Hide in Admin', 'church-theme-content' ),
+		'after_name'        => '', // append (Optional) or (Pro), etc.
+		'desc'              => __( 'This can be useful if you are not using the feature.', 'church-theme-content' ),
+		'type'              => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
+		'checkbox_label'    => '',
+		'inline'            => false, // make radio inputs inline instead of stacked.
+		'options'           => array(), // array of keys/values for radio or select.
+		'upload_button'     => '', // text for button that opens media chooser.
+		'upload_title'      => '', // title appearing at top of media chooser.
+		'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+		'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+		'default'           => false, // value to pre-populate option with (before first save or on reset).
+		'no_empty'          => false, // if user empties value, force default to be saved instead.
+		'allow_html'        => false, // allow HTML to be used in the value.
+		'attributes'        => array(), // attr => value array (e.g. set min/max for number or range type).
+		'class'             => '', // classes to add to input.
+		'content'           => '', // custom content instead of input (HTML allowed).
+		'custom_sanitize'   => '', // function to do additional sanitization.
+		'custom_content'    => '', // function for custom display of field input.
+		'pro'               => false, // field input element disabled when Pro not active.
 	);
 
 	/**********************************
@@ -322,7 +338,7 @@ function ctc_settings_config() {
 					// SEO Structured Data.
 					'sermons_seo' => array_merge( $seo_field, array(
 						'checkbox_label' => __( 'Improve SEO for Sermons <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
-						'unsupported'    => ! $sermons_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'      => ! $sermons_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Sermon Podcast (Shortcut).
@@ -334,6 +350,10 @@ function ctc_settings_config() {
 						'checkbox_label'   => '', // show text after checkbox.
 						'inline'           => false, // make radio inputs inline instead of stacked.
 						'options'          => array(), // array of keys/values for radio or select.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
 						'default'          => '', // value to pre-populate option with (before first save or on reset).
 						'no_empty'         => false, // if user empties value, force default to be saved instead.
 						'allow_html'       => false, // allow HTML to be used in the value.
@@ -347,140 +367,148 @@ function ctc_settings_config() {
 					),
 
 					// Alternative Wording - Singular
-					'sermon_word_singular' => array(
-						'name'            => __( 'Alternative Wording', 'church-theme-content' ),
-						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => '',
-						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
-						'checkbox_label'  => '', // show text after checkbox.
-						'inline'          => false, // make radio inputs inline instead of stacked.
-						'options'         => array(), // array of keys/values for radio or select.
-						'default'         => '', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => false, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
-						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+					'sermon_word_singular'  => array(
+						'name'              => __( 'Alternative Wording', 'church-theme-content' ),
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => '',
+						'type'              => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+						'checkbox_label'    => '', // show text after checkbox.
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => array(), // array of keys/values for radio or select.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => false, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_word_singular_default, // show the standard value if they leave blank.
 							'maxlength'   => '30',
 						),
-						'class'           => 'ctps-width-200', // classes to add to input.
-						'content'         => '', // custom content instead of input (HTML allowed).
-						'custom_sanitize' => '', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => true, // field input element disabled when Pro not active.
-						'unsupported'    => ! $sermons_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'class'             => 'ctps-width-200', // classes to add to input.
+						'content'           => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => '', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => true, // field input element disabled when Pro not active.
+						'unsupported'       => ! $sermons_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// Alternative Wording - Plural
 					'sermon_word_plural' => array(
-						'name'            => '',
-						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => sprintf(
+						'name'              => '',
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => sprintf(
 							/* translators: %1$s is "Sermon" and %2$s is "Sermons" (translated). */
 							__( 'Enter alternative wording for "%1$s" and "%2$s" (e.g. "Message" and "Messages").', 'church-theme-content' ),
 							$sermon_word_singular_default,
 							$sermon_word_plural_default
 						),
-						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
-						'checkbox_label'  => '', // show text after checkbox.
-						'inline'          => false, // make radio inputs inline instead of stacked.
-						'options'         => array(), // array of keys/values for radio or select.
-						'default'         => '', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => false, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
-						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+						'type'              => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+						'checkbox_label'    => '', // show text after checkbox.
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => array(), // array of keys/values for radio or select.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => false, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_word_plural_default, // show the standard value if they leave blank.
 							'maxlength'   => '30',
 						),
-						'class'           => 'ctps-width-200', // classes to add to input.
-						'content'         => '', // custom content instead of input (HTML allowed).
-						'custom_sanitize' => '', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => true, // field input element disabled when Pro not active.
-						'unsupported'    => ! $sermons_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'class'             => 'ctps-width-200', // classes to add to input.
+						'content'           => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => '', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => true, // field input element disabled when Pro not active.
+						'unsupported'       => ! $sermons_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// Sermon URL Base (Slug).
 					'sermon_url_slug' => array_merge( $url_slug_field, array(
-						'name'            => __( 'Sermon URL Base', 'church-theme-content' ), // "Base" makes more sense to users than "Slug" and that's what it's called in Permalink settings, for consistency.
-						'desc'            => sprintf(
+						'name'              => __( 'Sermon URL Base', 'church-theme-content' ), // "Base" makes more sense to users than "Slug" and that's what it's called in Permalink settings, for consistency.
+						'desc'              => sprintf(
 							$url_slug_desc,
 							$sermon_url_slug_default,
 							ctc_make_url_slug_bold( $sermon_url_slug_default ) . $url_slug_title // make slug bold.
 						),
-						'attributes'      => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
+						'attributes'        => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_url_slug_default, // show the standard value if they leave blank.
 						) ),
-						'unsupported'    => ! $sermons_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'       => ! $sermons_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Topic URL Base (Slug).
 					'sermon_topic_url_slug' => array_merge( $taxonomy_url_slug_field, array(
-						'name'            => __( 'Category URL Bases', 'church-theme-content' ),
-						'desc'            => sprintf(
+						'name'              => __( 'Category URL Bases', 'church-theme-content' ),
+						'desc'              => sprintf(
 							$url_slug_desc,
 							$sermon_topic_url_slug_default,
 							ctc_make_url_slug_bold( $sermon_topic_url_slug_default ) . $url_slug_name // make slug bold.
 						),
-						'attributes'      => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
+						'attributes'        => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_topic_url_slug_default, // show the standard value if they leave blank.
 						) ),
-						'unsupported'    => ! ctc_taxonomy_supported( 'sermons', 'ctc_sermon_topic' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'       => ! ctc_taxonomy_supported( 'sermons', 'ctc_sermon_topic' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Series URL Base (Slug).
 					'sermon_series_url_slug' => array_merge( $taxonomy_url_slug_field, array(
-						'name'            => '',
-						'desc'            => sprintf(
+						'name'        => '',
+						'desc'        => sprintf(
 							$url_slug_desc,
 							$sermon_series_url_slug_default,
 							ctc_make_url_slug_bold( $sermon_series_url_slug_default ) . $url_slug_name // make slug bold.
 						),
-						'attributes'      => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
+						'attributes'  => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_series_url_slug_default, // show the standard value if they leave blank.
 						) ),
-						'unsupported'    => ! ctc_taxonomy_supported( 'sermons', 'ctc_sermon_series' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported' => ! ctc_taxonomy_supported( 'sermons', 'ctc_sermon_series' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Book URL Base (Slug).
 					'sermon_book_url_slug' => array_merge( $taxonomy_url_slug_field, array(
-						'name'            => '',
-						'desc'            => sprintf(
+						'name'        => '',
+						'desc'        => sprintf(
 							$url_slug_desc,
 							$sermon_book_url_slug_default,
 							ctc_make_url_slug_bold( $sermon_book_url_slug_default ) . $url_slug_name // make slug bold.
 						),
-						'attributes'      => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
+						'attributes'  => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_book_url_slug_default, // show the standard value if they leave blank.
 						) ),
-						'unsupported'    => ! ctc_taxonomy_supported( 'sermons', 'ctc_sermon_book' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported' => ! ctc_taxonomy_supported( 'sermons', 'ctc_sermon_book' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Speaker URL Base (Slug).
 					'sermon_speaker_url_slug' => array_merge( $taxonomy_url_slug_field, array(
-						'name'            => '',
-						'desc'            => sprintf(
+						'name'       => '',
+						'desc'       => sprintf(
 							$url_slug_desc,
 							$sermon_speaker_url_slug_default,
 							ctc_make_url_slug_bold( $sermon_speaker_url_slug_default ) . $url_slug_name // make slug bold.
 						),
-						'attributes'      => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
+						'attributes'  => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_speaker_url_slug_default, // show the standard value if they leave blank.
 						) ),
-						'unsupported'    => ! ctc_taxonomy_supported( 'sermons', 'ctc_sermon_speaker' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported' => ! ctc_taxonomy_supported( 'sermons', 'ctc_sermon_speaker' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Tag URL Base (Slug).
 					'sermon_tag_url_slug' => array_merge( $taxonomy_url_slug_field, array(
-						'name'            => '',
-						'desc'            => sprintf(
+						'name'        => '',
+						'desc'        => sprintf(
 							$url_slug_desc,
 							$sermon_tag_url_slug_default,
 							ctc_make_url_slug_bold( $sermon_tag_url_slug_default ) . $url_slug_name // make slug bold.
 						),
-						'attributes'      => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
+						'attributes'  => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $sermon_tag_url_slug_default, // show the standard value if they leave blank.
 						) ),
-						'unsupported'    => ! ctc_taxonomy_supported( 'sermons', 'ctc_sermon_tag' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported' => ! ctc_taxonomy_supported( 'sermons', 'ctc_sermon_tag' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Hide in Admin Menu.
@@ -507,461 +535,534 @@ function ctc_settings_config() {
 
 					// Feed URL.
 					'podcast_feed_content' => array(
-						'name'            => _x( 'Feed URL', 'settings', 'church-theme-content' ),
-						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => sprintf(
+						'name'              => _x( 'Feed URL', 'settings', 'church-theme-content' ),
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => sprintf(
 							/* translators: %1$s is URL to guide about sermon podcasting. */
 							__( 'Submit your podcast feed URL to iTunes, Google Play, etc. Read the <a href="%1$s" target="_blank">Podcasting Guide</a> to learn how.', 'church-theme-content' ),
 							esc_url( ctc_ctcom_url( 'podcast-guide', array( 'utm_content' => 'settings' ) ) )
 						),
-						'type'            => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
-						'checkbox_label'  => '', // show text after checkbox.
-						'inline'          => false, // make radio inputs inline instead of stacked.
-						'options'         => array(), // array of keys/values for radio or select.
-						'default'         => '', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => false, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
-						'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
-						'class'           => '', // classes to add to input.
-						'content'         => $podcast_feed_content, // custom content instead of input (HTML allowed).
-						'custom_sanitize' => '', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => true, // field input element disabled when Pro not active.
-						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'type'              => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+						'checkbox_label'    => '', // show text after checkbox.
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => array(), // array of keys/values for radio or select.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => false, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array(), // attr => value array (e.g. set min/max for number or range type).
+						'class'             => '', // classes to add to input.
+						'content'           => $podcast_feed_content, // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => '', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => true, // field input element disabled when Pro not active.
+						'unsupported'       => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// Image.
 					'podcast_image' => array(
-						'name'            => _x( 'Image', 'podcast settings', 'church-theme-content' ),
-						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => __( 'Image must be between 1400x1400 and 3000x3000 pixels and in JPG or PNG format. <b>Required by iTunes</b>.', 'church-theme-content' ),
-						'type'            => 'upload', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
-						'checkbox_label'  => '', // show text after checkbox.
-						'inline'          => false, // make radio inputs inline instead of stacked.
-						'options'         => array(), // array of keys/values for radio or select.
-						'upload_button'   => __( 'Choose Image', 'church-theme-content' ), // text for button that opens media frame.
-						'upload_title'    => __( 'Choose an Image', 'church-theme-content' ), // title appearing at top of media frame.
-						'upload_type'     => 'image', // optional type of media to filter by (image, audio, video, application/pdf).
-						'default'         => '', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => false, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
-						'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
-						'class'           => '', // classes to add to input.
-						'content'         => '', // custom content instead of input (HTML allowed).
-						'custom_sanitize' => '', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => true, // field input element disabled when Pro not active.
-						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'name'              => _x( 'Image', 'podcast settings', 'church-theme-content' ),
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => __( 'Square image must be between 1400x1400 and 3000x3000 pixels and in JPG or PNG format. <b>Required by iTunes</b>.', 'church-theme-content' ),
+						'type'              => 'upload', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+						'checkbox_label'    => '', // show text after checkbox.
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => array(), // array of keys/values for radio or select.
+						'upload_button'     => __( 'Choose Image', 'church-theme-content' ), // text for button that opens media chooser.
+						'upload_title'      => __( 'Choose an Image', 'church-theme-content' ), // title appearing at top of media chooser.
+						'upload_type'       => 'image', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => '350', // provide a pixel width to show the image, if type is image.
+						'default'           => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => false, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array(), // attr => value array (e.g. set min/max for number or range type).
+						'class'             => '', // classes to add to input.
+						'content'           => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => '', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => true, // field input element disabled when Pro not active.
+						'unsupported'       => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// Title.
 					'podcast_title' => array(
-						'name'            => _x( 'Title', 'podcast settings', 'church-theme-content' ),
-						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => __( 'The title of your sermon podcast. Example: "Grace Church Sermons" or "Cornerstone Church Podcast". <b>Required</b>.', 'church-theme-content' ),
-						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
-						'checkbox_label'  => '', // show text after checkbox.
-						'inline'          => false, // make radio inputs inline instead of stacked.
-						'options'         => array(), // array of keys/values for radio or select.
-						'default'         => '', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => false, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
-						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+						'name'              => _x( 'Title', 'podcast settings', 'church-theme-content' ),
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => __( 'The title of your sermon podcast. Example: "Grace Church Sermons" or "Cornerstone Church Podcast". <b>Required</b>.', 'church-theme-content' ),
+						'type'              => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+						'checkbox_label'    => '', // show text after checkbox.
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => array(), // array of keys/values for radio or select.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => false, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => ctc_podcast_title_default(),
 							'maxlength'   => '60',
 						),
-						'class'           => '', // classes to add to input.
-						'content'         => '', // custom content instead of input (HTML allowed).
-						'custom_sanitize' => '', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => true, // field input element disabled when Pro not active.
-						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'class'             => '', // classes to add to input.
+						'content'           => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => '', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => true, // field input element disabled when Pro not active.
+						'unsupported'       => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// Subtitle.
 					'podcast_subtitle' => array(
-						'name'            => _x( 'Subtitle', 'podcast settings', 'church-theme-content' ),
-						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => __( 'A short description of your podcast. Example: "Weekly sermons by Pastor Bob Smith at Grace Church in Orlando, FL."', 'church-theme-content' ),
-						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
-						'checkbox_label'  => '', // show text after checkbox.
-						'inline'          => false, // make radio inputs inline instead of stacked.
-						'options'         => array(), // array of keys/values for radio or select.
-						'default'         => '', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => false, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
-						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+						'name'              => _x( 'Subtitle', 'podcast settings', 'church-theme-content' ),
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => __( 'A short description of your podcast. Example: "Weekly sermons by Pastor Bob Smith at Grace Church in Orlando, FL."', 'church-theme-content' ),
+						'type'              => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+						'checkbox_label'    => '', // show text after checkbox.
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => array(), // array of keys/values for radio or select.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => false, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => ctc_podcast_subtitle_default(),
 							'maxlength'   => '255', // enforce with custom_sanitize
 						),
-						'class'           => 'ctps-width-500', // classes to add to input.
-						'content'         => '', // custom content instead of input (HTML allowed).
-						'custom_sanitize' => 'ctc_sanitize_podcast_subtitle', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => true, // field input element disabled when Pro not active.
-						'unsupported'    => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'class'             => 'ctps-width-500', // classes to add to input.
+						'content'           => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => 'ctc_sanitize_podcast_subtitle', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => true, // field input element disabled when Pro not active.
+						'unsupported'       => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// Description (Summary).
 					'podcast_summary' => array(
-						'name'            => _x( 'Description', 'podcast settings', 'church-theme-content' ),
-						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => __( 'A full description of your podcast. You can write about your church, mission and pastor, link to your website, etc.', 'church-theme-content' ),
-						'type'            => 'textarea', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
-						'checkbox_label'  => '', // show text after checkbox.
-						'inline'          => false, // make radio inputs inline instead of stacked.
-						'options'         => array(), // array of keys/values for radio or select.
-						'default'         => '', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => false, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
-						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
-							'maxlength'   => '4000', // enforce with custom_sanitize
+						'name'              => _x( 'Description', 'podcast settings', 'church-theme-content' ),
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => __( 'A full description of your podcast. You can write about your church, mission and pastor, link to your website, etc.', 'church-theme-content' ),
+						'type'              => 'textarea', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+						'checkbox_label'    => '', // show text after checkbox.
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => array(), // array of keys/values for radio or select.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => false, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array( // attr => value array (e.g. set min/max for number or range type).
+							'maxlength' => '4000', // enforce with custom_sanitize
 						),
-						'class'           => 'ctps-width-500', // classes to add to input.
-						'content'         => '', // custom content instead of input (HTML allowed).
-						'custom_sanitize' => 'ctc_sanitize_podcast_summary', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => true, // field input element disabled when Pro not active.
-						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'class'             => 'ctps-width-500', // classes to add to input.
+						'content'           => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => 'ctc_sanitize_podcast_summary', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => true, // field input element disabled when Pro not active.
+						'unsupported'       => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// Provider (Author).
 					'podcast_author' => array(
-						'name'            => _x( 'Provider', 'podcast settings', 'church-theme-content' ),
-						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => __( 'The name of your church and/or pastor. Example: "Grace Church - Pastor Bob Smith". <b>Required</b>.', 'church-theme-content' ),
-						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
-						'checkbox_label'  => '', // show text after checkbox.
-						'inline'          => false, // make radio inputs inline instead of stacked.
-						'options'         => array(), // array of keys/values for radio or select.
-						'default'         => '', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => false, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
-						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+						'name'              => _x( 'Provider', 'podcast settings', 'church-theme-content' ),
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => __( 'The name of your church and/or pastor. Example: "Grace Church - Pastor Bob Smith". <b>Required</b>.', 'church-theme-content' ),
+						'type'              => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+						'checkbox_label'    => '', // show text after checkbox.
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => array(), // array of keys/values for radio or select.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => false, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => ctc_podcast_author_default(),
 							'maxlength'   => '60',
 						),
-						'class'           => '', // classes to add to input.
-						'content'         => '', // custom content instead of input (HTML allowed).
-						'custom_sanitize' => '', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => array( // field input element disabled when Pro not active.
+						'class'             => '', // classes to add to input.
+						'content'           => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => '', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => array( // field input element disabled when Pro not active.
 							'default' => ctc_podcast_title_default(), // set when Pro active if value not already saved.
 						),
-						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'       => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// Copyright.
 					'podcast_copyright' => array(
-						'name'            => _x( 'Copyright', 'podcast settings', 'church-theme-content' ),
-						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => __( 'Copyright notice for your podcast. Example: "&copy; Grace Church"', 'church-theme-content' ),
-						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
-						'checkbox_label'  => '', // show text after checkbox.
-						'inline'          => false, // make radio inputs inline instead of stacked.
-						'options'         => array(), // array of keys/values for radio or select.
-						'default'         => '', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => false, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
-						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+						'name'              => _x( 'Copyright', 'podcast settings', 'church-theme-content' ),
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => __( 'Copyright notice for your podcast. Example: "&copy; Grace Church"', 'church-theme-content' ),
+						'type'              => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+						'checkbox_label'    => '', // show text after checkbox.
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => array(), // array of keys/values for radio or select.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => false, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => ctc_podcast_copyright_default(),
 							'maxlength'   => '60',
 						),
-						'class'           => '', // classes to add to input.
-						'content'         => '', // custom content instead of input (HTML allowed).
-						'custom_sanitize' => '', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => true, // field input element disabled when Pro not active.
-						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'class'             => '', // classes to add to input.
+						'content'           => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => '', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => true, // field input element disabled when Pro not active.
+						'unsupported'       => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// Link (Website URL).
 					'podcast_link' => array(
-						'name'            => _x( 'Link', 'podcast settings', 'church-theme-content' ),
-						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => __( 'Provide a URL if you want your podcast to link to somewhere other than your website homepage.', 'church-theme-content' ),
-						'type'            => 'url', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
-						'checkbox_label'  => '', // show text after checkbox.
-						'inline'          => false, // make radio inputs inline instead of stacked.
-						'options'         => array(), // array of keys/values for radio or select.
-						'default'         => '', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => false, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
-						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+						'name'              => _x( 'Link', 'podcast settings', 'church-theme-content' ),
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => __( 'Provide a URL if you want your podcast to link to somewhere other than your website homepage.', 'church-theme-content' ),
+						'type'              => 'url', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+						'checkbox_label'    => '', // show text after checkbox.
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => array(), // array of keys/values for radio or select.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => false, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => ctc_podcast_link_default(),
 						),
-						'class'           => '', // classes to add to input.
-						'content'         => '', // custom content instead of input (HTML allowed).
-						'custom_sanitize' => '', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => true, // field input element disabled when Pro not active.
-						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'class'             => '', // classes to add to input.
+						'content'           => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => '', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => true, // field input element disabled when Pro not active.
+						'unsupported'       => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// Email.
 					'podcast_email' => array(
-						'name'            => _x( 'Email', 'podcast settings', 'church-theme-content' ),
-						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => __( 'Email to receive notifications from iTunes / Google Play. Not shown to public (but is in feed). <b>Required by Google Play</b>.', 'church-theme-content' ),
-						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
-						'checkbox_label'  => '', // show text after checkbox.
-						'inline'          => false, // make radio inputs inline instead of stacked.
-						'options'         => array(), // array of keys/values for radio or select.
-						'default'         => '', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => false, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
-						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
-							'maxlength'   => '60',
+						'name'              => _x( 'Email', 'podcast settings', 'church-theme-content' ),
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => __( 'Email to receive notifications from iTunes / Google Play. Not shown to public (but is in feed). <b>Required by Google Play</b>.', 'church-theme-content' ),
+						'type'              => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+						'checkbox_label'    => '', // show text after checkbox.
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => array(), // array of keys/values for radio or select.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => false, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array( // attr => value array (e.g. set min/max for number or range type).
+							'maxlength' => '60',
 						),
-						'class'           => '', // classes to add to input.
-						'content'         => '', // custom content instead of input (HTML allowed).
-						'custom_sanitize' => '', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => true, // field input element disabled when Pro not active.
-						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'class'             => '', // classes to add to input.
+						'content'           => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => '', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => true, // field input element disabled when Pro not active.
+						'unsupported'       => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// Category.
 					'podcast_category' => array(
-						'name'            => _x( 'Category', 'sermon settings', 'church-theme-content' ),
-						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => __( 'Choosing a category for your podcast is <b>required by iTunes</b> and can help users find it.', 'church-theme-content' ),
-						'type'            => 'radio', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
-						'checkbox_label'  => '', // show text after checkbox.
-						'inline'          => true, // make radio inputs inline instead of stacked.
-						'options'         => ctc_podcast_category_options(), // array of keys/values for radio or select.
-						'default'         => 'Religion & Spirituality|Christianity', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => true, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
-						'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
-						'class'           => '', // classes to add to input.
-						'content'         => '', // custom content instead of input (HTML allowed).
-						'custom_sanitize' => '', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => true,
-						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'name'              => _x( 'Category', 'sermon settings', 'church-theme-content' ),
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => __( 'Choosing a category for your podcast is <b>required by iTunes</b> and can help users find it.', 'church-theme-content' ),
+						'type'              => 'radio', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+						'checkbox_label'    => '', // show text after checkbox.
+						'inline'            => true, // make radio inputs inline instead of stacked.
+						'options'           => ctc_podcast_category_options(), // array of keys/values for radio or select.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => 'Religion & Spirituality|Christianity', // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => true, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array(), // attr => value array (e.g. set min/max for number or range type).
+						'class'             => '', // classes to add to input.
+						'content'           => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => '', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => true,
+						'unsupported'       => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// Clean (Not Explicit).
 					'podcast_not_explicit' => array(
-						'name'            => _x( 'Clean', 'sermon settings', 'church-theme-content' ),
-						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => __( 'iTunes needs to know if a podcast contains explicit content or not.', 'church-theme-content' ),
-						'type'            => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
-						'checkbox_label'  => __( 'Podcast does <em>not</em> contain explicit content', 'church-theme-content' ), // show text after checkbox.
-						'inline'          => false, // make radio inputs inline instead of stacked.
-						'options'         => array(), // array of keys/values for radio or select.
-						'default'         => true, // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => false, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
-						'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
-						'class'           => '', // classes to add to input.
-						'content'         => '', // custom content instead of input (HTML allowed).
-						'custom_sanitize' => '', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => true,
-						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'name'              => _x( 'Clean', 'sermon settings', 'church-theme-content' ),
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => __( 'iTunes needs to know if a podcast contains explicit content or not.', 'church-theme-content' ),
+						'type'              => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+						'checkbox_label'    => __( 'Podcast does <em>not</em> contain explicit content', 'church-theme-content' ), // show text after checkbox.
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => array(), // array of keys/values for radio or select.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => true, // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => false, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array(), // attr => value array (e.g. set min/max for number or range type).
+						'class'             => '', // classes to add to input.
+						'content'           => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => '', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => true,
+						'unsupported'       => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// Language.
 					'podcast_language' => array(
-						'name'            => _x( 'Language', 'podcast settings', 'church-theme-content' ),
-						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => sprintf(
+						'name'              => _x( 'Language', 'podcast settings', 'church-theme-content' ),
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => sprintf(
 							/* translators: %1$s is URL to ISO 639-1 language code list, %2$s is URL to General Settings */
 							__( 'Specify your podcast language in <a href="%1$s" target="_blank">ISO 639-1</a> format. If not specified, the language in <a href="%2$s" target="_blank">General Settings</a> will be used.', 'church-theme-content' ),
 							'http://www.loc.gov/standards/iso639-2/php/code_list.php',
 							esc_url( admin_url( 'options-general.php' ) )
 						),
-						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
-						'checkbox_label'  => '', // show text after checkbox.
-						'inline'          => false, // make radio inputs inline instead of stacked.
-						'options'         => array(), // array of keys/values for radio or select.
-						'default'         => '', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => false, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
-						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+						'type'              => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+						'checkbox_label'    => '', // show text after checkbox.
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => array(), // array of keys/values for radio or select.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => false, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => ctc_podcast_language_default(),
 							'maxlength'   => '5',
 						),
-						'class'           => 'ctps-width-100', // classes to add to input.
-						'content'         => '', // custom content instead of input (HTML allowed).
-						'custom_sanitize' => '', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => true, // field input element disabled when Pro not active.
-						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'class'             => 'ctps-width-100', // classes to add to input.
+						'content'           => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => '', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => true, // field input element disabled when Pro not active.
+						'unsupported'       => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// Limit.
 					'podcast_limit' => array(
-						'name'            => _x( 'Limit', 'podcast settings', 'church-theme-content' ),
-						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => sprintf(
+						'name'              => _x( 'Limit', 'podcast settings', 'church-theme-content' ),
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => sprintf(
 							/* translators: %1$s is URL to Reading Settings */
 							__( 'Include the X most recent sermons in your podcast feed. Defaults to "Syndication feeds..." in <a href="%1$s" target="_blank">Reading Settings</a>.', 'church-theme-content' ),
 							esc_url( admin_url( 'options-reading.php' ) )
 						),
-						'type'            => 'number', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
-						'checkbox_label'  => '', // show text after checkbox.
-						'inline'          => false, // make radio inputs inline instead of stacked.
-						'options'         => array(), // array of keys/values for radio or select.
-						'default'         => '', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => false, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
-						'attributes'      => array( // attr => value array (e.g. set min/max for number or range type).
+						'type'              => 'number', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+						'checkbox_label'    => '', // show text after checkbox.
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => array(), // array of keys/values for radio or select.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => false, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => ctc_podcast_limit_default(),
 							'min' 	      => '1',
 							'max'         => '999',
 						),
-						'class'           => 'ctps-width-100', // classes to add to input.
-						'content'         => '', // custom content instead of input (HTML allowed).
-						'custom_sanitize' => 'ctc_sanitize_podcast_limit', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => true, // field input element disabled when Pro not active.
-						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'class'             => 'ctps-width-100', // classes to add to input.
+						'content'           => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => 'ctc_sanitize_podcast_limit', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => true, // field input element disabled when Pro not active.
+						'unsupported'       => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// iTunes New Feed URL.
 					'podcast_new_url' => array(
-						'name'            => _x( 'iTunes New Feed URL', 'podcast settings', 'church-theme-content' ),
-						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => sprintf(
+						'name'              => _x( 'iTunes New Feed URL', 'podcast settings', 'church-theme-content' ),
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => sprintf(
 							/* translators: %1$s is <itunes:new-feed-url>, %2$s is URL to Apple's docs on changing podcast feed URLs */
 							__( 'If necessary, enter a URL to add the <code>%1$s</code> tag to your podcast feed. <a href="%2$s" target="_blank">Learn More</a>', 'church-theme-content' ),
 							htmlspecialchars( '<itunes:new-feed-url>' ),
 							'https://help.apple.com/itc/podcasts_connect/#/itca489031e0'
 						),
-						'type'            => 'url', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
-						'checkbox_label'  => '', // show text after checkbox.
-						'inline'          => false, // make radio inputs inline instead of stacked.
-						'options'         => array(), // array of keys/values for radio or select.
-						'default'         => '', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => false, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
-						'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
-						'class'           => '', // classes to add to input.
-						'content'         => '', // custom content instead of input (HTML allowed).
-						'custom_sanitize' => '', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => false, // field input element disabled when Pro not active.
-						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'type'              => 'url', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+						'checkbox_label'    => '', // show text after checkbox.
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => array(), // array of keys/values for radio or select.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => false, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array(), // attr => value array (e.g. set min/max for number or range type).
+						'class'             => '', // classes to add to input.
+						'content'           => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => '', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => false, // field input element disabled when Pro not active.
+						'unsupported'       => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					/* Future possibility. Problem: ctc_term_options() cannot get terms because taxonomies not registered this early. Would need to hide any taxonomies not supported by theme.
 
 					// Filter Topics.
 					'podcast_topic' => array(
-						'name'            => _x( 'Filtering', 'podcast settings', 'church-theme-content' ),
-						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => '',
-						'type'            => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
-						'checkbox_label'  => '', // show text after checkbox.
-						'inline'          => false, // make radio inputs inline instead of stacked.
-						'options'         => ctc_term_options( 'sermons', 'ctc_sermon_topic', array( // array of keys/values for radio or select.
+						'name'              => _x( 'Filtering', 'podcast settings', 'church-theme-content' ),
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => '',
+						'type'              => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+						'checkbox_label'    => '', // show text after checkbox.
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => ctc_term_options( 'sermons', 'ctc_sermon_topic', array( // array of keys/values for radio or select.
 							'all' => _x( 'All Topics', 'podcast settings', 'church-theme-content' )
 						) ),
-						'default'         => 'all', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => true, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
-						'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
-						'class'           => 'ctps-width-350', // classes to add to input.
-						'content'         => '', // custom content instead of input (HTML allowed).
-						'custom_sanitize' => '', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => true, // field input element disabled when Pro not active.
-						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => 'all', // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => true, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array(), // attr => value array (e.g. set min/max for number or range type).
+						'class'             => 'ctps-width-350', // classes to add to input.
+						'content'           => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => '', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => true, // field input element disabled when Pro not active.
+						'unsupported'       => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// Filter Books.
 					'podcast_book' => array(
-						'name'            => '',
-						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => '',
-						'type'            => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
-						'checkbox_label'  => '', // show text after checkbox.
-						'inline'          => false, // make radio inputs inline instead of stacked.
-						'options'         => ctc_term_options( 'sermons', 'ctc_sermon_book', array( // array of keys/values for radio or select.
+						'name'              => '',
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => '',
+						'type'              => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+						'checkbox_label'    => '', // show text after checkbox.
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => ctc_term_options( 'sermons', 'ctc_sermon_book', array( // array of keys/values for radio or select.
 							'all' => _x( 'All Books', 'podcast settings', 'church-theme-content' )
 						) ),
-						'default'         => 'all', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => true, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
-						'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
-						'class'           => 'ctps-width-350', // classes to add to input.
-						'content'         => '', // custom content instead of input (HTML allowed).
-						'custom_sanitize' => '', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => true, // field input element disabled when Pro not active.
-						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => 'all', // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => true, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array(), // attr => value array (e.g. set min/max for number or range type).
+						'class'             => 'ctps-width-350', // classes to add to input.
+						'content'           => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => '', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => true, // field input element disabled when Pro not active.
+						'unsupported'       => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// Filter Series.
 					'podcast_series' => array(
-						'name'            => '',
-						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => '',
-						'type'            => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
-						'checkbox_label'  => '', // show text after checkbox.
-						'inline'          => false, // make radio inputs inline instead of stacked.
-						'options'         => ctc_term_options( 'sermons', 'ctc_sermon_series', array( // array of keys/values for radio or select.
+						'name'              => '',
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => '',
+						'type'              => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+						'checkbox_label'    => '', // show text after checkbox.
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => ctc_term_options( 'sermons', 'ctc_sermon_series', array( // array of keys/values for radio or select.
 							'all' => _x( 'All Series', 'podcast settings', 'church-theme-content' )
 						) ),
-						'default'         => 'all', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => true, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
-						'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
-						'class'           => 'ctps-width-350', // classes to add to input.
-						'content'         => '', // custom content instead of input (HTML allowed).
-						'custom_sanitize' => '', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => true, // field input element disabled when Pro not active.
-						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => 'all', // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => true, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array(), // attr => value array (e.g. set min/max for number or range type).
+						'class'             => 'ctps-width-350', // classes to add to input.
+						'content'           => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => '', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => true, // field input element disabled when Pro not active.
+						'unsupported'       => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// Filter Speaker.
 					'podcast_speaker' => array(
-						'name'            => '',
-						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => '',
-						'type'            => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
-						'checkbox_label'  => '', // show text after checkbox.
-						'inline'          => false, // make radio inputs inline instead of stacked.
-						'options'         => ctc_term_options( 'sermons', 'ctc_sermon_speaker', array( // array of keys/values for radio or select.
+						'name'              => '',
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => '',
+						'type'              => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+						'checkbox_label'    => '', // show text after checkbox.
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => ctc_term_options( 'sermons', 'ctc_sermon_speaker', array( // array of keys/values for radio or select.
 							'all' => _x( 'All Speakers', 'podcast settings', 'church-theme-content' )
 						) ),
-						'default'         => 'all', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => true, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
-						'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
-						'class'           => 'ctps-width-350', // classes to add to input.
-						'content'         => '', // custom content instead of input (HTML allowed).
-						'custom_sanitize' => '', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => true, // field input element disabled when Pro not active.
-						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => 'all', // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => true, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array(), // attr => value array (e.g. set min/max for number or range type).
+						'class'             => 'ctps-width-350', // classes to add to input.
+						'content'           => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => '', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => true, // field input element disabled when Pro not active.
+						'unsupported'       => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// Filter Tags.
 					'podcast_tag' => array(
-						'name'            => '',
-						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => __( 'You may choose to limit which sermons are included in your podcast.', 'church-theme-content' ),
-						'type'            => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
-						'checkbox_label'  => '', // show text after checkbox.
-						'inline'          => false, // make radio inputs inline instead of stacked.
-						'options'         => ctc_term_options( 'sermons', 'ctc_sermon_tag', array( // array of keys/values for radio or select.
+						'name'              => '',
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => __( 'You may choose to limit which sermons are included in your podcast.', 'church-theme-content' ),
+						'type'              => 'select', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+						'checkbox_label'    => '', // show text after checkbox.
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => ctc_term_options( 'sermons', 'ctc_sermon_tag', array( // array of keys/values for radio or select.
 							'all' => _x( 'All Tags', 'podcast settings', 'church-theme-content' )
 						) ),
-						'default'         => 'all', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => true, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
-						'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
-						'class'           => 'ctps-width-350', // classes to add to input.
-						'content'         => '', // custom content instead of input (HTML allowed).
-						'custom_sanitize' => '', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => true, // field input element disabled when Pro not active.
-						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => 'all', // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => true, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array(), // attr => value array (e.g. set min/max for number or range type).
+						'class'             => 'ctps-width-350', // classes to add to input.
+						'content'           => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => '', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => true, // field input element disabled when Pro not active.
+						'unsupported'       => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					*/
@@ -983,86 +1084,94 @@ function ctc_settings_config() {
 
 					// Recurring Events.
 					'event_recurrence_content' => array(
-						'name'            => _x( 'Recurring Events', 'settings', 'church-theme-content' ),
-						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => $event_recurrence_desc,
-						'type'            => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
-						'checkbox_label'  => '', // show text after checkbox.
-						'inline'          => false, // make radio inputs inline instead of stacked.
-						'options'         => array(), // array of keys/values for radio or select.
-						'default'         => '', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => false, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
-						'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
-						'class'           => '', // classes to add to input.
-						'content'         => $event_recurrence_content, // custom content instead of input (HTML allowed).
-						'custom_sanitize' => '', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => true, // field input element disabled when Pro not active.
-						'unsupported'     => ! $events_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'name'              => _x( 'Recurring Events', 'settings', 'church-theme-content' ),
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => $event_recurrence_desc,
+						'type'              => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+						'checkbox_label'    => '', // show text after checkbox.
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => array(), // array of keys/values for radio or select.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => false, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array(), // attr => value array (e.g. set min/max for number or range type).
+						'class'             => '', // classes to add to input.
+						'content'           => $event_recurrence_content, // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => '', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => true, // field input element disabled when Pro not active.
+						'unsupported'       => ! $events_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// SEO Structured Data.
 					'events_seo' => array_merge( $seo_field, array(
 						'checkbox_label' => __( 'Improve SEO for Events <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
-						'unsupported'    => ! $events_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'      => ! $events_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Location Memory.
 					'event_location_memory' => array(
-						'name'            => __( 'Location Memory', 'church-theme-content' ),
-						'after_name'      => '', // append (Optional) or (Pro), etc.
-						'desc'            => __( 'Save time when adding events by choosing from previously used locations.', 'church-theme-content' ),
-						'type'            => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
-						'checkbox_label'  => __( 'Enable "Choose" Button and Autocomplete <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ),
-						'inline'          => false, // make radio inputs inline instead of stacked.
-						'options'         => array(), // array of keys/values for radio or select.
-						'default'         => false, // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => false, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
-						'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
-						'class'           => '', // classes to add to input.
-						'content'         => '', // custom content instead of input (HTML allowed).
-						'custom_sanitize' => '', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-						'pro'             => array( // field input element disabled when Pro not active.
+						'name'              => __( 'Location Memory', 'church-theme-content' ),
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => __( 'Save time when adding events by choosing from previously used locations.', 'church-theme-content' ),
+						'type'              => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
+						'checkbox_label'    => __( 'Enable "Choose" Button and Autocomplete <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ),
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => array(), // array of keys/values for radio or select.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => false, // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => false, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array(), // attr => value array (e.g. set min/max for number or range type).
+						'class'             => '', // classes to add to input.
+						'content'           => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => '', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => array( // field input element disabled when Pro not active.
 							'default' => true, // default to use instead, when Pro plugin (Pro plugin will also set this on first installation).
 						),
-						'unsupported'    => ! ( ctc_field_supported( 'events', '_ctc_event_address' ) || ctc_field_supported( 'events', '_ctc_event_venue' ) ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'      => ! ( ctc_field_supported( 'events', '_ctc_event_address' ) || ctc_field_supported( 'events', '_ctc_event_venue' ) ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// Event URL Base (Slug).
 					'event_url_slug' => array_merge( $url_slug_field, array(
-						'name'            => __( 'Event URL Base', 'church-theme-content' ), // "Base" makes more sense to users than "Slug" and that's what it's called in Permalink settings, for consistency.
-						'desc'            => sprintf(
+						'name'              => __( 'Event URL Base', 'church-theme-content' ), // "Base" makes more sense to users than "Slug" and that's what it's called in Permalink settings, for consistency.
+						'desc'              => sprintf(
 							$url_slug_desc,
 							$event_url_slug_default,
 							ctc_make_url_slug_bold( $event_url_slug_default ) . $url_slug_name // make slug bold.
 						),
-						'attributes'      => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
+						'attributes'        => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $event_url_slug_default, // show the standard value if they leave blank.
 						) ),
-						'unsupported'     => ! $events_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'       => ! $events_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Category URL Base (Slug).
 					'event_category_url_slug' => array_merge( $taxonomy_url_slug_field, array(
-						'name'            => __( 'Category URL Base', 'church-theme-content' ), // "Base" makes more sense to users than "Slug" and that's what it's called in Permalink settings, for consistency.
-						'desc'            => sprintf(
+						'name'              => __( 'Category URL Base', 'church-theme-content' ), // "Base" makes more sense to users than "Slug" and that's what it's called in Permalink settings, for consistency.
+						'desc'              => sprintf(
 							$url_slug_desc,
 							$event_category_url_slug_default,
 							ctc_make_url_slug_bold( $event_category_url_slug_default ) . $url_slug_name // make slug bold.
 						),
-						'attributes'      => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
+						'attributes'        => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $event_category_url_slug_default, // show the standard value if they leave blank.
 						) ),
-						'unsupported'     => ! ctc_taxonomy_supported( 'events', 'ctc_event_category' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'       => ! ctc_taxonomy_supported( 'events', 'ctc_event_category' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Hide in Admin Menu.
 					'events_admin_hide' => array_merge( $hide_admin_field, array(
 						'checkbox_label' => __( 'Hide Events in Admin Menu', 'church-theme-content' ), // show text after checkbox.
-						'unsupported'    => ! $events_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'      => ! $events_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 				),
@@ -1084,51 +1193,55 @@ function ctc_settings_config() {
 					// SEO Structured Data.
 					'locations_seo' => array_merge( $seo_field, array(
 						'checkbox_label' => __( 'Improve SEO for Locations <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
-						'unsupported'    => ! $locations_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'      => ! $locations_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Google Maps API Key.
 					'google_maps_api_key' => array(
-						'name'            => _x( 'Google Maps API Key', 'settings', 'church-theme-content' ),
-						'after_name'      => __( '(Required)', 'setting label', 'church-theme-content' ), // append (Optional) or (Pro), etc.
-						'desc'            => sprintf(
+						'name'              => _x( 'Google Maps API Key', 'settings', 'church-theme-content' ),
+						'after_name'        => __( '(Required)', 'setting label', 'church-theme-content' ), // append (Optional) or (Pro), etc.
+						'desc'              => sprintf(
 							/* translators: %1$s is URL to guide telling user how to get a Google Maps API Key */
 							__( 'An API Key for Google Maps is required if you want to show maps for locations or events. <a href="%1$s" target="_blank">Get an API Key</a>', 'church-theme-content' ),
 							esc_url( ctc_ctcom_url( 'google-maps-api-key' ) ) // how to get API key.
 						),
-						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
-						'checkbox_label'  => '', // show text after checkbox.
-						'inline'          => false, // make radio inputs inline instead of stacked.
-						'options'         => array(), // array of keys/values for radio or select.
-						'default'         => '', // value to pre-populate option with (before first save or on reset).
-						'no_empty'        => false, // if user empties value, force default to be saved instead.
-						'allow_html'      => false, // allow HTML to be used in the value.
-						'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
-						'class'           => '', // classes to add to input.
-						'content'         => '', // custom content instead of input (HTML allowed).
-						'custom_sanitize' => '', // function to do additional sanitization.
-						'custom_content'  => '', // function for custom display of field input.
-						'unsupported'     => '', // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'type'              => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
+						'checkbox_label'    => '', // show text after checkbox.
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => array(), // array of keys/values for radio or select.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => false, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array(), // attr => value array (e.g. set min/max for number or range type).
+						'class'             => '', // classes to add to input.
+						'content'           => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => '', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'unsupported'       => '', // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
 					// Location URL Base (Slug).
 					'location_url_slug' => array_merge( $url_slug_field, array(
-						'name'            => __( 'Location URL Base', 'church-theme-content' ), // "Base" makes more sense to users than "Slug" and that's what it's called in Permalink settings, for consistency.
-						'desc'            => sprintf(
+						'name'              => __( 'Location URL Base', 'church-theme-content' ), // "Base" makes more sense to users than "Slug" and that's what it's called in Permalink settings, for consistency.
+						'desc'              => sprintf(
 							$url_slug_desc,
 							$location_url_slug_default,
 							ctc_make_url_slug_bold( $location_url_slug_default ) . $url_slug_name // make slug bold.
 						),
-						'attributes'      => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
+						'attributes'        => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $location_url_slug_default, // show the standard value if they leave blank.
 						) ),
-						'unsupported'     => ! $locations_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'       => ! $locations_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Hide in Admin Menu.
 					'locations_admin_hide' => array_merge( $hide_admin_field, array(
 						'checkbox_label' => __( 'Hide Locations in Admin Menu', 'church-theme-content' ), // show text after checkbox.
-						'unsupported'    => ! $locations_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'      => ! $locations_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 				),
@@ -1155,30 +1268,30 @@ function ctc_settings_config() {
 
 					// Person URL Base (Slug).
 					'person_url_slug' => array_merge( $url_slug_field, array(
-						'name'            => __( 'Person URL Base', 'church-theme-content' ), // "Base" makes more sense to users than "Slug" and that's what it's called in Permalink settings, for consistency.
-						'desc'            => sprintf(
+						'name'              => __( 'Person URL Base', 'church-theme-content' ), // "Base" makes more sense to users than "Slug" and that's what it's called in Permalink settings, for consistency.
+						'desc'              => sprintf(
 							$url_slug_desc,
 							$person_url_slug_default,
 							ctc_make_url_slug_bold( $person_url_slug_default ) . $url_slug_name // make slug bold.
 						),
-						'attributes'      => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
+						'attributes'        => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $person_url_slug_default, // show the standard value if they leave blank.
 						) ),
-						'unsupported'    => ! $people_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'      => ! $people_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Group URL Base (Slug).
 					'person_group_url_slug' => array_merge( $taxonomy_url_slug_field, array(
-						'name'            => __( 'Group URL Base', 'church-theme-content' ), // "Base" makes more sense to users than "Slug" and that's what it's called in Permalink settings, for consistency.
-						'desc'            => sprintf(
+						'name'              => __( 'Group URL Base', 'church-theme-content' ), // "Base" makes more sense to users than "Slug" and that's what it's called in Permalink settings, for consistency.
+						'desc'              => sprintf(
 							$url_slug_desc,
 							$person_group_url_slug_default,
 							ctc_make_url_slug_bold( $person_group_url_slug_default ) . $url_slug_name // make slug bold.
 						),
-						'attributes'      => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
+						'attributes'        => array_merge( $url_slug_field['attributes'], array( // attr => value array (e.g. set min/max for number or range type).
 							'placeholder' => $person_group_url_slug_default, // show the standard value if they leave blank.
 						) ),
-						'unsupported'     => ! ctc_taxonomy_supported( 'people', 'ctc_person_group' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
+						'unsupported'       => ! ctc_taxonomy_supported( 'people', 'ctc_person_group' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
 					// Hide in Admin Menu.

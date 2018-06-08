@@ -63,7 +63,7 @@
 /* License Buttons */
 
 .ctc-license-button,
-input[name^=ctc_settings] {
+.ctps-section-licenses input[name^=ctc_settings] {
 	margin-right: 8px !important;
 }
 
