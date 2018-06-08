@@ -540,7 +540,7 @@ function ctc_settings_config() {
 						'inline'          => false, // make radio inputs inline instead of stacked.
 						'options'         => array(), // array of keys/values for radio or select.
 						'upload_button'   => __( 'Choose Image', 'church-theme-content' ), // text for button that opens media frame.
-						'upload_title'    => __( 'Choose an Image File', 'church-theme-content' ), // title appearing at top of media frame.
+						'upload_title'    => __( 'Choose an Image', 'church-theme-content' ), // title appearing at top of media frame.
 						'upload_type'     => 'image', // optional type of media to filter by (image, audio, video, application/pdf).
 						'default'         => '', // value to pre-populate option with (before first save or on reset).
 						'no_empty'        => false, // if user empties value, force default to be saved instead.
