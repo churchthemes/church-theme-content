@@ -818,6 +818,32 @@ function ctc_settings_config() {
 						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
+					// iTunes New Feed URL.
+					'podcast_new_url' => array(
+						'name'            => _x( 'iTunes New Feed URL', 'podcast settings', 'church-theme-content' ),
+						'after_name'      => '', // append (Optional) or (Pro), etc.
+						'desc'            => sprintf(
+							/* translators: %1$s is <itunes:new-feed-url>, %2$s is URL to Apple's docs on changing podcast feed URLs */
+							__( 'If necessary, enter a URL to add the <code>%1$s</code> tag to your podcast feed. <a href="%2$s" target="_blank">Learn More</a>', 'church-theme-content' ),
+							htmlspecialchars( '<itunes:new-feed-url>' ),
+							'https://help.apple.com/itc/podcasts_connect/#/itca489031e0'
+						),
+						'type'            => 'text', // text, textarea, checkbox, checkbox_multiple, radio, select, number, content.
+						'checkbox_label'  => '', // show text after checkbox.
+						'inline'          => false, // make radio inputs inline instead of stacked.
+						'options'         => array(), // array of keys/values for radio or select.
+						'default'         => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'        => false, // if user empties value, force default to be saved instead.
+						'allow_html'      => false, // allow HTML to be used in the value.
+						'attributes'      => array(), // attr => value array (e.g. set min/max for number or range type).
+						'class'           => '', // classes to add to input.
+						'content'         => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize' => '', // function to do additional sanitization.
+						'custom_content'  => '', // function for custom display of field input.
+						'pro'             => false, // field input element disabled when Pro not active.
+						'unsupported'     => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+					),
+
 					/* Future possibility. Problem: ctc_term_options() cannot get terms because taxonomies not registered this early. Would need to hide any taxonomies not supported by theme.
 
 					// Filter Topics.
