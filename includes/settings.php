@@ -199,6 +199,14 @@ function ctc_settings_config() {
 	 * SETTINGS
 	 **********************************/
 
+	// Podcast settings description.
+	$podcast_guide_url = ctc_ctcom_url( 'podcast-guide', array( 'utm_content' => 'settings' ) );
+	$podcast_settings_desc = sprintf(
+		/* translators: Used in settings on Sermons section for Podcast shortcut and at top of Podcast tab. %1$s is URL for sermon podcast guide. */
+		__( 'Set up your <a href="%1$s" target="_blank">Sermon Podcast</a> to reach more people automatically on iTunes, Google Play and elsewhere.', 'church-theme-content' ),
+		esc_url( $podcast_guide_url )
+	);
+
 	// Podcast data.
 	$podcast_supported = ctc_podcast_content_supported();
 	$podcast_feed_url = ctc_podcast_feed_url();
@@ -345,7 +353,7 @@ function ctc_settings_config() {
 					'podcast_content' => array(
 						'name'             => _x( 'Sermon Podcast', 'settings', 'church-theme-content' ),
 						'after_name'       => '', // append (Optional) or (Pro), etc.
-						'desc'             => __( 'Reach more people by automatically podcasting your sermons on iTunes, Google Play and elsewhere.', 'church-theme-content' ),
+						'desc'             => strip_tags( $podcast_settings_desc ),
 						'type'             => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'   => '', // show text after checkbox.
 						'inline'           => false, // make radio inputs inline instead of stacked.
@@ -528,7 +536,7 @@ function ctc_settings_config() {
 				'title' => _x( 'Podcast', 'settings section title', 'church-theme-content' ),
 
 				// Description.
-				'desc' => __( 'Reach more people by automatically podcasting your sermons on iTunes, Google Play and elsewhere. It is recommended that you complete all fields.', 'church-theme-content' ),
+				'desc' => $podcast_settings_desc,
 
 				// Fields (Settings).
 				'fields' => array(
@@ -540,7 +548,7 @@ function ctc_settings_config() {
 						'desc'              => sprintf(
 							/* translators: %1$s is URL to guide about sermon podcasting. */
 							__( 'Submit your podcast feed URL to iTunes, Google Play, etc. Read the <a href="%1$s" target="_blank">Podcasting Guide</a> to learn how.', 'church-theme-content' ),
-							esc_url( ctc_ctcom_url( 'podcast-guide', array( 'utm_content' => 'settings' ) ) )
+							esc_url( $podcast_guide_url )
 						),
 						'type'              => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'    => '', // show text after checkbox.
