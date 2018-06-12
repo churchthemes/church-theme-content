@@ -278,6 +278,12 @@ add_action( 'init', 'ctc_add_podcast_feed' );
  */
 function ctc_output_podcast_feed() {
 
+	// Get settings.
+	$title = ctc_setting( 'podcast_title' );
+
+	// Set defaults.
+	$title = empty( $title ) ? ctc_podcast_title_default() : $title;
+
 	// Set content type and charset.
 	header( 'Content-Type: ' . feed_content_type( 'rss2' ) . '; charset=' . get_option( 'blog_charset' ), true );
 
@@ -301,7 +307,7 @@ function ctc_output_podcast_feed() {
 
 	<channel>
 
-		<title></title>
+		<title><?php echo esc_html( $title ); ?></title>
 
 
 
