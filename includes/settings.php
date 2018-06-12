@@ -210,6 +210,7 @@ function ctc_settings_config() {
 	// Podcast data.
 	$podcast_supported = ctc_podcast_content_supported();
 	$podcast_feed_url = ctc_podcast_feed_url();
+	$validate_url = 'https://podba.se/validate/?url=' . $podcast_feed_url; // urelncode() causes problem with podbase.
 	$itunes_submit_url = 'https://podcastsconnect.apple.com/my-podcasts/new-feed?submitfeed=' . urlencode( $podcast_feed_url );
 	$google_submit_url = 'https://play.google.com/music/podcasts/publish';
 
@@ -234,6 +235,7 @@ function ctc_settings_config() {
 	$podcast_feed_content .= '</div>';
 	$podcast_feed_content .= '<div id="ctc-settings-podcast-feed-buttons">';
 	$podcast_feed_content .= '	<a href="#" id="ctc-copy-podcast-url-button" class="button ' . esc_attr( $podcast_button_classes ) . '" data-clipboard-text="' . esc_attr( $podcast_feed_url ) . '">' . _x( 'Copy', 'podcast feed URL', 'church-theme-content' ) . '</a>';
+	$podcast_feed_content .= '	<a href="' . esc_url( $validate_url ) . '" class="button ' . esc_attr( $podcast_button_classes ) . '" target="_blank">' . _x( 'Validate', 'podcast settings', 'church-theme-content' ) . '</a>';
 	$podcast_feed_content .= '	<a href="' . esc_url( $itunes_submit_url ) . '" class="button ' . esc_attr( $podcast_button_classes ) . '" target="_blank">' . __( 'Submit to iTunes', 'church-theme-content' ) . '</a>';
 	$podcast_feed_content .= '	<a href="' . esc_url( $google_submit_url ) . '" class="button ' . esc_attr( $podcast_button_classes ) . '" target="_blank">' . __( 'Submit to Google Play', 'church-theme-content' ) . '</a>';
 	$podcast_feed_content .= '</div>';
