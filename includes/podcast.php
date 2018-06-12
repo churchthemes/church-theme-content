@@ -251,6 +251,69 @@ function ctc_podcast_feed_url() {
 
 }
 
+/**
+ * Add podcast feed.
+ *
+ * Register the custom podcast feed accessible at ctc_podcast_feed_url().
+ *
+ * @since 1.9
+ */
+function ctc_add_podcast_feed() {
+
+	$feed_name = ctc_podcast_feed_name();
+
+	add_feed( $feed_name, 'ctc_podcast_feed_content' );
+
+}
+
+add_action( 'init', 'ctc_add_podcast_feed' );
+
+/**
+ * Set podcast feed content type.
+ *
+ * Use correct HTTP header for RSS feed.
+ *
+ * @since 1.9
+ */
+function ctc_podcast_feed_type( $content_type, $type ) {
+
+	$feed_name = ctc_podcast_feed_name();
+
+	if ( $feed_name === $type ) {
+		$content_type = feed_content_type( 'rss2' );
+	}
+
+	return $content_type;
+
+}
+
+add_filter( 'feed_content_type', 'ctc_podcast_feed_type', 10, 2 );
+
+/**
+ * Podcast feed content.
+ *
+ * Return XML for podcast feed accessible at ctc_podcast_feed_url().
+ *
+ * @since 1.9
+ * @return string Feed contents.
+ */
+function ctc_podcast_feed_content() {
+
+	$xml = '';
+
+	$xml .= 'content';
+
+	// Standard feed only supports iTunes New Feed URL tag.
+
+
+	// Allow plugins (Pro) to filter in contents.
+	$xml = apply_filters( 'ctc_podcast_feed_content', $xml );
+
+	// Output content.
+	echo $xml;
+
+}
+
 /*********************************************
  * HELPERS
  *********************************************/
