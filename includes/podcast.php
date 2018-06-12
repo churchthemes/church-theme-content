@@ -262,54 +262,66 @@ function ctc_add_podcast_feed() {
 
 	$feed_name = ctc_podcast_feed_name();
 
-	add_feed( $feed_name, 'ctc_podcast_feed_content' );
+	add_feed( $feed_name, 'ctc_output_podcast_feed' );
 
 }
 
 add_action( 'init', 'ctc_add_podcast_feed' );
 
 /**
- * Set podcast feed content type.
+ * Output podcast feed XML.
  *
- * Use correct HTTP header for RSS feed.
- *
- * @since 1.9
- */
-function ctc_podcast_feed_type( $content_type, $type ) {
-
-	$feed_name = ctc_podcast_feed_name();
-
-	if ( $feed_name === $type ) {
-		$content_type = feed_content_type( 'rss2' );
-	}
-
-	return $content_type;
-
-}
-
-add_filter( 'feed_content_type', 'ctc_podcast_feed_type', 10, 2 );
-
-/**
- * Podcast feed content.
- *
- * Return XML for podcast feed accessible at ctc_podcast_feed_url().
+ * Note: Do not rely on DOMDocument since not always available.
  *
  * @since 1.9
  * @return string Feed contents.
  */
-function ctc_podcast_feed_content() {
+function ctc_output_podcast_feed() {
 
-	$xml = '';
+	// Set content type and charset.
+	header( 'Content-Type: ' . feed_content_type( 'rss2' ) . '; charset=' . get_option( 'blog_charset' ), true );
 
-	$xml .= 'content';
+	// Buffer feed contents.
+	ob_start();
 
-	// Standard feed only supports iTunes New Feed URL tag.
+	// Begin output.
+	?>
+
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+	xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0"
+	<?php do_action( 'rss2_ns' ); // Fires at the end of the RSS root to add namespaces. ?>
+>
+
+	<channel>
+
+		<title></title>
 
 
-	// Allow plugins (Pro) to filter in contents.
-	$xml = apply_filters( 'ctc_podcast_feed_content', $xml );
 
-	// Output content.
+	</channel>
+
+</rss>
+
+	<?php
+
+	// Get XML.
+	$xml = ob_get_contents();
+	ob_end_clean(); // end buffer.
+
+	// Filter XML.
+	$xml = apply_filters( 'ctc_output_podcast_feed', $xml );
+
+	// Trim XML.
+	$xml = trim( $xml );
+
+	// Output XML.
 	echo $xml;
 
 }
