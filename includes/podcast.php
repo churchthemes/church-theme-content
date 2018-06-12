@@ -271,7 +271,10 @@ add_action( 'init', 'ctc_add_podcast_feed' );
 /**
  * Output podcast feed XML.
  *
- * Note: Do not rely on DOMDocument since not always available.
+ * This outputs bare minimum for iTunes New Feed URL tag.
+ * Church Content Pro adds other tags to make complete sermon podcast feed.
+ *
+ * Note: Not relying on DOMDocument to avoid issue in rare case that is not available.
  *
  * @since 1.9
  * @return string Feed contents.
@@ -280,9 +283,12 @@ function ctc_output_podcast_feed() {
 
 	// Get settings.
 	$title = ctc_setting( 'podcast_title' );
+	$author = ctc_setting( 'podcast_author' );
+	$new_url = ctc_setting( 'podcast_new_url' );
 
 	// Set defaults.
 	$title = empty( $title ) ? ctc_podcast_title_default() : $title;
+	$author = empty( $author ) ? ctc_podcast_author_default() : $author;
 
 	// Set content type and charset.
 	header( 'Content-Type: ' . feed_content_type( 'rss2' ) . '; charset=' . get_option( 'blog_charset' ), true );
@@ -302,14 +308,22 @@ function ctc_output_podcast_feed() {
 	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
 	xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
 	xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0"
-	<?php do_action( 'rss2_ns' ); // Fires at the end of the RSS root to add namespaces. ?>
+	<?php do_action( 'rss2_ns' ); // Core: Fires at the end of the RSS root to add namespaces. ?>
 >
 
 	<channel>
 
 		<title><?php echo esc_html( $title ); ?></title>
 
+		<atom:link href="<?php self_link(); ?>" rel="self" type="application/rss+xml" />
 
+		<itunes:author><?php echo esc_html( $author ); ?></itunes:author>
+
+		<?php if ( $new_url ) : ?>
+			<itunes:new-feed-url><?php echo esc_url( $new_url ); ?></itunes:new-feed-url>
+		<?php endif; ?>
+
+		<?php do_action( 'rss2_head' ); // Core: Fires at the end of the RSS2 Feed Header (before items). ?>
 
 	</channel>
 
@@ -326,6 +340,15 @@ function ctc_output_podcast_feed() {
 
 	// Trim XML.
 	$xml = trim( $xml );
+
+	// Format XML if DOMDocument available.
+	if ( class_exists( 'DOMDocument', false ) ) {
+		$doc = new DOMDocument();
+		$doc->preserveWhiteSpace = false;
+		$doc->formatOutput = true;
+		$doc->loadXML( $xml );
+		$xml = $doc->saveXML();
+	}
 
 	// Output XML.
 	echo $xml;

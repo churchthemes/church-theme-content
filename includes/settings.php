@@ -934,7 +934,7 @@ function ctc_settings_config() {
 						'content'           => '', // custom content instead of input (HTML allowed).
 						'custom_sanitize'   => '', // function to do additional sanitization.
 						'custom_content'    => '', // function for custom display of field input.
-						'pro'               => false, // field input element disabled when Pro not active.
+						'pro'               => true, // field input element disabled when Pro not active.
 						'unsupported'       => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
