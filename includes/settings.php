@@ -1466,12 +1466,14 @@ function ctc_sanitize_setting_url_slug( $value, $field ) {
 /**
  * Sanitize Podcast Subtitle.
  *
+ * This may also be used when generating podcast feed XML.
+ *
  * @since 1.9
  * @param string $setting Setting key.
  * @return mixed Setting value.
  * @global object $ctc_settings.
  */
-function ctc_sanitize_podcast_subtitle( $value, $field ) {
+function ctc_sanitize_podcast_subtitle( $value, $field = false ) {
 
 	// Max characters for iTunes.
 	$value = substr( $value, 0, 255 );
@@ -1484,12 +1486,14 @@ function ctc_sanitize_podcast_subtitle( $value, $field ) {
 /**
  * Sanitize Podcast Description (Summary).
  *
+ * This may also be used when generating podcast feed XML.
+ *
  * @since 1.9
  * @param string $setting Setting key.
  * @return mixed Setting value.
  * @global object $ctc_settings.
  */
-function ctc_sanitize_podcast_summary( $value, $field ) {
+function ctc_sanitize_podcast_summary( $value, $field = false ) {
 
 	// Max characters for iTunes.
 	$value = substr( $value, 0, 4000 );
