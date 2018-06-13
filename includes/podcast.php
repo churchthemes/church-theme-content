@@ -65,7 +65,7 @@ function ctc_podcast_author_default() {
 
 	// Build default title string.
 	$default = '';
-	if ( 'WordPress Site' !== $site_name ) { // not default title
+	if ( 'WordPress Site' !== $site_name ) { // not default title.
 		$default = $site_name;
 	}
 
