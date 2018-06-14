@@ -211,44 +211,6 @@ function ctc_add_meta_box_sermon_details() {
 add_action( 'admin_init', 'ctc_add_meta_box_sermon_details' );
 
 /**********************************
- * PODCAST ENCLOSURE
- **********************************/
-
-/**
- * Save enclosure for sermon podcast.
- *
- * When audio URL is provided, save its data to the 'enclosure' field.
- * WordPress automatically uses this data to make feeds useful for podcast.
- *
- * @since 0.9
- * @param int $post_id ID of post being saved
- * @param object $post Post object being saved
- */
-function ctc_sermon_save_audio_enclosure( $post_id, $post ) {
-
-	// Stop if no post, auto-save (meta not submitted) or user lacks permission
-	$post_type = get_post_type_object( $post->post_type );
-	if ( empty( $_POST ) || ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) || ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
-		return false;
-	}
-
-	// Stop if PowerPress plugin is active
-	// Solves conflict regarding enclosure field: http://wordpress.org/support/topic/breaks-blubrry-powerpress-plugin?replies=6
-	if ( defined( 'POWERPRESS_VERSION' ) ) {
-		return false;
-	}
-
-	// Get audio URL
-	$audio = get_post_meta( $post_id , '_ctc_sermon_audio' , true );
-
-	// Populate enclosure field with URL, length and format, if valid URL found
-	do_enclose( $audio, $post_id );
-
-}
-
-add_action( 'save_post', 'ctc_sermon_save_audio_enclosure', 11, 2 ); // after 'save_post' saves meta fields on 10
-
-/**********************************
  * ADMIN COLUMNS
  **********************************/
 
