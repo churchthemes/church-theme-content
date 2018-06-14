@@ -8,11 +8,10 @@ jQuery( document ).ready( function( $ ) {
 	 * PRO SETTINGS
 	 **************************************/
 
-	// Add .ctc-pro-setting-inactive and .button-disabled to image button when Pro inactive.
-	if ( $( '#ctps-field-podcast_image' ).hasClass( 'ctc-pro-setting-inactive' ) ) {
+	// Add .ctc-pro-setting-inactive and .button-disabled to image button when image input readonly.
+	if ( $( '#ctps-field-podcast_image' ).hasClass( 'ctc-setting-readonly' ) ) {
 		$( '.ctps-upload-file', $( '#ctps-field-podcast_image' ).parent( '.ctps-section' ) ).addClass( 'ctc-pro-setting-inactive button-disabled' );
 	}
-
 
 	// Show notice when user engages field requiring Pro while Pro is inactive.
 	// The Pro fields have readonly attribute so cannot be changed, but will be saved.
