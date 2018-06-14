@@ -43,9 +43,9 @@ jQuery( document ).ready( function( $ ) {
 
 	} );
 
-	// Prevent checkbox changes on inactive fields (due to missing theme support or Pro being required).
+	// Prevent checkbox/radio changes on inactive fields (due to missing theme support or Pro being required).
 	// readonly attribute does not stop changes to checkbox states.
-	$( 'input[type=checkbox].ctc-setting-readonly' ).click( function( e ) {
+	$( 'input[type=checkbox].ctc-setting-readonly, input[type=radio].ctc-setting-readonly' ).click( function( e ) {
 		return false;
 	} );
 
