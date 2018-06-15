@@ -57,6 +57,7 @@ function ctc_taxonomy_sermon_topic_args( $unfiltered = false ) {
 			'choose_from_most_used' 		=> esc_html_x( 'Choose from the most used topics', 'sermons', 'church-theme-content' ),
 			'menu_name' 					=> esc_html_x( 'Topics', 'sermon menu name', 'church-theme-content' )
 		),
+		'show_in_rest'	=> true,
 		'hierarchical'	=> true, // category-style instead of tag-style
 		'public' 		=> ctc_taxonomy_supported( 'sermons', 'ctc_sermon_topic' ),
 		'rewrite' 		=> array(
@@ -136,6 +137,7 @@ function ctc_taxonomy_sermon_book_args( $unfiltered = false ) {
 			'choose_from_most_used' 		=> esc_html_x( 'Choose from the most used books', 'sermons', 'church-theme-content' ),
 			'menu_name' 					=> esc_html_x( 'Books', 'sermon menu name', 'church-theme-content' )
 		),
+		'show_in_rest'	=> true,
 		'hierarchical'	=> true, // category-style instead of tag-style
 		'public' 		=> ctc_taxonomy_supported( 'sermons', 'ctc_sermon_book' ),
 		'rewrite' 		=> array(
@@ -215,6 +217,7 @@ function ctc_taxonomy_sermon_series_args( $unfiltered = false ) {
 			'choose_from_most_used' 		=> esc_html_x( 'Choose from the most used series', 'sermons', 'church-theme-content' ),
 			'menu_name' 					=> esc_html_x( 'Series', 'sermon menu name', 'church-theme-content' )
 		),
+		'show_in_rest'	=> true,
 		'hierarchical'	=> true, // category-style instead of tag-style.
 		'public' 		=> ctc_taxonomy_supported( 'sermons', 'ctc_sermon_series' ),
 		'rewrite' 		=> array(
@@ -293,6 +296,7 @@ function ctc_taxonomy_sermon_speaker_args( $unfiltered = false ) {
 			'choose_from_most_used' 		=> esc_html_x( 'Choose from the most used speakers', 'sermons', 'church-theme-content' ),
 			'menu_name' 					=> esc_html_x( 'Speakers', 'sermon menu name', 'church-theme-content' )
 		),
+		'show_in_rest'	=> true,
 		'hierarchical'	=> true, // category-style instead of tag-style
 		'public' 		=> ctc_taxonomy_supported( 'sermons', 'ctc_sermon_speaker' ),
 		'rewrite' 		=> array(
@@ -372,6 +376,7 @@ function ctc_taxonomy_sermon_tag_args( $unfiltered = false ) {
 			'choose_from_most_used' 		=> esc_html_x( 'Choose from the most used tags', 'sermons', 'church-theme-content' ),
 			'menu_name' 					=> esc_html_x( 'Tags', 'sermon menu name', 'church-theme-content' )
 		),
+		'show_in_rest'	=> true,
 		'hierarchical'	=> false, // tag style instead of category style
 		'public' 		=> ctc_taxonomy_supported( 'sermons', 'ctc_sermon_tag' ),
 		'rewrite' 		=> array(
@@ -443,6 +448,7 @@ function ctc_taxonomy_event_category_args( $unfiltered = false ) {
 			'choose_from_most_used' 		=> esc_html_x( 'Choose from the most used categories', 'events', 'church-theme-content' ),
 			'menu_name' 					=> esc_html_x( 'Categories', 'event menu name', 'church-theme-content' )
 		),
+		'show_in_rest'	=> true,
 		'hierarchical'	=> true, // category-style instead of tag-style
 		'public' 		=> ctc_taxonomy_supported( 'events', 'ctc_event_category' ),
 		'rewrite' 		=> array(
@@ -514,6 +520,7 @@ function ctc_taxonomy_person_group_args( $unfiltered = false ) {
 			'choose_from_most_used' 		=> esc_html_x( 'Choose from the most used groups', 'people', 'church-theme-content' ),
 			'menu_name' 					=> esc_html_x( 'Groups', 'people menu name', 'church-theme-content' )
 		),
+		'show_in_rest'	=> true,
 		'hierarchical'	=> true, // category-style instead of tag-style
 		'public' 		=> ctc_taxonomy_supported( 'people', 'ctc_person_group' ),
 		'rewrite' 		=> array(
