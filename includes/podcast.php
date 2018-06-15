@@ -252,7 +252,7 @@ function ctc_podcast_feed_url() {
 }
 
 /**********************************
- * ENCLOSURE
+ * SERMON META
  **********************************/
 
 /**
@@ -291,6 +291,42 @@ function ctc_sermon_save_audio_enclosure( $post_id, $post ) {
 }
 
 add_action( 'save_post', 'ctc_sermon_save_audio_enclosure', 11, 2 ); // after 'save_post' saves meta fields on 10
+
+/**
+ * Add support for "Exclude from Podcast" field
+ *
+ * This field should automatically be supported whenever Audio field is supported.
+ *
+ * @since 1.0
+ */
+function ctc_support_podcast_exclude_field() {
+
+	// Only if sermon post type and audio field supported.
+	if ( ! ctc_podcast_content_supported() ) {
+		return;
+	}
+
+	// Get sermon fields that are supported by theme.
+	$supported_fields = ctc_get_theme_support( 'ctc-sermons', 'fields' );
+
+	// Field to add support for.
+	$field = '_ctc_sermon_podcast_exclude';
+
+	// Is field already supported?
+	if ( ! in_array( $field, $supported_fields ) ) {
+
+		// Add field to supported fields array.
+		$sermons_support[] = $field;
+
+	}
+
+	// Update theme support.
+	remove_theme_support( 'ctc-sermons' );
+	add_theme_support( 'ctc-sermons', $sermons_support );
+
+}
+
+add_action( 'init', 'ctc_support_podcast_exclude_field', 2 ); // init 2 is right after ctc_set_default_theme_support in Church Content.
 
 /*********************************************
  * HELPERS

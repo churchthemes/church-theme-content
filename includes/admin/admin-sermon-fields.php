@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  **********************************/
 
 /**
- * Sermon details
+ * Sermon Media
  *
  * Note that title, description, etc. is escaped automatically by CT Meta Box class
  * for localization security
@@ -32,6 +32,26 @@ function ctc_add_meta_box_sermon_details() {
 	// Sermon wording.
 	$sermon_word_singular = ctc_sermon_word_singular();
 	$sermon_word_plural = ctc_sermon_word_plural();
+
+	// "Exclude from Podcast" changes based on Pro plugin status.
+	$podcast_exclude_desc = '';
+	$podcast_exclude_attributes = array();
+	if ( ! ctc_pro_is_active() ) { // show Pro message when not installed.
+
+		// Description.
+		$podcast_exclude_desc = sprintf(
+			/* translators: %1$s is URL to Church Content Pro upgrade; %2$s is lowercase plural word for "sermons" (possibly translated or changed by settings). */
+			__( 'Install <a href="%1$s" target="_blank">Church Content Pro</a> to podcast your %2$s', 'church-theme-content' ),
+			esc_url( ctc_ctcom_url( 'cre-to-pro', array( 'utm_content' => 'sermon' ) ) ),
+			strtolower( $sermon_word_plural )
+		);
+
+		// Readonly.
+		$podcast_exclude_attributes = array( // attr => value array (e.g. set min/max for number or range type)
+			'readonly' => 'readonly',
+		);
+
+	}
 
 	// Configure Meta Box
 	$meta_box = array(
@@ -191,6 +211,37 @@ function ctc_add_meta_box_sermon_details() {
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
 				'attributes'		=> array(), // attr => value array (e.g. set min/max for number or range type)
+				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
+				'field_attributes'	=> array(), // attr => value array for field container
+				'field_class'		=> '', // class(es) to add to field container
+				'custom_sanitize'	=> '', // function to do additional sanitization
+				'custom_field'		=> '', // function for custom display of field input
+				'visibility' 		=> array(), // show/hide based on other fields' values: array( array( 'field1' => 'value' ), array( 'field2' => array( 'value', '!=' ) )
+			),
+
+			// Exclude from Podcast.
+			'_ctc_sermon_podcast_exclude' => array(
+				'name'				=> _x( 'Podcast', 'sermon meta box', 'church-theme-content' ),
+				'after_name'		=> '', // (Optional), (Required), etc.
+				'after_input'		=> '', // text to show to right of input (fields: text, select, number, range, upload, url, date, time)
+				'desc'				=> $podcast_exclude_desc,
+				'type'				=> 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number, range, upload, upload_textarea, url, date, time
+				'checkbox_label'    => sprintf(
+					/* translators: %1$s is singular (lowercase) word for "Sermon" (possibly translated or changed by settings); %2$s is URL to Podcast settings */
+					__( 'Exclude %1$s from <a href="%2$s" target="_blank">Podcast</a>', 'church-theme-content' ),
+					strtolower( $sermon_word_singular ),
+					esc_url( admin_url( 'options-general.php?page=' . CTC_DIR . '#podcast' ) )
+				),
+				'options'			=> array(), // array of keys/values for radio or select
+				'upload_button'		=> '', // text for button that opens media frame
+				'upload_title'		=> '', // title appearing at top of media frame
+				'upload_type'		=> '', // optional type of media to filter by (image, audio, video, application/pdf)
+				'date_multiple'		=> false, // whether or not to allow date field type to select multiple dates, to be saved as comma-separated list.
+				'date_button'       => '', // text for button user clicks to open datepicker calendar.
+				'default'			=> '', // value to pre-populate option with (before first save or on reset)
+				'no_empty'			=> false, // if user empties value, force default to be saved instead
+				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
+				'attributes'		=> $podcast_exclude_attributes, // attr => value array (e.g. set min/max for number or range type)
 				'class'				=> '', // class(es) to add to input (try ctmb-medium, ctmb-small, ctmb-tiny)
 				'field_attributes'	=> array(), // attr => value array for field container
 				'field_class'		=> '', // class(es) to add to field container
