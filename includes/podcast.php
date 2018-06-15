@@ -205,8 +205,8 @@ function ctc_podcast_limit_default() {
 function ctc_podcast_category_options() {
 
 	$options = array(
-		'Religion & Spirituality|Christianity' => __( 'Christianity', 'podcast category', 'church-theme-content' ),
-		'Government & Organizations|Non-Profit' => __( 'Non-Profit', 'podcast category', 'church-theme-content' ),
+		'Religion & Spirituality|Christianity' => __( 'Christianity (Religion)', 'podcast category', 'church-theme-content' ),
+		'Government & Organizations|Non-Profit' => __( 'Non-Profit (Organizations)', 'podcast category', 'church-theme-content' ),
 		'none' => __( 'None', 'podcast category', 'church-theme-content' ),
 	);
 
