@@ -1476,7 +1476,7 @@ function ctc_sanitize_setting_url_slug( $value, $field ) {
 function ctc_sanitize_podcast_subtitle( $value, $field = false ) {
 
 	// Max characters for iTunes.
-	$value = substr( $value, 0, 255 );
+	$value = mb_substr( $value, 0, 255 );
 
 	// Return sanitized value.
 	return $value;
@@ -1496,7 +1496,7 @@ function ctc_sanitize_podcast_subtitle( $value, $field = false ) {
 function ctc_sanitize_podcast_summary( $value, $field = false ) {
 
 	// Max characters for iTunes.
-	$value = substr( $value, 0, 4000 );
+	$value = mb_substr( $value, 0, 4000 );
 
 	// Return sanitized value.
 	return $value;
