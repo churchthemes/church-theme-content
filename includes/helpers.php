@@ -159,14 +159,11 @@ function ctc_make_url_slug_bold( $slug ) {
  */
 function ctc_shorten( $string, $length ) {
 
-	// Length offset.
-	$substr_length = $length - 1;
-
 	// Trim.
 	$string = trim( $string );
 
 	// Shorten.
-	$string = mb_substr( $string, 0, $substr_length );
+	$string = mb_substr( $string, 0, $length );
 
 	// Trim.
 	$string = trim( $string );
