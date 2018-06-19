@@ -938,6 +938,32 @@ function ctc_settings_config() {
 						'unsupported'       => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
+					// Maintenance.
+					'podcast_maintenance' => array(
+						'name'              => _x( 'Maintenance', 'podcast settings', 'church-theme-content' ),
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => __( 'This updates enclosures for all sermons. This can be helpful if you find that any are missing from your feed (not common).', 'church-theme-content' ),
+						'type'              => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+						'checkbox_label'    => '', // show text after checkbox.
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => array(), // array of keys/values for radio or select.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => false, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array(), // attr => value array (e.g. set min/max for number or range type).
+						'class'             => '', // classes to add to input.
+						'content'           => '<a href="#" class="button ctc-podcast-update-enclosures" target="_blank">' . __( 'Update Enclosures', 'church-theme-content' ) . '</a>', // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => '', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => true, // field input element disabled when Pro not active.
+						'unsupported'       => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+					),
+
+
 					/* Future possibility. Problem: ctc_term_options() cannot get terms because taxonomies not registered this early. Would need to hide any taxonomies not supported by theme.
 
 					// Filter Topics.
