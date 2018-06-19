@@ -146,6 +146,37 @@ function ctc_make_url_slug_bold( $slug ) {
 }
 
 /*************************************************
+ * STRINGS
+ *************************************************/
+
+/**
+ * Shorten a string
+ *
+ * @since 1.9
+ * @param string $string String to shorten.
+ * @param int $length Max length of string.
+ * @return string Shortened string.
+ */
+function ctc_shorten( $string, $length ) {
+
+	// Length offset.
+	$substr_length = $length - 1;
+
+	// Trim.
+	$string = trim( $string );
+
+	// Shorten.
+	$string = mb_substr( $string, 0, $substr_length );
+
+	// Trim.
+	$string = trim( $string );
+
+	// Return.
+	return apply_filters( 'ctc_shorten', $string, $length );
+
+}
+
+/*************************************************
  * ARRAYS
  *************************************************/
 

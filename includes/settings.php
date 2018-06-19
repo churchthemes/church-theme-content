@@ -647,7 +647,7 @@ function ctc_settings_config() {
 						),
 						'class'             => 'ctps-width-500', // classes to add to input.
 						'content'           => '', // custom content instead of input (HTML allowed).
-						'custom_sanitize'   => 'ctc_sanitize_podcast_subtitle', // function to do additional sanitization.
+						'custom_sanitize'   => 'ctc_sanitize_setting_podcast_subtitle', // function to do additional sanitization.
 						'custom_content'    => '', // function for custom display of field input.
 						'pro'               => true, // field input element disabled when Pro not active.
 						'unsupported'       => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
@@ -674,7 +674,7 @@ function ctc_settings_config() {
 						),
 						'class'             => 'ctps-width-500', // classes to add to input.
 						'content'           => '', // custom content instead of input (HTML allowed).
-						'custom_sanitize'   => 'ctc_sanitize_podcast_summary', // function to do additional sanitization.
+						'custom_sanitize'   => 'ctc_sanitize_setting_podcast_summary', // function to do additional sanitization.
 						'custom_content'    => '', // function for custom display of field input.
 						'pro'               => true, // field input element disabled when Pro not active.
 						'unsupported'       => ! $podcast_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
@@ -1466,17 +1466,21 @@ function ctc_sanitize_setting_url_slug( $value, $field ) {
 /**
  * Sanitize Podcast Subtitle.
  *
- * This may also be used when generating podcast feed XML.
+ * Limit the length of content. Tags are already stipped on save.
  *
  * @since 1.9
  * @param string $setting Setting key.
  * @return mixed Setting value.
  * @global object $ctc_settings.
  */
-function ctc_sanitize_podcast_subtitle( $value, $field = false ) {
+function ctc_sanitize_setting_podcast_subtitle( $value, $field = false ) {
+
+	// Strip shortcodes.
+	$value = strip_shortcodes( $value );
+	$value = trim( $value );
 
 	// Max characters for iTunes.
-	$value = mb_substr( $value, 0, 255 );
+	$value = ctc_shorten( $value, 255 );
 
 	// Return sanitized value.
 	return $value;
@@ -1486,17 +1490,21 @@ function ctc_sanitize_podcast_subtitle( $value, $field = false ) {
 /**
  * Sanitize Podcast Description (Summary).
  *
- * This may also be used when generating podcast feed XML.
+ * Limit the length of content. Tags are already stipped on save.
  *
  * @since 1.9
  * @param string $setting Setting key.
  * @return mixed Setting value.
  * @global object $ctc_settings.
  */
-function ctc_sanitize_podcast_summary( $value, $field = false ) {
+function ctc_sanitize_setting_podcast_summary( $value, $field = false ) {
+
+	// Strip shortcodes.
+	$value = strip_shortcodes( $value );
+	$value = trim( $value );
 
 	// Max characters for iTunes.
-	$value = mb_substr( $value, 0, 4000 );
+	$value = ctc_shorten( $value, 4000 );
 
 	// Return sanitized value.
 	return $value;
