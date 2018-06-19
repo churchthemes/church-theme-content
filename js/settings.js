@@ -103,7 +103,7 @@ jQuery( document ).ready( function( $ ) {
 		e.preventDefault();
 
 		// Add hidden input to trigger maintenance on form post.
-		$form = $( this ).parents( 'form' );
+		var $form = $( this ).parents( 'form' );
 		$form.append( '<input type="hidden" name="ctc_update_enclosures" value="1">' );
 
 		// Submit the form.
