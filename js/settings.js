@@ -96,5 +96,19 @@ jQuery( document ).ready( function( $ ) {
 		e.preventDefault();
 	} );
 
+	// Process Update Enclosures button.
+	$( '#ctc-podcast-update-enclosures' ).on( 'click', function( e ) {
+
+		// Stop regular click.
+		e.preventDefault();
+
+		// Add hidden input to trigger maintenance on form post.
+		$form = $( this ).parents( 'form' );
+		$form.append( '<input type="hidden" name="ctc_update_enclosures" value="1">' );
+
+		// Submit the form.
+		$( '#submit' ).click();
+
+	} );
 
 } );

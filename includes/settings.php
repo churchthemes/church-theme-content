@@ -956,7 +956,7 @@ function ctc_settings_config() {
 						'allow_html'        => false, // allow HTML to be used in the value.
 						'attributes'        => array(), // attr => value array (e.g. set min/max for number or range type).
 						'class'             => '', // classes to add to input.
-						'content'           => '<a href="#" class="button ctc-podcast-update-enclosures" target="_blank">' . __( 'Update Enclosures', 'church-theme-content' ) . '</a>', // custom content instead of input (HTML allowed).
+						'content'           => '<a href="#" id="ctc-podcast-update-enclosures" class="button">' . __( 'Update Enclosures', 'church-theme-content' ) . '</a>', // custom content instead of input (HTML allowed).
 						'custom_sanitize'   => '', // function to do additional sanitization.
 						'custom_content'    => '', // function for custom display of field input.
 						'pro'               => true, // field input element disabled when Pro not active.
