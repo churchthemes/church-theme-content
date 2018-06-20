@@ -82,13 +82,13 @@ function ctc_settings_config() {
 	$locations_supported = ctc_feature_supported( 'locations' );
 	$people_supported = ctc_feature_supported( 'people' );
 
-	// SEO Structured Data field.
+	// Structured Data field.
 	$seo_field = array(
-		'name'              => _x( 'SEO Structured Data', 'settings', 'church-theme-content' ),
+		'name'              => _x( 'Improve SEO', 'settings', 'church-theme-content' ),
 		'after_name'        => '', // append (Optional) or (Pro), etc.
 		'desc'              => sprintf(
 			/* translators: %1$s is URL with information about SEO with JSON-LD */
-			__( 'Automatic Search Engine Optimization (SEO) with Schema.org structured data via JSON-LD. <a href="%1$s" target="_blank">Learn More</a>', 'church-theme-content' ),
+			__( 'Automatic Search Engine Optimization (SEO) with Schema.org structured data using JSON-LD. <a href="%1$s" target="_blank">Learn More</a>', 'church-theme-content' ),
 			esc_url( ctc_ctcom_url( 'seo-setting' ) )
 		),
 		'type'              => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
@@ -345,9 +345,9 @@ function ctc_settings_config() {
 				// Fields (Settings).
 				'fields' => array(
 
-					// SEO Structured Data.
+					// Structured Data.
 					'sermons_seo' => array_merge( $seo_field, array(
-						'checkbox_label' => __( 'Improve SEO for Sermons <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
+						'checkbox_label' => __( 'Enable Structured Data for Sermons <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
 						'unsupported'      => ! $sermons_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
@@ -1142,9 +1142,9 @@ function ctc_settings_config() {
 						'unsupported'       => ! $events_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
-					// SEO Structured Data.
+					// Structured Data.
 					'events_seo' => array_merge( $seo_field, array(
-						'checkbox_label' => __( 'Improve SEO for Events <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
+						'checkbox_label' => __( 'Enable Structured Data for Events <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
 						'unsupported'      => ! $events_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
@@ -1225,9 +1225,9 @@ function ctc_settings_config() {
 				// Fields (Settings).
 				'fields' => array(
 
-					// SEO Structured Data.
+					// Structured Data.
 					'locations_seo' => array_merge( $seo_field, array(
-						'checkbox_label' => __( 'Improve SEO for Locations <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
+						'checkbox_label' => __( 'Enable Structured Data for Locations <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
 						'unsupported'      => ! $locations_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
@@ -1295,9 +1295,9 @@ function ctc_settings_config() {
 				// Fields (Settings).
 				'fields' => array(
 
-					// SEO Structured Data.
+					// Structured Data.
 					'people_seo' => array_merge( $seo_field, array(
-						'checkbox_label' => __( 'Improve SEO for People <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
+						'checkbox_label' => __( 'Enable Structured Data for People <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
 						'unsupported' => ! $people_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					) ),
 
