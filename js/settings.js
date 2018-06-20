@@ -5,7 +5,7 @@
 jQuery( document ).ready( function( $ ) {
 
 	/**************************************
-	 * PRO SETTINGS
+	 * PRO DISABLED
 	 **************************************/
 
 	// Add .ctc-pro-setting-inactive and .button-disabled to image button when image input readonly.
@@ -49,7 +49,7 @@ jQuery( document ).ready( function( $ ) {
 	} );
 
 	/**************************************
-	 * PODCAST SETTINGS
+	 * PODCAST
 	 **************************************/
 
 	// Open Podcast section when "Podcast Settings" link clicked in Sermons section.
@@ -90,25 +90,5 @@ jQuery( document ).ready( function( $ ) {
 		$( '#ctc-copy-podcast-url-button' ).on( 'click', function( e ) {
 			e.preventDefault();
 		} );
-
-	// Prevent clicks on disabled podcast feed URL buttons.
-	$( '#ctc-settings-podcast-feed-buttons a.button-disabled' ).on( 'click', function( e ) {
-		e.preventDefault();
-	} );
-
-	// Process Update Enclosures button.
-	$( '#ctc-podcast-update-enclosures' ).on( 'click', function( e ) {
-
-		// Stop regular click.
-		e.preventDefault();
-
-		// Add hidden input to trigger maintenance on form post.
-		var $form = $( this ).parents( 'form' );
-		$form.append( '<input type="hidden" name="ctc_update_enclosures" value="1">' );
-
-		// Submit the form.
-		$( '#submit' ).click();
-
-	} );
 
 } );
