@@ -821,7 +821,7 @@ function ctc_settings_config() {
 					'podcast_not_explicit' => array(
 						'name'              => _x( 'Clean', 'sermon settings', 'church-theme-content' ),
 						'after_name'        => '', // append (Optional) or (Pro), etc.
-						'desc'              => __( 'iTunes needs to know if a podcast contains explicit content or not.', 'church-theme-content' ),
+						'desc'              => __( 'iTunes and Google Play need to know if a podcast contains explicit content or not.', 'church-theme-content' ),
 						'type'              => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'    => __( 'Podcast does <em>not</em> contain explicit content', 'church-theme-content' ), // show text after checkbox.
 						'inline'            => false, // make radio inputs inline instead of stacked.
