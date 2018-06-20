@@ -280,7 +280,7 @@ function ctc_sermon_save_audio_enclosure( $post_id, $post ) {
 	}
 
 	// Update the enclosure for this sermon.
-	ctc_do_enclose();
+	ctc_do_enclose( $post_id );
 
 }
 
