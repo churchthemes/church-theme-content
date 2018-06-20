@@ -220,7 +220,7 @@ function ctc_settings_config() {
 		$podcast_feed_link = strip_tags( $podcast_feed_link );
 	}
 
-	// Podcast Feed URL button classes.
+	// Podcast button classes (for Feed URL buttons and Update Enclosures button)
 	$podcast_button_classes = 'button';
 	if ( ! $pro_is_active ) {
 		$podcast_button_classes = ' ctc-pro-setting-inactive button-disabled';
@@ -956,7 +956,7 @@ function ctc_settings_config() {
 						'allow_html'        => false, // allow HTML to be used in the value.
 						'attributes'        => array(), // attr => value array (e.g. set min/max for number or range type).
 						'class'             => '', // classes to add to input.
-						'content'           => '<a href="#" id="ctc-podcast-update-enclosures" class="button">' . __( 'Update Enclosures', 'church-theme-content' ) . '</a>', // custom content instead of input (HTML allowed).
+						'content'           => '<a href="#" id="ctc-podcast-update-enclosures" class="button ' . esc_attr( $podcast_button_classes ) . '">' . __( 'Update Enclosures', 'church-theme-content' ) . '</a>', // custom content instead of input (HTML allowed).
 						'custom_sanitize'   => '', // function to do additional sanitization.
 						'custom_content'    => '', // function for custom display of field input.
 						'pro'               => true, // field input element disabled when Pro not active.
