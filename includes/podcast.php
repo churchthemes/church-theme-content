@@ -256,38 +256,40 @@ function ctc_podcast_feed_url() {
  **********************************/
 
 /**
- * Save enclosure for sermon podcasting
+ * Church Content plugin version of do_enclose()
  *
  * When audio URL is provided, save its data to the 'enclosure' field.
  * WordPress automatically uses this data to make feeds useful for podcasting.
  *
- * @since 0.9
- * @param int $post_id ID of post being saved
- * @param object $post Post object being saved
+ * @since 1.9
+ * @param int $post_id
  */
-function ctc_sermon_save_audio_enclosure( $post_id, $post ) {
+function ctc_do_enclose( $post_id ) {
 
-	// Stop if no post, auto-save (meta not submitted) or user lacks permission
+	// Stop if no ID.
+	if ( empty( $post_id ) ) {
+		return;
+	}
+
+	// Stop if user lacks permission to edit a post.
 	$post_type = get_post_type_object( $post->post_type );
-	if ( empty( $_POST ) || ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) || ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
-		return false;
+	if ( ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+		return;
 	}
 
 	// Stop if PowerPress plugin is active
 	// Solves conflict regarding enclosure field: http://wordpress.org/support/topic/breaks-blubrry-powerpress-plugin?replies=6
 	if ( defined( 'POWERPRESS_VERSION' ) ) {
-		return false;
+		return;
 	}
 
-	// Get audio URL
+	// Get audio URL.
 	$audio = get_post_meta( $post_id , '_ctc_sermon_audio' , true );
 
-	// Populate enclosure field with URL, length and format, if valid URL found
+	// Populate enclosure field with URL, length and format, if valid URL found.
 	do_enclose( $audio, $post_id );
 
 }
-
-add_action( 'save_post', 'ctc_sermon_save_audio_enclosure', 11, 2 ); // after 'save_post' saves meta fields on 10
 
 /**
  * Add support for "Exclude from Podcast" field

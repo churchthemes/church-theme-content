@@ -262,6 +262,31 @@ function ctc_add_meta_box_sermon_details() {
 add_action( 'admin_init', 'ctc_add_meta_box_sermon_details' );
 
 /**********************************
+ * SAVING
+ **********************************/
+
+/**
+ * Save enclosure for sermon podcasting when sermon is added/updated.
+ *
+ * @since 0.9
+ * @param int $post_id ID of post being saved
+ * @param object $post Post object being saved
+ */
+function ctc_sermon_save_audio_enclosure( $post_id, $post ) {
+
+	// Stop if no post or auto-save (meta not submitted).
+	if ( empty( $_POST ) || ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) ) {
+		return false;
+	}
+
+	// Update the enclosure for this sermon.
+	ctc_do_enclose();
+
+}
+
+add_action( 'save_post', 'ctc_sermon_save_audio_enclosure', 11, 2 ); // after 'save_post' saves meta fields on 10
+
+/**********************************
  * ADMIN COLUMNS
  **********************************/
 
