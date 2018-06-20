@@ -199,20 +199,13 @@ function ctc_settings_config() {
 	 * SETTINGS
 	 **********************************/
 
-	// Podcast settings description.
-	$podcast_guide_url = ctc_ctcom_url( 'podcast-guide', array( 'utm_content' => 'settings' ) );
-	$podcast_settings_desc = sprintf(
-		/* translators: Used in settings on Sermons section for Podcast shortcut and at top of Podcast tab. %1$s is URL for sermon podcast guide. */
-		__( 'Set up your <a href="%1$s" target="_blank">Sermon Podcast</a> to reach more people automatically on iTunes, Google Play and elsewhere.', 'church-theme-content' ),
-		esc_url( $podcast_guide_url )
-	);
-
 	// Podcast data.
 	$podcast_supported = ctc_podcast_content_supported();
 	$podcast_feed_url = ctc_podcast_feed_url();
 	$validate_url = 'https://podba.se/validate/?url=' . $podcast_feed_url; // urelncode() causes problem with podbase.
 	$itunes_submit_url = 'https://podcastsconnect.apple.com/my-podcasts/new-feed?submitfeed=' . urlencode( $podcast_feed_url );
 	$google_submit_url = 'https://play.google.com/music/podcasts/publish';
+	$podcast_guide_url = ctc_ctcom_url( 'podcast-guide', array( 'utm_content' => 'settings' ) );
 
 	// Podcast Feed URL link.
 	$podcast_feed_link = '<a href="' . esc_url( $podcast_feed_url ) . '" target="_blank" id="ctc-settings-podcast-feed-link">' . esc_html( $podcast_feed_url ) . '</a>';
@@ -355,7 +348,7 @@ function ctc_settings_config() {
 					'podcast_content' => array(
 						'name'             => _x( 'Sermon Podcast', 'settings', 'church-theme-content' ),
 						'after_name'       => '', // append (Optional) or (Pro), etc.
-						'desc'             => strip_tags( $podcast_settings_desc ),
+						'desc'             => __( 'Set up your sermon podcast to reach more people automatically on iTunes, Google Play and elsewhere.', 'church-theme-content' ),
 						'type'             => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'   => '', // show text after checkbox.
 						'inline'           => false, // make radio inputs inline instead of stacked.
@@ -538,7 +531,11 @@ function ctc_settings_config() {
 				'title' => _x( 'Podcast', 'settings section title', 'church-theme-content' ),
 
 				// Description.
-				'desc' => $podcast_settings_desc,
+				'desc' => sprintf(
+					/* translators: Used in settings at top of Podcast section. %1$s is URL for sermon podcast guide. */
+					__( 'Set up your <a href="%1$s" target="_blank">Sermon Podcast</a> to reach more people.', 'church-theme-content' ),
+					esc_url( $podcast_guide_url )
+				),
 
 				// Fields (Settings).
 				'fields' => array(
