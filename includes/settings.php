@@ -1580,40 +1580,6 @@ function ctc_settings_flush_rewrite_rules() {
 
 add_action( 'ctps_after_save', 'ctc_settings_flush_rewrite_rules' );
 
-/**
- * Process "Update Enclosures" button.
- *
- * Trigger the routine for updating enclosures and show a notice that it completed.
- *
- * @since 1.9
- * @global object $ctc_settings
- */
-function ctc_settings_update_enclosures() {
-
-	global $ctc_settings;
-
-	// Is ctc_update_enclosures present?
-	if ( empty( $_POST['ctc_update_enclosures'] ) ) {
-		return;
-	}
-echo 'test';exit;
-	// Is this plugin settings page?
-	if ( ! $ctc_settings->is_settings_page() ) {
-		return;
-	}
-
-
-
-	// Run update enclosures function - put this in podcast.php maintenance.
-
-
-	// Then set flash data / transient or something to make a notice showing (see how license activation button does this and removes the settings saved notice)
-
-
-}
-
-add_action( 'admin_init', 'ctc_settings_update_enclosures' );
-
 /**********************************
  * GETTING SETTINGS
  **********************************/
