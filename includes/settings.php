@@ -942,7 +942,7 @@ function ctc_settings_config() {
 					'podcast_maintenance' => array(
 						'name'              => _x( 'Maintenance', 'podcast settings', 'church-theme-content' ),
 						'after_name'        => '', // append (Optional) or (Pro), etc.
-						'desc'              => __( 'This updates enclosures for all sermons. This can be helpful if you find that any are missing from your feed (not common).', 'church-theme-content' ),
+						'desc'              => __( 'Updates enclosures for all sermons. This can be helpful if you find that any are missing from your feed (not common).', 'church-theme-content' ),
 						'type'              => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'    => '', // show text after checkbox.
 						'inline'            => false, // make radio inputs inline instead of stacked.
