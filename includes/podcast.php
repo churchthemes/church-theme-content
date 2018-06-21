@@ -160,7 +160,7 @@ function ctc_podcast_copyright_default() {
 	// Build default title string.
 	$default = '';
 	if ( $site_name && 'WordPress Site' !== $site_name ) { // have site name and not default title
-		$default = '&copy; ' . $site_name;
+		$default = '© ' . $site_name;
 	}
 
 	// Return filterable.
