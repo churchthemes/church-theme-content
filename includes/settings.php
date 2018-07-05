@@ -84,7 +84,7 @@ function ctc_settings_config() {
 
 	// Structured Data field.
 	$seo_field = array(
-		'name'              => _x( 'Improve SEO', 'settings', 'church-theme-content' ),
+		'name'              => _x( 'Enhanced SEO', 'settings', 'church-theme-content' ),
 		'after_name'        => '', // append (Optional) or (Pro), etc.
 		'desc'              => sprintf(
 			/* translators: %1$s is URL with information about SEO with JSON-LD */
