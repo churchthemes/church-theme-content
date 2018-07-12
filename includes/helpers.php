@@ -4,7 +4,7 @@
  *
  * @package    Church_Theme_Content
  * @subpackage Functions
- * @copyright  Copyright (c) 2013 - 2017, churchthemes.com
+ * @copyright  Copyright (c) 2013 - 2018, churchthemes.com
  * @link       https://github.com/churchthemes/church-theme-content
  * @license    GPLv2 or later
  * @since      0.9
@@ -143,6 +143,28 @@ function ctc_ctcom_url( $path_key, $query_args = array() ) {
  */
 function ctc_make_url_slug_bold( $slug ) {
 	return preg_replace( '/(.*)(\/(.*)\/)$/', '$1/<b>' . $slug . '</b>/', trailingslashit( home_url( $slug ) ) );
+}
+
+
+/**
+ * Check if string is a URL
+ *
+ * @since 1.9
+ * @param string $string String to check for URL format
+ * @return bool True if string i=s URL
+ */
+function ctc_is_url( $string ) {
+
+	$bool = false;
+
+	$url_pattern = '/^(http(s*)):\/\//i';
+
+	if ( preg_match( $url_pattern, $string ) ) { // URL
+		$bool = true;
+	}
+
+	return apply_filters( 'ctc_is_url', $bool, $string );
+
 }
 
 /*************************************************
