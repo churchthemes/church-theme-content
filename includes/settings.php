@@ -1218,12 +1218,6 @@ function ctc_settings_config() {
 				// Fields (Settings).
 				'fields' => array(
 
-					// Structured Data.
-					'locations_seo' => array_merge( $seo_field, array(
-						'checkbox_label' => __( 'Enable Structured Data for Locations <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
-						'unsupported'      => ! $locations_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
-					) ),
-
 					// Google Maps API Key.
 					'google_maps_api_key' => array(
 						'name'              => _x( 'Google Maps API Key', 'settings', 'church-theme-content' ),
@@ -1287,12 +1281,6 @@ function ctc_settings_config() {
 
 				// Fields (Settings).
 				'fields' => array(
-
-					// Structured Data.
-					'people_seo' => array_merge( $seo_field, array(
-						'checkbox_label' => __( 'Enable Structured Data for People <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
-						'unsupported' => ! $people_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
-					) ),
 
 					// Person URL Base (Slug).
 					'person_url_slug' => array_merge( $url_slug_field, array(

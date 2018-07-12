@@ -173,6 +173,30 @@ function ctc_shorten( $string, $length ) {
 
 }
 
+
+/**
+ * Convert to one line
+ *
+ * It replaces line breaks with commas.
+ *
+ * @since 1.9
+ * @param string $string Multi-line string.
+ * @return string Single line string.
+ */
+function ctc_one_line( $string ) {
+
+	$one_line = $string;
+
+	if ( $string ) {
+		$one_line = strip_tags( $string ); // remove HTML
+		$one_line = preg_replace( '/\r\n|\n|\r/', ', ', $one_line ); // replace line breaks with commas
+		$one_line = trim( $one_line ); // remove whitespace
+	}
+
+	return apply_filters( 'ctc_one_line', $one_line, $string );
+
+}
+
 /*************************************************
  * ARRAYS
  *************************************************/
@@ -258,6 +282,23 @@ function ctc_convert_to_datetime( $date, $time ) {
 	$datetime = $date . ' ' . $time . ':00';
 
 	return apply_filters( 'ctc_convert_to_datetime', $datetime, $date, $time );
+
+}
+
+/**
+ * Convert address to one line
+ *
+ * It replaces line breaks with commas.
+ *
+ * @since 1.9
+ * @param string $address Multi-line address
+ * @return string Single line address
+ */
+function ctc_address_one_line( $address ) {
+
+	$address_one_line = ctc_one_line( $address );
+
+	return apply_filters( 'ctc_address_one_line', $address_one_line, $address );
 
 }
 
