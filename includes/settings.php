@@ -336,12 +336,6 @@ function ctc_settings_config() {
 				// Fields (Settings).
 				'fields' => array(
 
-					// Structured Data.
-					'sermons_seo' => array_merge( $seo_field, array(
-						'checkbox_label' => __( 'Enable Structured Data for Sermons <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
-						'unsupported'      => ! $sermons_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
-					) ),
-
 					// Sermon Podcast (Shortcut).
 					'podcast_content' => array(
 						'name'             => _x( 'Sermon Podcast', 'settings', 'church-theme-content' ),
@@ -366,6 +360,12 @@ function ctc_settings_config() {
 						'pro'              => true, // field input element disabled when Pro not active.
 						'unsupported'      => ! ctc_field_supported( 'sermons', '_ctc_sermon_audio' ), // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
+
+					// Enhanced SEO.
+					'sermons_seo' => array_merge( $seo_field, array(
+						'checkbox_label' => __( 'Enable Structured Data for Sermons <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
+						'unsupported'      => ! $sermons_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+					) ),
 
 					// Alternative Wording - Singular
 					'sermon_word_singular'  => array(
@@ -1135,7 +1135,7 @@ function ctc_settings_config() {
 						'unsupported'       => ! $events_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
 					),
 
-					// Structured Data.
+					// Enhanced SEO.
 					'events_seo' => array_merge( $seo_field, array(
 						'checkbox_label' => __( 'Enable Structured Data for Events <span class="ctps-light ctps-italic">(Recommended)</span>', 'church-theme-content' ), // show text after checkbox.
 						'unsupported'      => ! $events_supported, // set true if theme doesn't support required feature, taxonomy, fields, etc.
