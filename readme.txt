@@ -18,7 +18,7 @@ The Church Content WordPress plugin provides an interface for managing sermons, 
 
 This plugin is intended for a very specific audience. If you are *not* one of the following then this plugin will not be useful to you.
 
-* Users of [official themes](https://churchthemes.com) from churchthemes.com
+* Users of [official themes](https://churchthemes.com) from ChurchThemes.com
 * Users of [third-party themes](https://churchthemes.com/third-party-themes) made *specifically* for this plugin
 * Theme developers improving data portability for church sites
 
@@ -28,13 +28,13 @@ It provides post types, taxonomies and fields for *sermons*, *events*, *people* 
 
 Experienced WordPress developers agree that functionality like this does not belong in themes since themes are intended only for controlling the appearance of a WordPress site. Content that users might expect to take with them if they switch themes should "live" in a plugin in order to [avoid theme lock-in](https://churchthemes.com/wordpress-theme-users-avoid-lock-in-effect/). Similarly, our approach is not to present content using the plugin since themes offer more control for that purpose. This is why a **compatible theme is required**.
 
-See the [Plugin Details](https://churchthemes.com/plugins/church-content/) on churchthemes.com for a tour of features. Read the [User Guide](https://churchthemes.com/guides/user/plugins/church-content/) for instructions.
+See the [Plugin Details](https://churchthemes.com/plugins/church-content/) on ChurchThemes.com for a tour of features. Read the [User Guide](https://churchthemes.com/guides/user/plugins/church-content/) for instructions.
 
 = Compatible Themes =
 
 A compatible theme is required for presenting sermons, events, etc. added with the plugin.
 
-* Official themes provided by [churchthemes.com](https://churchthemes.com)
+* Official themes provided by [ChurchThemes.com](https://churchthemes.com)
 * Third-party themes at [churchthemes.com/third-party-themes](https://churchthemes.com/third-party-themes)
 
 = Add-ons =
@@ -46,7 +46,7 @@ Users can optionally install [add-ons](https://churchthemes.com/plugins/) for ad
 
 = Developers =
 
-Please see the [Developer Guide](https://churchthemes.com/guides/developer/church-content/) on churchthemes.com for notes on developing themes that use this plugin. A couple benefits are that you will save time and be helping to accomplish better data portability among church websites powered by WordPress.
+Please see the [Developer Guide](https://churchthemes.com/guides/developer/church-content/) on ChurchThemes.com for notes on developing themes that use this plugin. A couple benefits are that you will save time and be helping to accomplish better data portability among church websites powered by WordPress.
 
 You can follow development on [GitHub](https://github.com/churchthemes/church-theme-content).
 
@@ -56,7 +56,7 @@ Several translations are available, including English, Spanish, German, French, 
 
 = Follow us =
 
-* Visit [churchthemes.com](https://churchthemes.com) for compatible themes, add-ons and help
+* Visit [ChurchThemes.com](https://churchthemes.com) for compatible themes, add-ons and help
 * We're on [Twitter](https://twitter.com/churchthemes), [Facebook](https://www.facebook.com/churchthemescom) and have a [Newsletter](https://churchthemes.com/newsletter)
 * Lead developer: [stevengliebe.com](http://stevengliebe.com)
 
