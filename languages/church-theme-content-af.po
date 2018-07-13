@@ -1,24 +1,38 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Church Content\n"
-"POT-Creation-Date: 2017-09-01 12:18-0500\n"
-"PO-Revision-Date: 2018-03-07 06:55-0600\n"
+"POT-Creation-Date: 2018-07-13 13:01-0500\n"
+"PO-Revision-Date: 2018-07-13 13:01-0500\n"
+"Last-Translator: churchthemes.com <contact@churchthemes.com>\n"
 "Language-Team: churchthemes.com\n"
+"Language: af\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.0.8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_nx:1,2;_x:1,2c;_ex:1,2c;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:1,2,3c\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"Last-Translator: churchthemes.com <contact@churchthemes.com>\n"
-"Language: af\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../includes/admin/admin-enqueue-scripts.php:35
+#: ../includes/admin/admin-add-ons.php:1
+#, php-format
+msgid ""
+"Upgrade to <a href=\"%1$s\" target=\"_blank\">Church Content Pro</a> to save "
+"time with recurring events."
+msgstr ""
+
+#: ../includes/admin/admin-add-ons.php:1
+#, php-format
+msgid ""
+"Upgrade to <a href=\"%1$s\" target=\"_blank\">Church Content Pro</a> to save "
+"time by selecting previously used locations."
+msgstr ""
+
+#: ../includes/admin/admin-enqueue-scripts.php:51
 msgid ""
 "Address could not be converted. Check the address or enter your city then "
 "click the map to pinpoint your location."
@@ -26,60 +40,65 @@ msgstr ""
 "Adres kon nie omgeskakel word nie. Gaan die adres na of tik jou stad in en "
 "klik dan op die kaart om jou ligging te bepaal."
 
-#: ../includes/admin/admin-enqueue-scripts.php:36
+#: ../includes/admin/admin-enqueue-scripts.php:52
 msgid "Please enter an Address above."
 msgstr "Voer asseblief 'n adres hierbo in."
 
-#: ../includes/admin/admin-enqueue-scripts.php:37
+#: ../includes/admin/admin-enqueue-scripts.php:53
 msgid ""
-"Go to Settings > Church Content to set your Google Maps API Key in order to "
-"use this button."
+"Go to Settings > Church Content > Locations to set your Google Maps API Key "
+"to use this button."
 msgstr ""
-"Gaan na Instellings> Kerkinhoud om jou Google Maps API-sleutel in te stel om "
-"hierdie knoppie te gebruik."
 
 #: ../includes/admin/admin-event-fields.php:39
 msgctxt "event meta box"
 msgid "Date & Time"
 msgstr "Datum & Tyd"
 
-#: ../includes/admin/admin-event-fields.php:77
+#: ../includes/admin/admin-event-fields.php:82
 msgid "Start Date"
 msgstr "Begin Datum"
 
-#: ../includes/admin/admin-event-fields.php:78
+#: ../includes/admin/admin-event-fields.php:83 ../includes/settings.php:1224
 msgid "(Required)"
 msgstr "(Word vereis)"
 
-#: ../includes/admin/admin-event-fields.php:102
+#: ../includes/admin/admin-event-fields.php:93
+#: ../includes/admin/admin-event-fields.php:119
+#: ../includes/admin/admin-event-fields.php:284
+msgctxt "datepicker"
+msgid "Choose Date"
+msgstr ""
+
+#: ../includes/admin/admin-event-fields.php:108
 msgid "End Date"
 msgstr "Einddatum"
 
-#: ../includes/admin/admin-event-fields.php:105
+#: ../includes/admin/admin-event-fields.php:111
 msgid "Specify End Date if event will span multiple consecutive days."
 msgstr ""
 "Spesifiseer Einddatum indien gebeurtenis oor meer as een opeenvolgende dae "
 "sal strek."
 
-#: ../includes/admin/admin-event-fields.php:126
+#: ../includes/admin/admin-event-fields.php:134
 msgid "Start Time"
 msgstr "Begin Tyd"
 
-#: ../includes/admin/admin-event-fields.php:151
+#: ../includes/admin/admin-event-fields.php:160
 msgid "End Time"
 msgstr "Eindtyd"
 
-#: ../includes/admin/admin-event-fields.php:182
+#: ../includes/admin/admin-event-fields.php:193
 msgid "Do not show times entered above (use only for ordering events)"
 msgstr ""
 "Moenie die tye wat hierbo ingeskryf is, wys nie (gebruik slegs vir die "
 "volgorde van gebeure)"
 
-#: ../includes/admin/admin-event-fields.php:203
+#: ../includes/admin/admin-event-fields.php:216
 msgid "Time Description"
 msgstr "Tyd Beskrywing"
 
-#: ../includes/admin/admin-event-fields.php:206
+#: ../includes/admin/admin-event-fields.php:219
 msgid ""
 "Optionally describe the time (e.g. \"9:30 am and 11:00 am\" or \"After "
 "Second Service\")"
@@ -87,94 +106,94 @@ msgstr ""
 "Beskryf opsioneel die tyd (bv. \"9:30 vm en 11:00 vm\" of \"Na tweede diens"
 "\")"
 
-#: ../includes/admin/admin-event-fields.php:227
+#: ../includes/admin/admin-event-fields.php:242
 msgid "Recurrence"
 msgstr "Herhaling"
 
-#: ../includes/admin/admin-event-fields.php:230
+#: ../includes/admin/admin-event-fields.php:245
 msgctxt "event meta box"
 msgid "Dates automatically move forward after event ends."
 msgstr "Datums beweeg outomaties aan na die gebeurtenis eindig."
 
-#: ../includes/admin/admin-event-fields.php:234
+#: ../includes/admin/admin-event-fields.php:249
 msgctxt "event meta box"
 msgid "None"
 msgstr "Geen"
 
-#: ../includes/admin/admin-event-fields.php:235
+#: ../includes/admin/admin-event-fields.php:250
 msgctxt "event meta box"
 msgid "Weekly"
 msgstr "Weekliks"
 
-#: ../includes/admin/admin-event-fields.php:236
+#: ../includes/admin/admin-event-fields.php:251
 msgctxt "event meta box"
 msgid "Monthly"
 msgstr "Maandeliks"
 
-#: ../includes/admin/admin-event-fields.php:237
+#: ../includes/admin/admin-event-fields.php:252
 msgctxt "event meta box"
 msgid "Yearly"
 msgstr "Jaarliks"
 
-#: ../includes/admin/admin-event-fields.php:256
+#: ../includes/admin/admin-event-fields.php:273
 msgid "Recur Until"
 msgstr "Herhaal tot"
 
-#: ../includes/admin/admin-event-fields.php:303
+#: ../includes/admin/admin-event-fields.php:324
 msgctxt "event meta box"
 msgid "Location"
 msgstr "Lokaal"
 
-#: ../includes/admin/admin-event-fields.php:341
+#: ../includes/admin/admin-event-fields.php:367
 msgid "Venue"
 msgstr "Lokaal"
 
-#: ../includes/admin/admin-event-fields.php:344
+#: ../includes/admin/admin-event-fields.php:370
 msgid ""
 "Optionally provide a building name, room number or other helpful identifier."
 msgstr ""
 "Gee opsioneel 'n gebounaam, kamernommer of ander nuttige identifiseerder."
 
-#: ../includes/admin/admin-event-fields.php:365
-#: ../includes/admin/admin-location-fields.php:75
+#: ../includes/admin/admin-event-fields.php:393
+#: ../includes/admin/admin-location-fields.php:80
 msgid "Address"
 msgstr "Adres"
 
-#: ../includes/admin/admin-event-fields.php:394
-#: ../includes/admin/admin-location-fields.php:104
+#: ../includes/admin/admin-event-fields.php:424
+#: ../includes/admin/admin-location-fields.php:111
 msgid "Show directions link"
 msgstr "Vertoon aanwysings skakel"
 
-#: ../includes/admin/admin-event-fields.php:413
-#: ../includes/admin/admin-location-fields.php:195
+#: ../includes/admin/admin-event-fields.php:445
+#: ../includes/admin/admin-location-fields.php:210
 msgid "Map Latitude"
 msgstr "Kaart Latitude"
 
-#: ../includes/admin/admin-event-fields.php:437
-#: ../includes/admin/admin-location-fields.php:219
+#: ../includes/admin/admin-event-fields.php:471
+#: ../includes/admin/admin-location-fields.php:236
 msgid "Map Longitude"
 msgstr "Kaart Longitude"
 
-#: ../includes/admin/admin-event-fields.php:461
-#: ../includes/admin/admin-location-fields.php:243
+#: ../includes/admin/admin-event-fields.php:497
+#: ../includes/admin/admin-location-fields.php:262
 msgid "Map Type"
 msgstr "Kaart Tipe"
 
-#: ../includes/admin/admin-event-fields.php:485
-#: ../includes/admin/admin-location-fields.php:267
+#: ../includes/admin/admin-event-fields.php:523
+#: ../includes/admin/admin-location-fields.php:288
 msgid "Map Zoom"
 msgstr "Kaart Zoom"
 
-#: ../includes/admin/admin-event-fields.php:534
+#: ../includes/admin/admin-event-fields.php:574
 msgctxt "event meta box"
 msgid "Registration"
 msgstr "Registrasie"
 
-#: ../includes/admin/admin-event-fields.php:572
+#: ../includes/admin/admin-event-fields.php:617
 msgid "Registration URL"
 msgstr "Registrasie URL"
 
-#: ../includes/admin/admin-event-fields.php:576
+#: ../includes/admin/admin-event-fields.php:622
 #, php-format
 msgid ""
 "Link to a third-party registration page from your Church Management System, "
@@ -185,57 +204,57 @@ msgstr ""
 "EventBrite, ens. (Of voeg 'n vorm in die bostaande inhoud by). <a href=\"%1$s"
 "\" target=\"_blank\">Meer Inligting</a>"
 
-#: ../includes/admin/admin-event-fields.php:763
-#: ../includes/admin/admin-location-fields.php:322
-#: ../includes/admin/admin-person-fields.php:220
-#: ../includes/admin/admin-sermon-fields.php:243
+#: ../includes/admin/admin-event-fields.php:872
+#: ../includes/admin/admin-location-fields.php:345
+#: ../includes/admin/admin-person-fields.php:210
+#: ../includes/admin/admin-sermon-fields.php:306
 msgid "Thumbnail"
 msgstr "Duimnaelskets"
 
-#: ../includes/admin/admin-event-fields.php:768
+#: ../includes/admin/admin-event-fields.php:877
 msgctxt "events admin column"
 msgid "When"
 msgstr "Wanneer"
 
-#: ../includes/admin/admin-event-fields.php:769
+#: ../includes/admin/admin-event-fields.php:878
 msgctxt "events admin column"
 msgid "Details"
 msgstr "Besonderhede"
 
-#: ../includes/admin/admin-event-fields.php:831
+#: ../includes/admin/admin-event-fields.php:939
 msgctxt "date range separator"
 msgid " &ndash; "
 msgstr " &ndash; "
 
-#: ../includes/admin/admin-event-fields.php:849
+#: ../includes/admin/admin-event-fields.php:957
 msgctxt "time range separator"
 msgid " &ndash; "
 msgstr " &ndash; "
 
-#: ../includes/admin/admin-event-fields.php:879
+#: ../includes/admin/admin-event-fields.php:988
 #, php-format
 msgid "Every week until %1$s"
 msgstr "Elke week tot %1$s"
 
-#: ../includes/admin/admin-event-fields.php:884
+#: ../includes/admin/admin-event-fields.php:993
 msgid "Every week"
 msgstr "Elke week"
 
-#: ../includes/admin/admin-event-fields.php:895
+#: ../includes/admin/admin-event-fields.php:1004
 #, php-format
 msgid "Every month until %1$s"
 msgstr "Elke maand tot %1$s"
 
-#: ../includes/admin/admin-event-fields.php:900
+#: ../includes/admin/admin-event-fields.php:1009
 msgid "Every month"
 msgstr "Elke maand"
 
-#: ../includes/admin/admin-event-fields.php:911
+#: ../includes/admin/admin-event-fields.php:1020
 #, php-format
 msgid "Every year until %1$s"
 msgstr "Elke jaar tot %1$s"
 
-#: ../includes/admin/admin-event-fields.php:916
+#: ../includes/admin/admin-event-fields.php:1025
 msgid "Every year"
 msgstr "Elke jaar"
 
@@ -244,38 +263,38 @@ msgctxt "location meta box"
 msgid "Location Details"
 msgstr "Ligging Besonderhede"
 
-#: ../includes/admin/admin-location-fields.php:123
-#: ../includes/admin/admin-person-fields.php:124
+#: ../includes/admin/admin-location-fields.php:132
+#: ../includes/admin/admin-person-fields.php:108
 msgid "Phone"
 msgstr "Telefoonnommer"
 
-#: ../includes/admin/admin-location-fields.php:147
-#: ../includes/admin/admin-person-fields.php:148
+#: ../includes/admin/admin-location-fields.php:158
+#: ../includes/admin/admin-person-fields.php:134
 msgid "Email"
 msgstr "Epos"
 
-#: ../includes/admin/admin-location-fields.php:171
+#: ../includes/admin/admin-location-fields.php:184
 msgctxt "location meta box"
 msgid "Times"
 msgstr "Tye"
 
-#: ../includes/admin/admin-location-fields.php:327
+#: ../includes/admin/admin-location-fields.php:350
 msgctxt "location admin column"
 msgid "Address"
 msgstr "Adres"
 
-#: ../includes/admin/admin-location-fields.php:328
+#: ../includes/admin/admin-location-fields.php:351
 msgctxt "location admin column"
 msgid "Times"
 msgstr "Tye"
 
-#: ../includes/admin/admin-location-fields.php:329
-#: ../includes/admin/admin-person-fields.php:227
+#: ../includes/admin/admin-location-fields.php:352
+#: ../includes/admin/admin-person-fields.php:217
 msgctxt "sorting"
 msgid "Order"
 msgstr "Sorteer volgens"
 
-#: ../includes/admin/admin-location-fields.php:333
+#: ../includes/admin/admin-location-fields.php:356
 msgctxt "location admin column"
 msgid "Location"
 msgstr "Ligging"
@@ -300,7 +319,7 @@ msgctxt "map"
 msgid "Terrain"
 msgstr "Terrein"
 
-#: ../includes/admin/admin-maps.php:203
+#: ../includes/admin/admin-maps.php:204
 #, php-format
 msgid ""
 "<strong>Google Maps API Key Not Set.</strong> You must set it in <a href="
@@ -309,7 +328,7 @@ msgstr ""
 "<strong>Google Maps API sleutel nie ingestel.</strong> Jy moet dit instel in "
 "<a href=\"%1$s\">Church Content Settings</a> vir die kaart om te werk."
 
-#: ../includes/admin/admin-maps.php:338
+#: ../includes/admin/admin-maps.php:339
 msgid ""
 "You may click the map to adjust your location (it is draggable and can be "
 "double-clicked to zoom)."
@@ -317,79 +336,93 @@ msgstr ""
 "U kan op die kaart klik om u ligging aan te pas (dit is verskuifbaar en kan "
 "dubbel geklik word om te vergroot)."
 
-#: ../includes/admin/admin-maps.php:356
+#: ../includes/admin/admin-maps.php:357
 #, php-format
 msgid ""
-"Set your <a href=\"%1$s\" target=\"_blank\">Google Maps API Key</a> to show "
-"a map preview here."
+"<strong>Important:</strong> You must set your Google Maps API Key in <a href="
+"\"%1$s\" target=\"_blank\">Church Content Settings</a> for maps to work."
 msgstr ""
-"Stel jou <a href=\"%1$s\" target=\"_blank\">Google Maps API Key</a> in om 'n "
-"kaartvoorskou hier te wys."
 
-#: ../includes/admin/admin-maps.php:407
+#: ../includes/admin/admin-maps.php:411
 msgctxt "coordinate button"
 msgid "Get From Address"
 msgstr "Kry Van Adres"
 
-#: ../includes/admin/admin-person-fields.php:34
-msgid "Enter name here"
-msgstr "Voer naam hier in"
+#: ../includes/admin/admin-menu.php:43
+msgctxt "custom post type menu"
+msgid "Settings"
+msgstr ""
 
-#: ../includes/admin/admin-person-fields.php:62
+#: ../includes/admin/admin-menu.php:50
+msgctxt "custom post type menu"
+msgid "Podcast"
+msgstr ""
+
+#: ../includes/admin/admin-person-fields.php:39
 msgctxt "meta box"
 msgid "Person Details"
 msgstr "Persoon besonderhede"
 
-#: ../includes/admin/admin-person-fields.php:100
+#: ../includes/admin/admin-person-fields.php:82
 msgctxt "person meta box"
 msgid "Position"
 msgstr "Posisie / Rol"
 
-#: ../includes/admin/admin-person-fields.php:103
+#: ../includes/admin/admin-person-fields.php:85
 msgid "Enter the person's position or title (e.g. Senior Pastor, Deacon, etc.)"
 msgstr ""
 "Voer die persoon se posisie of titel in (bv. Hoofleraar, Diaken, ens.)."
 
-#: ../includes/admin/admin-person-fields.php:172
+#: ../includes/admin/admin-person-fields.php:160
 msgid "URLs"
 msgstr "URLs"
 
-#: ../includes/admin/admin-person-fields.php:225
+#: ../includes/admin/admin-person-fields.php:215
 msgid "Position"
 msgstr "Posisie / Rol"
 
-#: ../includes/admin/admin-person-fields.php:226
+#: ../includes/admin/admin-person-fields.php:216
 msgctxt "people column"
 msgid "Groups"
 msgstr "Groepe"
 
-#: ../includes/admin/admin-person-fields.php:231
+#: ../includes/admin/admin-person-fields.php:221
 msgctxt "person"
 msgid "Name"
 msgstr "Naam"
 
-#: ../includes/admin/admin-sermon-fields.php:37
-msgctxt "meta box"
-msgid "Sermon Media"
-msgstr "Preek Media"
+#: ../includes/admin/admin-sermon-fields.php:44
+#, php-format
+msgid ""
+"Install <a href=\"%1$s\" target=\"_blank\">Church Content Pro</a> to podcast "
+"your %2$s"
+msgstr ""
 
-#: ../includes/admin/admin-sermon-fields.php:75
+#: ../includes/admin/admin-sermon-fields.php:63
+#, php-format
+msgctxt "meta box"
+msgid "%s Media"
+msgstr ""
+
+#: ../includes/admin/admin-sermon-fields.php:108
 msgid "Full Text"
 msgstr "Volledige Teks"
 
-#: ../includes/admin/admin-sermon-fields.php:78
+#: ../includes/admin/admin-sermon-fields.php:111
 msgid "Check this if you provide a complete transcript above."
 msgstr "Klik hier as jy 'n volledige transkripsie hierbo verskaf."
 
-#: ../includes/admin/admin-sermon-fields.php:80
-msgid "Full sermon text provided"
-msgstr "Volledige preek teks verskaf"
+#: ../includes/admin/admin-sermon-fields.php:115
+#, php-format
+msgctxt "sermon taxonomy general name"
+msgid "Full %s text provided"
+msgstr ""
 
-#: ../includes/admin/admin-sermon-fields.php:99
+#: ../includes/admin/admin-sermon-fields.php:138
 msgid "Video"
 msgstr "Video"
 
-#: ../includes/admin/admin-sermon-fields.php:103
+#: ../includes/admin/admin-sermon-fields.php:142
 #, php-format
 msgid ""
 "Upload a file by clicking \"Choose Video\" or upload a video to one of the "
@@ -402,19 +435,19 @@ msgstr ""
 "YouTube) en plak dan die URL hier, of plak 'n inbeddingskode van 'n ander "
 "werf. <a href=\"%s\" target=\"_blank\">Videohulp</a>"
 
-#: ../includes/admin/admin-sermon-fields.php:110
+#: ../includes/admin/admin-sermon-fields.php:149
 msgid "Choose Video"
 msgstr "Kies Video"
 
-#: ../includes/admin/admin-sermon-fields.php:111
+#: ../includes/admin/admin-sermon-fields.php:150
 msgid "Choose a Video File"
 msgstr "Kies 'n Videolêer"
 
-#: ../includes/admin/admin-sermon-fields.php:127
+#: ../includes/admin/admin-sermon-fields.php:168
 msgid "Audio"
 msgstr "Oudio"
 
-#: ../includes/admin/admin-sermon-fields.php:131
+#: ../includes/admin/admin-sermon-fields.php:172
 #, php-format
 msgid ""
 "Upload a file by clicking \"Choose Audio\" or upload audio to one of the <a "
@@ -427,19 +460,19 @@ msgstr ""
 "en plak dan die URL hier of plak 'n insluit kode van 'n ander webwerf. <a "
 "href=\"%s\" target=\"_blank\">Oudiohulp</a>"
 
-#: ../includes/admin/admin-sermon-fields.php:138
+#: ../includes/admin/admin-sermon-fields.php:179
 msgid "Choose Audio"
 msgstr "Kies Oudio"
 
-#: ../includes/admin/admin-sermon-fields.php:139
+#: ../includes/admin/admin-sermon-fields.php:180
 msgid "Choose an Audio File"
 msgstr "Kies 'n oudiolêer"
 
-#: ../includes/admin/admin-sermon-fields.php:155 ../includes/mime-types.php:75
+#: ../includes/admin/admin-sermon-fields.php:198 ../includes/mime-types.php:75
 msgid "PDF"
 msgstr "PDF"
 
-#: ../includes/admin/admin-sermon-fields.php:158
+#: ../includes/admin/admin-sermon-fields.php:201
 msgid ""
 "Upload a file by clicking \"Choose PDF\" or paste the URL to a PDF hosted on "
 "another site."
@@ -447,39 +480,49 @@ msgstr ""
 "Laai 'n lêer op deur \"Kies PDF\" te klik of plak die URL na 'n PDF wat op "
 "'n ander webwerf gehuisves word."
 
-#: ../includes/admin/admin-sermon-fields.php:162
+#: ../includes/admin/admin-sermon-fields.php:205
 msgid "Choose PDF"
 msgstr "Kies PDF"
 
-#: ../includes/admin/admin-sermon-fields.php:163
+#: ../includes/admin/admin-sermon-fields.php:206
 msgid "Choose a PDF File"
 msgstr "Kies 'n PDF-lêer"
 
-#: ../includes/admin/admin-sermon-fields.php:248
+#: ../includes/admin/admin-sermon-fields.php:224
+msgctxt "sermon meta box"
+msgid "Podcast"
+msgstr ""
+
+#: ../includes/admin/admin-sermon-fields.php:231
+#, php-format
+msgid "Exclude %1$s from <a href=\"%2$s\" target=\"_blank\">Podcast</a>"
+msgstr ""
+
+#: ../includes/admin/admin-sermon-fields.php:311
 msgctxt "sermons"
 msgid "Formats"
 msgstr "Formate"
 
-#: ../includes/admin/admin-sermon-fields.php:249
+#: ../includes/admin/admin-sermon-fields.php:312
 msgid "Topics"
 msgstr "Temas"
 
-#: ../includes/admin/admin-sermon-fields.php:291
+#: ../includes/admin/admin-sermon-fields.php:354
 msgctxt "media type"
 msgid "Text"
 msgstr "Teks"
 
-#: ../includes/admin/admin-sermon-fields.php:295
+#: ../includes/admin/admin-sermon-fields.php:358
 msgctxt "media type"
 msgid "Video"
 msgstr "Video"
 
-#: ../includes/admin/admin-sermon-fields.php:299
+#: ../includes/admin/admin-sermon-fields.php:362
 msgctxt "media type"
 msgid "Audio"
 msgstr "Oudio"
 
-#: ../includes/admin/admin-sermon-fields.php:303
+#: ../includes/admin/admin-sermon-fields.php:366
 msgctxt "media type"
 msgid "PDF"
 msgstr "PDF"
@@ -492,6 +535,79 @@ msgid ""
 msgstr ""
 "Die <b>%1$s</b> -tema ondersteun nie die <b>%2$s</b> plugin nie. <a href="
 "\"%3$s\" target=\"_blank\">Meer Inligting</a>, <a href=\"%4$s\">Ignoreer</a>"
+
+#: ../includes/admin/editor.php:40
+msgid "Enter name here"
+msgstr "Voer naam hier in"
+
+#: ../includes/admin/editor.php:52
+#, php-format
+msgctxt "page title placeholder"
+msgid "%1$s Title"
+msgstr ""
+
+#: ../includes/admin/editor.php:68
+#, php-format
+msgctxt "post title placeholder"
+msgid "%1$s Title"
+msgstr ""
+
+#: ../includes/admin/editor.php:84
+#, php-format
+msgctxt "sermon title placeholder"
+msgid "%1$s Title"
+msgstr ""
+
+#: ../includes/admin/editor.php:101
+#, php-format
+msgctxt "event title placeholder"
+msgid "%1$s Name"
+msgstr ""
+
+#: ../includes/admin/editor.php:120
+#, php-format
+msgctxt "location title placeholder"
+msgid "%1$s Name"
+msgstr ""
+
+#: ../includes/admin/editor.php:139
+#, php-format
+msgctxt "person title placeholder"
+msgid "%s's Name"
+msgstr ""
+
+#: ../includes/admin/editor.php:186
+#, php-format
+msgid "Enter %1$s transcript or details"
+msgstr ""
+
+#: ../includes/admin/editor.php:197
+#, php-format
+msgctxt "event body placeholder"
+msgid "Describe the %1$s"
+msgstr ""
+
+#: ../includes/admin/editor.php:208
+#, php-format
+msgctxt "location body placeholder"
+msgid "Describe the %1$s"
+msgstr ""
+
+#: ../includes/admin/editor.php:218
+msgid "Write a biography"
+msgstr ""
+
+#: ../includes/admin/editor.php:226
+msgid "Add content"
+msgstr ""
+
+#: ../includes/admin/notices.php:60
+#, php-format
+msgid ""
+"<strong>Event recurrence is disabled.</strong> PHP %1$s or newer is required "
+"for recurrence to work. <a href=\"%2$s\" target=\"_blank\">Update PHP</a> to "
+"resolve."
+msgstr ""
 
 #: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:226
 #, php-format
@@ -521,7 +637,7 @@ msgstr "Jy het nie toestemming om plugin-opdaterings te installeer nie"
 msgid "Error"
 msgstr "Fout"
 
-#: ../includes/libraries/ct-plugin-settings/ct-plugin-settings.php:259
+#: ../includes/libraries/ct-plugin-settings/ct-plugin-settings.php:261
 msgid "Settings"
 msgstr "Instellings"
 
@@ -536,708 +652,1311 @@ msgid_plural "PDFs <span class=\"count\">(%s)</span>"
 msgstr[0] "PDF <span class=\"count\">(%s)</span>"
 msgstr[1] "PDFs <span class=\"count\">(%s)</span>"
 
-#: ../includes/post-types.php:30
-msgctxt "post type general name"
-msgid "Sermons"
-msgstr "Preke"
+#: ../includes/podcast.php:208
+msgid "Christianity (Religion)"
+msgstr ""
 
-#: ../includes/post-types.php:31
-msgctxt "post type singular name"
-msgid "Sermon"
-msgstr "Preek"
+#: ../includes/podcast.php:209
+msgid "Non-Profit (Organizations)"
+msgstr ""
 
-#: ../includes/post-types.php:32
+#: ../includes/podcast.php:210
+msgid "None"
+msgstr ""
+
+#: ../includes/post-types.php:48
 msgctxt "sermon"
 msgid "Add New"
 msgstr "Voeg nuwe by"
 
-#: ../includes/post-types.php:33
-msgid "Add Sermon"
-msgstr "Voeg Preek by"
+#: ../includes/post-types.php:51
+#, php-format
+msgctxt "sermon"
+msgid "Add %s"
+msgstr ""
 
-#: ../includes/post-types.php:34
-msgid "Edit Sermon"
-msgstr "Wysig Preek"
+#: ../includes/post-types.php:56
+#, php-format
+msgctxt "sermon"
+msgid "Edit %s"
+msgstr ""
 
-#: ../includes/post-types.php:35
-msgid "New Sermon"
-msgstr "Nuwe Preek"
+#: ../includes/post-types.php:61
+#, php-format
+msgctxt "sermon"
+msgid "New %s"
+msgstr ""
 
-#: ../includes/post-types.php:36
-msgid "All Sermons"
-msgstr "Alle Preke"
+#: ../includes/post-types.php:66
+#, php-format
+msgctxt "sermons"
+msgid "All %s"
+msgstr ""
 
-#: ../includes/post-types.php:37
-msgid "View Sermon"
-msgstr "Bekyk Preek"
+#: ../includes/post-types.php:71
+#, php-format
+msgctxt "sermon"
+msgid "View %s"
+msgstr ""
 
-#: ../includes/post-types.php:38
-msgid "View Sermons"
-msgstr "Bekyk Preke"
-
-#: ../includes/post-types.php:39
-msgid "Search Sermons"
-msgstr "Soek Preke"
-
-#: ../includes/post-types.php:40
-msgid "No sermons found"
-msgstr "Geen preke gevind nie"
-
-#: ../includes/post-types.php:41
-msgid "No sermons found in Trash"
-msgstr "Geen preke in asblik gevind nie"
+#: ../includes/post-types.php:76
+#, php-format
+msgctxt "sermons"
+msgid "View %s"
+msgstr ""
 
 #: ../includes/post-types.php:81
+#, php-format
+msgctxt "sermons"
+msgid "Search %s"
+msgstr ""
+
+#: ../includes/post-types.php:86
+#, php-format
+msgctxt "sermons"
+msgid "No %s found"
+msgstr ""
+
+#: ../includes/post-types.php:91
+#, php-format
+msgctxt "sermons"
+msgid "No %s found in Trash"
+msgstr ""
+
+#: ../includes/post-types.php:151
+msgctxt "post type singular"
+msgid "Sermon"
+msgstr ""
+
+#: ../includes/post-types.php:171
+msgctxt "post type plural"
+msgid "Sermons"
+msgstr ""
+
+#: ../includes/post-types.php:194
 msgctxt "post type general name"
 msgid "Events"
 msgstr "Gebeure"
 
-#: ../includes/post-types.php:82
+#: ../includes/post-types.php:195
 msgctxt "post type singular name"
 msgid "Event"
 msgstr "Gebeurtenis"
 
-#: ../includes/post-types.php:83
+#: ../includes/post-types.php:196
 msgctxt "event"
 msgid "Add New"
 msgstr "Voeg nuwe by"
 
-#: ../includes/post-types.php:84
+#: ../includes/post-types.php:197
 msgid "Add Event"
 msgstr "Voeg Gebeurtenis by"
 
-#: ../includes/post-types.php:85
+#: ../includes/post-types.php:198
 msgid "Edit Event"
 msgstr "Wysig Gebeurtenis"
 
-#: ../includes/post-types.php:86
+#: ../includes/post-types.php:199
 msgid "New Event"
 msgstr "Nuwe Gebeurtenis"
 
-#: ../includes/post-types.php:87
+#: ../includes/post-types.php:200
 msgid "All Events"
 msgstr "Alle Gebeure"
 
-#: ../includes/post-types.php:88
+#: ../includes/post-types.php:201
 msgid "View Event"
 msgstr "Bekyk Gebeurtenis"
 
-#: ../includes/post-types.php:89
+#: ../includes/post-types.php:202
 msgid "View Events"
 msgstr "Bekyk Gebeure"
 
-#: ../includes/post-types.php:90
+#: ../includes/post-types.php:203
 msgid "Search Events"
 msgstr "Soek Gebeure"
 
-#: ../includes/post-types.php:91
+#: ../includes/post-types.php:204
 msgid "No events found"
 msgstr "Geen gebeure gevind nie"
 
-#: ../includes/post-types.php:92
+#: ../includes/post-types.php:205
 msgid "No events found in Trash"
 msgstr "Geen gebeure in asblik gevind nie"
 
-#: ../includes/post-types.php:132
+#: ../includes/post-types.php:265
 msgctxt "post type general name"
 msgid "Locations"
 msgstr "Lokale"
 
-#: ../includes/post-types.php:133
+#: ../includes/post-types.php:266
 msgctxt "post type singular name"
 msgid "Location"
 msgstr "Lokaal"
 
-#: ../includes/post-types.php:134
+#: ../includes/post-types.php:267
 msgctxt "location"
 msgid "Add New"
 msgstr "Voeg nuwe by"
 
-#: ../includes/post-types.php:135
+#: ../includes/post-types.php:268
 msgid "Add Location"
 msgstr "Voeg Lokaal by"
 
-#: ../includes/post-types.php:136
+#: ../includes/post-types.php:269
 msgid "Edit Location"
 msgstr "Wysig Lokaal"
 
-#: ../includes/post-types.php:137
+#: ../includes/post-types.php:270
 msgid "New Location"
 msgstr "Nuwe Lokaal"
 
-#: ../includes/post-types.php:138
+#: ../includes/post-types.php:271
 msgid "All Locations"
 msgstr "Alle Lokale"
 
-#: ../includes/post-types.php:139
+#: ../includes/post-types.php:272
 msgid "View Location"
 msgstr "Bekyk Lokaal"
 
-#: ../includes/post-types.php:140
+#: ../includes/post-types.php:273
 msgid "View Locations"
 msgstr "Bekyk Lokale"
 
-#: ../includes/post-types.php:141
+#: ../includes/post-types.php:274
 msgid "Search Locations"
 msgstr "Soek Lokale"
 
-#: ../includes/post-types.php:142
+#: ../includes/post-types.php:275
 msgid "No location found"
 msgstr "Geen lokaal gevind nie"
 
-#: ../includes/post-types.php:143
+#: ../includes/post-types.php:276
 msgid "No location found in Trash"
 msgstr "Geen lokaal in asblik gevind nie"
 
-#: ../includes/post-types.php:182
+#: ../includes/post-types.php:335
 msgctxt "post type general name"
 msgid "People"
 msgstr "Rolspelers"
 
-#: ../includes/post-types.php:183
+#: ../includes/post-types.php:336
 msgctxt "post type singular name"
 msgid "Person"
 msgstr "Rolspeler"
 
-#: ../includes/post-types.php:184
+#: ../includes/post-types.php:337
 msgctxt "person"
 msgid "Add New"
 msgstr "Voeg nuwe by"
 
-#: ../includes/post-types.php:185
+#: ../includes/post-types.php:338
 msgid "Add Person"
 msgstr "Voeg Rolspeler by"
 
-#: ../includes/post-types.php:186
+#: ../includes/post-types.php:339
 msgid "Edit Person"
 msgstr "Wysig Rolspeler"
 
-#: ../includes/post-types.php:187
+#: ../includes/post-types.php:340
 msgid "New Person"
 msgstr "Nuwe Rolspeler"
 
-#: ../includes/post-types.php:188
+#: ../includes/post-types.php:341
 msgid "All People"
 msgstr "Alle Rolspelers"
 
-#: ../includes/post-types.php:189
+#: ../includes/post-types.php:342
 msgid "View Person"
 msgstr "Bekyk Rolspeler"
 
-#: ../includes/post-types.php:190
+#: ../includes/post-types.php:343
 msgid "View People"
 msgstr "Bekyk Rolspelers"
 
-#: ../includes/post-types.php:191
+#: ../includes/post-types.php:344
 msgid "Search People"
 msgstr "Soek Rolspelers"
 
-#: ../includes/post-types.php:192
+#: ../includes/post-types.php:345
 msgid "No people found"
 msgstr "Geen rolspelers gevind nie"
 
-#: ../includes/post-types.php:193
+#: ../includes/post-types.php:346
 msgid "No people found in Trash"
 msgstr "Geen rolspelers in asblik gevind nie"
 
-#: ../includes/settings.php:43
+#: ../includes/settings.php:87
+msgctxt "settings"
+msgid "Enhanced SEO"
+msgstr ""
+
+#: ../includes/settings.php:91
+#, php-format
+msgid ""
+"Automatic Search Engine Optimization (SEO) with Schema.org structured data "
+"using JSON-LD. <a href=\"%1$s\" target=\"_blank\">Learn More</a>"
+msgstr ""
+
+#: ../includes/settings.php:117
+#, php-format
+msgid "Change \"%1$s\" in URLs. Example: <code>%2$s</code>"
+msgstr ""
+
+#: ../includes/settings.php:118
+msgid "Title"
+msgstr ""
+
+#: ../includes/settings.php:121
+msgctxt "url slug setting"
+msgid "name"
+msgstr ""
+
+#: ../includes/settings.php:176
+msgid "Hide in Admin"
+msgstr ""
+
+#: ../includes/settings.php:178
+msgid "This can be useful if you are not using the feature."
+msgstr ""
+
+#: ../includes/settings.php:226
+msgid "Copied to Clipboard"
+msgstr ""
+
+#: ../includes/settings.php:229
+msgctxt "podcast feed URL"
+msgid "Copy"
+msgstr ""
+
+#: ../includes/settings.php:230
+msgid "Submit to iTunes"
+msgstr ""
+
+#: ../includes/settings.php:231
+msgid "Submit to Google Play"
+msgstr ""
+
+#: ../includes/settings.php:236
+msgid ""
+"Save time by setting events to repeat automatically (e.g. \"Every month on "
+"last Sunday except December 25\")."
+msgstr ""
+
+#: ../includes/settings.php:239
+msgctxt "recurrence setting"
+msgid ""
+"Enabled by <b>Church Content Pro</b> <span class=\"ctps-light ctps-italic"
+"\">(Always On)</span>"
+msgstr ""
+
+#: ../includes/settings.php:243
+msgid "Partially Enabled by <b>Custom Recurring Events</b> Add-on"
+msgstr ""
+
+#: ../includes/settings.php:247
+#, php-format
+msgid ""
+"Upgrade to <a href=\"%1$s\" target=\"_blank\">Church Content Pro</a> for the "
+"complete set of recurrence and exclusion options."
+msgstr ""
+
+#: ../includes/settings.php:256
+msgid ""
+"Basic Recurrence Only <span class=\"ctps-light ctps-italic\">(Pro Recurrence "
+"Inactive)</span>"
+msgstr ""
+
+#: ../includes/settings.php:260
+#, php-format
+msgid ""
+"Install <a href=\"%1$s\" target=\"_blank\">Church Content Pro</a> for full "
+"recurrence (e.g. \"Every month on last Sunday except December 25\")."
+msgstr ""
+
+#: ../includes/settings.php:271
+#, php-format
+msgctxt "recurrence setting"
+msgid ""
+"Install <a href=\"%1$s\" target=\"_blank\">Church Content Pro</a> to Enable "
+"<span class=\"ctps-light ctps-italic\">(Recommended)</span>"
+msgstr ""
+
+#: ../includes/settings.php:289
 #, php-format
 msgid "%1$s Settings"
 msgstr "%1$s Instellings"
 
-#: ../includes/settings.php:49
+#: ../includes/settings.php:297
 #, php-format
 msgid ""
 "These settings are for the <a href=\"%1$s\" target=\"_blank\">Church "
-"Content</a> plugin and its <a href=\"%2$s\" target=\"_blank\">Add-ons</a>."
+"Content</a> plugin. Use the <a href=\"%2$s\">Customizer</a> for theme-"
+"provided appearance settings."
 msgstr ""
-"Hierdie instellings is vir die <a href=\"%1$s\" target=\"_blank\">Church "
-"Content</a> plugin en die plugin se<a href=\"%2$s\" target=\"_blank\">Add-"
-"ons</a>."
 
-#: ../includes/settings.php:69
+#: ../includes/settings.php:316
+msgctxt "settings"
+msgid "Licenses"
+msgstr ""
+
+#: ../includes/settings.php:319
+msgid ""
+"Save then activate your add-on's license key to enable one-click updates for "
+"it."
+msgstr ""
+
+#: ../includes/settings.php:331
 msgctxt "settings section title"
-msgid "General"
-msgstr "Algemeen"
+msgid "Sermons"
+msgstr ""
 
-#: ../includes/settings.php:79
+#: ../includes/settings.php:341
+msgctxt "settings"
+msgid "Sermon Podcast"
+msgstr ""
+
+#: ../includes/settings.php:343
+msgid ""
+"Set up your sermon podcast to reach more people automatically on iTunes, "
+"Google Play and elsewhere."
+msgstr ""
+
+#: ../includes/settings.php:357
+msgid "<a href=\"#\">Podcast Settings</a>"
+msgstr ""
+
+#: ../includes/settings.php:366
+msgid ""
+"Enable Structured Data for Sermons <span class=\"ctps-light ctps-italic"
+"\">(Recommended)</span>"
+msgstr ""
+
+#: ../includes/settings.php:372
+msgid "Alternative Wording"
+msgstr ""
+
+#: ../includes/settings.php:404
+#, php-format
+msgid ""
+"Enter alternative wording for \"%1$s\" and \"%2$s\" (e.g. \"Message\" and "
+"\"Messages\")."
+msgstr ""
+
+#: ../includes/settings.php:433
+msgid "Sermon URL Base"
+msgstr ""
+
+#: ../includes/settings.php:447
+msgid "Category URL Bases"
+msgstr ""
+
+#: ../includes/settings.php:517
+msgid "Hide Sermons in Admin Menu"
+msgstr ""
+
+#: ../includes/settings.php:529
+msgctxt "settings section title"
+msgid "Podcast"
+msgstr ""
+
+#: ../includes/settings.php:534
+#, php-format
+msgid ""
+"Set up your <a href=\"%1$s\" target=\"_blank\">Sermon Podcast</a> to reach "
+"more people."
+msgstr ""
+
+#: ../includes/settings.php:543
+msgctxt "settings"
+msgid "Feed URL"
+msgstr ""
+
+#: ../includes/settings.php:547
+#, php-format
+msgid ""
+"Submit your podcast feed URL to iTunes, Google Play, etc. Read the <a href="
+"\"%1$s\" target=\"_blank\">Podcasting Guide</a> to learn how."
+msgstr ""
+
+#: ../includes/settings.php:572
+msgctxt "podcast settings"
+msgid "Image"
+msgstr ""
+
+#: ../includes/settings.php:574
+msgid ""
+"Square image must be between 1400x1400 and 3000x3000 pixels and in JPG or "
+"PNG format. <b>Required by iTunes</b>."
+msgstr ""
+
+#: ../includes/settings.php:579
+msgid "Choose Image"
+msgstr ""
+
+#: ../includes/settings.php:580
+msgid "Choose an Image"
+msgstr ""
+
+#: ../includes/settings.php:597
+msgctxt "podcast settings"
+msgid "Title"
+msgstr ""
+
+#: ../includes/settings.php:599
+msgid ""
+"The title of your sermon podcast. Example: \"Grace Church Sermons\" or "
+"\"Cornerstone Church Podcast\". <b>Required</b>."
+msgstr ""
+
+#: ../includes/settings.php:625
+msgctxt "podcast settings"
+msgid "Subtitle"
+msgstr ""
+
+#: ../includes/settings.php:627
+msgid ""
+"A short description of your podcast. Example: \"Weekly sermons by Pastor Bob "
+"Smith at Grace Church in Orlando, FL.\""
+msgstr ""
+
+#: ../includes/settings.php:653
+msgctxt "podcast settings"
+msgid "Description"
+msgstr ""
+
+#: ../includes/settings.php:655
+msgid ""
+"A full description of your podcast. You can write about your church, mission "
+"and pastor, link to your website, etc."
+msgstr ""
+
+#: ../includes/settings.php:680
+msgctxt "podcast settings"
+msgid "Provider"
+msgstr ""
+
+#: ../includes/settings.php:682
+msgid ""
+"The name of your church and/or pastor. Example: \"Grace Church - Pastor Bob "
+"Smith\". <b>Required</b>."
+msgstr ""
+
+#: ../includes/settings.php:708
+msgctxt "podcast settings"
+msgid "Copyright"
+msgstr ""
+
+#: ../includes/settings.php:710
+msgid "Copyright notice for your podcast. Example: \"&copy; Grace Church\""
+msgstr ""
+
+#: ../includes/settings.php:736
+msgctxt "podcast settings"
+msgid "Link"
+msgstr ""
+
+#: ../includes/settings.php:738
+msgid ""
+"Provide a URL if you want your podcast to link to somewhere other than your "
+"website homepage."
+msgstr ""
+
+#: ../includes/settings.php:763
+msgctxt "podcast settings"
+msgid "Email"
+msgstr ""
+
+#: ../includes/settings.php:765
+msgid ""
+"Email to receive notifications from iTunes / Google Play. Not shown to "
+"public (but is in feed). <b>Required by Google Play</b>."
+msgstr ""
+
+#: ../includes/settings.php:790
+msgctxt "sermon settings"
+msgid "Category"
+msgstr ""
+
+#: ../includes/settings.php:792
+msgid ""
+"Choosing a category for your podcast is <b>required by iTunes</b> and can "
+"help users find it."
+msgstr ""
+
+#: ../includes/settings.php:815
+msgctxt "sermon settings"
+msgid "Clean"
+msgstr ""
+
+#: ../includes/settings.php:817
+msgid ""
+"iTunes and Google Play need to know if a podcast contains explicit content "
+"or not."
+msgstr ""
+
+#: ../includes/settings.php:819
+msgid "Podcast does <em>not</em> contain explicit content"
+msgstr ""
+
+#: ../includes/settings.php:840
+msgctxt "podcast settings"
+msgid "Language"
+msgstr ""
+
+#: ../includes/settings.php:844
+#, php-format
+msgid ""
+"Specify your podcast language in <a href=\"%1$s\" target=\"_blank\">ISO "
+"639-1</a> format. If not specified, the language in <a href=\"%2$s\" target="
+"\"_blank\">General Settings</a> will be used."
+msgstr ""
+
+#: ../includes/settings.php:873
+msgctxt "podcast settings"
+msgid "Limit"
+msgstr ""
+
+#: ../includes/settings.php:877
+#, php-format
+msgid ""
+"Include the X most recent sermons in your podcast feed. Defaults to "
+"\"Syndication feeds...\" in <a href=\"%1$s\" target=\"_blank\">Reading "
+"Settings</a>."
+msgstr ""
+
+#: ../includes/settings.php:906
+msgctxt "podcast settings"
+msgid "iTunes New Feed URL"
+msgstr ""
+
+#: ../includes/settings.php:910
+#, php-format
+msgid ""
+"If necessary, enter a URL to add the <code>%1$s</code> tag to your podcast "
+"feed. <a href=\"%2$s\" target=\"_blank\">Learn More</a>"
+msgstr ""
+
+#: ../includes/settings.php:936
+msgctxt "podcast settings"
+msgid "Maintenance"
+msgstr ""
+
+#: ../includes/settings.php:938
+msgid ""
+"Updates enclosures for all sermons. This can be helpful if you find that any "
+"are missing from your feed (not common)."
+msgstr ""
+
+#: ../includes/settings.php:952
+msgid "Update Enclosures"
+msgstr ""
+
+#: ../includes/settings.php:1105
+msgctxt "settings section title"
+msgid "Events"
+msgstr ""
+
+#: ../includes/settings.php:1115
+msgctxt "settings"
+msgid "Recurring Events"
+msgstr ""
+
+#: ../includes/settings.php:1140
+msgid ""
+"Enable Structured Data for Events <span class=\"ctps-light ctps-italic"
+"\">(Recommended)</span>"
+msgstr ""
+
+#: ../includes/settings.php:1146
+msgid "Location Memory"
+msgstr ""
+
+#: ../includes/settings.php:1148
+msgid ""
+"Save time when adding events by choosing from previously used locations."
+msgstr ""
+
+#: ../includes/settings.php:1150
+msgid ""
+"Enable \"Choose\" Button and Autocomplete <span class=\"ctps-light ctps-"
+"italic\">(Recommended)</span>"
+msgstr ""
+
+#: ../includes/settings.php:1173
+msgid "Event URL Base"
+msgstr ""
+
+#: ../includes/settings.php:1187
+msgid "Category URL Base"
+msgstr ""
+
+#: ../includes/settings.php:1201
+msgid "Hide Events in Admin Menu"
+msgstr ""
+
+#: ../includes/settings.php:1213
+msgctxt "settings section title"
+msgid "Locations"
+msgstr ""
+
+#: ../includes/settings.php:1223
 msgctxt "settings"
 msgid "Google Maps API Key"
 msgstr "Google Maps API Sleutel"
 
-#: ../includes/settings.php:82
+#: ../includes/settings.php:1227
 #, php-format
 msgid ""
-"An API Key for Google Maps is required if you want to show maps for events "
-"or locations. <a href=\"%1$s\" target=\"_blank\">Get an API Key</a>"
+"An API Key for Google Maps is required if you want to show maps for "
+"locations or events. <a href=\"%1$s\" target=\"_blank\">Get an API Key</a>"
 msgstr ""
-"'n API Sleutel vir Google Maps is nodig as jy kaarte vir gebeure of plekke "
-"wil wys.<a href=\"%1$s\" target=\"_blank\">Kry 'n API Key</a>"
 
-#: ../includes/settings.php:108
+#: ../includes/settings.php:1251
+msgid "Location URL Base"
+msgstr ""
+
+#: ../includes/settings.php:1265
+msgid "Hide Locations in Admin Menu"
+msgstr ""
+
+#: ../includes/settings.php:1277
+msgctxt "settings section title"
+msgid "People"
+msgstr ""
+
+#: ../includes/settings.php:1287
+msgid "Person URL Base"
+msgstr ""
+
+#: ../includes/settings.php:1301
+msgid "Group URL Base"
+msgstr ""
+
+#: ../includes/settings.php:1315
+msgid "Hide People in Admin Menu"
+msgstr ""
+
+#: ../includes/settings.php:1351
 msgctxt "settings"
-msgid "Add-on Licenses"
-msgstr "Add-on Licensies"
-
-#: ../includes/settings.php:113
-msgid ""
-"Save then activate your add-on license keys to enable one-click updates for "
-"them."
+msgid "(Pro)"
 msgstr ""
-"Stoor en aktiveer dan jou add-on lisensie sleutels om een kliek-opdaterings "
-"vir hulle in staat te stel."
 
-#: ../includes/taxonomies.php:30
-msgctxt "taxonomy general name"
-msgid "Sermon Topics"
-msgstr "Preek Temas"
+#: ../includes/settings.php:1383
+msgid ""
+"<b>Note:</b> This is not supported by your theme and will have no effect."
+msgstr ""
 
-#: ../includes/taxonomies.php:31
-msgctxt "taxonomy singular name"
-msgid "Sermon Topic"
-msgstr "Preek Tema"
+#: ../includes/settings.php:1432
+#, php-format
+msgid ""
+"Settings labeled \"Pro\" are provided by the <a href=\"%1$s\" target=\"_blank"
+"\">Church Content Pro</a> plugin. Install it to add Pro features."
+msgstr ""
 
-#: ../includes/taxonomies.php:32
+#: ../includes/settings.php:1651
+msgid "Posts per page"
+msgstr ""
+
+#: ../includes/settings.php:1683
+#, php-format
+msgid ""
+"Use <a href=\"%1$s\">Church Content Settings</a> to override this for "
+"specific post types (sermons, events, etc.)"
+msgstr ""
+
+#: ../includes/settings.php:1731
+msgid "Church Content Settings"
+msgstr ""
+
+#: ../includes/settings.php:1755
+#, php-format
+msgid ""
+"Go to <a href=\"%1$s\">Church Content Settings</a> to set custom URL bases "
+"for sermons, events, etc."
+msgstr ""
+
+#: ../includes/taxonomies.php:38
+#, php-format
+msgctxt "sermon taxonomy general name"
+msgid "%s Topics"
+msgstr ""
+
+#: ../includes/taxonomies.php:43
+#, php-format
+msgctxt "sermon taxonomy singular name"
+msgid "%s Topic"
+msgstr ""
+
+#: ../includes/taxonomies.php:46
 msgctxt "sermons"
 msgid "Search Topics"
 msgstr "Soek Temas"
 
-#: ../includes/taxonomies.php:33
+#: ../includes/taxonomies.php:47
 msgctxt "sermons"
 msgid "Popular Topics"
 msgstr "GewildeTemas"
 
-#: ../includes/taxonomies.php:34
+#: ../includes/taxonomies.php:48
 msgctxt "sermons"
 msgid "All Topics"
 msgstr "Alle Temas"
 
-#: ../includes/taxonomies.php:37
+#: ../includes/taxonomies.php:51
 msgctxt "sermons"
 msgid "Edit Topic"
 msgstr "Wysig Tema"
 
-#: ../includes/taxonomies.php:38
+#: ../includes/taxonomies.php:52
 msgctxt "sermons"
 msgid "Update Topic"
 msgstr "Dateer Tema op"
 
-#: ../includes/taxonomies.php:39
+#: ../includes/taxonomies.php:53
 msgctxt "sermons"
 msgid "Add Topic"
 msgstr "Voeg Tema by"
 
-#: ../includes/taxonomies.php:40
+#: ../includes/taxonomies.php:54
 msgctxt "sermons"
 msgid "New Topic"
 msgstr "Nuwe Tema"
 
-#: ../includes/taxonomies.php:41
+#: ../includes/taxonomies.php:55
 msgctxt "sermons"
 msgid "Separate topics with commas"
 msgstr "Skei temas met kommas"
 
-#: ../includes/taxonomies.php:42
+#: ../includes/taxonomies.php:56
 msgctxt "sermons"
 msgid "Add or remove topics"
 msgstr "Voeg temas by of verwyder temas"
 
-#: ../includes/taxonomies.php:43
+#: ../includes/taxonomies.php:57
 msgctxt "sermons"
 msgid "Choose from the most used topics"
 msgstr "Kies uit die mees gebruikte temas"
 
-#: ../includes/taxonomies.php:44
+#: ../includes/taxonomies.php:58
 msgctxt "sermon menu name"
 msgid "Topics"
 msgstr "Temas"
 
-#: ../includes/taxonomies.php:77
-msgctxt "taxonomy general name"
-msgid "Sermon Books"
-msgstr "Bybelboeke"
+#: ../includes/taxonomies.php:118
+#, php-format
+msgctxt "sermon taxonomy general name"
+msgid "%s Books"
+msgstr ""
 
-#: ../includes/taxonomies.php:78
-msgctxt "taxonomy singular name"
-msgid "Sermon Book"
-msgstr "Bybelboek"
+#: ../includes/taxonomies.php:123
+#, php-format
+msgctxt "sermon taxonomy general name"
+msgid "%s Book"
+msgstr ""
 
-#: ../includes/taxonomies.php:79
+#: ../includes/taxonomies.php:126
 msgctxt "sermons"
 msgid "Search Books"
 msgstr "Soek Bybelboeke"
 
-#: ../includes/taxonomies.php:80
+#: ../includes/taxonomies.php:127
 msgctxt "sermons"
 msgid "Popular Books"
 msgstr "Gewilde Bybelboeke"
 
-#: ../includes/taxonomies.php:81
+#: ../includes/taxonomies.php:128
 msgctxt "sermons"
 msgid "All Books"
 msgstr "Alle Bybelboeke"
 
-#: ../includes/taxonomies.php:84
+#: ../includes/taxonomies.php:131
 msgctxt "sermons"
 msgid "Edit Book"
 msgstr "Wysig Bybelboek"
 
-#: ../includes/taxonomies.php:85
+#: ../includes/taxonomies.php:132
 msgctxt "sermons"
 msgid "Update Book"
 msgstr "Dateer Bybelboek op"
 
-#: ../includes/taxonomies.php:86
+#: ../includes/taxonomies.php:133
 msgctxt "sermons"
 msgid "Add Book"
 msgstr "Voeg Bybelboek by"
 
-#: ../includes/taxonomies.php:87
+#: ../includes/taxonomies.php:134
 msgctxt "sermons"
 msgid "New Book"
 msgstr "Nuwe Bybelboek"
 
-#: ../includes/taxonomies.php:88
+#: ../includes/taxonomies.php:135
 msgctxt "sermons"
 msgid "Separate books with commas"
 msgstr "Skei Bybelboeke met kommas"
 
-#: ../includes/taxonomies.php:89
+#: ../includes/taxonomies.php:136
 msgctxt "sermons"
 msgid "Add or remove books"
 msgstr "Voeg Bybelboeke by of verwyder Bybelboeke"
 
-#: ../includes/taxonomies.php:90
+#: ../includes/taxonomies.php:137
 msgctxt "sermons"
 msgid "Choose from the most used books"
 msgstr "Kies uit die mees gebruikte Bybelboeke"
 
-#: ../includes/taxonomies.php:91
+#: ../includes/taxonomies.php:138
 msgctxt "sermon menu name"
 msgid "Books"
 msgstr "Bybelboeke"
 
-#: ../includes/taxonomies.php:124
-msgctxt "taxonomy general name"
-msgid "Sermon Series"
-msgstr "Reekse"
+#: ../includes/taxonomies.php:198 ../includes/taxonomies.php:203
+#, php-format
+msgctxt "sermon taxonomy general name"
+msgid "%s Series"
+msgstr ""
 
-#: ../includes/taxonomies.php:125
-msgctxt "taxonomy singular name"
-msgid "Sermon Series"
-msgstr "Reeks"
-
-#: ../includes/taxonomies.php:126
+#: ../includes/taxonomies.php:206
 msgctxt "sermons"
 msgid "Search Series"
 msgstr "Soek Reekse"
 
-#: ../includes/taxonomies.php:127
+#: ../includes/taxonomies.php:207
 msgctxt "sermons"
 msgid "Popular Series"
 msgstr "Gewilde Reekse"
 
-#: ../includes/taxonomies.php:128
+#: ../includes/taxonomies.php:208
 msgctxt "sermons"
 msgid "All Series"
 msgstr "Alle Reeks"
 
-#: ../includes/taxonomies.php:131
+#: ../includes/taxonomies.php:211
 msgctxt "sermons"
 msgid "Edit Series"
 msgstr "Wysig Reeks"
 
-#: ../includes/taxonomies.php:132
+#: ../includes/taxonomies.php:212
 msgctxt "sermons"
 msgid "Update Series"
 msgstr "Dateer Reeks op"
 
-#: ../includes/taxonomies.php:133
+#: ../includes/taxonomies.php:213
 msgctxt "sermons"
 msgid "Add Series"
 msgstr "Voeg Reeks by"
 
-#: ../includes/taxonomies.php:134
+#: ../includes/taxonomies.php:214
 msgctxt "sermons"
 msgid "New Series"
 msgstr "Nuwe Reeks"
 
-#: ../includes/taxonomies.php:135
+#: ../includes/taxonomies.php:215
 msgctxt "sermons"
 msgid "Separate series with commas"
 msgstr "Skei reekse met kommas"
 
-#: ../includes/taxonomies.php:136
+#: ../includes/taxonomies.php:216
 msgctxt "sermons"
 msgid "Add or remove series"
 msgstr "Voeg reekse by of verwyder reekse"
 
-#: ../includes/taxonomies.php:137
+#: ../includes/taxonomies.php:217
 msgctxt "sermons"
 msgid "Choose from the most used series"
 msgstr "Kies uit die mees gebruikte reekse"
 
-#: ../includes/taxonomies.php:138
+#: ../includes/taxonomies.php:218
 msgctxt "sermon menu name"
 msgid "Series"
 msgstr "Reekse"
 
-#: ../includes/taxonomies.php:171
-msgctxt "taxonomy general name"
-msgid "Sermon Speakers"
-msgstr "Aanbieders"
+#: ../includes/taxonomies.php:278
+#, php-format
+msgctxt "sermon taxonomy general name"
+msgid "%s Speakers"
+msgstr ""
 
-#: ../includes/taxonomies.php:172
-msgctxt "taxonomy singular name"
-msgid "Sermon Speaker"
-msgstr "Aanbieder"
+#: ../includes/taxonomies.php:283
+#, php-format
+msgctxt "sermon taxonomy general name"
+msgid "%s Speaker"
+msgstr ""
 
-#: ../includes/taxonomies.php:173
+#: ../includes/taxonomies.php:285
 msgctxt "sermons"
 msgid "Search Speakers"
 msgstr "Soek Aanbieders"
 
-#: ../includes/taxonomies.php:174
+#: ../includes/taxonomies.php:286
 msgctxt "sermons"
 msgid "Popular Speakers"
 msgstr "Gewilde Aanbieders"
 
-#: ../includes/taxonomies.php:175
+#: ../includes/taxonomies.php:287
 msgctxt "sermons"
 msgid "All Speakers"
 msgstr "Alle Aanbieders"
 
-#: ../includes/taxonomies.php:178
+#: ../includes/taxonomies.php:290
 msgctxt "sermons"
 msgid "Edit Speaker"
 msgstr "Wysig Aanbieder"
 
-#: ../includes/taxonomies.php:179
+#: ../includes/taxonomies.php:291
 msgctxt "sermons"
 msgid "Update Speaker"
 msgstr "Dateer Aanbieder op"
 
-#: ../includes/taxonomies.php:180
+#: ../includes/taxonomies.php:292
 msgctxt "sermons"
 msgid "Add Speaker"
 msgstr "Voeg Aanbieder by"
 
-#: ../includes/taxonomies.php:181
+#: ../includes/taxonomies.php:293
 msgctxt "sermons"
 msgid "New Speaker"
 msgstr "Nuwe Aanbieder"
 
-#: ../includes/taxonomies.php:182
+#: ../includes/taxonomies.php:294
 msgctxt "sermons"
 msgid "Separate speakers with commas"
 msgstr "Skei aanbieders met kommas"
 
-#: ../includes/taxonomies.php:183
+#: ../includes/taxonomies.php:295
 msgctxt "sermons"
 msgid "Add or remove speakers"
 msgstr "Voeg aanbieders by of verwyder aanbieders"
 
-#: ../includes/taxonomies.php:184
+#: ../includes/taxonomies.php:296
 msgctxt "sermons"
 msgid "Choose from the most used speakers"
 msgstr "Kies uit die mees gebruikte aanbieders"
 
-#: ../includes/taxonomies.php:185
+#: ../includes/taxonomies.php:297
 msgctxt "sermon menu name"
 msgid "Speakers"
 msgstr "Aanbieders"
 
-#: ../includes/taxonomies.php:218
-msgctxt "taxonomy general name"
-msgid "Sermon Tags"
-msgstr "Preekmerkers"
+#: ../includes/taxonomies.php:357
+#, php-format
+msgctxt "sermon taxonomy general name"
+msgid "%s Tags"
+msgstr ""
 
-#: ../includes/taxonomies.php:219
-msgctxt "taxonomy singular name"
-msgid "Sermon Tag"
-msgstr "Preek Merker"
+#: ../includes/taxonomies.php:362
+#, php-format
+msgctxt "sermon taxonomy general name"
+msgid "%s Tag"
+msgstr ""
 
-#: ../includes/taxonomies.php:220
+#: ../includes/taxonomies.php:365
 msgctxt "sermons"
 msgid "Search Tags"
 msgstr "Soek Merker"
 
-#: ../includes/taxonomies.php:221
+#: ../includes/taxonomies.php:366
 msgctxt "sermons"
 msgid "Popular Tags"
 msgstr "Gewilde Merker"
 
-#: ../includes/taxonomies.php:222
+#: ../includes/taxonomies.php:367
 msgctxt "sermons"
 msgid "All Tags"
 msgstr "Alle Merkers"
 
-#: ../includes/taxonomies.php:225
+#: ../includes/taxonomies.php:370
 msgctxt "sermons"
 msgid "Edit Tag"
 msgstr "Wysig Merker"
 
-#: ../includes/taxonomies.php:226
+#: ../includes/taxonomies.php:371
 msgctxt "sermons"
 msgid "Update Tag"
 msgstr "Dateer Merker op"
 
-#: ../includes/taxonomies.php:227
+#: ../includes/taxonomies.php:372
 msgctxt "sermons"
 msgid "Add Tag"
 msgstr "Voeg Merker by"
 
-#: ../includes/taxonomies.php:228
+#: ../includes/taxonomies.php:373
 msgctxt "sermons"
 msgid "New Tag"
 msgstr "Nuwe Merker"
 
-#: ../includes/taxonomies.php:229
+#: ../includes/taxonomies.php:374
 msgctxt "sermons"
 msgid "Separate tags with commas"
 msgstr "Skei merkers met kommas"
 
-#: ../includes/taxonomies.php:230
+#: ../includes/taxonomies.php:375
 msgctxt "sermons"
 msgid "Add or remove tags"
 msgstr "Voeg merkers by of verwyder merkers"
 
-#: ../includes/taxonomies.php:231
+#: ../includes/taxonomies.php:376
 msgctxt "sermons"
 msgid "Choose from the most used tags"
 msgstr "Kies uit die mees gebruikte sleutelwoorde"
 
-#: ../includes/taxonomies.php:232
+#: ../includes/taxonomies.php:377
 msgctxt "sermon menu name"
 msgid "Tags"
 msgstr "Merkers"
 
-#: ../includes/taxonomies.php:269
+#: ../includes/taxonomies.php:435
 msgctxt "taxonomy general name"
 msgid "Event Categories"
 msgstr "Gebeure Kategorieë"
 
-#: ../includes/taxonomies.php:270
+#: ../includes/taxonomies.php:436
 msgctxt "taxonomy singular name"
 msgid "Event Category"
 msgstr "Gebeure Kategorie"
 
-#: ../includes/taxonomies.php:271
+#: ../includes/taxonomies.php:437
 msgctxt "events"
 msgid "Search Categories"
 msgstr "Soek Kategorieë"
 
-#: ../includes/taxonomies.php:272
+#: ../includes/taxonomies.php:438
 msgctxt "events"
 msgid "Popular Categories"
 msgstr "Gewilde Kategorieë"
 
-#: ../includes/taxonomies.php:273
+#: ../includes/taxonomies.php:439
 msgctxt "events"
 msgid "All Categories"
 msgstr "Alle Kategorieë"
 
-#: ../includes/taxonomies.php:276
+#: ../includes/taxonomies.php:442
 msgctxt "events"
 msgid "Edit Event Category"
 msgstr "Wysig Gebeure Kategorie"
 
-#: ../includes/taxonomies.php:277
+#: ../includes/taxonomies.php:443
 msgctxt "events"
 msgid "Update Event Category"
 msgstr "Dateer Gebeure Kategorie op"
 
-#: ../includes/taxonomies.php:278
+#: ../includes/taxonomies.php:444
 msgctxt "events"
 msgid "Add Category"
 msgstr "Voeg Kategorie by"
 
-#: ../includes/taxonomies.php:279
+#: ../includes/taxonomies.php:445
 msgctxt "events"
 msgid "New Category"
 msgstr "Nuwe Kategorie"
 
-#: ../includes/taxonomies.php:280
+#: ../includes/taxonomies.php:446
 msgctxt "events"
 msgid "Separate categories with commas"
 msgstr "Skei kategorieë met kommas"
 
-#: ../includes/taxonomies.php:281
+#: ../includes/taxonomies.php:447
 msgctxt "events"
 msgid "Add or remove categories"
 msgstr "Voeg kategorieë by of verwyder kategorieë"
 
-#: ../includes/taxonomies.php:282
+#: ../includes/taxonomies.php:448
 msgctxt "events"
 msgid "Choose from the most used categories"
 msgstr "Kies uit die mees gebruikte kategorieë"
 
-#: ../includes/taxonomies.php:283
+#: ../includes/taxonomies.php:449
 msgctxt "event menu name"
 msgid "Categories"
 msgstr "Kategorieë"
 
-#: ../includes/taxonomies.php:320
+#: ../includes/taxonomies.php:507
 msgctxt "taxonomy general name"
 msgid "Groups"
 msgstr "Groepe"
 
-#: ../includes/taxonomies.php:321
+#: ../includes/taxonomies.php:508
 msgctxt "taxonomy singular name"
 msgid "Group"
 msgstr "Groep"
 
-#: ../includes/taxonomies.php:322
+#: ../includes/taxonomies.php:509
 msgctxt "people"
 msgid "Search Groups"
 msgstr "Soek Groepe"
 
-#: ../includes/taxonomies.php:323
+#: ../includes/taxonomies.php:510
 msgctxt "people"
 msgid "Popular Groups"
 msgstr "Gewilde Groepe"
 
-#: ../includes/taxonomies.php:324
+#: ../includes/taxonomies.php:511
 msgctxt "people"
 msgid "All Groups"
 msgstr "Alle Groepe"
 
-#: ../includes/taxonomies.php:327
+#: ../includes/taxonomies.php:514
 msgctxt "people"
 msgid "Edit Group"
 msgstr "Wysig Groep"
 
-#: ../includes/taxonomies.php:328
+#: ../includes/taxonomies.php:515
 msgctxt "people"
 msgid "Update Group"
 msgstr "Dateer Groep op"
 
-#: ../includes/taxonomies.php:329
+#: ../includes/taxonomies.php:516
 msgctxt "people"
 msgid "Add Group"
 msgstr "Voeg Groep by"
 
-#: ../includes/taxonomies.php:330
+#: ../includes/taxonomies.php:517
 msgctxt "people"
 msgid "New Group"
 msgstr "Nuwe Groep"
 
-#: ../includes/taxonomies.php:331
+#: ../includes/taxonomies.php:518
 msgctxt "people"
 msgid "Separate groups with commas"
 msgstr "Skei groepe met kommas"
 
-#: ../includes/taxonomies.php:332
+#: ../includes/taxonomies.php:519
 msgctxt "people"
 msgid "Add or remove groups"
 msgstr "Voeg groepe by of verwyder groepe"
 
-#: ../includes/taxonomies.php:333
+#: ../includes/taxonomies.php:520
 msgctxt "people"
 msgid "Choose from the most used groups"
 msgstr "Kies uit die mees gebruikte groepe"
 
-#: ../includes/taxonomies.php:334
+#: ../includes/taxonomies.php:521
 msgctxt "people menu name"
 msgid "Groups"
 msgstr "Groepe"
+
+#~ msgid ""
+#~ "Go to Settings > Church Content to set your Google Maps API Key in order "
+#~ "to use this button."
+#~ msgstr ""
+#~ "Gaan na Instellings> Kerkinhoud om jou Google Maps API-sleutel in te stel "
+#~ "om hierdie knoppie te gebruik."
+
+#~ msgid ""
+#~ "Set your <a href=\"%1$s\" target=\"_blank\">Google Maps API Key</a> to "
+#~ "show a map preview here."
+#~ msgstr ""
+#~ "Stel jou <a href=\"%1$s\" target=\"_blank\">Google Maps API Key</a> in om "
+#~ "'n kaartvoorskou hier te wys."
+
+#~ msgctxt "meta box"
+#~ msgid "Sermon Media"
+#~ msgstr "Preek Media"
+
+#~ msgid "Full sermon text provided"
+#~ msgstr "Volledige preek teks verskaf"
+
+#~ msgctxt "post type general name"
+#~ msgid "Sermons"
+#~ msgstr "Preke"
+
+#~ msgctxt "post type singular name"
+#~ msgid "Sermon"
+#~ msgstr "Preek"
+
+#~ msgid "Add Sermon"
+#~ msgstr "Voeg Preek by"
+
+#~ msgid "Edit Sermon"
+#~ msgstr "Wysig Preek"
+
+#~ msgid "New Sermon"
+#~ msgstr "Nuwe Preek"
+
+#~ msgid "All Sermons"
+#~ msgstr "Alle Preke"
+
+#~ msgid "View Sermon"
+#~ msgstr "Bekyk Preek"
+
+#~ msgid "View Sermons"
+#~ msgstr "Bekyk Preke"
+
+#~ msgid "Search Sermons"
+#~ msgstr "Soek Preke"
+
+#~ msgid "No sermons found"
+#~ msgstr "Geen preke gevind nie"
+
+#~ msgid "No sermons found in Trash"
+#~ msgstr "Geen preke in asblik gevind nie"
+
+#~ msgid ""
+#~ "These settings are for the <a href=\"%1$s\" target=\"_blank\">Church "
+#~ "Content</a> plugin and its <a href=\"%2$s\" target=\"_blank\">Add-ons</a>."
+#~ msgstr ""
+#~ "Hierdie instellings is vir die <a href=\"%1$s\" target=\"_blank\">Church "
+#~ "Content</a> plugin en die plugin se<a href=\"%2$s\" target=\"_blank\">Add-"
+#~ "ons</a>."
+
+#~ msgctxt "settings section title"
+#~ msgid "General"
+#~ msgstr "Algemeen"
+
+#~ msgid ""
+#~ "An API Key for Google Maps is required if you want to show maps for "
+#~ "events or locations. <a href=\"%1$s\" target=\"_blank\">Get an API Key</a>"
+#~ msgstr ""
+#~ "'n API Sleutel vir Google Maps is nodig as jy kaarte vir gebeure of "
+#~ "plekke wil wys.<a href=\"%1$s\" target=\"_blank\">Kry 'n API Key</a>"
+
+#~ msgctxt "settings"
+#~ msgid "Add-on Licenses"
+#~ msgstr "Add-on Licensies"
+
+#~ msgid ""
+#~ "Save then activate your add-on license keys to enable one-click updates "
+#~ "for them."
+#~ msgstr ""
+#~ "Stoor en aktiveer dan jou add-on lisensie sleutels om een kliek-"
+#~ "opdaterings vir hulle in staat te stel."
+
+#~ msgctxt "taxonomy general name"
+#~ msgid "Sermon Topics"
+#~ msgstr "Preek Temas"
+
+#~ msgctxt "taxonomy singular name"
+#~ msgid "Sermon Topic"
+#~ msgstr "Preek Tema"
+
+#~ msgctxt "taxonomy general name"
+#~ msgid "Sermon Books"
+#~ msgstr "Bybelboeke"
+
+#~ msgctxt "taxonomy singular name"
+#~ msgid "Sermon Book"
+#~ msgstr "Bybelboek"
+
+#~ msgctxt "taxonomy general name"
+#~ msgid "Sermon Series"
+#~ msgstr "Reekse"
+
+#~ msgctxt "taxonomy singular name"
+#~ msgid "Sermon Series"
+#~ msgstr "Reeks"
+
+#~ msgctxt "taxonomy general name"
+#~ msgid "Sermon Speakers"
+#~ msgstr "Aanbieders"
+
+#~ msgctxt "taxonomy singular name"
+#~ msgid "Sermon Speaker"
+#~ msgstr "Aanbieder"
+
+#~ msgctxt "taxonomy general name"
+#~ msgid "Sermon Tags"
+#~ msgstr "Preekmerkers"
+
+#~ msgctxt "taxonomy singular name"
+#~ msgid "Sermon Tag"
+#~ msgstr "Preek Merker"
