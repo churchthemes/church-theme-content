@@ -5,7 +5,7 @@
  * Setup and retrieve plugin settings. Also handles WordPress settings.
  *
  * @package    Church_Theme_Content
- * @copyright  Copyright (c) 2014 - 2018, churchthemes.com
+ * @copyright  Copyright (c) 2014 - 2018, ChurchThemes.com
  * @link       https://github.com/churchthemes/church-theme-content
  * @license    GPLv2 or later
  * @since      1.2

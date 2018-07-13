@@ -4,14 +4,14 @@
  * Plugin URI: https://churchthemes.com/plugins/church-content/
  * Description: Provides an interface for managing sermons, events, people and locations. A <strong>compatible theme is required</strong> for presenting content from these church-centric post types in a tightly-integrated manner.
  * Version: 2.0
- * Author: churchthemes.com
+ * Author: ChurchThemes.com
  * Author URI: https://churchthemes.com
  * License: GPLv2 or later
  * Text Domain: church-theme-content
  * Domain Path: /languages
  *
  * @package   Church_Theme_Content
- * @copyright Copyright (c) 2013 - 2018, churchthemes.com
+ * @copyright Copyright (c) 2013 - 2018, ChurchThemes.com
  * @link      https://github.com/churchthemes/church-theme-content
  * @license   GPLv2 or later
  */
