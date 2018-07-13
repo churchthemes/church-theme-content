@@ -9,7 +9,7 @@
  * @copyright  Copyright (c) 2018, churchthemes.com
  * @link       https://github.com/churchthemes/church-theme-content
  * @license    GPLv2 or later
- * @since      1.9
+ * @since 2.0
  */
 
 // No direct access.
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Change "Add Title" placeholder to make sense for various post types.
  *
- * @since 1.9
+ * @since 2.0
  * @param string $placeholder Default title placeholder
  * @return string Modified placeholder
  */
@@ -166,7 +166,7 @@ add_filter( 'enter_title_here', 'ctc_title_placeholder' );
  *
  * Note: The filter this uses is for Gutenberg only.
  *
- * @since 1.9
+ * @since 2.0
  * @param string $placeholder Default body placeholder
  * @return string Modified placeholder
  */
@@ -242,7 +242,7 @@ add_filter( 'write_your_story', 'ctc_body_placeholder' );
 /**
  * Check if block editor (Gutenberg) is in use on add/edit screen.
  *
- * @since 1.9
+ * @since 2.0
  */
 function ctc_is_block_editor() {
 

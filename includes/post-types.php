@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * Sermon post type arguments.
  *
- * @since 1.9
+ * @since 2.0
  * @param bool $unfiltered Set true to return arguments without being filtered.
  * @return array Post type registration arguments.
  */
@@ -138,7 +138,7 @@ add_action( 'init', 'ctc_register_post_type_sermon' ); // register post type.
 /**
  * "Sermon" singular label from post type.
  *
- * @since 1.9
+ * @since 2.0
  * @return string Default, translated or what is set in settings.
  */
 function ctc_sermon_word_singular() {
@@ -158,7 +158,7 @@ function ctc_sermon_word_singular() {
 /**
  * "Sermons" plural label from post type.
  *
- * @since 1.9
+ * @since 2.0
  * @return string Default, translated or what is set in settings.
  */
 function ctc_sermon_word_plural() {
@@ -182,7 +182,7 @@ function ctc_sermon_word_plural() {
 /**
  * Event post type arguments.
  *
- * @since 1.9
+ * @since 2.0
  * @param bool $unfiltered Set true to return arguments without being filtered.
  * @return array Post type registration arguments.
  */
@@ -253,7 +253,7 @@ add_action( 'init', 'ctc_register_post_type_event' ); // register post type.
 /**
  * Location post type arguments.
  *
- * @since 1.9
+ * @since 2.0
  * @param bool $unfiltered Set true to return arguments without being filtered.
  * @return array Post type registration arguments.
  */
@@ -323,7 +323,7 @@ add_action( 'init', 'ctc_register_location_post_type' ); // register post type.
 /**
  * Person post type arguments.
  *
- * @since 1.9
+ * @since 2.0
  * @param bool $unfiltered Set true to return arguments without being filtered.
  * @return array Post type registration arguments.
  */
@@ -399,7 +399,7 @@ add_action( 'init', 'ctc_register_post_type_person' ); // register post type.
  *
  * Will return empty if post type not yet registered.
  *
- * @since 1.9
+ * @since 2.0
  * @param string $post_type Post type to get label for.
  * @param string $form 'singular' or 'plural' (can also leave empty to get plural).
  * @return string Singular or plural label for post type.

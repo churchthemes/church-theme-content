@@ -7,7 +7,7 @@
  * @copyright  Copyright (c) 2018, churchthemes.com
  * @link       https://github.com/churchthemes/church-theme-content
  * @license    GPLv2 or later
- * @since      1.9
+ * @since 2.0
  */
 
 // No direct access.
@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Not using sermon plural word because it's too early to show that in settings placeholder.
  * The user can easily change this from their church name to one of the examples "Grace Church Sermons" if they want.
  *
- * @since 1.9
+ * @since 2.0
  * @return string Default string.
  */
 function ctc_podcast_title_default() {
@@ -55,7 +55,7 @@ function ctc_podcast_title_default() {
  *
  * Default is site name which is assumed to be church name.
  *
- * @since 1.9
+ * @since 2.0
  * @return string Default string.
  */
 function ctc_podcast_author_default() {
@@ -81,7 +81,7 @@ function ctc_podcast_author_default() {
  *
  * Default is tagline from General Settings.
  *
- * @since 1.9
+ * @since 2.0
  * @return string Default string.
  */
 function ctc_podcast_subtitle_default() {
@@ -107,7 +107,7 @@ function ctc_podcast_subtitle_default() {
  *
  * Default is from Settings > General.
  *
- * @since 1.9
+ * @since 2.0
  * @return string Default string.
  */
 function ctc_podcast_language_default() {
@@ -128,7 +128,7 @@ function ctc_podcast_language_default() {
  *
  * URL used for link on podcast. Default is homepage.
  *
- * @since 1.9
+ * @since 2.0
  * @return string Default string.
  */
 function ctc_podcast_link_default() {
@@ -149,7 +149,7 @@ function ctc_podcast_link_default() {
  *
  * Copyright notice to use when no copyright saved in settings.
  *
- * @since 1.9
+ * @since 2.0
  * @return string Default string.
  */
 function ctc_podcast_copyright_default() {
@@ -175,7 +175,7 @@ function ctc_podcast_copyright_default() {
  *
  * Use posts_per_rss "Syndication feeds..." in Reading Settings as default.
  *
- * @since 1.9
+ * @since 2.0
  * @return string Default string.
  */
 function ctc_podcast_limit_default() {
@@ -199,7 +199,7 @@ function ctc_podcast_limit_default() {
  * Only iTunes subcategories relevant to Church Content plugin users are presented.
  * https://help.apple.com/itc/podcasts_connect/#/itc9267a2f12
  *
- * @since 1.9
+ * @since 2.0
  * @return array Key and value pairs.
  */
 function ctc_podcast_category_options() {
@@ -223,7 +223,7 @@ function ctc_podcast_category_options() {
  *
  * Filterable feed name used with add_feed() and get_feed_link().
  *
- * @since 1.9
+ * @since 2.0
  * @return string Feed name.
  */
 function ctc_podcast_feed_name() {
@@ -239,7 +239,7 @@ function ctc_podcast_feed_name() {
  *
  * Get the podcast feed URL.
  *
- * @since 1.9
+ * @since 2.0
  * @return string Feed URL
  */
 function ctc_podcast_feed_url() {
@@ -261,7 +261,7 @@ function ctc_podcast_feed_url() {
  * When audio URL is provided, save its data to the 'enclosure' field.
  * WordPress automatically uses this data to make feeds useful for podcasting.
  *
- * @since 1.9
+ * @since 2.0
  * @param int $post_id
  */
 function ctc_do_enclose( $post_id ) {
@@ -339,7 +339,7 @@ add_action( 'init', 'ctc_support_podcast_exclude_field', 2 ); // init 2 is right
  *
  * Note that this does NOT consider whether or not Pro plugin is active or not.
  *
- * @since 1.9
+ * @since 2.0
  * @return bool True if supported.
  */
 function ctc_podcast_content_supported() {

@@ -66,7 +66,7 @@ function ctc_file_path( $file, $directory = false ) {
 /**
  * churchthemes.com URLs.
  *
- * @since 1.9
+ * @since 2.0
  * @param array $path_key Which URL this is for.
  * @param array $query_args Parameters to add or replace in URL.
  * @return string URL.
@@ -137,7 +137,7 @@ function ctc_ctcom_url( $path_key, $query_args = array() ) {
  *
  * Make https://yourname.com/slug/ into https://yourname.com/<b>slug</b>/
  *
- * @since 1.9
+ * @since 2.0
  * @param string $slug Slug to append to home_url().
  * @return string URL with slug made bold.
  */
@@ -149,7 +149,7 @@ function ctc_make_url_slug_bold( $slug ) {
 /**
  * Check if string is a URL
  *
- * @since 1.9
+ * @since 2.0
  * @param string $string String to check for URL format
  * @return bool True if string i=s URL
  */
@@ -174,7 +174,7 @@ function ctc_is_url( $string ) {
 /**
  * Shorten a string
  *
- * @since 1.9
+ * @since 2.0
  * @param string $string String to shorten.
  * @param int $length Max length of string.
  * @return string Shortened string.
@@ -201,7 +201,7 @@ function ctc_shorten( $string, $length ) {
  *
  * It replaces line breaks with commas.
  *
- * @since 1.9
+ * @since 2.0
  * @param string $string Multi-line string.
  * @return string Single line string.
  */
@@ -312,7 +312,7 @@ function ctc_convert_to_datetime( $date, $time ) {
  *
  * It replaces line breaks with commas.
  *
- * @since 1.9
+ * @since 2.0
  * @param string $address Multi-line address
  * @return string Single line address
  */
@@ -363,7 +363,7 @@ function ctc_function_available( $function ) {
 /**
  * Check if Church Content Pro plugin active.
  *
- * @since 1.9
+ * @since 2.0
  * @return bool True if plugin installed and active.
  */
 function ctc_pro_is_active() {
@@ -381,7 +381,7 @@ function ctc_pro_is_active() {
 /**
  * Check if Custom Recurring Events plugin is active.
  *
- * @since 1.9
+ * @since 2.0
  * @return bool True if plugin installed and active.
  */
 function ctc_cre_is_active() {

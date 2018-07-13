@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * This is used by ctc_settings_setup() to make settings available to user.
  *
- * @since 1.9
+ * @since 2.0
  * @return array Settings array.
  */
 function ctc_settings_config() {
@@ -1453,7 +1453,7 @@ add_action( 'init', 'ctc_settings_setup', 1 ); // early so later actions can use
 /**
  * Sanitize URL slug.
  *
- * @since 1.9
+ * @since 2.0
  * @param string $setting Setting key.
  * @return mixed Setting value.
  * @global object $ctc_settings.
@@ -1474,7 +1474,7 @@ function ctc_sanitize_setting_url_slug( $value, $field ) {
  *
  * Limit the length of content. Tags are already stipped on save.
  *
- * @since 1.9
+ * @since 2.0
  * @param string $setting Setting key.
  * @return mixed Setting value.
  * @global object $ctc_settings.
@@ -1498,7 +1498,7 @@ function ctc_sanitize_setting_podcast_subtitle( $value, $field = false ) {
  *
  * Limit the length of content. Tags are already stipped on save.
  *
- * @since 1.9
+ * @since 2.0
  * @param string $setting Setting key.
  * @return mixed Setting value.
  * @global object $ctc_settings.
@@ -1520,7 +1520,7 @@ function ctc_sanitize_setting_podcast_summary( $value, $field = false ) {
 /**
  * Sanitize podcast limit.
  *
- * @since 1.9
+ * @since 2.0
  * @param string $setting Setting key.
  * @return mixed Setting value.
  * @global object $ctc_settings.
@@ -1640,7 +1640,7 @@ function ctc_setting( $setting ) {
  *
  * "Posts per page" makes more sense when using multiple post types.
  *
- * @since 1.9.
+ * @since 2.0.
  */
 function ctc_change_wp_per_page_label( $translated_text, $text, $domain ) {
 
@@ -1664,7 +1664,7 @@ add_filter( 'gettext', 'ctc_change_wp_per_page_label', 20, 3 );
  *
  * A description is added after the "Blog pages show at most" input, which we renamed to "Posts per page".
  *
- * @since 1.9.
+ * @since 2.0.
  */
 function ctc_add_wp_per_page_desc() {
 
@@ -1721,7 +1721,7 @@ function ctc_add_wp_per_page_desc() {
  *
  * This tells the user there are permalink settings for custom post types in Church Content plugin settings.
  *
- * @since 1.9.
+ * @since 2.0.
  */
 function ctc_add_permalink_setting_section() {
 
@@ -1740,7 +1740,7 @@ add_action( 'admin_init', 'ctc_add_permalink_setting_section' );
 /**
  * Output content for ctc_add_permalink_setting_section();
  *
- * @since 1.9.
+ * @since 2.0.
  */
 function ctc_permalink_setting_section_output( $arg ) {
 

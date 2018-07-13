@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * For example, add "Settings" and "Podcast" links to Sermons
  * linking to Church Content plugin settings tabs.
  *
- * @since 1.9
+ * @since 2.0
  * @global array $submenu Existing menu items.
  */
 function ctc_add_settings_menu_links() {
@@ -211,7 +211,7 @@ function ctc_move_admin_menu_item( &$menu_ord, $move_item, $target_item, $positi
  *
  * This filters post type registration arguments.
  *
- * @since 1.9
+ * @since 2.0
  * @param array $args Current post type arguments.
  * @return array Modified post type arguments.
  */
@@ -224,7 +224,7 @@ add_filter( 'ctc_post_type_sermon_args', 'ctc_admin_hide_sermons' );
 /**
  * Hide events in admin area.
  *
- * @since 1.9
+ * @since 2.0
  * @param array $args Current post type arguments.
  * @return array Modified post type arguments.
  */
@@ -237,7 +237,7 @@ add_filter( 'ctc_post_type_event_args', 'ctc_admin_hide_events' );
 /**
  * Hide locations in admin area.
  *
- * @since 1.9
+ * @since 2.0
  * @param array $args Current post type arguments.
  * @return array Modified post type arguments.
  */
@@ -250,7 +250,7 @@ add_filter( 'ctc_post_type_location_args', 'ctc_admin_hide_locations' );
 /**
  * Hide people in admin area.
  *
- * @since 1.9
+ * @since 2.0
  * @param array $args Current post type arguments.
  * @return array Modified post type arguments.
  */
@@ -263,7 +263,7 @@ add_filter( 'ctc_post_type_person_args', 'ctc_admin_hide_people' );
 /**
  * Update post type arguments array to hide in admin, when a setting is true.
  *
- * @since 1.9
+ * @since 2.0
  * @param string $setting Setting ID to check for true value on.
  * @param array $args Arguments to merge into.
  * @return array Modified post type arguments.

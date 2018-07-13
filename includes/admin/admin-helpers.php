@@ -59,7 +59,7 @@ function ctc_admin_term_list( $post_id, $taxonomy ) {
  *
  * Example: Adding a sermon or editing an event.
  *
- * @since 1.9
+ * @since 2.0
  * @global bool $multipage
  * @return bool True if current post has multiple pages
  */

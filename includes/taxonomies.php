@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * Sermon topic arguments.
  *
- * @since 1.9
+ * @since 2.0
  * @param bool $unfiltered Set true to return arguments without being filtered.
  * @return array Taxonomy registration arguments.
  */
@@ -100,7 +100,7 @@ add_action( 'init', 'ctc_register_taxonomy_sermon_topic' );
 /**
  * Sermon book arguments.
  *
- * @since 1.9
+ * @since 2.0
  * @param bool $unfiltered Set true to return arguments without being filtered.
  * @return array Taxonomy registration arguments.
  */
@@ -180,7 +180,7 @@ add_action( 'init', 'ctc_register_taxonomy_sermon_book' );
 /**
  * Sermon series arguments.
  *
- * @since 1.9
+ * @since 2.0
  * @param bool $unfiltered Set true to return arguments without being filtered.
  * @return array Taxonomy registration arguments.
  */
@@ -260,7 +260,7 @@ add_action( 'init', 'ctc_register_taxonomy_sermon_series' );
 /**
  * Sermon speaker arguments.
  *
- * @since 1.9
+ * @since 2.0
  * @param bool $unfiltered Set true to return arguments without being filtered.
  * @return array Taxonomy registration arguments.
  */
@@ -339,7 +339,7 @@ add_action( 'init', 'ctc_register_taxonomy_sermon_speaker' );
 /**
  * Sermon tag arguments.
  *
- * @since 1.9
+ * @since 2.0
  * @param bool $unfiltered Set true to return arguments without being filtered.
  * @return array Taxonomy registration arguments.
  */
@@ -423,7 +423,7 @@ add_action( 'init', 'ctc_register_taxonomy_sermon_tag' );
 /**
  * Event category arguments.
  *
- * @since 1.9
+ * @since 2.0
  * @param bool $unfiltered Set true to return arguments without being filtered.
  * @return array Taxonomy registration arguments.
  */
@@ -495,7 +495,7 @@ add_action( 'init', 'ctc_register_taxonomy_event_category' );
 /**
  * Person group arguments.
  *
- * @since 1.9
+ * @since 2.0
  * @param bool $unfiltered Set true to return arguments without being filtered.
  * @return array Taxonomy registration arguments.
  */
@@ -569,7 +569,7 @@ add_action( 'init', 'ctc_register_taxonomy_person_group' );
  *
  * Returns ID/name pairs useful for creating select options and sanitizing.
  *
- * @since 1.9
+ * @since 2.0
  * @param string $feature ctc_taxonomy_supported
  * @param string $taxonomy_name Taxonomy slug
  * @param array $prepend Array to start with such as "All" or similar

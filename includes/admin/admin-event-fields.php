@@ -713,7 +713,7 @@ add_action( 'save_post', 'ctc_after_save_event', 11, 2 ); // after save at defau
  *
  * Note the ctc_correct_event action which lets add-ons like Pro run additional corrections.
  *
- * @since 1.9
+ * @since 2.0
  * @param int $post_id Post ID.
  */
 function ctc_correct_event( $post_id ) {
@@ -822,7 +822,7 @@ add_action( 'ctc_after_save_event', 'ctc_correct_event' ); // run after event po
  * Note that the ctc_correct_event action in ctc_correct_event() lets add-ons like Pro
  * run additional corrections. When this is run, corrections from Pro are also run.
  *
- * @since 1.9
+ * @since 2.0
  */
 function ctc_correct_all_events() {
 

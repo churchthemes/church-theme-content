@@ -7,7 +7,7 @@
  * @copyright  Copyright (c) 2017, churchthemes.com
  * @link       https://github.com/churchthemes/church-theme-content
  * @license    GPLv2 or later
- * @since      1.9
+ * @since 2.0
  */
 
 // No direct access
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  *
  * This is shown in admin notice via ctc_recurrence_php_notice().
  *
- * @since 1.9
+ * @since 2.0
  */
 function ctc_recurrence_php_note() {
 
@@ -83,7 +83,7 @@ function ctc_recurrence_php_note() {
  * CT Recurrence methods return empty when PHP version not satisfied.
  * Recurring events are treated as non-recurring until PHP is updated.
  *
- * @since 1.9
+ * @since 2.0
  */
 function ctc_recurrence_php_notice() {
 
