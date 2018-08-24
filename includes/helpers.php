@@ -90,7 +90,8 @@ function ctc_ctcom_url( $path_key, $query_args = array() ) {
 		'church-content'      => '/plugins/church-content/' . $utm_base_query . '&utm_campaign=church-theme-content',
 
 		// Church Content Pro product page.
-		'church-content-pro'  => '/plugins/church-content-pro/' . $utm_base_query . '&utm_campaign=church_content_pro',
+		// Pro details are on same page as Church Content plugin.
+		'church-content-pro'  => '/plugins/church-content/' . $utm_base_query . '&utm_campaign=church_content_pro',
 
 		// How to upgrade from Custom Recurring Events to Pro.
 		'cre-to-pro'          => '/go/cre-to-pro/' . $utm_base_query . '&utm_campaign=church_content_pro',
