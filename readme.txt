@@ -37,12 +37,16 @@ A compatible theme is required for presenting sermons, events, etc. added with t
 * Official themes provided by [ChurchThemes.com](https://churchthemes.com)
 * Third-party themes at [churchthemes.com/third-party-themes](https://churchthemes.com/third-party-themes)
 
-= Add-ons =
+= Church Content Pro =
 
-Users can optionally install [add-ons](https://churchthemes.com/plugins/) for additional features.
+[Church Content Pro](https://churchthemes.com/plugins/church-content/) is an add-on that provides additional features.
 
-* [Custom Recurring Events](https://churchthemes.com/plugins/custom-recurring-events)
-* More add-ons are planned...
+* Sermon Podcasting (iTunes, Google Play, etc.)
+* Recurring Events (e.g. "every Monday and Thursday")
+* Event Date Exclusions (holidays, weather closings, etc.)
+* Enhanced SEO (schema.org Structure Data using JSON-LD)
+* Location Memory (autofill and select previous event locations)
+* Wording Settings (e.g. rename "Sermons" to "Messages")
 
 = Developers =
 
@@ -60,7 +64,7 @@ Several translations are available, including English, Spanish, German, French, 
 * We're on [Twitter](https://twitter.com/churchthemes), [Facebook](https://www.facebook.com/churchthemescom) and have a [Newsletter](https://churchthemes.com/newsletter)
 * Lead developer: [stevengliebe.com](http://stevengliebe.com)
 
-_**Note:** This plugin was previously named "Church Theme Content"._
+_**Note:** This plugin was previously named "Church Theme Content".
 
 == Installation ==
 
@@ -84,7 +88,7 @@ Yes, please see the [Developer Guide](https://churchthemes.com/guides/developer/
 
 = How can I make an event recur in a special way? =
 
-Install the [Custom Recurring Events](https://churchthemes.com/plugins/custom-recurring-events) add-on for recurrence like "every two weeks" and "third Sunday of every month".
+Install the [Church Content Pro](https://churchthemes.com/plugins/church-content-pro/) add-on for recurrence like "every two weeks" and "third Sunday of every month".
 
 = How can I make content show differently? =
 
