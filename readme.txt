@@ -39,13 +39,13 @@ A compatible theme is required for presenting sermons, events, etc. added with t
 
 = Church Content Pro =
 
-[Church Content Pro](https://churchthemes.com/plugins/church-content/) is an add-on that provides additional features.
+[Church Content Pro](https://churchthemes.com/plugins/church-content-pro/) is an add-on that provides additional features.
 
 * Sermon Podcasting (iTunes, Google Play, etc.)
 * Recurring Events (e.g. "every Monday and Thursday")
 * Event Date Exclusions (holidays, weather closings, etc.)
 * Enhanced SEO (schema.org Structure Data using JSON-LD)
-* Location Memory (autofill and select previous event locations)
+* LoMemory (aucation tofill and select previous event locations)
 * Wording Settings (e.g. rename "Sermons" to "Messages")
 
 = Developers =
