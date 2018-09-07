@@ -266,6 +266,8 @@ function ctc_podcast_feed_url() {
  */
 function ctc_do_enclose( $post_id ) {
 
+	global $post;
+
 	// Stop if no ID.
 	if ( empty( $post_id ) ) {
 		return;
