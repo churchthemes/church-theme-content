@@ -310,20 +310,25 @@ function ctc_support_podcast_exclude_field() {
 	// Get sermon fields that are supported by theme.
 	$supported_fields = ctc_get_theme_support( 'ctc-sermons', 'fields' );
 
-	// Field to add support for.
-	$field = '_ctc_sermon_podcast_exclude';
+	// Have supported fields.
+	if ( ! empty( $supported_fields ) ) {
 
-	// Is field already supported?
-	if ( ! in_array( $field, $supported_fields ) ) {
+		// Field to add support for.
+		$field = '_ctc_sermon_podcast_exclude';
 
-		// Add field to supported fields array.
-		$sermons_support[] = $field;
+		// Is field already supported?
+		if ( ! in_array( $field, $supported_fields ) ) {
+
+			// Add field to supported fields array.
+			$sermons_support[] = $field;
+
+		}
+
+		// Update theme support.
+		remove_theme_support( 'ctc-sermons' );
+		add_theme_support( 'ctc-sermons', $sermons_support );
 
 	}
-
-	// Update theme support.
-	remove_theme_support( 'ctc-sermons' );
-	add_theme_support( 'ctc-sermons', $sermons_support );
 
 }
 
