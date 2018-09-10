@@ -359,7 +359,7 @@ function ctc_settings_config() {
 						'desc'              => sprintf(
 							//* translators: %1$s is URL for guide on Agency Mode */
 							__( 'Agencies and freelancers can enable <a href="%1$s" target="_blank">Agency Mode</a>.', 'church-theme-content' ),
-							'https://churchthemes.com/go/agency-mode/'
+							ctc_ctcom_url( 'agency-mode' )
 						),
 						'type'              => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'    => '', // show text after checkbox.

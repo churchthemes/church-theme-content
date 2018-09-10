@@ -114,6 +114,9 @@ function ctc_ctcom_url( $path_key, $query_args = array() ) {
 		// Podcasting guide.
 		'podcast-guide'  => '/go/podcast-guide/' . $utm_base_query . '&utm_campaign=church-theme-content',
 
+		// Agency mode guide.
+		'agency-mode' => '/go/agency-mode/' . $utm_base_query . '&utm_campaign=church-theme-content',
+
 	);
 
 	// Make URL.
