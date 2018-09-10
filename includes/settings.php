@@ -316,11 +316,72 @@ function ctc_settings_config() {
 				'title' => _x( 'Licenses', 'settings', 'church-theme-content' ),
 
 				// Description.
-				'desc' => __( "Save then activate your add-on's license key to enable one-click updates for it.", 'church-theme-content' ),
+				'desc' => __( "Save then activate your add-on's license key to enable one-click updates.", 'church-theme-content' ),
 
 				// Fields (Settings).
-				// These are filtered in.
-				'fields' => array(),
+				// License key fields are filtered in.
+				'fields' => array(
+
+					// Church Content Pro.
+					// Prompt to install it.
+					'church_content_pro_note' => array(
+						'name'              => _x( 'Church Content Pro', 'settings', 'church-theme-content' ),
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => sprintf(
+							/* translators: %1$s is URL to Church Content Pro add-on. */
+							__( 'Install the <a href="%1$s" target="_blank">Church Content Pro</a> add-on to enter its license key here.', 'church-theme-content' ),
+							esc_url( ctc_ctcom_url( 'church-content-pro', array( 'utm_content' => 'settings' ) ) )
+						),
+						'type'              => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+						'checkbox_label'    => '', // show text after checkbox.
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => array(), // array of keys/values for radio or select.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => false, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array(), // attr => value array (e.g. set min/max for number or range type).
+						'class'             => '', // classes to add to input.
+						'content'           => __( 'Not Installed', 'church-theme-content' ), // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => '', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => false, // field input element disabled when Pro not active.
+						'unsupported'       => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+					),
+
+					// Agency Mode.
+					'agency_mode_note' => array(
+						'name'              => _x( 'Agency Mode', 'settings', 'church-theme-content' ),
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => sprintf(
+							//* translators: %1$s is URL for guide on Agency Mode */
+							__( 'Agencies and freelancers can enable <a href="%1$s" target="_blank">Agency Mode</a>.', 'church-theme-content' ),
+							'https://churchthemes.com/go/agency-mode/'
+						),
+						'type'              => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
+						'checkbox_label'    => '', // show text after checkbox.
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => array(), // array of keys/values for radio or select.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => '', // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => false, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array(), // attr => value array (e.g. set min/max for number or range type).
+						'class'             => '', // classes to add to input.
+						'content'           => _x( 'Disabled', 'agency mode', 'church-theme-content' ), // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => '', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => true, // field input element disabled when Pro not active.
+						'unsupported'       => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+					),
+
+				),
 
 			),
 
@@ -1429,7 +1490,7 @@ function ctc_settings_setup() {
 				// Add note.
 				$config['sections'][ $section_id ]['desc'] .= '<span class="ctc-pro-setting-inactive-message">' . sprintf(
 					/* %1$s is URL to Church Content Pro plugin info */
-					__( 'Settings labeled "Pro" are provided by the <a href="%1$s" target="_blank">Church Content Pro</a> plugin. Install it to add Pro features.', 'church-theme-content' ),
+					__( '"Pro" settings are provided by the <a href="%1$s" target="_blank">Church Content Pro</a> plugin. Install it to add more features.', 'church-theme-content' ),
 					esc_url( ctc_ctcom_url( 'church-content-pro', array( 'utm_content' => 'settings' ) ) )
 				) . '</span>';
 
