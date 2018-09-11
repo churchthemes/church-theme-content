@@ -356,11 +356,7 @@ function ctc_settings_config() {
 					'agency_mode_note' => array(
 						'name'              => _x( 'Agency Mode', 'settings', 'church-theme-content' ),
 						'after_name'        => '', // append (Optional) or (Pro), etc.
-						'desc'              => sprintf(
-							//* translators: %1$s is URL for guide on Agency Mode */
-							__( 'Agencies and freelancers can enable <a href="%1$s" target="_blank">Agency Mode</a>.', 'church-theme-content' ),
-							ctc_ctcom_url( 'agency-mode' )
-						),
+						'desc'              => ctc_agency_mode_note(),
 						'type'              => 'content', // text, textarea, checkbox, checkbox_multiple, radio, select, number, upload, url, content.
 						'checkbox_label'    => '', // show text after checkbox.
 						'inline'            => false, // make radio inputs inline instead of stacked.
