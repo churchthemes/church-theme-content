@@ -115,7 +115,7 @@ function ctc_ctcom_url( $path_key, $query_args = array() ) {
 		'podcast-guide'  => '/go/podcast-guide/' . $utm_base_query . '&utm_campaign=church-theme-content',
 
 		// Agency mode guide.
-		'agency-mode' => '/go/agency-mode/' . $utm_base_query . '&utm_campaign=church-theme-content',
+		'agency-mode' => '/go/agency-mode/', // no UTM, used by theme framework too.
 
 	);
 
