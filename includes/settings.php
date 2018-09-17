@@ -1825,3 +1825,34 @@ function ctc_permalink_setting_section_output( $arg ) {
 	<?php
 
 }
+
+/*******************************************
+ * AGENCY MODE
+ *******************************************/
+
+/**
+ * Agency mode note.
+ *
+ * Note shown on add-on license settings and Theme License to tell user about Agency Mode.
+ *
+ * @since 2.0
+ */
+function ctc_agency_mode_note() {
+
+	$note = sprintf(
+		wp_kses(
+			//* translators: %1$s is URL for guide on Agency Mode */
+			__( 'Agencies and freelancers can enable <a href="%1$s" target="_blank">Agency Mode</a>.', 'church-theme-content' ),
+			array(
+				'a' => array(
+					'href' => array(),
+					'target' => array(),
+				),
+			)
+		),
+		ctc_ctcom_url( 'agency-mode' )
+	);
+
+	return apply_filters( 'ctc_agency_mode_note', $note );
+
+}
