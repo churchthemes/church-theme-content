@@ -273,9 +273,12 @@ function ctc_do_enclose( $post_id ) {
 		return;
 	}
 
+	// Get post type.
+	$post_type = get_post_type( $post_id );
+
 	// Stop if user lacks permission to edit a post.
-	$post_type = get_post_type_object( $post->post_type );
-	if ( ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+	$post_type_obj = get_post_type_object( $post_type );
+	if ( ! current_user_can( $post_type_obj->cap->edit_post, $post_id ) ) {
 		return;
 	}
 
