@@ -106,7 +106,7 @@ if ( ! class_exists( 'CTC_Dashboard_News' ) ) {
 
 			// Initialize the feeds array.
 			$feed_urls = array(
-				'https://churchthemes.com/feed/',
+				'https://churchthemes.com/feed/?dashboard_news=1', // ?dashboard_news=1 prepends "ChurchThemes.com: " to titles consistent with planet feed
 				$url,
 			);
 
