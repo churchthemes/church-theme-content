@@ -53,11 +53,6 @@ class CTC_Dashboard_News {
 		// Allow filtering of count.
 		$count = (int) apply_filters( 'ctc_dashboard_news_count', self::FEED_COUNT );
 
-		// Set to 0 if dashboard news disabled in settings.
-		if ( ! ctc_setting( 'dashboard_news' ) ) {
-			$count = 0;
-		}
-
 		return $count;
 
 	}
@@ -119,6 +114,3 @@ class CTC_Dashboard_News {
 	}
 
 }
-
-// Create an instance.
-new CTC_Dashboard_News();
