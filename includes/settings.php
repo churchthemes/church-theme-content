@@ -1668,6 +1668,24 @@ function ctc_settings_flush_rewrite_rules() {
 
 add_action( 'ctps_after_save', 'ctc_settings_flush_rewrite_rules' );
 
+/**
+ * Delete dashboard news transients on save.
+ *
+ * This purges the cache so any changes to dashboard_news setting take effect immediately.
+ *
+ * @since 2.0
+ * @global object $ctc_settings
+ */
+function ctc_settings_delete_dashboard_news_transients() {
+
+	global $wpdb;
+
+	$wpdb->query( "DELETE FROM $wpdb->options WHERE option_name LIKE '\_transient\_feed\_%' OR option_name LIKE '\_transient\_dash\_%'" );
+
+}
+
+add_action( 'ctps_after_save', 'ctc_settings_delete_dashboard_news_transients' );
+
 /**********************************
  * GETTING SETTINGS
  **********************************/
