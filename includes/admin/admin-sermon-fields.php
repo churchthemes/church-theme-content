@@ -42,7 +42,7 @@ function ctc_add_meta_box_sermon_details() {
 		$podcast_exclude_desc = sprintf(
 			/* translators: %1$s is URL to Church Content Pro upgrade; %2$s is lowercase plural word for "sermons" (possibly translated or changed by settings). */
 			__( 'Install <a href="%1$s" target="_blank">Church Content Pro</a> to podcast your %2$s', 'church-theme-content' ),
-			esc_url( ctc_ctcom_url( 'cre-to-pro', array( 'utm_content' => 'sermon' ) ) ),
+			esc_url( ctc_ctcom_url( 'church-content-pro', array( 'utm_content' => 'sermon' ) ) ),
 			strtolower( $sermon_word_plural )
 		);
 
