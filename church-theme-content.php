@@ -192,7 +192,7 @@ class Church_Theme_Content {
 			// Frontend or admin
 			'always' => array(
 
-				// Functions
+				// Functions.
 				CTC_INC_DIR . '/add-ons.php',
 				CTC_INC_DIR . '/event-fields.php',
 				CTC_INC_DIR . '/helpers.php',
@@ -204,15 +204,15 @@ class Church_Theme_Content {
 				CTC_INC_DIR . '/support.php',
 				CTC_INC_DIR . '/taxonomies.php',
 
-				// Libraries
+				// Libraries.
 				CTC_LIB_DIR . '/ct-plugin-settings/ct-plugin-settings.php', // see CTPS_URL constant defined above.
 				CTC_LIB_DIR . '/ct-recurrence/ct-recurrence-load.php', // don't load ct-recurrence.php directly.
 
-				// Classes
+				// Classes.
 
 			),
 
-			// Admin only
+			// Admin only.
 			'admin' => array(
 
 				// Functions
@@ -235,8 +235,11 @@ class Church_Theme_Content {
 				CTC_ADMIN_DIR . '/notices.php',
 				CTC_ADMIN_DIR . '/upgrade.php',
 
-				// Libraries
+				// Libraries.
 				CTC_LIB_DIR . '/ct-meta-box/ct-meta-box.php', // see CTMB_URL constant defined above
+
+				// Classes.
+				CTC_CLASS_DIR . '/CTC_Dashboard_News.php', // see CTMB_URL constant defined above
 
 			),
 
