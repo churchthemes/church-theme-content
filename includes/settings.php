@@ -1377,6 +1377,56 @@ function ctc_settings_config() {
 
 			),
 
+			// Other.
+			'other' => array(
+
+				// Title.
+				'title' => _x( 'Other', 'settings section title', 'church-theme-content' ),
+
+				// Description.
+				'desc' => '',
+
+				// Fields (Settings).
+				'fields' => array(
+
+					// Dashboard News.
+					'dashboard_news' => array(
+						'name'              => _x( 'Dashboard News', 'settings', 'church-theme-content' ),
+						'after_name'        => '', // append (Optional) or (Pro), etc.
+						'desc'              => sprintf(
+							/* translators: %1$s is URL for newsletter sign up */
+							__( 'Hear about updates, new features, themes and tips. You can also subscribe to our <a href="%1$s" target="_blank">Newsletter</a>.', 'church-theme-content' ),
+							esc_url( ctc_ctcom_url( 'newsletter' ) )
+						),
+						'type'              => 'checkbox', // text, textarea, checkbox, checkbox_multiple, radio, select, number.
+						'checkbox_label'    => sprintf( // show text after checkbox.
+							/* translators: %1$s is URL for ChurchThemes.com blog, %2$s is URL for admin dashboard */
+							__( 'Show news from <a href="%1$s" target="_blank">ChurchThemes.com</a> on your admin <a href="%2$s">Dashboard</a>', 'church-theme-content' ),
+							esc_url( ctc_ctcom_url( 'blog' ) ),
+							esc_url( admin_url() )
+						),
+						'inline'            => false, // make radio inputs inline instead of stacked.
+						'options'           => array(), // array of keys/values for radio or select.
+						'upload_button'     => '', // text for button that opens media chooser.
+						'upload_title'      => '', // title appearing at top of media chooser.
+						'upload_type'       => '', // optional type of media to filter by (image, audio, video, application/pdf).
+						'upload_show_image' => false, // provide a pixel width to show the image, if type is image.
+						'default'           => true, // value to pre-populate option with (before first save or on reset).
+						'no_empty'          => false, // if user empties value, force default to be saved instead.
+						'allow_html'        => false, // allow HTML to be used in the value.
+						'attributes'        => array(), // attr => value array (e.g. set min/max for number or range type).
+						'class'             => '', // classes to add to input.
+						'content'           => '', // custom content instead of input (HTML allowed).
+						'custom_sanitize'   => '', // function to do additional sanitization.
+						'custom_content'    => '', // function for custom display of field input.
+						'pro'               => false, // field input element disabled when Pro not active.
+						'unsupported'       => false, // set true if theme doesn't support required feature, taxonomy, fields, etc.
+					),
+
+				),
+
+			),
+
 		),
 
 	);

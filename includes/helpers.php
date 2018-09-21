@@ -117,6 +117,12 @@ function ctc_ctcom_url( $path_key, $query_args = array() ) {
 		// Agency mode guide.
 		'agency-mode' => '/go/agency-mode/', // no UTM, used by theme framework too.
 
+		// Newsletter sign up.
+		'newsletter' => '/newsletter/', // no UTM, redirects to Mailchimp page.
+
+		// Blog.
+		'blog' => '/blog/' . $utm_base_query . '&utm_campaign=church-theme-content&utm_content=settings',
+
 	);
 
 	// Make URL.
