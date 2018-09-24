@@ -6,7 +6,7 @@
  *
  * @package    Church_Theme_Content
  * @subpackage Functions
- * @copyright  Copyright (c) 2013 - 2017, ChurchThemes.com
+ * @copyright  Copyright (c) 2013 - 2018, ChurchThemes.com
  * @link       https://github.com/churchthemes/church-theme-content
  * @license    GPLv2 or later
  * @since      0.9
@@ -41,11 +41,12 @@ add_action( 'wp', 'ctc_schedule_recurring_events' );
  * Update recurring event dates.
  *
  * @since 0.9
+ * @param bool $force Force update even when recurrence not supported (for sample content imports to be up to date).
  */
-function ctc_update_recurring_event_dates() {
+function ctc_update_recurring_event_dates( $force = false ) {
 
 	// Only if recurrence is supported.
-	if ( ! ctc_field_supported( 'events', '_ctc_event_recurrence' ) ) {
+	if ( ! $force && ! ctc_field_supported( 'events', '_ctc_event_recurrence' ) ) {
 		return;
 	}
 
