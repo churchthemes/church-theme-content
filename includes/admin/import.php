@@ -50,7 +50,12 @@ add_action( 'import_end', 'ctc_after_import' ); // WordPress Importer plugin hoo
  */
 function ctc_import_recur_events() {
 
-	ctc_update_recurring_event_dates();
+	// Force update even if recurrence not supported.
+	// This is to keep sample content imports up to date when Pro not installed.
+	$force = true;
+
+	// Move recurring event dates forward.
+	ctc_update_recurring_event_dates( $force );
 
 }
 
