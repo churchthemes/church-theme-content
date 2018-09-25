@@ -250,8 +250,11 @@ function ctc_settings_config() {
 
 	} else { // No plugin active for recurring events.
 
-		// Basic recurrence enabled either by grandfathering or theme support.
-		if ( ctc_field_supported( 'events', '_ctc_event_recurrence' ) ) {
+		// We check CT Framework's grandfathering directly because it occurs after these settings are registered so ctc_field_supported() is unable to check for field support that has been added.
+		$ctfw_grandfather_recurring_events = get_option( 'ctfw_grandfather_recurring_events' );
+
+		// Basic recurrence enabled either by theme support or grandfathering.
+		if ( ctc_field_supported( 'events', '_ctc_event_recurrence' ) || $ctfw_grandfather_recurring_events ) {
 
 			$event_recurrence_content = __( 'Basic Recurrence Only <span class="ctps-light ctps-italic">(Pro Recurrence Inactive)</span>', 'church-theme-content' );
 
