@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: church-theme-content\n"
-"POT-Creation-Date: 2018-07-13 12:59-0500\n"
-"PO-Revision-Date: 2018-07-13 13:00-0500\n"
+"POT-Creation-Date: 2018-10-01 08:17-0500\n"
+"PO-Revision-Date: 2018-10-01 08:18-0500\n"
 "Last-Translator: churchthemes.com <contact@churchthemes.com>\n"
 "Language-Team: \n"
 "Language: nb_NO\n"
@@ -53,7 +53,7 @@ msgstr "Dato og tidspunkt"
 msgid "Start Date"
 msgstr "Startdato"
 
-#: ../includes/admin/admin-event-fields.php:83 ../includes/settings.php:1224
+#: ../includes/admin/admin-event-fields.php:83 ../includes/settings.php:1284
 msgid "(Required)"
 msgstr "(Påkrevd)"
 
@@ -585,6 +585,13 @@ msgstr ""
 msgid "Add content"
 msgstr ""
 
+#: ../includes/admin/import.php:45
+#, php-format
+msgid ""
+"Please activate a theme compatible with the %1$s plugin before importing "
+"content. <a href=\"%2$s\" target=\"_blank\">More Information</a>"
+msgstr ""
+
 #: ../includes/admin/notices.php:60
 #, php-format
 msgid ""
@@ -945,20 +952,20 @@ msgid ""
 "complete set of recurrence and exclusion options."
 msgstr ""
 
-#: ../includes/settings.php:256
+#: ../includes/settings.php:259
 msgid ""
 "Basic Recurrence Only <span class=\"ctps-light ctps-italic\">(Pro Recurrence "
 "Inactive)</span>"
 msgstr ""
 
-#: ../includes/settings.php:260
+#: ../includes/settings.php:263
 #, php-format
 msgid ""
 "Install <a href=\"%1$s\" target=\"_blank\">Church Content Pro</a> for full "
 "recurrence (e.g. \"Every month on last Sunday except December 25\")."
 msgstr ""
 
-#: ../includes/settings.php:271
+#: ../includes/settings.php:274
 #, php-format
 msgctxt "recurrence setting"
 msgid ""
@@ -966,12 +973,12 @@ msgid ""
 "<span class=\"ctps-light ctps-italic\">(Recommended)</span>"
 msgstr ""
 
-#: ../includes/settings.php:289
+#: ../includes/settings.php:292
 #, php-format
 msgid "%1$s Settings"
 msgstr "Innstillinger for %1$s"
 
-#: ../includes/settings.php:297
+#: ../includes/settings.php:300
 #, php-format
 msgid ""
 "These settings are for the <a href=\"%1$s\" target=\"_blank\">Church "
@@ -979,216 +986,241 @@ msgid ""
 "provided appearance settings."
 msgstr ""
 
-#: ../includes/settings.php:316
+#: ../includes/settings.php:319
 msgctxt "settings"
 msgid "Licenses"
 msgstr ""
 
-#: ../includes/settings.php:319
+#: ../includes/settings.php:322
 msgid ""
-"Save then activate your add-on's license key to enable one-click updates for "
-"it."
+"Save then activate your add-on's license key to enable one-click updates."
 msgstr ""
 
 #: ../includes/settings.php:331
+msgctxt "settings"
+msgid "Church Content Pro"
+msgstr ""
+
+#: ../includes/settings.php:335
+#, php-format
+msgid ""
+"Install the <a href=\"%1$s\" target=\"_blank\">Church Content Pro</a> add-on "
+"to enter its license key here."
+msgstr ""
+
+#: ../includes/settings.php:351
+msgid "Not Installed"
+msgstr ""
+
+#: ../includes/settings.php:360
+msgctxt "settings"
+msgid "Agency Mode"
+msgstr ""
+
+#: ../includes/settings.php:376
+msgctxt "agency mode"
+msgid "Disabled"
+msgstr ""
+
+#: ../includes/settings.php:391
 msgctxt "settings section title"
 msgid "Sermons"
 msgstr ""
 
-#: ../includes/settings.php:341
+#: ../includes/settings.php:401
 msgctxt "settings"
 msgid "Sermon Podcast"
 msgstr ""
 
-#: ../includes/settings.php:343
+#: ../includes/settings.php:403
 msgid ""
 "Set up your sermon podcast to reach more people automatically on iTunes, "
 "Google Play and elsewhere."
 msgstr ""
 
-#: ../includes/settings.php:357
+#: ../includes/settings.php:417
 msgid "<a href=\"#\">Podcast Settings</a>"
 msgstr ""
 
-#: ../includes/settings.php:366
+#: ../includes/settings.php:426
 msgid ""
 "Enable Structured Data for Sermons <span class=\"ctps-light ctps-italic"
 "\">(Recommended)</span>"
 msgstr ""
 
-#: ../includes/settings.php:372
+#: ../includes/settings.php:432
 msgid "Alternative Wording"
 msgstr ""
 
-#: ../includes/settings.php:404
+#: ../includes/settings.php:464
 #, php-format
 msgid ""
 "Enter alternative wording for \"%1$s\" and \"%2$s\" (e.g. \"Message\" and "
 "\"Messages\")."
 msgstr ""
 
-#: ../includes/settings.php:433
+#: ../includes/settings.php:493
 msgid "Sermon URL Base"
 msgstr ""
 
-#: ../includes/settings.php:447
+#: ../includes/settings.php:507
 msgid "Category URL Bases"
 msgstr ""
 
-#: ../includes/settings.php:517
+#: ../includes/settings.php:577
 msgid "Hide Sermons in Admin Menu"
 msgstr ""
 
-#: ../includes/settings.php:529
+#: ../includes/settings.php:589
 msgctxt "settings section title"
 msgid "Podcast"
 msgstr ""
 
-#: ../includes/settings.php:534
+#: ../includes/settings.php:594
 #, php-format
 msgid ""
 "Set up your <a href=\"%1$s\" target=\"_blank\">Sermon Podcast</a> to reach "
 "more people."
 msgstr ""
 
-#: ../includes/settings.php:543
+#: ../includes/settings.php:603
 msgctxt "settings"
 msgid "Feed URL"
 msgstr ""
 
-#: ../includes/settings.php:547
+#: ../includes/settings.php:607
 #, php-format
 msgid ""
 "Submit your podcast feed URL to iTunes, Google Play, etc. Read the <a href="
 "\"%1$s\" target=\"_blank\">Podcasting Guide</a> to learn how."
 msgstr ""
 
-#: ../includes/settings.php:572
+#: ../includes/settings.php:632
 msgctxt "podcast settings"
 msgid "Image"
 msgstr ""
 
-#: ../includes/settings.php:574
+#: ../includes/settings.php:634
 msgid ""
 "Square image must be between 1400x1400 and 3000x3000 pixels and in JPG or "
 "PNG format. <b>Required by iTunes</b>."
 msgstr ""
 
-#: ../includes/settings.php:579
+#: ../includes/settings.php:639
 msgid "Choose Image"
 msgstr ""
 
-#: ../includes/settings.php:580
+#: ../includes/settings.php:640
 msgid "Choose an Image"
 msgstr ""
 
-#: ../includes/settings.php:597
+#: ../includes/settings.php:657
 msgctxt "podcast settings"
 msgid "Title"
 msgstr ""
 
-#: ../includes/settings.php:599
+#: ../includes/settings.php:659
 msgid ""
 "The title of your sermon podcast. Example: \"Grace Church Sermons\" or "
 "\"Cornerstone Church Podcast\". <b>Required</b>."
 msgstr ""
 
-#: ../includes/settings.php:625
+#: ../includes/settings.php:685
 msgctxt "podcast settings"
 msgid "Subtitle"
 msgstr ""
 
-#: ../includes/settings.php:627
+#: ../includes/settings.php:687
 msgid ""
 "A short description of your podcast. Example: \"Weekly sermons by Pastor Bob "
 "Smith at Grace Church in Orlando, FL.\""
 msgstr ""
 
-#: ../includes/settings.php:653
+#: ../includes/settings.php:713
 msgctxt "podcast settings"
 msgid "Description"
 msgstr ""
 
-#: ../includes/settings.php:655
+#: ../includes/settings.php:715
 msgid ""
 "A full description of your podcast. You can write about your church, mission "
 "and pastor, link to your website, etc."
 msgstr ""
 
-#: ../includes/settings.php:680
+#: ../includes/settings.php:740
 msgctxt "podcast settings"
 msgid "Provider"
 msgstr ""
 
-#: ../includes/settings.php:682
+#: ../includes/settings.php:742
 msgid ""
 "The name of your church and/or pastor. Example: \"Grace Church - Pastor Bob "
 "Smith\". <b>Required</b>."
 msgstr ""
 
-#: ../includes/settings.php:708
+#: ../includes/settings.php:768
 msgctxt "podcast settings"
 msgid "Copyright"
 msgstr ""
 
-#: ../includes/settings.php:710
+#: ../includes/settings.php:770
 msgid "Copyright notice for your podcast. Example: \"&copy; Grace Church\""
 msgstr ""
 
-#: ../includes/settings.php:736
+#: ../includes/settings.php:796
 msgctxt "podcast settings"
 msgid "Link"
 msgstr ""
 
-#: ../includes/settings.php:738
+#: ../includes/settings.php:798
 msgid ""
 "Provide a URL if you want your podcast to link to somewhere other than your "
 "website homepage."
 msgstr ""
 
-#: ../includes/settings.php:763
+#: ../includes/settings.php:823
 msgctxt "podcast settings"
 msgid "Email"
 msgstr ""
 
-#: ../includes/settings.php:765
+#: ../includes/settings.php:825
 msgid ""
 "Email to receive notifications from iTunes / Google Play. Not shown to "
 "public (but is in feed). <b>Required by Google Play</b>."
 msgstr ""
 
-#: ../includes/settings.php:790
+#: ../includes/settings.php:850
 msgctxt "sermon settings"
 msgid "Category"
 msgstr ""
 
-#: ../includes/settings.php:792
+#: ../includes/settings.php:852
 msgid ""
 "Choosing a category for your podcast is <b>required by iTunes</b> and can "
 "help users find it."
 msgstr ""
 
-#: ../includes/settings.php:815
+#: ../includes/settings.php:875
 msgctxt "sermon settings"
 msgid "Clean"
 msgstr ""
 
-#: ../includes/settings.php:817
+#: ../includes/settings.php:877
 msgid ""
 "iTunes and Google Play need to know if a podcast contains explicit content "
 "or not."
 msgstr ""
 
-#: ../includes/settings.php:819
+#: ../includes/settings.php:879
 msgid "Podcast does <em>not</em> contain explicit content"
 msgstr ""
 
-#: ../includes/settings.php:840
+#: ../includes/settings.php:900
 msgctxt "podcast settings"
 msgid "Language"
 msgstr ""
 
-#: ../includes/settings.php:844
+#: ../includes/settings.php:904
 #, php-format
 msgid ""
 "Specify your podcast language in <a href=\"%1$s\" target=\"_blank\">ISO "
@@ -1196,12 +1228,12 @@ msgid ""
 "\"_blank\">General Settings</a> will be used."
 msgstr ""
 
-#: ../includes/settings.php:873
+#: ../includes/settings.php:933
 msgctxt "podcast settings"
 msgid "Limit"
 msgstr ""
 
-#: ../includes/settings.php:877
+#: ../includes/settings.php:937
 #, php-format
 msgid ""
 "Include the X most recent sermons in your podcast feed. Defaults to "
@@ -1209,155 +1241,186 @@ msgid ""
 "Settings</a>."
 msgstr ""
 
-#: ../includes/settings.php:906
+#: ../includes/settings.php:966
 msgctxt "podcast settings"
 msgid "iTunes New Feed URL"
 msgstr ""
 
-#: ../includes/settings.php:910
+#: ../includes/settings.php:970
 #, php-format
 msgid ""
 "If necessary, enter a URL to add the <code>%1$s</code> tag to your podcast "
 "feed. <a href=\"%2$s\" target=\"_blank\">Learn More</a>"
 msgstr ""
 
-#: ../includes/settings.php:936
+#: ../includes/settings.php:996
 msgctxt "podcast settings"
 msgid "Maintenance"
 msgstr ""
 
-#: ../includes/settings.php:938
+#: ../includes/settings.php:998
 msgid ""
 "Updates enclosures for all sermons. This can be helpful if you find that any "
 "are missing from your feed (not common)."
 msgstr ""
 
-#: ../includes/settings.php:952
+#: ../includes/settings.php:1012
 msgid "Update Enclosures"
 msgstr ""
 
-#: ../includes/settings.php:1105
+#: ../includes/settings.php:1165
 msgctxt "settings section title"
 msgid "Events"
 msgstr ""
 
-#: ../includes/settings.php:1115
+#: ../includes/settings.php:1175
 msgctxt "settings"
 msgid "Recurring Events"
 msgstr ""
 
-#: ../includes/settings.php:1140
+#: ../includes/settings.php:1200
 msgid ""
 "Enable Structured Data for Events <span class=\"ctps-light ctps-italic"
 "\">(Recommended)</span>"
 msgstr ""
 
-#: ../includes/settings.php:1146
+#: ../includes/settings.php:1206
 msgid "Location Memory"
 msgstr ""
 
-#: ../includes/settings.php:1148
+#: ../includes/settings.php:1208
 msgid ""
 "Save time when adding events by choosing from previously used locations."
 msgstr ""
 
-#: ../includes/settings.php:1150
+#: ../includes/settings.php:1210
 msgid ""
 "Enable \"Choose\" Button and Autocomplete <span class=\"ctps-light ctps-"
 "italic\">(Recommended)</span>"
 msgstr ""
 
-#: ../includes/settings.php:1173
+#: ../includes/settings.php:1233
 msgid "Event URL Base"
 msgstr ""
 
-#: ../includes/settings.php:1187
+#: ../includes/settings.php:1247
 msgid "Category URL Base"
 msgstr ""
 
-#: ../includes/settings.php:1201
+#: ../includes/settings.php:1261
 msgid "Hide Events in Admin Menu"
 msgstr ""
 
-#: ../includes/settings.php:1213
+#: ../includes/settings.php:1273
 msgctxt "settings section title"
 msgid "Locations"
 msgstr ""
 
-#: ../includes/settings.php:1223
+#: ../includes/settings.php:1283
 msgctxt "settings"
 msgid "Google Maps API Key"
 msgstr ""
 
-#: ../includes/settings.php:1227
+#: ../includes/settings.php:1287
 #, php-format
 msgid ""
 "An API Key for Google Maps is required if you want to show maps for "
 "locations or events. <a href=\"%1$s\" target=\"_blank\">Get an API Key</a>"
 msgstr ""
 
-#: ../includes/settings.php:1251
+#: ../includes/settings.php:1311
 msgid "Location URL Base"
 msgstr ""
 
-#: ../includes/settings.php:1265
+#: ../includes/settings.php:1325
 msgid "Hide Locations in Admin Menu"
 msgstr ""
 
-#: ../includes/settings.php:1277
+#: ../includes/settings.php:1337
 msgctxt "settings section title"
 msgid "People"
 msgstr ""
 
-#: ../includes/settings.php:1287
+#: ../includes/settings.php:1347
 msgid "Person URL Base"
 msgstr ""
 
-#: ../includes/settings.php:1301
+#: ../includes/settings.php:1361
 msgid "Group URL Base"
 msgstr ""
 
-#: ../includes/settings.php:1315
+#: ../includes/settings.php:1375
 msgid "Hide People in Admin Menu"
 msgstr ""
 
-#: ../includes/settings.php:1351
+#: ../includes/settings.php:1387
+msgctxt "settings section title"
+msgid "Other"
+msgstr ""
+
+#: ../includes/settings.php:1397
+msgctxt "settings"
+msgid "Dashboard News"
+msgstr ""
+
+#: ../includes/settings.php:1401
+#, php-format
+msgid ""
+"Hear about updates, new features, themes and tips. You can also subscribe to "
+"our <a href=\"%1$s\" target=\"_blank\">Newsletter</a>."
+msgstr ""
+
+#: ../includes/settings.php:1407
+#, php-format
+msgid ""
+"Show news from <a href=\"%1$s\" target=\"_blank\">ChurchThemes.com</a> on "
+"your admin <a href=\"%2$s\">Dashboard</a>"
+msgstr ""
+
+#: ../includes/settings.php:1461
 msgctxt "settings"
 msgid "(Pro)"
 msgstr ""
 
-#: ../includes/settings.php:1383
+#: ../includes/settings.php:1493
 msgid ""
 "<b>Note:</b> This is not supported by your theme and will have no effect."
 msgstr ""
 
-#: ../includes/settings.php:1432
+#: ../includes/settings.php:1542
 #, php-format
 msgid ""
-"Settings labeled \"Pro\" are provided by the <a href=\"%1$s\" target=\"_blank"
-"\">Church Content Pro</a> plugin. Install it to add Pro features."
+"\"Pro\" settings are provided by the <a href=\"%1$s\" target=\"_blank"
+"\">Church Content Pro</a> plugin. Install it to add more features."
 msgstr ""
 
-#: ../includes/settings.php:1651
+#: ../includes/settings.php:1779
 msgid "Posts per page"
 msgstr ""
 
-#: ../includes/settings.php:1683
+#: ../includes/settings.php:1811
 #, php-format
 msgid ""
 "Use <a href=\"%1$s\">Church Content Settings</a> to override this for "
 "specific post types (sermons, events, etc.)"
 msgstr ""
 
-#: ../includes/settings.php:1731
+#: ../includes/settings.php:1859
 msgid "Church Content Settings"
 msgstr ""
 
-#: ../includes/settings.php:1755
+#: ../includes/settings.php:1883
 #, php-format
 msgid ""
 "Go to <a href=\"%1$s\">Church Content Settings</a> to set custom URL bases "
 "for sermons, events, etc."
+msgstr ""
+
+#: ../includes/settings.php:1916
+#, php-format
+msgid ""
+"Agencies and freelancers can enable <a href=\"%1$s\" target=\"_blank"
+"\">Agency Mode</a>."
 msgstr ""
 
 #: ../includes/taxonomies.php:38
