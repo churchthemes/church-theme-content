@@ -65,7 +65,7 @@ Several translations are available, including English, Spanish, German, French, 
 * We're on [Twitter](https://twitter.com/churchthemes), [Facebook](https://www.facebook.com/churchthemescom) and have a [Newsletter](https://churchthemes.com/newsletter)
 * Lead developer: [stevengliebe.com](http://stevengliebe.com)
 
-_**Note:** This plugin was previously named "Church Theme Content".
+**Note:** This plugin was previously named "Church Theme Content".
 
 == Installation ==
 
