@@ -90,7 +90,7 @@ function ctc_add_meta_box_event_date() {
 				'upload_title'		=> '', // title appearing at top of media frame
 				'upload_type'		=> '', // optional type of media to filter by (image, audio, video, application/pdf)
 				'date_multiple'		=> false, // whether or not to allow date field type to select multiple dates, to be saved as comma-separated list.
-				'date_button'       => _x( 'Choose Date', 'datepicker', 'church-content' ), // text for button user clicks to open datepicker calendar.
+				'date_button'       => _x( 'Choose Date', 'datepicker', 'church-theme-content' ), // text for button user clicks to open datepicker calendar.
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
@@ -116,7 +116,7 @@ function ctc_add_meta_box_event_date() {
 				'upload_title'		=> '', // title appearing at top of media frame
 				'upload_type'		=> '', // optional type of media to filter by (image, audio, video, application/pdf)
 				'date_multiple'		=> false, // whether or not to allow date field type to select multiple dates, to be saved as comma-separated list.
-				'date_button'       => _x( 'Choose Date', 'datepicker', 'church-content' ), // text for button user clicks to open datepicker calendar.
+				'date_button'       => _x( 'Choose Date', 'datepicker', 'church-theme-content' ), // text for button user clicks to open datepicker calendar.
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
@@ -281,7 +281,7 @@ function ctc_add_meta_box_event_date() {
 				'upload_title'		=> '', // title appearing at top of media frame
 				'upload_type'		=> '', // optional type of media to filter by (image, audio, video, application/pdf)
 				'date_multiple'		=> false, // whether or not to allow date field type to select multiple dates, to be saved as comma-separated list.
-				'date_button'       => _x( 'Choose Date', 'datepicker', 'church-content' ), // text for button user clicks to open datepicker calendar.
+				'date_button'       => _x( 'Choose Date', 'datepicker', 'church-theme-content' ), // text for button user clicks to open datepicker calendar.
 				'default'			=> '', // value to pre-populate option with (before first save or on reset)
 				'no_empty'			=> false, // if user empties value, force default to be saved instead
 				'allow_html'		=> false, // allow HTML to be used in the value (text, textarea)
