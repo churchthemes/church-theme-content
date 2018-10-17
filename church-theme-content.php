@@ -232,6 +232,7 @@ class Church_Theme_Content {
 				CTC_ADMIN_DIR . '/edd-license.php',
 				CTC_ADMIN_DIR . '/editor.php',
 				CTC_ADMIN_DIR . '/import.php',
+				CTC_ADMIN_DIR . '/migrate-risen.php',
 				CTC_ADMIN_DIR . '/notices.php',
 				CTC_ADMIN_DIR . '/upgrade.php',
 
