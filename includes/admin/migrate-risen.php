@@ -195,7 +195,7 @@ function ctc_migrate_risen_show_results() {
  *******************************************/
 
 /**
- * Process content
+ * Process button submission.
  *
  * @since 2.1
  */
@@ -206,13 +206,34 @@ function ctc_migrate_risen_submit() {
 	if ( ! empty( $_POST['submit'] ) && check_admin_referer( 'ctc_migrate_risen', 'ctc_migrate_risen_nonce' ) ) {
 
 		// Process content.
-//		ctc_migrate_risen_process();
+		ctc_migrate_risen_process();
 
 	}
 
 }
 
 add_action( 'load-tools_page_ctc-migrate-risen', 'ctc_migrate_risen_submit' );
+
+/**
+ * Process content conversion.
+ *
+ * @since 2.1
+ * @global string $ctc_migrate_risen_results
+ */
+function ctc_migrate_risen_process() {
+
+	global $ctc_migrate_risen_results;
+
+	// Begin results.
+	$results = array( 'results here' );
+
+	// Do it...
+
+
+	// Make results available for display.
+	$ctc_migrate_risen_results = $results;
+
+}
 
 /*******************************************
  * HELPERS
