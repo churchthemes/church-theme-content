@@ -100,7 +100,7 @@ function ctc_migrate_risen_page_content() {
 
 			echo wp_kses(
 				sprintf(
-					__( 'This will not modify your content used by Risen. Instead, it will duplicate content then make <em>that</em> content compatible with the Church Content plugin. Because of this, you can switch back to Risen if desired. In any case, <a href="%1$s" target="_blank">make a full website backup</a> before running this tool and switching themes to be extra safe.', 'church-theme-content' ),
+					__( 'This will not modify your content used by Risen. Instead, it will duplicate the content then make the copy compatible with the Church Content plugin. Because of this, you can switch back to Risen if desired. In any case, <a href="%1$s" target="_blank">make a full website backup</a> before running this tool and switching themes to be extra safe.', 'church-theme-content' ),
 					'https://churchthemes.com/go/backups/'
 				),
 				array(
