@@ -36,7 +36,7 @@ function ctc_migrate_risen_page() {
 		esc_html__( 'Risen Theme to Church Content Plugin', 'church-theme-content' ), // Page title.
 		esc_html__( 'Risen to Church Content', 'church-theme-content' ), // Menu title.
 		'switch_themes', // Capability (can manage Appearance > Widgets).
-		'migrate-risen', // Menu Slug.
+		'ctc-migrate-risen', // Menu Slug.
 		'ctc_migrate_risen_page_content' // Callback for displaying page content.
 	);
 
@@ -47,7 +47,7 @@ add_action( 'admin_menu', 'ctc_migrate_risen_page' );
 /**
  * Page content
  *
- * @since 0.1
+ * @since 2.1
  */
 function ctc_migrate_risen_page_content() {
 
@@ -117,7 +117,7 @@ function ctc_migrate_risen_page_content() {
 
 		</p>
 
-		<form method="get">
+		<form method="post">
 			<?php wp_nonce_field( 'ctc_migrate_risen', 'ctc_migrate_risen_nonce' ); ?>
 			<?php submit_button( esc_html( 'Make Compatible', 'church-theme-content' ) ); ?>
 		</form>
@@ -191,6 +191,30 @@ function ctc_migrate_risen_show_results() {
 }
 
 /*******************************************
+ * PROCESSING
+ *******************************************/
+
+/**
+ * Process content
+ *
+ * @since 2.1
+ */
+function ctc_migrate_risen_submit() {
+
+	// Check nonce for security since form was submitted.
+	// check_admin_referer prints fail page and dies.
+	if ( ! empty( $_POST['submit'] ) && check_admin_referer( 'ctc_migrate_risen', 'ctc_migrate_risen_nonce' ) ) {
+
+		// Process content.
+//		ctc_migrate_risen_process();
+
+	}
+
+}
+
+add_action( 'load-tools_page_ctc-migrate-risen', 'ctc_migrate_risen_submit' );
+
+/*******************************************
  * HELPERS
  *******************************************/
 
@@ -199,7 +223,7 @@ function ctc_migrate_risen_show_results() {
  *
  * This is true only if Risen theme is active.
  *
- * @since 2.0
+ * @since 2.1
  * @return bool True if Risen active.
  */
 function ctc_migrate_risen_show() {
