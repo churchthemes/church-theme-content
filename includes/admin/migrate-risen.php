@@ -224,11 +224,15 @@ function ctc_migrate_risen_process() {
 
 	global $ctc_migrate_risen_results;
 
+	// Prevent interruption.
+	set_time_limit( 0 );
+	ignore_user_abort( true );
+
 	// Begin results.
-	$results = array( 'results here' );
+	$results = array();
 
 	// Do it...
-
+	$results[] = 'result item';
 
 	// Make results available for display.
 	$ctc_migrate_risen_results = $results;
