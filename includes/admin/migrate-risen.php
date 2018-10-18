@@ -35,7 +35,7 @@ function ctc_migrate_risen_page() {
 	$page_hook = add_management_page(
 		esc_html__( 'Risen Theme to Church Content Plugin', 'church-theme-content' ), // Page title.
 		esc_html__( 'Risen to Church Content', 'church-theme-content' ), // Menu title.
-		'edit_theme_options', // Capability (can manage Appearance > Widgets).
+		'switch_themes', // Capability (can manage Appearance > Widgets).
 		'migrate-risen', // Menu Slug.
 		'ctc_migrate_risen_page_content' // Callback for displaying page content.
 	);
@@ -117,7 +117,7 @@ function ctc_migrate_risen_page_content() {
 
 		</p>
 
-		<form method="post">
+		<form method="get">
 			<?php wp_nonce_field( 'ctc_migrate_risen', 'ctc_migrate_risen_nonce' ); ?>
 			<?php submit_button( esc_html( 'Make Compatible', 'church-theme-content' ) ); ?>
 		</form>
