@@ -33,7 +33,7 @@ function ctc_migrate_risen_page() {
 
 	// Add page.
 	$page_hook = add_management_page(
-		esc_html__( 'Risen to Church Content', 'church-theme-content' ), // Page title.
+		esc_html__( 'Risen Theme to Church Content Plugin', 'church-theme-content' ), // Page title.
 		esc_html__( 'Risen to Church Content', 'church-theme-content' ), // Menu title.
 		'edit_theme_options', // Capability (can manage Appearance > Widgets).
 		'migrate-risen', // Menu Slug.
@@ -54,7 +54,7 @@ function ctc_migrate_risen_page_content() {
 	?>
 	<div class="wrap">
 
-		<h2><?php esc_html_e( 'Risen to Church Content', 'church-theme-content' ); ?></h2>
+		<h2><?php esc_html_e( 'Risen Theme to Church Content Plugin', 'church-theme-content' ); ?></h2>
 
 		<?php
 
@@ -75,9 +75,41 @@ function ctc_migrate_risen_page_content() {
 			<?php
 
 			echo wp_kses(
-				__( 'Intro text here...', 'church-theme-content' ),
+				sprintf(
+					__( 'Click "Make Compatible" to make <b>sermons</b>, <b>events</b>, <b>locations</b> and <b>people</b> in the Risen theme compatible with the <a href="%1$s" target="_blank">Church Content plugin</a> so that you can switch to a newer theme from <a href="%2$s" target="_blank">ChurchThemes.com</a>. Read the <a href="%3$s" target="_blank">Switching from Risen</a> guide for full details before proceeding.', 'church-theme-content' ),
+					'https://churchthemes.com/plugins/church-content/',
+					'https://churchthemes.com/',
+					'https://churchthemes.com/go/switch-from-risen/'
+				),
 				array(
 					'b' => array(),
+					'a' => array(
+						'href' => array(),
+						'target' => array(),
+					),
+				)
+			);
+
+			?>
+
+		</p>
+
+		<p>
+
+			<?php
+
+			echo wp_kses(
+				sprintf(
+					__( 'This will not modify your content used by Risen. Instead, it will duplicate content then make <em>that</em> content compatible with the Church Content plugin. Because of this, you can switch back to Risen if desired. In any case, <a href="%1$s" target="_blank">make a full website backup</a> before running this tool and switching themes to be extra safe.', 'church-theme-content' ),
+					'https://churchthemes.com/go/backups/'
+				),
+				array(
+					'b' => array(),
+					'em' => array(),
+					'a' => array(
+						'href' => array(),
+						'target' => array(),
+					),
 				)
 			);
 
@@ -87,7 +119,7 @@ function ctc_migrate_risen_page_content() {
 
 		<form method="post">
 			<?php wp_nonce_field( 'ctc_migrate_risen', 'ctc_migrate_risen_nonce' ); ?>
-			<?php submit_button( esc_html( 'Run Converter', 'church-theme-content' ) ); ?>
+			<?php submit_button( esc_html( 'Make Compatible', 'church-theme-content' ) ); ?>
 		</form>
 
 		<?php if ( ! empty( $ctc_migrate_risen_results ) ) : ?>
