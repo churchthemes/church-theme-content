@@ -54,7 +54,7 @@ function ctc_migrate_risen_page_content() {
 	?>
 	<div class="wrap">
 
-		<h2><?php esc_html_e( 'Risen Theme to Church Content Plugin', 'church-theme-content' ); ?></h2>
+		<h3><?php esc_html_e( 'Risen Theme to Church Content Plugin', 'church-theme-content' ); ?></h3>
 
 		<?php
 
@@ -170,7 +170,7 @@ function ctc_migrate_risen_show_results() {
 
 	?>
 
-	<h3 class="title"><?php echo esc_html( 'Finished', 'church-theme-content' ); ?></h3>
+	<h2 class="title"><?php echo esc_html( 'Finished', 'church-theme-content' ); ?></h2>
 
 	<p>
 
@@ -195,14 +195,14 @@ function ctc_migrate_risen_show_results() {
 		?>
 
 	</p>
-`
+
 	<p id="ctc-migrate-risen-results">
 
 		<?php
 
 		$results = $ctc_migrate_risen_results;
 
-		echo '<pre>' . print_r( $results, 'true' ) . '</pre>';
+		echo $results;
 
 		?>
 
@@ -265,7 +265,7 @@ function ctc_migrate_risen_process() {
 	foreach ( $post_types as $post_type => $post_type_name ) {
 
 		// Post type name.
-		$results .= '<h3>' . esc_html( $post_type_name ) . '</h3>';
+		$results .= '<h4>' . esc_html( $post_type_name ) . '</h4>';
 
 		// Get posts.
 
