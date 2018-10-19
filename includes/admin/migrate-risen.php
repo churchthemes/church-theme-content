@@ -229,10 +229,26 @@ function ctc_migrate_risen_process() {
 	ignore_user_abort( true );
 
 	// Begin results.
-	$results = array();
+	$results = '';
 
-	// Do it...
-	$results[] = 'result item';
+	// Post types.
+	$post_types = array(
+		'risen_sermon' => risen_option( 'multimedia_word_plural' ),
+		'risen_event' => 'Events',
+		'risen_staff' => 'Staff',
+		'risen_location' => 'Locations',
+	);
+
+	// Loop post types.
+	foreach ( $post_types as $post_type => $post_type_name ) {
+
+		// Post type name.
+		$results .= '<h3>' . esc_html( $post_type_name ) . '</h3>';
+
+		// Get posts.
+
+
+	}
 
 	// Make results available for display.
 	$ctc_migrate_risen_results = $results;
