@@ -54,7 +54,7 @@ function ctc_migrate_risen_page_content() {
 	?>
 	<div class="wrap">
 
-		<h3><?php esc_html_e( 'Risen Theme to Church Content Plugin', 'church-theme-content' ); ?></h3>
+		<h2><?php esc_html_e( 'Risen Theme to Church Content Plugin', 'church-theme-content' ); ?></h2>
 
 		<?php
 
@@ -255,22 +255,71 @@ function ctc_migrate_risen_process() {
 
 	// Post types.
 	$post_types = array(
-		'risen_sermon' => risen_option( 'multimedia_word_plural' ),
-		'risen_event' => 'Events',
-		'risen_staff' => 'Staff',
-		'risen_location' => 'Locations',
+		'risen_multimedia',
+		'risen_event',
+		'risen_staff',
+		'risen_location',
 	);
 
 	// Loop post types.
-	foreach ( $post_types as $post_type => $post_type_name ) {
-
-		// Post type name.
-		$results .= '<h4>' . esc_html( $post_type_name ) . '</h4>';
+	foreach ( $post_types as $post_type ) {
 
 		// Get posts.
+		$posts = get_posts( array(
+			'posts_per_page'   => -1,
+			'post_type'        => $post_type,
+			'post_status'      => 'publish',
+		) );
 
+		// Post type data.
+		$post_type_object = get_post_type_object( $post_type );
+		$post_type_label = $post_type_object->labels->name;
+
+		// Post type name.
+		$results .= '<h4>' . esc_html( $post_type_label ) . ' (' . esc_html( count( $posts ) ) . ')</h4>';
+
+		// Loop posts.
+		foreach ( $posts as $post ) {
+
+			$results .= '<div>' . esc_html( $post->post_title ) . '</div>';
+
+			// Featured image, etc.? Will image be attached to it? Some library for just duplicating, then modifying?
+			// Google how to programatically copy a post, completely.
+
+			// Assign new taxonomy (so convert those first?).
+
+			// Don't forget custom fields.
+
+			// And post-processing (MP# enclosure, recurring events, etc.).
+
+		}
+
+		// Get taxonomies for post type.
+		$taxonomies = get_object_taxonomies( $post_type, 'objects' );
+
+		// Loop taxonomies.
+		foreach ( $taxonomies as $taxonomy => $taxonomy_object ) {
+
+			// Get taxonomy terms.
+			$terms = get_terms( $taxonomy );
+
+			// Taxonomy name.
+			$results .= '<h4>' . esc_html( $taxonomy_object->label ) . ' (' . esc_html( count( $terms ) ) . ')</h4>';
+
+			foreach ( $terms as $term ) {
+
+				$results .= '<div>' . esc_html( $term->name ) . '</div>';
+
+
+
+			}
+
+		}
 
 	}
+
+	// Don't foget to grandfather basic recurrence by updating options.
+
 
 	// Make results available for display.
 	$ctc_migrate_risen_results = $results;
