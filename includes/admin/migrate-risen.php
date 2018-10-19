@@ -255,14 +255,46 @@ function ctc_migrate_risen_process() {
 
 	// Post types.
 	$post_types = array(
-		'risen_multimedia',
-		'risen_event',
-		'risen_staff',
-		'risen_location',
+		'risen_multimedia' => array(
+			'ctc_post_type' => 'ctc_sermon',
+			'fields' => array(
+				'' => '',
+			),
+			'taxonmies' => array(
+
+			)
+		),
+		'risen_event' => array(
+			'ctc_post_type' => 'ctc_event',
+			'fields' => array(
+				'' => '',
+			),
+			'taxonmies' => array(
+
+			)
+		),
+		'risen_staff' => array(
+			'ctc_post_type' => 'ctc_person',
+			'fields' => array(
+				'' => '',
+			),
+			'taxonmies' => array(
+
+			)
+		),
+		'risen_location' => array(
+			'ctc_post_type' => 'ctc_location',
+			'fields' => array(
+				'' => '',
+			),
+			'taxonmies' => array(
+
+			)
+		),
 	);
 
 	// Loop post types.
-	foreach ( $post_types as $post_type ) {
+	foreach ( $post_types as $post_type => $post_type_data ) {
 
 		// Get posts.
 		$posts = get_posts( array(
@@ -280,6 +312,8 @@ function ctc_migrate_risen_process() {
 
 		// Loop posts.
 		foreach ( $posts as $post ) {
+
+			$post_id = ctc_risen_migrate_duplicate( $post, $post_type_data );
 
 			$results .= '<div>' . esc_html( $post->post_title ) . '</div>';
 
@@ -323,6 +357,38 @@ function ctc_migrate_risen_process() {
 
 	// Make results available for display.
 	$ctc_migrate_risen_results = $results;
+
+}
+
+/**
+ * Duplicate post (as new post type).
+ *
+ * @since 2.0
+ * @param object $post Original post to duplicate.
+ * @param string $post_type_data Array with data for handling duplication.
+ * @return int $post_id New post's ID.
+ */
+function ctc_risen_migrate_duplicate( $original_post, $post_type_data ) {
+
+	// Check if exists and if does set $post['ID'] so that it updates instead of making a second duplicate.
+	// This way tool can be re-run safely.
+
+
+	// Duplicate as new post type.
+	$post = (array) $original_post;
+	$post['post_type'] = $post_type_data['ctc_post_type']; // use new post type.
+	unset( $post['ID'] ); // add new versus update old.
+	unset( $post['guid'] ); // generate a new GUID.
+	$post_id = wp_insert_post( $post );
+
+	// Featured image?
+
+	// What about slug not being unique?
+	// Or is it fine because different post type?
+	// See this: https://github.com/10up/secure-duplicate-post/blob/master/duplicate-post-admin.php#L315
+
+
+	return $post_id;
 
 }
 
