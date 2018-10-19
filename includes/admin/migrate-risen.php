@@ -119,7 +119,9 @@ function ctc_migrate_risen_page_content() {
 
 		<form method="post">
 			<?php wp_nonce_field( 'ctc_migrate_risen', 'ctc_migrate_risen_nonce' ); ?>
-			<?php submit_button( esc_html( 'Make Compatible', 'church-theme-content' ) ); ?>
+			<?php submit_button( esc_html( 'Make Compatible', 'church-theme-content' ), 'primary', 'submit', true, array(
+				'onclick' => "var button = this; setTimeout( function() { button.disabled = true; button.value=' " . esc_attr( __( "Processing. Please wait...", 'church-theme-content' ) ) . "' }, 10 ) ;return true;",
+			) ); ?>
 		</form>
 
 		<?php if ( ! empty( $ctc_migrate_risen_results ) ) : ?>
