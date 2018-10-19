@@ -170,10 +170,30 @@ function ctc_migrate_risen_show_results() {
 
 	?>
 
-	<h3 class="title"><?php echo esc_html( 'Conversion Results', 'church-theme-content' ); ?></h3>
+	<h3 class="title"><?php echo esc_html( 'Finished', 'church-theme-content' ); ?></h3>
 
 	<p>
-		<?php echo esc_html_e( 'Text here...', 'church-theme-content' ); ?>
+
+		<?php
+
+		echo wp_kses(
+			sprintf(
+				__( 'Your <b>sermons</b>, <b>events</b>, <b>locations</b> and <b>people</b> in the Risen theme have been made compatible with the <a href="%1$s" target="_blank">Church Content plugin</a>. Now you can switch to a newer theme from <a href="%2$s" target="_blank">ChurchThemes.com</a>. Read the <a href="%3$s" target="_blank">Switching from Risen</a> guide for additional instructions.', 'church-theme-content' ),
+				'https://churchthemes.com/plugins/church-content/',
+				'https://churchthemes.com/',
+				'https://churchthemes.com/go/switch-from-risen/'
+			),
+			array(
+				'b' => array(),
+				'a' => array(
+					'href' => array(),
+					'target' => array(),
+				),
+			)
+		);
+
+		?>
+
 	</p>
 `
 	<p id="ctc-migrate-risen-results">
