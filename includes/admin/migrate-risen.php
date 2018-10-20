@@ -384,11 +384,14 @@ function ctc_migrate_risen_process() {
 
 	}
 
-	// Don't foget to grandfather basic recurrence by updating options. Show results.
+	// Additional.
+	$results .= '<h4>Miscellaneous</h4>';
 
+		// Don't foget to grandfather basic recurrence by updating options. Show results.
+		$results .= '<div>' . __( 'DO GRANDFATHER BASIC RECURRENCE OPTIONS', 'church-theme-content' ) . '</div>';
 
-	// Set Risen's Google Maps API Key in Church Content settings. Show results.
-
+		// Set Risen's Google Maps API Key in Church Content settings. Show results.
+		$results .= '<div>' . __( 'DO SET GOOGLE MAPS API KEY', 'church-theme-content' ) . '</div>';
 
 	// Make results available for display.
 	$ctc_migrate_risen_results = $results;
