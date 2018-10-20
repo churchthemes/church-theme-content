@@ -118,10 +118,41 @@ function ctc_migrate_risen_page_content() {
 		</p>
 
 		<form method="post">
+
 			<?php wp_nonce_field( 'ctc_migrate_risen', 'ctc_migrate_risen_nonce' ); ?>
-			<?php submit_button( esc_html( 'Make Compatible', 'church-theme-content' ), 'primary', 'submit', true, array(
+
+			<?php
+
+			// Button arguments.
+			$button_args = array(
 				'onclick' => "var button = this; setTimeout( function() { button.disabled = true; button.value=' " . esc_attr( __( "Processing. Please wait...", 'church-theme-content' ) ) . "' }, 10 ) ;return true;",
-			) ); ?>
+			);
+
+			// WordPress version is too old.
+			// wp_insert_post()'s meta_input argument requires WordPress 4.4+.
+			if ( version_compare( get_bloginfo( 'version' ), '4.4', '<' ) ) {
+
+				// Disable button.
+				$button_args['disabled'] = 'disabled';
+
+				// Show message.
+				echo '<p><i>';
+				echo wp_kses(
+					__( '<strong>Update WordPress:</strong> Please update WordPress to the latest version before running this tool.', 'church-theme-content' ),
+					array(
+						'strong' => array(),
+						'i' => array(),
+					)
+				);
+				echo '</i></p>';
+
+			}
+
+			// Show button.
+			submit_button( esc_html( 'Make Compatible', 'church-theme-content' ), 'primary', 'submit', true, $button_args );
+
+			?>
+
 		</form>
 
 		<?php if ( ! empty( $ctc_migrate_risen_results ) ) : ?>
@@ -320,15 +351,6 @@ function ctc_migrate_risen_process() {
 
 			$results .= '<div>' . esc_html( $post->post_title ) . '</div>';
 
-			// Featured image, etc.? Will image be attached to it? Some library for just duplicating, then modifying?
-			// Google how to programatically copy a post, completely.
-
-			// Assign new taxonomy (so convert those first?).
-
-			// Don't forget custom fields.
-
-			// And post-processing (MP# enclosure, recurring events, etc.).
-
 		}
 
 		// Get taxonomies for post type.
@@ -394,11 +416,13 @@ function ctc_migrate_risen_duplicate( $original_post, $post_type_data ) {
 		set_post_thumbnail( $post_id, $thumbnail_id );
 	}
 
-	// What about slug not being unique?
-	// Or is it fine because different post type?
-	// See this: https://github.com/10up/secure-duplicate-post/blob/master/duplicate-post-admin.php#L315
+	// Comments?
 
-	// Show message in place of button when not WP 4.4.4 or newer? meta_input added in that version.
+
+	// Assign new taxonomy (so convert those first?).
+
+
+	// And post-processing (MP# enclosure, recurring events, etc.).
 
 
 	return $post_id;
