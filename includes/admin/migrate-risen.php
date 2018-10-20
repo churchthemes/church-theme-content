@@ -337,6 +337,28 @@ function ctc_migrate_risen_process() {
 	// Loop post types.
 	foreach ( $post_types as $post_type => $post_type_data ) {
 
+		// Get taxonomies for post type.
+		$taxonomies = get_object_taxonomies( $post_type, 'objects' );
+
+		// Loop taxonomies.
+		foreach ( $taxonomies as $taxonomy => $taxonomy_object ) {
+
+			// Get taxonomy terms.
+			$terms = get_terms( $taxonomy );
+
+			// Taxonomy name.
+			$results .= '<h4>' . esc_html( $taxonomy_object->label ) . ' (' . esc_html( count( $terms ) ) . ')</h4>';
+
+			foreach ( $terms as $term ) {
+
+				$results .= '<div>' . esc_html( $term->name ) . '</div>';
+
+
+
+			}
+
+		}
+
 		// Get posts.
 		$posts = get_posts( array(
 			'posts_per_page'   => -1,
@@ -357,28 +379,6 @@ function ctc_migrate_risen_process() {
 			$post_id = ctc_migrate_risen_duplicate( $post, $post_type_data );
 
 			$results .= '<div>' . esc_html( $post->post_title ) . '</div>';
-
-		}
-
-		// Get taxonomies for post type.
-		$taxonomies = get_object_taxonomies( $post_type, 'objects' );
-
-		// Loop taxonomies.
-		foreach ( $taxonomies as $taxonomy => $taxonomy_object ) {
-
-			// Get taxonomy terms.
-			$terms = get_terms( $taxonomy );
-
-			// Taxonomy name.
-			$results .= '<h4>' . esc_html( $taxonomy_object->label ) . ' (' . esc_html( count( $terms ) ) . ')</h4>';
-
-			foreach ( $terms as $term ) {
-
-				$results .= '<div>' . esc_html( $term->name ) . '</div>';
-
-
-
-			}
 
 		}
 
