@@ -416,14 +416,39 @@ function ctc_migrate_risen_duplicate( $original_post, $post_type_data ) {
 		set_post_thumbnail( $post_id, $thumbnail_id );
 	}
 
-	// Comments?
-
 
 	// Assign new taxonomy (so convert those first?).
 
 
-	// And post-processing (MP# enclosure, recurring events, etc.).
+	// Procesing after save.
+	switch ( $post_type_data['ctc_post_type'] ) :
 
+		case 'ctc_sermon':
+
+			// Update the enclosure for this sermon.
+			ctc_do_enclose( $post_id );
+
+			break;
+
+		case 'ctc_event':
+
+			// Something with recurring events?
+
+			break;
+
+
+		case 'ctc_location':
+
+
+			break;
+
+
+		case 'ctc_person':
+
+
+			break;
+
+	}
 
 	return $post_id;
 
