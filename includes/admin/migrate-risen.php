@@ -258,9 +258,12 @@ function ctc_migrate_risen_process() {
 		'risen_multimedia' => array(
 			'ctc_post_type' => 'ctc_sermon',
 			'fields' => array(
-				'' => '',
+				'_risen_multimedia_video_url' => '_ctc_sermon_video',
+				'_risen_multimedia_audio_url' => '_ctc_sermon_audio',
+				'_risen_multimedia_pdf_url'   => '_ctc_sermon_pdf',
+				'_risen_multimedia_text'      => '_ctc_sermon_has_full_text',
 			),
-			'taxonmies' => array(
+			'taxonomies' => array(
 
 			)
 		),
@@ -269,7 +272,7 @@ function ctc_migrate_risen_process() {
 			'fields' => array(
 				'' => '',
 			),
-			'taxonmies' => array(
+			'taxonomies' => array(
 
 			)
 		),
@@ -278,7 +281,7 @@ function ctc_migrate_risen_process() {
 			'fields' => array(
 				'' => '',
 			),
-			'taxonmies' => array(
+			'taxonomies' => array(
 
 			)
 		),
@@ -287,7 +290,7 @@ function ctc_migrate_risen_process() {
 			'fields' => array(
 				'' => '',
 			),
-			'taxonmies' => array(
+			'taxonomies' => array(
 
 			)
 		),
@@ -370,16 +373,20 @@ function ctc_migrate_risen_process() {
  */
 function ctc_migrate_risen_duplicate( $original_post, $post_type_data ) {
 
-	// Get post if was already converted.
-	$existing_post = get_page_by_path( $original_post->post_name, OBJECT, $post_type_data['ctc_post_type'] );
-	$existing_post_id = isset( $existing_post->ID ) ? $existing_post->ID : 0;
+	// Original post ID.
+	$original_post_id = $original_post->ID;
 
-	// Duplicate as new post type.
-	$post = (array) $original_post;
-	$post['post_type'] = $post_type_data['ctc_post_type']; // use new post type.
-	$post['ID'] = $existing_post_id; // update if was already added so can run this tool again safely.
-	unset( $post['guid'] ); // generate a new GUID.
-	$post_id = wp_insert_post( $post );
+	// Get post if was already converted, so can update instead of adding again.
+	$converted_post = get_page_by_path( $original_post->post_name, OBJECT, $post_type_data['ctc_post_type'] );
+	$post_id = isset( $converted_post->ID ) ? $converted_post->ID : 0; // 0 causes wp_insert_post() to make new post versus updating existing.
+
+	// Duplicate as new post type (or update if was already converted).
+	$post = $original_post;
+	$post->post_type = $post_type_data['ctc_post_type']; // use new post type.
+	$post->ID = $post_id; // update if was already added so can run this tool again safely.
+	$post->meta_input = ctc_migrate_risen_meta_input( $original_post_id, $post_type_data['fields'] ); // copy post meta.
+	unset( $post->guid ); // generate a new GUID.
+	$post_id = wp_insert_post( $post ); // add or update and get post ID if new.
 
 	// Featured image?
 
@@ -387,6 +394,8 @@ function ctc_migrate_risen_duplicate( $original_post, $post_type_data ) {
 	// What about slug not being unique?
 	// Or is it fine because different post type?
 	// See this: https://github.com/10up/secure-duplicate-post/blob/master/duplicate-post-admin.php#L315
+
+	// Show message in place of button when not WP 4.4.4 or newer? meta_input added in that version.
 
 
 	return $post_id;
@@ -415,5 +424,27 @@ function ctc_migrate_risen_show() {
 	}
 
 	return $show;
+
+}
+
+/**
+ * Get a post's custom fields.
+ *
+ * Return array with CC plugin's keys for use with wp_insert_post().
+ *
+ * @since 2.1
+ * @param int $post_id Post ID to get meta for.
+ * @param array $fields Array of keys.
+ * @param array $fields Custom fields as array (key / value pairs).
+ */
+function ctc_migrate_risen_meta_input( $post_id, $keys ) {
+
+	$fields = array();
+
+	foreach ( $keys as $old_key => $new_key ) {
+		$fields[ $new_key ] = get_post_meta( $post_id, $old_key, true );
+	}
+
+	return $fields;
 
 }
