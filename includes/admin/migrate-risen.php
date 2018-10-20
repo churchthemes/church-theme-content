@@ -329,7 +329,7 @@ function ctc_migrate_risen_process() {
 		'risen_staff' => array(
 			'ctc_post_type' => 'ctc_person',
 			'fields' => array(
-
+				'_risen_staff_position'            => '_ctc_person_position',
 			),
 		),
 	);
@@ -384,10 +384,10 @@ function ctc_migrate_risen_process() {
 
 	}
 
-	// Don't foget to grandfather basic recurrence by updating options.
+	// Don't foget to grandfather basic recurrence by updating options. Show results.
 
 
-	// Set Risen's Google Maps API Key in Church Content settings.
+	// Set Risen's Google Maps API Key in Church Content settings. Show results.
 
 
 	// Make results available for display.
@@ -428,6 +428,10 @@ function ctc_migrate_risen_duplicate( $original_post, $post_type_data ) {
 
 	// Assign new taxonomy (so convert those first?).
 	// CAN DO THIS WITH tax_input for add/update? - see https://developer.wordpress.org/reference/functions/wp_insert_post/#comment-2434
+
+
+	// Convert Risen "E-mail Button" field - get email address from contact form data
+	// LOCATIONS and PEOPLE
 
 
 	// Procesing after save.
