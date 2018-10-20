@@ -388,8 +388,11 @@ function ctc_migrate_risen_duplicate( $original_post, $post_type_data ) {
 	unset( $post->guid ); // generate a new GUID.
 	$post_id = wp_insert_post( $post ); // add or update and get post ID if new.
 
-	// Featured image?
-
+	// Set featured image.
+	$thumbnail_id = get_post_thumbnail_id( $original_post_id );
+	if ( $thumbnail_id ) {
+		set_post_thumbnail( $post_id, $thumbnail_id );
+	}
 
 	// What about slug not being unique?
 	// Or is it fine because different post type?
