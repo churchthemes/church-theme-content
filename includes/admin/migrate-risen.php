@@ -313,7 +313,7 @@ function ctc_migrate_risen_process() {
 		// Loop posts.
 		foreach ( $posts as $post ) {
 
-			$post_id = ctc_risen_migrate_duplicate( $post, $post_type_data );
+			$post_id = ctc_migrate_risen_duplicate( $post, $post_type_data );
 
 			$results .= '<div>' . esc_html( $post->post_title ) . '</div>';
 
@@ -368,20 +368,21 @@ function ctc_migrate_risen_process() {
  * @param string $post_type_data Array with data for handling duplication.
  * @return int $post_id New post's ID.
  */
-function ctc_risen_migrate_duplicate( $original_post, $post_type_data ) {
+function ctc_migrate_risen_duplicate( $original_post, $post_type_data ) {
 
-	// Check if exists and if does set $post['ID'] so that it updates instead of making a second duplicate.
-	// This way tool can be re-run safely.
-
+	// Get post if was already converted.
+	$existing_post = get_page_by_path( $original_post->post_name, OBJECT, $post_type_data['ctc_post_type'] );
+	$existing_post_id = isset( $existing_post->ID ) ? $existing_post->ID : 0;
 
 	// Duplicate as new post type.
 	$post = (array) $original_post;
 	$post['post_type'] = $post_type_data['ctc_post_type']; // use new post type.
-	unset( $post['ID'] ); // add new versus update old.
+	$post['ID'] = $existing_post_id; // update if was already added so can run this tool again safely.
 	unset( $post['guid'] ); // generate a new GUID.
 	$post_id = wp_insert_post( $post );
 
 	// Featured image?
+
 
 	// What about slug not being unique?
 	// Or is it fine because different post type?
