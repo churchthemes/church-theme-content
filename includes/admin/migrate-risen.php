@@ -289,10 +289,10 @@ function ctc_migrate_risen_process() {
 		'risen_multimedia' => array(
 			'ctc_post_type' => 'ctc_sermon',
 			'fields' => array(
-				'_risen_multimedia_video_url' => '_ctc_sermon_video',
-				'_risen_multimedia_audio_url' => '_ctc_sermon_audio',
-				'_risen_multimedia_pdf_url'   => '_ctc_sermon_pdf',
-				'_risen_multimedia_text'      => '_ctc_sermon_has_full_text',
+				'_risen_multimedia_video_url'      => '_ctc_sermon_video',
+				'_risen_multimedia_audio_url'      => '_ctc_sermon_audio',
+				'_risen_multimedia_pdf_url'        => '_ctc_sermon_pdf',
+				'_risen_multimedia_text'           => '_ctc_sermon_has_full_text',
 			),
 			'taxonomies' => array(
 
@@ -301,29 +301,30 @@ function ctc_migrate_risen_process() {
 		'risen_event' => array(
 			'ctc_post_type' => 'ctc_event',
 			'fields' => array(
-				'' => '',
+				'_risen_event_start_date'          => '_ctc_event_start_date',
+				'_risen_event_end_date'            => '_ctc_event_end_date',
+				'_risen_event_time'                => '_ctc_event_time',
+				'_risen_event_recurrence'          => '_ctc_event_recurrence',
+				'_risen_event_recurrence_end_date' => '_ctc_event_recurrence_end_date',
+				'_risen_event_venue'               => '_ctc_event_venue',
+				'_risen_event_address'             => '_ctc_event_address',
+				'_risen_event_map_lat'             => '_ctc_event_map_lat',
+				'_risen_event_map_lng'             => '_ctc_event_map_lng',
+				'_risen_event_map_type'            => '_ctc_event_map_type',
+				'_risen_event_map_zoom'            => '_ctc_event_map_zoom',
 			),
-			'taxonomies' => array(
-
-			)
 		),
 		'risen_staff' => array(
 			'ctc_post_type' => 'ctc_person',
 			'fields' => array(
 				'' => '',
 			),
-			'taxonomies' => array(
-
-			)
 		),
 		'risen_location' => array(
 			'ctc_post_type' => 'ctc_location',
 			'fields' => array(
 				'' => '',
 			),
-			'taxonomies' => array(
-
-			)
 		),
 	);
 
@@ -380,6 +381,9 @@ function ctc_migrate_risen_process() {
 	// Don't foget to grandfather basic recurrence by updating options.
 
 
+	// Set Risen's Google Maps API Key in Church Content settings.
+
+
 	// Make results available for display.
 	$ctc_migrate_risen_results = $results;
 
@@ -416,34 +420,35 @@ function ctc_migrate_risen_duplicate( $original_post, $post_type_data ) {
 		set_post_thumbnail( $post_id, $thumbnail_id );
 	}
 
-
 	// Assign new taxonomy (so convert those first?).
+	// CAN DO THIS WITH tax_input for add/update? - see https://developer.wordpress.org/reference/functions/wp_insert_post/#comment-2434
 
 
 	// Procesing after save.
-	switch ( $post_type_data['ctc_post_type'] ) :
+	switch ( $post_type_data['ctc_post_type'] ) {
 
-		case 'ctc_sermon':
+		case 'ctc_sermon' :
 
 			// Update the enclosure for this sermon.
 			ctc_do_enclose( $post_id );
 
 			break;
 
-		case 'ctc_event':
+		case 'ctc_event' :
 
-			// Something with recurring events?
-
-			break;
-
-
-		case 'ctc_location':
-
+			// Correct event to update hidden event DATETIME fields, etc.
+			ctc_correct_event( $post_id );
 
 			break;
 
 
-		case 'ctc_person':
+		case 'ctc_location' :
+
+
+			break;
+
+
+		case 'ctc_person' :
 
 
 			break;
