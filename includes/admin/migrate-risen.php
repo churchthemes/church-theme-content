@@ -314,16 +314,22 @@ function ctc_migrate_risen_process() {
 				'_risen_event_map_zoom'            => '_ctc_event_map_zoom',
 			),
 		),
-		'risen_staff' => array(
-			'ctc_post_type' => 'ctc_person',
-			'fields' => array(
-				'' => '',
-			),
-		),
 		'risen_location' => array(
 			'ctc_post_type' => 'ctc_location',
 			'fields' => array(
-				'' => '',
+				'_risen_location_address'          => '_ctc_location_address',
+				'_risen_location_directions'       => '_ctc_location_show_directions_link',
+				'_risen_location_phone'            => '_ctc_location_phone',
+				'_risen_location_map_lat'          => '_ctc_location_map_lat',
+				'_risen_location_map_lng'          => '_ctc_location_map_lng',
+				'_risen_location_map_type'         => '_ctc_location_map_type',
+				'_risen_location_map_zoom'         => '_ctc_location_map_zoom',
+			),
+		),
+		'risen_staff' => array(
+			'ctc_post_type' => 'ctc_person',
+			'fields' => array(
+
 			),
 		),
 	);
