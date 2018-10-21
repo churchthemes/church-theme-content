@@ -358,7 +358,7 @@ function ctc_migrate_risen_process() {
 				$results .= '<div>' . esc_html( $term->name ) . '</div>';
 
 				// Insert term if not already added to new taxonomy.
-				$term_id = ctc_migrate_risen_duplicate_term( $term, $post_type_data );
+				$term_id = ctc_migrate_risen_duplicate_post_term( $term, $post_type_data );
 
 				// Update terms map (old ID's to new).
 				if ( $term_id ) {
@@ -411,7 +411,7 @@ function ctc_migrate_risen_process() {
 		// Loop posts.
 		foreach ( $posts as $post ) {
 
-			$post_id = ctc_migrate_risen_duplicate( $post, $post_type_data, $terms_map );
+			$post_id = ctc_migrate_risen_duplicate_post( $post, $post_type_data, $terms_map );
 
 			$results .= '<div>' . esc_html( $post->post_title ) . '</div>';
 
@@ -441,7 +441,7 @@ function ctc_migrate_risen_process() {
  * @param string $post_type_data Array with data for handling duplication.
  * @return int $term_id New term's ID.
  */
-function ctc_migrate_risen_duplicate_term( $original_term, $post_type_data ) {
+function ctc_migrate_risen_duplicate_post_term( $original_term, $post_type_data ) {
 
 	$term_id = 0;
 
@@ -483,7 +483,7 @@ function ctc_migrate_risen_duplicate_term( $original_term, $post_type_data ) {
  * @param string $terms_map Array mapping original term ID to new term ID.
  * @return int $post_id New post's ID.
  */
-function ctc_migrate_risen_duplicate( $original_post, $post_type_data, $terms_map ) {
+function ctc_migrate_risen_duplicate_post( $original_post, $post_type_data, $terms_map ) {
 
 	// Original post ID.
 	$original_post_id = $original_post->ID;
@@ -506,10 +506,6 @@ function ctc_migrate_risen_duplicate( $original_post, $post_type_data, $terms_ma
 	if ( $thumbnail_id ) {
 		set_post_thumbnail( $post_id, $thumbnail_id );
 	}
-
-	// Assign new taxonomy (so convert those first?).
-	// CAN DO THIS WITH tax_input for add/update? - see https://developer.wordpress.org/reference/functions/wp_insert_post/#comment-2434
-
 
 	// Convert Risen "E-mail Button" field - get email address from contact form data
 	// LOCATIONS and PEOPLE
@@ -608,9 +604,20 @@ function ctc_migrate_risen_tax_input( $original_post_id, $taxonomies, $terms_map
 		// Loop terms.
 		foreach ( $terms as $term ) {
 
-			// Add new term's ID to array.
-			if ( ! empty( $terms_map[ $old_taxonomy ][ $term->term_id ] ) ) {
+			// Hierarchical? Use IDs.
+			if ( is_taxonomy_hierarchical( $old_taxonomy ) && ! empty( $terms_map[ $old_taxonomy ][ $term->term_id ] ) ) {
+
+				// Add new term's ID to array.
 				$tax_input[ $new_taxonomy ][] = $terms_map[ $old_taxonomy ][ $term->term_id ];
+
+			}
+
+			// Non-hierarchical, like tags (use names instead of IDs).
+			elseif ( ! empty( $term->name ) ) {
+
+				// Add new term's name to array.
+				$tax_input[ $new_taxonomy ][] = $term->name;
+
 			}
 
 		}
