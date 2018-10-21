@@ -295,8 +295,10 @@ function ctc_migrate_risen_process() {
 				'_risen_multimedia_text'           => '_ctc_sermon_has_full_text',
 			),
 			'taxonomies' => array(
-
-			)
+				'risen_multimedia_category'        => 'ctc_sermon_topic',
+				'risen_multimedia_speaker'         => 'ctc_sermon_speaker',
+				'risen_multimedia_tag'             => 'ctc_sermon_tag',
+			),
 		),
 		'risen_event' => array(
 			'ctc_post_type' => 'ctc_event',
@@ -349,11 +351,13 @@ function ctc_migrate_risen_process() {
 			// Taxonomy name.
 			$results .= '<h4>' . esc_html( $taxonomy_object->label ) . ' (' . esc_html( count( $terms ) ) . ')</h4>';
 
+			// Loop terms.
+			$terms_map = array(); // for this post type.
 			foreach ( $terms as $term ) {
 
 				$results .= '<div>' . esc_html( $term->name ) . '</div>';
 
-
+				$terms_map[ $term->taxonomy ][ $term->term_id ] = ctc_migrate_risen_duplicate_term( $term, $post_type_data );
 
 			}
 
@@ -395,6 +399,38 @@ function ctc_migrate_risen_process() {
 
 	// Make results available for display.
 	$ctc_migrate_risen_results = $results;
+
+}
+
+/**
+ * Duplicate post (as new post type).
+ *
+ * @since 2.0
+ * @param object $original_term Original term to duplicate.
+ * @param string $post_type_data Array with data for handling duplication.
+ * @return int $term_id New term's ID.
+ */
+function ctc_migrate_risen_duplicate_term( $original_term, $post_type_data ) {
+
+	$term_id = 0;
+
+	// Get new taxonomy.
+	$new_taxonomy = ! empty( $post_type_data['taxonomies'][ $original_term->taxonomy ] ) ? $post_type_data['taxonomies'][ $original_term->taxonomy ] : false;
+
+	// Have new taxonomy.
+	if ( $new_taxonomy ) {
+
+		// Duplicate as new term of new taxonomy (or update if was already converted).
+		// Won't add it already exists (but won't update either).
+		$term_id = wp_insert_term( $original_term->name, $new_taxonomy, array(
+			'description' => $original_term->description,
+			'slug' => $original_term->slug,
+		) );
+
+	}
+
+	// Return new ID.
+	return $term_id;
 
 }
 
@@ -451,18 +487,6 @@ function ctc_migrate_risen_duplicate( $original_post, $post_type_data ) {
 
 			// Correct event to update hidden event DATETIME fields, etc.
 			ctc_correct_event( $post_id );
-
-			break;
-
-
-		case 'ctc_location' :
-
-
-			break;
-
-
-		case 'ctc_person' :
-
 
 			break;
 
