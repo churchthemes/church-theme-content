@@ -343,6 +343,7 @@ function ctc_migrate_risen_process() {
 		$taxonomies = get_object_taxonomies( $post_type, 'objects' );
 
 		// Loop taxonomies.
+		$terms_map = array(); // map old ID to new ID for this post type.
 		foreach ( $taxonomies as $taxonomy => $taxonomy_object ) {
 
 			// Get taxonomy terms.
@@ -352,16 +353,21 @@ function ctc_migrate_risen_process() {
 			$results .= '<h4>' . esc_html( $taxonomy_object->label ) . ' (' . esc_html( count( $terms ) ) . ')</h4>';
 
 			// Loop terms.
-			$terms_map = array(); // for this post type.
 			foreach ( $terms as $term ) {
 
 				$results .= '<div>' . esc_html( $term->name ) . '</div>';
 
-				$terms_map[ $term->taxonomy ][ $term->term_id ] = ctc_migrate_risen_duplicate_term( $term, $post_type_data );
+				$term_id = ctc_migrate_risen_duplicate_term( $term, $post_type_data );
+
+				if ( $term_id ) {
+					$terms_map[ $taxonomy ][ $term->term_id ] = $term_id;
+				}
 
 			}
 
 		}
+
+$results .= '<pre>' . print_r( $terms_map, true ) . '</pre>';
 
 		// Get posts.
 		$posts = get_posts( array(
@@ -420,12 +426,21 @@ function ctc_migrate_risen_duplicate_term( $original_term, $post_type_data ) {
 	// Have new taxonomy.
 	if ( $new_taxonomy ) {
 
-		// Duplicate as new term of new taxonomy (or update if was already converted).
-		// Won't add it already exists (but won't update either).
-		$term_id = wp_insert_term( $original_term->name, $new_taxonomy, array(
-			'description' => $original_term->description,
-			'slug' => $original_term->slug,
-		) );
+		// Term not already added (otherwise get ID).
+		$term = term_exists( $original_term->name, $new_taxonomy );
+		if ( ! ( 0 !== $term && null !== $term ) ) {
+
+			// Duplicate as new term of new taxonomy (or update if was already converted).
+			// Won't add it already exists (but won't update either).
+			$term = wp_insert_term( $original_term->name, $new_taxonomy, array(
+				'description' => $original_term->description,
+				'slug' => $original_term->slug,
+			) );
+
+		}
+
+		// Get new term ID.
+		$term_id = isset( $term['term_id'] ) ? $term['term_id'] : 0;
 
 	}
 
