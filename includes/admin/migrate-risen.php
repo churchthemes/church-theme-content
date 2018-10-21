@@ -394,9 +394,6 @@ function ctc_migrate_risen_process() {
 
 		}
 
-
-//$results .= '<pre>' . print_r( $terms_map, true ) . '</pre>';
-
 		// Get posts.
 		$posts = get_posts( array(
 			'posts_per_page'   => -1,
@@ -414,7 +411,7 @@ function ctc_migrate_risen_process() {
 		// Loop posts.
 		foreach ( $posts as $post ) {
 
-			$post_id = ctc_migrate_risen_duplicate( $post, $post_type_data );
+			$post_id = ctc_migrate_risen_duplicate( $post, $post_type_data, $terms_map );
 
 			$results .= '<div>' . esc_html( $post->post_title ) . '</div>';
 
@@ -439,7 +436,7 @@ function ctc_migrate_risen_process() {
 /**
  * Duplicate post (as new post type).
  *
- * @since 2.0
+ * @since 2.1
  * @param object $original_term Original term to duplicate.
  * @param string $post_type_data Array with data for handling duplication.
  * @return int $term_id New term's ID.
@@ -480,12 +477,13 @@ function ctc_migrate_risen_duplicate_term( $original_term, $post_type_data ) {
 /**
  * Duplicate post (as new post type).
  *
- * @since 2.0
+ * @since 2.1
  * @param object $post Original post to duplicate.
  * @param string $post_type_data Array with data for handling duplication.
+ * @param string $terms_map Array mapping original term ID to new term ID.
  * @return int $post_id New post's ID.
  */
-function ctc_migrate_risen_duplicate( $original_post, $post_type_data ) {
+function ctc_migrate_risen_duplicate( $original_post, $post_type_data, $terms_map ) {
 
 	// Original post ID.
 	$original_post_id = $original_post->ID;
@@ -499,6 +497,7 @@ function ctc_migrate_risen_duplicate( $original_post, $post_type_data ) {
 	$post->post_type = $post_type_data['ctc_post_type']; // use new post type.
 	$post->ID = $post_id; // update if was already added so can run this tool again safely.
 	$post->meta_input = ctc_migrate_risen_meta_input( $original_post_id, $post_type_data['fields'] ); // copy post meta.
+	$post->tax_input = isset( $post_type_data['taxonomies'] ) ? ctc_migrate_risen_tax_input( $original_post_id, $post_type_data['taxonomies'], $terms_map ) : array(); // set taxonomy terms.
 	unset( $post->guid ); // generate a new GUID.
 	$post_id = wp_insert_post( $post ); // add or update and get post ID if new.
 
@@ -565,23 +564,59 @@ function ctc_migrate_risen_show() {
 }
 
 /**
- * Get a post's custom fields.
+ * Build meta_input array.
  *
- * Return array with CC plugin's keys for use with wp_insert_post().
+ * Return array to let wp_insert_post() set custom fields.
  *
  * @since 2.1
  * @param int $post_id Post ID to get meta for.
- * @param array $fields Array of keys.
- * @param array $fields Custom fields as array (key / value pairs).
+ * @param array $keys Array of keys.
+ * @return array $meta_input Custom fields as array (key / value pairs).
  */
 function ctc_migrate_risen_meta_input( $post_id, $keys ) {
 
-	$fields = array();
+	$meta_input = array();
 
 	foreach ( $keys as $old_key => $new_key ) {
-		$fields[ $new_key ] = get_post_meta( $post_id, $old_key, true );
+		$meta_input[ $new_key ] = get_post_meta( $post_id, $old_key, true );
 	}
 
-	return $fields;
+	return $meta_input;
+
+}
+
+/**
+ * Build tax_input array.
+ *
+ * Return array to let wp_insert_post() set taxonomy terms.
+ *
+ * @since 2.1
+ * @param array $original_post_id Original post's ID.
+ * @param array $taxonomies Array of taxonomies.
+ * @param array $terms_map Array mapping old ID's to new ID's.
+ * @return array $tax_input Array of taxonomies with term IDs.
+ */
+function ctc_migrate_risen_tax_input( $original_post_id, $taxonomies, $terms_map ) {
+
+	$tax_input = array();
+
+	foreach ( $taxonomies as $old_taxonomy => $new_taxonomy ) {
+
+		// Get original post's terms for this taxonomy.
+		$terms = wp_get_post_terms( $original_post_id, $old_taxonomy );
+
+		// Loop terms.
+		foreach ( $terms as $term ) {
+
+			// Add new term's ID to array.
+			if ( ! empty( $terms_map[ $old_taxonomy ][ $term->term_id ] ) ) {
+				$tax_input[ $new_taxonomy ][] = $terms_map[ $old_taxonomy ][ $term->term_id ];
+			}
+
+		}
+
+	}
+
+	return $tax_input;
 
 }
