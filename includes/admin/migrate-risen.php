@@ -357,17 +357,45 @@ function ctc_migrate_risen_process() {
 
 				$results .= '<div>' . esc_html( $term->name ) . '</div>';
 
+				// Insert term if not already added to new taxonomy.
 				$term_id = ctc_migrate_risen_duplicate_term( $term, $post_type_data );
 
+				// Update terms map (old ID's to new).
 				if ( $term_id ) {
 					$terms_map[ $taxonomy ][ $term->term_id ] = $term_id;
 				}
 
 			}
 
+			// Loop terms again (now that all added and have IDs) to set parents.
+			foreach ( $terms as $term ) {
+
+				// Has parent?
+				if ( ! empty( $term->parent ) ) {
+
+					// Get new term ID.
+					$term_id = $terms_map[ $taxonomy ][ $term->term_id ];
+
+					// Get parent's new term ID.
+					$parent_id = $terms_map[ $taxonomy ][ $term->parent ];
+
+					// Set parent.
+					if ( $parent_id ) {
+
+						wp_update_term( $term_id, $post_type_data['taxonomies'][ $term->taxonomy ], array(
+							'parent' => $parent_id,
+						) );
+
+					}
+
+				}
+
+			}
+
 		}
 
-$results .= '<pre>' . print_r( $terms_map, true ) . '</pre>';
+
+//$results .= '<pre>' . print_r( $terms_map, true ) . '</pre>';
 
 		// Get posts.
 		$posts = get_posts( array(
