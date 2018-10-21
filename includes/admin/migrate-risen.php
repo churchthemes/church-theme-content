@@ -322,6 +322,7 @@ function ctc_migrate_risen_process() {
 				'_risen_location_address'          => '_ctc_location_address',
 				'_risen_location_directions'       => '_ctc_location_show_directions_link',
 				'_risen_location_phone'            => '_ctc_location_phone',
+				'_risen_location_contact'          => '_ctc_location_email',
 				'_risen_location_map_lat'          => '_ctc_location_map_lat',
 				'_risen_location_map_lng'          => '_ctc_location_map_lng',
 				'_risen_location_map_type'         => '_ctc_location_map_type',
@@ -332,6 +333,7 @@ function ctc_migrate_risen_process() {
 			'ctc_post_type' => 'ctc_person',
 			'fields' => array(
 				'_risen_staff_position'            => '_ctc_person_position',
+				'_risen_staff_contact'             => '_ctc_person_email',
 			),
 		),
 	);
@@ -507,10 +509,6 @@ function ctc_migrate_risen_duplicate_post( $original_post, $post_type_data, $ter
 		set_post_thumbnail( $post_id, $thumbnail_id );
 	}
 
-	// Convert Risen "E-mail Button" field - get email address from contact form data
-	// LOCATIONS and PEOPLE
-
-
 	// Procesing after save.
 	switch ( $post_type_data['ctc_post_type'] ) {
 
@@ -573,8 +571,43 @@ function ctc_migrate_risen_meta_input( $post_id, $keys ) {
 
 	$meta_input = array();
 
+	// Loop fields.
 	foreach ( $keys as $old_key => $new_key ) {
-		$meta_input[ $new_key ] = get_post_meta( $post_id, $old_key, true );
+
+		// Meta value.
+		$value = get_post_meta( $post_id, $old_key, true );
+
+		// Get email address from contacts options.
+		if ( function_exists( 'risen_contacts' ) && in_array( $old_key, array( '_risen_staff_contact', '_risen_location_contact' ) ) ) {
+
+			$contacts = risen_contacts();
+
+			// Loop contacts.
+			$found_email = false;
+			foreach ( $contacts as $name => $email ) {
+
+				// Match?
+				if ( $value === md5( $email ) ) {
+
+					// Set value as email.
+					$found_email = $email;
+
+					break;
+
+				}
+
+			}
+
+			// Set email if found.
+			if ( $found_email ) {
+				$value = $found_email;
+			}
+
+		}
+
+		// Assign value.
+		$meta_input[ $new_key ] = $value;
+
 	}
 
 	return $meta_input;
