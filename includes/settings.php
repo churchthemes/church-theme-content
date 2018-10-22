@@ -1760,6 +1760,29 @@ function ctc_setting( $setting ) {
 }
 
 /**********************************
+ * UPDATING SETTINGS
+ **********************************/
+
+/**
+ * Update a setting
+ *
+ * Update a single setting's value in the option array.
+ *
+ * @since 2.1
+ * @param string $setting Setting key.
+ * @param mixed $value Setting value.
+ * @global object $ctc_settings.
+ */
+function ctc_update_setting( $setting, $value ) {
+
+	global $ctc_settings;
+
+	// Update setting value.
+	$ctc_settings->update( $setting, $value );
+
+}
+
+/**********************************
  * WORDPRESS SETTINGS
  **********************************/
 

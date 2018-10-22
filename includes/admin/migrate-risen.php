@@ -424,11 +424,30 @@ function ctc_migrate_risen_process() {
 	// Additional.
 	$results .= '<h4>Miscellaneous</h4>';
 
+		// Set Risen's Google Maps API Key in Church Content settings. Show results.
+		if ( function_exists( 'risen_option' ) ) {
+
+			// Get key from Theme Options.
+			$google_maps_api_key = risen_option( 'gmaps_api_key' );
+
+			// Set key in Church Content settings.
+			if ( $google_maps_api_key ) {
+
+				// Update option.
+
+				// Results.
+				$results .= '<div>' . __( 'Google Maps API Key set', 'church-theme-content' ) . '</div>';
+
+			}
+
+		}
+
 		// Don't foget to grandfather basic recurrence by updating options. Show results.
 		$results .= '<div>' . __( 'DO GRANDFATHER BASIC RECURRENCE OPTIONS', 'church-theme-content' ) . '</div>';
 
-		// Set Risen's Google Maps API Key in Church Content settings. Show results.
-		$results .= '<div>' . __( 'DO SET GOOGLE MAPS API KEY', 'church-theme-content' ) . '</div>';
+
+
+
 
 	// Make results available for display.
 	$ctc_migrate_risen_results = $results;
