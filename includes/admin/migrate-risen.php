@@ -434,6 +434,7 @@ function ctc_migrate_risen_process() {
 			if ( $google_maps_api_key ) {
 
 				// Update option.
+				ctc_update_setting( 'google_maps_api_key', $google_maps_api_key );
 
 				// Results.
 				$results .= '<div>' . __( 'Google Maps API Key set', 'church-theme-content' ) . '</div>';
