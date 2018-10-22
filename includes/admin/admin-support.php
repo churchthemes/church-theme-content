@@ -40,6 +40,11 @@ function ctc_get_theme_support_notice() {
 			return;
 		}
 
+		// Show except on discontinued Risen theme (in that case we show migration notice).
+		if ( ctc_migrate_risen_show() ) {
+			return;
+		}
+
 		// Option ID
 		$theme_data = wp_get_theme();
 		$option_id = 'ctc_hide_theme_support_notice-' . $theme_data['Template']; // unique to theme so if change, message shows again
