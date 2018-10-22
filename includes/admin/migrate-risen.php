@@ -565,10 +565,16 @@ function ctc_migrate_risen_duplicate_post( $original_post, $post_type_data, $ter
 function ctc_migrate_risen_show() {
 
 	$show = false;
-//print_r( wp_get_theme() );
+
 	// Risen theme is active.
-	if ( function_exists( 'wp_get_theme' ) && 'Risen' === (string) wp_get_theme() ) {
-		$show = true;
+	if ( function_exists( 'wp_get_theme' ) ) {
+
+		$theme = wp_get_theme();
+
+		if ( 'Risen' === $theme->get( 'Name' ) || 'risen' === $theme->get( 'Template' ) ) {
+			$show = true;
+		}
+
 	}
 
 	return $show;
