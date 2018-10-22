@@ -594,6 +594,11 @@ add_filter( 'ctc_post_type_person_args', 'ctc_migrate_risen_hide_menu_items' );
  */
 function ctc_migrate_risen_notice() {
 
+	// Risen must be active.
+	if ( ! ctc_migrate_risen_show() ) {
+		return;
+	}
+
 	// Show only on relavent pages as not to overwhelm admin (same places as Risen theme).
 	$screen = get_current_screen();
 	if ( ! ( in_array( $screen->base, array( 'dashboard', 'themes', 'plugins' ) ) || preg_match( '/^risen_.+/', $screen->post_type ) ) ) {
