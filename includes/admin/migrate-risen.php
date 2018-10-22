@@ -551,6 +551,84 @@ function ctc_migrate_risen_duplicate_post( $original_post, $post_type_data, $ter
 }
 
 /*******************************************
+ * ADMIN
+ *******************************************/
+
+/**
+ * Hide post type menu items
+ *
+ * Let Risen items show for now and not both Risen and Church Content.
+ * When user finishes switch to Church Content then those will show.
+ *
+ * @since 2.1
+ */
+function ctc_migrate_risen_hide_menu_items( $args ) {
+
+	// Hide menu items only when Risen is active.
+	if ( ctc_migrate_risen_show() ) {
+		$args['show_ui'] = false;
+		$args['show_in_nav_menus'] = false;
+	}
+
+	return $args;
+
+}
+
+add_filter( 'ctc_post_type_sermon_args', 'ctc_migrate_risen_hide_menu_items' );
+add_filter( 'ctc_post_type_event_args', 'ctc_migrate_risen_hide_menu_items' );
+add_filter( 'ctc_post_type_location_args', 'ctc_migrate_risen_hide_menu_items' );
+add_filter( 'ctc_post_type_person_args', 'ctc_migrate_risen_hide_menu_items' );
+
+
+/*******************************************
+ * NOTICES
+ *******************************************/
+
+/**
+ * Show notice directing to migration tool.
+ *
+ * Risen stops showing its notice about being discontinued when Church Content plugin activated.
+ * In place of that nows, show one directing user to the migration tool.
+ *
+ * @since 2.1
+ */
+function ctc_migrate_risen_notice() {
+
+	// Show only on relavent pages as not to overwhelm admin (same places as Risen theme).
+	$screen = get_current_screen();
+	if ( ! ( in_array( $screen->base, array( 'dashboard', 'themes', 'plugins' ) ) || preg_match( '/^risen_.+/', $screen->post_type ) ) ) {
+		return;
+	}
+
+	// Notice.
+	?>
+	<div id="risen-ctc-migrate-notice" class="notice notice-warning">
+		<p>
+			<?php
+			printf(
+				wp_kses(
+					__( 'Use the <a href="%1$s">Risen Theme to Church Content Plugin</a> migration tool to begin switching themes. <a href="%2$s" target="_blank">Learn More</a>', 'church-theme-content' ),
+					array(
+						'b' => array(),
+						'a' => array(
+							'href' => array(),
+							'target' => array(),
+						)
+					)
+				),
+				esc_url( admin_url( 'tools.php?page=ctc-migrate-risen' ) ),
+				'https://churchthemes.com/go/switch-from-risen/'
+			);
+			?>
+		</p>
+	</div>
+	<?php
+
+}
+
+add_action( 'admin_notices', 'ctc_migrate_risen_notice' );
+
+/*******************************************
  * HELPERS
  *******************************************/
 
@@ -684,32 +762,3 @@ function ctc_migrate_risen_tax_input( $original_post_id, $taxonomies, $terms_map
 	return $tax_input;
 
 }
-
-/*******************************************
- * ADMIN MENU
- *******************************************/
-
-/**
- * Hide post type menu items
- *
- * Let Risen items show for now and not both Risen and Church Content.
- * When user finishes switch to Church Content then those will show.
- *
- * @since 2.1
- */
-function ctc_migrate_risen_hide_menu_items( $args ) {
-
-	// Hide menu items only when Risen is active.
-	if ( ctc_migrate_risen_show() ) {
-		$args['show_ui'] = false;
-		$args['show_in_nav_menus'] = false;
-	}
-
-	return $args;
-
-}
-
-add_filter( 'ctc_post_type_sermon_args', 'ctc_migrate_risen_hide_menu_items' );
-add_filter( 'ctc_post_type_event_args', 'ctc_migrate_risen_hide_menu_items' );
-add_filter( 'ctc_post_type_location_args', 'ctc_migrate_risen_hide_menu_items' );
-add_filter( 'ctc_post_type_person_args', 'ctc_migrate_risen_hide_menu_items' );
