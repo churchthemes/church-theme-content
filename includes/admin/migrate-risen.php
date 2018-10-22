@@ -424,7 +424,7 @@ function ctc_migrate_risen_process() {
 	// Additional.
 	$results .= '<h4>Miscellaneous</h4>';
 
-		// Set Risen's Google Maps API Key in Church Content settings. Show results.
+		// Set Google Maps API Key.
 		if ( function_exists( 'risen_option' ) ) {
 
 			// Get key from Theme Options.
@@ -443,12 +443,10 @@ function ctc_migrate_risen_process() {
 
 		}
 
-		// Don't foget to grandfather basic recurrence by updating options. Show results.
-		$results .= '<div>' . __( 'DO GRANDFATHER BASIC RECURRENCE OPTIONS', 'church-theme-content' ) . '</div>';
-
-
-
-
+		// Grandfather basic event recurrence.
+		update_option( 'ctfw_grandfather_recurring_events', true ); // Tell Church Theme Framework to grandfather basic recurrence.
+		update_option( 'ctfw_grandfather_recurring_events_checked', true ); // Save option to indicate check has been run, so don't run it again.
+		$results .= '<div>' . __( 'Basic event recurrence grandfathered (Church Theme Framework)', 'church-theme-content' ) . '</div>';
 
 	// Make results available for display.
 	$ctc_migrate_risen_results = $results;
