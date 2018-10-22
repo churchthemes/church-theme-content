@@ -565,7 +565,7 @@ function ctc_migrate_risen_duplicate_post( $original_post, $post_type_data, $ter
 function ctc_migrate_risen_show() {
 
 	$show = false;
-
+//print_r( wp_get_theme() );
 	// Risen theme is active.
 	if ( function_exists( 'wp_get_theme' ) && 'Risen' === (string) wp_get_theme() ) {
 		$show = true;
@@ -678,3 +678,32 @@ function ctc_migrate_risen_tax_input( $original_post_id, $taxonomies, $terms_map
 	return $tax_input;
 
 }
+
+/*******************************************
+ * ADMIN MENU
+ *******************************************/
+
+/**
+ * Hide post type menu items
+ *
+ * Let Risen items show for now and not both Risen and Church Content.
+ * When user finishes switch to Church Content then those will show.
+ *
+ * @since 2.1
+ */
+function ctc_migrate_risen_hide_menu_items( $args ) {
+
+	// Hide menu items only when Risen is active.
+	if ( ctc_migrate_risen_show() ) {
+		$args['show_ui'] = false;
+		$args['show_in_nav_menus'] = false;
+	}
+
+	return $args;
+
+}
+
+add_filter( 'ctc_post_type_sermon_args', 'ctc_migrate_risen_hide_menu_items' );
+add_filter( 'ctc_post_type_event_args', 'ctc_migrate_risen_hide_menu_items' );
+add_filter( 'ctc_post_type_location_args', 'ctc_migrate_risen_hide_menu_items' );
+add_filter( 'ctc_post_type_person_args', 'ctc_migrate_risen_hide_menu_items' );
