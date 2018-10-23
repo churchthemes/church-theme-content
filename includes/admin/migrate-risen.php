@@ -77,9 +77,9 @@ function ctc_migrate_risen_page_content() {
 			echo wp_kses(
 				sprintf(
 					__( 'Click "Make Compatible" to make <b>sermons</b>, <b>events</b>, <b>locations</b> and <b>people</b> in the Risen theme compatible with the <a href="%1$s" target="_blank">Church Content plugin</a> so that you can switch to a newer theme from <a href="%2$s" target="_blank">ChurchThemes.com</a>. Read the <a href="%3$s" target="_blank">Switching from Risen</a> guide for full details before proceeding.', 'church-theme-content' ),
-					'https://churchthemes.com/plugins/church-content/',
-					'https://churchthemes.com/',
-					'https://churchthemes.com/go/switch-from-risen/'
+					ctc_ctcom_url( 'church-content', array( 'utm_campaign' => 'migrate-risen' ) ),
+					ctc_ctcom_url( 'home', array( 'utm_campaign' => 'migrate-risen' ) ),
+					ctc_ctcom_url( 'migrate-risen' )
 				),
 				array(
 					'b' => array(),
@@ -101,7 +101,7 @@ function ctc_migrate_risen_page_content() {
 			echo wp_kses(
 				sprintf(
 					__( 'This will not modify your content used by Risen. Instead, it will modify a copy of the content to be compatible with the Church Content plugin. This is a safeguard to ensure you can switch back to Risen. In any case, <a href="%1$s" target="_blank">make a full website backup</a> before running this tool and switching themes to be extra safe.', 'church-theme-content' ),
-					'https://churchthemes.com/go/backups/'
+					ctc_ctcom_url( 'migrate-risen-backup' )
 				),
 				array(
 					'b' => array(),
@@ -210,9 +210,9 @@ function ctc_migrate_risen_show_results() {
 		echo wp_kses(
 			sprintf(
 				__( 'Your <b>sermons</b>, <b>events</b>, <b>locations</b> and <b>people</b> in the Risen theme have been made compatible with the <a href="%1$s" target="_blank">Church Content plugin</a>. Now you can switch to a newer theme from <a href="%2$s" target="_blank">ChurchThemes.com</a>. Read the <a href="%3$s" target="_blank">Switching from Risen</a> guide for additional instructions.', 'church-theme-content' ),
-				'https://churchthemes.com/plugins/church-content/',
-				'https://churchthemes.com/',
-				'https://churchthemes.com/go/switch-from-risen/'
+				ctc_ctcom_url( 'church-content', array( 'utm_campaign' => 'migrate-risen' ) ),
+				ctc_ctcom_url( 'home', array( 'utm_campaign' => 'migrate-risen' ) ),
+				ctc_ctcom_url( 'migrate-risen' )
 			),
 			array(
 				'b' => array(),
@@ -622,7 +622,7 @@ function ctc_migrate_risen_notice() {
 					)
 				),
 				esc_url( admin_url( 'tools.php?page=ctc-migrate-risen' ) ),
-				'https://churchthemes.com/go/switch-from-risen/'
+				ctc_ctcom_url( 'migrate-risen' )
 			);
 			?>
 		</p>

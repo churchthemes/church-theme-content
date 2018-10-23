@@ -71,7 +71,7 @@ function ctc_file_path( $file, $directory = false ) {
  * @param array $query_args Parameters to add or replace in URL.
  * @return string URL.
  */
-function ctc_ctcom_url( $path_key, $query_args = array() ) {
+function ctc_ctcom_url( $path_key = false, $query_args = array() ) {
 
 	// Base URL.
 	$url = 'https://churchthemes.com';
@@ -82,6 +82,9 @@ function ctc_ctcom_url( $path_key, $query_args = array() ) {
 
 	// Paths by key.
 	$paths = array(
+
+		// Homepage.
+		'home'      => '/' . $utm_base_query . '&utm_campaign=church-theme-content',
 
 		// How to get a Google Maps API key.
 		'google-maps-api-key' => '/go/google-maps-api-key/', // no utm, messes up redirect.
@@ -112,16 +115,20 @@ function ctc_ctcom_url( $path_key, $query_args = array() ) {
 		'sermon-audio-help'   => '/go/ctc-sermon-audio-help/' . $utm_base_query . '&utm_campaign=church-theme-content&utm_content=sermon',
 
 		// Podcasting guide.
-		'podcast-guide'  => '/go/podcast-guide/' . $utm_base_query . '&utm_campaign=church-theme-content',
+		'podcast-guide'       => '/go/podcast-guide/' . $utm_base_query . '&utm_campaign=church-theme-content',
 
 		// Agency mode guide.
-		'agency-mode' => '/go/agency-mode/', // no UTM, used by theme framework too.
+		'agency-mode'         => '/go/agency-mode/', // no UTM, used by theme framework too.
 
 		// Newsletter sign up.
-		'newsletter' => '/newsletter/', // no UTM, redirects to Mailchimp page.
+		'newsletter'          => '/newsletter/', // no UTM, redirects to Mailchimp page.
 
 		// Blog.
-		'blog' => '/blog/' . $utm_base_query . '&utm_campaign=church-theme-content&utm_content=settings',
+		'blog'                => '/blog/' . $utm_base_query . '&utm_campaign=church-theme-content&utm_content=settings',
+
+		// Risen migration guide.
+		'migrate-risen'        => '/go/switch-from-risen/' . $utm_base_query . '&utm_campaign=migrate-risen',
+		'migrate-risen-backup' => '/go/backups/',
 
 	);
 
