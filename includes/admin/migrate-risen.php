@@ -76,7 +76,7 @@ function ctc_migrate_risen_page_content() {
 
 			echo wp_kses(
 				sprintf(
-					__( 'Click "Make Compatible" to make <b>sermons</b>, <b>events</b>, <b>locations</b> and <b>people</b> in the Risen theme compatible with the <a href="%1$s" target="_blank">Church Content plugin</a> so that you can switch to a newer theme from <a href="%2$s" target="_blank">ChurchThemes.com</a>. Read the <a href="%3$s" target="_blank">Switching from Risen</a> guide for full details before proceeding.', 'church-theme-content' ),
+					__( 'Click "Make Compatible" to make <b>sermons</b>, <b>events</b>, <b>locations</b> and <b>staff</b> in the Risen theme compatible with the <a href="%1$s" target="_blank">Church Content plugin</a> so that you can switch to a newer theme from <a href="%2$s" target="_blank">ChurchThemes.com</a>. Read the <a href="%3$s" target="_blank">Switching from Risen</a> guide for full details before proceeding.', 'church-theme-content' ),
 					ctc_ctcom_url( 'church-content', array( 'utm_campaign' => 'migrate-risen' ) ),
 					ctc_ctcom_url( 'home', array( 'utm_campaign' => 'migrate-risen' ) ),
 					ctc_ctcom_url( 'migrate-risen' )
@@ -209,7 +209,7 @@ function ctc_migrate_risen_show_results() {
 
 		echo wp_kses(
 			sprintf(
-				__( 'Your <b>sermons</b>, <b>events</b>, <b>locations</b> and <b>people</b> in the Risen theme have been made compatible with the <a href="%1$s" target="_blank">Church Content plugin</a>. Now you can switch to a newer theme from <a href="%2$s" target="_blank">ChurchThemes.com</a>. Read the <a href="%3$s" target="_blank">Switching from Risen</a> guide for additional instructions.', 'church-theme-content' ),
+				__( 'Your <b>sermons</b>, <b>events</b>, <b>locations</b> and <b>staff</b> in the Risen theme have been made compatible with the <a href="%1$s" target="_blank">Church Content plugin</a>. Now you can switch to a newer theme from <a href="%2$s" target="_blank">ChurchThemes.com</a>. Read the <a href="%3$s" target="_blank">Switching from Risen</a> guide for additional instructions.', 'church-theme-content' ),
 				ctc_ctcom_url( 'church-content', array( 'utm_campaign' => 'migrate-risen' ) ),
 				ctc_ctcom_url( 'home', array( 'utm_campaign' => 'migrate-risen' ) ),
 				ctc_ctcom_url( 'migrate-risen' )
