@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: church-theme-content\n"
-"POT-Creation-Date: 2018-10-01 08:17-0500\n"
-"PO-Revision-Date: 2018-10-01 08:18-0500\n"
+"POT-Creation-Date: 2018-10-23 07:47-0500\n"
+"PO-Revision-Date: 2018-10-23 07:47-0500\n"
 "Last-Translator: churchthemes.com <contact@churchthemes.com>\n"
 "Language-Team: \n"
 "Language: nn_NO\n"
@@ -526,7 +526,7 @@ msgctxt "media type"
 msgid "PDF"
 msgstr "PDF"
 
-#: ../includes/admin/admin-support.php:56
+#: ../includes/admin/admin-support.php:61
 #, php-format
 msgid ""
 "The <b>%1$s</b> theme does not support the <b>%2$s</b> plugin. <a href=\"%3$s"
@@ -605,6 +605,73 @@ msgstr ""
 msgid ""
 "Please activate a theme compatible with the %1$s plugin before importing "
 "content. <a href=\"%2$s\" target=\"_blank\">More Information</a>"
+msgstr ""
+
+#: ../includes/admin/migrate-risen.php:36
+#: ../includes/admin/migrate-risen.php:57
+msgid "Risen Theme to Church Content Plugin"
+msgstr ""
+
+#: ../includes/admin/migrate-risen.php:37
+msgid "Risen to Church Content"
+msgstr ""
+
+#: ../includes/admin/migrate-risen.php:79
+#, php-format
+msgid ""
+"Click \"Make Compatible\" to make <b>sermons</b>, <b>events</b>, "
+"<b>locations</b> and <b>staff</b> in the Risen theme compatible with the <a "
+"href=\"%1$s\" target=\"_blank\">Church Content plugin</a> so that you can "
+"switch to a newer theme from <a href=\"%2$s\" target=\"_blank\">ChurchThemes."
+"com</a>. Read the <a href=\"%3$s\" target=\"_blank\">Switching from Risen</"
+"a> guide for full details before proceeding."
+msgstr ""
+
+#: ../includes/admin/migrate-risen.php:103
+#, php-format
+msgid ""
+"This will not modify your content used by Risen. Instead, it will modify a "
+"copy of the content to be compatible with the Church Content plugin. This is "
+"a safeguard to ensure you can switch back to Risen. In any case, <a href="
+"\"%1$s\" target=\"_blank\">make a full website backup</a> before running "
+"this tool and switching themes to be extra safe."
+msgstr ""
+
+#: ../includes/admin/migrate-risen.php:128
+msgid "Processing. Please wait..."
+msgstr ""
+
+#: ../includes/admin/migrate-risen.php:141
+msgid ""
+"<strong>Update WordPress:</strong> Please update WordPress to the latest "
+"version before running this tool."
+msgstr ""
+
+#: ../includes/admin/migrate-risen.php:212
+#, php-format
+msgid ""
+"Your <b>sermons</b>, <b>events</b>, <b>locations</b> and <b>staff</b> in the "
+"Risen theme have been made compatible with the <a href=\"%1$s\" target="
+"\"_blank\">Church Content plugin</a>. Now you can switch to a newer theme "
+"from <a href=\"%2$s\" target=\"_blank\">ChurchThemes.com</a>. Read the <a "
+"href=\"%3$s\" target=\"_blank\">Switching from Risen</a> guide for "
+"additional instructions."
+msgstr ""
+
+#: ../includes/admin/migrate-risen.php:440
+msgid "Google Maps API Key set"
+msgstr ""
+
+#: ../includes/admin/migrate-risen.php:449
+msgid "Basic event recurrence grandfathered (Church Theme Framework)"
+msgstr ""
+
+#: ../includes/admin/migrate-risen.php:623
+#, php-format
+msgid ""
+"Use the <a href=\"%1$s\">Risen Theme to Church Content Plugin</a> migration "
+"tool to begin switching themes. <a href=\"%2$s\" target=\"_blank\">Learn "
+"More</a>"
 msgstr ""
 
 #: ../includes/admin/notices.php:60
@@ -1409,29 +1476,29 @@ msgid ""
 "\">Church Content Pro</a> plugin. Install it to add more features."
 msgstr ""
 
-#: ../includes/settings.php:1779
+#: ../includes/settings.php:1802
 msgid "Posts per page"
 msgstr ""
 
-#: ../includes/settings.php:1811
+#: ../includes/settings.php:1834
 #, php-format
 msgid ""
 "Use <a href=\"%1$s\">Church Content Settings</a> to override this for "
 "specific post types (sermons, events, etc.)"
 msgstr ""
 
-#: ../includes/settings.php:1859
+#: ../includes/settings.php:1882
 msgid "Church Content Settings"
 msgstr ""
 
-#: ../includes/settings.php:1883
+#: ../includes/settings.php:1906
 #, php-format
 msgid ""
 "Go to <a href=\"%1$s\">Church Content Settings</a> to set custom URL bases "
 "for sermons, events, etc."
 msgstr ""
 
-#: ../includes/settings.php:1916
+#: ../includes/settings.php:1939
 #, php-format
 msgid ""
 "Agencies and freelancers can enable <a href=\"%1$s\" target=\"_blank"
