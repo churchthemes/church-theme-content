@@ -311,7 +311,8 @@ function ctc_support_podcast_exclude_field() {
 	}
 
 	// Get sermon fields that are supported by theme.
-	$supported_fields = ctc_get_theme_support( 'ctc-sermons', 'fields' );
+	$sermons_support = ctc_get_theme_support( 'ctc-sermons' );
+	$supported_fields = isset( $sermons_support['fields'] ) ? $sermons_support['fields'] : array();
 
 	// Have supported fields.
 	if ( ! empty( $supported_fields ) ) {
@@ -323,7 +324,7 @@ function ctc_support_podcast_exclude_field() {
 		if ( ! in_array( $field, $supported_fields ) ) {
 
 			// Add field to supported fields array.
-			$sermons_support[] = $field;
+			$sermons_support['fields'][] = $field;
 
 		}
 
