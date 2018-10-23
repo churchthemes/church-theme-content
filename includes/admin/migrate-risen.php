@@ -691,21 +691,28 @@ function ctc_migrate_risen_meta_input( $post_id, $keys ) {
 		$value = str_ireplace( '[upload_url]', $upload_dir['baseurl'], $value );
 
 		// Get email address from contacts options.
-		if ( function_exists( 'risen_contacts' ) && in_array( $old_key, array( '_risen_staff_contact', '_risen_location_contact' ) ) ) {
+		if ( in_array( $old_key, array( '_risen_staff_contact', '_risen_location_contact' ) ) ) {
 
-			$contacts = risen_contacts();
-
-			// Loop contacts.
 			$found_email = false;
-			foreach ( $contacts as $name => $email ) {
 
-				// Match?
-				if ( $value === md5( $email ) ) {
+			// Have function for contacts.
+			if ( function_exists( 'risen_contacts' ) ) {
 
-					// Set value as email.
-					$found_email = $email;
+				// Get contacts.
+				$contacts = risen_contacts();
 
-					break;
+				// Loop contacts.
+				foreach ( $contacts as $name => $email ) {
+
+					// Match?
+					if ( $value === md5( $email ) ) {
+
+						// Set value as email.
+						$found_email = $email;
+
+						break;
+
+					}
 
 				}
 
@@ -714,6 +721,8 @@ function ctc_migrate_risen_meta_input( $post_id, $keys ) {
 			// Set email if found.
 			if ( $found_email ) {
 				$value = $found_email;
+			} else { // empty if not (so doesn't use md5).
+				$value = '';
 			}
 
 		}
