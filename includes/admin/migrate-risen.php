@@ -448,6 +448,9 @@ function ctc_migrate_risen_process() {
 		update_option( 'ctfw_grandfather_recurring_events_checked', true ); // Save option to indicate check has been run, so don't run it again.
 		$results .= '<div>' . __( 'Basic event recurrence grandfathered (Church Theme Framework)', 'church-theme-content' ) . '</div>';
 
+	// Prevent notice asking to run tool from showing again,
+	update_option( 'ctc_migrate_risen_processed', true );
+
 	// Make results available for display.
 	$ctc_migrate_risen_results = $results;
 
@@ -602,6 +605,11 @@ function ctc_migrate_risen_notice() {
 	// Show only on relavent pages as not to overwhelm admin (same places as Risen theme).
 	$screen = get_current_screen();
 	if ( ! ( in_array( $screen->base, array( 'dashboard', 'themes', 'plugins' ) ) || preg_match( '/^risen_.+/', $screen->post_type ) ) ) {
+		return;
+	}
+
+	// Show only if tool has not yet been run.
+	if ( get_option( 'ctc_migrate_risen_processed' ) ) {
 		return;
 	}
 
