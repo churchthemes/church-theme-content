@@ -678,11 +678,17 @@ function ctc_migrate_risen_meta_input( $post_id, $keys ) {
 
 	$meta_input = array();
 
+	// Upload dir.
+	$upload_dir = wp_upload_dir();
+
 	// Loop fields.
 	foreach ( $keys as $old_key => $new_key ) {
 
 		// Meta value.
 		$value = get_post_meta( $post_id, $old_key, true );
+
+		// Replace [upload_url] with actual URL whenever necessary.
+		$value = str_ireplace( '[upload_url]', $upload_dir['baseurl'], $value );
 
 		// Get email address from contacts options.
 		if ( function_exists( 'risen_contacts' ) && in_array( $old_key, array( '_risen_staff_contact', '_risen_location_contact' ) ) ) {
