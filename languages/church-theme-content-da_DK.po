@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Church Content\n"
 "POT-Creation-Date: 2018-10-23 07:48-0500\n"
-"PO-Revision-Date: 2018-10-23 07:48-0500\n"
+"PO-Revision-Date: 2018-12-31 08:47-0600\n"
 "Last-Translator: churchthemes.com <contact@churchthemes.com>\n"
 "Language-Team: ChurchThemes.com\n"
 "Language: da_DK\n"
@@ -63,7 +63,7 @@ msgstr "Dato og tid"
 
 #: ../includes/admin/admin-event-fields.php:82
 msgid "Start Date"
-msgstr "Start dato"
+msgstr "Startdato"
 
 #: ../includes/admin/admin-event-fields.php:83 ../includes/settings.php:1284
 msgid "(Required)"
@@ -107,6 +107,8 @@ msgid ""
 "Optionally describe the time (e.g. \"9:30 am and 11:00 am\" or \"After "
 "Second Service\")"
 msgstr ""
+"Du kan valgfrit beskrive tidspunktet (f.eks. \"kl 9:30 og kl 1.30\" eller "
+"\"efter anden gudstjeneste\")"
 
 #: ../includes/admin/admin-event-fields.php:242
 msgid "Recurrence"
@@ -295,7 +297,7 @@ msgstr "Tid"
 #: ../includes/admin/admin-person-fields.php:217
 msgctxt "sorting"
 msgid "Order"
-msgstr "Bestil"
+msgstr "Rækkefølge"
 
 #: ../includes/admin/admin-location-fields.php:356
 msgctxt "location admin column"
@@ -385,7 +387,7 @@ msgstr "URL'er"
 
 #: ../includes/admin/admin-person-fields.php:215
 msgid "Position"
-msgstr "Position"
+msgstr "Stilling/titel"
 
 #: ../includes/admin/admin-person-fields.php:216
 msgctxt "people column"
@@ -414,21 +416,21 @@ msgstr "%s Media"
 
 #: ../includes/admin/admin-sermon-fields.php:108
 msgid "Full Text"
-msgstr "Fuld tekst"
+msgstr "Komplet tekst"
 
 #: ../includes/admin/admin-sermon-fields.php:111
 msgid "Check this if you provide a complete transcript above."
-msgstr "Tjek dette, hvis du giver et komplet udskrift ovenfor."
+msgstr "Tjek dette, hvis du har afskrevet hele prædiken ovenfor."
 
 #: ../includes/admin/admin-sermon-fields.php:115
 #, php-format
 msgctxt "sermon taxonomy general name"
 msgid "Full %s text provided"
-msgstr "Fuld %s tekst til rådighed"
+msgstr "Komplet %s tekst til rådighed"
 
 #: ../includes/admin/admin-sermon-fields.php:138
 msgid "Video"
-msgstr "video"
+msgstr "Video"
 
 #: ../includes/admin/admin-sermon-fields.php:142
 #, php-format
@@ -438,10 +440,14 @@ msgid ""
 "paste its URL here, or paste an embed code from another site. <a href=\"%s\" "
 "target=\"_blank\">Video Help</a>"
 msgstr ""
+"Upload en fil ved at klikke på \"Vælg video\" eller upload en video til en "
+"af de <a href=\"%s\" target=\"_blank\">supporterede websites</a> (f.eks. "
+"YouTube) eller indsæt dens URL her, eller indsæt en indlejret kode fra en "
+"anden side. <a href=\"%s\" target=\"_blank\">Video hjælp</a>"
 
 #: ../includes/admin/admin-sermon-fields.php:149
 msgid "Choose Video"
-msgstr "Vælg Video"
+msgstr "Vælg videofil"
 
 #: ../includes/admin/admin-sermon-fields.php:150
 msgid "Choose a Video File"
@@ -459,10 +465,14 @@ msgid ""
 "paste its URL here, or paste an embed code from another site. <a href=\"%s\" "
 "target=\"_blank\">Audio Help</a>"
 msgstr ""
+"Upload en fil ved at klikke på \"Vælg lydfil\" eller upload en lydfil  til "
+"en af de <a href=\"%s\" target=\"_blank\">supporterede websites</a> (f.eks. "
+"SoundCloud) eller indsæt dens URL her, eller indsæt en indlejret kode fra en "
+"anden side. <a href=\"%s\" target=\"_blank\">Lydfils hjælp</a>"
 
 #: ../includes/admin/admin-sermon-fields.php:179
 msgid "Choose Audio"
-msgstr "Vælg lyd"
+msgstr "Vælg lydfil"
 
 #: ../includes/admin/admin-sermon-fields.php:180
 msgid "Choose an Audio File"
@@ -477,10 +487,12 @@ msgid ""
 "Upload a file by clicking \"Choose PDF\" or paste the URL to a PDF hosted on "
 "another site."
 msgstr ""
+"Upload en PDF fil ved at klikke på \"Vælg PDF\" eller indsæt en URL til en "
+"PDF hosted på et anden website."
 
 #: ../includes/admin/admin-sermon-fields.php:205
 msgid "Choose PDF"
-msgstr "Vælg PDF"
+msgstr "Vælg PDF-fil"
 
 #: ../includes/admin/admin-sermon-fields.php:206
 msgid "Choose a PDF File"
@@ -513,7 +525,7 @@ msgstr "Tekst"
 #: ../includes/admin/admin-sermon-fields.php:358
 msgctxt "media type"
 msgid "Video"
-msgstr "video"
+msgstr "Video"
 
 #: ../includes/admin/admin-sermon-fields.php:362
 msgctxt "media type"
@@ -531,7 +543,7 @@ msgid ""
 "The <b>%1$s</b> theme does not support the <b>%2$s</b> plugin. <a href=\"%3$s"
 "\" target=\"_blank\">More Information</a>, <a href=\"%4$s\">Dismiss</a>"
 msgstr ""
-"Temaet <b>%1$s</b> understøtter ikke pluginet <b>%2$s</b>. <a href=\"%3$s\" "
+"Temaet <b>%1$s</b> understøtter ikke plugin'et <b>%2$s</b>. <a href=\"%3$s\" "
 "target=\"_blank\">Flere oplysninger</a>, <a href=\"%4$s\">Afvis</a>"
 
 #: ../includes/admin/editor.php:40
@@ -640,7 +652,7 @@ msgstr ""
 
 #: ../includes/admin/migrate-risen.php:128
 msgid "Processing. Please wait..."
-msgstr ""
+msgstr "Bearbejder. Vent venligst..."
 
 #: ../includes/admin/migrate-risen.php:141
 msgid ""
@@ -855,7 +867,7 @@ msgstr "Søg begivenheder"
 
 #: ../includes/post-types.php:204
 msgid "No events found"
-msgstr "Ingen arrangementer fundet"
+msgstr "Ingen begivenheder fundet"
 
 #: ../includes/post-types.php:205
 msgid "No events found in Trash"
@@ -869,7 +881,7 @@ msgstr "Steder"
 #: ../includes/post-types.php:266
 msgctxt "post type singular name"
 msgid "Location"
-msgstr "Beliggenhed"
+msgstr "Sted"
 
 #: ../includes/post-types.php:267
 msgctxt "location"
@@ -878,15 +890,15 @@ msgstr "Tilføj ny"
 
 #: ../includes/post-types.php:268
 msgid "Add Location"
-msgstr "Tilføj placering"
+msgstr "Tilføj sted"
 
 #: ../includes/post-types.php:269
 msgid "Edit Location"
-msgstr "Rediger placering"
+msgstr "Rediger sted"
 
 #: ../includes/post-types.php:270
 msgid "New Location"
-msgstr "Ny placering"
+msgstr "Nyt sted"
 
 #: ../includes/post-types.php:271
 msgid "All Locations"
@@ -894,7 +906,7 @@ msgstr "Alle steder"
 
 #: ../includes/post-types.php:272
 msgid "View Location"
-msgstr "Se beliggenhed"
+msgstr "Se sted"
 
 #: ../includes/post-types.php:273
 msgid "View Locations"
@@ -906,11 +918,11 @@ msgstr "Søg steder"
 
 #: ../includes/post-types.php:275
 msgid "No location found"
-msgstr "Ingen placering fundet"
+msgstr "Ingen steder fundet"
 
 #: ../includes/post-types.php:276
 msgid "No location found in Trash"
-msgstr "Ingen placering fundet i Papirkurven"
+msgstr "Ingen steder fundet i Papirkurven"
 
 #: ../includes/post-types.php:335
 msgctxt "post type general name"
@@ -980,7 +992,7 @@ msgstr ""
 #: ../includes/settings.php:117
 #, php-format
 msgid "Change \"%1$s\" in URLs. Example: <code>%2$s</code>"
-msgstr ""
+msgstr "Rediger \"%1$s\" i URL'er. Eksempel: <code>%2$s</code>"
 
 #: ../includes/settings.php:118
 msgid "Title"
@@ -1021,6 +1033,8 @@ msgid ""
 "Save time by setting events to repeat automatically (e.g. \"Every month on "
 "last Sunday except December 25\")."
 msgstr ""
+"Spar tid ved at sætte en begivenhed til at gentage automatisk (f.eks. \"Hver "
+"måned den sidste søndag, undtagen d. 25. december)."
 
 #: ../includes/settings.php:239
 msgctxt "recurrence setting"
@@ -1058,6 +1072,9 @@ msgid ""
 "Install <a href=\"%1$s\" target=\"_blank\">Church Content Pro</a> for full "
 "recurrence (e.g. \"Every month on last Sunday except December 25\")."
 msgstr ""
+"Installer <a href=\"%1$s\" target=\"_blank\">Church Content Pro</a> for at "
+"aktivere fuld tilbagevenden (f.eks. \"Hver måned den sidste søndag, undtagen "
+"d. 25. december)."
 
 #: ../includes/settings.php:274
 #, php-format
@@ -1094,7 +1111,7 @@ msgstr "Licenser"
 msgid ""
 "Save then activate your add-on's license key to enable one-click updates."
 msgstr ""
-"Gem, og derefter aktiver din tilføjelses licensnøgle, for at aktivere "
+"Gem, og aktiver derefter din tilføjelses licensnøgle, for at aktivere "
 "opdateringer med et enkelt klik."
 
 #: ../includes/settings.php:331
@@ -1140,8 +1157,8 @@ msgid ""
 "Set up your sermon podcast to reach more people automatically on iTunes, "
 "Google Play and elsewhere."
 msgstr ""
-"Opsæt din prædik på podcast, for at nå flere mennesker automatisk, på "
-"iTunes, Google Play og andre steder."
+"Opsæt din prædiken podcast, for at nå flere mennesker automatisk, på iTunes, "
+"Google Play og andre steder."
 
 #: ../includes/settings.php:417
 msgid "<a href=\"#\">Podcast Settings</a>"
@@ -1165,14 +1182,16 @@ msgid ""
 "Enter alternative wording for \"%1$s\" and \"%2$s\" (e.g. \"Message\" and "
 "\"Messages\")."
 msgstr ""
+"Indsæt alternativ ordlyd for \"%1$s\" og \"%2$s\" (f.eks. \"Budskab\" and "
+"\"Budskaber\")."
 
 #: ../includes/settings.php:493
 msgid "Sermon URL Base"
-msgstr "URL til prædikener"
+msgstr "URL til Prædikener"
 
 #: ../includes/settings.php:507
 msgid "Category URL Bases"
-msgstr "URL til kategori"
+msgstr "URL til Kategori"
 
 #: ../includes/settings.php:577
 msgid "Hide Sermons in Admin Menu"
@@ -1203,8 +1222,8 @@ msgid ""
 "Submit your podcast feed URL to iTunes, Google Play, etc. Read the <a href="
 "\"%1$s\" target=\"_blank\">Podcasting Guide</a> to learn how."
 msgstr ""
-"Indsend din podcast-feedwebadresse til iTunes, Google Play osv. Læs <a href="
-"\"%1$s\" target=\"_blank\">Podcasting Guide</a> for at lære hvordan."
+"Indsend din podcast-feed URL til iTunes, Google Play osv. Læs <a href=\"%1$s"
+"\" target=\"_blank\">Podcasting Guide</a> for at lære hvordan."
 
 #: ../includes/settings.php:632
 msgctxt "podcast settings"
@@ -1237,17 +1256,21 @@ msgid ""
 "The title of your sermon podcast. Example: \"Grace Church Sermons\" or "
 "\"Cornerstone Church Podcast\". <b>Required</b>."
 msgstr ""
+"Titlen på den prædiken podcast. F.eks. \"Vor Frelsers Kirke Prædikener\" "
+"eller \"Bykirkens Podcast\". <b>Påkrævet</b>."
 
 #: ../includes/settings.php:685
 msgctxt "podcast settings"
 msgid "Subtitle"
-msgstr "Undertekst"
+msgstr "Undertitel"
 
 #: ../includes/settings.php:687
 msgid ""
 "A short description of your podcast. Example: \"Weekly sermons by Pastor Bob "
 "Smith at Grace Church in Orlando, FL.\""
 msgstr ""
+"En kort beskrivelse af din podcast. F.eks. \"Ugentlige prædikener af præst "
+"Hans Hansen fra Vor Frelsers Kirke i København.\""
 
 #: ../includes/settings.php:713
 msgctxt "podcast settings"
@@ -1260,7 +1283,7 @@ msgid ""
 "and pastor, link to your website, etc."
 msgstr ""
 "En fuldstændig beskrivelse af din podcast. Du kan skrive om din kirke, "
-"mission og præst, link til dit websted osv."
+"mission og præst, link til dit website osv."
 
 #: ../includes/settings.php:740
 msgctxt "podcast settings"
@@ -1272,6 +1295,8 @@ msgid ""
 "The name of your church and/or pastor. Example: \"Grace Church - Pastor Bob "
 "Smith\". <b>Required</b>."
 msgstr ""
+"Navnet på din kirke og/eller præst. F.eks. \"Vor Frelsers Kirke - Præst Hans "
+"Hansen\". <b>Påkrævet</b>."
 
 #: ../includes/settings.php:768
 msgctxt "podcast settings"
@@ -1281,6 +1306,7 @@ msgstr "Ophavsret"
 #: ../includes/settings.php:770
 msgid "Copyright notice for your podcast. Example: \"&copy; Grace Church\""
 msgstr ""
+"Copyright notits for din podcast. Example: \"&copy; Vor Frelsers Kirke\""
 
 #: ../includes/settings.php:796
 msgctxt "podcast settings"
@@ -1292,7 +1318,7 @@ msgid ""
 "Provide a URL if you want your podcast to link to somewhere other than your "
 "website homepage."
 msgstr ""
-"Giv en webadresse, hvis du vil have din podcast til at linke til et andet "
+"Indsæt en webadresse, hvis du vil have din podcast til at linke til et andet "
 "sted end din hjemmeside."
 
 #: ../includes/settings.php:823
@@ -1350,14 +1376,14 @@ msgid ""
 "639-1</a> format. If not specified, the language in <a href=\"%2$s\" target="
 "\"_blank\">General Settings</a> will be used."
 msgstr ""
-"Angiv dit podcastssprog i <a href=\"%1$s\" target=\"_blank\">ISO 639-1</a> "
+"Angiv dit podcasts-sprog i <a href=\"%1$s\" target=\"_blank\">ISO 639-1</a> "
 "formatet. Hvis ikke angivet, vil sproget i <a href=\"%2$s\" target=\"_blank"
 "\">Generelle indstillinger</a> blive brugt."
 
 #: ../includes/settings.php:933
 msgctxt "podcast settings"
 msgid "Limit"
-msgstr "Begrænse"
+msgstr "Begrænsning"
 
 #: ../includes/settings.php:937
 #, php-format
@@ -1367,7 +1393,7 @@ msgid ""
 "Settings</a>."
 msgstr ""
 "Medtag de sidste 10 prædikener i dit podcast-feed. Standard til "
-"\"Syndication feeds ...\" i <a href=\"%1$s\" target=\"_blank\">Læs "
+"\"Syndication feeds...\" i <a href=\"%1$s\" target=\"_blank\">Læs "
 "indstillinger</a>."
 
 #: ../includes/settings.php:966
@@ -1422,27 +1448,30 @@ msgstr ""
 
 #: ../includes/settings.php:1206
 msgid "Location Memory"
-msgstr "Placering arkiv"
+msgstr "Steder i hukommelse"
 
 #: ../includes/settings.php:1208
 msgid ""
 "Save time when adding events by choosing from previously used locations."
 msgstr ""
-"Spar tid, når du tilføjer events ved at vælge fra tidligere brugte steder."
+"Spar tid, når du tilføjer begivenheder ved at vælge fra tidligere anvendte "
+"steder."
 
 #: ../includes/settings.php:1210
 msgid ""
 "Enable \"Choose\" Button and Autocomplete <span class=\"ctps-light ctps-"
 "italic\">(Recommended)</span>"
 msgstr ""
+"Aktivér \"Vælg\" knappen og indsæt automatisk fra Steder <span class=\"ctps-"
+"light ctps-italic\">(Anbefalet)</span>"
 
 #: ../includes/settings.php:1233
 msgid "Event URL Base"
-msgstr "Webadresse for events"
+msgstr "URL for Begivenheder"
 
 #: ../includes/settings.php:1247
 msgid "Category URL Base"
-msgstr "Webadresse for kategorier"
+msgstr "URL for Kategorier"
 
 #: ../includes/settings.php:1261
 msgid "Hide Events in Admin Menu"
@@ -1469,7 +1498,7 @@ msgstr ""
 
 #: ../includes/settings.php:1311
 msgid "Location URL Base"
-msgstr "Webadresser for steder"
+msgstr "URL  for Steder"
 
 #: ../includes/settings.php:1325
 msgid "Hide Locations in Admin Menu"
@@ -1478,15 +1507,15 @@ msgstr "Skjul steder i Admin Menu"
 #: ../includes/settings.php:1337
 msgctxt "settings section title"
 msgid "People"
-msgstr "Mennesker"
+msgstr "Personer"
 
 #: ../includes/settings.php:1347
 msgid "Person URL Base"
-msgstr "Person URL-base"
+msgstr "URL for Personer"
 
 #: ../includes/settings.php:1361
 msgid "Group URL Base"
-msgstr "Gruppe URL-base"
+msgstr "URL for Grupper"
 
 #: ../includes/settings.php:1375
 msgid "Hide People in Admin Menu"
@@ -1555,7 +1584,7 @@ msgstr ""
 
 #: ../includes/settings.php:1882
 msgid "Church Content Settings"
-msgstr "Indstillinger for kirkeindhold"
+msgstr "Indstillinger for Church Content"
 
 #: ../includes/settings.php:1906
 #, php-format
@@ -1585,12 +1614,12 @@ msgstr "%s emner"
 #, php-format
 msgctxt "sermon taxonomy singular name"
 msgid "%s Topic"
-msgstr "%s Emne"
+msgstr "%s emne"
 
 #: ../includes/taxonomies.php:46
 msgctxt "sermons"
 msgid "Search Topics"
-msgstr "Søg emner"
+msgstr "Søg i emner"
 
 #: ../includes/taxonomies.php:47
 msgctxt "sermons"
@@ -1657,7 +1686,7 @@ msgstr "%s bog"
 #: ../includes/taxonomies.php:126
 msgctxt "sermons"
 msgid "Search Books"
-msgstr "Søg bøger"
+msgstr "Søg i bøger"
 
 #: ../includes/taxonomies.php:127
 msgctxt "sermons"
@@ -1687,7 +1716,7 @@ msgstr "Tilføj bog"
 #: ../includes/taxonomies.php:134
 msgctxt "sermons"
 msgid "New Book"
-msgstr "Ny Bog"
+msgstr "Ny bog"
 
 #: ../includes/taxonomies.php:135
 msgctxt "sermons"
@@ -1713,22 +1742,22 @@ msgstr "Bøger"
 #, php-format
 msgctxt "sermon taxonomy general name"
 msgid "%s Series"
-msgstr "%s serie"
+msgstr "%s serier"
 
 #: ../includes/taxonomies.php:206
 msgctxt "sermons"
 msgid "Search Series"
-msgstr "Søg Series"
+msgstr "Søg i serier"
 
 #: ../includes/taxonomies.php:207
 msgctxt "sermons"
 msgid "Popular Series"
-msgstr "Populære Serie"
+msgstr "Populære serier"
 
 #: ../includes/taxonomies.php:208
 msgctxt "sermons"
 msgid "All Series"
-msgstr "All Series"
+msgstr "All serier"
 
 #: ../includes/taxonomies.php:211
 msgctxt "sermons"
@@ -1753,7 +1782,7 @@ msgstr "Ny serie"
 #: ../includes/taxonomies.php:215
 msgctxt "sermons"
 msgid "Separate series with commas"
-msgstr "Separer serier med kommaer"
+msgstr "Adskil serier med kommaer"
 
 #: ../includes/taxonomies.php:216
 msgctxt "sermons"
@@ -1785,7 +1814,7 @@ msgstr "%s taler"
 #: ../includes/taxonomies.php:285
 msgctxt "sermons"
 msgid "Search Speakers"
-msgstr "Søg taler"
+msgstr "Søg i talere"
 
 #: ../includes/taxonomies.php:286
 msgctxt "sermons"
@@ -1820,7 +1849,7 @@ msgstr "Ny taler"
 #: ../includes/taxonomies.php:294
 msgctxt "sermons"
 msgid "Separate speakers with commas"
-msgstr "Separer talere med kommaer"
+msgstr "Adskil talere med kommaer"
 
 #: ../includes/taxonomies.php:295
 msgctxt "sermons"
@@ -1841,18 +1870,18 @@ msgstr "Talere"
 #, php-format
 msgctxt "sermon taxonomy general name"
 msgid "%s Tags"
-msgstr "%s Tags"
+msgstr "%s tags"
 
 #: ../includes/taxonomies.php:362
 #, php-format
 msgctxt "sermon taxonomy general name"
 msgid "%s Tag"
-msgstr "%s Tag"
+msgstr "%s tag"
 
 #: ../includes/taxonomies.php:365
 msgctxt "sermons"
 msgid "Search Tags"
-msgstr "Søg tags"
+msgstr "Søg i tags"
 
 #: ../includes/taxonomies.php:366
 msgctxt "sermons"
@@ -1872,7 +1901,7 @@ msgstr "Rediger tag"
 #: ../includes/taxonomies.php:371
 msgctxt "sermons"
 msgid "Update Tag"
-msgstr "Opdater Tag"
+msgstr "Opdater tag"
 
 #: ../includes/taxonomies.php:372
 msgctxt "sermons"
@@ -1907,37 +1936,37 @@ msgstr "Tags"
 #: ../includes/taxonomies.php:435
 msgctxt "taxonomy general name"
 msgid "Event Categories"
-msgstr "Eventkategorier"
+msgstr "Begivenheds-kategorier"
 
 #: ../includes/taxonomies.php:436
 msgctxt "taxonomy singular name"
 msgid "Event Category"
-msgstr "Eventkategori"
+msgstr "Begivenheds-kategori"
 
 #: ../includes/taxonomies.php:437
 msgctxt "events"
 msgid "Search Categories"
-msgstr "Søg Kategorier"
+msgstr "Søg i kategorier"
 
 #: ../includes/taxonomies.php:438
 msgctxt "events"
 msgid "Popular Categories"
-msgstr "Populære Kategorier"
+msgstr "Populære kategorier"
 
 #: ../includes/taxonomies.php:439
 msgctxt "events"
 msgid "All Categories"
-msgstr "alle kategorier"
+msgstr "Alle kategorier"
 
 #: ../includes/taxonomies.php:442
 msgctxt "events"
 msgid "Edit Event Category"
-msgstr "Rediger event kategori"
+msgstr "Rediger begivenheds-kategori"
 
 #: ../includes/taxonomies.php:443
 msgctxt "events"
 msgid "Update Event Category"
-msgstr "Opdater event kategori"
+msgstr "Opdater begivenheds-kategori"
 
 #: ../includes/taxonomies.php:444
 msgctxt "events"
@@ -1972,7 +2001,7 @@ msgstr "Kategorier"
 #: ../includes/taxonomies.php:507
 msgctxt "taxonomy general name"
 msgid "Groups"
-msgstr "grupper"
+msgstr "Grupper"
 
 #: ../includes/taxonomies.php:508
 msgctxt "taxonomy singular name"
@@ -1987,12 +2016,12 @@ msgstr "Søg i grupper"
 #: ../includes/taxonomies.php:510
 msgctxt "people"
 msgid "Popular Groups"
-msgstr "Populære Grupper"
+msgstr "Populære grupper"
 
 #: ../includes/taxonomies.php:511
 msgctxt "people"
 msgid "All Groups"
-msgstr "Alle Grupper"
+msgstr "Alle grupper"
 
 #: ../includes/taxonomies.php:514
 msgctxt "people"
@@ -2032,7 +2061,7 @@ msgstr "Vælg blandt de mest brugte grupper"
 #: ../includes/taxonomies.php:521
 msgctxt "people menu name"
 msgid "Groups"
-msgstr "grupper"
+msgstr "Grupper"
 
 #~ msgid ""
 #~ "Optionally describe the time (e.g.\"9:30 am and 11:00 am\" or\"After "
