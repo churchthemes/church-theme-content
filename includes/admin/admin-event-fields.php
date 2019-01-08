@@ -8,7 +8,7 @@
  *
  * @package    Church_Theme_Content
  * @subpackage Admin
- * @copyright  Copyright (c) 2013 - 2018, ChurchThemes.com
+ * @copyright  Copyright (c) 2013 - 2019, ChurchThemes.com
  * @link       https://github.com/churchthemes/church-theme-content
  * @license    GPLv2 or later
  * @since      0.9
