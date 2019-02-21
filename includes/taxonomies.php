@@ -653,53 +653,24 @@ function ctc_post_term_hide_parent() {
     <style type="text/css">
 
     /* Hide in Classic Editor */
+
     #newctc_sermon_book_parent,
     #newctc_sermon_series_parent,
     #newctc_sermon_speaker_parent {
     	display: none;
     }
 
-	</style>
-
-    <script type="text/javascript">
-
     /* Hide in Block Editor */
-    jQuery( document ).ready( function( $ ) {
 
-		 // Gutenberg in use.
-		 if ( $( '.block-editor-page' ).length ) {
+    /* IMPORTANT: Get translated taxonomy plural labels and test w/translation */
 
-			var interval = setInterval( function() {
+	.editor-post-taxonomies__hierarchical-terms-list[aria-label*="Sermon Books"] ~ form .components-base-control,
+	.editor-post-taxonomies__hierarchical-terms-list[aria-label*="Sermon Series"] ~ form .components-base-control,
+	.editor-post-taxonomies__hierarchical-terms-list[aria-label*="Sermon Speakers"] ~ form .components-base-control {
+		display: none;
+	}
 
-				// VERY HACKY EXPERIMENT
-
-				if ( $( '.components-select-control__input', $( '.editor-post-taxonomies__hierarchical-terms-list[aria-label="Available Sermon Books"]' ).parent() ).length ) {
-
-					var id = $( '.components-select-control__input', $( '.editor-post-taxonomies__hierarchical-terms-list[aria-label="Available Sermon Books"]' ).parent() ).attr( 'id' );
-
-					$( 'head' ).append( '<style type="text/css">#' + id + ' { display: none; }</style>' );
-
-	        		//clearInterval( interval );
-
-				}
-
-				if ( $( '.components-select-control__input', $( '.editor-post-taxonomies__hierarchical-terms-list[aria-label="Available Sermon Series"]' ).parent() ).length ) {
-
-					var id = $( '.components-select-control__input', $( '.editor-post-taxonomies__hierarchical-terms-list[aria-label="Available Sermon Series"]' ).parent() ).attr( 'id' );
-
-					$( 'head' ).append( '<style type="text/css">#' + id + ' { display: none; }</style>' );
-
-	        		//clearInterval( interval );
-
-				}
-
-			}, 1000 );
-
-		}
-
-	} );
-
-    </script>
+	</style>
 
     <?php
 
