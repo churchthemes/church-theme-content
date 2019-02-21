@@ -4,7 +4,7 @@
  *
  * @package    Church_Theme_Content
  * @subpackage Functions
- * @copyright  Copyright (c) 2013 - 2017, ChurchThemes.com
+ * @copyright  Copyright (c) 2013 - 2019, ChurchThemes.com
  * @link       https://github.com/churchthemes/church-theme-content
  * @license    GPLv2 or later
  * @since      0.9
@@ -559,6 +559,69 @@ function ctc_register_taxonomy_person_group() {
 }
 
 add_action( 'init', 'ctc_register_taxonomy_person_group' );
+
+
+/**********************************
+ * TERM FIELDS
+ **********************************/
+
+/**
+ * Hide 'Parent' term selector on Add/Edit term screens.
+ *
+ * We want hierachical-style selector, but without parent option.
+ * Alternative is tag-style (hierarchical false), but that is unfriendly.
+ *
+ * Hide only if no parent already selected. Otherwise, user cannot remove parent.
+ *
+ * @since 2.1.2
+ */
+function ctc_term_hide_parent() {
+
+    $screen = get_current_screen();
+
+    // Specific taxonomies (Topic can have parent).
+    if ( ! in_array( $screen->taxonomy, array(
+    	'ctc_sermon_series',
+    	'ctc_sermon_book',
+    	'ctc_sermon_speaker',
+    ) ) ) {
+    	return;
+    }
+
+    ?>
+
+    <style type="text/css">
+
+    /* Hide by default */
+    .term-parent-wrap {
+    	display: none;
+    }
+
+	</style>
+
+    <script type="text/javascript">
+
+    jQuery( document ).ready( function( $ ) {
+
+    	// Get select element and selected value.
+    	var $select = $( '.term-parent-wrap' );
+    	var selected_value = $( 'option:selected', $select ).val();
+
+    	// Show Parent only if already has option selected.
+    	if ( selected_value.length && selected_value !== '-1' ) {
+			$select.show();
+		}
+
+    } );
+
+    </script>
+
+    <?php
+
+}
+
+add_action( 'admin_head-edit-tags.php', 'ctc_term_hide_parent' ); // list and add term.
+add_action( 'admin_head-term.php', 'ctc_term_hide_parent' ); // edit term.
 
 /**********************************
  * TAXONOMY HELPERS
