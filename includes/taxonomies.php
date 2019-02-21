@@ -484,6 +484,8 @@ function ctc_register_taxonomy_event_category() {
 		$args
 	);
 
+
+
 }
 
 add_action( 'init', 'ctc_register_taxonomy_event_category' );
@@ -645,7 +647,61 @@ function ctc_post_term_hide_parent() {
 		return;
 	}
 
-	// Unfinished...
+	// Hide Parent for book, series and speaker (topic can have parent).
+    ?>
+
+    <style type="text/css">
+
+    /* Hide in Classic Editor */
+    #newctc_sermon_book_parent,
+    #newctc_sermon_series_parent,
+    #newctc_sermon_speaker_parent {
+    	display: none;
+    }
+
+	</style>
+
+    <script type="text/javascript">
+
+    /* Hide in Block Editor */
+    jQuery( document ).ready( function( $ ) {
+
+		 // Gutenberg in use.
+		 if ( $( '.block-editor-page' ).length ) {
+
+			var interval = setInterval( function() {
+
+				// VERY HACKY EXPERIMENT
+
+				if ( $( '.components-select-control__input', $( '.editor-post-taxonomies__hierarchical-terms-list[aria-label="Available Sermon Books"]' ).parent() ).length ) {
+
+					var id = $( '.components-select-control__input', $( '.editor-post-taxonomies__hierarchical-terms-list[aria-label="Available Sermon Books"]' ).parent() ).attr( 'id' );
+
+					$( 'head' ).append( '<style type="text/css">#' + id + ' { display: none; }</style>' );
+
+	        		//clearInterval( interval );
+
+				}
+
+				if ( $( '.components-select-control__input', $( '.editor-post-taxonomies__hierarchical-terms-list[aria-label="Available Sermon Series"]' ).parent() ).length ) {
+
+					var id = $( '.components-select-control__input', $( '.editor-post-taxonomies__hierarchical-terms-list[aria-label="Available Sermon Series"]' ).parent() ).attr( 'id' );
+
+					$( 'head' ).append( '<style type="text/css">#' + id + ' { display: none; }</style>' );
+
+	        		//clearInterval( interval );
+
+				}
+
+			}, 1000 );
+
+		}
+
+	} );
+
+    </script>
+
+    <?php
 
 }
 
