@@ -572,6 +572,8 @@ add_action( 'init', 'ctc_register_taxonomy_person_group' );
  *
  * Hide only if no parent already selected. Otherwise, user cannot remove parent.
  *
+ * Only for series, book and speaker (topic can have parent).
+ *
  * @since 2.1.2
  */
 function ctc_term_hide_parent() {
@@ -621,6 +623,34 @@ function ctc_term_hide_parent() {
 
 add_action( 'admin_head-edit-tags.php', 'ctc_term_hide_parent' ); // list and add term.
 add_action( 'admin_head-term.php', 'ctc_term_hide_parent' ); // edit term.
+
+/**
+ * Hide 'Parent' term selector when adding or editing a sermon.
+ *
+ * We want hierachical-style selector, but without parent option.
+ * Alternative is tag-style (hierarchical false), but that is unfriendly.
+ *
+ * Hide only if no parent already selected. Otherwise, user cannot remove parent.
+ *
+ * Only for series, book and speaker (topic can have parent).
+ *
+ * @since 2.1.2
+ */
+function ctc_post_term_hide_parent() {
+
+    $screen = get_current_screen();
+
+	// Add/edit sermon post type only.
+	if ( 'post' !== $screen->base || ( isset( $screen->post_type ) && 'ctc_sermon' !== $screen->post_type ) ) {
+		return;
+	}
+
+	// Unfinished...
+
+}
+
+add_action( 'admin_head-post.php', 'ctc_post_term_hide_parent' ); // edit post.
+add_action( 'admin_head-post-new.php', 'ctc_post_term_hide_parent' ); // add post.
 
 /**********************************
  * TAXONOMY HELPERS
