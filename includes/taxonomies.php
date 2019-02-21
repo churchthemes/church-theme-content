@@ -46,7 +46,7 @@ function ctc_taxonomy_sermon_topic_args( $unfiltered = false ) {
 			'search_items' 					=> esc_html_x( 'Search Topics', 'sermons', 'church-theme-content' ),
 			'popular_items' 				=> esc_html_x( 'Popular Topics', 'sermons', 'church-theme-content' ),
 			'all_items' 					=> esc_html_x( 'All Topics', 'sermons', 'church-theme-content' ),
-			'parent_item' 					=> null,
+			'parent_item' 					=> esc_html_x( 'Parent Topic', 'sermons', 'church-theme-content' ),
 			'parent_item_colon' 			=> null,
 			'edit_item' 					=> esc_html_x( 'Edit Topic', 'sermons', 'church-theme-content' ),
 			'update_item' 					=> esc_html_x( 'Update Topic', 'sermons', 'church-theme-content' ),
@@ -560,9 +560,8 @@ function ctc_register_taxonomy_person_group() {
 
 add_action( 'init', 'ctc_register_taxonomy_person_group' );
 
-
 /**********************************
- * TERM FIELDS
+ * TAXONOMY TERM FIELDS
  **********************************/
 
 /**
