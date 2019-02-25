@@ -647,6 +647,19 @@ function ctc_post_term_hide_parent() {
 		return;
 	}
 
+	// Get taxonomy label names translated, for CSS to hide in Guteberg.
+	$taxonomy_selectors = array();
+	$taxonomies = get_object_taxonomies( 'ctc_sermon' );
+	foreach( $taxonomies as $taxonomy_name ) {
+
+		$taxonomy = get_taxonomy( $taxonomy_name );
+
+		if ( ! empty( $taxonomy->labels->name ) && in_array( $taxonomy_name, array( 'ctc_sermon_book', 'ctc_sermon_series', 'ctc_sermon_speaker' ) ) ) {
+			$taxonomy_selectors[] = '.editor-post-taxonomies__hierarchical-terms-list[aria-label*="' . esc_html( $taxonomy->labels->name ) . '"] ~ form .components-base-control';
+		}
+
+	}
+
 	// Hide Parent for book, series and speaker (topic can have parent).
     ?>
 
@@ -662,11 +675,7 @@ function ctc_post_term_hide_parent() {
 
     /* Hide in Block Editor */
 
-    /* IMPORTANT: Get translated taxonomy plural labels and test w/translation */
-
-	.editor-post-taxonomies__hierarchical-terms-list[aria-label*="Sermon Books"] ~ form .components-base-control,
-	.editor-post-taxonomies__hierarchical-terms-list[aria-label*="Sermon Series"] ~ form .components-base-control,
-	.editor-post-taxonomies__hierarchical-terms-list[aria-label*="Sermon Speakers"] ~ form .components-base-control {
+    <?php echo implode( ',' . PHP_EOL, $taxonomy_selectors ); ?> {
 		display: none;
 	}
 
