@@ -567,7 +567,25 @@ add_action( 'init', 'ctc_register_taxonomy_person_group' );
  **********************************/
 
 /**
- * Hide 'Parent' term selector on Add/Edit term screens.
+ * Taxonomies to hide Parent field for in editors and term screens.
+ *
+ * @since 2.1.2
+ * @return array Taxonomy names
+ */
+function ctc_taxonomies_no_parent() {
+
+	$taxonomies = array(
+    	'ctc_sermon_series',
+    	'ctc_sermon_book',
+    	'ctc_sermon_speaker',
+    );
+
+    return apply_filters( 'ctc_taxonomies_no_parent', $taxonomies );
+
+}
+
+/**
+ * Hide 'Parent' taxonomy term selector on Add/Edit term screens.
  *
  * We want hierachical-style selector, but without parent option.
  * Alternative is tag-style (hierarchical false), but that is unfriendly.
@@ -578,16 +596,12 @@ add_action( 'init', 'ctc_register_taxonomy_person_group' );
  *
  * @since 2.1.2
  */
-function ctc_term_hide_parent() {
+function ctc_taxonomy_hide_parent() {
 
     $screen = get_current_screen();
 
     // Specific taxonomies (Topic can have parent).
-    if ( ! in_array( $screen->taxonomy, array(
-    	'ctc_sermon_series',
-    	'ctc_sermon_book',
-    	'ctc_sermon_speaker',
-    ) ) ) {
+    if ( ! in_array( $screen->taxonomy, ctc_taxonomies_no_parent() ) ) {
     	return;
     }
 
@@ -623,11 +637,11 @@ function ctc_term_hide_parent() {
 
 }
 
-add_action( 'admin_head-edit-tags.php', 'ctc_term_hide_parent' ); // list and add term.
-add_action( 'admin_head-term.php', 'ctc_term_hide_parent' ); // edit term.
+add_action( 'admin_head-edit-tags.php', 'ctc_taxonomy_hide_parent' ); // list and add term.
+add_action( 'admin_head-term.php', 'ctc_taxonomy_hide_parent' ); // edit term.
 
 /**
- * Hide 'Parent' term selector when adding or editing a sermon.
+ * Hide 'Parent' taxonomy term selector when adding or editing a sermon.
  *
  * We want hierachical-style selector, but without parent option.
  * Alternative is tag-style (hierarchical false), but that is unfriendly.
@@ -638,7 +652,7 @@ add_action( 'admin_head-term.php', 'ctc_term_hide_parent' ); // edit term.
  *
  * @since 2.1.2
  */
-function ctc_post_term_hide_parent() {
+function ctc_post_taxonomy_hide_parent() {
 
     $screen = get_current_screen();
 
@@ -654,7 +668,7 @@ function ctc_post_term_hide_parent() {
 
 		$taxonomy = get_taxonomy( $taxonomy_name );
 
-		if ( ! empty( $taxonomy->labels->name ) && in_array( $taxonomy_name, array( 'ctc_sermon_book', 'ctc_sermon_series', 'ctc_sermon_speaker' ) ) ) {
+		if ( ! empty( $taxonomy->labels->name ) && in_array( $taxonomy_name, ctc_taxonomies_no_parent() ) ) {
 			$taxonomy_selectors[] = '.editor-post-taxonomies__hierarchical-terms-list[aria-label*="' . esc_html( $taxonomy->labels->name ) . '"] ~ form .components-base-control';
 		}
 
@@ -685,8 +699,8 @@ function ctc_post_term_hide_parent() {
 
 }
 
-add_action( 'admin_head-post.php', 'ctc_post_term_hide_parent' ); // edit post.
-add_action( 'admin_head-post-new.php', 'ctc_post_term_hide_parent' ); // add post.
+add_action( 'admin_head-post.php', 'ctc_post_taxonomy_hide_parent' ); // edit post.
+add_action( 'admin_head-post-new.php', 'ctc_post_taxonomy_hide_parent' ); // add post.
 
 /**********************************
  * TAXONOMY HELPERS
