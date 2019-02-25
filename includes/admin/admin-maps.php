@@ -210,7 +210,7 @@ function ctc_gmaps_api_key_notice() {
 						),
 					)
 				),
-				admin_url( 'options-general.php?page=' . CTC_DIR . '#locations' )
+				esc_url( admin_url( 'options-general.php?page=' . CTC_DIR . '#locations' ) )
 			);
 			?>
 		</p>
@@ -363,7 +363,7 @@ function ctc_map_after_fields( $object ) {
 							),
 						)
 					),
-					admin_url( 'options-general.php?page=' . CTC_DIR . '#locations' )
+					esc_url( admin_url( 'options-general.php?page=' . CTC_DIR . '#locations' ) )
 				);
 				?>
 

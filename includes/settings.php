@@ -1838,7 +1838,7 @@ function ctc_add_wp_per_page_desc() {
 				),
 			)
 		),
-		admin_url( 'options-general.php?page=' . CTC_DIR )
+		esc_url( admin_url( 'options-general.php?page=' . CTC_DIR ) )
 	);
 
 	// Output JS to footer to insert description below input.
@@ -1910,7 +1910,7 @@ function ctc_permalink_setting_section_output( $arg ) {
 					),
 				)
 			),
-			admin_url( 'options-general.php?page=' . CTC_DIR . '#sermons' ) // start at sermons, not licenses.
+			esc_url( admin_url( 'options-general.php?page=' . CTC_DIR . '#sermons' ) ) // start at sermons, not licenses.
 		);
 		?>
 
