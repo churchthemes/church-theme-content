@@ -262,29 +262,147 @@ function ctc_add_meta_box_sermon_details() {
 add_action( 'admin_init', 'ctc_add_meta_box_sermon_details' );
 
 /**********************************
- * SAVING
+ * DATA CORRECTION
  **********************************/
 
 /**
- * Save enclosure for sermon podcasting when sermon is added/updated.
+ * After Save Sermon
  *
- * @since 0.9
- * @param int $post_id ID of post being saved
- * @param object $post Post object being saved
+ * This runs after the sermon post is saved, for further manipulation of meta data.
+ *
+ * @since 2.6
+ * @param int $post_id Post ID
+ * @param object $post Data for post being saved
  */
-function ctc_sermon_save_audio_enclosure( $post_id, $post ) {
+function ctc_after_save_sermon( $post_id, $post ) {
 
-	// Stop if no post or auto-save (meta not submitted).
-	if ( empty( $_POST ) || ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) ) {
-		return false;
+	// Sermon is being saved.
+	if ( ! isset( $post->post_type ) || 'ctc_sermon' !== $post->post_type ) {
+		return;
 	}
 
-	// Update the enclosure for this sermon.
-	ctc_do_enclose( $post_id );
+	// Is a POST occurring?
+	if ( empty( $_POST ) ) {
+		return;
+	}
+
+	// Not an auto-save (meta values not submitted).
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
+
+	// Verify the nonce.
+	$nonce_key = 'ctc_sermon_options_nonce';
+	$nonce_action = 'ctc_sermon_options_save';
+	if ( empty( $_POST[ $nonce_key ] ) || ! wp_verify_nonce( $_POST[ $nonce_key ], $nonce_action ) ) {
+		return;
+	}
+
+	// Make sure user has permission to edit.
+	$post_type = get_post_type_object( $post->post_type );
+	if ( ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+		return;
+	}
+
+	// Action to hook on save sermon, after nonce, permissions, etc.
+	// This can be used elsewhere such as by Church Content Pro add-on to correct data after saving.
+	do_action( 'ctc_after_save_sermon', $post_id, $post );
 
 }
 
-add_action( 'save_post', 'ctc_sermon_save_audio_enclosure', 11, 2 ); // after 'save_post' saves meta fields on 10
+add_action( 'save_post', 'ctc_after_save_sermon', 11, 2 ); // after 'save_post' saves meta fields on 10
+
+/**
+ * Correct sermon data.
+ *
+ * This corrects values in consideration of enclosures, WP Offload Media support, etc.
+ *
+ * It is run on sermon post save and by ctc_correct_all_sermons() in different situations.
+ *
+ * Note the ctc_correct_sermon action which lets add-ons like Pro run additional corrections.
+ *
+ * @since 2.6
+ * @param int $post_id Post ID.
+ */
+function ctc_correct_sermon( $post_id ) {
+
+	/**
+	 * Values
+	 */
+
+	// Get current values.
+	$video = get_post_meta( $post_id, '_ctc_sermon_video', true );
+	$audio = get_post_meta( $post_id, '_ctc_sermon_audio', true );
+	$pdf = get_post_meta( $post_id, '_ctc_sermon_pdf', true );
+
+	/**
+	 * Media.
+	 */
+
+	// WP Offload Media plugin support.
+	// Best practice to convert external URLs to local when saving to database.
+	// See https://deliciousbrains.com/wp-offload-media/doc/filtering-urls-in-custom-content/
+	$video = apply_filters( 'as3cf_filter_post_provider_to_local', $video );
+	$audio = apply_filters( 'as3cf_filter_post_provider_to_local', $audio );
+	$pdf = apply_filters( 'as3cf_filter_post_provider_to_local', $pdf );
+
+	// Update the enclosure for this sermon (feed for podcasting).
+	ctc_do_enclose( $post_id );
+
+	/**
+	 * Hook for add-ons.
+	 *
+	 * Let add-ons like Pro run additional corrections whenever this function runs.
+	 * An add-on might also run this function directly in order to make it's corrections run.
+	 */
+
+	do_action( 'ctc_correct_sermon', $post_id );
+
+}
+
+add_action( 'ctc_after_save_sermon', 'ctc_correct_sermon' ); // run after sermon post is saved.
+
+/**
+ * Correct sermon data for all sermons
+ *
+ * Loop all sermons to run ctc_correct_sermon() on each.
+ *
+ * This can be run when needed by the database upgrader, on sample content import, etc.
+ *
+ * Note that the ctc_correct_sermon action in ctc_correct_sermon() lets add-ons like Pro
+ * run additional corrections. When this is run, corrections from Pro are also run.
+ *
+ * @since 2.0
+ */
+function ctc_correct_all_sermons() {
+
+	global $post;
+
+	// Get all sermon posts.
+	$sermons_query = new WP_Query( array(
+		'post_type'   => 'ctc_sermon',
+		'post_status' => 'publish,pending,draft,auto-draft,future,private,inherit,trash', // all to be safe.
+		'nopaging' => true, // get all posts.
+	) );
+
+	// Have sermon posts.
+	if ( ! empty( $sermons_query->posts ) ) {
+
+		// Loop sermon posts.
+		foreach ( $sermons_query->posts as $post ) {
+
+			// Correct sermon's data.
+			// Note that this will also run Pro plugin's correct functions via 'ctc_correct_sermon' action.
+			ctc_correct_sermon( $post->ID );
+
+		}
+
+		// Restore original post data.
+		wp_reset_postdata();
+
+	}
+
+}
 
 /**********************************
  * ADMIN COLUMNS

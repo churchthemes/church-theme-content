@@ -637,8 +637,8 @@ function ctc_taxonomy_hide_parent() {
 
 }
 
-//add_action( 'admin_head-edit-tags.php', 'ctc_taxonomy_hide_parent' ); // list and add term.
-//add_action( 'admin_head-term.php', 'ctc_taxonomy_hide_parent' ); // edit term.
+add_action( 'admin_head-edit-tags.php', 'ctc_taxonomy_hide_parent' ); // list and add term.
+add_action( 'admin_head-term.php', 'ctc_taxonomy_hide_parent' ); // edit term.
 
 /**
  * Hide 'Parent' taxonomy term selector when adding or editing a sermon.
