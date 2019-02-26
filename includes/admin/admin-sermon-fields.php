@@ -6,7 +6,7 @@
  *
  * @package    Church_Theme_Content
  * @subpackage Admin
- * @copyright  Copyright (c) 2013 - 2018, ChurchThemes.com
+ * @copyright  Copyright (c) 2013 - 2019, ChurchThemes.com
  * @link       https://github.com/churchthemes/church-theme-content
  * @license    GPLv2 or later
  * @since      0.9
@@ -345,6 +345,11 @@ function ctc_correct_sermon( $post_id ) {
 	$video = apply_filters( 'as3cf_filter_post_provider_to_local', $video );
 	$audio = apply_filters( 'as3cf_filter_post_provider_to_local', $audio );
 	$pdf = apply_filters( 'as3cf_filter_post_provider_to_local', $pdf );
+
+	// Update media field values in case changed.
+	update_post_meta( $post_id, '_ctc_event_video', $video );
+	update_post_meta( $post_id, '_ctc_event_audio', $audio );
+	update_post_meta( $post_id, '_ctc_event_pdf', $pdf );
 
 	// Update the enclosure for this sermon (feed for podcasting).
 	ctc_do_enclose( $post_id );
