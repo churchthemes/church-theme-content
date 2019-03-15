@@ -1582,7 +1582,7 @@ function ctc_sanitize_setting_url_slug( $value, $field ) {
 /**
  * Sanitize Podcast Subtitle.
  *
- * Limit the length of content. Tags are already stipped on save.
+ * Limit the length of content. Tags are already stripped on save.
  *
  * @since 2.0
  * @param string $setting Setting key.
@@ -1606,7 +1606,7 @@ function ctc_sanitize_setting_podcast_subtitle( $value, $field = false ) {
 /**
  * Sanitize Podcast Description (Summary).
  *
- * Limit the length of content. Tags are already stipped on save.
+ * Limit the length of content. Tags are already stripped on save.
  *
  * @since 2.0
  * @param string $setting Setting key.

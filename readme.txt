@@ -47,7 +47,7 @@ A compatible theme is required for presenting sermons, events, etc. added with t
 * Enhanced SEO (schema.org Structure Data using JSON-LD)
 * Location Memory (autofill and select previous event locations)
 * Wording Settings (e.g. rename "Sermons" to "Messages")
-* Agency Mode (simplify license mangement for clients)
+* Agency Mode (simplify license management for clients)
 
 = Developers =
 

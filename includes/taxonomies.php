@@ -661,7 +661,7 @@ function ctc_post_taxonomy_hide_parent() {
 		return;
 	}
 
-	// Get taxonomy label names translated, for CSS to hide in Guteberg.
+	// Get taxonomy label names translated, for CSS to hide in Gutenburg.
 	$taxonomy_selectors = array();
 	$taxonomies = get_object_taxonomies( 'ctc_sermon' );
 	foreach( $taxonomies as $taxonomy_name ) {
