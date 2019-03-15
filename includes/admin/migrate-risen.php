@@ -530,7 +530,7 @@ function ctc_migrate_risen_duplicate_post( $original_post, $post_type_data, $ter
 		set_post_thumbnail( $post_id, $thumbnail_id );
 	}
 
-	// Procesing after save.
+	// Processing after save.
 	switch ( $post_type_data['ctc_post_type'] ) {
 
 		case 'ctc_sermon' :
@@ -602,7 +602,7 @@ function ctc_migrate_risen_notice() {
 		return;
 	}
 
-	// Show only on relavent pages as not to overwhelm admin (same places as Risen theme).
+	// Show only on relevant pages as not to overwhelm admin (same places as Risen theme).
 	$screen = get_current_screen();
 	if ( ! ( in_array( $screen->base, array( 'dashboard', 'themes', 'plugins' ) ) || preg_match( '/^risen_.+/', $screen->post_type ) ) ) {
 		return;

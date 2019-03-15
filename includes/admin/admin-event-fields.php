@@ -182,7 +182,7 @@ function ctc_add_meta_box_event_date() {
 			),
 
 			// Hide Start/End Time
-			// The user may just want to show the Time Description while still having a Start Time for ordeing purposes
+			// The user may just want to show the Time Description while still having a Start Time for ordering purposes
 			// An example is Sunday Worship Services having Time Description as "9:30 am and 11:00 am" with another event happening later that night
 			'_ctc_event_hide_time_range' => array(
 				'name'				=> '',

@@ -133,7 +133,7 @@ class CTC_EDD_SL_Plugin_Updater {
     }
 
     /**
-     * show update nofication row -- needed for multisite subsites, because WP won't tell you otherwise!
+     * show update notification row -- needed for multisite subsites, because WP won't tell you otherwise!
      *
      * @param string  $file
      * @param array   $plugin
@@ -358,7 +358,7 @@ class CTC_EDD_SL_Plugin_Updater {
     }
 
     /**
-     * Calls the API and, if successfull, returns the object delivered by the API.
+     * Calls the API and, if successful, returns the object delivered by the API.
      *
      * @uses get_bloginfo()
      * @uses wp_remote_post()

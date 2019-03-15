@@ -281,7 +281,7 @@ function ctc_taxonomy_supported( $feature, $taxonomy ) {
 		}
 
 		// (if true, could override with false using plugin settings here)
-		// (checking if show_ui is true is not enhough since this is used during taxonomy registration)
+		// (checking if show_ui is true is not enough since this is used during taxonomy registration)
 
 	}
 

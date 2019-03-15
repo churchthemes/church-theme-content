@@ -133,7 +133,7 @@ class Church_Theme_Content {
 
 		// CT Meta Box
 		if ( ! defined( 'CTMB_URL' ) ) { // in case also used in theme or other plugin
-			define( 'CTMB_URL', CTC_URL . '/' . CTC_LIB_DIR . '/ct-meta-box' ); // for enqueing JS/CSS
+			define( 'CTMB_URL', CTC_URL . '/' . CTC_LIB_DIR . '/ct-meta-box' ); // for enqueueing JS/CSS
 		}
 
 	}

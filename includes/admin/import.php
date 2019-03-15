@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * This is to prevent any CT Framework recurring events grandfathering
  * from happening by activating the plugin, importing, then activating the theme
  * which would then grandfather based on sample content. Theme should be active
- * to make gradfathering decision first, before importing sample content.
+ * to make grandfathering decision first, before importing sample content.
  *
  * @since 2.0
  */
