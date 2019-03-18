@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Church Content\n"
-"POT-Creation-Date: 2018-10-23 07:48-0500\n"
-"PO-Revision-Date: 2018-12-31 08:47-0600\n"
+"POT-Creation-Date: 2019-03-18 08:43-0500\n"
+"PO-Revision-Date: 2019-03-18 08:43-0500\n"
 "Last-Translator: churchthemes.com <contact@churchthemes.com>\n"
 "Language-Team: ChurchThemes.com\n"
 "Language: da_DK\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.8\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_nx:1,2;_x:1,2c;_ex:1,2c;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:1,2,3c\n"
@@ -212,7 +212,7 @@ msgstr ""
 #: ../includes/admin/admin-event-fields.php:872
 #: ../includes/admin/admin-location-fields.php:345
 #: ../includes/admin/admin-person-fields.php:210
-#: ../includes/admin/admin-sermon-fields.php:306
+#: ../includes/admin/admin-sermon-fields.php:429
 msgid "Thumbnail"
 msgstr "Miniature"
 
@@ -508,31 +508,31 @@ msgstr "Podcast"
 msgid "Exclude %1$s from <a href=\"%2$s\" target=\"_blank\">Podcast</a>"
 msgstr "Ekskluder %1$s fra <a href=\"%2$s\" target=\"_blank\">Podcast</a>"
 
-#: ../includes/admin/admin-sermon-fields.php:311
+#: ../includes/admin/admin-sermon-fields.php:434
 msgctxt "sermons"
 msgid "Formats"
 msgstr "Formater"
 
-#: ../includes/admin/admin-sermon-fields.php:312
+#: ../includes/admin/admin-sermon-fields.php:435
 msgid "Topics"
 msgstr "Emner"
 
-#: ../includes/admin/admin-sermon-fields.php:354
+#: ../includes/admin/admin-sermon-fields.php:477
 msgctxt "media type"
 msgid "Text"
 msgstr "Tekst"
 
-#: ../includes/admin/admin-sermon-fields.php:358
+#: ../includes/admin/admin-sermon-fields.php:481
 msgctxt "media type"
 msgid "Video"
 msgstr "Video"
 
-#: ../includes/admin/admin-sermon-fields.php:362
+#: ../includes/admin/admin-sermon-fields.php:485
 msgctxt "media type"
 msgid "Audio"
 msgstr "Lyd"
 
-#: ../includes/admin/admin-sermon-fields.php:366
+#: ../includes/admin/admin-sermon-fields.php:489
 msgctxt "media type"
 msgid "PDF"
 msgstr "PDF"
@@ -704,7 +704,7 @@ msgid ""
 "There is a new version of %1$s available. <a target=\"_blank\" class=\"%4$s"
 "\" href=\"%2$s\">View version %3$s details</a>."
 msgstr ""
-"Der er en ny version af %1$s tilgængelig. <a target=\"_blank\" class=\" %4$s "
+"Der er en ny version af %1$s tilgængelig. <a target=\"_blank\" class=\" %4$s"
 "\" href=\"%2$s\">Se version %3$s detaljer</a>."
 
 #: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:243
@@ -715,8 +715,8 @@ msgid ""
 "now</a>."
 msgstr ""
 "Der er en ny version af %1$s tilgængelig. <a target=\"_blank\" class=\" %5$s"
-"\" href=\"%2$s\">Se version %3$s detaljer</a> eller <a href = \\\" %4$s \\"
-"\">opdater nu</a>."
+"\" href=\"%2$s\">Se version %3$s detaljer</a> eller <a href=\"%4$s\">opdater "
+"nu</a>."
 
 #: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:440
 msgid "You do not have permission to install plugin updates"
@@ -1631,6 +1631,16 @@ msgctxt "sermons"
 msgid "All Topics"
 msgstr "Alle emner"
 
+#: ../includes/taxonomies.php:49
+msgctxt "sermons"
+msgid "Parent Topic"
+msgstr "Overordnet emne"
+
+#: ../includes/taxonomies.php:50
+msgctxt "sermons"
+msgid "Parent Topic:"
+msgstr "Overordnet emne:"
+
 #: ../includes/taxonomies.php:51
 msgctxt "sermons"
 msgid "Edit Topic"
@@ -1958,6 +1968,16 @@ msgctxt "events"
 msgid "All Categories"
 msgstr "Alle kategorier"
 
+#: ../includes/taxonomies.php:440
+msgctxt "events"
+msgid "Parent Category"
+msgstr "Overordnet kategori"
+
+#: ../includes/taxonomies.php:441
+msgctxt "events"
+msgid "Parent Category:"
+msgstr "Overordnet kategori:"
+
 #: ../includes/taxonomies.php:442
 msgctxt "events"
 msgid "Edit Event Category"
@@ -1998,160 +2018,77 @@ msgctxt "event menu name"
 msgid "Categories"
 msgstr "Kategorier"
 
-#: ../includes/taxonomies.php:507
+#: ../includes/taxonomies.php:509
 msgctxt "taxonomy general name"
 msgid "Groups"
 msgstr "Grupper"
 
-#: ../includes/taxonomies.php:508
+#: ../includes/taxonomies.php:510
 msgctxt "taxonomy singular name"
 msgid "Group"
 msgstr "Gruppe"
 
-#: ../includes/taxonomies.php:509
+#: ../includes/taxonomies.php:511
 msgctxt "people"
 msgid "Search Groups"
 msgstr "Søg i grupper"
 
-#: ../includes/taxonomies.php:510
+#: ../includes/taxonomies.php:512
 msgctxt "people"
 msgid "Popular Groups"
 msgstr "Populære grupper"
 
-#: ../includes/taxonomies.php:511
+#: ../includes/taxonomies.php:513
 msgctxt "people"
 msgid "All Groups"
 msgstr "Alle grupper"
 
 #: ../includes/taxonomies.php:514
 msgctxt "people"
+msgid "Parent Group"
+msgstr "Overordnet gruppe"
+
+#: ../includes/taxonomies.php:515
+msgctxt "people"
+msgid "Parent Group:"
+msgstr "Overordnet gruppe:"
+
+#: ../includes/taxonomies.php:516
+msgctxt "people"
 msgid "Edit Group"
 msgstr "Rediger gruppe"
 
-#: ../includes/taxonomies.php:515
+#: ../includes/taxonomies.php:517
 msgctxt "people"
 msgid "Update Group"
 msgstr "Opdater gruppe"
 
-#: ../includes/taxonomies.php:516
+#: ../includes/taxonomies.php:518
 msgctxt "people"
 msgid "Add Group"
 msgstr "Tilføj gruppe"
 
-#: ../includes/taxonomies.php:517
+#: ../includes/taxonomies.php:519
 msgctxt "people"
 msgid "New Group"
 msgstr "Ny gruppe"
 
-#: ../includes/taxonomies.php:518
+#: ../includes/taxonomies.php:520
 msgctxt "people"
 msgid "Separate groups with commas"
 msgstr "Adskil grupper med kommaer"
 
-#: ../includes/taxonomies.php:519
+#: ../includes/taxonomies.php:521
 msgctxt "people"
 msgid "Add or remove groups"
 msgstr "Tilføj eller fjern grupper"
 
-#: ../includes/taxonomies.php:520
+#: ../includes/taxonomies.php:522
 msgctxt "people"
 msgid "Choose from the most used groups"
 msgstr "Vælg blandt de mest brugte grupper"
 
-#: ../includes/taxonomies.php:521
+#: ../includes/taxonomies.php:523
 msgctxt "people menu name"
 msgid "Groups"
 msgstr "Grupper"
-
-#~ msgid ""
-#~ "Optionally describe the time (e.g.\"9:30 am and 11:00 am\" or\"After "
-#~ "Second Service\")"
-#~ msgstr ""
-#~ "Beskriv eventuelt tiden (f.eks.\"9:30 og 11:00\" eller\"Efter anden "
-#~ "service\")"
-
-#~ msgid ""
-#~ "Upload a file by clicking\"Choose Video\" or upload a video to one of the "
-#~ "<a href=\"%s\" target=\"_blank\">supported sites</a> (such as YouTube) "
-#~ "then paste its URL here, or paste an embed code from another site. <a "
-#~ "href=\"%s\" target=\"_blank\">Video Help</a>"
-#~ msgstr ""
-#~ "Upload en fil ved at klikke på\"Vælg video\" eller upload en video til et "
-#~ "af <a href=\"%s\" target=\"_blank\">understøttede websteder</a> (som f."
-#~ "eks. YouTube) indsæt en URL fra et andet websted. <a href=\"%s\" target="
-#~ "\"_blank\">Hjælp til video</a>"
-
-#~ msgid ""
-#~ "Upload a file by clicking\"Choose Audio\" or upload audio to one of the "
-#~ "<a href=\"%s\" target=\"_blank\">supported sites</a> (such as SoundCloud) "
-#~ "then paste its URL here, or paste an embed code from another site. <a "
-#~ "href=\"%s\" target=\"_blank\">Audio Help</a>"
-#~ msgstr ""
-#~ "Upload en fil ved at klikke på\"Vælg lyd\" eller upload lyd til en af <a "
-#~ "href=\"%s\" target=\"_blank\">understøttede websteder</a> (f.eks. "
-#~ "SoundCloud) og indsæt derefter dens URL her, eller indsæt en integreret "
-#~ "kode fra et andet websted. <a href=\"%s\" target=\"_blank\">Hjælp til "
-#~ "Lyd</a>"
-
-#~ msgid ""
-#~ "Upload a file by clicking\"Choose PDF\" or paste the URL to a PDF hosted "
-#~ "on another site."
-#~ msgstr ""
-#~ "Upload en fil ved at klikke på\"Vælg PDF\" eller indsæt webadressen til "
-#~ "en PDF-fil, der er hostet på et andet websted."
-
-#~ msgid "Change\"%1$s\" in URLs. Example: <code>%2$s</code>"
-#~ msgstr "Skift\" %1$s\" i webadresser. Eksempel: <code>%2$s</code>"
-
-#~ msgid ""
-#~ "Save time by setting events to repeat automatically (e.g.\"Every month on "
-#~ "last Sunday except December 25\")."
-#~ msgstr ""
-#~ "Spar tid ved at indstille begivenheder til at gentage automatisk (f.eks. "
-#~ "\"Hver måned sidste søndag undtagen 25. december\")."
-
-#~ msgid ""
-#~ "Install <a href=\"%1$s\" target=\"_blank\">Church Content Pro</a> for "
-#~ "full recurrence (e.g.\"Every month on last Sunday except December 25\")."
-#~ msgstr ""
-#~ "Installer <a href=\"%1$s\" target=\"_blank\">Church Content Pro</a> for "
-#~ "fuld gentagelse (f.eks.\"Hver måned sidste søndag undtagen 25. december"
-#~ "\")."
-
-#~ msgid ""
-#~ "Enter alternative wording for\"%1$s\" and\"%2$s\" (e.g.\"Message\" and "
-#~ "\"Messages\")."
-#~ msgstr ""
-#~ "Indtast alternativ ordlyd for\"%1$s\" og\"%2$s\" (f.eks.\"Besked\" og "
-#~ "\"Beskeder\")."
-
-#~ msgid ""
-#~ "The title of your sermon podcast. Example:\"Grace Church Sermons\" or "
-#~ "\"Cornerstone Church Podcast\". <b>Required</b>."
-#~ msgstr ""
-#~ "Titlen på din prædik podcast. Eksempel: \"Grace Church Precepts\" eller "
-#~ "\"Cornerstone Church Podcast\". <b>Påkrævet</b>."
-
-#~ msgid ""
-#~ "A short description of your podcast. Example:\"Weekly sermons by Pastor "
-#~ "Bob Smith at Grace Church in Orlando, FL.\""
-#~ msgstr ""
-#~ "En kort beskrivelse af din podcast. Eksempel:\"Ugentlige prædikener ved "
-#~ "præst Bob Smith ved Grace Church i Orlando, FL.\""
-
-#~ msgid ""
-#~ "The name of your church and/or pastor. Example:\"Grace Church - Pastor "
-#~ "Bob Smith\". <b>Required</b>."
-#~ msgstr ""
-#~ "Navnet på din kirke og / eller præst. Eksempel:\"Grace Church - Pastor "
-#~ "Bob Smith\". <b>Påkrævet</b>."
-
-#~ msgid "Copyright notice for your podcast. Example:\"&copy; Grace Church\""
-#~ msgstr "Ophavsret for din podcast. Eksempel:\"&copy; Grace Church\""
-
-#~ msgid ""
-#~ "Enable\"Choose\" Button and Autocomplete <span class=\"ctps-light ctps-"
-#~ "italic\">(Recommended)</span>"
-#~ msgstr ""
-#~ "Aktivér\"Vælg\" -knappen og autofuldfør <span class=\"ctps-light ctps-"
-#~ "italic\">(Anbefalet)</span>"
