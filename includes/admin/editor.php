@@ -1,12 +1,12 @@
 <?php
 /**
- * Editor ini Admin
+ * Editor in Admin
  *
  * Meta boxes and admin columns.
  *
  * @package    Church_Theme_Content
  * @subpackage Admin
- * @copyright  Copyright (c) 2018, ChurchThemes.com
+ * @copyright  Copyright (c) 2018 - 2019, ChurchThemes.com
  * @link       https://github.com/churchthemes/church-theme-content
  * @license    GPLv2 or later
  * @since 2.0
