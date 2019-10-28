@@ -291,6 +291,13 @@ function ctc_do_enclose( $post_id ) {
 	// Get audio URL.
 	$audio = get_post_meta( $post_id , '_ctc_sermon_audio' , true );
 
+	// Make Dropbox URLs use ?raw=1.
+	// Note that this will not work on iTunes.
+	if ( preg_match( '/dropbox/', $audio ) ) {
+		$audio = remove_query_arg( 'dl', $audio );
+		$audio = add_query_arg( 'raw', '1', $audio );
+	}
+
 	// Populate enclosure field with URL, length and format, if valid URL found.
 	do_enclose( $audio, $post_id );
 
