@@ -1,0 +1,15 @@
+/**
+ * Church Content General Styles
+ */
+
+/*******************************************
+ * INPUTS
+ *******************************************/
+
+/* Move inline buttons down (new WP 5.3 styling) */
+
+.ctc-license-button,
+.ctmb-upload-file,
+#ctc-get-coordinates-button {
+	margin-top: 1.5px !important;
+}
