@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Church Content\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-05 07:21-0600\n"
-"PO-Revision-Date: 2019-12-05 07:22-0600\n"
+"POT-Creation-Date: 2019-12-11 06:31-0600\n"
+"PO-Revision-Date: 2019-12-11 06:32-0600\n"
 "Last-Translator: churchthemes.com <contact@churchthemes.com>\n"
 "Language-Team: Français\n"
 "Language: fr_FR\n"
@@ -579,7 +579,7 @@ msgstr "%1$s Nom"
 #, php-format
 msgctxt "person title placeholder"
 msgid "%s's Name"
-msgstr ""
+msgstr "%1$s Nom"
 
 #: ../includes/admin/editor.php:186
 #, php-format
@@ -710,7 +710,7 @@ msgstr ""
 #: ../includes/classes/CTC_EDD_SL_Plugin_Updater.php:440
 msgid "Error"
 msgstr ""
-"<p><b>Erreur Google Map:</b> <i>latitude</i> et <i>longitude</i> attributs "
+"<p><b>Erreur Google Maps :</b> <i>latitude</i> et <i>longitude</i> attributs "
 "requis. Voir la documentation de l'aide.</p>"
 
 #: ../includes/libraries/ct-plugin-settings/ct-plugin-settings.php:261
@@ -846,7 +846,7 @@ msgstr "Voir l'évènement"
 
 #: ../includes/post-types.php:202
 msgid "View Events"
-msgstr ""
+msgstr "Voir les évènements"
 
 #: ../includes/post-types.php:203
 msgid "Search Events"
@@ -948,7 +948,7 @@ msgstr "Voir la personne"
 
 #: ../includes/post-types.php:343
 msgid "View People"
-msgstr ""
+msgstr "Voir les personnes"
 
 #: ../includes/post-types.php:344
 msgid "Search People"
@@ -1061,7 +1061,7 @@ msgstr ""
 #: ../includes/settings.php:292
 #, php-format
 msgid "%1$s Settings"
-msgstr "Plus d'articles de %s"
+msgstr "%s Réglages"
 
 #: ../includes/settings.php:300
 #, php-format
@@ -1361,7 +1361,7 @@ msgstr "Evènements"
 #: ../includes/settings.php:1175
 msgctxt "settings"
 msgid "Recurring Events"
-msgstr ""
+msgstr "Évènements récurrents"
 
 #: ../includes/settings.php:1200
 msgid ""
