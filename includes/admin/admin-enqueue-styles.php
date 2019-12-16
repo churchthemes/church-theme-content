@@ -28,7 +28,7 @@ function ctc_admin_enqueue_styles() {
 	$screen = get_current_screen();
 
 	// Main stylesheet.
-	wp_enqueue_style( 'ctc', CTC_URL . '/' . CTC_CSS_DIR . '/style.css', false, CTC_VERSION );
+	//wp_enqueue_style( 'ctc', CTC_URL . '/' . CTC_CSS_DIR . '/style.css', false, CTC_VERSION );
 
 	// Dashboard.
 	if ( 'dashboard' === $screen->base ) { // only on Dashboard screen.
