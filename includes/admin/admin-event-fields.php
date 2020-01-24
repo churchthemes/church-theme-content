@@ -8,7 +8,7 @@
  *
  * @package    Church_Theme_Content
  * @subpackage Admin
- * @copyright  Copyright (c) 2013 - 2019, ChurchThemes.com
+ * @copyright  Copyright (c) 2013 - 2020, ChurchThemes.com
  * @link       https://github.com/churchthemes/church-theme-content
  * @license    GPLv2 or later
  * @since      0.9
@@ -1096,6 +1096,11 @@ function ctc_event_columns_sorting_request( $args ) {
 
 	// admin area only
 	if ( is_admin() ) {
+
+		// Don't run if something causing filter to run when would not normally.
+		if ( ! function_exists( 'get_current_screen' ) ) {
+			return;
+		}
 
 		$screen = get_current_screen();
 
