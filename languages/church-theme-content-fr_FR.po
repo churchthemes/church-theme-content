@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Church Content\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-11 06:31-0600\n"
-"PO-Revision-Date: 2019-12-11 06:32-0600\n"
+"POT-Creation-Date: 2020-02-13 07:10-0600\n"
+"PO-Revision-Date: 2020-02-13 07:10-0600\n"
 "Last-Translator: churchthemes.com <contact@churchthemes.com>\n"
 "Language-Team: Français\n"
 "Language: fr_FR\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Loco-Version: 2.3.1; wp-5.3\n"
+"X-Loco-Version: 2.3.1; wp-5.3.2\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../includes/admin/admin-add-ons.php:1
@@ -113,9 +113,7 @@ msgstr "Répétition"
 #: ../includes/admin/admin-event-fields.php:245
 msgctxt "event meta box"
 msgid "Dates automatically move forward after event ends."
-msgstr ""
-"La date de début et de fin changeront automatiquement à la fin de "
-"l'évènement."
+msgstr "Les dates changeront automatiquement à la fin de l'évènement."
 
 #: ../includes/admin/admin-event-fields.php:249
 msgctxt "event meta box"
@@ -802,7 +800,7 @@ msgstr "Pas %s trouvé dans la corbeille"
 #: ../includes/post-types.php:151
 msgctxt "post type singular"
 msgid "Sermon"
-msgstr "Multimedia"
+msgstr "Multimédias"
 
 #: ../includes/post-types.php:171
 msgctxt "post type plural"
@@ -1895,7 +1893,7 @@ msgstr "Mettre à jour l'orateur"
 #: ../includes/taxonomies.php:444
 msgctxt "events"
 msgid "Add Category"
-msgstr "Ajouter un mot-clé"
+msgstr "Ajouter une catégorie"
 
 #: ../includes/taxonomies.php:445
 msgctxt "events"
@@ -1955,7 +1953,7 @@ msgstr "Groupe parent"
 #: ../includes/taxonomies.php:515
 msgctxt "people"
 msgid "Parent Group:"
-msgstr "Groupe parent :"
+msgstr "Groupe parent:"
 
 #: ../includes/taxonomies.php:516
 msgctxt "people"
