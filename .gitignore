@@ -1,0 +1,3 @@
+# Prevent repo-specific files from being version controlled.
+# These are in addition to system-specific files in ~/.gitignore_global.
+# Also see .distignore
