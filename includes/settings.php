@@ -5,7 +5,7 @@
  * Setup and retrieve plugin settings. Also handles WordPress settings.
  *
  * @package    Church_Theme_Content
- * @copyright  Copyright (c) 2014 - 2018, ChurchThemes.com
+ * @copyright  Copyright (c) 2014 - 2020, ChurchThemes.com
  * @link       https://github.com/churchthemes/church-theme-content
  * @license    GPLv2 or later
  * @since      1.2
@@ -202,8 +202,10 @@ function ctc_settings_config() {
 	// Podcast data.
 	$podcast_supported = ctc_podcast_content_supported();
 	$podcast_feed_url = ctc_podcast_feed_url();
-	$itunes_submit_url = 'https://podcastsconnect.apple.com/my-podcasts/new-feed?submitfeed=' . urlencode( $podcast_feed_url );
-	$google_submit_url = 'https://play.google.com/music/podcasts/publish';
+	//$itunes_submit_url = 'https://podcastsconnect.apple.com/my-podcasts/new-feed?submitfeed=' . urlencode( $podcast_feed_url );
+	//$google_submit_url = 'https://play.google.com/music/podcasts/publish';
+	$itunes_submit_url = ctc_ctcom_url( 'podcast-submit-apple', array( 'url' => urlencode( $podcast_feed_url ) ) ); // e.g. https://churchthemes.com/go/apple-podcast-submit?url=https%3A%2F%2Fdev.churchthemes.local%2Fjubilee%2Ffeed%2Fsermon-podcast%2F
+	$google_submit_url = ctc_ctcom_url( 'podcast-submit-google', array( 'url' => urlencode( $podcast_feed_url ) ) );
 	$podcast_guide_url = ctc_ctcom_url( 'podcast-guide', array( 'utm_content' => 'settings' ) );
 
 	// Podcast Feed URL link.

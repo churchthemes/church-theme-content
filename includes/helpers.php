@@ -4,7 +4,7 @@
  *
  * @package    Church_Theme_Content
  * @subpackage Functions
- * @copyright  Copyright (c) 2013 - 2018, ChurchThemes.com
+ * @copyright  Copyright (c) 2013 - 2020, ChurchThemes.com
  * @link       https://github.com/churchthemes/church-theme-content
  * @license    GPLv2 or later
  * @since      0.9
@@ -84,51 +84,55 @@ function ctc_ctcom_url( $path_key = false, $query_args = array() ) {
 	$paths = array(
 
 		// Homepage.
-		'home'      => '/' . $utm_base_query . '&utm_campaign=church-theme-content',
+		'home'                  => '/' . $utm_base_query . '&utm_campaign=church-theme-content',
 
 		// How to get a Google Maps API key.
-		'google-maps-api-key' => '/go/google-maps-api-key/', // no utm, messes up redirect.
+		'google-maps-api-key'   => '/go/google-maps-api-key/', // no utm, messes up redirect.
 
 		// Church Content product page.
-		'church-content'      => '/plugins/church-content/' . $utm_base_query . '&utm_campaign=church-theme-content',
+		'church-content'        => '/plugins/church-content/' . $utm_base_query . '&utm_campaign=church-theme-content',
 
 		// Church Content Pro product page.
 		// Pro details are on same page as Church Content plugin.
-		'church-content-pro'  => '/plugins/church-content-pro/' . $utm_base_query . '&utm_campaign=church_content_pro',
+		'church-content-pro'    => '/plugins/church-content-pro/' . $utm_base_query . '&utm_campaign=church_content_pro',
 
 		// How to upgrade from Custom Recurring Events to Pro.
-		'cre-to-pro'          => '/go/cre-to-pro/' . $utm_base_query . '&utm_campaign=church_content_pro',
+		'cre-to-pro'            => '/go/cre-to-pro/' . $utm_base_query . '&utm_campaign=church_content_pro',
 
 		// What SEO Structured Data setting does.
-		'seo-setting'         => '/go/seo-setting/' . $utm_base_query . '&utm_campaign=church_content_pro&utm_content=settings',
+		'seo-setting'           => '/go/seo-setting/' . $utm_base_query . '&utm_campaign=church_content_pro&utm_content=settings',
 
 		// How to handle event registration.
-		'event-registration'  => '/go/ctc-event-registration/' . $utm_base_query . '&utm_campaign=church-theme-content',
+		'event-registration'    => '/go/ctc-event-registration/' . $utm_base_query . '&utm_campaign=church-theme-content',
 
 		// How to update PHP.
-		'update-php'          => '/go/update-php/' . $utm_base_query . '&utm_campaign=church-theme-content',
+		'update-php'            => '/go/update-php/' . $utm_base_query . '&utm_campaign=church-theme-content',
 
 		// URLs for sermon media field descriptions.
-		'sermon-video-sites'  => '/go/ctc-sermon-video-sites/', // external.
-		'sermon-video-help'   => '/go/ctc-sermon-video-help/' . $utm_base_query . '&utm_campaign=church-theme-content&utm_content=sermon',
-		'sermon-audio-sites'  => '/go/ctc-sermon-audio-sites/', // external.
-		'sermon-audio-help'   => '/go/ctc-sermon-audio-help/' . $utm_base_query . '&utm_campaign=church-theme-content&utm_content=sermon',
+		'sermon-video-sites'    => '/go/ctc-sermon-video-sites/', // external.
+		'sermon-video-help'     => '/go/ctc-sermon-video-help/' . $utm_base_query . '&utm_campaign=church-theme-content&utm_content=sermon',
+		'sermon-audio-sites'    => '/go/ctc-sermon-audio-sites/', // external.
+		'sermon-audio-help'     => '/go/ctc-sermon-audio-help/' . $utm_base_query . '&utm_campaign=church-theme-content&utm_content=sermon',
 
 		// Podcasting guide.
-		'podcast-guide'       => '/go/podcast-guide/' . $utm_base_query . '&utm_campaign=church-theme-content',
+		'podcast-guide'         => '/go/podcast-guide/' . $utm_base_query . '&utm_campaign=church-theme-content',
+
+		// Podcasting submission.
+		'podcast-submit-apple'  => '/go/apple-podcast-submit/', // no UTM, redirects. add ?url=https://feedurl argument
+		'podcast-submit-google' => '/go/google-podcast-submit/', // no UTM, redirects.
 
 		// Agency mode guide.
-		'agency-mode'         => '/go/agency-mode/', // no UTM, used by theme framework too.
+		'agency-mode'           => '/go/agency-mode/', // no UTM, used by theme framework too.
 
 		// Newsletter sign up.
-		'newsletter'          => '/newsletter/', // no UTM, redirects to Mailchimp page.
+		'newsletter'            => '/newsletter/', // no UTM, redirects to Mailchimp page.
 
 		// Blog.
-		'blog'                => '/blog/' . $utm_base_query . '&utm_campaign=church-theme-content&utm_content=settings',
+		'blog'                  => '/blog/' . $utm_base_query . '&utm_campaign=church-theme-content&utm_content=settings',
 
 		// Risen migration guide.
-		'migrate-risen'        => '/go/switch-from-risen/' . $utm_base_query . '&utm_campaign=migrate-risen',
-		'migrate-risen-backup' => '/go/backups/',
+		'migrate-risen'         => '/go/switch-from-risen/' . $utm_base_query . '&utm_campaign=migrate-risen',
+		'migrate-risen-backup'  => '/go/backups/',
 
 	);
 
