@@ -1,11 +1,4 @@
-# Prevent files from being deployed to WordPress.org by WP Continuous Deployment
-# https://github.com/ahmadawais/wp-continuous-deployment
-# https://github.com/marketplace/actions/wordpress-plugin-deploy
-
-.dev
 .git
-.github
-.wordpress-org
 .distignore
 .gitignore
 README.md
