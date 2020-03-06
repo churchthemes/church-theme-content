@@ -8,7 +8,7 @@
         },
         {
             "name": "Product Folder",
-            "script": "open $HOME'/Work/ChurchThemes.com/Products/Plugins/Church Content';exit",
+            "script": "open $CT_WORK'/Products/Plugins/Church Content';exit",
             "description": "Releases, starter content, etc."
         },
         {
