@@ -1,0 +1,25 @@
+// vscode-buttons config
+{
+    "buttons": [
+        {
+            "name": "Plugin Folder",
+            "script": "open .;exit",
+            "description": "Project Repo"
+        },
+        {
+            "name": "Product Folder",
+            "script": "open $HOME'/Work/ChurchThemes.com/Products/Plugins/Church Content';exit",
+            "description": "Releases, starter content, etc."
+        },
+        {
+            "name": "WordPress.org",
+            "script": "open https://wordpress.org/plugins/church-theme-content/;exit",
+            "description": "church-theme-content"
+        },
+        {
+            "name": "GitHub",
+            "script": "open https://github.com/churchthemes/church-theme-content;exit",
+            "description": "church-theme-content"
+        }
+    ]
+}
