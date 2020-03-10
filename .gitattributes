@@ -1,0 +1,8 @@
+# Ignore files and directories when deploying to WordPress.org.
+# Files in .gitignore and .gitignore_global are also ignored.
+
+.git* export-ignore
+.wpo-assets export-ignore
+buttons.jsonc export-ignore
+deploy export-ignore
+README.md export-ignore

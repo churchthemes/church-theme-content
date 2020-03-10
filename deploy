@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+# Run ./deploy to deploy plugin to WordPress.org plugin directory. This also makes archive zip in
+# Releases folder. It respects .gitignore, .gitignore_global and .gitattributes (export-ignore).
+# WordPress.org assets (icon and screenshots) are stored in .wpo-assets.
+#
+# Also see buttons.jsonc which uses vscode-buttons extension for convenient execution.
+#
+# Three options are given: 1) Release new version, 2) Update readme.txt or assets, and
+# 3) Make manual changes such as deletions
+#
+# PREREQUISITES:
+#
+# 1) Set environment variables (see variables.zsh and script commons)
+# 2) Make this script executable: chmod +x deploy
+# 3) Folder must exist at $CT_PLUGIN_PRODUCTS/$NAME/Releases
+# 4) System must have WordPress.org keychain access
+# 5) Requires 'brew install git-archive-all': https://github.com/Kentzo/git-archive-all
+#	 This helps include any submodules, which native 'git archive-all' doesn't do easily.
+
+source "$CT_SCRIPTS/deploy-wpo.common"
+
+SLUG="church-theme-content" # Plugin folder name in wp-content/plugins
+NAME="Church Content" # Folder name in Releases folder
+
+ct_deploy_wpo "$SLUG" "$NAME"

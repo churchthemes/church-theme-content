@@ -2,23 +2,28 @@
 {
     "buttons": [
         {
+            "name": "Deploy to WP.org",
+            "script": "./deploy",
+            "description": "./deploy (tag or readme/assets)"
+        },
+        {
             "name": "Plugin Folder",
-            "script": "open .;exit",
+            "script": "open . && exit",
             "description": "Project Repo"
         },
         {
             "name": "Product Folder",
-            "script": "open $CT_WORK'/Products/Plugins/Church Content';exit",
+            "script": "open $CT_WORK'/Products/Plugins/Church Content' && exit",
             "description": "Releases, starter content, etc."
         },
         {
             "name": "WordPress.org",
-            "script": "open https://wordpress.org/plugins/church-theme-content/;exit",
+            "script": "open https://wordpress.org/plugins/church-theme-content/ && exit",
             "description": "church-theme-content"
         },
         {
             "name": "GitHub",
-            "script": "open https://github.com/churchthemes/church-theme-content;exit",
+            "script": "open https://github.com/churchthemes/church-theme-content && exit",
             "description": "church-theme-content"
         }
     ]
