@@ -2,6 +2,11 @@
 {
     "buttons": [
         {
+            "name": "Push to GitHub",
+            "script": "git push origin master --tags",
+            "description": "git push origin master --tags"
+        },
+        {
             "name": "Deploy to WP.org",
             "script": "./deploy",
             "description": "./deploy (tag or readme/assets)"
