@@ -3,6 +3,7 @@
 
 .git* export-ignore
 .wpo-assets export-ignore
+.vscode export-ignore
 buttons.jsonc export-ignore
 deploy export-ignore
 README.md export-ignore
