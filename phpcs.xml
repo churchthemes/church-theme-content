@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<ruleset>
+
+	<!-- SGCS-WP ruleset for WordPress plugins/themes: https://github.com/stevengliebe/SGCS -->
+	<rule ref="SGCS-WP"/>
+
+	<!-- PHPCompatibility to check 5.2 and newer -->
+	<config name="testVersion" value="5.2-"/>
+
+</ruleset>
