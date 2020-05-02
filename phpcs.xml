@@ -4,7 +4,7 @@
 	<!-- SGCS-WP ruleset for WordPress plugins/themes: https://github.com/stevengliebe/SGCS -->
 	<rule ref="SGCS-WP"/>
 
-	<!-- PHPCompatibility to check 5.2 and newer -->
-	<config name="testVersion" value="5.2-"/>
+	<!-- PHPCompatibility to check 5.3 and newer -->
+	<config name="testVersion" value="5.3-"/>
 
 </ruleset>
