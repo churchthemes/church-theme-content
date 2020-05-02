@@ -7,3 +7,4 @@
 buttons.jsonc export-ignore
 deploy export-ignore
 README.md export-ignore
+phpcs.xml export-ignore
