@@ -3,7 +3,7 @@
  * Plugin Name: Church Content
  * Plugin URI: https://churchthemes.com/plugins/church-content/
  * Description: Provides an interface for managing sermons, events, people and locations. A <strong>compatible theme is required</strong> for presenting content from these church-centric post types in a tightly-integrated manner.
- * Version: 2.4.1
+ * Version: 2.5
  * Author: ChurchThemes.com
  * Author URI: https://churchthemes.com
  * License: GPLv2 or later
@@ -17,7 +17,7 @@
  */
 
 // No direct access
-if ( ! defined( 'ABSPATH' ) ) exit;
+if (! defined( 'ABSPATH' )) exit;
 
 /**
  * Main class
@@ -87,7 +87,7 @@ class Church_Theme_Content {
 	public function set_plugin_data() {
 
 		// Load plugin.php if get_plugins() not available
-		if ( ! function_exists( 'get_plugins' ) ) {
+		if (! function_exists( 'get_plugins' )) {
 			require_once ABSPATH . 'wp-admin/includes/plugin.php';
 		}
 
@@ -132,7 +132,7 @@ class Church_Theme_Content {
 		define( 'CTC_LANG_DIR', 	'languages' );					// languages directory
 
 		// CT Meta Box
-		if ( ! defined( 'CTMB_URL' ) ) { // in case also used in theme or other plugin
+		if (! defined( 'CTMB_URL' )) { // in case also used in theme or other plugin
 			define( 'CTMB_URL', CTC_URL . '/' . CTC_LIB_DIR . '/ct-meta-box' ); // for enqueueing JS/CSS
 		}
 
@@ -165,8 +165,8 @@ class Church_Theme_Content {
 		$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
 
 		// WordPress 3.6 and earlier don't auto-load from wp-content/languages, so check and load manually: http://core.trac.wordpress.org/changeset/22346.
-		$external_mofile = WP_LANG_DIR . '/plugins/'. $domain . '-' . $locale . '.mo';
-		if ( version_compare( $wp_version, '3.6', '<=' ) && file_exists( $external_mofile ) ) { // external translation exists.
+		$external_mofile = WP_LANG_DIR . '/plugins/' . $domain . '-' . $locale . '.mo';
+		if (version_compare( $wp_version, '3.6', '<=' ) && file_exists( $external_mofile )) { // external translation exists.
 			load_textdomain( $domain, $external_mofile );
 		}
 
@@ -269,17 +269,17 @@ class Church_Theme_Content {
 		$includes = $this->includes;
 
 		// Loop conditions
-		foreach ( $includes as $condition => $files ) {
+		foreach ($includes as $condition => $files) {
 
 			$do_includes = false;
 
 			// Check condition
-			switch( $condition ) {
+			switch($condition) {
 
 				// Admin Only
 				case 'admin':
 
-					if ( is_admin() ) {
+					if (is_admin()) {
 						$do_includes = true;
 					}
 
@@ -288,7 +288,7 @@ class Church_Theme_Content {
 				// Frontend Only
 				case 'frontend':
 
-					if ( ! is_admin() ) {
+					if (! is_admin()) {
 						$do_includes = true;
 					}
 
@@ -304,9 +304,9 @@ class Church_Theme_Content {
 			}
 
 			// Loop files if condition met
-			if ( $do_includes ) {
+			if ($do_includes) {
 
-				foreach ( $files as $file ) {
+				foreach ($files as $file) {
 					require_once trailingslashit( CTC_PATH ) . $file;
 				}
 
@@ -340,7 +340,7 @@ class Church_Theme_Content {
 	public function ctc_check_flush_rewrite_rules() {
 
 		// Check if option was set.
-		if ( get_option( 'ctc_flush_rewrite_rules' ) ) {
+		if (get_option( 'ctc_flush_rewrite_rules' )) {
 
 			// Flush rewrite rules.
 			flush_rewrite_rules();
