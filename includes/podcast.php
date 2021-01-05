@@ -258,7 +258,7 @@ function ctc_podcast_feed_url() {
 /**
  * Church Content plugin version of do_enclose()
  *
- * When audio URL is provided, save its data to the 'enclosure' field.
+ * When audio and/or video URL is provided, save its data to the 'enclosure' field.
  * WordPress automatically uses this data to make feeds useful for podcasting.
  *
  * @since 2.0
@@ -300,6 +300,15 @@ function ctc_do_enclose( $post_id ) {
 
 	// Populate enclosure field with URL, length and format, if valid URL found.
 	do_enclose( $audio, $post_id );
+
+	// Get video URL.
+	$video = get_post_meta( $post_id , '_ctc_sermon_video' , true );
+
+	// Populate enclosure field with URL, length and format, if valid URL found.
+	if ( ! empty( $video ) ) {
+		do_enclose( $video, $post_id );
+	}
+
 
 }
 
