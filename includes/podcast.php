@@ -301,6 +301,14 @@ function ctc_do_enclose( $post_id ) {
 	// Populate enclosure field with URL, length and format, if valid URL found.
 	do_enclose( $audio, $post_id );
 
+	// Get video URL.
+	$video = get_post_meta( $post_id, '_ctc_sermon_video', true );
+
+	// Populate enclosure field with URL, length and format, if valid URL found.
+	if ( ! empty( $video ) ) {
+		do_enclose( $video, $post_id );
+	}
+
 }
 
 /**
