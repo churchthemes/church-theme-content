@@ -11,7 +11,7 @@
  */
 
 // No direct access
-if ( ! defined( 'ABSPATH' ) ) exit;
+if (! defined( 'ABSPATH' )) exit;
 
 /**********************************
  * SERMON TAXONOMIES
@@ -68,7 +68,7 @@ function ctc_taxonomy_sermon_topic_args( $unfiltered = false ) {
 	);
 
 	// Filter arguments.
-	if ( ! $unfiltered ) {
+	if (! $unfiltered) {
 		$args = apply_filters( 'ctc_taxonomy_sermon_topic_args', $args );
 	}
 
@@ -126,8 +126,8 @@ function ctc_taxonomy_sermon_book_args( $unfiltered = false ) {
 			'search_items' 					=> esc_html_x( 'Search Books', 'sermons', 'church-theme-content' ),
 			'popular_items' 				=> esc_html_x( 'Popular Books', 'sermons', 'church-theme-content' ),
 			'all_items' 					=> esc_html_x( 'All Books', 'sermons', 'church-theme-content' ),
-			'parent_item' 					=> null,
-			'parent_item_colon' 			=> null,
+			'parent_item' 					=> esc_html_x( 'Parent Book', 'sermons', 'church-theme-content' ),
+			'parent_item_colon' 			=> esc_html_x( 'Parent Book:', 'sermons', 'church-theme-content' ),
 			'edit_item' 					=> esc_html_x( 'Edit Book', 'sermons', 'church-theme-content' ),
 			'update_item' 					=> esc_html_x( 'Update Book', 'sermons', 'church-theme-content' ),
 			'add_new_item' 					=> esc_html_x( 'Add Book', 'sermons', 'church-theme-content' ),
@@ -148,7 +148,7 @@ function ctc_taxonomy_sermon_book_args( $unfiltered = false ) {
 	);
 
 	// Filter arguments.
-	if ( ! $unfiltered ) {
+	if (! $unfiltered) {
 		$args = apply_filters( 'ctc_taxonomy_sermon_book_args', $args );
 	}
 
@@ -206,8 +206,8 @@ function ctc_taxonomy_sermon_series_args( $unfiltered = false ) {
 			'search_items' 					=> esc_html_x( 'Search Series', 'sermons', 'church-theme-content' ),
 			'popular_items' 				=> esc_html_x( 'Popular Series', 'sermons', 'church-theme-content' ),
 			'all_items' 					=> esc_html_x( 'All Series', 'sermons', 'church-theme-content' ),
-			'parent_item' 					=> null,
-			'parent_item_colon' 			=> null,
+			'parent_item' 					=> esc_html_x( 'Parent Series', 'sermons', 'church-theme-content' ),
+			'parent_item_colon' 			=> esc_html_x( 'Parent Series:', 'sermons', 'church-theme-content' ),
 			'edit_item' 					=> esc_html_x( 'Edit Series', 'sermons', 'church-theme-content' ),
 			'update_item' 					=> esc_html_x( 'Update Series', 'sermons', 'church-theme-content' ),
 			'add_new_item' 					=> esc_html_x( 'Add Series', 'sermons', 'church-theme-content' ),
@@ -228,7 +228,7 @@ function ctc_taxonomy_sermon_series_args( $unfiltered = false ) {
 	);
 
 	// Filter arguments.
-	if ( ! $unfiltered ) {
+	if (! $unfiltered) {
 		$args = apply_filters( 'ctc_taxonomy_sermon_series_args', $args );
 	}
 
@@ -285,8 +285,8 @@ function ctc_taxonomy_sermon_speaker_args( $unfiltered = false ) {
 			) ),			'search_items' 					=> esc_html_x( 'Search Speakers', 'sermons', 'church-theme-content' ),
 			'popular_items' 				=> esc_html_x( 'Popular Speakers', 'sermons', 'church-theme-content' ),
 			'all_items' 					=> esc_html_x( 'All Speakers', 'sermons', 'church-theme-content' ),
-			'parent_item' 					=> null,
-			'parent_item_colon' 			=> null,
+			'parent_item' 					=> esc_html_x( 'Parent Speaker', 'sermons', 'church-theme-content' ),
+			'parent_item_colon' 			=> esc_html_x( 'Parent Speaker:', 'sermons', 'church-theme-content' ),
 			'edit_item' 					=> esc_html_x( 'Edit Speaker', 'sermons', 'church-theme-content' ),
 			'update_item' 					=> esc_html_x( 'Update Speaker', 'sermons', 'church-theme-content' ),
 			'add_new_item' 					=> esc_html_x( 'Add Speaker', 'sermons', 'church-theme-content' ),
@@ -307,7 +307,7 @@ function ctc_taxonomy_sermon_speaker_args( $unfiltered = false ) {
 	);
 
 	// Filter arguments.
-	if ( ! $unfiltered ) {
+	if (! $unfiltered) {
 		$args = apply_filters( 'ctc_taxonomy_sermon_speaker_args', $args ); // allow filtering.
 	}
 
@@ -387,7 +387,7 @@ function ctc_taxonomy_sermon_tag_args( $unfiltered = false ) {
 	);
 
 	// Filter arguments.
-	if ( ! $unfiltered ) {
+	if (! $unfiltered) {
 		$args = apply_filters( 'ctc_taxonomy_sermon_tag_args', $args ); // allow filtering.
 	}
 
@@ -459,7 +459,7 @@ function ctc_taxonomy_event_category_args( $unfiltered = false ) {
 	);
 
 	// Filter arguments.
-	if ( ! $unfiltered ) {
+	if (! $unfiltered) {
 		$args = apply_filters( 'ctc_taxonomy_event_category_args', $args );
 	}
 
@@ -533,7 +533,7 @@ function ctc_taxonomy_person_group_args( $unfiltered = false ) {
 	);
 
 	// Filter arguments.
-	if ( ! $unfiltered ) {
+	if (! $unfiltered) {
 		$args = apply_filters( 'ctc_taxonomy_person_group_args', $args );
 	}
 
@@ -601,7 +601,7 @@ function ctc_taxonomy_hide_parent() {
     $screen = get_current_screen();
 
     // Specific taxonomies (Topic can have parent).
-    if ( ! in_array( $screen->taxonomy, ctc_taxonomies_no_parent() ) ) {
+    if (! in_array( $screen->taxonomy, ctc_taxonomies_no_parent() )) {
     	return;
     }
 
@@ -657,18 +657,18 @@ function ctc_post_taxonomy_hide_parent() {
     $screen = get_current_screen();
 
 	// Add/edit sermon post type only.
-	if ( 'post' !== $screen->base || ( isset( $screen->post_type ) && 'ctc_sermon' !== $screen->post_type ) ) {
+	if ('post' !== $screen->base || ( isset( $screen->post_type ) && 'ctc_sermon' !== $screen->post_type )) {
 		return;
 	}
 
 	// Get taxonomy label names translated, for CSS to hide in Gutenburg.
 	$taxonomy_selectors = array();
 	$taxonomies = get_object_taxonomies( 'ctc_sermon' );
-	foreach( $taxonomies as $taxonomy_name ) {
+	foreach($taxonomies as $taxonomy_name) {
 
 		$taxonomy = get_taxonomy( $taxonomy_name );
 
-		if ( ! empty( $taxonomy->labels->name ) && in_array( $taxonomy_name, ctc_taxonomies_no_parent() ) ) {
+		if (! empty( $taxonomy->labels->name ) && in_array( $taxonomy_name, ctc_taxonomies_no_parent() )) {
 			$taxonomy_selectors[] = '.editor-post-taxonomies__hierarchical-terms-list[aria-label*="' . esc_html( $taxonomy->labels->name ) . '"] ~ form .components-base-control';
 		}
 
@@ -684,13 +684,13 @@ function ctc_post_taxonomy_hide_parent() {
     #newctc_sermon_book_parent,
     #newctc_sermon_series_parent,
     #newctc_sermon_speaker_parent {
-    	display: none;
+/*    	display: none;*/
     }
 
     /* Hide in Block Editor */
 
     <?php echo implode( ',' . PHP_EOL, $taxonomy_selectors ); ?> {
-		display: none;
+/*		display: none;*/
 	}
 
 	</style>
@@ -721,15 +721,15 @@ function ctc_term_options( $feature, $taxonomy_name, $prepend = array() ) {
 
 	$options = array();
 
-	if ( ! preg_match( '/^ctc_/', $taxonomy_name ) || ctc_taxonomy_supported( $feature, $taxonomy_name ) ) { // make sure taxonomy supported.
+	if (! preg_match( '/^ctc_/', $taxonomy_name ) || ctc_taxonomy_supported( $feature, $taxonomy_name )) { // make sure taxonomy supported.
 
 		$terms = $categories = get_terms( $taxonomy_name );
 
-		if ( ! empty( $prepend ) ) {
+		if (! empty( $prepend )) {
 			$options = $prepend;
 		}
 
-		foreach ( $terms as $term ) {
+		foreach ($terms as $term) {
 			$options[ $term->term_id ] = $term->name;
 		}
 
@@ -738,4 +738,3 @@ function ctc_term_options( $feature, $taxonomy_name, $prepend = array() ) {
 	return apply_filters( 'ctc_term_options', $options, $taxonomy_name, $prepend );
 
 }
-
