@@ -654,7 +654,9 @@ add_action( 'admin_head-term.php', 'ctc_taxonomy_hide_parent' ); // edit term.
  */
 function ctc_post_taxonomy_hide_parent() {
 
-    $screen = get_current_screen();
+	global $wp_version;
+
+	$screen = get_current_screen();
 
 	// Add/edit sermon post type only.
 	if ('post' !== $screen->base || ( isset( $screen->post_type ) && 'ctc_sermon' !== $screen->post_type )) {
@@ -669,7 +671,11 @@ function ctc_post_taxonomy_hide_parent() {
 		$taxonomy = get_taxonomy( $taxonomy_name );
 
 		if (! empty( $taxonomy->labels->name ) && in_array( $taxonomy_name, ctc_taxonomies_no_parent() )) {
-			$taxonomy_selectors[] = '.editor-post-taxonomies__hierarchical-terms-list[aria-label*="' . esc_html( $taxonomy->labels->name ) . '"] ~ form .components-base-control';
+			if (version_compare($wp_version, '5.9', '<')) { // WordPress before 5.9
+				$taxonomy_selectors[] = '.editor-post-taxonomies__hierarchical-terms-list[aria-label*="' . esc_html( $taxonomy->labels->name ) . '"] ~ form .components-base-control';
+			} else { // WordPress 5.9 and later user different CSS selector
+				$taxonomy_selectors[] = '.editor-post-taxonomies__hierarchical-terms-list[aria-label*="' . esc_html( $taxonomy->labels->name ) . '"] ~ form > .components-base-control:nth-of-type(2)';
+			}
 		}
 
 	}
@@ -684,13 +690,13 @@ function ctc_post_taxonomy_hide_parent() {
     #newctc_sermon_book_parent,
     #newctc_sermon_series_parent,
     #newctc_sermon_speaker_parent {
-/*    	display: none;*/
+    	display: none;
     }
 
     /* Hide in Block Editor */
 
     <?php echo implode( ',' . PHP_EOL, $taxonomy_selectors ); ?> {
-/*		display: none;*/
+		display: none;
 	}
 
 	</style>
