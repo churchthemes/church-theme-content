@@ -4,7 +4,7 @@
  *
  * @package    Church_Theme_Content
  * @subpackage Admin
- * @copyright  Copyright (c) 2013 - 2017, ChurchThemes.com
+ * @copyright  Copyright (c) 2013 - 2024, ChurchThemes.com
  * @link       https://github.com/churchthemes/church-theme-content
  * @license    GPLv2 or later
  * @since      0.9
@@ -52,6 +52,15 @@ function ctc_get_theme_support_notice() {
 		// Message has not been dismissed for this theme
 		if ( ! get_option( $option_id  ) ) {
 
+			// Nonce
+			$nonce = wp_create_nonce( 'ctc_hide_theme_support_notice' );
+
+			// Dismiss URL
+			$dismiss_url = add_query_arg( [
+				'ctc_hide_theme_support_notice' => '1',
+				'ctc_hide_theme_support_notice_security' => $nonce
+			] );
+
 			?>
 			<div class="notice notice-warning">
 				<p>
@@ -70,7 +79,7 @@ function ctc_get_theme_support_notice() {
 						wp_get_theme(),
 						CTC_NAME,
 						'https://wordpress.org/plugins/church-theme-content/',
-						esc_url( add_query_arg( 'ctc_hide_theme_support_notice', '1' ) )
+						esc_url( $dismiss_url )
 					);
 					?>
 				</p>
@@ -96,6 +105,11 @@ function ctc_hide_theme_support_notice() {
 
 	// User requested dismissal
 	if ( ! empty( $_GET['ctc_hide_theme_support_notice'] ) ) {
+
+		// Check nonce
+		if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET[ 'ctc_hide_theme_support_notice_security' ] ) ), 'ctc_hide_theme_support_notice' ) ) {
+			return;
+		}
 
 		// Option ID
 		$theme_data = wp_get_theme();
