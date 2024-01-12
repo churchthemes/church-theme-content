@@ -11,7 +11,7 @@
  * Domain Path: /languages
  *
  * @package   Church_Theme_Content
- * @copyright Copyright (c) 2013 - 2023, ChurchThemes.com, LLC
+ * @copyright Copyright (c) 2013 - 2024, ChurchThemes.com, LLC
  * @link      https://github.com/churchthemes/church-theme-content
  * @license   GPLv2 or later
  */
