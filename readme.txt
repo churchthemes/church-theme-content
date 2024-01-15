@@ -4,7 +4,7 @@ Tags: church, churches, sermon, sermons, ministry, ministries, event, events, ca
 Requires at least: 3.6
 Tested up to: 6.4
 Requires PHP: 7.0
-Stable tag: 2.6
+Stable tag: 2.6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
