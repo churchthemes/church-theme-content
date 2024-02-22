@@ -3,7 +3,7 @@ Contributors: churchthemes, stevengliebe, galengidman
 Tags: church, churches, sermon, sermons, ministry, ministries, event, events, calendar, location, locations
 Requires at least: 3.6
 Tested up to: 6.4
-Requires PHP: 8.0
+Requires PHP: 7.4
 Stable tag: 2.6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
