@@ -1119,7 +1119,7 @@ function ctc_edd_license_action($add_on_dir, $action)
 						'no_cache' 		=> md5(microtime(true)),
 					],
 					'timeout' => 15,
-					'sslverify' => false, // allow for self-signed certificates
+					'sslverify' => true,
 				]);
 
 				// Got a valid response?
