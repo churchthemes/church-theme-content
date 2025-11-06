@@ -1098,17 +1098,6 @@ function ctc_edd_license_action($add_on_dir, $action)
 			// Have license
 			if ($license) {
 
-				// Data to send in API request
-				/*
-				$api_params = array(
-					'edd_action'	=> $action,
-					'license' 		=> $license,
-					'item_name'		=> urlencode(ctc_get_add_on($add_on_dir, 'item_name')), // name of download in EDD
-					'url'			=> urlencode(home_url()) // URL of this site activated for license
-				);
-				$response = wp_remote_get(esc_url_raw(add_query_arg($api_params, ctc_get_add_on($add_on_dir, 'store_url'))), array('timeout' => 15, 'sslverify' => false));
-				*/
-
 				// Call the API
 				$remote_api_url = ctc_get_add_on($add_on_dir, 'store_url');
 				$remote_api_url = trailingslashit($remote_api_url);

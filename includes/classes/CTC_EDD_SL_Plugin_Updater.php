@@ -379,22 +379,6 @@ class CTC_EDD_SL_Plugin_Updater
 			return false; // Don't allow a plugin to ping itself
 		}
 
-		/*
-		$api_params = array(
-			'edd_action' => 'get_version',
-			'license'    => ! empty( $data['license'] ) ? $data['license'] : '',
-			'item_name'  => isset( $data['item_name'] ) ? $data['item_name'] : false,
-			'item_id'    => isset( $data['item_id'] ) ? $data['item_id'] : false,
-			'version'    => isset( $data['version'] ) ? $data['version'] : false,
-			'slug'       => $data['slug'],
-			'author'     => $data['author'],
-			'url'        => home_url(),
-			'beta'       => ! empty( $data['beta'] ),
-		);
-		$verify_ssl = $this->verify_ssl();
-		$request    = wp_remote_post( $this->api_url, array( 'timeout' => 15, 'sslverify' => $verify_ssl, 'body' => $api_params ) );
-		*/
-
 		$request = wp_remote_post($this->api_url, [
 			'body' => [
 				'edd_action'	=> 'get_version',
@@ -462,20 +446,6 @@ class CTC_EDD_SL_Plugin_Updater
 		$version_info = $this->get_cached_version_info($cache_key);
 
 		if (false === $version_info) {
-
-			/*
-			$api_params = array(
-				'edd_action' => 'get_version',
-				'item_name'  => isset($data['item_name']) ? $data['item_name'] : false,
-				'item_id'    => isset($data['item_id']) ? $data['item_id'] : false,
-				'slug'       => $_REQUEST['slug'],
-				'author'     => $data['author'],
-				'url'        => home_url(),
-				'beta'       => ! empty($data['beta'])
-			);
-			$verify_ssl = $this->verify_ssl();
-			$request    = wp_remote_post($this->api_url, array('timeout' => 15, 'sslverify' => $verify_ssl, 'body' => $api_params));
-			*/
 
 			$request = wp_remote_post($this->api_url, [
 				'body' => [

@@ -6,7 +6,7 @@
  * Global functions pertaining to add-ons.
  *
  * @package    Church_Theme_Content
- * @copyright  Copyright (c) 2014, ChurchThemes.com
+ * @copyright  Copyright (c) 2014 - 2025, ChurchThemes.com
  * @link       https://github.com/churchthemes/church-theme-content
  * @license    GPLv2 or later
  * @since      1.2
@@ -34,7 +34,7 @@ if (! defined('ABSPATH')) exit;
  *
  *			ctc_register_add_on( array(
  *				'plugin_file'		=> __FILE__,													// Full path to plugin main file (__FILE__ if this code is in main file)
- *				'store_url'			=> 'https://churchthemes.com',									// URL of store running EDD with Software Licensing extension
+ *				'store_url'			=> 'https://churchthemes.com',									// URL of store running EDD with Software Licensing extension (or proxy)
  *				'renewal_url'		=> 'https://churchthemes.com/renew/?license_key={license_key}',	// It is recommended to provide a URL for renewal links (ie. redirecting to EDD checkout); {license_key} will be replaced with key
  *				'renewal_info_url'	=> 'https://churchthemes.com/go/license-renewal', 				// Optional URL for renewal information
  *			) );
@@ -96,8 +96,7 @@ function ctc_register_add_on($args)
 
 			// EDD Software Licensing
 			// The translation strings are automatically escaped on use in edd-license.php
-			//'store_url'					=> '',								// URL of store running EDD with Software Licensing extension
-			'store_url'					=> 'https://license.churchthemes.link', // Reverse proxy to bypass IP block lists (Immunify360 and Wordfence)
+			'store_url'					=> '',								// URL of store running EDD with Software Licensing extension (or proxy)
 			'version'					=> $plugin_data['Version'],			// current version of the add-on plugin; default is to auto-determine
 			'item_name'					=> $name_short,						// must match download's name in EDD store
 			'author'					=> $author,							// default is to auto-determine from add-on plugin
